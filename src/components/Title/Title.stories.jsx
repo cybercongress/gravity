@@ -1,8 +1,19 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Title } from "../..";
+import {storiesOf} from '@storybook/react';
+import {Title} from "../..";
 
 storiesOf('Title', module)
     .add('inline title', () => (
-        <Title>I'm a title</Title>
+        <div>
+            <p>some text</p>
+            <Title inline>I'm a inline title</Title>
+            <p>some text</p>
+        </div>
+    ))
+    .add('regular title', () => (
+        <div>
+            <p>some text</p>
+            <Title>Regular title</Title>
+            <p>some text</p>
+        </div>
     ));

@@ -1,15 +1,9 @@
 import React from 'react';
-
-import './Title.css';
+import cx from 'classnames';
+import styles from './Title.css';
 
 const Title = ({ inline, ...props }) => {
-    let css = 'title';
-
-    if (inline) {
-        css += ' title-inline';
-    }
-
-    return <h2 { ...props } className={ css } />;
+    return <h2 { ...props } className={cx(styles.title, {[styles.titleInline] : inline})} />;
 };
 
 export default Title;
