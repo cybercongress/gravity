@@ -1,6 +1,6 @@
 {
   "name": "@cybercongress/ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Components for cyb",
   "author": {
     "name": "cybercongress",
@@ -11,12 +11,14 @@
     "prepublishOnly": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
-    "build": "webpack --mode production"
+    "build": "webpack --mode development"
   },
   "license": "WTFPL",
   "dependencies": {
     "react": "16.6.3",
-    "react-dom": "16.6.3"
+    "react-dom": "16.6.3",
+    "highlight.js": "9.12.0",
+    "react-router": "3.0.5"
   },
   "devDependencies": {
     "@storybook/react": "4.0.6",

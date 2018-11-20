@@ -19,6 +19,12 @@ module.exports = {
             commonjs2: 'react',
             amd: 'react',
             root: 'React'
+        },
+        'react-dom': {
+            root: 'ReactDOM',
+            commonjs2: 'react-dom',
+            commonjs: 'react-dom',
+            amd: 'react-dom'
         }
     },
     module: {
@@ -35,6 +41,15 @@ module.exports = {
                             }
                     },
                 ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    { loader: 'style-loader' },
+                    {
+                        loader: 'css-loader'
+                    },
+                ],
             },
             {
                 test: /\.(js|jsx)$/,
