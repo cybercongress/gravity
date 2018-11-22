@@ -1,0 +1,22 @@
+.text {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.warn {
+    background-color: #fff59d;
+}
+
+.info {
+    background-color: #90caf9;
+}
+
+.error {
+    background-color: #ef9a9a;
+}
+
+.success {
+    background-color: #a5d6a7;
+}

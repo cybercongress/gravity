@@ -12,7 +12,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: true,
-                            localIdentName: '[name]_[local]',
+                            localIdentName: '[hash]_[local]',
                         },
                     },
                 ],

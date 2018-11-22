@@ -1,10 +1,4 @@
-import { configure, addDecorator } from '@storybook/react';
-
-
-const centered = require('@storybook/addon-centered').default
-
-
-// addDecorator(centered);
+import { configure } from '@storybook/react';
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src/components/', true, /.stories.jsx?$/);

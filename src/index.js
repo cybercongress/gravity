@@ -17,6 +17,7 @@ import {
 import { Container, Text, Link as ActionLink } from './components/CallToAction';
 import { Table } from './components/Table';
 import { LinkHash } from './components/LinkHash';
+import { Message } from './components/Message'
 
 import {
     Content, ContainerRegister, SideBar,
@@ -51,6 +52,7 @@ export {
     AddItemButton,
     AddItemButtonText,
     TotalCost,
+    Message,
 
     Content, ContainerRegister, SideBar,
     FieldsTable,
