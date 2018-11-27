@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 const styles = require('./Message.css');
 
-export const Message = ({ children, props, type }) => {
+export const Message = ({ children, type, ...props }) => {
     return <div {...props} className={
         cx(styles.text, {
             [styles.warn]: type === 'warning',
