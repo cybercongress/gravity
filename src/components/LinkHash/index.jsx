@@ -62,7 +62,7 @@ function copyTextToClipboard(text) {
   });
 }
 
-export const LinkHash = ({ value, to, marginLeft, noCopy }) => {
+export const LinkHash = ({ value, to, marginLeft, noCopy, noPadding, ...props }) => {
   const copyFunc = (e) => {
     copyTextToClipboard(value);
     e.preventDefault();
@@ -70,10 +70,11 @@ export const LinkHash = ({ value, to, marginLeft, noCopy }) => {
   }
   if (to) {
     return (
-      <Link to={to} className={
+      <Link to={to} {...props} className={
         cx(styles.linHash, {
           [styles.linHashMarginLeft] : marginLeft,
-          [styles.noCopy] : noCopy
+          [styles.noCopy] : noCopy,
+          [styles.linHashPadded] : !noPadding,
         })}>
         <Hash value={value} />
         <button

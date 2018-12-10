@@ -117,4 +117,6 @@ export const BoxTitle = (props) => (
     <div {...props} className={styles.boxTitle}/>
 );
 
-
+export const RightContainer = ({children, ...props}) => (
+    <div {...props} className={styles.rightContainer}>{children}</div>
+);

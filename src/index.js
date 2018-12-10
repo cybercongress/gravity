@@ -12,12 +12,17 @@ import {
     BoxTitle,
     AddItemButton,
     AddItemButtonText,
-    TotalCost
+    TotalCost,
+    RightContainer
 } from './components/chaingear';
 import { Container, Text, Link as ActionLink } from './components/CallToAction';
 import { Table } from './components/Table';
 import { LinkHash } from './components/LinkHash';
 import { Message } from './components/Message'
+import { BlockRow } from "./components/BlockRow/BlockRow";
+import { ParamRow } from "./components/newregistry/ParamRow/ParamRow";
+import { WideInput, WideSelect } from "./components/newregistry/WideInput/WideInput";
+import { Description } from "./components/newregistry/Description/Description";
 
 import {
     Content, ContainerRegister, SideBar,
@@ -66,5 +71,11 @@ export {
     AddButton,
     AddField,
     StatusBar,
-    Code
+    Code,
+    RightContainer,
+    BlockRow,
+    ParamRow,
+    WideInput,
+    WideSelect,
+    Description
 }

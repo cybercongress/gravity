@@ -36,7 +36,7 @@
     // padding-left: 40px;
     // color: #7c7c7c;
     // font-size: 24px;
-    // line-height: 24p;x
+    // line-height: 24p;
     font-weight: bold;
 }
 
@@ -186,4 +186,9 @@
     text-transform: uppercase;
     color: #000000;
     font-size: 14px;
+}
+
+.rightContainer {
+    display: flex;
+    justify-Content: flex-end;
 }

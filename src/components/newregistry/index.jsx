@@ -8,8 +8,8 @@ export const FieldsTable = ({ children }) => (
   </table>
 );
 
-export const Panel = ({ children, title, noPadding }) => (
-  <div className={styles.panel}>
+export const Panel = ({ children, title, noPadding, ...props }) => (
+  <div {...props} className={styles.panel}>
     {title && <h3 className={styles.panelTitle}>{title}</h3>}
     {noPadding ? children : <div className={styles.panelContent}>
       {children}
@@ -18,14 +18,14 @@ export const Panel = ({ children, title, noPadding }) => (
 );
 
 export const Label = ({ children, color }) => (
-  <label className={styles.label} style={{ background: color }}>
-    {children}
-  </label>
+    <div className={styles.label} style={{ background: color }}>
+        {children}
+    </div>
 );
 
 
-export const CreateButton = ({ children, ...ptops }) => (
-  <button  className={styles.createButton} {...ptops}>
+export const CreateButton = ({ children, ...props }) => (
+  <button  className={styles.createButton} {...props}>
     {children}
   </button>
 );
