@@ -1,12 +1,11 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
+import centered from '@storybook/addon-centered';
 import {Message, Title} from "../..";
 import { addDecorator } from '@storybook/react';
 
-const centered = require('@storybook/addon-centered').default;
-addDecorator(centered);
-
 storiesOf('Message', module)
+    .addDecorator(centered)
     .add('info', () => (
         <div>
             <Message type='info'>Information message looks like this</Message>

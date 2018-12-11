@@ -24,6 +24,13 @@ import { ParamRow } from "./components/newregistry/ParamRow/ParamRow";
 import { WideInput, WideSelect } from "./components/newregistry/WideInput/WideInput";
 import { Description } from "./components/newregistry/Description/Description";
 
+import { 
+    Browser, 
+    BrowserHeader,
+    BrowserContent,
+    BrowserSidebar
+} from './components/browser/Browser';
+
 import {
     Content, ContainerRegister, SideBar,
     FieldsTable,
@@ -77,5 +84,11 @@ export {
     ParamRow,
     WideInput,
     WideSelect,
-    Description
+    Description,
+
+
+    Browser, 
+    BrowserHeader,
+    BrowserContent,
+    BrowserSidebar    
 }

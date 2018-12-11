@@ -1,0 +1,55 @@
+
+
+.browser {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	background: #438cef;
+	color: #fff;
+	height: 60px;
+}
+
+.header.open {
+	margin-left: 200px;	
+}
+
+.header.open.home {
+	margin-left: 0;	
+}
+
+.header.home {
+	height: 450px;
+}
+
+.content {
+	flex: 1 auto;
+	height: calc(100% - 60px);
+	background: #eff3f6;
+	overflow: scroll;
+}
+
+.content.home {
+	height: calc(100% - 450px);	
+	overflow: initial;
+}
+
+.sidebar {
+    background: #2e3842;
+    color: #fff;	
+    position: fixed;
+    top: 0;
+    left: -200px;
+    bottom: 0;
+    width: 200px;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar.open.home {
+	left: -200px;
+}
