@@ -18,7 +18,8 @@ class AddField extends Component {
             name
         } = this.state;
         const type = this.type.value;
-        this.props.onAdd(name, type);
+        const unique = this.unique.checked;
+        this.props.onAdd(name, type, unique);
         this.setState({
             name: ''
         })
@@ -38,9 +39,9 @@ class AddField extends Component {
         const canAdd = name.length > 0 && !exist;
 
         return (
-            <tr >
-                <td>
-                    <WideInput value={name} onChange={this.changeName}/>
+            <tr>
+                <td style={{width: 100}}>
+                    <WideInput placeholder='Field name' value={name} onChange={this.changeName}/>
                 </td>
                 <td>
                     <WideSelect inputRef={node => { this.type = node; }}>
@@ -51,7 +52,10 @@ class AddField extends Component {
                         <option value='int256'>int256</option>
                     </WideSelect>
                 </td>
-                <td>
+                <td style={{textAlign: 'center'}}>
+                    <input ref={node => this.unique = node} type='checkbox' style={{width: 12}}/> unique
+                </td>
+                <td style={{textAlign: 'end'}}>
                     <AddButton
                         onClick={this.add}
                         disabled={!canAdd}
