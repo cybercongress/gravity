@@ -74,7 +74,7 @@ export const LinkHash = ({ value, to, marginLeft, noCopy, noPadding, ...props })
         cx(styles.linHash, {
           [styles.linHashMarginLeft] : marginLeft,
           [styles.noCopy] : noCopy,
-          [styles.linHashPadded] : !noPadding,
+          [styles.linHashNoPadding] : noPadding,
         })}>
         <Hash value={value} />
         <button

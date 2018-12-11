@@ -191,4 +191,5 @@
 .rightContainer {
     display: flex;
     justify-Content: flex-end;
+    margin-top: 10px;
 }

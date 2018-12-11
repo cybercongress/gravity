@@ -9,11 +9,13 @@
   font-size: 18px;
   line-height: 21px;
   display: inline-flex;
+  /*
   width: 150px;
+  */
   align-items: center;
 }
 
-.linHashPadded {
+.linHashNoPadding {
   padding-left: 45px;
 }
 
