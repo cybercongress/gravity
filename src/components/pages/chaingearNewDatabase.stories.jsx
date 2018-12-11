@@ -42,7 +42,7 @@ storiesOf('Chaingear_NewDatabase', module)
         ];
         const databaseId = null;
 
-        const DatabaseSource = 'ebat kolotit';
+        const DatabaseSource = 'Database source code';
 
         const exist = false;
         const benCount = 1;
