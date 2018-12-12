@@ -33,7 +33,9 @@
     border: 1px solid #dedede;
 }
 
-.fieldsTable td,
+.fieldsTable td {
+    padding: 10px 10px;
+}
 .fieldsTable th {
     padding: 5px 10px;
 }

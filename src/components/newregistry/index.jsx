@@ -2,8 +2,8 @@ import * as React from 'react';
 
 const styles = require("./newregistry.css");
 
-export const FieldsTable = ({ children }) => (
-  <table className={styles.fieldsTable}>
+export const FieldsTable = ({ children, ...props }) => (
+  <table {...props} className={styles.fieldsTable}>
     {children}
   </table>
 );
@@ -107,7 +107,9 @@ class AddField extends React.Component {
 
         return (
             <tr >
-                <td>
+                <td style={{
+                    width: 100,
+                }}>
                     <input value={name} onChange={this.changeName}/>
                 </td>
                 <td>

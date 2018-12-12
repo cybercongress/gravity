@@ -14,6 +14,10 @@ class AddField extends Component {
     }
 
     add = () => {
+        if (!this.type.value) {
+            return;
+        }
+
         const {
             name
         } = this.state;
@@ -40,11 +44,12 @@ class AddField extends Component {
 
         return (
             <tr>
-                <td style={{width: 100}}>
-                    <WideInput placeholder='Field name' value={name} onChange={this.changeName}/>
+                <td style={{width: 95}}>
+                    <WideInput placeholder='Name' value={name} onChange={this.changeName}/>
                 </td>
-                <td>
+                <td style={{width: 80}}>
                     <WideSelect inputRef={node => { this.type = node; }}>
+                        <option value=''>Type</option>
                         <option value='string'>string</option>
                         <option value='address'>address</option>
                         <option value='bool'>bool</option>
@@ -52,7 +57,10 @@ class AddField extends Component {
                         <option value='int256'>int256</option>
                     </WideSelect>
                 </td>
-                <td style={{textAlign: 'center'}}>
+                <td style={{
+                    textAlign: 'center',
+                    width: 70,
+                }}>
                     <input ref={node => this.unique = node} type='checkbox' style={{width: 12}}/> unique
                 </td>
                 <td style={{textAlign: 'end'}}>
