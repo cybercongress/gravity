@@ -9,7 +9,8 @@ class AddField extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ''
+            name: '',
+            disableUniqueCheckbox: false,
         }
     }
 
@@ -32,12 +33,25 @@ class AddField extends Component {
         this.setState({ name: e.target.value })
     }
 
+    onTypeChange = (e) => {
+        if (e.target.value === 'bool') {
+            this.setState({
+                disableUniqueCheckbox: true
+            })
+        } else {
+            this.setState({
+                disableUniqueCheckbox: false
+            })
+        }
+    };
+
     render() {
         const {
             fields
         } = this.props;
         const {
-            name
+            name,
+            disableUniqueCheckbox,
         } = this.state;
         const exist = !!fields.find(x => x.name === name);
         const canAdd = name.length > 0 && !exist;
@@ -48,7 +62,7 @@ class AddField extends Component {
                     <WideInput placeholder='Name' value={name} onChange={this.changeName}/>
                 </td>
                 <td style={{width: 80}}>
-                    <WideSelect inputRef={node => { this.type = node; }}>
+                    <WideSelect inputRef={node => { this.type = node; }} onChange={this.onTypeChange}>
                         <option value=''>Type</option>
                         <option value='string'>string</option>
                         <option value='address'>address</option>
@@ -61,7 +75,7 @@ class AddField extends Component {
                     textAlign: 'center',
                     width: 70,
                 }}>
-                    <input ref={node => this.unique = node} type='checkbox' style={{width: 12}}/> unique
+                    <input disabled={disableUniqueCheckbox} ref={node => this.unique = node} type='checkbox' style={{width: 12}}/> unique
                 </td>
                 <td style={{textAlign: 'end'}}>
                     <AddButton
