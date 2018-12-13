@@ -76,21 +76,6 @@
   margin: 0;
 }
 
-.doneGreen::before{
-  display: inline-block;
-  /* align-items: flex-end;
-  justify-content: center; */
-  content: url(./pensil.svg);
-  width:30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #3fb990;
-  color: #FFF;
-  font-size: 16px;
-  position: absolute; 
-  margin-top: -30px;
-}
-
 .bar {
   position: relative;
   width: 50px;
@@ -111,6 +96,23 @@
   font-size: 17px;
   font-family: Play;
   background: #979797;
+  position: relative; 
+}
+.doneGreen{
+  /* align-items: flex-end;
+  justify-content: center; */
+  content: url(./pensil.svg);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 30px;
+  margin-top: 5px;
+  color: #fff;
+  font-size: 17px;
+  font-family: Play;
+  background-color: #3fb990;
+  position: relative; 
 }
 
 

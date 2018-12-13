@@ -20,17 +20,21 @@ const NumberText =[
 ];
 
 class CircleLable extends React.Component {
-    state = {
-        visible: false,
+    constructor(props) {
+        super(props);
+        self = this;
+        this.state = {
+            visible: true,  // visible: false | color swap add circle
+        };
       }
-     
+    
     render() {
-      
+        
       const CircleLableTemplate = this.props.data.map(function(item) {
         return (
             <div key={item.id} className={styles.NumberText}>
-            <div className={styles.circle}>
-                <span className={styles.label}>{item.number}</span>
+            <div className={self.state.visible ? styles.circle : styles.done}>
+                <span className={self.state.visible ? styles.label : styles.doneGreen}>{item.number}</span>
             </div>
             <span className={styles.title}>{item.text}</span>
         </div>
