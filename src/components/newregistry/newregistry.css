@@ -1,15 +1,16 @@
 
 .container2 {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
 }
 
 .sideBar {
-    width: 37%;
+    width: 100%;
 }
 
 .content {
-    width: 60%;
+    width: 100%;
 }
 
 .fieldsTable {
@@ -129,7 +130,6 @@
     color: #7c7c7c;
     position: relative;
     padding-left: 40px;
-    margin-bottom: 40px;
     margin-top: 0;
     -webkit-font-smoothing: antialiased;
     font-weight: normal;

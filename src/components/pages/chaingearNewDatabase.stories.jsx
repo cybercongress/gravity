@@ -20,6 +20,9 @@ import {RightContainer} from "../..";
 import {ParamRow} from "../newregistry/ParamRow/ParamRow";
 import {WideInput, WideSelect} from "../newregistry/WideInput/WideInput";
 import {Description} from "../newregistry/Description/Description";
+import {DarkPanel} from "../newregistry/DarkPanel/DarkPanel";
+import ProgressBar from "../newregistry/ProgressBar/ProgressBar";
+
 
 storiesOf('Chaingear_NewDatabase', module)
     .add('create_db', () => {
@@ -53,6 +56,8 @@ storiesOf('Chaingear_NewDatabase', module)
         return (
             <MainContainer>
                 <PageTitle>New database creation</PageTitle>
+                <ProgressBar></ProgressBar>
+               
                 <ContainerRegister>
                     <SideBar>
 
@@ -67,6 +72,7 @@ storiesOf('Chaingear_NewDatabase', module)
                                 />
                             </ParamRow>
                             <ParamRow>
+                            
                                 <WideInput
                                     /*
                                                                         ref='symbol'
@@ -164,9 +170,9 @@ storiesOf('Chaingear_NewDatabase', module)
 
                     <Content>
                         <Label color='#3fb990'>Database code</Label>
-                        <div>
-                            {DatabaseSource}
-                        </div>
+                        <DarkPanel>
+
+                        </DarkPanel>
                         {(type === 'error' && message) && <ErrorMessage>{message}</ErrorMessage>}
                     </Content>
                 </ContainerRegister>
