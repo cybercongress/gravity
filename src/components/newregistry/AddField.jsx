@@ -22,6 +22,11 @@ class AddField extends Component {
         const {
             name
         } = this.state;
+
+        if (this.type.value === 'bool') {
+            this.unique.checked = false;
+        }
+
         const type = this.type.value;
         const unique = this.unique.checked;
         this.props.onAdd(name, type, unique);
@@ -75,7 +80,15 @@ class AddField extends Component {
                     textAlign: 'center',
                     width: 70,
                 }}>
-                    <input disabled={disableUniqueCheckbox} ref={node => this.unique = node} type='checkbox' style={{width: 12}}/> unique
+                    <span hidden={disableUniqueCheckbox}>
+                        <input
+                            ref={node => this.unique = node}
+                            id='addCheckBox'
+                            type='checkbox'
+                            defaultChecked={!disableUniqueCheckbox}
+                            style={{width: 12}}/>
+                        <label htmlFor='addCheckBox'>unique</label>
+                    </span>
                 </td>
                 <td style={{textAlign: 'end'}}>
                     <AddButton
