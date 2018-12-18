@@ -1,0 +1,23 @@
+.databaseHeader {
+    color: #7c7c7c;
+    width: 100%;
+}
+
+.databaseHeaderLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.databaseHeaderLeft {
+
+}
+
+.databaseHeaderRight {
+
+}
+
+.databaseHeaderName {
+    font-size: 30px;
+}
+

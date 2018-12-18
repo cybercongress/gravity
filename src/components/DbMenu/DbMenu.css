@@ -1,0 +1,23 @@
+.dbMenu {
+    position: relative;
+}
+
+.dbMenuPopup {
+    display: none;
+    position: absolute;
+    min-height: 100px;
+    min-width: 100px;
+    right: 5px;
+    top: 5px;
+    background: white;
+}
+
+.dbMenuPopupOpen {
+    display: block;
+}
+
+.dbMenuButton {
+    width: 24px;
+    height: 24px;
+    background: url('./menu.svg') center center;
+}

@@ -1,0 +1,34 @@
+.menuPopup {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menuPopupItem {
+    display: flex;
+    margin: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.menuPopupItem span {
+    margin-left: 20px;
+}
+
+.menuSeparator {
+    width: 100%;
+    border-bottom: 1px solid #dedede;
+}
+
+.menuIcon {
+    height: 16px;
+    width: 16px;
+}
+
+.menuIconEdit {
+    background: url('./editIcon.svg') center center;
+}
+
+.menuIconDelete {
+    background: url('./deleteIcon.svg') center center;
+}

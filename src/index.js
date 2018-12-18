@@ -23,9 +23,13 @@ import { BlockRow } from "./components/BlockRow/BlockRow";
 import { ParamRow } from "./components/newregistry/ParamRow/ParamRow";
 import { WideInput, WideSelect } from "./components/newregistry/WideInput/WideInput";
 import { Description } from "./components/newregistry/Description/Description";
+import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
+import { DbMenu } from "./components/DbMenu/DbMenu";
+import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon } from './components/MenuPopup/MenuPopup';
+import { Popup, PopupContent, PopupFooter, PopupTitle } from "./components/Popup/Popup";
 
-import { 
-    Browser, 
+import {
+    Browser,
     BrowserHeader,
     BrowserContent,
     BrowserSidebar
@@ -87,8 +91,13 @@ export {
     Description,
 
 
-    Browser, 
+    Browser,
     BrowserHeader,
     BrowserContent,
-    BrowserSidebar    
+    BrowserSidebar,
+
+    DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName,
+    DbMenu,
+    MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon,
+    Popup, PopupContent, PopupFooter, PopupTitle
 }
