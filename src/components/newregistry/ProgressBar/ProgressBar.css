@@ -50,7 +50,8 @@
   display: flex;
   position: relative;
   padding-left: 9px;
-  background-color: #eff3f6;
+  align-items: center;
+  /* background-color: #eff3f6; */
 }
 
 .done::before{
@@ -97,6 +98,7 @@
   font-family: Play;
   background: #979797;
   position: relative; 
+  text-align: center;
 }
 .doneGreen{
   /* align-items: flex-end;
