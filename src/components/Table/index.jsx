@@ -4,7 +4,7 @@ const styles = require("./Table.css");
 
 
 export const Table = ({ children }) => (
-  <table className={styles.table}>
+  <div className={styles.table}>
     {children}
-  </table>
+  </div>
 );

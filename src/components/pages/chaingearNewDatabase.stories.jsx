@@ -111,9 +111,11 @@ storiesOf('Chaingear_NewDatabase', module).add('create_db', () => {
               </Description>
             </ParamRow>
           </Panel>
-
           <Panel title="Beneficiaries (Optional)" noPadding>
             <FieldsTable>
+           {/* <TableRow>
+              <TableItem></TableItem>
+            </TableRow> */}
               <tbody>
                 {beneficiaries.map(ben => (
                   <tr key={ben.address}>
