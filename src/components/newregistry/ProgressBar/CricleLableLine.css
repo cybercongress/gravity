@@ -1,3 +1,8 @@
+:root{
+  --color-cricle: #979797;
+  --font-size-text:1.2em;
+}
+
 *, *:after, *:before {
   margin: 0;
   padding: 0;
@@ -18,7 +23,12 @@
   position: relative;
   justify-content: space-between;
 }
-
+.textLable{
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 /* .bar {
   display: inline-block;
   background: #979797;
@@ -45,7 +55,7 @@
   visibility: hidden;
 }
 
-.NumberText{
+.NumberTextLine{
   /* width: 30%; */
   display: flex;
   position: relative;
@@ -70,13 +80,6 @@
   visibility: visible;
 }
 
-.container hr{
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  margin: 0;
-}
-
 .bar {
   position: relative;
   width: 50px;
@@ -85,6 +88,7 @@
   border-left: none;
   border-right: none;
   border-radius: 0;
+  background-color: var(--color-cricle);
 }
 .label {
   display: inline-block;
@@ -96,7 +100,7 @@
   color: #fff;
   font-size: 17px;
   font-family: Play;
-  background: #979797;
+  background: var(--color-cricle);
   position: relative; 
   text-align: center;
 }
@@ -121,7 +125,7 @@
 .title {
   margin: 0 auto;
     font-family: Play;
-    font-size: 1.2em;
+    font-size: var(--font-size-text);
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;

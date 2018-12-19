@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './ProgressBar.css';
+import styles from './CricleLableLine.css';
 
 // const NumberText = [
 //   {
@@ -30,13 +30,16 @@ export default class CircleLableLine extends React.Component {
 
   render() {
     return (
-      <div key={self.props.number} className={styles.NumberText}>
-        <div className={self.state.visible ? styles.circle : styles.done}>
-          <span className={self.state.visible ? styles.label : styles.doneGreen}>
-            {self.props.number}
-          </span>
+      <div key={self.props.number} className={styles.NumberTextLine}>
+        <span className={styles.bar} />
+        <div className={styles.textLable}>
+          <div className={self.state.visible ? styles.circle : styles.done}>
+            <span className={self.state.visible ? styles.label : styles.doneGreen}>
+              {self.props.number}
+            </span>
+          </div>
+          <span className={styles.title}>{self.props.text}</span>
         </div>
-        <span className={styles.title}>{self.props.text}</span>
       </div>
     );
   }
