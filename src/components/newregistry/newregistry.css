@@ -161,6 +161,7 @@
     cursor: pointer;
     background: url(./shape.svg) no-repeat center;
     padding-left: 20px;
+    padding-top: 20px;
     height: 14px;
     width: 14px;
 }
