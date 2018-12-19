@@ -1,6 +1,6 @@
 {
   "name": "@cybercongress/ui",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Components for cyb",
   "author": {
     "name": "cybercongress",
@@ -16,13 +16,16 @@
   "license": "WTFPL",
   "dependencies": {
     "@storybook/addon-centered": "4.0.12",
+    "chart.js": "^2.7.3",
     "classnames": "2.2.6",
+    "google-palette": "1.1.0",
     "highlight.js": "9.12.0",
     "react": "16.6.3",
+    "react-chartjs-2": "2.7.4",
+    "react-click-outside": "github:tj/react-click-outside",
     "react-dom": "16.6.3",
     "react-router": "3.0.5",
-    "url-loader": "1.1.2",
-    "react-click-outside": "github:tj/react-click-outside"
+    "url-loader": "1.1.2"
   },
   "devDependencies": {
     "@babel/core": "7.1.6",
