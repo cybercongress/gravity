@@ -10,8 +10,6 @@ import {
     FundContainer, Centred,
     Button,
     BoxTitle,
-    AddItemButton,
-    AddItemButtonText,
     TotalCost,
     RightContainer
 } from './components/chaingear';
@@ -25,7 +23,7 @@ import { WideInput, WideSelect } from "./components/newregistry/WideInput/WideIn
 import { Description } from "./components/newregistry/Description/Description";
 import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
 import { DbMenu } from "./components/DbMenu/DbMenu";
-import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon } from './components/MenuPopup/MenuPopup';
+import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
 import { Popup, PopupContent, PopupFooter, PopupTitle } from "./components/Popup/Popup";
 import { BenContainer, BenPieChart, BenList, Ben } from "./components/Beneficiary/Ben";
 
@@ -66,8 +64,6 @@ export {
     FundContainer,
     LinkHash,
     Centred,
-    AddItemButton,
-    AddItemButtonText,
     TotalCost,
     Message,
 
@@ -99,7 +95,7 @@ export {
 
     DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName,
     DbMenu,
-    MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon,
+    MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon,
     Popup, PopupContent, PopupFooter, PopupTitle,
     BenContainer, BenPieChart, BenList, Ben,
 }

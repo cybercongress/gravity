@@ -30,8 +30,8 @@ export const MenuPopupEditIcon = ({children, ...props}) => (
     </i>
 );
 
-export const MenuPopupTransfertIcon = ({children, ...props}) => (
-    <i {...props} className={cx(styles.menuIcon, styles.menuIconTranfer)}>
+export const MenuPopupTransferIcon = ({children, ...props}) => (
+    <i {...props} className={cx(styles.menuIcon, styles.menuIconTransfer)}>
         {children}
     </i>
 );
@@ -54,8 +54,8 @@ export const MenuPopupDeleteIcon = ({children, ...props}) => (
     </i>
 );
 
-export const MenuPopupDeletePensilIcon = ({children, ...props}) => (
-    <i {...props} className={cx(styles.menuIcon, styles.menuIconDeletePensil)}>
+export const MenuPopupDeletePencilIcon = ({children, ...props}) => (
+    <i {...props} className={cx(styles.menuIcon, styles.menuIconDeletePencil)}>
         {children}
     </i>
 );

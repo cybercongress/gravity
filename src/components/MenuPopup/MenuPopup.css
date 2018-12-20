@@ -47,7 +47,7 @@
     background: url('./icons/edit.svg') center center;
 }
 
-.menuIconTranfer {
+.menuIconTransfer {
     background: url('./icons/account.svg') center center;
 }
 
@@ -63,6 +63,6 @@
     background: url('./icons/delete.svg') center center  no-repeat;
 }
 
-.menuIconDeletePensil{
+.menuIconDeletePencil{
     background: url('./icons/pensil.svg') center center;
 }
