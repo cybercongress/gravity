@@ -23,6 +23,9 @@
     align-items: center;
     justify-content: flex-start;
 }
+.menuPopupItem:hover{
+    background-color: #dedede;
+}
 
 .menuPopupItem:first-child {
     display: flex;
