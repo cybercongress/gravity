@@ -1,0 +1,190 @@
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+}
+
+
+/* Form Progress */
+.progress {
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+
+/* .bar {
+  display: inline-block;
+  background: #979797;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border: 1px solid #d5d5da;
+  text-align: center;
+} */
+
+.circle::before{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  content: url(./baseline_done_white_24dp.png);
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4a90e2;
+  color: #FFF;
+  font-size: 16px;
+  position: relative; 
+  margin-top: -36px;
+  visibility: hidden;
+}
+
+.NumberText{
+  /* width: 30%; */
+  display: flex;
+  position: relative;
+  padding-left: 9px;
+  align-items: center;
+  /* background-color: #eff3f6; */
+}
+
+.NumberText:first-child::before{
+  display: none;
+}
+
+
+.NumberText::before{
+  content: "";
+  height: 2px;
+  background-color: #979797;
+  position: absolute;
+  width: 50px;
+  /* width: 30%; */
+  display: flex;
+  position: relative;
+  padding-left: 9px;
+  align-items: center;
+  margin: 0 10px;
+  /* background-color: #eff3f6; */
+}
+
+.done{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  content: url(./baseline_done_white_24dp.png);
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4a90e2;
+  color: #FFF;
+  font-size: 16px;
+  position: relative; 
+  /* margin-top: -35px; */
+  /* visibility: visible; */
+}
+
+.container hr{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin: 0;
+}
+
+.bar {
+  position: relative;
+  width: 50px;
+  height: 2px;
+  margin: 0 auto;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+.label {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 30px;
+  margin-top: 5px;
+  color: #fff;
+  font-size: 17px;
+  font-family: Play;
+  background: #979797;
+  position: relative; 
+  text-align: center;
+}
+.doneGreen{
+  /* align-items: flex-end;
+  justify-content: center; */
+  content: url(./pensil.svg);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 30px;
+  margin-top: 5px;
+  color: #fff;
+  font-size: 17px;
+  font-family: Play;
+  background-color: #3fb990;
+  position: relative; 
+}
+
+
+.title {
+  margin: 0 auto;
+    font-family: Play;
+    font-size: 1.2em;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    text-overflow: clip;
+    padding: 0 10px;
+}
+
+.activeCircle{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Done / Active */
+/* .progress .bar.done,
+.progress .circle.done {
+  background: #eee;
+} */
+.progress .bar.active {
+  background: linear-gradient(to right, #EEE 40%, #FFF 60%);
+}
+/* .progress .circle.done .label {
+  color: #FFF;
+  background: #8bc435;
+  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+} */
+.progress .circle.done .title {
+  color: #444;
+}
+.progress .circle.active .label {
+  color: #FFF;
+  background: #0c95be;
+  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+}
+.progress .circle.active .title {
+  color: #0c95be;
+}

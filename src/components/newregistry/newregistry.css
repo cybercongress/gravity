@@ -1,15 +1,22 @@
+:root{
+  --hover-removeBtn:#eff3f6;
+  --color-panelTitle:#7c7c7c;
+  --color-lable-Btn:#438cef;
+}
 
 .container2 {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    box-sizing: border-box;
 }
 
 .sideBar {
-    width: 37%;
+    width: 100%;
 }
 
 .content {
-    width: 60%;
+    width: 100%;
 }
 
 .fieldsTable {
@@ -56,7 +63,7 @@
     padding: 30px;
     padding-bottom: 10px;
     border-bottom: 1px solid #dedede;
-    color: #7c7c7c;
+    color: var(--color-panelTitle);
     font-size: 14px;
     font-weight: bold;
 }
@@ -68,7 +75,7 @@
 
 .label {
     display: flex;
-    background: #438cef;
+    background: var(--color-lable-Btn);
     color: #fff;
     border-radius: 2px;
     padding: 5px 15px;
@@ -81,7 +88,7 @@
 
 .createButton {
     text-transform: uppercase;
-    background: #438cef;
+    background: var(--color-lable-Btn);
     color: #fff;
     border-radius: 2px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
@@ -92,6 +99,9 @@
     text-align: center;
 }
 
+.createButton:hover{
+  opacity: 0.8;
+}
 
 .createButton[disabled] {
     opacity: 0.7;
@@ -126,10 +136,9 @@
 .pageTitle {
     font-size: 36px;
     line-height: 42px;
-    color: #7c7c7c;
+    color: var(--color-panelTitle);
     position: relative;
     padding-left: 40px;
-    margin-bottom: 40px;
     margin-top: 0;
     -webkit-font-smoothing: antialiased;
     font-weight: normal;
@@ -139,7 +148,7 @@
     content: '';
     width: 39px;
     height: 2px;
-    background: #7c7c7c;
+    background: var(--color-panelTitle);
     position: absolute;
     left: 0;
     top: 50%;
@@ -150,9 +159,18 @@
     border: none;
     font-size: 70%;
     cursor: pointer;
-    background: url(./ic-remove.svg) no-repeat left center;
+    background: url(./shape.svg) no-repeat center;
     padding-left: 20px;
-    height: 15px;
+    padding-top: 20px;
+    height: 14px;
+    width: 14px;
+}
+
+.removeButton:hover{
+  background-color: var(--hover-removeBtn);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
 }
 
 .removeButton[disabled] {
