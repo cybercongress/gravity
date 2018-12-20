@@ -27,6 +27,7 @@ import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } fro
 import { DbMenu } from "./components/DbMenu/DbMenu";
 import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon } from './components/MenuPopup/MenuPopup';
 import { Popup, PopupContent, PopupFooter, PopupTitle } from "./components/Popup/Popup";
+import { BenContainer, BenPieChart, BenList, Ben } from "./components/Beneficiary/Ben";
 
 import {
     Browser,
@@ -99,5 +100,6 @@ export {
     DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName,
     DbMenu,
     MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon,
-    Popup, PopupContent, PopupFooter, PopupTitle
+    Popup, PopupContent, PopupFooter, PopupTitle,
+    BenContainer, BenPieChart, BenList, Ben,
 }
