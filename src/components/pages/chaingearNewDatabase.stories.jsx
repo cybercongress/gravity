@@ -33,7 +33,6 @@ import { Description } from '../newregistry/Description/Description';
 import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
 import { ProgressBar } from '../newregistry/ProgressBar/ProgressBar';
 import  CircleLable  from '../newregistry/ProgressBar/CricleLable';
-import CircleLableLine from '../newregistry/ProgressBar/CricleLableLine';
 import WideInput from '../newregistry/WideInput/WideInput';
 
 storiesOf('Chaingear_NewDatabase', module).add('create_db', () => {
@@ -68,9 +67,9 @@ storiesOf('Chaingear_NewDatabase', module).add('create_db', () => {
     <MainContainer>
       <PageTitle>New database creation</PageTitle>
       <ProgressBar>
-        <CircleLable number="1" text="Registry initialization" />
-        <CircleLableLine number="2" text="Schema definition" />
-        <CircleLableLine number="3" text="Contract code saving" />
+        <CircleLable type="complete" number="1" text="Registry initialization" />
+        <CircleLable type="edit" number="2" text="Schema definition" />
+        <CircleLable number="3" text="Contract code saving" />
       </ProgressBar>
       {/* <ProgressBarItems key="1">Registry initialization</ProgressBarItems>
         <ProgressBarItemsLine key="2">Schema definition</ProgressBarItemsLine>

@@ -1,3 +1,7 @@
+:root{
+    --color-text:#2e3842;
+}
+
 .menuPopup {
     list-style: none;
     margin: 0;
@@ -14,10 +18,18 @@
     white-space: nowrap;
     cursor: pointer;
     padding-top: 20px;
+    padding-left: 30px;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .menuPopupItem span {
-    margin-left: 20px;
+    /* margin-left: 20px;
+    padding-top: 20px; */
+    padding-left: 20px;
+    font-family: Play;
+    color: var(--color-text);
+    font-size: 0.875em;
 }
 
 .menuSeparator {
@@ -32,9 +44,25 @@
 }
 
 .menuIconEdit {
-    background: url('./icon-24-px.svg') center center;
+    background: url('./icons/edit.svg') center center;
+}
+
+.menuIconTranfer {
+    background: url('./icons/account.svg') center center;
+}
+
+.menuIconResume {
+    background: url('./icons/resume.svg') center center  no-repeat;
+}
+
+.menuIconPause {
+    background: url('./icons/pause.svg') center center  no-repeat;
 }
 
 .menuIconDelete {
-    background: url('./baseline-delete-24-px.svg') center center;
+    background: url('./icons/delete.svg') center center  no-repeat;
+}
+
+.menuIconDeletePensil{
+    background: url('./icons/pensil.svg') center center;
 }

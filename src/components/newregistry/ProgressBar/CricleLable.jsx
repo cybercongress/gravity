@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from './ProgressBar.css';
+import cx from 'classnames';
 
 // const NumberText = [
 //   {
@@ -20,23 +21,18 @@ import styles from './ProgressBar.css';
 // ];
 
 export default class CircleLable extends React.Component {
-  constructor(props) {
-    super(props);
-    self = this;
-    this.state = {
-      visible: true // visible: false | color swap add circle
-    };
-  }
-
   render() {
+    // const { visible } = this.state;
+    const {number, type, text} = this.props;
+    const circleCss = cx(styles.circle, { [styles.done] : type === "complete", [styles.doneGreen] : type === "edit"} );
     return (
-      <div key={self.props.number} className={styles.NumberText}>
-        <div className={self.state.visible ? styles.circle : styles.done}>
-          <span className={self.state.visible ? styles.label : styles.doneGreen}>
-            {self.props.number}
+      <div key={number} className={styles.NumberText}>
+        <div className={circleCss}>
+          <span className={styles.label}>
+            {number}
           </span>
         </div>
-        <span className={styles.title}>{self.props.text}</span>
+        <span className={styles.title}>{text}</span>
       </div>
     );
   }

@@ -7,21 +7,40 @@ import {
   MenuPopupItem,
   MenuSeparator,
   MenuPopupEditIcon,
-  MenuPopupDeleteIcon
+  MenuPopupDeleteIcon,
+  MenuPopupPauseIcon,
+  MenuPopupResumeIcon,
+  MenuPopupTransfertIcon,
+  MenuPopupDeletePensilIcon,
 } from './MenuPopup';
 
 storiesOf('MenuPopup', module)
   .addDecorator(centered)
   .add('MenuPopup', () => (
     <MenuPopup>
-      <MenuPopupItem icon={<MenuPopupEditIcon />}>dsfds</MenuPopupItem>
-      <MenuPopupItem icon={<MenuPopupEditIcon />}>dsfds</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupTransfertIcon />}>Transfer Ownership</MenuPopupItem>
       <MenuSeparator />
-      <MenuPopupItem icon={<MenuPopupDeleteIcon />}> dsfds </MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Fee</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+      <MenuSeparator />
+      <MenuPopupItem icon={<MenuPopupPauseIcon />}>Pause Regisrty</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupResumeIcon />}>Resume Registry</MenuPopupItem>
+      <MenuSeparator />
+      <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
       <MenuSeparator />
     </MenuPopup>
   ))
-  .add('MenuPopupItem', () => <MenuPopupItem> dsfds </MenuPopupItem>)
-  .add('MenuSeparator', () => <MenuSeparator />)
-  .add('MenuPopupEditIcon', () => <MenuPopupEditIcon />)
-  .add('MenuPopupDeleteIcon', () => <MenuPopupDeleteIcon />);
+  .add('MenuPopup_v2', () => (
+    <MenuPopup>
+      <MenuPopupItem icon={<MenuPopupTransfertIcon />}>Transfer Ownership</MenuPopupItem>
+      <MenuSeparator />
+      <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+      <MenuSeparator />
+      <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupDeletePensilIcon />}> Delete Registry </MenuPopupItem>
+      <MenuSeparator />
+    </MenuPopup>
+  ));
+ 

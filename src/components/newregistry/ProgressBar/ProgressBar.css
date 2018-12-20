@@ -54,7 +54,27 @@
   /* background-color: #eff3f6; */
 }
 
-.done::before{
+.NumberText:first-child::before{
+  display: none;
+}
+
+
+.NumberText::before{
+  content: "";
+  height: 2px;
+  background-color: #979797;
+  position: absolute;
+  width: 50px;
+  /* width: 30%; */
+  display: flex;
+  position: relative;
+  padding-left: 9px;
+  align-items: center;
+  margin: 0 10px;
+  /* background-color: #eff3f6; */
+}
+
+.done{
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -66,8 +86,8 @@
   color: #FFF;
   font-size: 16px;
   position: relative; 
-  margin-top: -35px;
-  visibility: visible;
+  /* margin-top: -35px; */
+  /* visibility: visible; */
 }
 
 .container hr{
@@ -145,18 +165,18 @@
 }
 
 /* Done / Active */
-.progress .bar.done,
+/* .progress .bar.done,
 .progress .circle.done {
   background: #eee;
-}
+} */
 .progress .bar.active {
   background: linear-gradient(to right, #EEE 40%, #FFF 60%);
 }
-.progress .circle.done .label {
+/* .progress .circle.done .label {
   color: #FFF;
   background: #8bc435;
   box-shadow: inset 0 0 2px rgba(0,0,0,.2);
-}
+} */
 .progress .circle.done .title {
   color: #444;
 }
