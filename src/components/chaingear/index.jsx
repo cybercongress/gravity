@@ -19,14 +19,11 @@ export const Paper = ({ children }) => (
   </div>
 );
 
-
-
 export const Title = ({ children }) => (
   <h2 className={styles.titile}>
     {children}
   </h2>
 );
-
 
 export const Badge = ({ children }) => (
   <span className={styles.badge} >
@@ -38,34 +35,12 @@ export const FooterButton = (props) => (
     <Link {...props} className={styles.footerButton}/>
 );
 
-
-
-
-
-
-
-
 export const TotalCost = ({ value }) => (
   <div className={styles.totalCost}>
     <span>Total cost:</span>
     <span>{value} gwei</span>
   </div>
 );
-
-
-
-
-
-export const AddItemButton = (props) => (
-    <button {...props} className={styles.addItemButton}/>
-);
-
-export const AddItemButtonText = (props) => (
-    <span {...props} className={styles.addItemButtonText} />
-);
-
-
-
 
 export const SectionTabs = ({ children }) => (
   <div className={styles.sectionTabContainer}>
@@ -77,7 +52,7 @@ export const SectionTitle = ({ children }) => (
   <h3 className={styles.sectionTitle}>
     {children}
   </h3>
-)
+);
 
 export const Section = ({ children, title }) => (
   <div>
@@ -86,8 +61,7 @@ export const Section = ({ children, title }) => (
       {children}
     </div>
   </div>
-)
-
+);
 
 export const SectionContent = ({ children, title, grow = 1, style }) => (
   <div className={styles.sectionContent} style={{ flexGrow: grow, ...style }}>
@@ -96,17 +70,15 @@ export const SectionContent = ({ children, title, grow = 1, style }) => (
     {children}
     </Paper>
   </div>
-)
-
+);
 
 export const Centred = (props) => (
     <div {...props} className={styles.centred}/>
-)
+);
 
 export const Button = (props) => (
     <button {...props} className={styles.button + ' ' + (props.color ? styles[props.color]: '')} />
 );
-
 
 export const FundContainer = (props) => (
     <div {...props} className={styles.fundContainer}/>
