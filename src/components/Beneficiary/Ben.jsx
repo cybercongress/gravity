@@ -18,7 +18,7 @@ export class BenPieChart extends React.Component {
 
         const labels = bens.map(ben => ben.address);
         const data = calculateBensShares(bens, 2).map(ben => parseFloat(ben.share));
-        const colors = palette('cb-Set1', data.length).map(function(hex) {
+        const colors = palette('cb-Set2', data.length).map(function(hex) {
             return '#' + hex;
         });
 
