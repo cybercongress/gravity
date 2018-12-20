@@ -1,0 +1,19 @@
+.ContentLine{
+  display: flex;
+  align-items: center;
+}
+
+.LineTitle{
+  font-family: Play;  
+  font-size: 14px;
+  color: #2e3842;
+}
+
+.ContentInput{
+  height: 30px;
+  border-radius:2px;
+  border: 1px solid rgb(150, 150, 150);
+  margin: 0 20px;
+  padding: 5px 10px;
+  font-family: Play;
+}

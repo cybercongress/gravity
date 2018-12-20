@@ -1,3 +1,13 @@
+:root{
+  /* color btn and text */
+  /* color cansel */
+  --color-btn-cansel: #ffffff;
+  --color-text-cansel: #979797;
+/* color confirm */
+  --color-btn-confirm: #3fb990;
+  --color-text-confirm:#ffffff;
+}
+
 .popup {
     display: none;
     justify-content: center;
@@ -17,7 +27,7 @@
     flex-direction: column;
     background-color: white;
     border-radius: 3px;
-    min-width: 350px;
+    min-width: 360px;
     min-height: 250px;
 }
 
@@ -27,17 +37,47 @@
 
 .popupTitle {
     border-bottom: 1px solid #D8D8D8;
-    padding: 20px;
-    text-transform: uppercase;
+    padding: 25px 0 10px 28px;
+    font-family: Play;
+    color: #7c7c7c;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .popupContent {
     margin: 20px;
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .popupFooter {
-    margin: 20px;
+    /* margin: 20px; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly; 
+    border-top: 1px solid #D8D8D8;
+    padding: 20px 20px;
+}
+
+.PopupButtun{
+  width: 105px;
+  height: 36px;
+  border-radius: 3px;
+  font-size: 1em;
+  font-family: Play;
+  border: none;
+  text-transform: uppercase;
+}
+
+.PopupButtunConfirm{
+  background-color: var(--color-btn-confirm);
+  color: var(--color-text-confirm);
+}
+
+.PopupButtunCansel{
+  background-color: var(--color-btn-cansel);
+  color: var(--color-text-cansel);
+  border: 1px solid;
 }

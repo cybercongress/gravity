@@ -1,11 +1,12 @@
 
 .table {
-  width: 400px;
-    /* border-collapse: collapse; */
-    /* table-layout: fixed; */
-    display: flex;
+  /* width: 400px; */
+  width: 100%;
+  border-collapse: collapse; 
+  table-layout: fixed;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
 }
 
 .table thead {
