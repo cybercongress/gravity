@@ -14,11 +14,11 @@ export const BenContainer = ({children, ...props}) => (
 export class BenPieChart extends React.Component {
 
     render() {
-        const { bens } = this.props;
+        const { bens, calculateBensShares } = this.props;
 
         const labels = bens.map(ben => ben.address);
-        const data = bens.map(ben => ben.share);
-        const colors = palette('tol', data.length).map(function(hex) {
+        const data = calculateBensShares(bens, 2).map(ben => parseFloat(ben.share));
+        const colors = palette('cb-Set1', data.length).map(function(hex) {
             return '#' + hex;
         });
 
@@ -32,9 +32,7 @@ export class BenPieChart extends React.Component {
                         return '';
                     },
                     label: function(tooltipItem, data) {
-                        var datasetLabel = '';
-                        var label = data.labels[tooltipItem.index];
-                        return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
                     },
                 },
             }
