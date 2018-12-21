@@ -1,0 +1,35 @@
+import * as React from 'react';
+
+const styles = require("./Table.css");
+
+export const HomeTable = ({ children }) => (
+    <table className={styles.table}>
+        {children}
+    </table>
+);
+
+const Table = ({ children }) => (
+    <div className={styles.tableContainer}>
+        {children}
+    </div>
+);
+
+export const TableItem = ({ children }) => (
+    <div className={styles.TableItem}>
+        {children}
+    </div>
+);
+
+export const TableRow = ({ children }) => (
+    <div className={styles.TableRow}>
+        {children}
+    </div>
+);
+
+export const TableAddRow = ({ children }) => (
+    <div className={styles.TableAddRow}>
+        {children}
+    </div>
+);
+
+export default Table;
