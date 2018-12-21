@@ -8,11 +8,30 @@ export const ContentLine = ({children}) => (
   </div>
 );
 
+export const ContentLineTextInput = ({children}) => (
+  <div className={styles.ContentLineTextInput}>
+      {children}
+  </div>
+);
+
+export const ContentLineFund = ({children}) => (
+  <div className={styles.ContentLineFund}>
+      {children}
+  </div>
+);
+
 export const LineTitle = ({children}) => (
   <span className={styles.LineTitle}>
       {children}
   </span>
 );
+
+export const LineText = ({children}) => (
+  <span className={styles.LineText}>
+      {children}
+  </span>
+);
+
 
 export const LineControl = ({children}) => (
   <div className={styles.LineControl}>

@@ -3,17 +3,60 @@
   align-items: center;
 }
 
+.ContentLineFund{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ContentLineTextInput{
+  display: grid;
+  /* align-items: center; */
+  grid-template-columns: 40% 54%;
+  /* grid-row-gap: 28px; */
+  /* padding: 30px 0; */
+  padding-bottom: 30px;
+  width: 100%;
+  grid-gap: 6%;
+}
+
+.ContentLineTextInput:first-child{
+  display: grid;
+  /* align-items: center; */
+  grid-template-columns: 40% 54%;
+  grid-gap: 6%;
+  /* grid-row-gap: 28px; */
+  /* padding: 30px 0; */
+  padding-bottom: 30px;
+  padding-top: 30px;  
+  width: 100%;
+}
+
+.ContentLineFund .LineTitle{
+  padding: 0 20px;
+}
+
 .LineTitle{
   font-family: Play;  
   font-size: 14px;
   color: #2e3842;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.LineText{
+  font-family: Play;  
+  font-size: 14px;
+  color: #2e3842;
+  line-height: 1.5;
 }
 
 .ContentInput{
   height: 30px;
   border-radius:2px;
   border: 1px solid rgb(150, 150, 150);
-  margin: 0 20px;
   padding: 5px 10px;
   font-family: Play;
 }

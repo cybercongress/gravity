@@ -27,8 +27,9 @@
     flex-direction: column;
     background-color: white;
     border-radius: 3px;
-    min-width: 360px;
+    width: 380px;
     min-height: 250px;
+    box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .popupOpen {
@@ -36,7 +37,7 @@
 }
 
 .popupTitle {
-    border-bottom: 1px solid #D8D8D8;
+    border-bottom: 1px solid #dedede;
     padding: 25px 0 10px 28px;
     font-family: Play;
     color: #7c7c7c;
@@ -45,10 +46,10 @@
 }
 
 .popupContent {
-    margin: 20px;
+    margin: 0 37px;
     flex-grow: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: center;
 }
@@ -56,9 +57,9 @@
 .popupFooter {
     /* margin: 20px; */
     display: flex;
-    justify-content: space-evenly; 
-    border-top: 1px solid #D8D8D8;
-    padding: 20px 20px;
+    justify-content: center; 
+    border-top: 1px solid #dedede;
+    padding: 20px 0;
 }
 
 .PopupButtun{
@@ -69,15 +70,22 @@
   font-family: Play;
   border: none;
   text-transform: uppercase;
+  margin: 0 10px;
 }
+
+.PopupButtun:hover{
+    background-color: rgba(0, 0, 0, 0.089);
+  }
 
 .PopupButtunConfirm{
   background-color: var(--color-btn-confirm);
   color: var(--color-text-confirm);
+  box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .PopupButtunCansel{
   background-color: var(--color-btn-cansel);
   color: var(--color-text-cansel);
-  border: 1px solid;
+  box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid #dedede;
 }
