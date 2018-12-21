@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { addDecorator } from '@storybook/react';
 import CircleLable from './CricleLable';
 import { ProgressBar } from './ProgressBar';
 

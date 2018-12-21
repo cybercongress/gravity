@@ -28,12 +28,11 @@ import {
 } from '../newregistry';
 import { RightContainer } from '../..';
 import { ParamRow } from '../newregistry/ParamRow/ParamRow';
-import { WideSelect } from '../newregistry/WideInput/WideInput';
+import { WideSelect, WideInput } from '../newregistry/WideInput/WideInput';
 import { Description } from '../newregistry/Description/Description';
 import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
 import { ProgressBar } from '../newregistry/ProgressBar/ProgressBar';
 import  CircleLable  from '../newregistry/ProgressBar/CricleLable';
-import WideInput from '../newregistry/WideInput/WideInput';
 
 storiesOf('Chaingear_NewDatabase', module).add('create_db', () => {
   const contractName = 'contract name';

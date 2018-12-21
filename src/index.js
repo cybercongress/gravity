@@ -2,7 +2,6 @@ import './index.less'
 
 import Title from './components/Title/Title'
 
-
 import {
     Badge, FooterButton,
     Section, SectionTabs, SectionContent,
@@ -14,18 +13,21 @@ import {
     RightContainer
 } from './components/chaingear';
 import { Container, Text, Link as ActionLink } from './components/CallToAction';
-import { Table } from './components/Table';
 import { LinkHash } from './components/LinkHash';
 import { Message } from './components/Message'
 import { BlockRow } from "./components/BlockRow/BlockRow";
 import { ParamRow } from "./components/newregistry/ParamRow/ParamRow";
-import { WideInput, WideSelect } from "./components/newregistry/WideInput/WideInput";
+import { WideInput,  WideSelect } from "./components/newregistry/WideInput/WideInput";
 import { Description } from "./components/newregistry/Description/Description";
 import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
 import { DbMenu } from "./components/DbMenu/DbMenu";
 import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
 import { Popup, PopupContent, PopupFooter, PopupTitle } from "./components/Popup/Popup";
 import { BenContainer, BenPieChart, BenList, Ben } from "./components/Beneficiary/Ben";
+import {DarkPanel} from "./components/newregistry/DarkPanel/DarkPanel";
+import {ProgressBar} from "./components/newregistry/ProgressBar/ProgressBar";
+import CircleLable from './components/newregistry/ProgressBar/CricleLable';
+import Table, { HomeTable, TableRow, TableItem, TableAddRow } from './components/Table/Table';
 
 import {
     Browser,
@@ -58,7 +60,6 @@ export {
     Badge, FooterButton, Button,
     Container, Text, ActionLink,
     Section, SectionTabs, SectionContent,
-    Table,
     BoxTitle,
     MainContainer,
     FundContainer,
@@ -98,4 +99,10 @@ export {
     MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon,
     Popup, PopupContent, PopupFooter, PopupTitle,
     BenContainer, BenPieChart, BenList, Ben,
+
+    DarkPanel,
+
+    ProgressBar, CircleLable,
+
+    Table, HomeTable, TableRow, TableItem, TableAddRow,
 }

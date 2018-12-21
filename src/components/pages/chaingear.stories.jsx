@@ -1,9 +1,9 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {
-    Badge, Container, FooterButton, Section, SectionContent, ActionLink,Text, Table,
+    Badge, Container, FooterButton, Section, SectionContent, ActionLink,Text,
     MainContainer,
-    LinkHash
+    LinkHash, HomeTable
 } from "../..";
 
 function formatDate() {
@@ -104,7 +104,7 @@ My registries
                     ) }
                     >
                         <SectionContent>
-                            <Table>
+                            <HomeTable>
                                 <thead>
                                 <tr>
                                     <th>NAME</th>
@@ -118,7 +118,7 @@ My registries
                                 <tbody>
                                 {myRows}
                                 </tbody>
-                            </Table>
+                            </HomeTable>
                             <FooterButton to='/new'>create new registry</FooterButton>
                         </SectionContent>
                     </Section>
@@ -141,7 +141,7 @@ My registries
                 ) }
                 >
                     <SectionContent>
-                        <Table>
+                        <HomeTable>
                             <thead>
                             <tr>
                                 <th>NAME</th>
@@ -155,7 +155,7 @@ My registries
                             <tbody>
                             {rows}
                             </tbody>
-                        </Table>
+                        </HomeTable>
                     </SectionContent>
                 </Section>
             </div>
@@ -255,7 +255,7 @@ My registries
                     ) }
                     >
                         <SectionContent>
-                            <Table>
+                            <HomeTable>
                                 <thead>
                                 <tr>
                                     <th>NAME</th>
@@ -269,7 +269,7 @@ My registries
                                 <tbody>
                                 {myRows}
                                 </tbody>
-                            </Table>
+                            </HomeTable>
                             <FooterButton to='/new'>create new registry</FooterButton>
                         </SectionContent>
                     </Section>
@@ -292,7 +292,7 @@ My registries
                     ) }
                     >
                         <SectionContent>
-                            <Table>
+                            <HomeTable>
                                 <thead>
                                 <tr>
                                     <th>NAME</th>
@@ -306,7 +306,7 @@ My registries
                                 <tbody>
                                 {rows}
                                 </tbody>
-                            </Table>
+                            </HomeTable>
                         </SectionContent>
                     </Section>
                 </div>

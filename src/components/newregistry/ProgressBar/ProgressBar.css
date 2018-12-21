@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /*
   font-family: "Open Sans";
+  */
 }
 
 
@@ -40,7 +42,7 @@
   background-color: #4a90e2;
   color: #FFF;
   font-size: 16px;
-  position: relative; 
+  position: relative;
   margin-top: -36px;
   visibility: hidden;
 }
@@ -85,7 +87,7 @@
   background-color: #4a90e2;
   color: #FFF;
   font-size: 16px;
-  position: relative; 
+  position: relative;
   /* margin-top: -35px; */
   /* visibility: visible; */
 }
@@ -117,7 +119,7 @@
   font-size: 17px;
   font-family: Play;
   background: #979797;
-  position: relative; 
+  position: relative;
   text-align: center;
 }
 .doneGreen{
@@ -134,7 +136,7 @@
   font-size: 17px;
   font-family: Play;
   background-color: #3fb990;
-  position: relative; 
+  position: relative;
 }
 
 
