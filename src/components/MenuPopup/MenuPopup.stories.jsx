@@ -41,3 +41,4 @@ storiesOf('MenuPopup', module)
       <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}> Delete Registry </MenuPopupItem>
     </MenuPopup>
   ));
+
