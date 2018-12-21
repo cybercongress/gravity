@@ -17,11 +17,28 @@
     /* margin: 20px; */
     white-space: nowrap;
     cursor: pointer;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 30px;
     align-items: center;
     justify-content: flex-start;
 }
+.menuPopupItem:hover{
+    background-color: #dedede;
+}
+
+.menuPopupItem:first-child {
+    display: flex;
+    /* margin: 20px; */
+    white-space: nowrap;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 
 .menuPopupItem span {
     /* margin-left: 20px;
@@ -35,7 +52,6 @@
 .menuSeparator {
     width: 100%;
     border-bottom: 1px solid #dedede;
-    padding-top: 20px;
 }
 
 .menuIcon {

@@ -5,8 +5,6 @@
 .dbMenuPopup {
     display: none;
     position: absolute;
-    min-height: 100px;
-    min-width: 100px;
     right: 5px;
     top: 5px;
     background: white;

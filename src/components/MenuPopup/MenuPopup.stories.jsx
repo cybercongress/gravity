@@ -28,7 +28,6 @@ storiesOf('MenuPopup', module)
       <MenuPopupItem icon={<MenuPopupResumeIcon />}>Resume Registry</MenuPopupItem>
       <MenuSeparator />
       <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
-      <MenuSeparator />
     </MenuPopup>
   ))
   .add('MenuPopup_v2', () => (
@@ -40,7 +39,6 @@ storiesOf('MenuPopup', module)
       <MenuSeparator />
       <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
       <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}> Delete Registry </MenuPopupItem>
-      <MenuSeparator />
     </MenuPopup>
   ));
 
