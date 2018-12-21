@@ -61,6 +61,6 @@
     align-items: center;
 }
 
-.TableAddRow {
-
+.TableRow:last-child {
+    padding-bottom: 25px;
 }

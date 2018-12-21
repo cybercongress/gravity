@@ -183,8 +183,10 @@
     font-size: 70%;
     background: url(./ic-plus.svg) no-repeat left center;
     background-size: 14px;
+    padding-top: 20px;
     padding-left: 20px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
 }
 
 .addButton[disabled] {
