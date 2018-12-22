@@ -15,12 +15,13 @@ export const PopupContent = ({ children }) => <div className={styles.popupConten
 
 export const PopupFooter = ({ children }) => <div className={styles.popupFooter}>{children}</div>;
 
-export const PopupButtun = ({ children, ...props}) => (
+export const PopupButton = ({ children, ...props}) => (
     <button
-    className={cx(styles.PopupButtun, {
-      [styles.PopupButtunCansel]: props.type === 'cansel',
-      [styles.PopupButtunConfirm]: props.type === 'confirm'
-    })}>
-    {children}
+      {...props}
+      className={cx(styles.PopupButtun, {
+        [styles.PopupButtunCansel]: props.type === 'cancel',
+        [styles.PopupButtunConfirm]: props.type === 'confirm',
+      })}>
+      {children}
   </button>
   );

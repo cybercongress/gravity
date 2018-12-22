@@ -12,7 +12,7 @@ import {
   LineText,
   ContentLineFund
 } from '../PopupContent/PopupContent';
-import { Popup, PopupButtun, PopupTitle, PopupContent, PopupFooter } from './Popup';
+import { Popup, PopupButton, PopupTitle, PopupContent, PopupFooter } from './Popup';
 
 storiesOf('Popup', module)
   .addDecorator(centered)
@@ -28,8 +28,8 @@ storiesOf('Popup', module)
         </ContentLineFund>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Cansel</PopupButtun>
-        <PopupButtun type="confirm">Confirm</PopupButtun>
+        <PopupButton type="cancel">cancel</PopupButton>
+        <PopupButton type="confirm">Confirm</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -45,8 +45,8 @@ storiesOf('Popup', module)
         </ContentLine>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Cansel</PopupButtun>
-        <PopupButtun type="confirm">Confirm</PopupButtun>
+        <PopupButton type="cancel">cancel</PopupButton>
+        <PopupButton type="confirm">Confirm</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -60,8 +60,8 @@ storiesOf('Popup', module)
         </ContentLine>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Cansel</PopupButtun>
-        <PopupButtun type="confirm">Confirm</PopupButtun>
+        <PopupButton type="cancel">cancel</PopupButton>
+        <PopupButton type="confirm">Confirm</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -78,8 +78,8 @@ storiesOf('Popup', module)
         </ContentLine>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Cansel</PopupButtun>
-        <PopupButtun type="confirm">Confirm</PopupButtun>
+        <PopupButton type="cancel">cancel</PopupButton>
+        <PopupButton type="confirm">Confirm</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -108,8 +108,8 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Cansel</PopupButtun>
-        <PopupButtun type="confirm">Confirm</PopupButtun>
+        <PopupButton type="cancel">cancel</PopupButton>
+        <PopupButton type="confirm">Confirm</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -134,8 +134,8 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Cansel</PopupButtun>
-        <PopupButtun type="confirm">Confirm</PopupButtun>
+        <PopupButton type="cancel">cancel</PopupButton>
+        <PopupButton type="confirm">Confirm</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -158,8 +158,8 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Cansel</PopupButtun>
-        <PopupButtun type="confirm">Confirm</PopupButtun>
+        <PopupButton type="cancel">cancel</PopupButton>
+        <PopupButton type="confirm">Confirm</PopupButton>
       </PopupFooter>
     </Popup>
   ));

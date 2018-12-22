@@ -36,7 +36,7 @@ LineTitle,
 LineText,
 ContentLineFund
 } from './components/PopupContent/PopupContent';
-import { Popup, PopupButtun, PopupTitle, PopupContent, PopupFooter } from './components/Popup/Popup';
+import { Popup, PopupButton, PopupTitle, PopupContent, PopupFooter } from './components/Popup/Popup';
 
 import {
     Browser,
@@ -115,5 +115,5 @@ export {
 
     Table, HomeTable, TableRow, TableItem, TableAddRow,
 
-    ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund,
+    ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
 }
