@@ -1,5 +1,5 @@
 .benContainer {
-
+    
 }
 
 .benPieChart {
@@ -14,7 +14,7 @@
 
 .benList {
     min-height: 50px;
-    overflow: scroll;
+    overflow: auto;
     margin-top: 60px;
 }
 

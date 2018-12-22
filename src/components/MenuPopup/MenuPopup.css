@@ -9,7 +9,7 @@
     width: 227px;
     border-radius: 3px;
     background: #fff;
-    box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
 }
 
 .menuPopupItem {
@@ -17,17 +17,30 @@
     /* margin: 20px; */
     white-space: nowrap;
     cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    /* padding-bottom: 10px; */
     padding-left: 30px;
     align-items: center;
     justify-content: flex-start;
 }
 .menuPopupItem:hover{
-    background-color: #dedede;
+    /* background-color: #dedede; */
+    opacity: 0.7;
 }
 
 .menuPopupItem:first-child {
+    display: flex;
+    /* margin: 20px; */
+    white-space: nowrap;
+    cursor: pointer;
+    padding-top: 20px;
+    /* padding-bottom: 10px; */
+    padding-left: 30px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menuPopupItem:last-child {
     display: flex;
     /* margin: 20px; */
     white-space: nowrap;
@@ -52,6 +65,7 @@
 .menuSeparator {
     width: 100%;
     border-bottom: 1px solid #dedede;
+    padding-top: 20px;
 }
 
 .menuIcon {

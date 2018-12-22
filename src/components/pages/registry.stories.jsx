@@ -30,39 +30,69 @@ import {
   BenContainer,
   BenPieChart,
   MenuPopupResumeIcon,
-  MenuPopupPauseIcon
+  MenuPopupPauseIcon,
+  ProgressBar,
+  CircleLable,
+  PageTitle,
 } from '../..';
 
-storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
+import FormField from '../FormField/FormFild';
+import { calculateBensShares } from '../utils/utils';
+import Title from '../Title/Title';
 
+storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
   const Permission = {
     OnlyAdmin: 0,
     Whitelist: 1,
-    AllUsers: 2,
+    AllUsers: 2
   };
 
-  const isOwner = false;
-  const totalFee = 0;
-  const funded = '';
+  const isOwner = true;
+  const totalFee = 3;
+  const funded = '5';
 
-  const beneficiaries = [];
+  const fundDatabaseOpen = true;
+
+  const beneficiaries = [
+    {
+      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
+      stake: 22,
+  },
+  {
+      address: '0xb175b6F3A4C712Da8CC59A824F1d3BC31f398CB8',
+      stake: 123,
+  },
+  {
+      address: '0x805dD5291406D081c7100916E1ACdb070d5b4DC5',
+      stake: 98,
+  },
+  {
+      address: '0x885dD5291406D081c9900916E1ACdb070d5b4DD5',
+      stake: 40,
+  },
+  {
+      address: '0x555dD52914000081c990091222ACdb070d5b4Dz1',
+      stake: 66,
+  },
+  
+  ];
   const ipfsGateway = null;
 
-  const name = '';
+  const name = 'Appstore';
   const description = '';
   const tag = '';
   const createdTimestamp = null;
   const entryCreationFee = 0;
-  const admin = '';
+  const admin = '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef';
   const isDbPaused = null;
 
   const contractVersion = null;
   const databaseAddress = null;
-  const databaseSymbol = null;
+  const databaseSymbol = 'APP';
   const CreateEntryPermissionGroup = {
     [Permission.OnlyAdmin]: {
       key: 'OnlyAdmin',
-      label: 'ONLY OWNER',
+      label: 'ONLY OWNER'
     },
     // 1: {
     //     key: 'Whitelist',
@@ -70,7 +100,7 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
     // },
     [Permission.AllUsers]: {
       key: 'AllUsers',
-      label: 'All Users',
+      label: 'All Users'
     }
   };
 
@@ -80,7 +110,6 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
   const permissionGroup = 0;
   const permissionGroupStr = CreateEntryPermissionGroup[permissionGroup].label;
 
- 
   const showAddButton =
     (isOwner || permissionGroup === Permission.AllUsers) && !isDbPaused && isSchemaExist;
 
@@ -97,62 +126,53 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
         </div>
       </Section>
       <DbHeader>
-        <DbHeaderLine>
-          <DbHeaderLeft>
-            <DbHeaderName>{name}</DbHeaderName>
-          </DbHeaderLeft>
-          <DbHeaderRight>
-            <DbMenu>
-              <MenuPopup>
-                {isOwner && !isDbPaused && (
-                  <span>
-                    <MenuPopupItem
-                      icon={<MenuPopupTransferIcon />}
-                      onClick={this.onTransferOwnership}
-                    >
-                      Transfer ownership
-                    </MenuPopupItem>
-                    <MenuSeparator />
-                  </span>
-                )}
-                {!isDbPaused && (
-                  <MenuPopupItem icon={<MenuPopupEditIcon />} onClick={this.onFundDb}>
-                    Fund registry
-                  </MenuPopupItem>
-                )}
-                {!isDbPaused && isOwner && (
-                  <span>
-                    <MenuPopupItem icon={<MenuPopupEditIcon />} onClick={this.onClaimFunds}>
-                      Claim Funds
-                    </MenuPopupItem>
-                    <MenuSeparator />
-                    <MenuPopupItem icon={<MenuPopupPauseIcon />} onClick={this.onPauseDb}>
-                      Pause database
-                    </MenuPopupItem>
-                  </span>
-                )}
-                {isDbPaused && isOwner && (
-                  <MenuPopupItem icon={<MenuPopupResumeIcon />} onClick={this.onResumeDb}>
-                    Resume database
-                  </MenuPopupItem>
-                )}
-                {!isDbPaused && isOwner && (
-                  <span>
-                    <MenuSeparator />
-                    <MenuPopupItem icon={<MenuPopupDeleteIcon />} onClick={this.onDeleteDb}>
-                      Delete registry
-                    </MenuPopupItem>
-                  </span>
-                )}
-              </MenuPopup>
-            </DbMenu>
-          </DbHeaderRight>
-        </DbHeaderLine>
+        <PageTitle>{name}</PageTitle>
+        <ProgressBar>
+          <CircleLable type="complete" number="1" text="Registry initialization" />
+          <CircleLable type="edit" number="2" text="Schema definition" />
+          <CircleLable number="3" text="Contract code saving" />
+        </ProgressBar>
 
         <DbHeaderLine>
           <DbHeaderLeft>symbol: {databaseSymbol}</DbHeaderLeft>
 
-          <DbHeaderRight>status: {isDbPaused ? 'paused' : 'operational'}</DbHeaderRight>
+          <DbHeaderRight>
+            status: {isDbPaused ? 'paused' : 'operational'}
+            <DbMenu>
+              <MenuPopup>
+                {/* {isOwner && !isDbPaused && ( */}
+                {/* <span> */}
+                <MenuPopupItem
+                  icon={<MenuPopupTransferIcon />}
+                  // onClick={this.onTransferOwnership}
+                >
+                  Transfer ownership
+                </MenuPopupItem>
+                <MenuSeparator />
+                {/* </span>
+                )}
+                {!isDbPaused && ( */}
+                <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund registry</MenuPopupItem>
+                {/* )}
+                {!isDbPaused && isOwner && (
+                  <span> */}
+                <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+                <MenuSeparator />
+                <MenuPopupItem icon={<MenuPopupPauseIcon />}>Pause database</MenuPopupItem>
+                {/* </span>
+                )}
+                {isDbPaused && isOwner && ( */}
+                <MenuPopupItem icon={<MenuPopupResumeIcon />}>Resume database</MenuPopupItem>
+                {/* )}
+                {!isDbPaused && isOwner && (
+                  <span> */}
+                <MenuSeparator />
+                <MenuPopupItem icon={<MenuPopupDeleteIcon />}>Delete registry</MenuPopupItem>
+                {/* </span>
+                )} */}
+              </MenuPopup>
+            </DbMenu>
+          </DbHeaderRight>
         </DbHeaderLine>
       </DbHeader>
       <Section title="General">
@@ -160,9 +180,10 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
           <Centred>
             <BoxTitle>Created:</BoxTitle>
             <div style={{ height: 100, color: '#000000' }}>
-              {createdTimestamp
+            7/2/2018 17:13:33
+              {/* {createdTimestamp
                 ? moment(new Date(createdTimestamp.toNumber() * 1000)).format('DD/MM/YYYY mm:hh:ss')
-                : ''}
+                : ''} */}
             </div>
           </Centred>
         </SectionContent>
@@ -188,9 +209,9 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
             >
               <span>{funded} ETH</span>
 
-              {isOwner && !isDbPaused && (
+              {/* {isOwner && !isDbPaused && (
                 <ValueInput onInter={this.claimDatabase} buttonLable="claim funds" color="second" />
-              )}
+              )} */}
             </FundContainer>
           </Centred>
         </SectionContent>
@@ -207,7 +228,10 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
             >
               <span>{totalFee} ETH</span>
               {isOwner && !isDbPaused && (
-                <Button style={{ width: 119 }} onClick={this.claimFee}>
+                <Button
+                  style={{ width: 119 }}
+                  //  onClick={this.claimFee}
+                >
                   clame fee
                 </Button>
               )}
@@ -220,22 +244,25 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
         <SectionContent title="Overview" grow={3}>
           <FormField
             label="Description"
-            value={description}
-            onUpdate={isOwner && !isDbPaused && this.changeDescription}
+            value="{description}"
+            // onUpdate={isOwner && !isDbPaused && this.changeDescription}
+            onUpdate="isOwner"
           />
-          <FormField label="Tags" value={tag} />
+          <FormField label="Tags" value="{tag}" />
           <FormField
             label="Record Fee"
-            value={entryCreationFee.toString()}
+            value="{entryCreationFee.toString()}"
             valueType="ETH"
-            onUpdate={isOwner && isDbPaused && this.changeEntryCreationFee}
+            // onUpdate={isOwner && isDbPaused && this.changeEntryCreationFee}
+            onUpdate="isOwner"
           />
           <FormField
             label="Permissions"
-            value={permissionGroupStr}
-            onUpdate={isOwner && isDbPaused && this.onUpdatePermissionGroup}
+            value="{permissionGroupStr}"
+            // onUpdate={isOwner && isDbPaused && this.onUpdatePermissionGroup}
+            onUpdate="isDbPaused"
           >
-            <select
+            {/* <select
               ref={node => {
                 this.permissionGroup = node;
               }}
@@ -250,19 +277,20 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
                   </option>
                 );
               })}
-            </select>
+            </select> */}
           </FormField>
-          <FormField label="Entries" value={rows.length} />
-          <FormField label="Version" value={contractVersion} />
-          <FormField label="Database address" value={databaseAddress} />
-          <FormField label="Schema address" value={entryCoreAddress} />
+          <FormField label="Entries" value="{rows.length}" />
+          <FormField label="Version" value="{contractVersion}" />
+          <FormField label="Database address" value="{databaseAddress}" />
+          <FormField label="Schema address" value="{entryCoreAddress}" />
           <FormField
             label="Abi link"
-            value={
-              <a href={`${ipfsGateway}/ipfs/${ipfsHash}`} target="_blank">
-                {ipfsHash}
-              </a>
-            }
+            // value={
+            //   <a href={`${ipfsGateway}/ipfs/${ipfsHash}`} target="_blank">
+            //     {ipfsHash}
+            //   </a>
+            // }
+            value="ipfsGateway"
           />
         </SectionContent>
 
@@ -284,7 +312,7 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
           </DbHeaderRight>
         </DbHeaderLine>
       </DbHeader>
-      <DatabaseList>{rows}</DatabaseList>
+      {/* <DatabaseList>{rows}</DatabaseList> */}
     </MainContainer>
   );
 });

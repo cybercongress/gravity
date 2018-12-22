@@ -14,6 +14,7 @@ export class DbMenu extends React.Component  {
         this.setState({
             open: !this.state.open,
         })
+
     };
 
     onClickOutside = () => {
@@ -25,10 +26,10 @@ export class DbMenu extends React.Component  {
     render() {
 
         const { open } = this.state;
-        const css = cx(styles.dbMenuPopup, {[styles.dbMenuPopupOpen] : open});
+        const css = cx(styles.dbMenuPopup, {[styles.dbMenuPopupOpen] : open });
 
         return <div className={styles.dbMenu}>
-            <button onClick={this.onClick} className={styles.dbMenuButton} />
+            <button onClick={this.onClick} className={cx(styles.dbMenuButton, {[styles.dbMenuButtonTriangle] : open})} />
             <ClickOutside onClickOutside={this.onClickOutside}>
                 <div className={css}>
                     {this.props.children}
