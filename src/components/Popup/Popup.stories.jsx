@@ -121,9 +121,7 @@ storiesOf('Popup', module)
         <ContentLineTextInput>
           <LineTitle>Availiable to claim:</LineTitle>
           <LineControl>
-          <LineText>
-            5.00 ETH
-          </LineText>
+            <LineText>5.00 ETH</LineText>
           </LineControl>
         </ContentLineTextInput>
         <ContentLineTextInput>
@@ -160,6 +158,88 @@ storiesOf('Popup', module)
       <PopupFooter>
         <PopupButton type="cancel">cancel</PopupButton>
         <PopupButton type="confirm">Confirm</PopupButton>
+      </PopupFooter>
+    </Popup>
+  ))
+
+  .add('TransferOwnership', () => (
+    <Popup open="claimFundOpen">
+      <PopupTitle>Transfer registry ownership</PopupTitle>
+      <PopupContent>
+        <ContentLineTextInput>
+          <LineTitle>Current owner:</LineTitle>
+          <LineControl>
+            <LinkHash noCopy noPadding value="0x000F3754f028c704FDCe4e8ab9aAdba220f39618" />
+          </LineControl>
+        </ContentLineTextInput>
+        <ContentLineTextInput>
+          <LineTitle>New owner:</LineTitle>
+          <LineControl>
+            <ContentInput />
+          </LineControl>
+        </ContentLineTextInput>
+      </PopupContent>
+      <PopupFooter>
+        <PopupButtun type="cansel">Confirm</PopupButtun>
+        <PopupButtun type="reject">Reject</PopupButtun>
+      </PopupFooter>
+    </Popup>
+  ))
+
+  .add('DeleteRecord', () => (
+    <Popup type="delete" open="claimFundOpen">
+      <PopupTitle>Delete record</PopupTitle>
+      <PopupFooter>
+        <PopupButtun type="cansel">Confirm</PopupButtun>
+        <PopupButtun type="reject">Reject</PopupButtun>
+      </PopupFooter>
+    </Popup>
+  ))
+
+  .add('EditRecord', () => (
+    <Popup open="claimFundOpen">
+      <PopupTitle>Edit record</PopupTitle>
+      <PopupContent>
+        <ContentLineTextInput>
+          <LineTitle>Header 1</LineTitle>
+          <LineControl>
+            <ContentInput />
+          </LineControl>
+        </ContentLineTextInput>
+        <ContentLineTextInput>
+          <LineTitle>Header 2</LineTitle>
+          <LineControl>
+            <ContentInput />
+          </LineControl>
+        </ContentLineTextInput>
+        <ContentLineTextInput>
+          <LineTitle>Header 3</LineTitle>
+          <LineControl>
+            <ContentInput />
+          </LineControl>
+        </ContentLineTextInput>
+        <ContentLineTextInput>
+          <LineTitle>Header 4</LineTitle>
+          <LineControl>
+            <ContentInput />
+          </LineControl>
+        </ContentLineTextInput>
+        <ContentLineTextInput>
+          <LineTitle>Header 5</LineTitle>
+          <LineControl>
+            <ContentInput />
+          </LineControl>
+        </ContentLineTextInput>
+        <ContentLineTextInput>
+          <LineTitle>Header 6</LineTitle>
+          <LineControl>
+            <ContentInput />
+          </LineControl>
+        </ContentLineTextInput>
+      </PopupContent>
+      <PopupFooter>
+        <PopupButtun type="cansel">Confirm</PopupButtun>
+        <PopupButtun type="reject">Reject</PopupButtun>
       </PopupFooter>
     </Popup>
   ));

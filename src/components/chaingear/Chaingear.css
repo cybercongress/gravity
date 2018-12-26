@@ -119,11 +119,12 @@
 .sectionTitle {
   box-sizing: border-box;
   text-transform: uppercase;
-  font-size: 26px;
+  font-size: 20px;
   padding-left: 30px;
-  color: #000000;
+  color: #7c7c7c;
+  font-family: Play;
   line-height: 23px;
-  margin-top: 40px;
+  margin-top: 45px;
   margin-bottom: 15px;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
@@ -143,6 +144,17 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.CentredPanel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 170px;
     padding-top: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
@@ -177,15 +189,16 @@
     padding-left: 30px;
     align-items: center;
 
-    // margin-bottom: 10px;
+    /* // margin-bottom: 10px; */
 }
 
 .boxTitle {
-    margin-top: 50px;
-    margin-bottom: 30px;
+    /* margin-top: 50px;
+    margin-bottom: 30px; */
     text-transform: uppercase;
     color: #000000;
     font-size: 14px;
+    padding-bottom: 20px;
 }
 
 .rightContainer {

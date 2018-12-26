@@ -12,7 +12,11 @@ import {
   MenuPopupResumeIcon,
   MenuPopupTransferIcon,
   MenuPopupDeletePencilIcon,
+  ItemLinkHash,
+  MenuPopupLinkHash,
 } from './MenuPopup';
+
+import { LinkHash } from '../..';
 
 storiesOf('MenuPopup', module)
   .addDecorator(centered)
@@ -40,5 +44,19 @@ storiesOf('MenuPopup', module)
       <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
       <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}> Delete Registry </MenuPopupItem>
     </MenuPopup>
+  ))
+
+  .add('MenuPopup_LinckHach', () => (
+    <MenuPopupLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+      <ItemLinkHash><LinkHash value="0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef" /></ItemLinkHash>
+    </MenuPopupLinkHash>
   ));
 

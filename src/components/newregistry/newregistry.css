@@ -142,6 +142,7 @@
     margin-top: 0;
     -webkit-font-smoothing: antialiased;
     font-weight: normal;
+    margin: 30px 0;
 }
 
 .pageTitle::before {
@@ -171,6 +172,7 @@
   border-radius: 50%;
   width: 30px;
   height: 30px;
+  opacity: 0.7;
 }
 
 .removeButton[disabled] {
@@ -181,13 +183,23 @@
     cursor: pointer;
     border: none;
     font-size: 70%;
-    background: url(./ic-plus.svg) no-repeat left center;
-    background-size: 14px;
-    padding-top: 20px;
-    padding-left: 20px;
-    width: 14px;
-    height: 14px;
+
+    background: url(./ic-plus.svg) no-repeat center;
+    /* background-size: 14px; */
+    padding-left: 30px;
+    padding-top: 30px;
+    height: 30px;
+    width: 30px;
 }
+
+.addButton:hover{
+    background-color: var(--hover-removeBtn);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+  }
+
 
 .addButton[disabled] {
     cursor: default;

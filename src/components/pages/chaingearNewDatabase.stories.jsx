@@ -32,7 +32,8 @@ import { WideSelect, WideInput } from '../newregistry/WideInput/WideInput';
 import { Description } from '../newregistry/Description/Description';
 import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
 import { ProgressBar } from '../newregistry/ProgressBar/ProgressBar';
-import  CircleLable  from '../newregistry/ProgressBar/CricleLable';
+import CircleLable from '../newregistry/ProgressBar/CricleLable';
+import { TableRow, TableItem, TableAddRow, TableAddItem } from '../Table/Table';
 
 storiesOf('Chaingear_NewDatabase', module).add('create_db', () => {
   const contractName = 'contract name';
@@ -44,13 +45,13 @@ storiesOf('Chaingear_NewDatabase', module).add('create_db', () => {
     {
       address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
       stake: 1,
-      share: 100,
+      share: 100
     },
     {
       address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
       stake: 1,
-      share: 100,
-    },
+      share: 100
+    }
   ];
   const databaseId = null;
 
@@ -111,48 +112,35 @@ storiesOf('Chaingear_NewDatabase', module).add('create_db', () => {
           </Panel>
           <Panel title="Beneficiaries (Optional)" noPadding>
             <FieldsTable>
-           {/* <TableRow>
+              {/* <TableRow>
               <TableItem></TableItem>
             </TableRow> */}
-              <tbody>
+              <Table>
                 {beneficiaries.map(ben => (
-                  <tr key={ben.address}>
-                    <td
-                      style={{
-                        overflow: 'hidden',
-                        width: 120,
-                      }}
-                    >
+                  <TableRow key={ben.address}>
+                    <TableItem>
                       <LinkHash noCopy noPadding value={ben.address} />
-                    </td>
-                    <td
-                      style={{
-                        textAlign: 'end',
-                        width: 70,
-                      }}
-                    >
-                      {ben.stake}
-                    </td>
-                    <td>{ben.share}</td>
-                    <td>
-                      <RemoveButton
-                      /*
-                                                                                                        onClick={() => this.removeBeneficiary(ben.address)}
-                                                    */
-                      />
-                    </td>
-                  </tr>
+                    </TableItem>
+                    <TableItem>{ben.stake}</TableItem>
+                    <TableItem>{ben.share}%</TableItem>
+                    <TableItem>
+                      <RemoveButton />
+                    </TableItem>
+                  </TableRow>
                 ))}
-                <tr>
-                  <td>
+              </Table>
+
+              <Table>
+                <TableAddRow>
+                  <TableAddItem>
                     <WideInput
                       /*
                                                                                        ref='benAddress'
                                             */
                       placeholder="Address"
                     />
-                  </td>
-                  <td>
+                  </TableAddItem>
+                  <TableAddItem>
                     <WideInput
                       /*
                                                                                         ref='benStake'
@@ -162,27 +150,20 @@ storiesOf('Chaingear_NewDatabase', module).add('create_db', () => {
                                             */
                       placeholder="Stake"
                     />
-                  </td>
-                  <td>
-                    <span
-                      /*
-                                                                                        ref='benShare'
-                                            */
-                      placeholder="Share"
-                    >
-                      0
-                    </span>{' '}
-                    <span>%</span>
-                  </td>
-                  <td>
+                  </TableAddItem>
+                  <TableAddItem>
+                         <span>0</span>
+                         <span>%</span>
+                  </TableAddItem>
+                  <TableAddItem>
                     <AddButton
                     /*
                                                                                         onClick={this.addBeneficiary}
                                             */
                     />
-                  </td>
-                </tr>
-              </tbody>
+                  </TableAddItem>
+                </TableAddRow>
+              </Table>
             </FieldsTable>
           </Panel>
         </SideBar>
@@ -241,6 +222,38 @@ const code = `
                 }
             }
         }
+        return (
+          <div className={styles.codeContainer}>
+              <pre key='598dhwpx5' className={styles.code}>
+                  <code key='d4mz31tt' className={className}>
+                  {children}
+                  </code>
+              </pre>
+          </div>
+          render() {
+            const { children } = this.props;
+            const className = 'solidity';
+        
+            return (
+                <div className={styles.codeContainer}>
+                    <pre key='598dhwpx5' className={styles.code}>
+                        <code key='d4mz31tt' className={className}>
+                        {children}
+                        </code>
+                    </pre>
+                </div>
+                render() {
+                  const { children } = this.props;
+                  const className = 'solidity';
+              
+                  return (
+                      <div className={styles.codeContainer}>
+                          <pre key='598dhwpx5' className={styles.code}>
+                              <code key='d4mz31tt' className={className}>
+                              {children}
+                              </code>
+                          </pre>
+                      </div>
     
       render() {
         const { children } = this.props;
@@ -254,6 +267,30 @@ const code = `
                     </code>
                 </pre>
             </div>
+            render() {
+              const { children } = this.props;
+              const className = 'solidity';
+          
+              return (
+                  <div className={styles.codeContainer}>
+                      <pre key='598dhwpx5' className={styles.code}>
+                          <code key='d4mz31tt' className={className}>
+                          {children}
+                          </code>
+                      </pre>
+                  </div>
+                  render() {
+                    const { children } = this.props;
+                    const className = 'solidity';
+                
+                    return (
+                        <div className={styles.codeContainer}>
+                            <pre key='598dhwpx5' className={styles.code}>
+                                <code key='d4mz31tt' className={className}>
+                                {children}
+                                </code>
+                            </pre>
+                        </div>
         );
       }
     }`;

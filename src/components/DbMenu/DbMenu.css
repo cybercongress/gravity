@@ -1,12 +1,21 @@
 .dbMenu {
     position: relative;
+    padding-left: 15px;
 }
+
+/* .dbMenu::before{
+    border: 20px solid transparent;
+    border-bottom: 20px solid #fff;
+    position: absolute;
+    top: 30px;
+    right: 4px;
+} */
 
 .dbMenuPopup {
     display: none;
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 0px;
+    top: 35px;
     background: white;
 }
 
@@ -18,4 +27,17 @@
     width: 24px;
     height: 24px;
     background: url('./menu.svg') center center;
+    border: none;
+}
+ 
+.dbMenuButtonTriangle::before{
+    content: '';
+    width: 17.1px;
+    height: 17.1px;
+    transform: rotate(45deg);
+    background-color: #ffffff;
+    position: absolute;
+    top: 30px;
+    right: 7px;
+    border-radius: 3px;
 }

@@ -32,6 +32,16 @@
     box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
+.popupInnerDelete {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3px;
+    width: 380px;
+    min-height: 0px;
+    box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
 .popupOpen {
     display: flex;
 }
@@ -94,3 +104,13 @@
 .PopupButtunCansel:hover{
     background-color: rgba(0, 0, 0, 0.07);
   }
+
+.PopupButtunReject{
+    background-color: #d32f2f;
+    color: var(--color-text-confirm);
+    box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.PopupButtunReject:hover{
+    opacity: 0.8;
+}

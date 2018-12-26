@@ -32,4 +32,11 @@ export const TableAddRow = ({ children }) => (
     </div>
 );
 
+export const TableAddItem = ({ children }) => (
+    <div className={styles.TableAddItem}>
+        {children}
+    </div>
+);
+
+
 export default Table;

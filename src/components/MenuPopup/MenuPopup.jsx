@@ -8,6 +8,12 @@ export const MenuPopup = ({children, ...props}) => (
         {children}
     </ul>
 );
+export const MenuPopupLinkHash = ({children, ...props}) => (
+    <ul {...props} className={styles.menuPopupLinkHash}>
+        {children}
+    </ul>
+);
+
 
 export const MenuPopupItem = ({children, icon, ...props}) => (
     <li {...props} className={styles.menuPopupItem}>
@@ -15,6 +21,14 @@ export const MenuPopupItem = ({children, icon, ...props}) => (
         <span>{children}</span>
     </li>
 );
+
+export const ItemLinkHash = ({children, icon, ...props}) => (
+    <li {...props} className={styles.ItemLinkHash}>
+        {icon}
+        <span>{children}</span>
+    </li>
+);
+
 
 export const MenuSeparator = ({children, ...props}) => (
     <li {...props} className={styles.menuSeparator}>
