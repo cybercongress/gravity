@@ -67,12 +67,12 @@
 .popupFooter {
     /* margin: 20px; */
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     border-top: 1px solid #dedede;
     padding: 20px 0;
 }
 
-.PopupButtun{
+.PopupButton{
   width: 105px;
   height: 36px;
   border-radius: 3px;

@@ -180,8 +180,8 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Confirm</PopupButtun>
-        <PopupButtun type="reject">Reject</PopupButtun>
+        <PopupButton type="cansel">Confirm</PopupButton>
+        <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -190,8 +190,8 @@ storiesOf('Popup', module)
     <Popup type="delete" open="claimFundOpen">
       <PopupTitle>Delete record</PopupTitle>
       <PopupFooter>
-        <PopupButtun type="cansel">Confirm</PopupButtun>
-        <PopupButtun type="reject">Reject</PopupButtun>
+        <PopupButton type="cansel">Confirm</PopupButton>
+        <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -238,8 +238,8 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Confirm</PopupButtun>
-        <PopupButtun type="reject">Reject</PopupButtun>
+        <PopupButton type="cansel">Confirm</PopupButton>
+        <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
   ));
