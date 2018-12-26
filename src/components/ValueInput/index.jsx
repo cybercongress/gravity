@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import ClickOutside from 'react-click-outside';
 
+import {Button} from '../..';
+
 
 // import {
 //     Button,

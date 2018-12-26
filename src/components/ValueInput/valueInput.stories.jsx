@@ -7,5 +7,5 @@ import ValueInput from './index';
 storiesOf('ValueInput', module)
   .addDecorator(centered)
   .add('ValueInput', () => (
-      <ValueInput onInter={this.claimDatabase} buttonLable="claim funds" color="second" />
+      <ValueInput buttonLable="claim funds" color="second" />
   ));

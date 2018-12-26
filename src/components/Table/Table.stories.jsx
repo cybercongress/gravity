@@ -27,6 +27,11 @@ storiesOf('Table', module)
                     <RemoveButton/>
                 </TableItem>
             </TableRow>
+        </Table>
+    ))
+    
+    .add('table_Input', () => (
+        <Table>
             <TableAddRow>
                 <input />
                 <input />

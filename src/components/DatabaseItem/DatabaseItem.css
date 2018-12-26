@@ -107,6 +107,19 @@
   background: url(./cancel.svg) no-repeat center center;
 }
 
+.InfoButton{
+  margin-left: 15px;
+  padding: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: none;
+  /* box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.14); */
+  display: inline-block;
+  cursor: pointer;
+  background: url(./info.svg) no-repeat center center;
+}
+
 .updateButton:hover {
   opacity: 0.8;
 }

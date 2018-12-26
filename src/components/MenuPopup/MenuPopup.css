@@ -1,5 +1,5 @@
-:root{
-    --color-text:#2e3842;
+:root {
+    --color-text: #2e3842;
 }
 
 .menuPopup {
@@ -9,7 +9,7 @@
     width: 227px;
     border-radius: 3px;
     background: #fff;
-    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
 }
 
 .menuPopupItem {
@@ -23,10 +23,37 @@
     align-items: center;
     justify-content: flex-start;
 }
-.menuPopupItem:hover{
+
+.menuPopupItem:hover {
     /* background-color: #dedede; */
     opacity: 0.7;
 }
+
+.ItemLinkHash {
+   padding-bottom: 20px;
+}
+
+.ItemLinkHash:first-child {
+    padding-top: 0;
+    padding-bottom: 20px;
+
+}
+.ItemLinkHash:last-child {
+    padding-bottom: 0;
+    
+}
+
+.menuPopupLinkHash {
+    list-style: none;
+    padding: 30px;
+    /* width: 227px; */
+    max-height: 270px;
+    overflow: auto;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
 
 .menuPopupItem:first-child {
     display: flex;
@@ -82,17 +109,17 @@
 }
 
 .menuIconResume {
-    background: url('./icons/resume.svg') center center  no-repeat;
+    background: url('./icons/resume.svg') center center no-repeat;
 }
 
 .menuIconPause {
-    background: url('./icons/pause.svg') center center  no-repeat;
+    background: url('./icons/pause.svg') center center no-repeat;
 }
 
 .menuIconDelete {
-    background: url('./icons/delete.svg') center center  no-repeat;
+    background: url('./icons/delete.svg') center center no-repeat;
 }
 
-.menuIconDeletePencil{
+.menuIconDeletePencil {
     background: url('./icons/pensil.svg') center center;
 }

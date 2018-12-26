@@ -7,6 +7,7 @@ import {
   Section,
   SectionContent,
   Centred,
+  CentredPanel,
   Button,
   FundContainer,
   BoxTitle,
@@ -36,9 +37,9 @@ import {
   PageTitle,
 } from '../..';
 
+import {InfoButton} from '../DatabaseItem/index';
 import FormField from '../FormField/FormFild';
 import { calculateBensShares } from '../utils/utils';
-import Title from '../Title/Title';
 
 storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
   const Permission = {
@@ -177,66 +178,60 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
       </DbHeader>
       <Section title="General">
         <SectionContent style={{ width: '25%' }}>
-          <Centred>
+          <CentredPanel>
             <BoxTitle>Created:</BoxTitle>
-            <div style={{ height: 100, color: '#000000' }}>
+            <div>
             7/2/2018 17:13:33
               {/* {createdTimestamp
                 ? moment(new Date(createdTimestamp.toNumber() * 1000)).format('DD/MM/YYYY mm:hh:ss')
                 : ''} */}
             </div>
-          </Centred>
+          </CentredPanel>
         </SectionContent>
 
         <SectionContent style={{ width: '25%' }}>
-          <Centred>
+          <CentredPanel>
             <BoxTitle>Admin:</BoxTitle>
-            <div style={{ height: 100 }}>
+            <div>
               <LinkHash value={admin} />
             </div>
-          </Centred>
+          </CentredPanel>
         </SectionContent>
 
         <SectionContent style={{ width: '25%' }}>
-          <Centred>
+          <CentredPanel>
             <BoxTitle>FUNDED:</BoxTitle>
 
-            <FundContainer
-              style={{
-                height: 100,
-                justifyContent: isOwner && !isDbPaused ? 'space-around' : 'start'
-              }}
-            >
+            <FundContainer>
               <span>{funded} ETH</span>
 
               {/* {isOwner && !isDbPaused && (
-                <ValueInput onInter={this.claimDatabase} buttonLable="claim funds" color="second" />
+                <ValueInput 
+                  // onInter={this.claimDatabase} 
+                  buttonLable="claim funds" 
+                  color="second" 
+                />
               )} */}
             </FundContainer>
-          </Centred>
+          </CentredPanel>
         </SectionContent>
 
         <SectionContent style={{ width: '25%' }}>
-          <Centred>
+          <CentredPanel>
             <BoxTitle>FEES:</BoxTitle>
 
-            <FundContainer
-              style={{
-                height: 100,
-                justifyContent: isOwner && !isDbPaused ? 'space-around' : 'start'
-              }}
-            >
+            <FundContainer>
               <span>{totalFee} ETH</span>
-              {isOwner && !isDbPaused && (
+              {/* {isOwner && !isDbPaused && (
                 <Button
                   style={{ width: 119 }}
                   //  onClick={this.claimFee}
                 >
                   clame fee
                 </Button>
-              )}
+              )} */}
             </FundContainer>
-          </Centred>
+          </CentredPanel>
         </SectionContent>
       </Section>
 
@@ -261,6 +256,7 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
             value="{permissionGroupStr}"
             // onUpdate={isOwner && isDbPaused && this.onUpdatePermissionGroup}
             onUpdate="isDbPaused"
+            icon={<InfoButton />}
           >
             {/* <select
               ref={node => {

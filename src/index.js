@@ -6,7 +6,7 @@ import {
     Badge, FooterButton,
     Section, SectionTabs, SectionContent,
     Container as MainContainer,
-    FundContainer, Centred,
+    FundContainer, Centred,CentredPanel,
     Button,
     BoxTitle,
     TotalCost,
@@ -65,6 +65,7 @@ export {
     FundContainer,
     LinkHash,
     Centred,
+    CentredPanel,
     TotalCost,
     Message,
 

@@ -76,6 +76,11 @@ export const Centred = (props) => (
     <div {...props} className={styles.centred}/>
 );
 
+export const CentredPanel = (props) => (
+  <div {...props} className={styles.CentredPanel}/>
+);
+
+
 export const Button = (props) => (
     <button {...props} className={styles.button + ' ' + (props.color ? styles[props.color]: '')} />
 );

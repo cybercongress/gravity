@@ -74,7 +74,7 @@ class Database extends Component {
         admin: '',
         userAccount: null,
         abi: [],
-        isDbPaused: null,
+        isDbPaused: true,
         duplicateFieldFound: false,
         duplicateFieldId: null,
 

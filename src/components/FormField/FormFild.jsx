@@ -41,7 +41,7 @@ class FormField extends React.Component {
 
     render() {
         const {
-            label, value, valueType, onUpdate, children,
+            label, value,icon, valueType, onUpdate, children,
         } = this.props;
         const { edit } = this.state;
 
@@ -53,7 +53,9 @@ class FormField extends React.Component {
                 <FormValue>
                     {!edit ? (
                         <span>
-                            <span>{value}</span>
+                            {value}
+                            {icon}
+                            
                             <span style={ { marginLeft: 5 } }>{valueType}</span>
                         </span>
                     ) : (
