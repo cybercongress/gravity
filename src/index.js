@@ -22,12 +22,21 @@ import { Description } from "./components/newregistry/Description/Description";
 import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
 import { DbMenu } from "./components/DbMenu/DbMenu";
 import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
-import { Popup, PopupContent, PopupFooter, PopupTitle } from "./components/Popup/Popup";
 import { BenContainer, BenPieChart, BenList, Ben } from "./components/Beneficiary/Ben";
 import {DarkPanel} from "./components/newregistry/DarkPanel/DarkPanel";
 import {ProgressBar} from "./components/newregistry/ProgressBar/ProgressBar";
 import CircleLable from './components/newregistry/ProgressBar/CricleLable';
 import Table, { HomeTable, TableRow, TableItem, TableAddRow } from './components/Table/Table';
+import {
+ContentLine,
+ContentLineTextInput,
+LineControl,
+ContentInput,
+LineTitle,
+LineText,
+ContentLineFund
+} from './components/PopupContent/PopupContent';
+import { Popup, PopupButton, PopupTitle, PopupContent, PopupFooter } from './components/Popup/Popup';
 
 import {
     Browser,
@@ -106,4 +115,6 @@ export {
     ProgressBar, CircleLable,
 
     Table, HomeTable, TableRow, TableItem, TableAddRow,
+
+    ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
 }

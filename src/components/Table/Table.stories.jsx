@@ -1,8 +1,9 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
-import Table, {TableRow, TableItem, TableAddRow} from './Table';
-import {AddButton, RemoveButton} from '../newregistry';
-import {LinkHash} from '../..';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Table, { TableRow, TableItem, TableAddRow } from "./Table";
+import { AddButton, RemoveButton } from "../newregistry";
+import { LinkHash } from "../..";
+
 
 storiesOf('Table', module)
     .add('table', () => (
@@ -40,3 +41,4 @@ storiesOf('Table', module)
             </TableAddRow>
         </Table>
     ));
+
