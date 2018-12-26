@@ -180,7 +180,10 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
+<<<<<<< HEAD
         <PopupButton type="cancel">Confirm</PopupButton>
+=======
+>>>>>>> fix spelling
         <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
@@ -190,7 +193,10 @@ storiesOf('Popup', module)
     <Popup type="delete" open="claimFundOpen">
       <PopupTitle>Delete record</PopupTitle>
       <PopupFooter>
+<<<<<<< HEAD
         <PopupButton type="cancel">Confirm</PopupButton>
+=======
+>>>>>>> fix spelling
         <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
@@ -238,7 +244,10 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
+<<<<<<< HEAD
         <PopupButton type="cancel">Confirm</PopupButton>
+=======
+>>>>>>> fix spelling
         <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
