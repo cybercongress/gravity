@@ -39,6 +39,6 @@ export const LineControl = ({children}) => (
   </div>
 );
 
-export const ContentInput = ({ children, ...props }) => (
-  <input {...props} className={styles.ContentInput} />
+export const ContentInput = ({ children, inputRef, ...props }) => (
+  <input {...props} ref={inputRef} className={styles.ContentInput} />
 );

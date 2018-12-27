@@ -30,6 +30,16 @@ import CircleLable from './components/newregistry/ProgressBar/CricleLable';
 import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry } from './components/Table/Table';
 import { Checkbox } from './components/Checkbox/index';
 import { AddNewRecordButton } from './components/Button/button';
+import {
+ContentLine,
+ContentLineTextInput,
+LineControl,
+ContentInput,
+LineTitle,
+LineText,
+ContentLineFund
+} from './components/PopupContent/PopupContent';
+import { Popup, PopupButton, PopupTitle, PopupContent, PopupFooter } from './components/Popup/Popup';
 
 import {
     Browser,
@@ -114,4 +124,6 @@ export {
     ProgressBar, CircleLable,
 
     Table, HomeTable, TableRow, TableItem, TableAddRow,
+
+    ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
 }
