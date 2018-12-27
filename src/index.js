@@ -23,7 +23,7 @@ import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } fro
 import { DbMenu } from "./components/DbMenu/DbMenu";
 import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon,MenuPopupDeletePencilIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
 import { Popup, PopupContent, PopupFooter, PopupTitle } from "./components/Popup/Popup";
-import { BenContainer, BenPieChart, BenList, Ben } from "./components/Beneficiary/Ben";
+import { BenContainer,PopupButton,  BenPieChart, BenList, Ben } from "./components/Beneficiary/Ben";
 import {DarkPanel} from "./components/newregistry/DarkPanel/DarkPanel";
 import {ProgressBar} from "./components/newregistry/ProgressBar/ProgressBar";
 import CircleLable from './components/newregistry/ProgressBar/CricleLable';
@@ -39,7 +39,6 @@ LineTitle,
 LineText,
 ContentLineFund
 } from './components/PopupContent/PopupContent';
-import { Popup, PopupButton, PopupTitle, PopupContent, PopupFooter } from './components/Popup/Popup';
 
 import {
     Browser,

@@ -94,14 +94,14 @@
     opacity: 0.8;
   }
 
-.PopupButtonCansel{
+.PopupButtonCancel{
   background-color: var(--color-btn-cansel);
   color: var(--color-text-cansel);
   box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.15);
   border: 1px solid #dedede;
 }
 
-.PopupButtonCansel:hover{
+.PopupButtonCancel:hover{
     background-color: rgba(0, 0, 0, 0.07);
   }
 
@@ -146,7 +146,7 @@
     /* padding: 10px 0; */
 }
 
-.PopupBarButton{
+.PopupBarButtun{
     width: 135px;
      height: 31px;
   border-radius: 3px;
@@ -159,6 +159,6 @@
   background-color: #ffffff;
 }
 
-.PopupBarButton:hover{
+.PopupBarButtun:hover{
     background-color: rgba(0, 0, 0, 0.08);
 }

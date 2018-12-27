@@ -12,7 +12,7 @@ import {
   LineText,
   ContentLineFund,
 } from '../PopupContent/PopupContent';
-import { Popup, Buttun, PopupBarButtun, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
+import { Popup, PopupButton, PopupBarButtun, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
 
 storiesOf('Popup', module)
   .addDecorator(centered)
@@ -180,8 +180,8 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Confirm</PopupButtun>
-        <PopupButtun type="reject">Reject</PopupButtun>
+        <PopupButton type="cancel">Confirm</PopupButton>
+        <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -190,8 +190,8 @@ storiesOf('Popup', module)
     <Popup type="delete" open="claimFundOpen">
       <PopupTitle>Delete record</PopupTitle>
       <PopupFooter>
-        <PopupButtun type="cansel">Confirm</PopupButtun>
-        <PopupButtun type="reject">Reject</PopupButtun>
+        <PopupButton type="cancel">Confirm</PopupButton>
+        <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
   ))
@@ -238,8 +238,8 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-        <PopupButtun type="cansel">Confirm</PopupButtun>
-        <PopupButtun type="reject">Reject</PopupButtun>
+        <PopupButton type="cancel">Confirm</PopupButton>
+        <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
   ))
