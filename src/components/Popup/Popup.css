@@ -72,7 +72,7 @@
     padding: 20px 0;
 }
 
-.PopupButtun{
+.PopupButton{
   width: 105px;
   height: 36px;
   border-radius: 3px;
@@ -84,34 +84,34 @@
 }
 
 
-.PopupButtunConfirm{
+.PopupButtonConfirm{
   background-color: var(--color-btn-confirm);
   color: var(--color-text-confirm);
   box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.PopupButtunConfirm:hover{
+.PopupButtonConfirm:hover{
     opacity: 0.8;
   }
 
-.PopupButtunCansel{
+.PopupButtonCansel{
   background-color: var(--color-btn-cansel);
   color: var(--color-text-cansel);
   box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.15);
   border: 1px solid #dedede;
 }
 
-.PopupButtunCansel:hover{
+.PopupButtonCansel:hover{
     background-color: rgba(0, 0, 0, 0.07);
   }
 
-.PopupButtunReject{
+.PopupButtonReject{
     background-color: #d32f2f;
     color: var(--color-text-confirm);
     box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.PopupButtunReject:hover{
+.PopupButtonReject:hover{
     opacity: 0.8;
 }
 
@@ -146,7 +146,7 @@
     /* padding: 10px 0; */
 }
 
-.PopupBarButtun{
+.PopupBarButton{
     width: 135px;
      height: 31px;
   border-radius: 3px;
@@ -159,6 +159,6 @@
   background-color: #ffffff;
 }
 
-.PopupBarButtun:hover{
+.PopupBarButton:hover{
     background-color: rgba(0, 0, 0, 0.08);
 }

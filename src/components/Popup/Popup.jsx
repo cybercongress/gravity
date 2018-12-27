@@ -18,13 +18,13 @@ export const PopupContent = ({ children }) => <div className={styles.popupConten
 export const PopupFooter = ({ children }) => <div className={styles.popupFooter}>{children}</div>;
 
 
-export const PopupButtun = ({ children, ...props }) => (
+export const PopupButton = ({ children, ...props }) => (
   <button
      {...props}
-    className={cx(styles.PopupButtun, {
-      [styles.PopupButtunCansel]: props.type === 'cansel',
-      [styles.PopupButtunConfirm]: props.type === 'confirm',
-      [styles.PopupButtunReject]: props.type === 'reject'
+    className={cx(styles.PopupButton, {
+      [styles.PopupButtonCansel]: props.type === 'cansel',
+      [styles.PopupButtonConfirm]: props.type === 'confirm',
+      [styles.PopupButtonReject]: props.type === 'reject'
     })}
   >
     {children}
@@ -41,8 +41,8 @@ export const PopupBar = ({ children }) => (
 export const PopupBarFooter = ({ children }) => (
   <div className={styles.PopupBarFooter}>{children}</div>);
 
-export const PopupBarButtun = ({ children}) => (
-  <button className={styles.PopupBarButtun}>
+export const PopupBarButton = ({ children}) => (
+  <button className={styles.PopupBarButton}>
     {children}
   </button>
 );
