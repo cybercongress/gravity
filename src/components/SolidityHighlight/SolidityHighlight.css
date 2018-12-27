@@ -1,7 +1,7 @@
 
 .code {
   color: #fff;
-  max-height: 500px;
+  max-height: 400px;
   padding: 20px;
   border-radius: 4px;
   /* box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.14); */
@@ -13,5 +13,6 @@
 .codeContainer {
     height: 100%;
     overflow: auto;
-    padding: 5px;
+    /* padding: 5px; */
+    border-radius: 4px;
 }

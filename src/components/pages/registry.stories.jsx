@@ -24,6 +24,7 @@ import {
   MenuPopupDeleteIcon,
   MenuPopupEditIcon,
   MenuPopupTransferIcon,
+  MenuPopupDeletePencilIcon,
   Popup,
   PopupContent,
   PopupFooter,
@@ -35,13 +36,17 @@ import {
   ProgressBar,
   CircleLable,
   PageTitle,
+  AddNewRecordButton,
+  TableRegistry
 } from '../..';
 
-import {InfoButton} from '../DatabaseItem/index';
+import { DbMenuPoints } from '../DbMenuPoints/DbMenuPoints';
+import { DatabaseItemsContainer } from '../DatabaseTable/DatabaseItemsContainer';
+import { InfoButton } from '../DatabaseItem/index';
 import FormField from '../FormField/FormFild';
 import { calculateBensShares } from '../utils/utils';
 
-storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
+storiesOf('Chaingear_pages', module).add('registry', () => {
   const Permission = {
     OnlyAdmin: 0,
     Whitelist: 1,
@@ -57,25 +62,24 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
   const beneficiaries = [
     {
       address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
-      stake: 22,
-  },
-  {
+      stake: 22
+    },
+    {
       address: '0xb175b6F3A4C712Da8CC59A824F1d3BC31f398CB8',
-      stake: 123,
-  },
-  {
+      stake: 123
+    },
+    {
       address: '0x805dD5291406D081c7100916E1ACdb070d5b4DC5',
-      stake: 98,
-  },
-  {
+      stake: 98
+    },
+    {
       address: '0x885dD5291406D081c9900916E1ACdb070d5b4DD5',
-      stake: 40,
-  },
-  {
+      stake: 40
+    },
+    {
       address: '0x555dD52914000081c990091222ACdb070d5b4Dz1',
-      stake: 66,
-  },
-  
+      stake: 66
+    }
   ];
   const ipfsGateway = null;
 
@@ -181,7 +185,7 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
           <CentredPanel>
             <BoxTitle>Created:</BoxTitle>
             <div>
-            7/2/2018 17:13:33
+              7/2/2018 17:13:33
               {/* {createdTimestamp
                 ? moment(new Date(createdTimestamp.toNumber() * 1000)).format('DD/MM/YYYY mm:hh:ss')
                 : ''} */}
@@ -304,11 +308,75 @@ storiesOf('Chaingear_NewDatabase', module).add('registry', () => {
           <DbHeaderLeft>RECORDS</DbHeaderLeft>
 
           <DbHeaderRight>
-            {showAddButton && <Button onClick={this.add}>Add new record</Button>}
+            <AddNewRecordButton>Add New Record</AddNewRecordButton>
           </DbHeaderRight>
         </DbHeaderLine>
       </DbHeader>
       {/* <DatabaseList>{rows}</DatabaseList> */}
+      <DatabaseItemsContainer>
+        <TableRegistry>
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Id</th>
+              <th>Funded</th>
+              <th>Owner</th>
+
+              <th>Name</th>
+              <th>Address</th>
+              <th>Developer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <DbMenuPoints>
+                  <MenuPopup>
+                    <MenuPopupItem icon={<MenuPopupTransferIcon />}>
+                      Transfer Ownership
+                    </MenuPopupItem>
+                    <MenuSeparator />
+                    <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
+                    <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+                    <MenuSeparator />
+                    <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
+                    <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}>
+                      Delete Registry
+                    </MenuPopupItem>
+                  </MenuPopup>
+                </DbMenuPoints>
+              </td>
+              <td>1</td>
+              <td>3 ETH</td>
+              <td>YOU</td>
+              <td>dragons</td>
+              <td>
+                <LinkHash value="0x727b557aeec8203A8e0f3f43FD30885d94399010" />
+              </td>
+              <td>congress</td>
+            </tr>
+            <tr>
+              <td>
+                <DbMenuPoints>
+                  <MenuPopup>
+                    <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}>
+                      Delete Registry
+                    </MenuPopupItem>
+                  </MenuPopup>
+                </DbMenuPoints>
+              </td>
+              <td>1</td>
+              <td>3 ETH</td>
+              <td>YOU</td>
+              <td>dragons</td>
+              <td>
+                <LinkHash value="0x727b557aeec8203A8e0f3f43FD30885d94399010" />
+              </td>
+              <td>congress</td>
+            </tr>
+          </tbody>
+        </TableRegistry>
+      </DatabaseItemsContainer>
     </MainContainer>
   );
 });

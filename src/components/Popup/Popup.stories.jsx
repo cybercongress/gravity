@@ -10,9 +10,9 @@ import {
   ContentInput,
   LineTitle,
   LineText,
-  ContentLineFund
+  ContentLineFund,
 } from '../PopupContent/PopupContent';
-import { Popup, PopupButtun, PopupTitle, PopupContent, PopupFooter } from './Popup';
+import { Popup, PopupButtun, PopupBarButtun, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
 
 storiesOf('Popup', module)
   .addDecorator(centered)
@@ -242,4 +242,22 @@ storiesOf('Popup', module)
         <PopupButtun type="reject">Reject</PopupButtun>
       </PopupFooter>
     </Popup>
-  ));
+  ))
+
+  .add('PopupProgrssBar_2', () => (
+    <PopupBar>
+      <LineText>To operate with records, please, define schema</LineText>
+      <PopupBarFooter>
+        <PopupBarButtun>complete step</PopupBarButtun>
+      </PopupBarFooter>
+    </PopupBar>
+  ))
+
+  .add('PopupProgrssBar_3', () => (
+    <PopupBar>
+      <LineText>To prevent lose of code, please, save ABI</LineText>
+      <PopupBarFooter>
+        <PopupBarButtun>complete step</PopupBarButtun>
+      </PopupBarFooter>
+    </PopupBar>
+  ))

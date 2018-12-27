@@ -8,6 +8,20 @@ export const HomeTable = ({ children }) => (
     </table>
 );
 
+export const TableRegistry = ({ children }) => (
+    <table className={styles.TableRegistry}>
+        {children}
+    </table>
+);
+
+export const TableItemBen = ({ children }) => (
+    <table className={styles.TableItemBen}>
+        {children}
+    </table>
+);
+
+
+
 const Table = ({ children }) => (
     <div className={styles.tableContainer}>
         {children}

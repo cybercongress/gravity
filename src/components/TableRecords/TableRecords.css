@@ -1,0 +1,44 @@
+.TableRecords {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.TableRecords thead {
+  border-bottom: 1px solid #dedede;
+}
+
+.TableRecords tbody {
+ border: none;
+}
+
+.TableRecords td,
+.TableRecords th {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.TableRecords th {
+  color: #000000;
+  font-weight: bold;
+  border-bottom: 1px solid #dedede;
+}
+
+.TableRecords tr{
+  height: 56px;
+}
+
+.TableRecords td:first-child,
+.TableRecords th:first-child {
+  padding-left: 20px;
+  padding-right: 0;
+  text-align: left;
+}
+
+.TableRecords td:last-child,
+.TableRecords th:last-child {
+  padding-right: 30px;
+}

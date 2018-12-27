@@ -114,3 +114,51 @@
 .PopupButtunReject:hover{
     opacity: 0.8;
 }
+
+.PopupBar{
+    width: 230px;
+    height: 100px;
+    border-radius: 3px;
+    /* border: 1px solid #979797; */
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    padding: 16px;
+    padding-left: 26px;
+    position: relative;
+}
+
+.PopupBar::before{
+    content: '';
+    width: 17.1px;
+    height: 17.1px;
+    transform: rotate(45deg);
+    background-color: #ffffff;
+    position: absolute;
+    top: 91px;
+    right: 104px;
+    border-radius: 3px;
+    box-shadow:2px 2px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+.PopupBarFooter{
+    display: flex;
+    justify-content: flex-end; 
+    /* padding: 10px 0; */
+}
+
+.PopupBarButtun{
+    width: 135px;
+     height: 31px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: Play;
+  border: none;
+  text-transform: uppercase;
+  /* margin: 0 10px; */
+  color: #b00020;
+  background-color: #ffffff;
+}
+
+.PopupBarButtun:hover{
+    background-color: rgba(0, 0, 0, 0.08);
+}

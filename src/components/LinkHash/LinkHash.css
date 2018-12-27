@@ -6,7 +6,7 @@
 
 .linHash {
   color: #000000;
-  font-size: 18px;
+  font-size: 14px;
   font-family: Play;
   line-height: 21px;
   display: inline-flex;
@@ -55,7 +55,7 @@
   letter-spacing: -6px;
   display: inline-block;
   width: 8px;
-  height: 14px;
+  height: 12px;
   overflow: hidden;
   padding: 0;
   line-height: 1;

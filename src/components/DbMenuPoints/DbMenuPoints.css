@@ -1,0 +1,46 @@
+.dbMenuP {
+  position: relative;
+  padding-left: 15px;
+}
+
+/* .dbMenu::before{
+  border: 20px solid transparent;
+  border-bottom: 20px solid #fff;
+  position: absolute;
+  top: 30px;
+  right: 4px;
+} */
+
+.dbMenuPoints {
+  display: none;
+  position: absolute;
+  left: 44px;
+    bottom: 0px;
+    right: 0px;
+  left: 44px;
+  background: white;
+}
+
+.dbMenuPointsOpen {
+  display: block;
+}
+
+.dbMenuPointsButton {
+  width: 24px;
+  height: 24px;
+  background: url('./points.svg') center center;
+  border: none;
+}
+
+.dbMenuPointsButtonTriangle::before{
+  content: '';
+  width: 17.1px;
+  height: 17.1px;
+  transform: rotate(45deg);
+  background-color: #000000;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 37px;
+  border-radius: 3px;
+}

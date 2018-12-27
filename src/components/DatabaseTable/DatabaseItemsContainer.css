@@ -1,0 +1,10 @@
+.DatabaseItemsContainer{
+  width: 100%;
+  border-radius: 4px;
+  background: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.14);
+    flex-grow: 1;
+    margin-top: 20px;
+}

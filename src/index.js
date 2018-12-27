@@ -21,13 +21,15 @@ import { WideInput,  WideSelect } from "./components/newregistry/WideInput/WideI
 import { Description } from "./components/newregistry/Description/Description";
 import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
 import { DbMenu } from "./components/DbMenu/DbMenu";
-import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
+import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon,MenuPopupDeletePencilIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
 import { Popup, PopupContent, PopupFooter, PopupTitle } from "./components/Popup/Popup";
 import { BenContainer, BenPieChart, BenList, Ben } from "./components/Beneficiary/Ben";
 import {DarkPanel} from "./components/newregistry/DarkPanel/DarkPanel";
 import {ProgressBar} from "./components/newregistry/ProgressBar/ProgressBar";
 import CircleLable from './components/newregistry/ProgressBar/CricleLable';
-import Table, { HomeTable, TableRow, TableItem, TableAddRow } from './components/Table/Table';
+import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry } from './components/Table/Table';
+import { Checkbox } from './components/Checkbox/index';
+import { AddNewRecordButton } from './components/Button/button';
 
 import {
     Browser,
@@ -40,6 +42,7 @@ import {
     Content, ContainerRegister, SideBar,
     FieldsTable,
     Panel,
+    PanelRecord,
     Label,
     CreateButton,
     Control,
@@ -72,6 +75,7 @@ export {
     Content, ContainerRegister, SideBar,
     FieldsTable,
     Panel,
+    PanelRecords,
     Label,
     CreateButton,
     Control,
@@ -88,6 +92,10 @@ export {
     WideInput,
     WideSelect,
     Description,
+    Checkbox,
+    AddNewRecordButton,
+    TableRegistry,
+    MenuPopupDeletePencilIcon,
 
 
     Browser,

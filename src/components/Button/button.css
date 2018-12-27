@@ -1,0 +1,15 @@
+.AddNewRecordButton{
+  /* text-transform: uppercase; */
+  background: #eff3f6;
+  color: #4a90e2;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.18);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  width: 153px;
+  height: 33px;
+  border-radius: 20px;
+  font-family: Play;
+  font-size: 14px;
+}

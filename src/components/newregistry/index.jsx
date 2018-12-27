@@ -17,6 +17,19 @@ export const Panel = ({ children, title, noPadding, ...props }) => (
   </div>
 );
 
+/*-----------------*/
+
+export const PanelRecord = ({ children, title, noPadding, ...props }) => (
+    <div {...props} className={styles.PanelRecord}>
+      {title && <h3 className={styles.panelTitle}>{title}</h3>}
+      {noPadding ? children : <div className={styles.panelContent}>
+        {children}
+      </div>}
+    </div>
+  );
+
+/*--------------------*/
+
 export const Label = ({ children, color }) => (
     <div className={styles.label} style={{ background: color }}>
         {children}

@@ -12,7 +12,9 @@ import {
   MainContainer,
   LinkHash,
   AddButton,
-  Code
+  Code,
+  HomeTable,
+  Checkbox
 } from '../..';
 import {
   ContainerRegister,
@@ -23,6 +25,7 @@ import {
   Label,
   PageTitle,
   Panel,
+  PanelRecord,
   RemoveButton,
   SideBar
 } from '../newregistry';
@@ -33,9 +36,9 @@ import { Description } from '../newregistry/Description/Description';
 import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
 import { ProgressBar } from '../newregistry/ProgressBar/ProgressBar';
 import CircleLable from '../newregistry/ProgressBar/CricleLable';
-import { TableRegistry,TableItemBen, TableRow, TableItem, TableAddRow, TableAddItem } from '../Table/Table';
+import { TableRegistry, TableAddRow, TableAddItem } from '../Table/Table';
 
-storiesOf('Chaingear_pages', module).add('create_db', () => {
+storiesOf('Chaingear_pages', module).add('registryCreation2.stories', () => {
   const contractName = 'contract name';
   const message = 'message';
   const inProgress = false;
@@ -52,22 +55,6 @@ storiesOf('Chaingear_pages', module).add('create_db', () => {
       stake: 1,
       share: 100
     },
-    {
-      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
-      stake: 1,
-      share: 100
-    },
-    {
-      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
-      stake: 1,
-      share: 100
-    },
-    {
-      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
-      stake: 1,
-      share: 100
-    },
-
   ];
   const databaseId = null;
 
@@ -94,59 +81,35 @@ storiesOf('Chaingear_pages', module).add('create_db', () => {
       <ContainerRegister>
         <SideBar>
           <Label>Input</Label>
-          <Panel title="General Parameters">
-            <ParamRow>
-              <WideInput placeholder="Name" defaultValue="" />
-            </ParamRow>
-            <ParamRow>
-              <WideInput
-                /*
-                                                                        ref='symbol'
-                                    */
-                defaultValue=""
-                placeholder="Symbol"
-              />
-            </ParamRow>
-            <ParamRow>
-              <WideSelect
-              /*
-                                                                        ref='databaseVersion'
-                                    */
-              >
-                <option value="">Version</option>
-                <option value="V1">V1 (Basic Database)</option>
-              </WideSelect>
-            </ParamRow>
-            <ParamRow>
-              <Description>
-                <b>Description:</b> One morning, when Gregor Samsa woke from troubled dreams, he
-                found himself transformed in his bed into a horrible vermin. He lay on his
-                armour-like back, and if he lifted his head a little he could see his brown belly,
-                slightly domed and divided by arches.
-              </Description>
-            </ParamRow>
-          </Panel>
-          <Panel title="Beneficiaries (Optional)" noPadding>
+          <PanelRecord title="Record Structure" noPadding>
             <FieldsTable>
               {/* <TableRow>
               <TableItem></TableItem>
             </TableRow> */}
-              <TableItemBen>
+              <TableRegistry>
                 <tbody>
-                  {beneficiaries.map(ben => (
-                    <tr key={ben.address}>
-                      <td>
-                        <LinkHash noCopy noPadding value={ben.address} />
-                      </td>
-                      <td>{ben.stake}</td>
-                      <td>{ben.share}%</td>
-                      <td>
-                        <RemoveButton />
-                      </td>
-                    </tr>
-                  ))}
+                  <tr>
+                    <td>Name</td>
+                    <td>string</td>
+                    <td>
+                      <Checkbox>unique</Checkbox>
+                    </td>
+                    <td>
+                      <RemoveButton />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td>address</td>
+                    <td>
+                      <Checkbox>unique</Checkbox>
+                    </td>
+                    <td>
+                      <RemoveButton />
+                    </td>
+                  </tr>
                 </tbody>
-              </TableItemBen>
+              </TableRegistry>
 
               <TableRegistry>
                 <tbody>
@@ -156,20 +119,22 @@ storiesOf('Chaingear_pages', module).add('create_db', () => {
                         /*
                                                                                        ref='benAddress'
                                             */
-                        placeholder="Address"
+                        placeholder="Name"
                       />
                     </td>
                     <td>
-                      <WideInput
-                        /*
-                                                                                       ref='benAddress'
-                                            */
-                        placeholder="Stake"
-                      />
+                      <WideSelect
+
+                      /*
+                                                                        ref='databaseVersion'
+                                    */
+                      >
+                        <option value="">Type</option>
+                        <option value="V1">V1 (Basic Database)</option>
+                      </WideSelect>
                     </td>
                     <td>
-                      <span>0</span>
-                      <span>%</span>
+                      <Checkbox>unique</Checkbox>
                     </td>
                     <td>
                       <AddButton
@@ -181,15 +146,43 @@ storiesOf('Chaingear_pages', module).add('create_db', () => {
                   </tr>
                 </tbody>
               </TableRegistry>
+              {/* 
+              <Table>
+                <TableAddRow>
+                  <TableAddItem>
+                    <WideInput
+                 
+                      placeholder="Address"
+                    />
+                  </TableAddItem>
+                  <TableAddItem>
+                    <WideInput
+                  
+                      placeholder="Stake"
+                    />
+                  </TableAddItem>
+                  <TableAddItem>
+                    <span>0</span>
+                    <span>%</span>
+                  </TableAddItem>
+                  <TableAddItem>
+                    <AddButton
+                    
+                    />
+                  </TableAddItem>
+                </TableAddRow>
+              </Table> */}
             </FieldsTable>
-          </Panel>
+          </PanelRecord>
         </SideBar>
 
         <Content>
           <Label color="#3fb990">Database code</Label>
           <DarkPanel>
-            <Code>${code}</Code>
+            <Code>{code}</Code>
           </DarkPanel>
+            
+          
           {type === 'error' && message && <ErrorMessage>{message}</ErrorMessage>}
         </Content>
       </ContainerRegister>
@@ -282,4 +275,5 @@ contract Coin {
   function queryBalance(address addr) constant returns (uint balance) {
       return balances[addr];
   }
-}`;
+}
+    `;

@@ -5,25 +5,29 @@
 }
 
 .container2 {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-    box-sizing: border-box;
+    box-sizing: border-box; */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }
 
 .sideBar {
-    width: 100%;
+    width: 50%;
+    padding-right: 20px;
 }
 
 .content {
-    width: 100%;
+    width: 50%;
 }
-
+/* ---------- */
 .fieldsTable {
     width: 100%;
     table-layout: fixed;
     font-size: 14px;
-    padding: 30px;
+    padding: 20px 0; 
     padding-top: 20px;
 }
 
@@ -35,13 +39,13 @@
 .fieldsTable input {
     width: 100%;
 }
-
+/* ---------- */
 .fieldsTable tbody {
-    border: 1px solid #dedede;
+    /* border: 1px solid #dedede; */
 }
-
+/* ----- */
 .fieldsTable td {
-    padding: 10px 10px;
+    /* padding: 10px 10px; */
 }
 .fieldsTable th {
     padding: 5px 10px;
@@ -58,6 +62,16 @@
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.14);
     margin-bottom: 20px;
 }
+
+/* ------------- */
+.PanelRecord {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.14);
+    /* margin-bottom: 20px; */
+    min-height: 403px;
+}
+/* ---------- */
 
 .panelTitle {
     padding: 30px;
@@ -161,8 +175,8 @@
     font-size: 70%;
     cursor: pointer;
     background: url(./shape.svg) no-repeat center;
-    padding-left: 20px;
-    padding-top: 20px;
+    padding-left: 30px;
+    padding-top: 30px;
     height: 14px;
     width: 14px;
 }
