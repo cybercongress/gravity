@@ -33,7 +33,7 @@ import { Description } from '../newregistry/Description/Description';
 import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
 import { ProgressBar } from '../newregistry/ProgressBar/ProgressBar';
 import CircleLable from '../newregistry/ProgressBar/CricleLable';
-import { TableRegistry,TableItemBen, TableRow, TableItem, TableAddRow, TableAddItem } from '../Table/Table';
+import { TableRegistry, TableItemBen, TableRow, TableItem, TableAddRow, TableAddItem } from '../Table/Table';
 
 storiesOf('Chaingear_pages', module).add('create_db', () => {
   const contractName = 'contract name';
@@ -127,7 +127,6 @@ storiesOf('Chaingear_pages', module).add('create_db', () => {
             </ParamRow>
           </Panel>
           <Panel title="Beneficiaries (Optional)" noPadding>
-            <FieldsTable>
               {/* <TableRow>
               <TableItem></TableItem>
             </TableRow> */}
@@ -181,7 +180,6 @@ storiesOf('Chaingear_pages', module).add('create_db', () => {
                   </tr>
                 </tbody>
               </TableRegistry>
-            </FieldsTable>
           </Panel>
         </SideBar>
 

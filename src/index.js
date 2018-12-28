@@ -27,7 +27,7 @@ import { BenContainer, BenPieChart, BenList, Ben } from './components/Beneficiar
 import {DarkPanel} from './components/newregistry/DarkPanel/DarkPanel';
 import {ProgressBar} from './components/newregistry/ProgressBar/ProgressBar';
 import CircleLable from './components/newregistry/ProgressBar/CricleLable';
-import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry } from './components/Table/Table';
+import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry, TableItemBen } from './components/Table/Table';
 import { Checkbox } from './components/Checkbox/index';
 import { AddNewRecordButton } from './components/Button/button';
 import FormField from './components/FormField/FormFild';
@@ -85,7 +85,7 @@ export {
     Content, ContainerRegister, SideBar,
     FieldsTable,
     Panel,
-    PanelRecords,
+    //PanelRecords,
     Label,
     CreateButton,
     Control,
@@ -104,7 +104,6 @@ export {
     Description,
     Checkbox,
     AddNewRecordButton,
-    TableRegistry,
     MenuPopupDeletePencilIcon,
 
 
@@ -123,7 +122,7 @@ export {
 
     ProgressBar, CircleLable,
 
-    Table, HomeTable, TableRow, TableItem, TableAddRow,
+    Table, HomeTable, TableRow, TableItem, TableAddRow, TableItemBen, TableRegistry,
 
     ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
     FormField,
