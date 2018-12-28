@@ -243,7 +243,7 @@ storiesOf('Chaingear_pages', module).add('registry', () => {
       </Section>
 
       <Section>
-        <SectionContent title="Overview" grow={3}>
+        <SectionContent title="Overview" style={{ width: '70%' }} grow={3}>
           <FormField
             label="Description"
             value="{description}"
@@ -293,11 +293,11 @@ storiesOf('Chaingear_pages', module).add('registry', () => {
             //     {ipfsHash}
             //   </a>
             // }
-            value="ipfsGateway"
+            value="QmdkrMcmKBWsg5K2senjLCFYLBxbqgamNF8d8ZC8xn1BHt"
           />
         </SectionContent>
 
-        <SectionContent title="Beneficiaries" grow={0} style={{ width: '25%' }}>
+        <SectionContent title="Beneficiaries" grow={0} style={{ width: '30%' }}>
           <Centred>
             <BenContainer>
               <BenPieChart bens={beneficiaries} calculateBensShares={calculateBensShares} />

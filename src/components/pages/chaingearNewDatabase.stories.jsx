@@ -50,26 +50,30 @@ storiesOf('Chaingear_pages', module).add('create_db', () => {
       share: 100
     },
     {
-      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
+      address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
       stake: 1,
       share: 100
     },
     {
-      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
+      address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
       stake: 1,
       share: 100
     },
     {
-      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
+      address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
       stake: 1,
       share: 100
     },
     {
-      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
+      address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
       stake: 1,
       share: 100
     },
-
+    {
+      address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
+      stake: 1,
+      share: 100
+    },
   ];
   const databaseId = null;
 

@@ -133,16 +133,16 @@
 
 .TableRegistry td:last-child,
 .TableRegistry th:last-child {
-    padding-right: 30px;
+    padding-right: 0px;
 }
 
 /* ---------------- */
 
 .TableItemBen tbody{
     display: flex;
-    overflow: auto;
+    /* overflow: auto; */
     flex-flow: column;
-    height: 100px;
+    /* height: 100px; */
     border: none;
 }
 
@@ -172,12 +172,15 @@
 }
 
 .TableItemBen tr{
-    height: 56px;
+    height: 30px;
     display: flex;
     width: 100%;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
+.TableItemBen tr:first-child{
+    margin-top: 20px;
+}
 
 .TableItemBen td:first-child,
 .TableItemBen th:first-child {
