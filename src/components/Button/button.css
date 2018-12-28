@@ -13,3 +13,12 @@
   font-family: Play;
   font-size: 14px;
 }
+
+.BttnIcon {
+  height: 24px;
+  width: 24px;
+}
+
+.BttnIconAdd {
+  background: url(./add.svg) no-repeat center center;
+}
