@@ -37,14 +37,14 @@ import {
   CircleLable,
   PageTitle,
   AddNewRecordButton,
-  TableRegistry
+  TableRegistry,
+  FormField,
 } from '../..';
 
 import { TableRecords } from '../TableRecords/TableRecords';
 import { DbMenuPoints } from '../DbMenuPoints/DbMenuPoints';
 import { DatabaseItemsContainer } from '../DatabaseTable/DatabaseItemsContainer';
 import { InfoButton } from '../DatabaseItem/index';
-import FormField from '../FormField/FormFild';
 import { calculateBensShares } from '../utils/utils';
 
 storiesOf('Chaingear_pages', module).add('registry', () => {
@@ -211,10 +211,10 @@ storiesOf('Chaingear_pages', module).add('registry', () => {
               <span>{funded} ETH</span>
 
               {/* {isOwner && !isDbPaused && (
-                <ValueInput 
-                  // onInter={this.claimDatabase} 
-                  buttonLable="claim funds" 
-                  color="second" 
+                <ValueInput
+                  // onInter={this.claimDatabase}
+                  buttonLable="claim funds"
+                  color="second"
                 />
               )} */}
             </FundContainer>

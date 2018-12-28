@@ -31,7 +31,7 @@ class FormField extends React.Component {
         if (children) {
             onUpdate();
         } else {
-            onUpdate(this.refs.input.value);
+            onUpdate(this.inputRef.value);
         }
     }
 
@@ -55,7 +55,7 @@ class FormField extends React.Component {
                         <span>
                             {value}
                             {icon}
-                            
+
                             <span style={ { marginLeft: 5 } }>{valueType}</span>
                         </span>
                     ) : (
@@ -65,7 +65,7 @@ class FormField extends React.Component {
                                 {children}
                             </span>
                         ) : (
-                            <input ref='input' defaultValue={ value } />
+                            <input ref={node => this.inputRef = node} defaultValue={ value } />
                         )}
                         </span>
                     )}
