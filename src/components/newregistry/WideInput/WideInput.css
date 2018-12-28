@@ -23,20 +23,18 @@
 }
 
 .inutText {
-/*  display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;*/
-  display: inline-block;
-  position: relative;
+  align-items: center;
 }
 
 .textError{
   position: absolute;
   color: var(--color-error);
+  padding-top: 30px;
   display: block;
   font-family: Play;
   font-size: 12px;
-  left: 40%;
 }
 
 .textErrorDisplayNone{
