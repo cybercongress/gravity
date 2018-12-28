@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { LinkHash, WideInput } from '../..';
+import { LinkHash } from '../..';
 import {
   ContentLine,
   ContentLineTextInput,
@@ -23,7 +23,7 @@ storiesOf('Popup', module)
         <ContentLineFund>
           <LineTitle>Amount:</LineTitle>
           <LineControl>
-            <WideInput />
+            <ContentInput />
           </LineControl>
         </ContentLineFund>
       </PopupContent>
@@ -180,10 +180,7 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-<<<<<<< HEAD
         <PopupButton type="cancel">Confirm</PopupButton>
-=======
->>>>>>> fix spelling
         <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
@@ -193,10 +190,7 @@ storiesOf('Popup', module)
     <Popup type="delete" open="claimFundOpen">
       <PopupTitle>Delete record</PopupTitle>
       <PopupFooter>
-<<<<<<< HEAD
         <PopupButton type="cancel">Confirm</PopupButton>
-=======
->>>>>>> fix spelling
         <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>
@@ -244,10 +238,7 @@ storiesOf('Popup', module)
         </ContentLineTextInput>
       </PopupContent>
       <PopupFooter>
-<<<<<<< HEAD
         <PopupButton type="cancel">Confirm</PopupButton>
-=======
->>>>>>> fix spelling
         <PopupButton type="reject">Reject</PopupButton>
       </PopupFooter>
     </Popup>

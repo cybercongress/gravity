@@ -17,7 +17,6 @@ export const PopupContent = ({ children }) => <div className={styles.popupConten
 
 export const PopupFooter = ({ children }) => <div className={styles.popupFooter}>{children}</div>;
 
-<<<<<<< HEAD
 
 export const PopupButton = ({ children, ...props }) => (
   <button
@@ -26,7 +25,6 @@ export const PopupButton = ({ children, ...props }) => (
       [styles.PopupButtonCancel]: props.type === 'cancel',
       [styles.PopupButtonConfirm]: props.type === 'confirm',
       [styles.PopupButtonReject]: props.type === 'reject'
-=======
     })}
   >
     {children}
