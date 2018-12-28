@@ -31,6 +31,7 @@ import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry, Tabl
 import { Checkbox } from './components/Checkbox/index';
 import { AddNewRecordButton } from './components/Button/button';
 import FormField from './components/FormField/FormFild';
+import ValueInput from  './components/ValueInput';
 import {
 ContentLine,
 ContentLineTextInput,
@@ -125,5 +126,5 @@ export {
     Table, HomeTable, TableRow, TableItem, TableAddRow, TableItemBen, TableRegistry,
 
     ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
-    FormField,
+    FormField, ValueInput,
 }
