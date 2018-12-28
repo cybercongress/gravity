@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { LinkHash } from '../..';
+import { LinkHash, WideInput } from '../..';
 import {
   ContentLine,
   ContentLineTextInput,
@@ -23,7 +23,7 @@ storiesOf('Popup', module)
         <ContentLineFund>
           <LineTitle>Amount:</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineFund>
       </PopupContent>
