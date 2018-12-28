@@ -15,17 +15,17 @@ import {
 import { Container, Text, Link as ActionLink } from './components/CallToAction';
 import { LinkHash } from './components/LinkHash';
 import { Message } from './components/Message'
-import { BlockRow } from "./components/BlockRow/BlockRow";
-import { ParamRow } from "./components/newregistry/ParamRow/ParamRow";
-import { WideInput,  WideSelect } from "./components/newregistry/WideInput/WideInput";
-import { Description } from "./components/newregistry/Description/Description";
+import { BlockRow } from './components/BlockRow/BlockRow';
+import { ParamRow } from './components/newregistry/ParamRow/ParamRow';
+import { WideInput, WideSelect } from './components/newregistry/WideInput/WideInput';
+import { Description } from './components/newregistry/Description/Description';
 import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
-import { DbMenu } from "./components/DbMenu/DbMenu";
+import { DbMenu } from './components/DbMenu/DbMenu';
 import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon,MenuPopupDeletePencilIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
-import { Popup, PopupContent, PopupFooter, PopupTitle } from "./components/Popup/Popup";
-import { BenContainer,PopupButton,  BenPieChart, BenList, Ben } from "./components/Beneficiary/Ben";
-import {DarkPanel} from "./components/newregistry/DarkPanel/DarkPanel";
-import {ProgressBar} from "./components/newregistry/ProgressBar/ProgressBar";
+import { Popup, PopupContent, PopupFooter, PopupTitle, PopupButton } from './components/Popup/Popup';
+import { BenContainer, BenPieChart, BenList, Ben } from './components/Beneficiary/Ben';
+import {DarkPanel} from './components/newregistry/DarkPanel/DarkPanel';
+import {ProgressBar} from './components/newregistry/ProgressBar/ProgressBar';
 import CircleLable from './components/newregistry/ProgressBar/CricleLable';
 import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry } from './components/Table/Table';
 import { Checkbox } from './components/Checkbox/index';

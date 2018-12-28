@@ -1,11 +1,11 @@
-:root{
-  /* color btn and text */
-  /* color cansel */
-  --color-btn-cansel: #ffffff;
-  --color-text-cansel: #979797;
-/* color confirm */
-  --color-btn-confirm: #3fb990;
-  --color-text-confirm:#ffffff;
+:root {
+    /* color btn and text */
+    /* color Cancel */
+    --color-btn-cancel: #ffffff;
+    --color-text-cancel: #979797;
+    /* color confirm */
+    --color-btn-confirm: #3fb990;
+    --color-text-confirm: #ffffff;
 }
 
 .popup {
@@ -72,45 +72,93 @@
     padding: 20px 0;
 }
 
-.PopupButton{
-  width: 105px;
-  height: 36px;
-  border-radius: 3px;
-  font-size: 1em;
-  font-family: Play;
-  border: none;
-  text-transform: uppercase;
-  margin: 0 10px;
+.PopupButton {
+    width: 105px;
+    height: 36px;
+    border-radius: 3px;
+    font-size: 1em;
+    font-family: Play;
+    border: none;
+    text-transform: uppercase;
+    margin: 0 10px;
 }
 
 
-.PopupButtunConfirm{
-  background-color: var(--color-btn-confirm);
-  color: var(--color-text-confirm);
-  box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
+.PopupButtonConfirm {
+    background-color: var(--color-btn-confirm);
+    color: var(--color-text-confirm);
+    box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.PopupButtunConfirm:hover{
+.PopupButtonConfirm:hover {
     opacity: 0.8;
-  }
-
-.PopupButtunCansel{
-  background-color: var(--color-btn-cansel);
-  color: var(--color-text-cansel);
-  box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.15);
-  border: 1px solid #dedede;
 }
 
-.PopupButtunCansel:hover{
-    background-color: rgba(0, 0, 0, 0.07);
-  }
+.PopupButtonCancel {
+    background-color: var(--color-btn-cancel);
+    color: var(--color-text-cancel);
+    box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.15);
+    border: 1px solid #dedede;
+}
 
-.PopupButtunReject{
+.PopupButtonCancel:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.PopupButtonReject {
     background-color: #d32f2f;
     color: var(--color-text-confirm);
     box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.PopupButtunReject:hover{
+.PopupButtonReject:hover {
     opacity: 0.8;
+}
+
+.PopupBar {
+    width: 230px;
+    height: 100px;
+    border-radius: 3px;
+    /* border: 1px solid #979797; */
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    padding: 16px;
+    padding-left: 26px;
+    position: relative;
+}
+
+.PopupBar::before {
+    content: '';
+    width: 17.1px;
+    height: 17.1px;
+    transform: rotate(45deg);
+    background-color: #ffffff;
+    position: absolute;
+    top: 91px;
+    right: 104px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+.PopupBarFooter {
+    display: flex;
+    justify-content: flex-end;
+    /* padding: 10px 0; */
+}
+
+.PopupBarButton {
+    width: 135px;
+    height: 31px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: Play;
+    border: none;
+    text-transform: uppercase;
+    /* margin: 0 10px; */
+    color: #b00020;
+    background-color: #ffffff;
+}
+
+.PopupBarButton:hover {
+    background-color: rgba(0, 0, 0, 0.08);
 }
