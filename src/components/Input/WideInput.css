@@ -10,6 +10,8 @@
   /* padding-left: 15px; */
   padding-left: 10px;
   box-sizing: border-box;
+  font-size: 12px;
+    font-family: Play;
 }
 
 .wideInputError{
@@ -20,21 +22,30 @@
   background-color: white;
   padding-left: 15px;
   box-sizing: border-box;
+  font-size: 12px;
+    font-family: Play;
 }
 
 .inutText {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
 }
 
 .textError{
   position: absolute;
   color: var(--color-error);
-  padding-top: 30px;
+  /* padding-top: 30px; */
   display: block;
   font-family: Play;
   font-size: 12px;
+  left: 40%;
+  /* box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3); */
 }
 
 .textErrorDisplayNone{

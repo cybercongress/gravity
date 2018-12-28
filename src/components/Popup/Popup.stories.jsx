@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { LinkHash } from '../..';
+import { LinkHash, WideInput } from '../..';
 import {
   ContentLine,
   ContentLineTextInput,
@@ -23,7 +23,7 @@ storiesOf('Popup', module)
         <ContentLineFund>
           <LineTitle>Amount:</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineFund>
       </PopupContent>
@@ -91,19 +91,19 @@ storiesOf('Popup', module)
         <ContentLineTextInput>
           <LineTitle>Name:</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
         <ContentLineTextInput>
           <LineTitle>Address:</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
         <ContentLineTextInput>
           <LineTitle>Developer:</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
       </PopupContent>
@@ -127,7 +127,7 @@ storiesOf('Popup', module)
         <ContentLineTextInput>
           <LineTitle>Claim amount:</LineTitle>
           <LineControl>
-            <ContentInput placeholder="0.00 ETH" />
+            <WideInput placeholder="0.00 ETH" />
           </LineControl>
         </ContentLineTextInput>
       </PopupContent>
@@ -151,7 +151,7 @@ storiesOf('Popup', module)
         <ContentLineTextInput>
           <LineTitle>New owner:</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
       </PopupContent>
@@ -175,7 +175,7 @@ storiesOf('Popup', module)
         <ContentLineTextInput>
           <LineTitle>New owner:</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
       </PopupContent>
@@ -203,37 +203,37 @@ storiesOf('Popup', module)
         <ContentLineTextInput>
           <LineTitle>Header 1</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
         <ContentLineTextInput>
           <LineTitle>Header 2</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
         <ContentLineTextInput>
           <LineTitle>Header 3</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
         <ContentLineTextInput>
           <LineTitle>Header 4</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
         <ContentLineTextInput>
           <LineTitle>Header 5</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
         <ContentLineTextInput>
           <LineTitle>Header 6</LineTitle>
           <LineControl>
-            <ContentInput />
+            <WideInput />
           </LineControl>
         </ContentLineTextInput>
       </PopupContent>

@@ -39,6 +39,8 @@ import {
   AddNewRecordButton,
   TableRegistry,
   FormField,
+  WideSelect,
+  WideInput,
 } from '../..';
 
 import { TableRecords } from '../TableRecords/TableRecords';

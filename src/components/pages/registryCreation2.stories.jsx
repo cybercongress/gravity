@@ -14,7 +14,11 @@ import {
   AddButton,
   Code,
   HomeTable,
-  Checkbox
+  Checkbox,
+  WideSelect,
+  WideInput,
+  CircleLable,
+  ProgressBar,
 } from '../..';
 import {
   ContainerRegister,
@@ -31,11 +35,8 @@ import {
 } from '../newregistry';
 import { RightContainer } from '../..';
 import { ParamRow } from '../newregistry/ParamRow/ParamRow';
-import { WideSelect, WideInput } from '../newregistry/WideInput/WideInput';
 import { Description } from '../newregistry/Description/Description';
 import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
-import { ProgressBar } from '../newregistry/ProgressBar/ProgressBar';
-import CircleLable from '../newregistry/ProgressBar/CricleLable';
 import { TableRegistry, TableAddRow, TableAddItem } from '../Table/Table';
 
 storiesOf('Chaingear_pages', module).add('registryCreation2.stories', () => {
@@ -44,27 +45,12 @@ storiesOf('Chaingear_pages', module).add('registryCreation2.stories', () => {
   const inProgress = false;
   const contracts = [];
   const type = '';
-  const beneficiaries = [
-    {
-      address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
-      stake: 1,
-      share: 100
-    },
-    {
-      address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
-      stake: 1,
-      share: 100
-    },
-  ];
+ 
   const databaseId = null;
 
-  const DatabaseSource = 'Database source code';
-
-  const exist = false;
-  const benCount = 1;
   const canCreate = true;
 
-  const onContractNameChange = undefined;
+
 
   return (
     <MainContainer>

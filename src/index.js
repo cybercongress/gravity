@@ -17,7 +17,7 @@ import { LinkHash } from './components/LinkHash';
 import { Message } from './components/Message'
 import { BlockRow } from './components/BlockRow/BlockRow';
 import { ParamRow } from './components/newregistry/ParamRow/ParamRow';
-import { WideInput, WideSelect } from './components/newregistry/WideInput/WideInput';
+import { WideInput, WideSelect } from './components/Input/WideInput';
 import { Description } from './components/newregistry/Description/Description';
 import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
 import { DbMenu } from './components/DbMenu/DbMenu';
@@ -25,8 +25,8 @@ import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon,MenuPopupD
 import { Popup, PopupContent, PopupFooter, PopupTitle, PopupButton } from './components/Popup/Popup';
 import { BenContainer, BenPieChart, BenList, Ben } from './components/Beneficiary/Ben';
 import {DarkPanel} from './components/newregistry/DarkPanel/DarkPanel';
-import {ProgressBar} from './components/newregistry/ProgressBar/ProgressBar';
-import CircleLable from './components/newregistry/ProgressBar/CricleLable';
+import {ProgressBar} from './components/ProgressBar/ProgressBar';
+import CircleLable from './components/ProgressBar/CricleLable';
 import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry } from './components/Table/Table';
 import { Checkbox } from './components/Checkbox/index';
 import { AddNewRecordButton } from './components/Button/button';

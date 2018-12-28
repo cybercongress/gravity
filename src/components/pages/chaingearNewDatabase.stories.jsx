@@ -12,7 +12,11 @@ import {
   MainContainer,
   LinkHash,
   AddButton,
-  Code
+  Code,
+  WideSelect,
+  WideInput,
+  CircleLable,
+  ProgressBar
 } from '../..';
 import {
   ContainerRegister,
@@ -28,11 +32,8 @@ import {
 } from '../newregistry';
 import { RightContainer } from '../..';
 import { ParamRow } from '../newregistry/ParamRow/ParamRow';
-import { WideSelect, WideInput } from '../newregistry/WideInput/WideInput';
 import { Description } from '../newregistry/Description/Description';
 import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
-import { ProgressBar } from '../newregistry/ProgressBar/ProgressBar';
-import CircleLable from '../newregistry/ProgressBar/CricleLable';
 import { TableRegistry,TableItemBen, TableRow, TableItem, TableAddRow, TableAddItem } from '../Table/Table';
 
 storiesOf('Chaingear_pages', module).add('create_db', () => {
@@ -105,6 +106,7 @@ storiesOf('Chaingear_pages', module).add('create_db', () => {
                                     */
                 defaultValue=""
                 placeholder="Symbol"
+               
               />
             </ParamRow>
             <ParamRow>
