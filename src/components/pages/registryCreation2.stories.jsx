@@ -39,7 +39,7 @@ import { Description } from '../newregistry/Description/Description';
 import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
 import { TableRegistry, TableAddRow, TableAddItem } from '../Table/Table';
 
-storiesOf('Chaingear_pages', module).add('registryCreation2.stories', () => {
+storiesOf('pages/create_shema', module).add('registryCreation2.stories', () => {
   const contractName = 'contract name';
   const message = 'message';
   const inProgress = false;

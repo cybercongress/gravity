@@ -37,7 +37,7 @@ import { DarkPanel } from '../newregistry/DarkPanel/DarkPanel';
 import { TableRegistry, TableItemBen, TableRow, TableItem, TableAddRow, TableAddItem } from '../Table/Table';
 
 
-storiesOf('Chaingear_pages', module).add('create_db', () => {
+storiesOf('pages/create_database', module).add('create_db', () => {
   const contractName = 'contract name';
   const message = 'message';
   const inProgress = false;

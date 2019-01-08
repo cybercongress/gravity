@@ -14,7 +14,7 @@ import {
 } from '../PopupContent/PopupContent';
 import { Popup, PopupButton, PopupBarButtun, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
 
-storiesOf('Popup', module)
+storiesOf('commponents/Popup', module)
   .addDecorator(centered)
   .add('FundRegistry', () => (
     <Popup open="claimFundOpen">

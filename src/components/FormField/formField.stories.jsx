@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
 import FormField from './FormFild';
 
-storiesOf('FormField', module)
+storiesOf('commponents/FormField', module)
   .addDecorator(centered)
   .add('FormField', () => (
     <div>

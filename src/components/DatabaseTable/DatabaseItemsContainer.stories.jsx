@@ -18,7 +18,7 @@ import {
 
 import { TableRecords } from '../TableRecords/TableRecords';
 
-storiesOf('DatabaseItemsContainer', module)
+storiesOf('commponents/DatabaseItemsContainer', module)
   .addDecorator(centered)
   .add('DatabaseItemsContainer', () => (
     <DatabaseItemsContainer>

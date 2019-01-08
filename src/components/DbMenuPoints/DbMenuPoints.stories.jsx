@@ -16,7 +16,7 @@ import {
 } from '../..';
 import { DbMenuPoints } from './DbMenuPoints';
 
-storiesOf('DbMenuPoints', module)
+storiesOf('commponents/DbMenuPoints', module)
   .addDecorator(centered)
   .add('DbMenuPoints', () => (
     <DbMenuPoints>

@@ -49,7 +49,7 @@ import { DatabaseItemsContainer } from '../DatabaseTable/DatabaseItemsContainer'
 import { InfoButton } from '../DatabaseItem/index';
 import { calculateBensShares } from '../utils/utils';
 
-storiesOf('Chaingear_pages', module).add('registry', () => {
+storiesOf('pages/view_registry', module).add('registry', () => {
   const Permission = {
     OnlyAdmin: 0,
     Whitelist: 1,

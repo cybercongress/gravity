@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import CircleLable from './CricleLable';
 import { ProgressBar } from './ProgressBar';
 
-storiesOf('Progressbar', module)
+storiesOf('commponents/Progressbar', module)
   .addDecorator(centered)
   .add('ProgressBarV2', () => (
     <ProgressBar>

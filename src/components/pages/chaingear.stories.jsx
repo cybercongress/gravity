@@ -10,7 +10,7 @@ function formatDate() {
     return '20/11/2018 03:01'
 }
 
-storiesOf('Chaingear', module)
+storiesOf('pages/home', module)
     .add('not items', () => {
         const registries = [
             // {
