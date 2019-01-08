@@ -56,7 +56,7 @@ class FormField extends React.Component {
                             {value}
                             {icon}
 
-                            <span style={ { marginLeft: 5 } }>{valueType}</span>
+                            {/* <span style={ { marginLeft: 5 } }>{valueType}</span> */}
                         </span>
                     ) : (
                         <span>
