@@ -104,7 +104,7 @@ const Pages = ({ databaseId, message }) => (
       </PanelRecord>
     </SideBar>
 
-    <Content title="Database code" color="#3fb990">
+    <Content title="Database code" >
         <Code>{code}</Code>
 
       {type === 'error' && message && <ErrorMessage>{message}</ErrorMessage>}

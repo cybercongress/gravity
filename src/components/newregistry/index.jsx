@@ -33,10 +33,10 @@ export const CreateButton = ({ children, ...props }) => (
   </button>
 );
 
-export const SideBar = ({ children, title, color, ...props }) => (
+export const SideBar = ({ children, title, ...props }) => (
   <div {...props} className={styles.sideBar}>
     {title && (
-      <div className={styles.label} style={{ background: color }}>
+      <div className={styles.label} style={{ background: '#4a90e2' }}>
         {title}
       </div>
     )}
@@ -44,10 +44,10 @@ export const SideBar = ({ children, title, color, ...props }) => (
   </div>
 );
 
-export const Content = ({ children, title, color, ...props }) => (
+export const Content = ({ children, title, ...props }) => (
     <div {...props} className={styles.content}>
     {title && (
-      <div className={styles.label} style={{ background: color }}>
+      <div className={styles.label} style={{ background: '#3fb990' }}>
         {title}
       </div>
     )}

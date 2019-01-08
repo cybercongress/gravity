@@ -167,7 +167,7 @@ const Pages = ({ databaseId, message }) => (
         </Panel>
     </SideBar>
 
-      <Content title="Database code" color="#3fb990">
+      <Content title="Database code">
         
           <Code>{code}</Code>
         
