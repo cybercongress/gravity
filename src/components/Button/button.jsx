@@ -14,3 +14,20 @@ export const ButtonIcon = ({children, ...props}) => (
       {children}
   </i>
 );
+
+export const Button = ({ children, to, color, ...props }) => {
+    if (to) {
+        return (<a className={styles.Button}>{children}</a>);
+    }
+    return (
+      <button {...props}
+        className={cx(styles.PopupButton, {
+            [styles.PopupButtonCancel]: props.color === 'cancel',
+            [styles.PopupButtonConfirm]: props.color === 'confirm',
+            [styles.PopupButtonReject]: props.color === 'reject',
+      })}>
+        <span>{children}</span>
+        {icon}
+    </button>
+);
+};
