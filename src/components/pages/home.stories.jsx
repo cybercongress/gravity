@@ -1,13 +1,20 @@
 import React from 'react';
-import {storiesOf} from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import {
-    Badge, Container, FooterButton, Section, SectionContent, ActionLink,Text,
+    Badge,
+    Container,
+    FooterButton,
+    Section,
+    SectionContent,
+    ActionLink,
+    Text,
     MainContainer,
-    LinkHash, HomeTable
-} from "../..";
+    LinkHash,
+    HomeTable,
+} from '../..';
 
 function formatDate() {
-    return '20/11/2018 03:01'
+    return '20/11/2018 03:01';
 }
 
 storiesOf('pages/home', module)
@@ -27,61 +34,44 @@ storiesOf('pages/home', module)
         const rows = registries.map(register => (
             <tr key={ register.name }>
                 <td>
-                    <a href={'/'}>
-                        {register.name}
-                    </a>
+                    <a href='/'>{register.name}</a>
                 </td>
-                <td>
-                    {register.symbol}
-                </td>
-                <td>
-                    {register.supply}
-                </td>
-                <td>
-                    {register.contractVersion}
-                </td>
+                <td>{register.symbol}</td>
+                <td>{register.supply}</td>
+                <td>{register.contractVersion}</td>
                 <td>
                     <LinkHash value={ register.admin } />
                 </td>
-                <td>
-                    {formatDate(register.registrationTimestamp)}
-                </td>
+                <td>{formatDate(register.registrationTimestamp)}</td>
             </tr>
         ));
 
-        const myRows = registries.filter(x => x.admin === account).map(register => (
-            <tr key={ register.name }>
-                <td>
-                    <a href={'/'}>
-                        {register.name}
-                    </a>
-                </td>
-                <td>
-                    {register.symbol}
-                </td>
-                <td>
-                    {register.supply.toNumber()}
-                </td>
-                <td>
-                    {register.contractVersion}
-                </td>
-                <td>
-                    <LinkHash value={ register.admin } />
-                </td>
-                <td>
-                    {formatDate(register.registrationTimestamp)}
-                </td>
-            </tr>
-        ));
+        const myRows = registries
+            .filter(x => x.admin === account)
+            .map(register => (
+                <tr key={ register.name }>
+                    <td>
+                        <a href='/'>{register.name}</a>
+                    </td>
+                    <td>{register.symbol}</td>
+                    <td>{register.supply.toNumber()}</td>
+                    <td>{register.contractVersion}</td>
+                    <td>
+                        <LinkHash value={ register.admin } />
+                    </td>
+                    <td>{formatDate(register.registrationTimestamp)}</td>
+                </tr>
+            ));
 
         let content = (
             <div>
-                <Section title={ (
-                    <span>
-                        <span>My registries</span>
-                        <Badge>{myRows.length}</Badge>
-                    </span>
-                ) }
+                <Section
+                  title={ (
+                      <span>
+                          <span>My registries</span>
+                          <Badge>{myRows.length}</Badge>
+                      </span>
+) }
                 >
                     <SectionContent>
                         <Container>
@@ -96,28 +86,27 @@ storiesOf('pages/home', module)
         if (myRows.length > 0) {
             content = (
                 <div>
-                    <Section title={ (
-                        <span>
-My registries
-                            <Badge>{myRows.length}</Badge>
-                        </span>
-                    ) }
+                    <Section
+                      title={ (
+                          <span>
+                                My registries
+                              <Badge>{myRows.length}</Badge>
+                          </span>
+) }
                     >
                         <SectionContent>
                             <HomeTable>
                                 <thead>
-                                <tr>
-                                    <th>NAME</th>
-                                    <th>SYMBOL</th>
-                                    <th>ENTRIES</th>
-                                    <th>VERSION</th>
-                                    <th>ADMIN</th>
-                                    <th>CREATED</th>
-                                </tr>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>SYMBOL</th>
+                                        <th>ENTRIES</th>
+                                        <th>VERSION</th>
+                                        <th>ADMIN</th>
+                                        <th>CREATED</th>
+                                    </tr>
                                 </thead>
-                                <tbody>
-                                {myRows}
-                                </tbody>
+                                <tbody>{myRows}</tbody>
                             </HomeTable>
                             <FooterButton to='/new'>create new registry</FooterButton>
                         </SectionContent>
@@ -128,37 +117,34 @@ My registries
 
         return (
             <MainContainer>
-            <div>
                 <div>
-                    {content}
-                </div>
+                    <div>{content}</div>
 
-                <Section title={ (
-                    <span>
-                        <span>chaingear registries</span>
-                        <Badge>{rows.length}</Badge>
-                    </span>
-                ) }
-                >
-                    <SectionContent>
-                        <HomeTable>
-                            <thead>
-                            <tr>
-                                <th>NAME</th>
-                                <th>SYMBOL</th>
-                                <th>ENTRIES</th>
-                                <th>VERSION</th>
-                                <th>ADMIN</th>
-                                <th>CREATED</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {rows}
-                            </tbody>
-                        </HomeTable>
-                    </SectionContent>
-                </Section>
-            </div>
+                    <Section
+                      title={ (
+                          <span>
+                              <span>chaingear registries</span>
+                              <Badge>{rows.length}</Badge>
+                          </span>
+) }
+                    >
+                        <SectionContent>
+                            <HomeTable>
+                                <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>SYMBOL</th>
+                                        <th>ENTRIES</th>
+                                        <th>VERSION</th>
+                                        <th>ADMIN</th>
+                                        <th>CREATED</th>
+                                    </tr>
+                                </thead>
+                                <tbody>{rows}</tbody>
+                            </HomeTable>
+                        </SectionContent>
+                    </Section>
+                </div>
             </MainContainer>
         );
     })
@@ -170,69 +156,52 @@ My registries
                 supply: 2,
                 contractVersion: 'V1',
                 admin: '0x4A2cbCE70E62C913b286011C7eF10050cEF799cF',
-                registrationTimestamp: ''
-            }
+                registrationTimestamp: '',
+            },
         ];
         const account = '0x4A2cbCE70E62C913b286011C7eF10050cEF799cF';
 
         const rows = registries.map(register => (
             <tr key={ register.name }>
                 <td>
-                    <a href={'/'}>
-                        {register.name}
-                    </a>
+                    <a href='/'>{register.name}</a>
                 </td>
-                <td>
-                    {register.symbol}
-                </td>
-                <td>
-                    {register.supply}
-                </td>
-                <td>
-                    {register.contractVersion}
-                </td>
+                <td>{register.symbol}</td>
+                <td>{register.supply}</td>
+                <td>{register.contractVersion}</td>
                 <td>
                     <LinkHash value={ register.admin } />
                 </td>
-                <td>
-                    {formatDate(register.registrationTimestamp)}
-                </td>
+                <td>{formatDate(register.registrationTimestamp)}</td>
             </tr>
         ));
 
-        const myRows = registries.filter(x => x.admin === account).map(register => (
-            <tr key={ register.name }>
-                <td>
-                    <a href={'/'}>
-                        {register.name}
-                    </a>
-                </td>
-                <td>
-                    {register.symbol}
-                </td>
-                <td>
-                    {register.supply}
-                </td>
-                <td>
-                    {register.contractVersion}
-                </td>
-                <td>
-                    <LinkHash value={ register.admin } />
-                </td>
-                <td>
-                    {formatDate(register.registrationTimestamp)}
-                </td>
-            </tr>
-        ));
+        const myRows = registries
+            .filter(x => x.admin === account)
+            .map(register => (
+                <tr key={ register.name }>
+                    <td>
+                        <a href='/'>{register.name}</a>
+                    </td>
+                    <td>{register.symbol}</td>
+                    <td>{register.supply}</td>
+                    <td>{register.contractVersion}</td>
+                    <td>
+                        <LinkHash value={ register.admin } />
+                    </td>
+                    <td>{formatDate(register.registrationTimestamp)}</td>
+                </tr>
+            ));
 
         let content = (
             <div>
-                <Section title={ (
-                    <span>
-                        <span>My registries</span>
-                        <Badge>{myRows.length}</Badge>
-                    </span>
-                ) }
+                <Section
+                  title={ (
+                      <span>
+                          <span>My registries</span>
+                          <Badge>{myRows.length}</Badge>
+                      </span>
+) }
                 >
                     <SectionContent>
                         <Container>
@@ -247,28 +216,27 @@ My registries
         if (myRows.length > 0) {
             content = (
                 <div>
-                    <Section title={ (
-                        <span>
-My registries
-                            <Badge>{myRows.length}</Badge>
-                        </span>
-                    ) }
+                    <Section
+                      title={ (
+                          <span>
+                                My registries
+                              <Badge>{myRows.length}</Badge>
+                          </span>
+) }
                     >
                         <SectionContent>
                             <HomeTable>
                                 <thead>
-                                <tr>
-                                    <th>NAME</th>
-                                    <th>SYMBOL</th>
-                                    <th>ENTRIES</th>
-                                    <th>VERSION</th>
-                                    <th>ADMIN</th>
-                                    <th>CREATED</th>
-                                </tr>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>SYMBOL</th>
+                                        <th>ENTRIES</th>
+                                        <th>VERSION</th>
+                                        <th>ADMIN</th>
+                                        <th>CREATED</th>
+                                    </tr>
                                 </thead>
-                                <tbody>
-                                {myRows}
-                                </tbody>
+                                <tbody>{myRows}</tbody>
                             </HomeTable>
                             <FooterButton to='/new'>create new registry</FooterButton>
                         </SectionContent>
@@ -280,32 +248,29 @@ My registries
         return (
             <MainContainer>
                 <div>
-                    <div>
-                        {content}
-                    </div>
+                    <div>{content}</div>
 
-                    <Section title={ (
-                        <span>
-                        <span>chaingear registries</span>
-                        <Badge>{rows.length}</Badge>
-                    </span>
-                    ) }
+                    <Section
+                      title={ (
+                          <span>
+                              <span>chaingear registries</span>
+                              <Badge>{rows.length}</Badge>
+                          </span>
+) }
                     >
                         <SectionContent>
                             <HomeTable>
                                 <thead>
-                                <tr>
-                                    <th>NAME</th>
-                                    <th>SYMBOL</th>
-                                    <th>ENTRIES</th>
-                                    <th>VERSION</th>
-                                    <th>ADMIN</th>
-                                    <th>CREATED</th>
-                                </tr>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>SYMBOL</th>
+                                        <th>ENTRIES</th>
+                                        <th>VERSION</th>
+                                        <th>ADMIN</th>
+                                        <th>CREATED</th>
+                                    </tr>
                                 </thead>
-                                <tbody>
-                                {rows}
-                                </tbody>
+                                <tbody>{rows}</tbody>
                             </HomeTable>
                         </SectionContent>
                     </Section>
