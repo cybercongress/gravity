@@ -9,6 +9,7 @@
   /* ---- */
   /* height: 91%; */
   margin-top: 20px;
+  overflow: auto;
 }
 
 .ContainerDarkPanel {

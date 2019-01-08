@@ -49,13 +49,13 @@ class Highlight extends React.Component {
     const className = 'solidity';
 
     return (
-        <div className={styles.codeContainer}>
+        
             <pre key='598dhwpx5' className={styles.code}>
                 <code key='d4mz31tt' className={className}>
                 {children}
                 </code>
             </pre>
-        </div>
+       
     );
   }
 }

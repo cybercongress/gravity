@@ -1,26 +1,24 @@
-.databaseHeader {
+
+.FlexContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    padding-bottom: 10px;
     color: #7c7c7c;
     width: 100%;
 }
 
-.databaseHeaderLine {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.FlexContainerLine {
     border-bottom: 1px solid #dedede;
-    padding-bottom: 10px;
 }
 
-.databaseHeaderLeft {
+.FlexContainerLeft {
 
 }
 
-.databaseHeaderRight {
+.FlexContainerRight {
     display: flex;
     flex-direction: row;
-}
-
-.databaseHeaderName {
-    font-size: 30px;
 }
 

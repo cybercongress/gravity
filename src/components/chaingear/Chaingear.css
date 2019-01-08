@@ -201,10 +201,3 @@
     font-size: 14px;
     padding-bottom: 20px;
 }
-
-.rightContainer {
-    display: flex;
-    justify-Content: flex-end;
-    /* ----- */
-    /* margin-top: 10px; */
-}

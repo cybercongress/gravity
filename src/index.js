@@ -19,7 +19,7 @@ import { BlockRow } from './components/BlockRow/BlockRow';
 import { ParamRow } from './components/newregistry/ParamRow/ParamRow';
 import { WideInput, WideSelect } from './components/Input/WideInput';
 import { Description } from './components/newregistry/Description/Description';
-import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
+import { FlexContainerLeft, FlexContainerRight, FlexContainer } from './components/DbHeader/DbHeader'
 import { DbMenu } from './components/DbMenu/DbMenu';
 import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon,MenuPopupDeletePencilIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
 import { Popup, PopupContent, PopupFooter, PopupTitle, PopupButton } from './components/Popup/Popup';
@@ -113,7 +113,7 @@ export {
     BrowserContent,
     BrowserSidebar,
 
-    DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName,
+    FlexContainerLeft, FlexContainerRight, FlexContainer,
     DbMenu,
     MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon,
     Popup, PopupContent, PopupFooter, PopupTitle,

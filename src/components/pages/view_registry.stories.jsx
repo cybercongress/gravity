@@ -13,10 +13,9 @@ import {
   BoxTitle,
   StatusBar,
   DbHeader,
-  DbHeaderLeft,
-  DbHeaderRight,
-  DbHeaderLine,
-  DbHeaderName,
+  FlexContainerLeft,
+  FlexContainerRight,
+  FlexContainer,
   DbMenu,
   MenuPopup,
   MenuPopupItem,
@@ -133,7 +132,6 @@ storiesOf('pages/view_registry', module).add('registry', () => {
           )}
         </div>
       </Section>
-      <DbHeader>
         <PageTitle>{name}</PageTitle>
         <ProgressBar>
           <CircleLable type="complete" number="1" text="Registry initialization" />
@@ -141,10 +139,10 @@ storiesOf('pages/view_registry', module).add('registry', () => {
           <CircleLable number="3" text="Contract code saving" />
         </ProgressBar>
 
-        <DbHeaderLine>
-          <DbHeaderLeft>symbol: {databaseSymbol}</DbHeaderLeft>
+        <FlexContainer line={true}>
+          <FlexContainerLeft>symbol: {databaseSymbol}</FlexContainerLeft>
 
-          <DbHeaderRight>
+          <FlexContainerRight>
             status: {isDbPaused ? 'paused' : 'operational'}
             <DbMenu>
               <MenuPopup>
@@ -180,9 +178,8 @@ storiesOf('pages/view_registry', module).add('registry', () => {
                 )} */}
               </MenuPopup>
             </DbMenu>
-          </DbHeaderRight>
-        </DbHeaderLine>
-      </DbHeader>
+          </FlexContainerRight>
+        </FlexContainer>
       <Section title="General">
         <SectionContent style={{ width: '25%' }}>
           <CentredPanel>
@@ -229,14 +226,6 @@ storiesOf('pages/view_registry', module).add('registry', () => {
 
             <FundContainer>
               <span>{totalFee} ETH</span>
-              {/* {isOwner && !isDbPaused && (
-                <Button
-                  style={{ width: 119 }}
-                  //  onClick={this.claimFee}
-                >
-                  clame fee
-                </Button>
-              )} */}
             </FundContainer>
           </CentredPanel>
         </SectionContent>
@@ -247,7 +236,6 @@ storiesOf('pages/view_registry', module).add('registry', () => {
           <FormField
             label="Description"
             value="{description}"
-            // onUpdate={isOwner && !isDbPaused && this.changeDescription}
             onUpdate="isOwner"
           />
           <FormField label="Tags" value="{tag}" />
@@ -255,32 +243,14 @@ storiesOf('pages/view_registry', module).add('registry', () => {
             label="Record Fee"
             value="{entryCreationFee.toString()}"
             valueType="ETH"
-            // onUpdate={isOwner && isDbPaused && this.changeEntryCreationFee}
             onUpdate="isOwner"
           />
           <FormField
             label="Permissions"
             value="{permissionGroupStr}"
-            // onUpdate={isOwner && isDbPaused && this.onUpdatePermissionGroup}
             onUpdate="isDbPaused"
             icon={<InfoButton />}
           >
-            {/* <select
-              ref={node => {
-                this.permissionGroup = node;
-              }}
-              defaultValue={permissionGroup}
-            >
-              {Object.keys(CreateEntryPermissionGroup).map(n => {
-                const { label } = CreateEntryPermissionGroup[n];
-
-                return (
-                  <option value={n} key={n}>
-                    {label}
-                  </option>
-                );
-              })}
-            </select> */}
           </FormField>
           <FormField label="Entries" value="{rows.length}" />
           <FormField label="Version" value="{contractVersion}" />
@@ -288,11 +258,6 @@ storiesOf('pages/view_registry', module).add('registry', () => {
           <FormField label="Schema address" value="{entryCoreAddress}" />
           <FormField
             label="Abi link"
-            // value={
-            //   <a href={`${ipfsGateway}/ipfs/${ipfsHash}`} target="_blank">
-            //     {ipfsHash}
-            //   </a>
-            // }
             value="QmdkrMcmKBWsg5K2senjLCFYLBxbqgamNF8d8ZC8xn1BHt"
           />
         </SectionContent>
@@ -306,16 +271,15 @@ storiesOf('pages/view_registry', module).add('registry', () => {
         </SectionContent>
       </Section>
 
-      <DbHeader>
-        <DbHeaderLine>
-          <DbHeaderLeft>RECORDS</DbHeaderLeft>
+      
+        <FlexContainer line={true}>
+          <FlexContainerLeft>RECORDS</FlexContainerLeft>
 
-          <DbHeaderRight>
+          <FlexContainerRight>
             <AddNewRecordButton>Add New Record</AddNewRecordButton>
-          </DbHeaderRight>
-        </DbHeaderLine>
-      </DbHeader>
-      {/* <DatabaseList>{rows}</DatabaseList> */}
+          </FlexContainerRight>
+        </FlexContainer>
+      
       <DatabaseItemsContainer>
         <TableRecords>
           <thead>
