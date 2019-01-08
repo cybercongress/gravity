@@ -30,9 +30,9 @@ import {
     PageTitle,
     AddNewRecordButton,
     FormField,
+    TableRecords,
 } from '../..';
 
-import { TableRecords } from '../TableRecords/TableRecords';
 import { DbMenuPoints } from '../DbMenuPoints/DbMenuPoints';
 import { DatabaseItemsContainer } from '../DatabaseTable/DatabaseItemsContainer';
 import { InfoButton } from '../DatabaseItem/index';

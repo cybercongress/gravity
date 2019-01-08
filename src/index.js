@@ -10,7 +10,6 @@ import {
     Button,
     BoxTitle,
     TotalCost,
-    RightContainer
 } from './components/chaingear';
 import { Container, Text, Link as ActionLink } from './components/CallToAction';
 import { LinkHash } from './components/LinkHash';
@@ -32,6 +31,7 @@ import { Checkbox } from './components/Checkbox/index';
 import { AddNewRecordButton } from './components/Button/button';
 import FormField from './components/FormField/FormFild';
 import ValueInput from  './components/ValueInput';
+import { TableRecords } from './components/TableRecords/TableRecords';
 import {
 ContentLine,
 ContentLineTextInput,
@@ -54,7 +54,7 @@ import {
     FieldsTable,
     Panel,
     PanelRecord,
-    Label,
+    //Label,
     CreateButton,
     Control,
     PageTitle,
@@ -82,12 +82,13 @@ export {
     CentredPanel,
     TotalCost,
     Message,
+    TableRecords,
 
     Content, ContainerRegister, SideBar,
     FieldsTable,
     Panel,
     //PanelRecords,
-    Label,
+    //Label,
     CreateButton,
     Control,
     PageTitle,
@@ -97,7 +98,7 @@ export {
     AddField,
     StatusBar,
     Code,
-    RightContainer,
+    //RightContainer,
     BlockRow,
     ParamRow,
     WideInput,
