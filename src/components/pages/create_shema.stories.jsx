@@ -46,8 +46,7 @@ const Pages = ({ databaseId, message }) => (
     <CircleLable number="3" text="Contract code saving" />
   </ProgressBar>
   <ContainerRegister>
-    <SideBar>
-      <Label>Input</Label>
+    <SideBar title="Input">
       <PanelRecord title="Record Structure" noPadding>
         <FieldsTable>
           
@@ -105,11 +104,8 @@ const Pages = ({ databaseId, message }) => (
       </PanelRecord>
     </SideBar>
 
-    <Content>
-      <Label color="#3fb990">Database code</Label>
-      <DarkPanel>
+    <Content title="Database code" color="#3fb990">
         <Code>{code}</Code>
-      </DarkPanel>
 
       {type === 'error' && message && <ErrorMessage>{message}</ErrorMessage>}
     </Content>

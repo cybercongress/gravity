@@ -60,13 +60,13 @@ const beneficiaries = [
   },
   {
     address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
-    stake: 1,
-    share: 100
+    stake: 51,
+    share: 1
   },
   {
     address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
-    stake: 1,
-    share: 100
+    stake: 23,
+    share: 1
   },
   {
     address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
@@ -104,8 +104,7 @@ const Pages = ({ databaseId, message }) => (
     </ProgressBar>
 
     <ContainerRegister>
-      <SideBar>
-        <Label>Input</Label>
+    <SideBar title="Input">
         <Panel title="General Parameters">
           <ParamRow>
             <WideInput placeholder="Name" defaultValue="" />
@@ -166,13 +165,12 @@ const Pages = ({ databaseId, message }) => (
             </tbody>
           </TableRegistry>
         </Panel>
-      </SideBar>
+    </SideBar>
 
-      <Content>
-        <Label color="#3fb990">Database code</Label>
-        <DarkPanel>
+      <Content title="Database code" color="#3fb990">
+        
           <Code>{code}</Code>
-        </DarkPanel>
+        
       </Content>
     </ContainerRegister>
     <FlexContainer>
