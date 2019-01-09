@@ -59,6 +59,9 @@ body {
 .linkContainer {
 	padding-top: 50px;
 	margin-bottom: 100px;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
 }
 
 .button {

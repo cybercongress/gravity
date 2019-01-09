@@ -209,6 +209,7 @@ const PagesViewRegistry = ({ showTable }) => (
                         <AddNewRecordButton>Add New Record</AddNewRecordButton>
                     </FlexContainerRight>
                 </FlexContainer>
+                <div>
                 <DatabaseItemsContainer>
                     <TableRecords>
                         <thead>
@@ -420,6 +421,7 @@ const PagesViewRegistry = ({ showTable }) => (
                         </tbody>
                     </TableRecords>
                 </DatabaseItemsContainer>
+                </div>
             </div>
         )}
     </MainContainer>

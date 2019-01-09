@@ -27,6 +27,7 @@ export const Buttons = ({ children, to, ...props }) => {
                 [styles.ButtonRed]: props.color === 'red',
                 [styles.ButtonBlue]: props.color === 'blue',
                 [styles.ButtonGreenYellow]: props.color === 'greenyellow',
+                [styles.ButtonOrange]: props.color === 'ogange',
                 [styles.ButtonOutline]: props.outline,
             }) }
             >
@@ -43,6 +44,7 @@ export const Buttons = ({ children, to, ...props }) => {
                 [styles.ButtonRed]: props.color === 'red',
                 [styles.ButtonBlue]: props.color === 'blue',
                 [styles.ButtonGreenYellow]: props.color === 'greenyellow',
+                [styles.ButtonOrange]: props.color === 'ogange',
                 [styles.ButtonOutline]: props.outline,
                 [styles.TextTransform]: props.transformtext,
             }) }

@@ -87,6 +87,12 @@ button {
   padding: 0 20px;
 }
 
+.ButtonOrange{
+  background-color: #f5a623;
+  color:#ffffff;
+  padding: 0 20px;
+}
+
 /* -----ActionLink--------- */
 
 .ActionLink{

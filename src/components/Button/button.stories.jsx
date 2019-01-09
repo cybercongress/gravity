@@ -46,6 +46,12 @@ storiesOf('commponents/Buttons', module)
         </Buttons>
     ))
 
+    .add('ButtonsOgange', () => (
+        <Buttons transformtext color='ogange'>
+          Link it!
+        </Buttons>
+    ))
+
     .add('ButtonsOutline', () => (
         <Buttons outline>
           outline

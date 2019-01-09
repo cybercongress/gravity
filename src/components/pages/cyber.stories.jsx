@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Buttons, Title} from '../..';
+import {Buttons, Title, PageTitle, MainContainer, WideInput, FlexContainer, Description} from '../..';
 import styles from './app.css';
 import { storiesOf } from '@storybook/react';
 
@@ -112,58 +112,71 @@ class App extends Component {
         console.log(' defaultAddress ', this.state.defaultAddress)
 
         return (
-          <div className={styles.searchContainer}>
-          <Title>/Cyberd search12</Title>
-          <input className={styles.input} defaultValue={searchQuery} ref='searchInput' onKeyPress={this._handleKeyPress}/>
-          <Buttons 
-            //className={styles.button} 
-            type="button" 
-            color='blue'
-            onClick={() => this.search()}>
-            search
-          </Buttons>
-
-          {links.length > 0 && <div>
-              <h3 className={styles.title}>Search results:</h3>
-              {searchResults}
-              {links.length > 10 &&  <button className={styles.button} type="button" onClick={() => this.seeAll()}>{!seeAll ? 'see all' : 'top 10'}</button>}
-          </div>}
-
-
-          {(defaultAddress && (balance > 0) && searchQuery && links.length > 0) &&
-              <div className={styles.linkContainer}>
-                  <p>Have your own option for <b>"{searchQuery}"</b>? Link your query and Cyb will understand it!</p>
-                  <input placeholder='type your link her...' className={styles.input} ref='cidToInput'/>
-                  <Buttons 
-                    //className={styles.button + ' ' + styles.yellow} 
-                    color='greenyellow'
-                    transformtext
+            <MainContainer>
+                <PageTitle>Cyberd search12</PageTitle>
+                <FlexContainer>
+                <WideInput  defaultValue={searchQuery} ref='searchInput' onKeyPress={this._handleKeyPress} />
+                <Buttons
                     type="button"
-                    onClick={() => this.link()}
-                  >
-                    Link it!
-                  </Buttons>
-              </div>
-          }
-
-          {(defaultAddress && (balance > 0) && searchQuery && links.length === 0) &&
-              <div className={styles.linkContainer}>
-                  <img className={styles.vitalick }  src={require('./buterin-02.svg')} alt='vitalick'/>
-                  <p className={styles.notFoundFirstLine}>Seems that you are first one who are searching for <b>"{searchQuery}"</b></p>
-                  <p><b>Link your query</b> and Cyb will understand it!</p>
-                  <input placeholder='type your link her...' className={styles.input+ ' ' + styles.noResult} ref='cidToInput'/>
-                  <Buttons 
-                    //className={styles.button+ ' ' + styles.green}
-                    color='greenyellow'
+                    color='blue'
                     transformtext
-                    type='button'
-                    onClick={() => this.link()}
-                  >
-                    Link it!
-                  </Buttons>
-              </div>
-          }
-      </div>
+                    onClick={() => this.search()}>
+                    search
+                </Buttons>
+                </FlexContainer>
+                {links.length > 0 && <div>
+                    <Title style={ { marginLeft: '0px', marginBottom: '30px' }}>Search results:</Title>
+                    {searchResults}
+                    {links.length > 10 && <Buttons color='blue' transformtext type="button" onClick={() => this.seeAll()}>{!seeAll ? 'see all' : 'top 10'}</Buttons>}
+                </div>}
+
+
+                {(defaultAddress && (balance > 0) && searchQuery && links.length > 0) &&
+                    <div className={styles.linkContainer} style={ { flexDirection: 'column' }}>
+                        <Description style={ { fontSize: '16px' }}>Have your own option for <b>"{searchQuery}"</b>? Link your query and Cyb will understand it!</Description>
+                        <FlexContainer>
+                        <WideInput placeholder='type your link her...' ref='cidToInput' />
+                        <Buttons
+                            color='ogange'
+                            transformtext
+                            type="button"
+                            onClick={() => this.link()}
+                        >
+                            Link it!
+                        </Buttons>
+                        </FlexContainer>
+                    </div>
+                }
+
+                {(defaultAddress && (balance > 0) && searchQuery && links.length === 0) &&
+                    <div className={styles.linkContainer}>
+                        <div style={ { width: '60%' }}>
+
+                            <Description style={ { fontSize: '16px' }} >Seems that you are first one who are searching for <b>"{searchQuery}"</b></Description>
+
+                            <Description style={ { fontSize: '16px' }}><b>Link your query</b> and Cyb will understand it!</Description>
+
+
+                            <FlexContainer>
+                                <WideInput placeholder='type your link her...' ref='cidToInput' />
+                                <Buttons
+                                    color='greenyellow'
+                                    transformtext
+                                    type='button'
+                                    onClick={() => this.link()}
+                                >
+                                    Link it!
+                            </Buttons>
+                            </FlexContainer>
+                        </div>
+
+                        <div style={ { width: '30%' }}>
+                            <img className={styles.vitalick} src={require('./buterin-02.svg')} alt='vitalick' />
+                        </div>
+
+                    </div>
+                }
+            </MainContainer>
         )
     }
 
@@ -179,11 +192,85 @@ const links=[
   hash: '45412',
   Rank: '1',
 },
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '1',
+},
 
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '1',
+},
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '1',
+},
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '1',
+},
+{
+    content: '312',
+    hash: '45412',
+    Rank: '1',
+},
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '1',
+},
+
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '12',
+},
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '12',
+},
+{
+    content: '312',
+    hash: '45412',
+    Rank: '14',
+},
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '1',
+},
+
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '16',
+},
+{
+    content: 'test',
+    hash: '45412',
+    Rank: '1',
+},
 ];
 
-const links1=[];
+const links2=[];
+const links3=[ 
+    {
+    content:'dds',
+    hash: 'sds12',
+    Rank: '2',
+  },
+  {
+    content:'312',
+    hash: '45412',
+    Rank: '1',
+  },];
 storiesOf('pages/cyber', module)
-    .add('index', () => <App  searchQuery='test' links={links1} defaultAddress='test' balance='0' />)
-    .add('index2', () => <App  searchQuery='test' links={links} defaultAddress='test' balance='1000' />)
-    .add('index3', () => <App  searchQuery='test' links={links1} defaultAddress='test' balance='1' />);
+    .add('index', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='0' />)
+    .add('index2', () => <App  searchQuery='test' links={links3} defaultAddress='test' balance='1000' />)
+    .add('index3', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='1' />)
+    .add('index4', () => <App  searchQuery='test' links={links} defaultAddress='test' balance='1000' />);;
