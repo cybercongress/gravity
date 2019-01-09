@@ -64,13 +64,23 @@ const beneficiaries = [
     },
 ];
 
+const Disabled = {
+    backgroundColor: '#3d3b56',
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    opacity: '0.6',
+    borderRadius: '3px',
+    zIndex: '99999',
+};
+
 const name = 'Appstore';
 const admin = '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef';
 const isDbPaused = null;
 const databaseSymbol = 'APP';
 const isSchemaExist = false;
 
-const PagesViewRegistry = ({ showTable }) => (
+const PagesViewRegistry = ({ showTable, disabled }) => (
     <MainContainer>
         <Section>
             <div style={ { marginLeft: '15px' } }>
@@ -209,8 +219,9 @@ const PagesViewRegistry = ({ showTable }) => (
                         <AddNewRecordButton>Add New Record</AddNewRecordButton>
                     </FlexContainerRight>
                 </FlexContainer>
-                <div>
+                
                 <DatabaseItemsContainer>
+                    { disabled && <div style={ Disabled } /> }
                     <TableRecords>
                         <thead>
                             <tr>
@@ -421,7 +432,7 @@ const PagesViewRegistry = ({ showTable }) => (
                         </tbody>
                     </TableRecords>
                 </DatabaseItemsContainer>
-                </div>
+                
             </div>
         )}
     </MainContainer>
@@ -429,4 +440,5 @@ const PagesViewRegistry = ({ showTable }) => (
 
 storiesOf('pages/view_registry', module)
     .add('registry', () => <PagesViewRegistry />)
+    .add('registry_disabled_table', () => <PagesViewRegistry disabled='1' />)
     .add('registry_no_table', () => <PagesViewRegistry showTable='1' />);

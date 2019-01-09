@@ -7,4 +7,5 @@
     box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.14);
     flex-grow: 1;
     margin-top: 20px;
+    position: relative;
 }
