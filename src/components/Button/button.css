@@ -1,3 +1,7 @@
+button {
+    outline: none;
+}
+
 .AddNewRecordButton{
   /* text-transform: uppercase; */
   background: #eff3f6;
@@ -22,3 +26,66 @@
 .BttnIconAdd {
   background: url(./add.svg) no-repeat center center;
 }
+
+/* -----Button------- */
+
+.Button {
+  /* width: 105px; */
+  height: 36px;
+  border-radius: 3px;
+  font-size: 1em;
+  font-family: Play;
+  border: none;
+  text-transform: uppercase;
+  margin: 0 10px;
+  padding: 0 10px;
+  cursor: pointer;
+  color: #979797;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.Button:hover{
+  opacity: 0.8;
+}
+
+.ButtonOutline{
+  border: 1px solid;
+  background-color: transparent;
+}
+
+.ButtonConfirm {
+  background-color: #3fb990;
+  padding: 0 20px;
+  color: #ffffff;
+}
+
+.ButtonReject {
+  background-color: #d32f2f;
+  padding: 0 20px;
+  color: #ffffff;
+}
+
+.ButtonCancel{
+  box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid #dedede;
+  background-color: transparent;
+}
+
+.ButtonNext{
+  background-color: #4a90e2;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+/* -----ActionLink--------- */
+
+.ActionLink{
+  cursor: pointer;
+  padding: 7px 18px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+}
+

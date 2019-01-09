@@ -37,9 +37,7 @@ import { DbMenuPoints } from '../DbMenuPoints/DbMenuPoints';
 import { DatabaseItemsContainer } from '../DatabaseTable/DatabaseItemsContainer';
 import { InfoButton } from '../DatabaseItem/index';
 import { calculateBensShares } from '../utils/utils';
-
-storiesOf('pages/view_registry', module).add('registry', () => {
-    const totalFee = 3;
+const totalFee = 3;
     const funded = '5';
 
 
@@ -71,6 +69,8 @@ storiesOf('pages/view_registry', module).add('registry', () => {
     const isDbPaused = null;
     const databaseSymbol = 'APP';
     const isSchemaExist = false;
+storiesOf('pages/view_registry', module).add('registry', () => {
+    
 
     return (
         <MainContainer>
@@ -428,6 +428,147 @@ storiesOf('pages/view_registry', module).add('registry', () => {
                     </tbody>
                 </TableRecords>
             </DatabaseItemsContainer>
+        </MainContainer>
+    );
+})
+
+.add('registry_no_table', () => {
+    return (
+        <MainContainer>
+            <Section>
+                <div style={ { marginLeft: '15px' } }>
+                    <ActionLink to='/'>BACK TO CHAINGEAR</ActionLink>
+                    {!isSchemaExist && (
+                        <ActionLink style={ { marginLeft: 15 } } to={ `/schema/${databaseSymbol}` }>
+                            Define schema
+                        </ActionLink>
+                    )}
+                </div>
+            </Section>
+            <PageTitle>{name}</PageTitle>
+            <ProgressBar>
+                <CircleLable type='complete' number='1' text='Registry initialization' />
+                <CircleLable type='edit' number='2' text='Schema definition' />
+                <CircleLable number='3' text='Contract code saving' />
+            </ProgressBar>
+
+            <FlexContainer line>
+                <FlexContainerLeft>
+                    symbol:
+                    {databaseSymbol}
+                </FlexContainerLeft>
+                <FlexContainerRight>
+                    status:
+                    {' '}
+                    {isDbPaused ? 'paused' : 'operational'}
+                    <DbMenu>
+                        <MenuPopup>
+                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
+                                Transfer ownership
+                            </MenuPopupItem>
+                            <MenuSeparator />
+                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                Fund registry
+                            </MenuPopupItem>
+                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                Claim Funds
+                            </MenuPopupItem>
+                            <MenuSeparator />
+                            <MenuPopupItem icon={ <MenuPopupPauseIcon /> }>
+                                Pause database
+                            </MenuPopupItem>
+                            <MenuPopupItem icon={ <MenuPopupResumeIcon /> }>
+                                Resume database
+                            </MenuPopupItem>
+                            <MenuSeparator />
+                            <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
+                                Delete registry
+                            </MenuPopupItem>
+                        </MenuPopup>
+                    </DbMenu>
+                </FlexContainerRight>
+            </FlexContainer>
+            <Section title='General'>
+                <SectionContent style={ { width: '25%' } }>
+                    <CentredPanel>
+                        <BoxTitle>Created:</BoxTitle>
+                        <div>7/2/2018 17:13:33</div>
+                    </CentredPanel>
+                </SectionContent>
+
+                <SectionContent style={ { width: '25%' } }>
+                    <CentredPanel>
+                        <BoxTitle>Admin:</BoxTitle>
+                        <div>
+                            <LinkHash value={ admin } />
+                        </div>
+                    </CentredPanel>
+                </SectionContent>
+
+                <SectionContent style={ { width: '25%' } }>
+                    <CentredPanel>
+                        <BoxTitle>FUNDED:</BoxTitle>
+
+                        <FundContainer>
+                            <span>
+                                {funded}
+                                ETH
+                            </span>
+                        </FundContainer>
+                    </CentredPanel>
+                </SectionContent>
+
+                <SectionContent style={ { width: '25%' } }>
+                    <CentredPanel>
+                        <BoxTitle>FEES:</BoxTitle>
+
+                        <FundContainer>
+                            <span>
+                                {totalFee}
+                                ETH
+                            </span>
+                        </FundContainer>
+                    </CentredPanel>
+                </SectionContent>
+            </Section>
+
+            <Section>
+                <SectionContent title='Overview' style={ { width: '70%' } } grow={ 3 }>
+                    <FormField label='Description' value='{description}' onUpdate='isOwner' />
+                    <FormField label='Tags' value='{tag}' />
+                    <FormField
+                      label='Record Fee'
+                      value='{entryCreationFee.toString()}'
+                      valueType='ETH'
+                      onUpdate='isOwner'
+                    />
+                    <FormField
+                      label='Permissions'
+                      value='{permissionGroupStr}'
+                      onUpdate='isDbPaused'
+                      icon={ <InfoButton /> }
+                    />
+                    <FormField label='Entries' value='{rows.length}' />
+                    <FormField label='Version' value='{contractVersion}' />
+                    <FormField label='Database address' value='{databaseAddress}' />
+                    <FormField label='Schema address' value='{entryCoreAddress}' />
+                    <FormField
+                      label='Abi link'
+                      value='QmdkrMcmKBWsg5K2senjLCFYLBxbqgamNF8d8ZC8xn1BHt'
+                    />
+                </SectionContent>
+
+                <SectionContent title='Beneficiaries' grow={ 0 } style={ { width: '30%' } }>
+                    <Centred>
+                        <BenContainer>
+                            <BenPieChart
+                              bens={ beneficiaries }
+                              calculateBensShares={ calculateBensShares }
+                            />
+                        </BenContainer>
+                    </Centred>
+                </SectionContent>
+            </Section>
         </MainContainer>
     );
 });
