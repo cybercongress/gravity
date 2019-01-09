@@ -42,6 +42,11 @@ button {
   cursor: pointer;
   color: #979797;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  min-width: 105px;
+}
+
+.TextTransform{
+  text-transform: none;
 }
 
 .Button:hover{
@@ -53,13 +58,13 @@ button {
   background-color: transparent;
 }
 
-.ButtonConfirm {
+.ButtonGreen{
   background-color: #3fb990;
   padding: 0 20px;
   color: #ffffff;
 }
 
-.ButtonReject {
+.ButtonRed {
   background-color: #d32f2f;
   padding: 0 20px;
   color: #ffffff;
@@ -71,8 +76,13 @@ button {
   background-color: transparent;
 }
 
-.ButtonNext{
+.ButtonBlue{
   background-color: #4a90e2;
+  color: #ffffff;
+  padding: 0 20px;
+}
+.ButtonGreenYellow{
+  background-color: #7ed321;
   color: #ffffff;
   padding: 0 20px;
 }
@@ -87,5 +97,6 @@ button {
   text-decoration: none;
   margin: 0 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  min-width: 105px;
 }
 

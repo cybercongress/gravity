@@ -16,16 +16,17 @@ export const AddNewRecordButton = ({ children, ...props }) => (
 //   </i>
 // );
 
-export const Button = ({ children, to, ...props }) => {
+export const Buttons = ({ children, to, ...props }) => {
     if (to) {
         return(
             <ActionLink
             { ...props }
             className={ cx(styles.ActionLink, {
                 [styles.ButtonCancel]: props.color === 'cancel',
-                [styles.ButtonConfirm]: props.color === 'confirm',
-                [styles.ButtonReject]: props.color === 'reject',
-                [styles.ButtonNext]: props.color === 'next',
+                [styles.ButtonGreen]: props.color === 'green',
+                [styles.ButtonRed]: props.color === 'red',
+                [styles.ButtonBlue]: props.color === 'blue',
+                [styles.ButtonGreenYellow]: props.color === 'greenyellow',
                 [styles.ButtonOutline]: props.outline,
             }) }
             >
@@ -38,10 +39,12 @@ export const Button = ({ children, to, ...props }) => {
           { ...props }
           className={ cx(styles.Button, {
                 [styles.ButtonCancel]: props.color === 'cancel',
-                [styles.ButtonConfirm]: props.color === 'confirm',
-                [styles.ButtonReject]: props.color === 'reject',
-                [styles.ButtonNext]: props.color === 'next',
+                [styles.ButtonGreen]: props.color === 'green',
+                [styles.ButtonRed]: props.color === 'red',
+                [styles.ButtonBlue]: props.color === 'blue',
+                [styles.ButtonGreenYellow]: props.color === 'greenyellow',
                 [styles.ButtonOutline]: props.outline,
+                [styles.TextTransform]: props.transformtext,
             }) }
         >
             {children}

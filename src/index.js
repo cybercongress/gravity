@@ -28,7 +28,7 @@ import {ProgressBar} from './components/ProgressBar/ProgressBar';
 import CircleLable from './components/ProgressBar/CricleLable';
 import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry, TableItemBen } from './components/Table/Table';
 import { Checkbox } from './components/Checkbox/index';
-import { AddNewRecordButton } from './components/Button/button';
+import { AddNewRecordButton, Buttons } from './components/Button/button';
 import FormField from './components/FormField/FormFild';
 import ValueInput from  './components/ValueInput';
 import { TableRecords } from './components/TableRecords/TableRecords';
@@ -106,6 +106,7 @@ export {
     Description,
     Checkbox,
     AddNewRecordButton,
+    Buttons,
     MenuPopupDeletePencilIcon,
 
 
