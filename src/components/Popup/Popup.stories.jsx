@@ -12,7 +12,7 @@ import {
   LineText,
   ContentLineFund,
 } from '../PopupContent/PopupContent';
-import { Popup, PopupButton, PopupBarButtun, PopupNotificationButton, PopupNotification, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
+import { Popup, PopupButton, PopupSkillBar, PopupBarButtun, PopupNotificationButton, PopupNotification, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
 import  { Status }  from './status';
 
 storiesOf('commponents/Popup', module)
@@ -261,6 +261,12 @@ storiesOf('commponents/Popup', module)
         <PopupBarButtun>complete step</PopupBarButtun>
       </PopupBarFooter>
     </PopupBar>
+  ))
+
+  .add('PopupSkillBar', () => (
+    <PopupSkillBar>
+      <LineText>600000 of 1000000 left (60%) </LineText>
+    </PopupSkillBar>
   ))
 
   .add('PopupNotification', () => (

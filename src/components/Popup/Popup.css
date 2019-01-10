@@ -140,6 +140,39 @@
     box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.15);
 }
 
+.PopupSkillBar{
+    /* width: 230px; */
+    height: 38px;
+    border-radius: 3px;
+    /* border: 1px solid #979797; */
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    padding: 10px 30px;
+    /* padding-left: 26px; */
+    position: relative;
+    background-color: #2e3842;
+    color: #ffffff;
+    align-items: center;
+    display: flex;
+}
+
+.PopupSkillBar::before {
+    content: '';
+    width: 17.1px;
+    height: 17.1px;
+    transform: rotate(45deg);
+    background-color: #2e3842;
+    position: absolute;
+    top: -5px;
+    right: 50%;
+    border-radius: 3px;
+    /* box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.15); */
+}
+
+.PopupSkillBar span{
+    color: #ffffff;
+}
+
 .PopupBarFooter {
     display: flex;
     justify-content: flex-end;
