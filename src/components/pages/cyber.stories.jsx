@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Buttons, Title, PageTitle, MainContainer, WideInput, FlexContainer, Description} from '../..';
+import {Buttons, Title, PageTitle, MainContainer, WideInput, FlexContainer, Description, SkillBar} from '../..';
 import styles from './app.css';
 import { storiesOf } from '@storybook/react';
+import { LinkContainer } from '../LinkContainer/LinkContainer';
 
 class App extends Component {
 
@@ -49,14 +50,21 @@ class App extends Component {
 
         return (
             <MainContainer>
+                <FlexContainer>
                 <PageTitle>Cyberd search</PageTitle>
+                <div style={ { width: '25%' }}>
+                    <Description style={ { fontSize: '14px', paddingBottom: '10px' }}>Your bandwidth:</Description>
+                    <SkillBar value={ 10 } />
+                </div>
+                
+                </FlexContainer>
                 <FlexContainer>
                 <WideInput  defaultValue={searchQuery} ref='searchInput' onKeyPress={this._handleKeyPress} />
                 <Buttons
                     type="button"
                     color='blue'
                     transformtext
-                    style={ { height: '30px' } }
+                    style={ { height: '30px', marginLeft: '10px' } }
                 >
                     search
                 </Buttons>
@@ -67,9 +75,9 @@ class App extends Component {
                     {links.length > 10 && <Buttons color='blue' style={ { marginLeft: '0px'}} transformtext type="button" onClick={() => this.seeAll()}>{!seeAll ? 'see all' : 'top 10'}</Buttons>}
                 </div>}
 
-
+ 
                 {(defaultAddress && (balance > 0) && searchQuery && links.length > 0) &&
-                    <div className={styles.linkContainer} style={ { flexDirection: 'column' }}>
+                    <LinkContainer column>
                         <Description style={ { fontSize: '16px' }}>Have your own option for <b>"{searchQuery}"</b>? Link your query and Cyb will understand it!</Description>
                         <FlexContainer>
                         <WideInput placeholder='type your link her...' ref='cidToInput' />
@@ -77,17 +85,17 @@ class App extends Component {
                             color='ogange'
                             transformtext
                             type="button"
-                            style={ { height: '30px' } }
+                            style={ { height: '30px', marginLeft: '10px' } }
                             onClick={() => this.link()}
                         >
                             Link it!
                         </Buttons>
                         </FlexContainer>
-                    </div>
+                    </LinkContainer>
                 }
 
                 {(defaultAddress && (balance > 0) && searchQuery && links.length === 0) &&
-                    <div className={styles.linkContainer}>
+                    <LinkContainer center>
                         <div style={ { width: '60%' }}>
 
                             <Description style={ { fontSize: '16px' }} >Seems that you are first one who are searching for <b>"{searchQuery}"</b></Description>
@@ -101,6 +109,7 @@ class App extends Component {
                                     color='greenyellow'
                                     transformtext
                                     type='button'
+                                    style={ { height: '30px', marginLeft: '10px' } }
                                     onClick={() => this.link()}
                                 >
                                     Link it!
@@ -112,7 +121,7 @@ class App extends Component {
                             <img className={styles.vitalick} src={require('./buterin-02.svg')} alt='vitalick' />
                         </div>
 
-                    </div>
+                    </LinkContainer>
                 }
             </MainContainer>
         )

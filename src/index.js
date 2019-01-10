@@ -42,6 +42,8 @@ LineText,
 ContentLineFund
 } from './components/PopupContent/PopupContent';
 
+import { SkillBar } from './components/SkillBar/SkillBar';
+
 import {
     Browser,
     BrowserHeader,
@@ -108,7 +110,7 @@ export {
     AddNewRecordButton,
     Buttons,
     MenuPopupDeletePencilIcon,
-
+    SkillBar,
 
     Browser,
     BrowserHeader,

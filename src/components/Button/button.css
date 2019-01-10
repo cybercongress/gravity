@@ -37,7 +37,7 @@ button {
   font-family: Play;
   border: none;
   text-transform: uppercase;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   padding: 0 10px;
   cursor: pointer;
   color: #979797;
