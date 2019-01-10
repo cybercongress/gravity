@@ -113,7 +113,7 @@ class App extends Component {
 
         return (
             <MainContainer>
-                <PageTitle>Cyberd search12</PageTitle>
+                <PageTitle>Cyberd search</PageTitle>
                 <FlexContainer>
                 <WideInput  defaultValue={searchQuery} ref='searchInput' onKeyPress={this._handleKeyPress} />
                 <Buttons
@@ -269,7 +269,7 @@ const links3=[
     hash: '45412',
     Rank: '1',
   },];
-storiesOf('pages/cyber', module)
+storiesOf('cyber/pages', module)
     .add('index', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='0' />)
     .add('index2', () => <App  searchQuery='test' links={links3} defaultAddress='test' balance='1000' />)
     .add('index3', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='1' />)
