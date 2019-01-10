@@ -141,7 +141,7 @@
 }
 
 .PopupSkillBar{
-    /* width: 230px; */
+    min-width: 230px;
     height: 38px;
     border-radius: 3px;
     /* border: 1px solid #979797; */
@@ -149,11 +149,13 @@
     box-sizing: border-box;
     padding: 10px 30px;
     /* padding-left: 26px; */
-    position: relative;
+    position: absolute;
     background-color: #2e3842;
     color: #ffffff;
     align-items: center;
     display: flex;
+    top: 18px;
+    z-index: 2;
 }
 
 .PopupSkillBar::before {
@@ -171,6 +173,7 @@
 
 .PopupSkillBar span{
     color: #ffffff;
+    font-size: 12px;
 }
 
 .PopupBarFooter {
