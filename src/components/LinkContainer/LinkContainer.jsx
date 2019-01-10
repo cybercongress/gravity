@@ -1,9 +1,7 @@
 import * as React from 'react';
 
-const styles = require('./WideInput.css');
+const styles = require('./LinkContainer.css');
 
-export const LinkContainer = ({children}) => (
-    <select {...props} ref={inputRef} className={styles.LinkContainer}>
-        {children}
-    </select>
-);
+const LinkContainer = ({ children }) => <div className={ styles.LinkContainer }>{children}</div>;
+
+export default LinkContainer;

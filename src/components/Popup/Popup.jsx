@@ -11,6 +11,14 @@ export const Popup = ({ children, open, ...props }) => (
   </div>
 );
 
+export const PopupNotification = ({ children, open, ...props }) => (
+  <div className={cx(styles.popup, { [styles.popupOpen]: open })}>
+      <div className={cx(styles.PopupNotification, { [styles.PopupNotificationError]: props.type === 'error' })}>
+      {children}
+    </div>
+  </div>
+);
+
 export const PopupTitle = ({ children }) => <div className={styles.popupTitle}>{children}</div>;
 
 export const PopupContent = ({ children }) => <div className={styles.popupContent}>{children}</div>;
@@ -42,6 +50,11 @@ export const PopupBarFooter = ({ children }) => (
 
 export const PopupBarButtun = ({ children}) => (
   <button className={styles.PopupBarButton}>
+    {children}
+  </button>
+)
+export const PopupNotificationButton = ({ children}) => (
+  <button className={styles.PopupNotificationButton}>
     {children}
   </button>
 );

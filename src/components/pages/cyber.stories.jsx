@@ -3,10 +3,6 @@ import {Buttons, Title, PageTitle, MainContainer, WideInput, FlexContainer, Desc
 import styles from './app.css';
 import { storiesOf } from '@storybook/react';
 
-function getQueryStringValue(key) {
-    return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
-}
-
 class App extends Component {
 
     state = {
@@ -17,65 +13,6 @@ class App extends Component {
         seeAll: false,
         balance: 0
     };
-
-    search(_query) {
-        const query =  _query || this.refs.searchInput.value ;
-
-        console.log('search');
-        console.log(query);
-        console.log(this.refs.searchInput.value);
-        console.log(getQueryStringValue('query'));
-        console.log();
-
-        // if (this.refs.searchInput.value === getQueryStringValue('query')) {
-            window.cyber.search(query).then((result) => {
-
-                console.log('result: ', result);
-                this.setState({
-                    links: result,
-                    searchQuery: query
-                })
-            })
-        // } else {
-        //     window.location = 'cyb://' + query;            
-        // }
-    }
-
-    _handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
-            this.search();
-        }
-    };
-
-    link() {
-        const address = this.state.defaultAddress;
-        const cidFrom = this.refs.searchInput.value;
-        const cidTo = this.refs.cidToInput.value;
-        console.log("from: " + cidFrom + " to: " + cidTo);
-
-        window.cyber.link(cidFrom, cidTo, address);
-    }
-
-    componentDidMount() {
-        if (!window.cyber) {
-            return
-        } else {
-
-            this.setState({
-                browserSupport: true,
-                searchQuery: getQueryStringValue('query')
-            }, () => {
-                window.cyber.getDefaultAddress(({ address, balance }) => {
-                    this.setState({
-                        defaultAddress: address,
-                        balance
-                    })
-                    this.search(getQueryStringValue('query'));
-                });
-            });
-        }
-    }
-
     seeAll = () => {
         this.setState({
             seeAll: !this.state.seeAll
@@ -83,7 +20,6 @@ class App extends Component {
     }
 
     openLink = (e, link) => {
-        // e.preventDefault();
         const { balance, defaultAddress: address } = this.state;
         const cidFrom = this.refs.searchInput.value;
         const cidTo = link.content;
@@ -120,14 +56,15 @@ class App extends Component {
                     type="button"
                     color='blue'
                     transformtext
-                    onClick={() => this.search()}>
+                    style={ { height: '30px' } }
+                >
                     search
                 </Buttons>
                 </FlexContainer>
                 {links.length > 0 && <div>
                     <Title style={ { marginLeft: '0px', marginBottom: '30px' }}>Search results:</Title>
                     {searchResults}
-                    {links.length > 10 && <Buttons color='blue' transformtext type="button" onClick={() => this.seeAll()}>{!seeAll ? 'see all' : 'top 10'}</Buttons>}
+                    {links.length > 10 && <Buttons color='blue' style={ { marginLeft: '0px'}} transformtext type="button" onClick={() => this.seeAll()}>{!seeAll ? 'see all' : 'top 10'}</Buttons>}
                 </div>}
 
 
@@ -140,6 +77,7 @@ class App extends Component {
                             color='ogange'
                             transformtext
                             type="button"
+                            style={ { height: '30px' } }
                             onClick={() => this.link()}
                         >
                             Link it!
@@ -180,7 +118,8 @@ class App extends Component {
         )
     }
 
-};
+}
+
 const links=[
   {
   content:'dds',
@@ -194,7 +133,7 @@ const links=[
 },
 {
     content: 'test',
-    hash: '45412',
+    hash: 'test',
     Rank: '1',
 },
 
@@ -270,7 +209,8 @@ const links3=[
     Rank: '1',
   },];
 storiesOf('cyber/pages', module)
-    .add('index', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='0' />)
-    .add('index2', () => <App  searchQuery='test' links={links3} defaultAddress='test' balance='1000' />)
-    .add('index3', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='1' />)
-    .add('index4', () => <App  searchQuery='test' links={links} defaultAddress='test' balance='1000' />);;
+    .add('anonym no result', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='0' />)
+    .add('anonym there are results', () => <App  searchQuery='test' links={links3} defaultAddress='test' balance='0' />)
+    .add('few results', () => <App  searchQuery='test' links={links3} defaultAddress='test' balance='1000' />)
+    .add('lot result', () => <App  searchQuery='test' links={links} defaultAddress='test' balance='1000' />)
+    .add('no result', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='1' />);

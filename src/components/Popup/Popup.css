@@ -162,3 +162,48 @@
 .PopupBarButton:hover {
     background-color: rgba(0, 0, 0, 0.08);
 }
+
+.PopupNotificationButton {
+    width: 110px;
+    height: 31px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: Play;
+    border: none;
+    text-transform: uppercase;
+    /* margin: 0 10px; */
+    color: #4a90e2;
+    background-color: #ffffff;
+    margin-right: 10px;
+}
+
+.PopupNotificationButton:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.PopupNotification {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3px;
+    width: 210px;
+    min-height: 200px;
+    box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
+    position: relative;
+    padding: 10px 0;
+}
+
+.PopupNotification::before{
+    content: url(./close.svg);
+    position: absolute;
+    top: 8px;
+    right: 11px;
+    cursor: pointer;
+}
+
+.PopupNotificationError{
+    width: 210px;
+    min-height: 160px;
+    justify-content: center;
+    align-items: center;
+}

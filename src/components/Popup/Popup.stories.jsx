@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { LinkHash, WideInput } from '../..';
+import { LinkHash, WideInput, Buttons } from '../..';
 import {
   ContentLine,
   ContentLineTextInput,
@@ -12,7 +12,8 @@ import {
   LineText,
   ContentLineFund,
 } from '../PopupContent/PopupContent';
-import { Popup, PopupButton, PopupBarButtun, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
+import { Popup, PopupButton, PopupBarButtun, PopupNotificationButton, PopupNotification, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
+import  { Status }  from './status';
 
 storiesOf('commponents/Popup', module)
   .addDecorator(centered)
@@ -261,3 +262,27 @@ storiesOf('commponents/Popup', module)
       </PopupBarFooter>
     </PopupBar>
   ))
+
+  .add('PopupNotification', () => (
+      <PopupNotification open='claimFundOpen'>
+          <PopupContent>
+              <ContentLineFund>
+                  <Status type='successfully'>
+                      Successfully linked
+                  </Status>
+              </ContentLineFund>
+          </PopupContent>
+          <PopupBarFooter>
+              <PopupNotificationButton>see results</PopupNotificationButton>
+          </PopupBarFooter>
+      </PopupNotification>
+
+  ))
+ 
+  .add('PopupNotification_Error', () => (
+    <PopupNotification open="claimFundOpen" type="error">
+      <Status type="error">
+        Link error
+      </Status>
+    </PopupNotification>
+  ));
