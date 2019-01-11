@@ -121,7 +121,7 @@ class App extends Component {
 
                 {(defaultAddress && (balance > 0) && searchQuery && links.length > 0) &&
                     <LinkContainer column>
-                        <Description style={{ fontSize: '16px' }}>Have your own option for <b>"{searchQuery}"</b>? Link your query and Cyb will understand it!</Description>
+                        <Text size='lg' style={{marginBottom: '20px' }}>Have your own option for <b>"{searchQuery}"</b>? Link your query and Cyb will understand it!</Text>
                         <FlexContainer>
                             <WideInput placeholder='type your link her...' ref='cidToInput' />
                             <Button
@@ -141,9 +141,9 @@ class App extends Component {
                     <LinkContainer center>
                         <div style={{ width: '60%' }}>
 
-                            <Description style={{ fontSize: '16px' }} >Seems that you are first one who are searching for <b>"{searchQuery}"</b></Description>
+                            <Text size='lg' style={{marginBottom: '10px' }}>Seems that you are first one who are searching for <b>"{searchQuery}"</b></Text>
 
-                            <Description style={{ fontSize: '16px' }}><b>Link your query</b> and Cyb will understand it!</Description>
+                            <Text size='lg' style={{marginBottom: '20px' }}><b>Link your query</b> and Cyb will understand it!</Text>
 
 
                             <FlexContainer>
