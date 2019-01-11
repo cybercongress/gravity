@@ -14,8 +14,6 @@ import {
     FlexContainerRight,
     Message,
     Button,
-} from '../..';
-import {
     ContainerRegister,
     Content,
     FieldsTable,
@@ -23,8 +21,18 @@ import {
     PanelRecord,
     RemoveButton,
     SideBar,
-} from '../newregistry';
-import { TableRegistry } from '../Table/Table';
+    TableRegistry,
+} from '../..';
+// import {
+//     ContainerRegister,
+//     Content,
+//     FieldsTable,
+//     PageTitle,
+//     PanelRecord,
+//     RemoveButton,
+//     SideBar,
+// } from '../newregistry';
+// import { TableRegistry } from '../Table/Table';
 import code from './code';
 
 const type = '';
