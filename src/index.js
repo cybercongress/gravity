@@ -21,7 +21,7 @@ import { Description } from './components/newregistry/Description/Description';
 import { FlexContainerLeft, FlexContainerRight, FlexContainer } from './components/DbHeader/DbHeader'
 import { DbMenu } from './components/DbMenu/DbMenu';
 import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon,MenuPopupDeletePencilIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
-import { Popup, PopupContent, PopupFooter, PopupTitle, PopupButton, PopupSkillBar, } from './components/Popup/Popup';
+import { Popup, PopupContent, PopupFooter, PopupTitle, PopupButton, PopupSkillBar, PopupBar, PopupBarFooter, PopupBarButton, } from './components/Popup/Popup';
 import { BenContainer, BenPieChart, BenList, Ben } from './components/Beneficiary/Ben';
 import {DarkPanel} from './components/newregistry/DarkPanel/DarkPanel';
 import {ProgressBar} from './components/ProgressBar/ProgressBar';
@@ -120,7 +120,7 @@ export {
     FlexContainerLeft, FlexContainerRight, FlexContainer,
     DbMenu,
     MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon,
-    Popup, PopupContent, PopupFooter, PopupTitle, PopupSkillBar,
+    Popup, PopupContent, PopupFooter, PopupTitle, PopupSkillBar, PopupBar, PopupBarFooter, PopupBarButton,
     BenContainer, BenPieChart, BenList, Ben,
 
     DarkPanel,

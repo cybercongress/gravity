@@ -12,7 +12,7 @@ import {
   LineText,
   ContentLineFund,
 } from '../PopupContent/PopupContent';
-import { Popup, PopupButton, PopupSkillBar, PopupBarButtun, PopupNotificationButton, PopupNotification, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
+import { Popup, PopupButton, PopupSkillBar, PopupBarButton, PopupNotificationButton, PopupNotification, PopupTitle, PopupContent, PopupFooter, PopupBar,PopupBarFooter } from './Popup';
 import  { Status }  from './status';
 
 storiesOf('commponents/Popup', module)
@@ -249,7 +249,7 @@ storiesOf('commponents/Popup', module)
     <PopupBar>
       <LineText>To operate with records, please, define schema</LineText>
       <PopupBarFooter>
-        <PopupBarButtun>complete step</PopupBarButtun>
+        <PopupBarButton>complete step</PopupBarButton>
       </PopupBarFooter>
     </PopupBar>
   ))
@@ -258,7 +258,7 @@ storiesOf('commponents/Popup', module)
     <PopupBar>
       <LineText>To prevent lose of code, please, save ABI</LineText>
       <PopupBarFooter>
-        <PopupBarButtun>complete step</PopupBarButtun>
+        <PopupBarButton>complete step</PopupBarButton>
       </PopupBarFooter>
     </PopupBar>
   ))
@@ -284,7 +284,7 @@ storiesOf('commponents/Popup', module)
       </PopupNotification>
 
   ))
- 
+
   .add('PopupNotification_Error', () => (
     <PopupNotification open="claimFundOpen" type="error">
       <Status type="error">
