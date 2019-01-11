@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { LinkHash, WideInput, Buttons } from '../..';
+import { LinkHash, WideInput, Button } from '../..';
 import {
   ContentLine,
   ContentLineTextInput,

@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-    ActionLink,
     MainContainer,
     LinkHash,
     AddButton,
@@ -13,20 +12,21 @@ import {
     FlexContainerRight,
     FlexContainerLeft,
     FlexContainer,
+    Button,
+    Message,
+    TableRegistry,
+    TableItemBen,
+    ParamRow,
+    Text,
 } from '../..';
 import {
     ContainerRegister,
     Content,
-    CreateButton,
-    ErrorMessage,
     PageTitle,
     Panel,
     RemoveButton,
     SideBar,
 } from '../newregistry';
-import { ParamRow } from '../newregistry/ParamRow/ParamRow';
-import { Description } from '../newregistry/Description/Description';
-import { TableRegistry, TableItemBen } from '../Table/Table';
 import code from './code';
 
 const beneficiaries = [
@@ -89,13 +89,13 @@ const Pages = ({ databaseId, message }) => (
                         </WideSelect>
                     </ParamRow>
                     <ParamRow>
-                        <Description>
+                        <Text size='sm' lineHeight justify>
                             <b>Description:</b>
-                            One morning, when Gregor Samsa woke from troubled
-                            dreams, he found himself transformed in his bed into a horrible vermin.
-                            He lay on his armour-like back, and if he lifted his head a little he
-                            could see his brown belly, slightly domed and divided by arches.
-                        </Description>
+                            One morning, when Gregor Samsa woke from troubled dreams, he found
+                            himself transformed in his bed into a horrible vermin. He lay on his
+                            armour-like back, and if he lifted his head a little he could see his
+                            brown belly, slightly domed and divided by arches.
+                        </Text>
                     </ParamRow>
                 </Panel>
                 <Panel title='Beneficiaries (Optional)' noPadding>
@@ -147,18 +147,22 @@ const Pages = ({ databaseId, message }) => (
         </ContainerRegister>
         <FlexContainer>
             <FlexContainerLeft>
-                {message && <ErrorMessage>{message}</ErrorMessage>}
+                {message && <Message type='error'>{message}</Message>}
             </FlexContainerLeft>
             <FlexContainerRight>
                 {databaseId ? (
                     <span>
-                        <ActionLink to={ `/databases/${databaseId}` }>Go to database</ActionLink>
-                        <ActionLink to={ `/schema/${databaseId}` }>
+                        <Button color='blue' style={ { marginRight: '10px' } } to={ `/databases/${databaseId}` }>
+                            Go to database
+                        </Button>
+                        <Button color='blue' to={ `/schema/${databaseId}` }>
                             Go to schema definition
-                        </ActionLink>
+                        </Button>
                     </span>
                 ) : (
-                    <CreateButton disabled={ !canCreate }>Next</CreateButton>
+                    <Button type='button' color='blue' disabled={ !canCreate }>
+                        Next
+                    </Button>
                 )}
             </FlexContainerRight>
         </FlexContainer>

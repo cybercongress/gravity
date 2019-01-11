@@ -75,7 +75,6 @@ export const RemoveButton = props => <button {...props} className={styles.remove
 
 export const AddButton = props => <button {...props} className={styles.addButton} />;
 
-export const ErrorMessage = props => <div {...props} className={styles.errorMessage} />;
 
 class AddField extends React.Component {
   state = {

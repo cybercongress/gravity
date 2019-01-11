@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Buttons, Title, PageTitle, MainContainer, PopupSkillBar,  LineText,  WideInput, CentredPanel, Section, FundContainer, SectionContent, BoxTitle, FlexContainer, Description, SkillBar} from '../..';
+import {Button, Title, PageTitle, MainContainer, PopupSkillBar,  LineText,  WideInput, CentredPanel, Section, FundContainer, SectionContent, BoxTitle, FlexContainer, Description, SkillBar} from '../..';
 import styles from './app.css';
 import { storiesOf } from '@storybook/react';
 import { LinkContainer } from '../LinkContainer/LinkContainer';
@@ -71,19 +71,19 @@ class App extends Component {
                 </FlexContainer>
                 <FlexContainer>
                     <WideInput defaultValue={searchQuery} ref='searchInput' onKeyPress={this._handleKeyPress} />
-                    <Buttons
+                    <Button
                         type="button"
                         color='blue'
                         transformtext
                         style={{ height: '30px', marginLeft: '10px' }}
                     >
                         search
-                </Buttons>
+                </Button>
                 </FlexContainer>
                 {links.length > 0 && <div>
                     <Title style={{ marginLeft: '0px', marginBottom: '30px' }}>Search results:</Title>
                     {searchResults}
-                    {links.length > 10 && <Buttons color='blue' style={{ marginLeft: '0px' }} transformtext type="button" onClick={() => this.seeAll()}>{!seeAll ? 'see all' : 'top 10'}</Buttons>}
+                    {links.length > 10 && <Button color='blue' style={{ marginLeft: '0px' }} transformtext type="button" onClick={() => this.seeAll()}>{!seeAll ? 'see all' : 'top 10'}</Button>}
                 </div>}
 
                 {index && 
@@ -100,20 +100,20 @@ class App extends Component {
                     <Section>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                               <Text fontSize={36} bold color={'#4a90e2'}>1000</Text>
-                               <Text fontSize={26} color={'#4a90e2'} NoPadding>link</Text>
+                               <Text color='blue' style={{paddingBottom:'10px'}} bold size='xxlg'>1000</Text>
+                               <Text color='blue' bold size='xlg'>link</Text>
                             </CentredPanel>
                         </SectionContent>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                                <Text fontSize={36} bold color={'#4a90e2'} >1000</Text>
-                                <Text fontSize={26} color={'#4a90e2'} NoPadding>CIDs</Text>
+                                <Text color='blue' bold size='xxlg' style={{paddingBottom:'10px'}}>1000</Text>
+                                <Text  color='blue' bold size='xlg'>CIDs</Text>
                             </CentredPanel>
                         </SectionContent>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                                <Text fontSize={36} bold color={'#4a90e2'}>1000</Text>
-                                <Text fontSize={26} color={'#4a90e2'} NoPadding>accounts</Text>
+                                <Text color='blue' style={{paddingBottom:'10px'}} bold size='xxlg' >1000</Text>
+                                <Text color='blue' bold size='xlg'>accounts</Text>
                             </CentredPanel>
                         </SectionContent>
                     </Section>
@@ -124,7 +124,7 @@ class App extends Component {
                         <Description style={{ fontSize: '16px' }}>Have your own option for <b>"{searchQuery}"</b>? Link your query and Cyb will understand it!</Description>
                         <FlexContainer>
                             <WideInput placeholder='type your link her...' ref='cidToInput' />
-                            <Buttons
+                            <Button
                                 color='ogange'
                                 transformtext
                                 type="button"
@@ -132,7 +132,7 @@ class App extends Component {
                                 onClick={() => this.link()}
                             >
                                 Link it!
-                        </Buttons>
+                        </Button>
                         </FlexContainer>
                     </LinkContainer>
                 }
@@ -148,7 +148,7 @@ class App extends Component {
 
                             <FlexContainer>
                                 <WideInput placeholder='type your link her...' ref='cidToInput' />
-                                <Buttons
+                                <Button
                                     color='greenyellow'
                                     transformtext
                                     type='button'
@@ -156,7 +156,7 @@ class App extends Component {
                                     onClick={() => this.link()}
                                 >
                                     Link it!
-                            </Buttons>
+                            </Button>
                             </FlexContainer>
                         </div>
 

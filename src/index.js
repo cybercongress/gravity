@@ -7,13 +7,12 @@ import {
     Section, SectionTabs, SectionContent,
     Container as MainContainer,
     FundContainer, Centred,CentredPanel,
-    Button,
     BoxTitle,
     TotalCost,
 } from './components/chaingear';
-import { Container, Text, Link as ActionLink } from './components/CallToAction';
+import { Container, Link as ActionLink } from './components/CallToAction';
 import { LinkHash } from './components/LinkHash';
-import { Message } from './components/Message'
+import { Message } from './components/Message';
 import { BlockRow } from './components/BlockRow/BlockRow';
 import { ParamRow } from './components/newregistry/ParamRow/ParamRow';
 import { WideInput, WideSelect } from './components/Input/WideInput';
@@ -28,7 +27,7 @@ import {ProgressBar} from './components/ProgressBar/ProgressBar';
 import CircleLable from './components/ProgressBar/CricleLable';
 import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry, TableItemBen } from './components/Table/Table';
 import { Checkbox } from './components/Checkbox/index';
-import { AddNewRecordButton, Buttons } from './components/Button/button';
+import { AddNewRecordButton, Button } from './components/Button/button';
 import FormField from './components/FormField/FormFild';
 import ValueInput from  './components/ValueInput';
 import { TableRecords } from './components/TableRecords/TableRecords';
@@ -43,6 +42,7 @@ ContentLineFund
 } from './components/PopupContent/PopupContent';
 
 import { SkillBar } from './components/SkillBar/SkillBar';
+import { Text } from './components/Text/Text';
 
 import {
     Browser,
@@ -61,8 +61,7 @@ import {
     Control,
     PageTitle,
     RemoveButton,
-    ErrorMessage,
-    AddButton
+    AddButton,
 } from './components/newregistry';
 
 import { AddField } from './components/newregistry/AddField';
@@ -95,7 +94,6 @@ export {
     Control,
     PageTitle,
     RemoveButton,
-    ErrorMessage,
     AddButton,
     AddField,
     StatusBar,
@@ -108,7 +106,6 @@ export {
     Description,
     Checkbox,
     AddNewRecordButton,
-    Buttons,
     MenuPopupDeletePencilIcon,
     SkillBar,
 

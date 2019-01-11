@@ -16,7 +16,7 @@ export const AddNewRecordButton = ({ children, ...props }) => (
 //   </i>
 // );
 
-export const Buttons = ({ children, to, ...props }) => {
+export const Button = ({ children, to, ...props }) => {
     if (to) {
         return(
             <ActionLink
@@ -29,6 +29,7 @@ export const Buttons = ({ children, to, ...props }) => {
                 [styles.ButtonGreenYellow]: props.color === 'greenyellow',
                 [styles.ButtonOrange]: props.color === 'ogange',
                 [styles.ButtonOutline]: props.outline,
+                [styles.TextTransform]: props.transformtext,
             }) }
             >
                 {children}

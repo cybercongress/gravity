@@ -20,7 +20,7 @@ const StatusBar = ({ open, message, type = 'processing', onClose }) => (
     >
         <div className={styles.message + ' ' + styles['message' + type]}>{message}</div>
         {type === 'error' && <button onClick={onClose} className={styles.button + ' ' + styles.buttonError}>try again</button>}
-        {type === 'success' && <button onClick={onClose} className={styles.button+ ' ' + styles.buttonSuccess}>go to registry</button>}
+        {type === 'success' && <button onClick={onClose} className={styles.button+ ' ' + styles.Buttonuccess}>go to registry</button>}
     </div>
 );
 
