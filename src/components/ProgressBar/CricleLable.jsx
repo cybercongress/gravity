@@ -26,17 +26,18 @@ export default class CircleLable extends React.Component {
     const {number, type, text, children} = this.props;
     const circleCss = cx(styles.circle, { [styles.done] : type === "complete", [styles.doneGreen] : type === "edit"} );
     return (
-      <span>
-        {children}
+        
         <div key={number} className={styles.NumberText}>
           <div className={circleCss}>
             <span className={styles.label}>
+            
               {number}
+              {children}
             </span>
           </div>
           <span className={styles.title}>{text}</span>
         </div>
-      </span>
+  
     );
   }
 }

@@ -24,7 +24,8 @@ storiesOf('commponents/Progressbar', module)
 
   .add('ProgressBar with popup', () => (
     <ProgressBar>
-      <CircleLable type="complete" number="1" text="Registry initialization" />
+      <CircleLable type="complete" number="1" text="Registry initialization">
+      </CircleLable>
       <CircleLable type="edit" number="1" text="Registry initialization" />
       <CircleLable number="1" text="Registry initialization">
         <PopupBar>
