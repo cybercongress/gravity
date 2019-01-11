@@ -12,11 +12,7 @@ export const Container = ({ children }) => (
   </div>
 );
 
-export const Text = ({ children }) => (
-  <span className={styles.text}>
-    {children}
-  </span>
-);
+
 
 export const Link = ({ children, ...props }) => (
   <RouterLink className={styles.link} {...props} >

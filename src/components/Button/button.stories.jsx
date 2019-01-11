@@ -2,82 +2,82 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { AddNewRecordButton, Buttons } from '../..';
+import { AddNewRecordButton, Button } from '../..';
 
-storiesOf('commponents/Buttons', module)
+storiesOf('commponents/Button', module)
     .addDecorator(centered)
-    .add('AddNewRecordButtons', () => (
+    .add('AddNewRecordButton', () => (
         <AddNewRecordButton>
           Add New Record
         </AddNewRecordButton>
     ))
-    .add('ButtonsDefault', () => (
-        <Buttons>
+    .add('ButtonDefault', () => (
+        <Button>
           Default
-        </Buttons>
+        </Button>
     ))
 
-    .add('ButtonsRed', () => (
-        <Buttons color='red'>
+    .add('ButtonRed', () => (
+        <Button color='red'>
           Reject
-        </Buttons>
+        </Button>
     ))
 
-    .add('ButtonsCancel', () => (
-        <Buttons color='cancel'>
+    .add('ButtonCancel', () => (
+        <Button color='cancel'>
           cancel
-        </Buttons>
+        </Button>
     ))
 
-    .add('ButtonsCreen', () => (
-        <Buttons color='green'>
+    .add('ButtonCreen', () => (
+        <Button color='green'>
           confirm
-        </Buttons>
+        </Button>
     ))
-    .add('ButtonsBlue', () => (
-        <Buttons color='blue'>
+    .add('ButtonBlue', () => (
+        <Button color='blue'>
           next
-        </Buttons>
+        </Button>
     ))
 
-    .add('ButtonsGreenYellow', () => (
-        <Buttons transformtext color='greenyellow'>
+    .add('ButtonGreenYellow', () => (
+        <Button transformtext color='greenyellow'>
           Link it!
-        </Buttons>
+        </Button>
     ))
 
-    .add('ButtonsOgange', () => (
-        <Buttons transformtext color='ogange'>
+    .add('ButtonOgange', () => (
+        <Button transformtext color='ogange'>
           Link it!
-        </Buttons>
+        </Button>
     ))
 
-    .add('ButtonsOutline', () => (
-        <Buttons outline>
+    .add('ButtonOutline', () => (
+        <Button outline>
           outline
-        </Buttons>
+        </Button>
     ))
 
-    .add('ButtonsDisabled', () => (
-        <Buttons disabled>
+    .add('ButtonDisabled', () => (
+        <Button disabled>
           disabled
-        </Buttons>
+        </Button>
     ))
 
     .add('ActionLink', () => (
-      <Buttons to={ `/databases/` }>
+      <Button to={ `/databases/` }>
         ActionLink
-      </Buttons>
+      </Button>
   ))
 
   .add('ActionLinkRed', () => (
-    <Buttons color='red' to={ `/databases/` }>
+    <Button color='red' to={ `/databases/` }>
         reject
-    </Buttons>
+    </Button>
 ))
 
 .add('ActionLinkBlue', () => (
-  <Buttons color='blue' to={ `/databases/` }>
+  <Button color='blue' to={ `/databases/` }>
       next
-  </Buttons>
+  </Button>
 ));

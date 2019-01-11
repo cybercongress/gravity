@@ -3,6 +3,8 @@
     margin-bottom: 5px;
     padding: 10px;
     border-radius: 5px;
+    min-width: 100px;
+    text-align: center;
 }
 
 .warn {
@@ -11,12 +13,15 @@
 
 .info {
     background-color: #90caf9;
+    color:#ffffff;
 }
 
 .error {
     background-color: #ef9a9a;
+    color:#ffffff;
 }
 
 .success {
     background-color: #a5d6a7;
+    color:#ffffff;
 }

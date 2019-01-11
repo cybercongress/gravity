@@ -3,7 +3,10 @@
   color:#7c7c7c;
   font-weight: normal;
   font-family: Play;
-  padding-bottom: 10px;
+}
+
+.TextColor{
+  color:#438cef;
 }
 
 .TextWeight{
@@ -14,6 +17,26 @@
   text-transform: uppercase;
 }
 
-.NoPadding{
-  padding-bottom: 0;
+.fontSizeSm{
+  font-size: 12px;
+}
+
+.fontSizeLg{
+  font-size: 16px;
+}
+
+.fontSizeXlg{
+  font-size: 24px;
+}
+
+.fontSizeXxlg{
+  font-size: 36px;
+}
+
+.lineHeight{
+ line-height: 1.5;
+}
+
+.textJustify{
+  text-align: justify;
 }

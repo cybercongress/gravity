@@ -93,6 +93,10 @@ button {
   padding: 0 20px;
 }
 
+.Margin{
+  margin-right: 10px;
+}
+
 /* -----ActionLink--------- */
 
 .ActionLink{
@@ -101,8 +105,12 @@ button {
   border-radius: 3px;
   text-transform: uppercase;
   text-decoration: none;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
   min-width: 105px;
+}
+
+.ActionLink:hover{
+  opacity: 0.8;
 }
 

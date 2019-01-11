@@ -7,10 +7,10 @@ import {
     Section,
     SectionContent,
     ActionLink,
-    Text,
     MainContainer,
     LinkHash,
     HomeTable,
+    Text,
 } from '../..';
 
 function formatDate() {
@@ -75,7 +75,7 @@ storiesOf('pages/home', module)
                 >
                     <SectionContent>
                         <Container>
-                            <Text>You haven&#39;t created registries yet!</Text>
+                            <Text size='xlg' color='blue' bold style={{ marginBottom: '20px' }}>You haven&#39;t created registries yet!</Text>
                             <ActionLink to='/new'>create and deploy right now</ActionLink>
                         </Container>
                     </SectionContent>
@@ -205,7 +205,7 @@ storiesOf('pages/home', module)
                 >
                     <SectionContent>
                         <Container>
-                            <Text>You haven&#39;t created registries yet!</Text>
+                            <Text size='xlg' color='blue' bold style={{ marginBottom: '20px' }}>You haven&#39;t created registries yet!</Text>
                             <ActionLink to='/new'>create and deploy right now</ActionLink>
                         </Container>
                     </SectionContent>
