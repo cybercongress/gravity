@@ -54,7 +54,7 @@ export const PopupSkillBar = ({ children }) => (
 export const PopupBarFooter = ({ children }) => (
   <div className={styles.PopupBarFooter}>{children}</div>);
 
-export const PopupBarButtun = ({ children}) => (
+export const PopupBarButton = ({ children}) => (
   <button className={styles.PopupBarButton}>
     {children}
   </button>
