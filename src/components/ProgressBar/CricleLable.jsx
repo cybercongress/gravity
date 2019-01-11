@@ -28,11 +28,13 @@ export default class CircleLable extends React.Component {
     return (
         
         <div key={number} className={styles.NumberText}>
+       
           <div className={circleCss}>
+          {children}
             <span className={styles.label}>
             
               {number}
-              {children}
+              
             </span>
           </div>
           <span className={styles.title}>{text}</span>
