@@ -5,8 +5,12 @@
   font-family: Play;
 }
 
-.TextColor{
+.TextColorBlue{
   color:#438cef;
+}
+
+.TextColorBlack{
+  color:#2e3842;
 }
 
 .TextWeight{

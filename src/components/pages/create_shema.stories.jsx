@@ -103,7 +103,7 @@ const Pages = ({ databaseId, message }) => (
             <Content title='Database code'>
                 <Code>{code}</Code>
 
-                {type === 'error' && message && <ErrorMessage>{message}</ErrorMessage>}
+                {type === 'error' && message && <Message type='error'>{message}</Message>}
             </Content>
         </ContainerRegister>
         <FlexContainer>

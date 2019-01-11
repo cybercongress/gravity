@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-    ActionLink,
     LinkHash,
     MainContainer,
     Section,
@@ -31,12 +30,13 @@ import {
     AddNewRecordButton,
     FormField,
     TableRecords,
+    Button,
+    calculateBensShares,
+    InfoButton,
+    DatabaseItemsContainer,
+    DbMenuPoints,
+    Text,
 } from '../..';
-
-import { DbMenuPoints } from '../DbMenuPoints/DbMenuPoints';
-import { DatabaseItemsContainer } from '../DatabaseTable/DatabaseItemsContainer';
-import { InfoButton } from '../DatabaseItem/index';
-import { calculateBensShares } from '../utils/utils';
 
 const totalFee = 3;
 const funded = '5';
@@ -77,18 +77,18 @@ const Disabled = {
 const name = 'Appstore';
 const admin = '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef';
 const isDbPaused = null;
-const databaseSymbol = 'APP';
+const databaseSymbol = ' APP';
 const isSchemaExist = false;
 
 const PagesViewRegistry = ({ showTable, disabled }) => (
     <MainContainer>
         <Section>
             <div style={ { marginLeft: '15px' } }>
-                <ActionLink to='/'>BACK TO CHAINGEAR</ActionLink>
+                <Button color='blue' style={ { marginRight: '15px' } } to='/'>BACK TO CHAINGEAR</Button>
                 {!isSchemaExist && (
-                    <ActionLink style={ { marginLeft: 15 } } to={ `/schema/${databaseSymbol}` }>
+                    <Button color='blue' to={ `/schema/${databaseSymbol}` }>
                         Define schema
-                    </ActionLink>
+                    </Button>
                 )}
             </div>
         </Section>
@@ -101,12 +101,11 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
 
         <FlexContainer line>
             <FlexContainerLeft>
-                symbol:
+                Symbol:
                 {databaseSymbol}
             </FlexContainerLeft>
             <FlexContainerRight>
                 status:
-                {' '}
                 {isDbPaused ? 'paused' : 'operational'}
                 <DbMenu>
                     <MenuPopup>
@@ -132,14 +131,14 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
         <Section title='General'>
             <SectionContent style={ { width: '25%' } }>
                 <CentredPanel>
-                    <BoxTitle>Created:</BoxTitle>
-                    <div>7/2/2018 17:13:33</div>
+                    <Text uppercase color='black' style={{marginBottom: '20px'}}>Created:</Text>
+                    <Text uppercase color='black'>7/2/2018 17:13:33</Text>
                 </CentredPanel>
             </SectionContent>
 
             <SectionContent style={ { width: '25%' } }>
                 <CentredPanel>
-                    <BoxTitle>Admin:</BoxTitle>
+                    <Text uppercase color='black' style={{marginBottom: '20px'}}>Admin:</Text>
                     <div>
                         <LinkHash value={ admin } />
                     </div>
@@ -148,27 +147,27 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
 
             <SectionContent style={ { width: '25%' } }>
                 <CentredPanel>
-                    <BoxTitle>FUNDED:</BoxTitle>
+                    <Text uppercase color='black' style={{marginBottom: '20px'}}>FUNDED:</Text>
 
-                    <FundContainer>
-                        <span>
+                    <Text uppercase color='black'>
+                        
                             {funded}
                             ETH
-                        </span>
-                    </FundContainer>
+                        
+                    </Text>
                 </CentredPanel>
             </SectionContent>
 
             <SectionContent style={ { width: '25%' } }>
                 <CentredPanel>
-                    <BoxTitle>FEES:</BoxTitle>
+                    <Text uppercase color='black' style={{marginBottom: '20px'}}>FEES:</Text>
 
-                    <FundContainer>
-                        <span>
+                    <Text uppercase color='black'>
+                
                             {totalFee}
                             ETH
-                        </span>
-                    </FundContainer>
+                    
+                    </Text>
                 </CentredPanel>
             </SectionContent>
         </Section>

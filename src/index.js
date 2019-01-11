@@ -51,6 +51,11 @@ import {
     BrowserSidebar
 } from './components/browser/Browser';
 
+import { calculateBensShares } from './components/utils/utils';
+import { InfoButton } from './components/DatabaseItem/index';
+import { DbMenuPoints } from './components/DbMenuPoints/DbMenuPoints';
+import { DatabaseItemsContainer } from './components/DatabaseTable/DatabaseItemsContainer';
+
 import {
     Content, ContainerRegister, SideBar,
     FieldsTable,
@@ -126,5 +131,5 @@ export {
     Table, HomeTable, TableRow, TableItem, TableAddRow, TableItemBen, TableRegistry,
 
     ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
-    FormField, ValueInput,
+    FormField, ValueInput,calculateBensShares,InfoButton,DatabaseItemsContainer,DbMenuPoints
 }
