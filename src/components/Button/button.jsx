@@ -29,7 +29,6 @@ export const Button = ({ children, to, ...props }) => {
                 [styles.ButtonGreenYellow]: props.color === 'greenyellow',
                 [styles.ButtonOrange]: props.color === 'ogange',
                 [styles.ButtonOutline]: props.outline,
-                [styles.Margin]: props.margin,
                 [styles.TextTransform]: props.transformtext,
             }) }
             >
@@ -49,7 +48,6 @@ export const Button = ({ children, to, ...props }) => {
                 [styles.ButtonOrange]: props.color === 'ogange',
                 [styles.ButtonOutline]: props.outline,
                 [styles.TextTransform]: props.transformtext,
-                [styles.Margin]: props.margin,
             }) }
         >
             {children}

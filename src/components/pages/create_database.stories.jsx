@@ -152,7 +152,7 @@ const Pages = ({ databaseId, message }) => (
             <FlexContainerRight>
                 {databaseId ? (
                     <span>
-                        <Button color='blue' margin to={ `/databases/${databaseId}` }>
+                        <Button color='blue' style={ { marginRight: '10px' } } to={ `/databases/${databaseId}` }>
                             Go to database
                         </Button>
                         <Button color='blue' to={ `/schema/${databaseId}` }>

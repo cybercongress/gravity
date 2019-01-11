@@ -100,20 +100,20 @@ class App extends Component {
                     <Section>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                               <Text fontSize={36} bold color={'#4a90e2'}>1000</Text>
-                               <Text fontSize={26} color={'#4a90e2'} NoPadding>link</Text>
+                               <Text color='blue' style={{paddingBottom:'10px'}} bold size='xxlg'>1000</Text>
+                               <Text color='blue' bold size='xlg'>link</Text>
                             </CentredPanel>
                         </SectionContent>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                                <Text fontSize={36} bold color={'#4a90e2'} >1000</Text>
-                                <Text fontSize={26} color={'#4a90e2'} NoPadding>CIDs</Text>
+                                <Text color='blue' bold size='xxlg' style={{paddingBottom:'10px'}}>1000</Text>
+                                <Text  color='blue' bold size='xlg'>CIDs</Text>
                             </CentredPanel>
                         </SectionContent>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                                <Text fontSize={36} bold color={'#4a90e2'}>1000</Text>
-                                <Text fontSize={26} color={'#4a90e2'} NoPadding>accounts</Text>
+                                <Text color='blue' style={{paddingBottom:'10px'}} bold size='xxlg' >1000</Text>
+                                <Text color='blue' bold size='xlg'>accounts</Text>
                             </CentredPanel>
                         </SectionContent>
                     </Section>
