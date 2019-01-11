@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Buttons, Title, PageTitle, MainContainer, WideInput, CentredPanel, Section, FundContainer, SectionContent, BoxTitle, FlexContainer, Description, SkillBar} from '../..';
+import {Buttons, Title, PageTitle, MainContainer, PopupSkillBar,  LineText,  WideInput, CentredPanel, Section, FundContainer, SectionContent, BoxTitle, FlexContainer, Description, SkillBar} from '../..';
 import styles from './app.css';
 import { storiesOf } from '@storybook/react';
 import { LinkContainer } from '../LinkContainer/LinkContainer';
-
+import { Text } from '../Text/Text';
+ 
 class App extends Component {
 
     state = {
@@ -12,7 +13,8 @@ class App extends Component {
         browserSupport: false,
         searchQuery: '',
         seeAll: false,
-        balance: 0
+        balance: 0,
+        PopupNotification: false,
     };
     seeAll = () => {
         this.setState({
@@ -29,6 +31,7 @@ class App extends Component {
         window.cyber.link(cidFrom, cidTo, address);        
     }
 
+
     render() {
         const { seeAll} = this.state;
         if (this.state.browserSupport) {
@@ -37,7 +40,7 @@ class App extends Component {
             </div>
         }
 
-        const { searchQuery, links, defaultAddress, balance, index } = this.props;
+        const { searchQuery, links, defaultAddress, balance, index, PopupNotification } = this.props;
 
         const searchResults = links.slice(0, seeAll ? links.length : 10).map(link =>
             <div key={link.hash} className={styles.searchItem}>
@@ -54,7 +57,15 @@ class App extends Component {
                     <PageTitle>Cyberd search</PageTitle>
                     <div style={{ width: '30%' }}>
                         <Description style={{ fontSize: '14px', paddingBottom: '10px' }}>Your bandwidth:</Description>
-                        <SkillBar value={10} />
+                        <SkillBar value={10}>
+                        {PopupNotification&&
+                            <PopupSkillBar>
+                                <LineText>600000 of 1000000 left (60%) </LineText>
+                            </PopupSkillBar>
+                        }
+                        
+
+                        </SkillBar>
                     </div>
 
                 </FlexContainer>
@@ -75,43 +86,34 @@ class App extends Component {
                     {links.length > 10 && <Buttons color='blue' style={{ marginLeft: '0px' }} transformtext type="button" onClick={() => this.seeAll()}>{!seeAll ? 'see all' : 'top 10'}</Buttons>}
                 </div>}
 
-                {index && <div>
-                    <Title style={{ marginLeft: '0px', marginBottom: '30px' }}>Search statistic:</Title>
+                {index && 
+                 <div>
+                     <div style={{ textAlign: 'center'}}>
+                     <Title style={{ marginLeft: '0px', 
+                                    marginBottom: '30px'
+                                 }}
+                    >
+                        Search statistic:
+                    </Title>
+                     </div>
+                    
                     <Section>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                                <BoxTitle>FUNDED:</BoxTitle>
-
-                                <FundContainer>
-                                    <span>
-                                        {12}
-                                        ETH
-                        </span>
-                                </FundContainer>
+                               <Text fontSize={36} bold color={'#4a90e2'}>1000</Text>
+                               <Text fontSize={26} color={'#4a90e2'} NoPadding>link</Text>
                             </CentredPanel>
                         </SectionContent>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                                <BoxTitle>FUNDED:</BoxTitle>
-
-                                <FundContainer>
-                                    <span>
-                                        {23}
-                                        ETH
-                        </span>
-                                </FundContainer>
+                                <Text fontSize={36} bold color={'#4a90e2'} >1000</Text>
+                                <Text fontSize={26} color={'#4a90e2'} NoPadding>CIDs</Text>
                             </CentredPanel>
                         </SectionContent>
                         <SectionContent style={{ width: '25%' }}>
                             <CentredPanel>
-                                <BoxTitle>FUNDED:</BoxTitle>
-
-                                <FundContainer>
-                                    <span>
-                                        {32}
-                                        ETH
-                        </span>
-                                </FundContainer>
+                                <Text fontSize={36} bold color={'#4a90e2'}>1000</Text>
+                                <Text fontSize={26} color={'#4a90e2'} NoPadding>accounts</Text>
                             </CentredPanel>
                         </SectionContent>
                     </Section>
@@ -170,80 +172,75 @@ class App extends Component {
 
 }
 
-const links=[
-  {
-  content:'dds',
-  hash: 'sds12',
-  Rank: '2',
-},
-{
-  content:'312',
-  hash: '45412',
-  Rank: '1',
-},
-{
-    content: 'test',
-    hash: 'test',
-    Rank: '1',
-},
+const links = [
+    {
+        content: '312',
+        hash: '45412',
+        Rank: 1,
+    },
+    {
+        content: 'test',
+        hash: 'test',
+        Rank: 2,
+    },
 
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '1',
-},
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '1',
-},
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '1',
-},
-{
-    content: '312',
-    hash: '45412',
-    Rank: '1',
-},
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '1',
-},
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '1',
+    },
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '1',
+    },
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '1',
+    },
+    {
+        content: '312',
+        hash: '45412',
+        Rank: '1',
+    },
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '1',
+    },
 
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '12',
-},
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '12',
-},
-{
-    content: '312',
-    hash: '45412',
-    Rank: '14',
-},
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '1',
-},
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '12',
+    },
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '12',
+    },
+    {
+        content: '312',
+        hash: '45412',
+        Rank: '14',
+    },
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '1',
+    },
 
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '16',
-},
-{
-    content: 'test',
-    hash: '45412',
-    Rank: '1',
-},
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '16',
+    },
+    {
+        content: 'test',
+        hash: '45412',
+        Rank: '1',
+    },
 ];
 
 const links2=[];
@@ -260,7 +257,7 @@ const links3=[
   },];
 storiesOf('cyber/pages', module)
     .add('anonym no result', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='0' />)
-    .add('index', () => <App  searchQuery='test' links={links2} defaultAddress='test' balance='0' index='1' />)
+    .add('index', () => <App  searchQuery='test' links={links2} defaultAddress='test' PopupNotification={ true } balance='0' index='1' />)
     .add('anonym there are results', () => <App  searchQuery='test' links={links3} defaultAddress='test' balance='0' />)
     .add('few results', () => <App  searchQuery='test' links={links3} defaultAddress='test' balance='1000' />)
     .add('lot result', () => <App  searchQuery='test' links={links} defaultAddress='test' balance='1000' />)
