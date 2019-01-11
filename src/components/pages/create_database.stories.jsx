@@ -18,15 +18,14 @@ import {
     TableItemBen,
     ParamRow,
     Text,
-} from '../..';
-import {
     ContainerRegister,
     Content,
     PageTitle,
     Panel,
     RemoveButton,
     SideBar,
-} from '../newregistry';
+} from '../..';
+
 import code from './code';
 
 const beneficiaries = [
