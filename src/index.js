@@ -126,5 +126,5 @@ export {
     Table, HomeTable, TableRow, TableItem, TableAddRow, TableItemBen, TableRegistry,
 
     ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
-    FormField, ValueInput
+    FormField, ValueInput, PanelRecord,
 }
