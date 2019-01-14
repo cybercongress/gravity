@@ -108,16 +108,13 @@ import {
     LineText,
     ContentLineFund,
 } from './components/PopupContent/PopupContent';
+import { DatabaseItemsContainer } from './components/DatabaseTable/DatabaseItemsContainer';
+import { DbMenuPoints } from './components/DbMenuPoints/DbMenuPoints';
+import { SkillBar } from './components/SkillBar/SkillBar';
+import { Text } from './components/Text/Text';
 import {
     SearchItem,
 } from './components/SearchItem/SearchItem';
-
-import {
-    SkillBar,
-} from './components/SkillBar/SkillBar';
-import {
-    Text,
-} from './components/Text/Text';
 
 import {
     Browser,
@@ -132,12 +129,6 @@ import {
 import {
     InfoButton,
 } from './components/DatabaseItem/index';
-import {
-    DbMenuPoints,
-} from './components/DbMenuPoints/DbMenuPoints';
-import {
-    DatabaseItemsContainer,
-} from './components/DatabaseTable/DatabaseItemsContainer';
 
 import {
     Content,
@@ -254,19 +245,13 @@ export {
     TableItemBen,
     TableRegistry,
 
-    ContentLine,
-    ContentLineTextInput,
-    LineControl,
-    ContentInput,
-    LineTitle,
-    LineText,
-    ContentLineFund,
-    FormField,
-    ValueInput,
+    ContentLine, ContentLineTextInput, LineControl,
+    ContentInput, LineTitle, LineText, ContentLineFund,
+    FormField, ValueInput,
+
+    DatabaseItemsContainer, DbMenuPoints,
     calculateBensShares,
     InfoButton,
-    DatabaseItemsContainer,
-    DbMenuPoints,
     SearchItem,
     LinkContainer,
     Vitalick,
