@@ -3,8 +3,8 @@ import cx from 'classnames';
 
 const styles = require('./LinkContainer.css');
 
-export const LinkContainer = ({ children, column, center }) =>(
-  <div className={cx(styles.LinkContainer, {[styles.LinkContainerColumn]:column,[styles.LinkContainerCenter]:center})}>
+export const LinkContainer = ({ children, column, center, ...props}) =>(
+  <div {...props} className={cx(styles.LinkContainer, {[styles.LinkContainerColumn]:column,[styles.LinkContainerCenter]:center})}>
         {children}
       </div>
 )

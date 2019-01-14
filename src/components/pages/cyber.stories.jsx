@@ -18,8 +18,8 @@ import {
     SkillBar,
     SearchItem,
     LinkContainer,
+    Vitalick,
 } from '../..';
-import styles from './app.css';
 import { Text } from '../Text/Text';
 
 class App extends Component {
@@ -218,7 +218,7 @@ class App extends Component {
                 )}
 
                 {defaultAddress && balance > 0 && searchQuery && links.length === 0 && (
-                    <LinkContainer center>
+                    <LinkContainer style={ { paddingTop: '100px' } } center>
                         <div style={ { width: '60%' } }>
                             <Text size='lg' style={ { marginBottom: '10px' } }>
                                 Seems that you are first one who are searching for
@@ -249,11 +249,7 @@ class App extends Component {
                         </div>
 
                         <div style={ { width: '30%' } }>
-                            <img
-                              className={ styles.vitalick }
-                              src={ require('./buterin-02.svg') }
-                              alt='vitalick'
-                            />
+                            <Vitalick />
                         </div>
                     </LinkContainer>
                 )}
