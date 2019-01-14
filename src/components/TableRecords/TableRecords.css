@@ -48,10 +48,11 @@
   font-weight: bold;
   border-bottom: 1px solid #dedede;
   font-size: 11px;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
   background: #ddd;
   height: 100%;
+  min-height: 40px;
 }
 
 .TableRecords tr{

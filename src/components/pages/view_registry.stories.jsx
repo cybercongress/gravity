@@ -17,9 +17,9 @@ import {
     MenuPopupItem,
     MenuSeparator,
     MenuPopupDeleteIcon,
-    MenuPopupEditIcon,
     MenuPopupTransferIcon,
-    MenuPopupDeletePencilIcon,
+    MenuPopupAccountIcon,
+    MenuPopupEditIcon,
     BenContainer,
     BenPieChart,
     MenuPopupResumeIcon,
@@ -109,12 +109,12 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                 {isDbPaused ? 'paused' : 'operational'}
                 <DbMenu>
                     <MenuPopup>
-                        <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
+                        <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
                             Transfer ownership
                         </MenuPopupItem>
                         <MenuSeparator />
-                        <MenuPopupItem icon={ <MenuPopupEditIcon /> }>Fund registry</MenuPopupItem>
-                        <MenuPopupItem icon={ <MenuPopupEditIcon /> }>Claim Funds</MenuPopupItem>
+                        <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>Fund registry</MenuPopupItem>
+                        <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>Claim Funds</MenuPopupItem>
                         <MenuSeparator />
                         <MenuPopupItem icon={ <MenuPopupPauseIcon /> }>Pause database</MenuPopupItem>
                         <MenuPopupItem icon={ <MenuPopupResumeIcon /> }>
@@ -224,25 +224,25 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                     <TableRecords>
                         <thead>
                             <tr>
-                                <th>Action</th>
+                                <th>Action</th> 
                                 <th>
                                     <DbMenuPoints>
                                         <MenuPopup>
-                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
                                                 Transfer Ownership
                                             </MenuPopupItem>
                                             <MenuSeparator />
-                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
                                                 Fund Registry
                                             </MenuPopupItem>
-                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
                                                 Claim Funds
                                             </MenuPopupItem>
                                             <MenuSeparator />
                                             <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
                                                 Delete Registry
                                             </MenuPopupItem>
-                                            <MenuPopupItem icon={ <MenuPopupDeletePencilIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
                                                 Delete Registry
                                             </MenuPopupItem>
                                         </MenuPopup>
@@ -251,21 +251,21 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                                 <th>
                                     <DbMenuPoints>
                                         <MenuPopup>
-                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
                                                 Transfer Ownership
                                             </MenuPopupItem>
                                             <MenuSeparator />
-                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
                                                 Fund Registry
                                             </MenuPopupItem>
-                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
                                                 Claim Funds
                                             </MenuPopupItem>
                                             <MenuSeparator />
                                             <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
                                                 Delete Registry
                                             </MenuPopupItem>
-                                            <MenuPopupItem icon={ <MenuPopupDeletePencilIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
                                                 Delete Registry
                                             </MenuPopupItem>
                                         </MenuPopup>
@@ -274,21 +274,21 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                                 <th>
                                     <DbMenuPoints>
                                         <MenuPopup>
-                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
                                                 Transfer Ownership
                                             </MenuPopupItem>
                                             <MenuSeparator />
-                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
                                                 Fund Registry
                                             </MenuPopupItem>
-                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
                                                 Claim Funds
                                             </MenuPopupItem>
                                             <MenuSeparator />
                                             <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
                                                 Delete Registry
                                             </MenuPopupItem>
-                                            <MenuPopupItem icon={ <MenuPopupDeletePencilIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
                                                 Delete Registry
                                             </MenuPopupItem>
                                         </MenuPopup>
@@ -297,21 +297,21 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                                 <th>
                                     <DbMenuPoints>
                                         <MenuPopup>
-                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
                                                 Transfer Ownership
                                             </MenuPopupItem>
                                             <MenuSeparator />
-                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
                                                 Fund Registry
                                             </MenuPopupItem>
-                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
                                                 Claim Funds
                                             </MenuPopupItem>
                                             <MenuSeparator />
                                             <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
                                                 Delete Registry
                                             </MenuPopupItem>
-                                            <MenuPopupItem icon={ <MenuPopupDeletePencilIcon /> }>
+                                            <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
                                                 Delete Registry
                                             </MenuPopupItem>
                                         </MenuPopup>
@@ -334,10 +334,10 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                             </tr>
                             <tr>
                                 <th>Owner</th>
-                                <th>YOU</th>
-                                <th>YOU</th>
-                                <th>YOU</th>
-                                <th>YOU</th>
+                                <th><LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' /></th>
+                                <th><LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' /></th>
+                                <th><LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' /></th>
+                                <th><LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' /></th>
                             </tr>
                         </thead>
                         <tbody>

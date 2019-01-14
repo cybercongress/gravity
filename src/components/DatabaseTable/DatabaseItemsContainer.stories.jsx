@@ -9,10 +9,10 @@ import {
   MenuPopup,
   MenuPopupItem,
   MenuSeparator,
+  MenuPopupAccountIcon,
   MenuPopupTransferIcon,
-  MenuPopupEditIcon,
   MenuPopupDeleteIcon,
-  MenuPopupDeletePencilIcon,
+  MenuPopupEditIcon,
   LinkHash
 } from '../..';
 
@@ -40,13 +40,13 @@ storiesOf('commponents/DatabaseItemsContainer', module)
             <td>
               <DbMenuPoints>
                 <MenuPopup>
-                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Transfer Ownership</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupAccountIcon />}>Transfer Ownership</MenuPopupItem>
                   <MenuSeparator />
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Fund Registry</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Funds</MenuPopupItem>
                   <MenuSeparator />
                   <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}>
+                  <MenuPopupItem icon={<MenuPopupEditIcon />}>
                     Delete Registry
                   </MenuPopupItem>
                 </MenuPopup>
@@ -65,13 +65,13 @@ storiesOf('commponents/DatabaseItemsContainer', module)
             <td>
               <DbMenuPoints>
                 <MenuPopup>
-                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Transfer Ownership</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupAccountIcon />}>Transfer Ownership</MenuPopupItem>
                   <MenuSeparator />
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Fund Registry</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Funds</MenuPopupItem>
                   <MenuSeparator />
                   <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}>
+                  <MenuPopupItem icon={<MenuPopupEditIcon />}>
                     Delete Registry
                   </MenuPopupItem>
                 </MenuPopup>
@@ -99,39 +99,39 @@ storiesOf('commponents/DatabaseItemsContainer', module)
             <th>Action</th>
             <th><DbMenuPoints>
                 <MenuPopup>
-                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Transfer Ownership</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupAccountIcon />}>Transfer Ownership</MenuPopupItem>
                   <MenuSeparator />
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Fund Registry</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Funds</MenuPopupItem>
                   <MenuSeparator />
                   <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}>
+                  <MenuPopupItem icon={<MenuPopupEditIcon />}>
                     Delete Registry
                   </MenuPopupItem>
                 </MenuPopup>
               </DbMenuPoints></th>
             <th><DbMenuPoints>
                 <MenuPopup>
-                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Transfer Ownership</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupAccountIcon />}>Transfer Ownership</MenuPopupItem>
                   <MenuSeparator />
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Fund Registry</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Funds</MenuPopupItem>
                   <MenuSeparator />
                   <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}>
+                  <MenuPopupItem icon={<MenuPopupEditIcon />}>
                     Delete Registry
                   </MenuPopupItem>
                 </MenuPopup>
               </DbMenuPoints></th>
             <th><DbMenuPoints>
                 <MenuPopup>
-                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Transfer Ownership</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupAccountIcon />}>Transfer Ownership</MenuPopupItem>
                   <MenuSeparator />
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Fund Registry</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Funds</MenuPopupItem>
                   <MenuSeparator />
                   <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}>
+                  <MenuPopupItem icon={<MenuPopupEditIcon />}>
                     Delete Registry
                   </MenuPopupItem>
                 </MenuPopup>
@@ -139,13 +139,13 @@ storiesOf('commponents/DatabaseItemsContainer', module)
             <th>
               <DbMenuPoints>
                 <MenuPopup>
-                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Transfer Ownership</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupAccountIcon />}>Transfer Ownership</MenuPopupItem>
                   <MenuSeparator />
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Fund Registry</MenuPopupItem>
+                  <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Funds</MenuPopupItem>
                   <MenuSeparator />
                   <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
-                  <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}>
+                  <MenuPopupItem icon={<MenuPopupEditIcon />}>
                     Delete Registry
                   </MenuPopupItem>
                 </MenuPopup>

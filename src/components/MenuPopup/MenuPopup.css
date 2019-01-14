@@ -100,26 +100,26 @@
     width: 24px;
 }
 
-.menuIconEdit {
+.IconTransfer {
     background: url('./icons/edit.svg') center center;
 }
 
-.menuIconTransfer {
+.MenuPopupAccountIcon {
     background: url('./icons/account.svg') center center;
 }
 
-.menuIconResume {
+.IconResume {
     background: url('./icons/resume.svg') center center no-repeat;
 }
 
-.menuIconPause {
+.IconPause {
     background: url('./icons/pause.svg') center center no-repeat;
 }
 
-.menuIconDelete {
+.IconDelete {
     background: url('./icons/delete.svg') center center no-repeat;
 }
 
-.menuIconDeletePencil {
+.IconEdit {
     background: url('./icons/pensil.svg') center center;
 }

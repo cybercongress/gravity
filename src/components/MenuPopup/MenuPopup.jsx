@@ -38,38 +38,38 @@ export const MenuSeparator = ({children, ...props}) => (
 
 // ICONS
 
-export const MenuPopupEditIcon = ({children, ...props}) => (
-    <i {...props} className={cx(styles.menuIcon, styles.menuIconEdit)}>
+export const MenuPopupTransferIcon = ({children, ...props}) => (
+    <i {...props} className={cx(styles.menuIcon, styles.IconTransfer)}>
         {children}
     </i>
 );
 
-export const MenuPopupTransferIcon = ({children, ...props}) => (
-    <i {...props} className={cx(styles.menuIcon, styles.menuIconTransfer)}>
+export const MenuPopupAccountIcon = ({children, ...props}) => (
+    <i {...props} className={cx(styles.menuIcon, styles.MenuPopupAccountIcon)}>
         {children}
     </i>
 );
 
 export const MenuPopupResumeIcon = ({children, ...props}) => (
-    <i {...props} className={cx(styles.menuIcon, styles.menuIconResume)}>
+    <i {...props} className={cx(styles.menuIcon, styles.IconResume)}>
         {children}
     </i>
 );
 
 export const MenuPopupPauseIcon = ({children, ...props}) => (
-    <i {...props} className={cx(styles.menuIcon, styles.menuIconPause)}>
+    <i {...props} className={cx(styles.menuIcon, styles.IconPause)}>
         {children}
     </i>
 );
 
 export const MenuPopupDeleteIcon = ({children, ...props}) => (
-    <i {...props} className={cx(styles.menuIcon, styles.menuIconDelete)}>
+    <i {...props} className={cx(styles.menuIcon, styles.IconDelete)}>
         {children}
     </i>
 );
 
-export const MenuPopupDeletePencilIcon = ({children, ...props}) => (
-    <i {...props} className={cx(styles.menuIcon, styles.menuIconDeletePencil)}>
+export const MenuPopupEditIcon = ({children, ...props}) => (
+    <i {...props} className={cx(styles.menuIcon, styles.IconEdit)}>
         {children}
     </i>
 );
