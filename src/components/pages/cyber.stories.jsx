@@ -134,12 +134,9 @@ class App extends Component {
 
                 {index && (
                     <div>
-                        <div style={ { textAlign: 'center' } }>
-                            <Title style={ { marginLeft: '0px', marginBottom: '30px' } }>
-                                Search statistic:
-                            </Title>
-                        </div>
-
+                        <Title style={ { marginLeft: '0px', marginBottom: '30px', textAlign: 'center' } }>
+                            Search statistic:
+                        </Title>
                         <Section>
                             <SectionContent style={ { width: '25%' } }>
                                 <CentredPanel>

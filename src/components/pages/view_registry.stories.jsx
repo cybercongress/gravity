@@ -7,8 +7,6 @@ import {
     SectionContent,
     Centred,
     CentredPanel,
-    FundContainer,
-    BoxTitle,
     FlexContainerLeft,
     FlexContainerRight,
     FlexContainer,
@@ -36,6 +34,7 @@ import {
     DatabaseItemsContainer,
     DbMenuPoints,
     Text,
+    WideSelect,
 } from '../..';
 
 const totalFee = 3;
@@ -63,10 +62,32 @@ const beneficiaries = [
         stake: 66,
     },
 ];
+const Permission = {
+    OnlyAdmin: 0,
+    Whitelist: 1,
+    AllUsers: 2,
+};
+
+const CreateEntryPermissionGroup = {
+    [Permission.OnlyAdmin]: {
+        key: 'OnlyAdmin',
+        label: 'ONLY OWNER',
+    },
+    // 1: {
+    //     key: 'Whitelist',
+    //     label: 'Whitelist',
+    // },
+    [Permission.AllUsers]: {
+        key: 'AllUsers',
+        label: 'All Users',
+    },
+};
+
 
 const name = 'Appstore';
 const admin = '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef';
 const isDbPaused = null;
+const isOwner = null;
 const databaseSymbol = ' APP';
 const isSchemaExist = false;
 
@@ -177,7 +198,22 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                   value='{permissionGroupStr}'
                   onUpdate='isDbPaused'
                   icon={ <InfoButton /> }
-                />
+                >
+                    <WideSelect
+                        //   inputRef={ (node) => {
+                        //         dbPage.permissionGroup = node;
+                        //   } }
+                      defaultValue='{ permissionGroup }'
+                    >
+                        {Object.keys(CreateEntryPermissionGroup).map((n) => {
+                                const { label } = CreateEntryPermissionGroup[n];
+
+                                return (
+                                    <option value={ n } key={ n }>{label}</option>
+                                );
+                            })}
+                    </WideSelect>
+                </FormField>
                 <FormField label='Entries' value='{rows.length}' />
                 <FormField label='Version' value='{contractVersion}' />
                 <FormField label='Database address' value='{databaseAddress}' />
