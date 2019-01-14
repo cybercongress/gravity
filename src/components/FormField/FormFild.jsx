@@ -52,10 +52,13 @@ class FormField extends React.Component {
                 </FormLabel>
                 <FormValue>
                     {!edit ? (
-                        <span>
-                            {value}
-                            {icon}
-
+                        <span style={{display: 'flex', alignItems: 'center'}}>
+                            <span style={{display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                {value}
+                            </span>
+                            <span>
+                                {icon}
+                            </span>
                             {/* <span style={ { marginLeft: 5 } }>{valueType}</span> */}
                         </span>
                     ) : (

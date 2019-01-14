@@ -88,7 +88,7 @@ const Pages = ({ databaseId, message }) => (
                         </WideSelect>
                     </ParamRow>
                     <ParamRow>
-                        <Text size='sm' lineHeight justify>
+                        <Text size='sm' lineheight justify>
                             <b>Description:</b>
                             One morning, when Gregor Samsa woke from troubled dreams, he found
                             himself transformed in his bed into a horrible vermin. He lay on his

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { LinkHash, WideInput, Button } from '../..';
+import { LinkHash, WideInput, Button, Text, } from '../..';
 import {
     ContentLine,
     ContentLineTextInput,
@@ -50,9 +50,12 @@ storiesOf('commponents/Popup', module)
             <PopupTitle>Pause Registry</PopupTitle>
             <PopupContent>
                 <ContentLine>
-                    <LineText>
+                    {/* <LineText>
                         When registry is on pause there will be no ability to operate with records
-                    </LineText>
+                    </LineText> */}
+                    <Text lineheight='true'>
+                        When registry is on pause there will be no ability to operate with records
+                    </Text>
                 </ContentLine>
             </PopupContent>
             <PopupFooter>
@@ -69,7 +72,7 @@ storiesOf('commponents/Popup', module)
             <PopupTitle>Resume registry</PopupTitle>
             <PopupContent>
                 <ContentLine>
-                    <LineText>Resume registry to operate with records</LineText>
+                    <Text lineheight='true'>Resume registry to operate with records</Text>
                 </ContentLine>
             </PopupContent>
             <PopupFooter>
@@ -86,10 +89,10 @@ storiesOf('commponents/Popup', module)
             <PopupTitle>Delete registry</PopupTitle>
             <PopupContent>
                 <ContentLine>
-                    <LineText>
+                    <Text lineheight='true'>
                         Your registry will be unlinked from Chaingear, but you still will be able to
                         operate with it
-                    </LineText>
+                    </Text>
                 </ContentLine>
             </PopupContent>
             <PopupFooter>
@@ -101,7 +104,7 @@ storiesOf('commponents/Popup', module)
         </Popup>
     ))
 
-    .add('EditRecord', () => (
+    .add('EditRecord_v1', () => (
         <Popup open='claimFundOpen'>
             <PopupTitle>Edit record</PopupTitle>
             <PopupContent>
@@ -140,7 +143,7 @@ storiesOf('commponents/Popup', module)
                 <ContentLineTextInput>
                     <LineTitle>Availiable to claim:</LineTitle>
                     <LineControl>
-                        <LineText>5.00 ETH</LineText>
+                        <Text>5.00 ETH</Text>
                     </LineControl>
                 </ContentLineTextInput>
                 <ContentLineTextInput>
@@ -283,7 +286,7 @@ storiesOf('commponents/Popup', module)
 
     .add('PopupProgrssBar_2', () => (
         <PopupBar>
-            <LineText>To operate with records, please, define schema</LineText>
+            <Text lineheight='true'>To operate with records, please, define schema</Text>
             <PopupBarFooter>
                 <Button transparent='true' style={ { color: '#b00020' } }>
                     complete step
@@ -294,7 +297,7 @@ storiesOf('commponents/Popup', module)
 
     .add('PopupProgrssBar_3', () => (
         <PopupBar>
-            <LineText>To prevent lose of code, please, save ABI</LineText>
+            <Text lineheight='true'>To prevent lose of code, please, save ABI</Text>
             <PopupBarFooter>
                 <Button transparent='true' style={ { color: '#b00020' } }>
                     complete step
@@ -305,7 +308,7 @@ storiesOf('commponents/Popup', module)
 
     .add('PopupSkillBar', () => (
         <PopupSkillBar>
-            <LineText>600000 of 1000000 left (60%) </LineText>
+            <Text style={ { color: '#ffffff' } }>600000 of 1000000 left (60%) </Text>
         </PopupSkillBar>
     ))
 
