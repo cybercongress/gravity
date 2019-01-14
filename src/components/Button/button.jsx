@@ -48,6 +48,7 @@ export const Button = ({ children, to, ...props }) => {
                 [styles.ButtonOrange]: props.color === 'ogange',
                 [styles.ButtonOutline]: props.outline,
                 [styles.TextTransform]: props.transformtext,
+                [styles.Transparent]: props.transparent,
             }) }
         >
             {children}

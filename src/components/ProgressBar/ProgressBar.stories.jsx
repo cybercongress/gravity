@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import CircleLable from './CricleLable';
 import { ProgressBar } from './ProgressBar';
-import { LineText, PopupBar, PopupBarButton, PopupBarFooter } from "../..";
+import { LineText, PopupBar, PopupBarFooter, Button } from "../..";
 
 storiesOf('commponents/Progressbar', module)
   .addDecorator(centered)
@@ -31,7 +31,7 @@ storiesOf('commponents/Progressbar', module)
         <PopupBar>
           <LineText>To operate with records, please, define schema</LineText>
           <PopupBarFooter>
-            <PopupBarButton>complete step</PopupBarButton>
+              <Button transparent style={{color: '#b00020'}}>complete step</Button>
           </PopupBarFooter>
         </PopupBar>
       </CircleLable>

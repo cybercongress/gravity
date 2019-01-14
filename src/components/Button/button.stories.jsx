@@ -64,6 +64,12 @@ storiesOf('commponents/Button', module)
         </Button>
     ))
 
+    .add('ButtonTransparent', () => (
+        <Button transparent style={ { color: '#b00020' } }>
+            complete step
+        </Button>
+    ))
+
     .add('ActionLink', () => (
       <Button to={ `/databases/` }>
         ActionLink

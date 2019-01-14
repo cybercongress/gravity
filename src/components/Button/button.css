@@ -93,6 +93,27 @@ button {
   padding: 0 20px;
 }
 
+.Transparent{
+  background: transparent;
+  min-width: 110px;
+  height: 31px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: Play;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: none;
+  /* margin: 0 10px; */
+}
+
+.Transparent:hover{
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* .Transparent:hover{
+
+} */
+
 /* -----ActionLink--------- */
 
 .ActionLink{
