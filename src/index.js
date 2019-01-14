@@ -38,8 +38,9 @@ LineControl,
 ContentInput,
 LineTitle,
 LineText,
-ContentLineFund
+ContentLineFund,
 } from './components/PopupContent/PopupContent';
+import { SearchItem } from './components/SearchItem/SearchItem';
 
 import { SkillBar } from './components/SkillBar/SkillBar';
 import { Text } from './components/Text/Text';
@@ -48,7 +49,7 @@ import {
     Browser,
     BrowserHeader,
     BrowserContent,
-    BrowserSidebar
+    BrowserSidebar,
 } from './components/browser/Browser';
 
 import { calculateBensShares } from './components/utils/utils';
@@ -71,6 +72,7 @@ import {
 import { AddField } from './components/newregistry/AddField';
 
 import StatusBar from './components/StatusBar';
+import { LinkContainer } from './components/LinkContainer/LinkContainer';
 
 import Code from './components/SolidityHighlight';
 
@@ -131,5 +133,5 @@ export {
     Table, HomeTable, TableRow, TableItem, TableAddRow, TableItemBen, TableRegistry,
 
     ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
-    FormField, ValueInput,calculateBensShares,InfoButton,DatabaseItemsContainer,DbMenuPoints
+    FormField, ValueInput,calculateBensShares,InfoButton,DatabaseItemsContainer,DbMenuPoints,SearchItem, LinkContainer,
 }
