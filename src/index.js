@@ -61,6 +61,7 @@ import {
     PopupSkillBar,
     PopupBar,
     PopupBarFooter,
+    PopupNotification,
 } from './components/Popup/Popup';
 import {
     BenContainer,
@@ -151,6 +152,7 @@ import {
 } from './components/Vitalick/vitalick';
 
 import Code from './components/SolidityHighlight';
+import { Status } from './components/Popup/status';
 
 export {
     Title,
@@ -246,4 +248,6 @@ export {
     SearchItem,
     LinkContainer,
     Vitalick,
+    Status,
+    PopupNotification,
 };

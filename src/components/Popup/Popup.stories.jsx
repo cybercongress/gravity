@@ -7,15 +7,11 @@ import {
     WideInput,
     Button,
     Text,
-} from '../..';
-import {
     ContentLine,
     ContentLineTextInput,
     LineControl,
     LineTitle,
     ContentLineFund,
-} from '../PopupContent/PopupContent';
-import {
     Popup,
     PopupSkillBar,
     PopupNotification,
@@ -24,8 +20,8 @@ import {
     PopupFooter,
     PopupBar,
     PopupBarFooter,
-} from './Popup';
-import { Status } from './status';
+    Status,
+} from '../..';
 
 storiesOf('commponents/Popup', module)
     .addDecorator(centered)

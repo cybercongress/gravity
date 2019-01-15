@@ -14,6 +14,7 @@ export const Popup = ({ children, open, ...props }) => (
 export const PopupNotification = ({ children, open, ...props }) => (
   <div className={cx(styles.popup, { [styles.popupOpen]: open })}>
       <div className={cx(styles.PopupNotification, { [styles.PopupNotificationError]: props.type === 'error' })}>
+      <div className={styles.PopupClose}/>
       {children}
     </div>
   </div>

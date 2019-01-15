@@ -234,7 +234,7 @@
     padding: 10px 0;
 }
 
-.PopupNotification::before{
+.PopupClose{
     content: url(./close.svg);
     position: absolute;
     top: 8px;
