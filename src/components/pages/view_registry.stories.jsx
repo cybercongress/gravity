@@ -220,7 +220,11 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                 <FormField label='Schema address' value='{entryCoreAddress}' />
                 <FormField
                   label='Abi link'
-                  value='QmdkrMcmKBWsg5K2senjLCFYLBxbqgamNF8d8ZC8xn1BHt'
+                  value={ (
+                      <a href='/' target='_blank'>
+                          QmdkrMcmKBWsg5K2senjLCFYLBxbqgamNF8d8ZC8xn1BHt
+                      </a>
+                  ) }
                 />
             </SectionContent>
 
