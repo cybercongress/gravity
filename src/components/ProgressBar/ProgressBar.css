@@ -56,24 +56,31 @@
   /* background-color: #eff3f6; */
 }
 
+.NumberText:last-child{
+  width: 70%;
+  padding-left: 0px;
+}
+
 .NumberText:first-child::before{
   display: none;
+  width: 30%;
 }
 
 
 .NumberText::before{
   content: "";
-  height: 2px;
-  background-color: #979797;
-  position: absolute;
-  width: 50px;
-  /* width: 30%; */
-  display: flex;
-  position: relative;
-  padding-left: 9px;
-  align-items: center;
-  margin: 0 10px;
-  /* background-color: #eff3f6; */
+    /* height: 2px; */
+    /* background-color: #979797; */
+    position: absolute;
+    width: 55%;
+    /* width: 30%; */
+    display: flex;
+    position: relative;
+    padding-left: 9px;
+    align-items: center;
+    margin: 0 10px;
+    /* background-color: #eff3f6; */
+    border-bottom: 3px dotted #979797;;
 }
 
 .done{

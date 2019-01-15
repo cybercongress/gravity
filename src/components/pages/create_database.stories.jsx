@@ -24,6 +24,8 @@ import {
     Panel,
     RemoveButton,
     SideBar,
+    PopupBar,
+    PopupBarFooter,
 } from '../..';
 
 import code from './code';
@@ -61,16 +63,22 @@ const beneficiaries = [
     },
 ];
 
-const canCreate = true;
+const canCreate = false;
 
 const Pages = ({ databaseId, message }) => (
     <MainContainer>
         <PageTitle>New database creation</PageTitle>
         <ProgressBar>
-            <CircleLable type='complete' number='1' text='Registry initialization' />
-            <CircleLable type='edit' number='2' text='Schema definition' />
-            <CircleLable number='3' text='Contract code saving' />
-        </ProgressBar>
+      <CircleLable type="complete" number="1" text="Registry initialization" />
+      <CircleLable number="1" text="Registry initialization">
+      <PopupBar>
+          <Text lineheight>To operate with records, please, define schema</Text>
+          <PopupBarFooter>
+              <Button transparent style={{color: '#b00020'}}>complete step</Button>
+          </PopupBarFooter>
+        </PopupBar>
+      </CircleLable>
+    </ProgressBar>
 
         <ContainerRegister>
             <SideBar title='Input'>

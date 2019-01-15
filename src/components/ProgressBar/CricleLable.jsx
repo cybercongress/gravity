@@ -30,9 +30,9 @@ export default class CircleLable extends React.Component {
         <div key={number} className={styles.NumberText}>
        
           <div className={circleCss}>
-          {children}
+          
             <span className={styles.label}>
-            
+            {children}
               {number}
               
             </span>

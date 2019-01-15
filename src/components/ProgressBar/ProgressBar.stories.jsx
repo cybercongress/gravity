@@ -7,10 +7,17 @@ import { Text, PopupBar, PopupBarFooter, Button } from "../..";
 
 storiesOf('commponents/Progressbar', module)
   .addDecorator(centered)
-  .add('ProgressBarV2', () => (
+  .add('ProgressBar', () => (
     <ProgressBar>
       <CircleLable type="complete" number="1" text="Registry initialization" />
       <CircleLable type="edit" number="1" text="Registry initialization" />
+      <CircleLable number="1" text="Registry initialization" />
+    </ProgressBar>
+  ))
+
+  .add('ProgressBarV2', () => (
+    <ProgressBar>
+      <CircleLable type="complete" number="1" text="Registry initialization" />
       <CircleLable number="1" text="Registry initialization" />
     </ProgressBar>
   ))
@@ -26,7 +33,6 @@ storiesOf('commponents/Progressbar', module)
     <ProgressBar>
       <CircleLable type="complete" number="1" text="Registry initialization">
       </CircleLable>
-      <CircleLable type="edit" number="1" text="Registry initialization" />
       <CircleLable number="1" text="Registry initialization">
         <PopupBar>
           <Text lineheight>To operate with records, please, define schema</Text>

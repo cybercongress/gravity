@@ -53,6 +53,13 @@ button {
   opacity: 0.8;
 }
 
+.Disabled:hover{
+  opacity: 0.6;
+}
+.Disabled{
+  opacity: 0.6;
+}
+
 .ButtonOutline{
   border: 1px solid;
   background-color: transparent;
