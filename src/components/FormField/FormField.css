@@ -22,7 +22,7 @@
   font-size: 14px;
   color: #000000;
   /* flex-grow: 3; */
-  width: 50%;
+  width: 68%;
 
 }
 
@@ -41,4 +41,5 @@
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
+  width: 15%;
 }

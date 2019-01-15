@@ -23,14 +23,14 @@
 
 .content {
     width: 50%;
-    max-height: 675px;
+    max-height: 585px;
 }
 /* ---------- */
 .fieldsTable {
     width: 100%;
     table-layout: fixed;
     font-size: 14px;
-    padding: 20px 0; 
+    padding: 20px 0;
     padding-top: 20px;
 }
 
