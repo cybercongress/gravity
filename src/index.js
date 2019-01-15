@@ -12,7 +12,6 @@ import {
     FundContainer,
     Centred,
     CentredPanel,
-    BoxTitle,
     TotalCost,
 } from './components/chaingear';
 import {
@@ -164,7 +163,6 @@ export {
     Section,
     SectionTabs,
     SectionContent,
-    BoxTitle,
     MainContainer,
     FundContainer,
     LinkHash,
