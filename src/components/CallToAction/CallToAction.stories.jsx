@@ -6,7 +6,7 @@ import { Container, Button, Text } from '../..';
 
 storiesOf('commponents/CallToAction', module)
     .add('Container', () => (
-        <div style={ { top: '30%', position: 'relative' } }>
+        <div style={ { top: '30%', position: 'relative', border: '1px solid #b1aeae' } }>
             <Container>
                 <div
                   style={ {
