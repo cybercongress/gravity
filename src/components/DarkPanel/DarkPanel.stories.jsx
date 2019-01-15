@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { DarkPanel } from '../..';
+import { DarkPanel, Code} from '../..';
+import code from '../pages/code';
 
 storiesOf('commponents/DarkPanel', module)
     .add('DarkPanel', () => (
@@ -11,20 +12,11 @@ storiesOf('commponents/DarkPanel', module)
             position: 'relative',
             margin: 'auto',
             width: '40%',
+            height: '700px',
         } }
         >
             <DarkPanel>
-                <div
-                  style={ {
-                        width: '80%',
-                        height: '500px',
-                        textAlign: 'center',
-                        margin: 'auto',
-                        color: '#ffff',
-                  } }
-                >
-                    content
-                </div>
+               <Code>{code}</Code>
             </DarkPanel>
         </div>
     ));
