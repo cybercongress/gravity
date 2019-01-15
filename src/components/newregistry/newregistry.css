@@ -68,17 +68,6 @@
     margin-top: 20px;
 }
 
-/* ------------- */
-.PanelRecord {
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.14);
-    /* margin-bottom: 20px; */
-    min-height: 403px;
-    margin-top: 5%;
-}
-/* ---------- */
-
 .panelTitle {
     padding: 30px;
     padding-bottom: 10px;

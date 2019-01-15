@@ -30,7 +30,7 @@ import {
 } from './components/BlockRow/BlockRow';
 import {
     ParamRow,
-} from './components/newregistry/ParamRow/ParamRow';
+} from './components/ParamRow/ParamRow';
 import {
     WideInput,
     WideSelect,
@@ -71,7 +71,7 @@ import {
 } from './components/Beneficiary/Ben';
 import {
     DarkPanel,
-} from './components/newregistry/DarkPanel/DarkPanel';
+} from './components/DarkPanel/DarkPanel';
 import {
     ProgressBar,
 } from './components/ProgressBar/ProgressBar';
@@ -132,7 +132,6 @@ import {
     SideBar,
     FieldsTable,
     Panel,
-    PanelRecord,
     CreateButton,
     Control,
     PageTitle,
@@ -180,7 +179,6 @@ export {
     SideBar,
     FieldsTable,
     Panel,
-    PanelRecord,
     CreateButton,
     Control,
     PageTitle,

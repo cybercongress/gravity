@@ -18,7 +18,7 @@ import {
     Content,
     FieldsTable,
     PageTitle,
-    PanelRecord,
+    Panel,
     RemoveButton,
     SideBar,
     TableRegistry,
@@ -28,7 +28,6 @@ import {
 //     Content,
 //     FieldsTable,
 //     PageTitle,
-//     PanelRecord,
 //     RemoveButton,
 //     SideBar,
 // } from '../newregistry';
@@ -48,7 +47,7 @@ const Pages = ({ databaseId, message }) => (
         </ProgressBar>
         <ContainerRegister>
             <SideBar title='Input'>
-                <PanelRecord title='Record Structure' noPadding>
+                <Panel title='Record Structure' style={{minHeight: '403px'}}>
                     <FieldsTable>
                         <TableRegistry>
                             <tbody>
@@ -97,7 +96,7 @@ const Pages = ({ databaseId, message }) => (
                             </tbody>
                         </TableRegistry>
                     </FieldsTable>
-                </PanelRecord>
+                </Panel>
             </SideBar>
 
             <Content title='Database code'>
