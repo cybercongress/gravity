@@ -14,6 +14,7 @@ export const Text = (props) => (
         [styles.fontSizeXxlg]: props.size === 'xxlg',
         [styles.TextColorBlue]: props.color === 'blue',
         [styles.TextColorBlack]: props.color === 'black',
+        [styles.TextColorWhite]: props.color === 'white',
         [styles.lineheight]: props.lineheight,
         [styles.textJustify]: props.justify,
       }

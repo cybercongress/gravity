@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import CircleLable from './CricleLable';
 import { ProgressBar } from './ProgressBar';
-import { LineText, PopupBar, PopupBarFooter, Button } from "../..";
+import { Text, PopupBar, PopupBarFooter, Button } from "../..";
 
 storiesOf('commponents/Progressbar', module)
   .addDecorator(centered)
@@ -29,7 +29,7 @@ storiesOf('commponents/Progressbar', module)
       <CircleLable type="edit" number="1" text="Registry initialization" />
       <CircleLable number="1" text="Registry initialization">
         <PopupBar>
-          <LineText>To operate with records, please, define schema</LineText>
+          <Text lineheight>To operate with records, please, define schema</Text>
           <PopupBarFooter>
               <Button transparent style={{color: '#b00020'}}>complete step</Button>
           </PopupBarFooter>

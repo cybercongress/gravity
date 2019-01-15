@@ -36,9 +36,6 @@ import {
     WideSelect,
 } from './components/Input/WideInput';
 import {
-    Description,
-} from './components/newregistry/Description/Description';
-import {
     FlexContainerLeft,
     FlexContainerRight,
     FlexContainer,
@@ -105,7 +102,6 @@ import {
     LineControl,
     ContentInput,
     LineTitle,
-    LineText,
     ContentLineFund,
 } from './components/PopupContent/PopupContent';
 import { DatabaseItemsContainer } from './components/DatabaseTable/DatabaseItemsContainer';
@@ -197,7 +193,6 @@ export {
     ParamRow,
     WideInput,
     WideSelect,
-    Description,
     Checkbox,
     AddNewRecordButton,
     MenuPopupEditIcon,
@@ -246,7 +241,7 @@ export {
     TableRegistry,
 
     ContentLine, ContentLineTextInput, LineControl,
-    ContentInput, LineTitle, LineText, ContentLineFund,
+    ContentInput, LineTitle, ContentLineFund,
     FormField, ValueInput,
 
     DatabaseItemsContainer, DbMenuPoints,

@@ -2,13 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { LinkHash, WideInput, Button, Text, } from '../..';
+import {
+    LinkHash,
+    WideInput,
+    Button,
+    Text,
+} from '../..';
 import {
     ContentLine,
     ContentLineTextInput,
     LineControl,
     LineTitle,
-    LineText,
     ContentLineFund,
 } from '../PopupContent/PopupContent';
 import {
@@ -50,9 +54,6 @@ storiesOf('commponents/Popup', module)
             <PopupTitle>Pause Registry</PopupTitle>
             <PopupContent>
                 <ContentLine>
-                    {/* <LineText>
-                        When registry is on pause there will be no ability to operate with records
-                    </LineText> */}
                     <Text lineheight='true'>
                         When registry is on pause there will be no ability to operate with records
                     </Text>

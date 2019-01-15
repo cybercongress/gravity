@@ -6,7 +6,7 @@ import {
     PageTitle,
     MainContainer,
     PopupSkillBar,
-    LineText,
+
     WideInput,
     CentredPanel,
     Section,
@@ -83,13 +83,13 @@ class App extends Component {
                 <FlexContainer>
                     <PageTitle>Cyberd search</PageTitle>
                     <div style={ { width: '30%' } }>
-                        <Description style={ { fontSize: '14px', paddingBottom: '10px' } }>
+                        <Text style={ { paddingBottom: '10px' } }>
                             Your bandwidth:
-                        </Description>
+                        </Text>
                         <SkillBar value={ 10 }>
                             {PopupNotification && (
                                 <PopupSkillBar>
-                                    <LineText>600000 of 1000000 left (60%) </LineText>
+                                    <Text color='white'>600000 of 1000000 left (60%) </Text>
                                 </PopupSkillBar>
                             )}
                         </SkillBar>
