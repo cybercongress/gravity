@@ -47,7 +47,7 @@ const Pages = ({ databaseId, message }) => (
         </ProgressBar>
         <ContainerRegister>
             <SideBar title='Input'>
-                <Panel title='Record Structure' style={{minHeight: '403px'}}>
+                <Panel noPadding title='Record Structure' style={{minHeight: '403px'}}>
                     <FieldsTable>
                         <TableRegistry>
                             <tbody>
