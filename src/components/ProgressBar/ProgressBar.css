@@ -31,6 +31,10 @@
   text-align: center;
 } */
 
+.circle {
+  box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
 .circle::before{
   display: flex;
   align-items: flex-end;
@@ -101,7 +105,6 @@
   position: relative;
   /* margin-top: -35px; */
   /* visibility: visible; */
-  box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .container hr{
