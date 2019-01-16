@@ -35,6 +35,8 @@ import {
     DbMenuPoints,
     Text,
     WideSelect,
+    PopupBarFooter,
+    PopupBar,
 } from '../..';
 
 const totalFee = 3;
@@ -90,6 +92,7 @@ const isDbPaused = null;
 const isOwner = null;
 const databaseSymbol = ' APP';
 const isSchemaExist = false;
+const canCreate = true;
 
 const PagesViewRegistry = ({ showTable, disabled }) => (
     <MainContainer>
@@ -105,9 +108,17 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
         </Section>
         <PageTitle>{name}</PageTitle>
         <ProgressBar>
-            <CircleLable type='complete' number='1' text='Registry initialization' />
-            <CircleLable type='edit' number='2' text='Schema definition' />
-            <CircleLable number='3' text='Contract code saving' />
+            <CircleLable type="complete" number="1" text="Registry initialization" />
+            <CircleLable number="1" text="Schema definition">
+               {!canCreate &&(
+                   <PopupBar>
+                        <Text lineheight>To operate with records, please, define schema</Text>
+                        <PopupBarFooter>
+                            <Button transparent style={{color: '#b00020'}}>complete step</Button>
+                        </PopupBarFooter>
+                    </PopupBar>
+               )} 
+            </CircleLable>
         </ProgressBar>
 
         <FlexContainer line>

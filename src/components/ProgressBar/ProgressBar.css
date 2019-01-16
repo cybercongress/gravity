@@ -45,25 +45,28 @@
   position: relative;
   margin-top: -36px;
   visibility: hidden;
+  flex-grow: 1;
 }
 
 .NumberText{
   /* width: 30%; */
   display: flex;
   position: relative;
-  padding-left: 9px;
+  /* padding-left: 9px; */
   align-items: center;
   /* background-color: #eff3f6; */
 }
 
 .NumberText:last-child{
-  width: 70%;
+  /* width: 70%; */
   padding-left: 0px;
+  flex-grow: 2;
 }
 
 .NumberText:first-child::before{
   display: none;
-  width: 30%;
+  /* width: 30%; */
+  flex-grow: 1;
 }
 
 
@@ -72,15 +75,16 @@
     /* height: 2px; */
     /* background-color: #979797; */
     position: absolute;
-    width: 55%;
+    /* width: 55%; */
     /* width: 30%; */
     display: flex;
     position: relative;
     padding-left: 9px;
     align-items: center;
-    margin: 0 10px;
+    margin: 0 30px;
     /* background-color: #eff3f6; */
-    border-bottom: 3px dotted #979797;;
+    border-bottom: 3px dotted #979797;
+    flex-grow: 2;
 }
 
 .done{
@@ -97,6 +101,7 @@
   position: relative;
   /* margin-top: -35px; */
   /* visibility: visible; */
+  box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .container hr{
@@ -128,6 +133,7 @@
   background: #979797;
   position: relative;
   text-align: center;
+  box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 .doneGreen{
   /* align-items: flex-end;

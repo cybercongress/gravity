@@ -22,6 +22,9 @@ import {
     RemoveButton,
     SideBar,
     TableRegistry,
+    PopupBar,
+    PopupBarFooter,
+    Text,
 } from '../..';
 // import {
 //     ContainerRegister,
@@ -37,13 +40,21 @@ import code from './code';
 const type = '';
 
 const canCreate = true;
-const Pages = ({ databaseId, message }) => (
+const Pages = ({ databaseId, disabled, disabledPopup, message  }) => (
     <MainContainer>
         <PageTitle>New database creation</PageTitle>
         <ProgressBar>
-            <CircleLable type='complete' number='1' text='Registry initialization' />
-            <CircleLable type='edit' number='2' text='Schema definition' />
-            <CircleLable number='3' text='Contract code saving' />
+            <CircleLable type="complete" number="1" text="Registry initialization" />
+            <CircleLable number="1" text="Schema definition">
+               {disabledPopup &&(
+                   <PopupBar>
+                        <Text lineheight>To operate with records, please, define schema</Text>
+                        <PopupBarFooter>
+                            <Button transparent style={{color: '#b00020'}}>complete step</Button>
+                        </PopupBarFooter>
+                    </PopupBar>
+               )} 
+            </CircleLable>
         </ProgressBar>
         <ContainerRegister>
             <SideBar title='Input'>
@@ -120,7 +131,7 @@ const Pages = ({ databaseId, message }) => (
                         </Button>
                     </span>
                 ) : (
-                    <Button type='button' color='blue' disabled={ !canCreate }>
+                    <Button type='button' color='blue' disabled={ disabled }>
                         Next
                     </Button>
                 )}
@@ -132,4 +143,6 @@ const Pages = ({ databaseId, message }) => (
 storiesOf('pages/create_shema', module)
     .add('index', () => <Pages />)
     .add('have_id', () => <Pages databaseId='1' />)
-    .add('error', () => <Pages message='error' />);
+    .add('error', () => <Pages message='error' />)
+    .add('disabledBttn', () => <Pages disabled='1' />)
+    .add('popupProgressBar', () => <Pages disabledPopup='1' />);

@@ -18,6 +18,11 @@ button {
   font-size: 14px;
 }
 
+.AddNewRecordButton:hover{
+  background-color: #dedede;
+  opacity: 0.8;
+}
+
 .BttnIcon {
   height: 24px;
   width: 24px;

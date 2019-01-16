@@ -63,22 +63,24 @@ const beneficiaries = [
     },
 ];
 
-const canCreate = false;
+const canCreate = true;
 
-const Pages = ({ databaseId, message }) => (
+const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
     <MainContainer>
         <PageTitle>New database creation</PageTitle>
         <ProgressBar>
-      <CircleLable type="complete" number="1" text="Registry initialization" />
-      <CircleLable number="1" text="Registry initialization">
-      <PopupBar>
-          <Text lineheight>To operate with records, please, define schema</Text>
-          <PopupBarFooter>
-              <Button transparent style={{color: '#b00020'}}>complete step</Button>
-          </PopupBarFooter>
-        </PopupBar>
-      </CircleLable>
-    </ProgressBar>
+            <CircleLable type="complete" number="1" text="Registry initialization" />
+            <CircleLable number="1" text="Schema definition">
+               {disabledPopup &&(
+                   <PopupBar>
+                        <Text lineheight>To operate with records, please, define schema</Text>
+                        <PopupBarFooter>
+                            <Button transparent style={{color: '#b00020'}}>complete step</Button>
+                        </PopupBarFooter>
+                    </PopupBar>
+               )} 
+            </CircleLable>
+        </ProgressBar>
 
         <ContainerRegister>
             <SideBar title='Input'>
@@ -148,7 +150,7 @@ const Pages = ({ databaseId, message }) => (
                 </Panel>
             </SideBar>
 
-            <Content title='Database code'>
+            <Content title='Database code' style={{ maxHeight: '660px'}}>
                 <Code>{code}</Code>
             </Content>
         </ContainerRegister>
@@ -167,7 +169,7 @@ const Pages = ({ databaseId, message }) => (
                         </Button>
                     </span>
                 ) : (
-                    <Button type='button' color='blue' disabled={ !canCreate }>
+                    <Button type='button' color='blue' disabled={ disabled }>
                         Next
                     </Button>
                 )}
@@ -179,4 +181,6 @@ const Pages = ({ databaseId, message }) => (
 storiesOf('pages/create_database', module)
     .add('create_db', () => <Pages />)
     .add('create_db_have_id', () => <Pages databaseId='1' />)
+    .add('create_db_disabledBttn', () => <Pages disabled='1' />)
+    .add('create_db_popupProgressBar', () => <Pages disabledPopup='1' />)
     .add('create_db_error', () => <Pages message='error' />);
