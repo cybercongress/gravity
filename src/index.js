@@ -25,9 +25,6 @@ import {
     Message,
 } from './components/Message';
 import {
-    BlockRow,
-} from './components/BlockRow/BlockRow';
-import {
     ParamRow,
 } from './components/ParamRow/ParamRow';
 import {
@@ -189,7 +186,6 @@ export {
     AddField,
     StatusBar,
     Code,
-    BlockRow,
     ParamRow,
     WideInput,
     WideSelect,
