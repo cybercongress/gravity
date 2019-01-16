@@ -61,7 +61,6 @@ import {
     PopupSkillBar,
     PopupBar,
     PopupBarFooter,
-    PopupNotification,
 } from './components/Popup/Popup';
 
 import {
@@ -252,5 +251,4 @@ export {
     Vitalick,
 
     Status,
-    PopupNotification,
 };

@@ -3,21 +3,16 @@ import cx from 'classnames';
 
 const styles = require('./Popup.css');
 
-export const Popup = ({ children, open, ...props }) => (
-  <div className={cx(styles.popup, { [styles.popupOpen]: open })}>
-    <div className={cx(styles.popupInner, { [styles.popupInnerDelete]: props.type === 'delete' })}>
-      {children}
+export const Popup = ({ children, open, onClose, ...props }) => (
+    <div className={cx(styles.popup, { [styles.popupOpen]: open })}>
+        <div className={cx(styles.popupInner, { [styles.popupInnerDelete]: props.type === 'delete',
+              [styles.PopupNotification]: props.type === 'notification',
+              [styles.PopupNotificationError]: props.type === 'notification-error',
+              })}>
+            {onClose&&(<div onClick={onClose} className={styles.PopupClose} />)}
+            {children}
+        </div>
     </div>
-  </div>
-);
-
-export const PopupNotification = ({ children, open, onClose, ...props }) => (
-  <div className={cx(styles.popup, { [styles.popupOpen]: open })}>
-      <div className={cx(styles.PopupNotification, { [styles.PopupNotificationError]: props.type === 'error' })}>
-      <div onClick={onClose} className={styles.PopupClose} />
-      {children}
-    </div>
-  </div>
 );
 
 export const PopupTitle = ({ children }) => <div className={styles.popupTitle}>{children}</div>;
