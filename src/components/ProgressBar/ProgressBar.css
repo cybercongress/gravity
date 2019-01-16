@@ -34,6 +34,7 @@
 .circle {
   border-radius: 30px;
   box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
 }
 
 .circle::before{

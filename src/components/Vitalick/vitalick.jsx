@@ -3,5 +3,6 @@ import styles from './vitalick.css';
 // import cx from 'classnames';
 
 export const Vitalick = () => (
-    <img className={ styles.vitalick } src={ require('./buterin-02.svg') } alt='vitalick' />
+    <div className={ styles.vitalick } alt='vitalick' />
+    // <img className={ styles.vitalick } src={ vitalick } alt='vitalick' />
 );
