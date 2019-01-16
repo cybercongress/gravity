@@ -10,4 +10,7 @@ storiesOf('commponents/StatusBar', module)
 ))
 .add('error', () => (
   <StatusBar open message='message' type='error'></StatusBar>
+))
+.add('deploy', () => (
+  <StatusBar open onClose message='message'></StatusBar>
 ));
