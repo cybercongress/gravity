@@ -155,8 +155,6 @@ import {
 import Code from './components/SolidityHighlight';
 import { Status } from './components/Popup/status';
 
-import { Status } from './components/Popup/status';
-
 
 export {
     Title,
