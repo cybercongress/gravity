@@ -63,6 +63,7 @@ import {
     PopupBarFooter,
     PopupNotification,
 } from './components/Popup/Popup';
+
 import {
     BenContainer,
     BenPieChart,
@@ -153,6 +154,9 @@ import {
 
 import Code from './components/SolidityHighlight';
 import { Status } from './components/Popup/status';
+
+import { Status } from './components/Popup/status';
+
 
 export {
     Title,
@@ -248,6 +252,7 @@ export {
     SearchItem,
     LinkContainer,
     Vitalick,
+
     Status,
     PopupNotification,
 };

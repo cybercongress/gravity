@@ -186,6 +186,7 @@
     /* padding: 10px 0; */
 }
 
+
 .PopupBarButton {
     width: 135px;
     height: 31px;
@@ -241,6 +242,7 @@
     right: 11px;
     cursor: pointer;
 }
+
 
 .PopupNotificationError{
     width: 210px;
