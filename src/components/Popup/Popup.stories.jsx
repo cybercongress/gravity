@@ -315,7 +315,7 @@ storiesOf('commponents/Popup', module)
     ))
 
     .add('PopupNotification', () => (
-        <PopupNotification open='claimFundOpen'>
+        <Popup type='notification' onClose open='claimFundOpen'>
             <PopupContent>
                 <ContentLineFund>
                     <Status type='successfully'>Successfully linked</Status>
@@ -326,11 +326,11 @@ storiesOf('commponents/Popup', module)
                     see results
                 </Button>
             </PopupBarFooter>
-        </PopupNotification>
+        </Popup>
     ))
 
     .add('PopupNotification_Error', () => (
-        <PopupNotification open='claimFundOpen' type='error'>
+        <Popup open='claimFundOpen' onClose type='notification-error'>
             <Status type='error'>Link error</Status>
-        </PopupNotification>
+        </Popup>
     ));
