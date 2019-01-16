@@ -3,20 +3,21 @@ import cx from 'classnames';
 
 const styles = require('./Text.css');
 
-export const Text = ({ bold, ...props }) => (
-    <div {...props} className={cx(styles.TextDefault,
-      {
-        [styles.TextWeight]: bold,
-        [styles.TextTransform]: props.uppercase,
-        [styles.fontSizeSm]: props.size === 'sm',
-        [styles.fontSizeLg]: props.size === 'lg',
-        [styles.fontSizeXlg]: props.size === 'xlg',
-        [styles.fontSizeXxlg]: props.size === 'xxlg',
-        [styles.TextColorBlue]: props.color === 'blue',
-        [styles.TextColorBlack]: props.color === 'black',
-        [styles.TextColorWhite]: props.color === 'white',
-        [styles.lineheight]: props.lineheight,
-        [styles.textJustify]: props.justify,
-      }
-    )}/>
+export const Text = ({ bold, uppercase, justify, lineheight, color, size, ...props }) => (
+    <div
+      { ...props }
+      className={ cx(styles.TextDefault, {
+            [styles.TextWeight]: bold,
+            [styles.TextTransform]: uppercase,
+            [styles.fontSizeSm]: size === 'sm',
+            [styles.fontSizeLg]: size === 'lg',
+            [styles.fontSizeXlg]: size === 'xlg',
+            [styles.fontSizeXxlg]: size === 'xxlg',
+            [styles.TextColorBlue]: color === 'blue',
+            [styles.TextColorBlack]: color === 'black',
+            [styles.TextColorWhite]: color === 'white',
+            [styles.lineheight]: lineheight,
+            [styles.textJustify]: justify,
+        }) }
+    />
 );
