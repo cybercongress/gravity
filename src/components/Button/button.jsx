@@ -16,23 +16,32 @@ export const AddNewRecordButton = ({ children, ...props }) => (
 //   </i>
 // );
 
-export const Button = ({ children, to, ...props }) => {
+export const Button = ({
+    children,
+    to,
+    color,
+    transformtext,
+    disabled,
+    transparent,
+    outline,
+    ...props
+}) => {
     if (to) {
         return (
             <ActionLink
               { ...props }
               to={ to }
               className={ cx(styles.ActionLink, {
-                [styles.ButtonCancel]: props.color === 'cancel',
-                [styles.ButtonGreen]: props.color === 'green',
-                [styles.ButtonRed]: props.color === 'red',
-                [styles.ButtonBlue]: props.color === 'blue',
-                [styles.ButtonGreenYellow]: props.color === 'greenyellow',
-                [styles.ButtonOrange]: props.color === 'ogange',
-                [styles.ButtonOutline]: props.outline,
-                [styles.TextTransform]: props.transformtext,
-                [styles.Disabled]: props.disabled,
-            }) }
+                    [styles.ButtonCancel]: color === 'cancel',
+                    [styles.ButtonGreen]: color === 'green',
+                    [styles.ButtonRed]: color === 'red',
+                    [styles.ButtonBlue]: color === 'blue',
+                    [styles.ButtonGreenYellow]: color === 'greenyellow',
+                    [styles.ButtonOrange]: color === 'ogange',
+                    [styles.ButtonOutline]: outline,
+                    [styles.TextTransform]: transformtext,
+                    [styles.Disabled]: disabled,
+                }) }
             >
                 {children}
             </ActionLink>
@@ -42,16 +51,16 @@ export const Button = ({ children, to, ...props }) => {
         <button
           { ...props }
           className={ cx(styles.Button, {
-                [styles.ButtonCancel]: props.color === 'cancel',
-                [styles.ButtonGreen]: props.color === 'green',
-                [styles.ButtonRed]: props.color === 'red',
-                [styles.ButtonBlue]: props.color === 'blue',
-                [styles.ButtonGreenYellow]: props.color === 'greenyellow',
-                [styles.ButtonOrange]: props.color === 'ogange',
-                [styles.ButtonOutline]: props.outline,
-                [styles.TextTransform]: props.transformtext,
-                [styles.Transparent]: props.transparent,
-                [styles.Disabled]: props.disabled,
+                [styles.ButtonCancel]: color === 'cancel',
+                [styles.ButtonGreen]: color === 'green',
+                [styles.ButtonRed]: color === 'red',
+                [styles.ButtonBlue]: color === 'blue',
+                [styles.ButtonGreenYellow]: color === 'greenyellow',
+                [styles.ButtonOrange]: color === 'ogange',
+                [styles.ButtonOutline]: outline,
+                [styles.TextTransform]: transformtext,
+                [styles.Transparent]: transparent,
+                [styles.Disabled]: disabled,
             }) }
         >
             {children}
