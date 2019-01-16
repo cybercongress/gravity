@@ -108,13 +108,28 @@
   flex-direction: row;
 }
 
+.sectionNoWrap{
+    flex-wrap: nowrap;
+}
+
+.sectionNoMargin{
+    margin: 0px;
+}
+
 .sectionContent {
   flex-grow: 1;
-  padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+}
+
+.sectionContent:first-child {
+    padding-left: 0px;
+}
+
+.sectionContent:last-child{
+    padding-right: 0px;
 }
 
 .sectionTitle {

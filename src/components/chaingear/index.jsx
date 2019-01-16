@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 const styles = require("./Chaingear.css");
+import cx from 'classnames'; 
 
 import { Link } from 'react-router';
 
@@ -54,13 +55,13 @@ export const SectionTitle = ({ children }) => (
   </h3>
 );
 
-export const Section = ({ children, title }) => (
-  <div>
-    {title && <SectionTitle>{title}</SectionTitle>}
-    <div className={styles.section}>
-      {children}
+export const Section = ({ children, title, ...props }) => (
+    <div>
+        {title && <SectionTitle>{title}</SectionTitle>}
+        <div {...props} className={cx(styles.section, { [styles.sectionNoWrap]: props.noWrap,[styles.sectionNoMargin]: props.noMargin })}>
+            {children} 
+        </div>
     </div>
-  </div>
 );
 
 export const SectionContent = ({ children, title, grow = 1, style }) => (

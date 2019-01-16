@@ -16,8 +16,13 @@ import {
     SearchItem,
     LinkContainer,
     Vitalick,
+    IconLinks,
+    IconCIDs,
+    IconAccounts,
+    IconBlockHeight,
+    IconBlockDelay,
+    Text,
 } from '../..';
-import { Text } from '../Text/Text';
 
 class App extends Component {
     state = {
@@ -134,50 +139,85 @@ class App extends Component {
                         <Title style={ { marginLeft: '0px', marginBottom: '30px', textAlign: 'center' } }>
                             Search statistic:
                         </Title>
-                        <Section>
+                        <Section noMargin noWrap>
                             <SectionContent style={ { width: '25%' } }>
-                                <CentredPanel>
-                                    <Text
-                                      color='blue'
-                                      style={ { paddingBottom: '10px' } }
-                                      bold
-                                      size='xxlg'
-                                    >
-                                        1000
-                                    </Text>
-                                    <Text color='blue' bold size='xlg'>
+                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                                    <IconLinks />
+                                    <Text uppercase color='blue'>
                                         link
                                     </Text>
-                                </CentredPanel>
-                            </SectionContent>
-                            <SectionContent style={ { width: '25%' } }>
-                                <CentredPanel>
                                     <Text
                                       color='blue'
-                                      bold
-                                      size='xxlg'
-                                      style={ { paddingBottom: '10px' } }
+                                      
+                                      size='xlg'
                                     >
                                         1000
                                     </Text>
-                                    <Text color='blue' bold size='xlg'>
+                                   
+                                </CentredPanel>
+                            </SectionContent>
+                            <SectionContent style={ { width: '25%' } }>
+                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                                <IconCIDs />
+                                <Text uppercase color='blue'>
                                         CIDs
                                     </Text>
-                                </CentredPanel>
-                            </SectionContent>
-                            <SectionContent style={ { width: '25%' } }>
-                                <CentredPanel>
                                     <Text
                                       color='blue'
-                                      style={ { paddingBottom: '10px' } }
-                                      bold
-                                      size='xxlg'
+                                      size='xlg'
+                                      
                                     >
                                         1000
                                     </Text>
-                                    <Text color='blue' bold size='xlg'>
+                                    
+                                </CentredPanel>
+                            </SectionContent>
+                            <SectionContent style={ { width: '25%' } }>
+                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                                <IconAccounts />
+                                <Text uppercase color='blue'>
                                         accounts
                                     </Text>
+                                    <Text
+                                      color='blue'
+                                      
+                                      size='xlg'
+                                    >
+                                        1000
+                                    </Text>
+                                    
+                                </CentredPanel>
+                            </SectionContent>
+                            <SectionContent style={ { width: '25%' } }>
+                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                                <IconBlockHeight />
+                                <Text uppercase color='blue'>
+                                        last block height
+                                    </Text>
+                                    <Text
+                                      color='blue'
+                                      
+                                      size='xlg'
+                                    >
+                                        1000
+                                    </Text>
+                                    
+                                </CentredPanel>
+                            </SectionContent>
+                            <SectionContent style={ { width: '23%' } }>
+                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                                <IconBlockDelay />
+                                <Text uppercase color='blue'>
+                                        last block delay
+                                    </Text>
+                                    <Text
+                                      color='blue'
+                                      
+                                      size='xlg'
+                                    >
+                                        100 sec
+                                    </Text>
+                                    
                                 </CentredPanel>
                             </SectionContent>
                         </Section>

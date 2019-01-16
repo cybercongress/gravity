@@ -153,6 +153,7 @@ import {
 
 import Code from './components/SolidityHighlight';
 import { Status } from './components/Popup/status';
+import { IconLinks, IconCIDs, IconAccounts, IconBlockHeight, IconBlockDelay } from './components/Icons/Icons';
 
 
 export {
@@ -249,6 +250,11 @@ export {
     SearchItem,
     LinkContainer,
     Vitalick,
+    IconLinks,
+    IconCIDs,
+    IconAccounts,
+    IconBlockHeight,
+    IconBlockDelay,
 
     Status,
 };
