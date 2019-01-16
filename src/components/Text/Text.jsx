@@ -3,10 +3,10 @@ import cx from 'classnames';
 
 const styles = require('./Text.css');
 
-export const Text = (props) => (
-    <div {...props} className={cx(styles.TextDefault, 
+export const Text = ({ bold, ...props }) => (
+    <div {...props} className={cx(styles.TextDefault,
       {
-        [styles.TextWeight]: props.bold,
+        [styles.TextWeight]: bold,
         [styles.TextTransform]: props.uppercase,
         [styles.fontSizeSm]: props.size === 'sm',
         [styles.fontSizeLg]: props.size === 'lg',
