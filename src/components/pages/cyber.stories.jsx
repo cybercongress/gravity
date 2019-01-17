@@ -137,14 +137,14 @@ class App extends Component {
                 {index && (
                     <div>
                         <Title style={ { marginLeft: '0px', marginBottom: '30px', textAlign: 'center' } }>
-                            Search statistic:
+                            Search statistics
                         </Title>
                         <Section noMargin noWrap>
                             <SectionContent style={ { width: '25%' } }>
                                 <CentredPanel style={{justifyContent: 'space-evenly'}}>
                                     <IconLinks />
                                     <Text uppercase color='blue'>
-                                        link
+                                        links
                                     </Text>
                                     <Text
                                       color='blue'
