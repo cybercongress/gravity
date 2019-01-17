@@ -227,8 +227,8 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                 </FormField>
                 <FormField label='Entries' value='{rows.length}' />
                 <FormField label='Version' value='{contractVersion}' />
-                <FormField label='Database address' value='{databaseAddress}' />
-                <FormField label='Schema address' value='{entryCoreAddress}' />
+                <FormField label='Database address' value='0x000F3754f028c704FDCe4e8ab9aAdba220f39618' />
+                <FormField label='Schema address' value='0x000F3754f028c704FDCe4e8ab9aAdba220f39618' />
                 <FormField
                   label='Abi link'
                   value={ (
@@ -239,7 +239,7 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                 />
             </SectionContent>
 
-            <SectionContent title='Beneficiaries' grow={ 0 } style={ { width: '30%' } }>
+            <SectionContent title='Beneficiaries' grow={ 0 } style={ { width: '25%' } }>
                 <Centred>
                     <BenContainer>
                         <BenPieChart
