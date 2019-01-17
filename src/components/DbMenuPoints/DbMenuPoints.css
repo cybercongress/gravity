@@ -31,6 +31,7 @@
   height: 24px;
   background: url('./points.svg') center center;
   border: none;
+  cursor: pointer;
 }
 
 .dbMenuPointsButtonTriangle::before{
@@ -38,7 +39,7 @@
   width: 17.1px;
   height: 17.1px;
   transform: rotate(45deg);
-  background-color: #000000;
+  background-color: #ffffff;
   position: absolute;
   top: 0px;
   right: 0px;

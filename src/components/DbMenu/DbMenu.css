@@ -28,6 +28,7 @@
     height: 24px;
     background: url('./menu.svg') center center;
     border: none;
+    cursor: pointer;
 }
  
 .dbMenuButtonTriangle::before{

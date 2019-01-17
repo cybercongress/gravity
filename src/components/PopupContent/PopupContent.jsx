@@ -26,13 +26,6 @@ export const LineTitle = ({children}) => (
   </span>
 );
 
-export const LineText = ({children}) => (
-  <span className={styles.LineText}>
-      {children}
-  </span>
-);
-
-
 export const LineControl = ({children}) => (
   <div className={styles.LineControl}>
       {children}

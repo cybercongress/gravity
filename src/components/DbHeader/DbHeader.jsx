@@ -1,33 +1,23 @@
 import * as React from 'react';
+import cx from 'classnames';
 
 const styles = require('./DbHeader.css');
 
-export const DbHeader = ({ children, ...props }) => (
-  <div {...props} className={styles.databaseHeader}>
+
+export const FlexContainer = ({ children, line, ...props, }) => (
+  <div {...props} className={cx(styles.FlexContainer,{ [styles.FlexContainerLine] : line}) }>
     {children}
   </div>
 );
 
-export const DbHeaderLine = ({ children, ...props }) => (
-  <div {...props} className={styles.databaseHeaderLine}>
+export const FlexContainerLeft = ({ children, ...props }) => (
+  <div {...props} className={styles.FlexContainerLeft}>
     {children}
   </div>
 );
 
-export const DbHeaderLeft = ({ children, ...props }) => (
-  <div {...props} className={styles.databaseHeaderLeft}>
+export const FlexContainerRight = ({ children, ...props }) => (
+  <div {...props} className={styles.FlexContainerRight}>
     {children}
   </div>
-);
-
-export const DbHeaderRight = ({ children, ...props }) => (
-  <div {...props} className={styles.databaseHeaderRight}>
-    {children}
-  </div>
-);
-
-export const DbHeaderName = ({ children, ...props }) => (
-  <span {...props} className={styles.databaseHeaderName}>
-    {children}
-  </span>
 );

@@ -23,17 +23,23 @@ import cx from 'classnames';
 export default class CircleLable extends React.Component {
   render() {
     // const { visible } = this.state;
-    const {number, type, text} = this.props;
+    const {number, type, text, children} = this.props;
     const circleCss = cx(styles.circle, { [styles.done] : type === "complete", [styles.doneGreen] : type === "edit"} );
     return (
-      <div key={number} className={styles.NumberText}>
-        <div className={circleCss}>
-          <span className={styles.label}>
-            {number}
-          </span>
+        
+        <div key={number} className={styles.NumberText}>
+       
+          <div className={circleCss}>
+          
+            <span className={styles.label}>
+            {children}
+              {number}
+              
+            </span>
+          </div>
+          <span className={styles.title}>{text}</span>
         </div>
-        <span className={styles.title}>{text}</span>
-      </div>
+  
     );
   }
 }

@@ -4,8 +4,7 @@ import ClickOutside from 'react-click-outside';
 
 const styles = require('./DbMenuPoints.css');
 
-export class DbMenuPoints extends React.Component  {
-
+export class DbMenuPoints extends React.Component {
     state = {
         open: false,
     };
@@ -13,28 +12,33 @@ export class DbMenuPoints extends React.Component  {
     onClick = () => {
         this.setState({
             open: !this.state.open,
-        })
-
+        });
     };
 
     onClickOutside = () => {
         this.setState({
             open: false,
-        })
+        });
     };
 
     render() {
-
         const { open } = this.state;
-        const css = cx(styles.dbMenuPoints, {[styles.dbMenuPointsOpen] : open });
+        const css = cx(styles.dbMenuPoints, { [styles.dbMenuPointsOpen]: open });
 
-        return <div className={styles.dbMenuP}>
-            <button onClick={this.onClick} className={cx(styles.dbMenuPointsButton, {[styles.dbMenuPointsButtonTriangle] : open})} />
-            <ClickOutside onClickOutside={this.onClickOutside}>
-                <div className={css}>
+        return (
+            <div className={ styles.dbMenuP }>
+                <ClickOutside onClickOutside={ this.onClickOutside }>
+                    <button
+                      onClick={ this.onClick }
+                      className={ cx(styles.dbMenuPointsButton, {
+                          [styles.dbMenuPointsButtonTriangle]: open,
+                      }) }
+                    />
+                </ClickOutside>
+                <div className={ css }>
                     {this.props.children}
                 </div>
-            </ClickOutside>
-        </div>
+            </div>
+        );
     }
 }

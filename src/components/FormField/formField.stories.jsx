@@ -3,60 +3,70 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
 import FormField from './FormFild';
+import { InfoButton, WideSelect } from '../..';
 
-storiesOf('FormField', module)
-  .addDecorator(centered)
-  .add('FormField', () => (
+const Permission = {
+    OnlyAdmin: 0,
+    Whitelist: 1,
+    AllUsers: 2,
+};
+
+const CreateEntryPermissionGroup = {
+    [Permission.OnlyAdmin]: {
+        key: 'OnlyAdmin',
+        label: 'ONLY OWNER',
+    },
+    [Permission.AllUsers]: {
+        key: 'AllUsers',
+        label: 'All Users',
+    },
+};
+
+storiesOf('commponents/FormField', module).add('FormField', () => (
     <div>
-      <FormField
-        label="Description"
-        value="{description}"
-        // onUpdate={isOwner && !isDbPaused && this.changeDescription}
-        onUpdate="isOwner"
-      />
-      <FormField label="Tags" value="{tag}" />
-      <FormField
-        label="Record Fee"
-        value="{entryCreationFee.toString()}"
-        valueType="ETH"
-        // onUpdate={isOwner && isDbPaused && this.changeEntryCreationFee}
-        onUpdate="isOwner"
-      />
-      <FormField
-        label="Permissions"
-        value="{permissionGroupStr}"
-        // onUpdate={isOwner && isDbPaused && this.onUpdatePermissionGroup}
-        onUpdate="isDbPaused"
-      >
-        {/* <select
-              ref={node => {
-                this.permissionGroup = node;
-              }}
-              defaultValue={permissionGroup}
+        <FormField
+          label='Description'
+          value='{description}'
+          onUpdate='isOwner'
+        />
+        <FormField label='Tags' value='{tag}' />
+        <FormField
+          label='Record Fee'
+          value='{entryCreationFee.toString()}'
+          valueType='ETH'
+          onUpdate='isOwner'
+        />
+        <FormField
+          label='Permissions'
+          value='{permissionGroupStr}'
+          onUpdate='isDbPaused'
+          icon={ <InfoButton /> }
+        >
+            <WideSelect
+              defaultValue='{ permissionGroup }'
             >
-              {Object.keys(CreateEntryPermissionGroup).map(n => {
-                const { label } = CreateEntryPermissionGroup[n];
+                {Object.keys(CreateEntryPermissionGroup).map((n) => {
+                    const { label } = CreateEntryPermissionGroup[n];
 
-                return (
-                  <option value={n} key={n}>
-                    {label}
-                  </option>
-                );
-              })}
-            </select> */}
-      </FormField>
-      <FormField label="Entries" value="{rows.length}" />
-      <FormField label="Version" value="{contractVersion}" />
-      <FormField label="Database address" value="{databaseAddress}" />
-      <FormField label="Schema address" value="{entryCoreAddress}" />
-      <FormField
-        label="Abi link"
-        // value={
-        //   <a href={`${ipfsGateway}/ipfs/${ipfsHash}`} target="_blank">
-        //     {ipfsHash}
-        //   </a>
-        // }
-        value="ipfsGateway"
-      />
+                    return (
+                        <option value={ n } key={ n }>
+                            {label}
+                        </option>
+                    );
+                })}
+            </WideSelect>
+        </FormField>
+        <FormField label='Entries' value='{rows.length}' />
+        <FormField label='Version' value='{contractVersion}' />
+        <FormField label='Database address' value='{databaseAddress}' />
+        <FormField label='Schema address' value='{entryCoreAddress}' />
+        <FormField
+          label='Abi link'
+          value={ (
+              <a href='/' target='_blank'>
+                    QmdkrMcmKBWsg5K2senjLCFYLBxbqgamNF8d8ZC8xn1BHt
+              </a>
+            ) }
+        />
     </div>
-  ));
+));

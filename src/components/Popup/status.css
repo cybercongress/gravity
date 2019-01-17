@@ -1,0 +1,27 @@
+.error{
+  content: url(./error.svg);
+  width: 53px;
+  height: 53px;
+   position: relative;
+}
+
+.successfully{
+  content: url(./done.svg);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #438cef;
+  color: #ffffff;
+  position: relative;
+}
+
+.status{
+  margin-bottom: 18px;
+}
+
+.StatusContainer{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

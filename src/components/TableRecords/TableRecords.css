@@ -1,11 +1,11 @@
 .TableRecords {
- 
+
   display: flex;
   overflow: hidden;
 
   vertical-align: top;
   max-width: 100%;
-  
+
   overflow-x: auto;
   white-space: nowrap;
 
@@ -47,11 +47,12 @@
   color: #000000;
   font-weight: bold;
   border-bottom: 1px solid #dedede;
-  font-size: 11px;
-  text-align: left;
+  font-size: 14px;
+  text-align: center;
   text-transform: uppercase;
   background: #ddd;
   height: 100%;
+  min-height: 40px;
 }
 
 .TableRecords tr{

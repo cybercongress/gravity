@@ -108,13 +108,29 @@
   flex-direction: row;
 }
 
+.sectionNoWrap{
+    flex-wrap: nowrap;
+}
+
+.sectionNoMargin{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 .sectionContent {
   flex-grow: 1;
-  padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+}
+
+.sectionContent:first-child {
+    padding-left: 0px;
+}
+
+.sectionContent:last-child{
+    padding-right: 0px;
 }
 
 .sectionTitle {
@@ -200,11 +216,4 @@
     color: #000000;
     font-size: 14px;
     padding-bottom: 20px;
-}
-
-.rightContainer {
-    display: flex;
-    justify-Content: flex-end;
-    /* ----- */
-    /* margin-top: 10px; */
 }

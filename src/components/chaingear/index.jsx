@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 const styles = require("./Chaingear.css");
+import cx from 'classnames'; 
 
 import { Link } from 'react-router';
 
@@ -54,13 +55,13 @@ export const SectionTitle = ({ children }) => (
   </h3>
 );
 
-export const Section = ({ children, title }) => (
-  <div>
-    {title && <SectionTitle>{title}</SectionTitle>}
-    <div className={styles.section}>
-      {children}
+export const Section = ({ children, title, noWrap, noMargin, ...props }) => (
+    <div>
+        {title && <SectionTitle>{title}</SectionTitle>}
+        <div {...props} className={cx(styles.section, { [styles.sectionNoWrap]: noWrap, [styles.sectionNoMargin]: noMargin })}>
+            {children} 
+        </div>
     </div>
-  </div>
 );
 
 export const SectionContent = ({ children, title, grow = 1, style }) => (
@@ -80,20 +81,6 @@ export const CentredPanel = (props) => (
   <div {...props} className={styles.CentredPanel}/>
 );
 
-
-export const Button = (props) => (
-    <button {...props} className={styles.button + ' ' + (props.color ? styles[props.color]: '')} />
-);
-
 export const FundContainer = (props) => (
     <div {...props} className={styles.fundContainer}/>
-);
-
-
-export const BoxTitle = (props) => (
-    <div {...props} className={styles.boxTitle}/>
-);
-
-export const RightContainer = ({children, ...props}) => (
-    <div {...props} className={styles.rightContainer}>{children}</div>
 );

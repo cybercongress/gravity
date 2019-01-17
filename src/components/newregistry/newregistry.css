@@ -23,13 +23,14 @@
 
 .content {
     width: 50%;
+    max-height: 585px;
 }
 /* ---------- */
 .fieldsTable {
     width: 100%;
     table-layout: fixed;
     font-size: 14px;
-    padding: 20px 0; 
+    padding: 20px 0;
     padding-top: 20px;
 }
 
@@ -66,17 +67,6 @@
     /* margin-bottom: 20px; */
     margin-top: 20px;
 }
-
-/* ------------- */
-.PanelRecord {
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.14);
-    /* margin-bottom: 20px; */
-    min-height: 403px;
-    margin-top: 5%;
-}
-/* ---------- */
 
 .panelTitle {
     padding: 30px;

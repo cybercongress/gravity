@@ -1,80 +1,169 @@
-import './index.less'
+import './index.less';
 
-import Title from './components/Title/Title'
+import Title from './components/Title/Title';
 
 import {
-    Badge, FooterButton,
-    Section, SectionTabs, SectionContent,
+    Badge,
+    FooterButton,
+    Section,
+    SectionTabs,
+    SectionContent,
     Container as MainContainer,
-    FundContainer, Centred,CentredPanel,
-    Button,
-    BoxTitle,
+    FundContainer,
+    Centred,
+    CentredPanel,
     TotalCost,
-    RightContainer
 } from './components/chaingear';
-import { Container, Text, Link as ActionLink } from './components/CallToAction';
-import { LinkHash } from './components/LinkHash';
-import { Message } from './components/Message'
-import { BlockRow } from './components/BlockRow/BlockRow';
-import { ParamRow } from './components/newregistry/ParamRow/ParamRow';
-import { WideInput, WideSelect } from './components/Input/WideInput';
-import { Description } from './components/newregistry/Description/Description';
-import { DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName } from './components/DbHeader/DbHeader'
-import { DbMenu } from './components/DbMenu/DbMenu';
-import { MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon,MenuPopupDeletePencilIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon } from './components/MenuPopup/MenuPopup';
-import { Popup, PopupContent, PopupFooter, PopupTitle, PopupButton } from './components/Popup/Popup';
-import { BenContainer, BenPieChart, BenList, Ben } from './components/Beneficiary/Ben';
-import {DarkPanel} from './components/newregistry/DarkPanel/DarkPanel';
-import {ProgressBar} from './components/ProgressBar/ProgressBar';
-import CircleLable from './components/ProgressBar/CricleLable';
-import Table, { HomeTable, TableRow, TableItem, TableAddRow, TableRegistry, TableItemBen } from './components/Table/Table';
-import { Checkbox } from './components/Checkbox/index';
-import { AddNewRecordButton } from './components/Button/button';
-import FormField from './components/FormField/FormFild';
-import ValueInput from  './components/ValueInput';
 import {
-ContentLine,
-ContentLineTextInput,
-LineControl,
-ContentInput,
-LineTitle,
-LineText,
-ContentLineFund
+    Container,
+    Link as ActionLink,
+} from './components/CallToAction';
+import {
+    LinkHash,
+} from './components/LinkHash';
+import {
+    Message,
+} from './components/Message';
+import {
+    ParamRow,
+} from './components/ParamRow/ParamRow';
+import {
+    WideInput,
+    WideSelect,
+} from './components/Input/WideInput';
+import {
+    FlexContainerLeft,
+    FlexContainerRight,
+    FlexContainer,
+} from './components/DbHeader/DbHeader';
+import {
+    DbMenu,
+} from './components/DbMenu/DbMenu';
+import {
+    MenuPopup,
+    MenuPopupItem,
+    MenuSeparator,
+    MenuPopupDeleteIcon,
+    MenuPopupEditIcon,
+    MenuPopupTransferIcon,
+    MenuPopupPauseIcon,
+    MenuPopupResumeIcon,
+    MenuPopupAccountIcon,
+} from './components/MenuPopup/MenuPopup';
+import {
+    Popup,
+    PopupContent,
+    PopupFooter,
+    PopupTitle,
+    PopupSkillBar,
+    PopupBar,
+    PopupBarFooter,
+} from './components/Popup/Popup';
+
+import {
+    BenContainer,
+    BenPieChart,
+    BenList,
+    Ben,
+} from './components/Beneficiary/Ben';
+import {
+    DarkPanel,
+} from './components/DarkPanel/DarkPanel';
+import {
+    ProgressBar,
+} from './components/ProgressBar/ProgressBar';
+import CircleLable from './components/ProgressBar/CricleLable';
+import Table, {
+    HomeTable,
+    TableRow,
+    TableItem,
+    TableAddRow,
+    TableRegistry,
+    TableItemBen,
+} from './components/Table/Table';
+import {
+    Checkbox,
+} from './components/Checkbox/index';
+import {
+    AddNewRecordButton,
+    Button,
+} from './components/Button/button';
+import FormField from './components/FormField/FormFild';
+import ValueInput from './components/ValueInput';
+import {
+    TableRecords,
+} from './components/TableRecords/TableRecords';
+import {
+    ContentLine,
+    ContentLineTextInput,
+    LineControl,
+    ContentInput,
+    LineTitle,
+    ContentLineFund,
 } from './components/PopupContent/PopupContent';
+import { DatabaseItemsContainer } from './components/DatabaseTable/DatabaseItemsContainer';
+import { DbMenuPoints } from './components/DbMenuPoints/DbMenuPoints';
+import { SkillBar } from './components/SkillBar/SkillBar';
+import { Text } from './components/Text/Text';
+import {
+    SearchItem,
+} from './components/SearchItem/SearchItem';
 
 import {
     Browser,
     BrowserHeader,
     BrowserContent,
-    BrowserSidebar
+    BrowserSidebar,
 } from './components/browser/Browser';
 
 import {
-    Content, ContainerRegister, SideBar,
+    calculateBensShares,
+} from './components/utils/utils';
+import {
+    InfoButton,
+} from './components/DatabaseItem/index';
+
+import {
+    Content,
+    ContainerRegister,
+    SideBar,
     FieldsTable,
     Panel,
-    PanelRecord,
-    Label,
     CreateButton,
     Control,
     PageTitle,
     RemoveButton,
-    ErrorMessage,
-    AddButton
+    AddButton,
 } from './components/newregistry';
 
-import { AddField } from './components/newregistry/AddField';
+import {
+    AddField,
+} from './components/newregistry/AddField';
 
 import StatusBar from './components/StatusBar';
+import {
+    LinkContainer,
+} from './components/LinkContainer/LinkContainer';
+import {
+    Vitalick,
+} from './components/Vitalick/vitalick';
 
 import Code from './components/SolidityHighlight';
+import { Status } from './components/Popup/status';
+import { IconLinks, IconCIDs, IconAccounts, IconBlockHeight, IconBlockDelay } from './components/Icons/Icons';
+
 
 export {
     Title,
-    Badge, FooterButton, Button,
-    Container, Text, ActionLink,
-    Section, SectionTabs, SectionContent,
-    BoxTitle,
+    Badge,
+    FooterButton,
+    Button,
+    Container,
+    Text,
+    ActionLink,
+    Section,
+    SectionTabs,
+    SectionContent,
     MainContainer,
     FundContainer,
     LinkHash,
@@ -82,49 +171,86 @@ export {
     CentredPanel,
     TotalCost,
     Message,
+    TableRecords,
 
-    Content, ContainerRegister, SideBar,
+    Content,
+    ContainerRegister,
+    SideBar,
     FieldsTable,
     Panel,
-    //PanelRecords,
-    Label,
     CreateButton,
     Control,
     PageTitle,
     RemoveButton,
-    ErrorMessage,
     AddButton,
     AddField,
     StatusBar,
     Code,
-    RightContainer,
-    BlockRow,
     ParamRow,
     WideInput,
     WideSelect,
-    Description,
     Checkbox,
     AddNewRecordButton,
-    MenuPopupDeletePencilIcon,
-
+    MenuPopupEditIcon,
+    SkillBar,
 
     Browser,
     BrowserHeader,
     BrowserContent,
     BrowserSidebar,
 
-    DbHeader, DbHeaderLeft, DbHeaderRight, DbHeaderLine, DbHeaderName,
+    FlexContainerLeft,
+    FlexContainerRight,
+    FlexContainer,
     DbMenu,
-    MenuPopup, MenuPopupItem, MenuSeparator, MenuPopupDeleteIcon, MenuPopupEditIcon, MenuPopupPauseIcon, MenuPopupResumeIcon, MenuPopupTransferIcon,
-    Popup, PopupContent, PopupFooter, PopupTitle,
-    BenContainer, BenPieChart, BenList, Ben,
+    MenuPopup,
+    MenuPopupItem,
+    MenuSeparator,
+    MenuPopupDeleteIcon,
+    MenuPopupTransferIcon,
+    MenuPopupPauseIcon,
+    MenuPopupResumeIcon,
+    MenuPopupAccountIcon,
+    Popup,
+    PopupContent,
+    PopupFooter,
+    PopupTitle,
+    PopupSkillBar,
+    PopupBar,
+    PopupBarFooter,
+    BenContainer,
+    BenPieChart,
+    BenList,
+    Ben,
 
     DarkPanel,
 
-    ProgressBar, CircleLable,
+    ProgressBar,
+    CircleLable,
 
-    Table, HomeTable, TableRow, TableItem, TableAddRow, TableItemBen, TableRegistry,
+    Table,
+    HomeTable,
+    TableRow,
+    TableItem,
+    TableAddRow,
+    TableItemBen,
+    TableRegistry,
 
-    ContentLine, ContentLineTextInput, LineControl, ContentInput, LineTitle, LineText, ContentLineFund, PopupButton,
+    ContentLine, ContentLineTextInput, LineControl,
+    ContentInput, LineTitle, ContentLineFund,
     FormField, ValueInput,
-}
+
+    DatabaseItemsContainer, DbMenuPoints,
+    calculateBensShares,
+    InfoButton,
+    SearchItem,
+    LinkContainer,
+    Vitalick,
+    IconLinks,
+    IconCIDs,
+    IconAccounts,
+    IconBlockHeight,
+    IconBlockDelay,
+
+    Status,
+};

@@ -10,7 +10,7 @@ import Table, {
 import { AddButton, RemoveButton } from '../newregistry';
 import { LinkHash, Checkbox } from '../..';
 
-storiesOf('Table', module)
+storiesOf('commponents/Table', module)
   .addDecorator(centered)
   .add('table', () => (
     <Table>

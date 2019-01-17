@@ -6,27 +6,27 @@ import {
   MenuPopup,
   MenuPopupItem,
   MenuSeparator,
-  MenuPopupEditIcon,
+  MenuPopupTransferIcon,
   MenuPopupDeleteIcon,
   MenuPopupPauseIcon,
   MenuPopupResumeIcon,
-  MenuPopupTransferIcon,
-  MenuPopupDeletePencilIcon,
+  MenuPopupAccountIcon,
+  MenuPopupEditIcon,
   ItemLinkHash,
   MenuPopupLinkHash,
 } from './MenuPopup';
 
 import { LinkHash } from '../..';
 
-storiesOf('MenuPopup', module)
+storiesOf('commponents/MenuPopup', module)
   .addDecorator(centered)
   .add('MenuPopup', () => (
     <MenuPopup>
-      <MenuPopupItem icon={<MenuPopupTransferIcon />}>Transfer Ownership</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupAccountIcon />}>Transfer Ownership</MenuPopupItem>
       <MenuSeparator />
-      <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
-      <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Fee</MenuPopupItem>
-      <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupTransferIcon />}>Fund Registry</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Fee</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Funds</MenuPopupItem>
       <MenuSeparator />
       <MenuPopupItem icon={<MenuPopupPauseIcon />}>Pause Regisrty</MenuPopupItem>
       <MenuPopupItem icon={<MenuPopupResumeIcon />}>Resume Registry</MenuPopupItem>
@@ -36,13 +36,13 @@ storiesOf('MenuPopup', module)
   ))
   .add('MenuPopup_v2', () => (
     <MenuPopup>
-      <MenuPopupItem icon={<MenuPopupTransferIcon />}>Transfer Ownership</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupAccountIcon />}>Transfer Ownership</MenuPopupItem>
       <MenuSeparator />
-      <MenuPopupItem icon={<MenuPopupEditIcon />}>Fund Registry</MenuPopupItem>
-      <MenuPopupItem icon={<MenuPopupEditIcon />}>Claim Funds</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupTransferIcon />}>Fund Registry</MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupTransferIcon />}>Claim Funds</MenuPopupItem>
       <MenuSeparator />
       <MenuPopupItem icon={<MenuPopupDeleteIcon />}> Delete Registry </MenuPopupItem>
-      <MenuPopupItem icon={<MenuPopupDeletePencilIcon />}> Delete Registry </MenuPopupItem>
+      <MenuPopupItem icon={<MenuPopupEditIcon />}> Delete Registry </MenuPopupItem>
     </MenuPopup>
   ))
 
