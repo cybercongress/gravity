@@ -16,7 +16,7 @@ import {
     Message,
     TableRegistry,
     TableItemBen,
-    ParamRow,
+    FormControl,
     Text,
     ContainerRegister,
     Content,
@@ -85,19 +85,19 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
         <ContainerRegister>
             <SideBar title='Input'>
                 <Panel title='General Parameters'>
-                    <ParamRow>
+                    <FormControl>
                         <WideInput placeholder='Name' defaultValue='' />
-                    </ParamRow>
-                    <ParamRow>
+                    </FormControl>
+                    <FormControl>
                         <WideInput defaultValue='' placeholder='Symbol' />
-                    </ParamRow>
-                    <ParamRow>
+                    </FormControl>
+                    <FormControl>
                         <WideSelect>
                             <option value=''>Version</option>
                             <option value='V1'>V1 (Basic Database)</option>
                         </WideSelect>
-                    </ParamRow>
-                    <ParamRow>
+                    </FormControl>
+                    <FormControl>
                         <Text size='sm' lineheight justify>
                             <b>Description:</b>
                             One morning, when Gregor Samsa woke from troubled dreams, he found
@@ -105,7 +105,7 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
                             armour-like back, and if he lifted his head a little he could see his
                             brown belly, slightly domed and divided by arches.
                         </Text>
-                    </ParamRow>
+                    </FormControl>
                 </Panel>
                 <Panel title='Beneficiaries (Optional)' noPadding>
                     <TableItemBen>

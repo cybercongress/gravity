@@ -2,18 +2,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
-import { ParamRow, WideInput } from '../..';
+import { FormControl, WideInput } from '../..';
 
-storiesOf('commponents/ParamRow', module).add('ParamRow', () => (
+storiesOf('commponents/FormControl', module).add('FormControl', () => (
     <div style={ { top: '30%', position: 'relative', width: '100%' } }>
-        <ParamRow>
+        <FormControl>
             <WideInput placeholder='Name' defaultValue='' />
-        </ParamRow>
-        <ParamRow>
+        </FormControl>
+        <FormControl>
             <WideInput placeholder='Name' defaultValue='' />
-        </ParamRow>
-        <ParamRow>
+        </FormControl>
+        <FormControl>
             <WideInput placeholder='Name' defaultValue='' />
-        </ParamRow>
+        </FormControl>
     </div>
 ));

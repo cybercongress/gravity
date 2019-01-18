@@ -25,8 +25,8 @@ import {
     Message,
 } from './components/Message';
 import {
-    ParamRow,
-} from './components/ParamRow/ParamRow';
+    FormControl,
+} from './components/FormControl/FormControl';
 import {
     WideInput,
     WideSelect,
@@ -186,7 +186,7 @@ export {
     AddField,
     StatusBar,
     Code,
-    ParamRow,
+    FormControl,
     WideInput,
     WideSelect,
     Checkbox,
