@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
 import {
     LinkHash,
-    WideInput,
+    Input,
     Button,
     Text,
 
@@ -37,7 +37,7 @@ storiesOf('commponents/Popup', module)
                 <ContentLineFund>
                     <LineTitle>Amount:</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineFund>
             </PopupContent>
@@ -113,19 +113,19 @@ storiesOf('commponents/Popup', module)
                 <ContentLineTextInput>
                     <LineTitle>Name:</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
                 <ContentLineTextInput>
                     <LineTitle>Address:</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
                 <ContentLineTextInput>
                     <LineTitle>Developer:</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
             </PopupContent>
@@ -151,7 +151,7 @@ storiesOf('commponents/Popup', module)
                 <ContentLineTextInput>
                     <LineTitle>Claim amount:</LineTitle>
                     <LineControl>
-                        <WideInput placeholder='0.00 ETH' />
+                        <Input placeholder='0.00 ETH' />
                     </LineControl>
                 </ContentLineTextInput>
             </PopupContent>
@@ -181,7 +181,7 @@ storiesOf('commponents/Popup', module)
                 <ContentLineTextInput>
                     <LineTitle>New owner:</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
             </PopupContent>
@@ -211,7 +211,7 @@ storiesOf('commponents/Popup', module)
                 <ContentLineTextInput>
                     <LineTitle>New owner:</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
             </PopupContent>
@@ -243,37 +243,37 @@ storiesOf('commponents/Popup', module)
                 <ContentLineTextInput>
                     <LineTitle>Header 1</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
                 <ContentLineTextInput>
                     <LineTitle>Header 2</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
                 <ContentLineTextInput>
                     <LineTitle>Header 3</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
                 <ContentLineTextInput>
                     <LineTitle>Header 4</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
                 <ContentLineTextInput>
                     <LineTitle>Header 5</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
                 <ContentLineTextInput>
                     <LineTitle>Header 6</LineTitle>
                     <LineControl>
-                        <WideInput />
+                        <Input />
                     </LineControl>
                 </ContentLineTextInput>
             </PopupContent>

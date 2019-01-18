@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { WideSelect } from './WideInput';
+import { WideSelect } from './Input';
 
 const Permission = {
     OnlyAdmin: 0,

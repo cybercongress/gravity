@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 import {
-    AddButton, WideInput, WideSelect
+    AddButton, Input, WideSelect
 } from '../..';
 
 class AddField extends Component {
@@ -64,7 +64,7 @@ class AddField extends Component {
         return (
             <tr>
                 <td style={{width: 95}}>
-                    <WideInput placeholder='Name' value={name} onChange={this.changeName}/>
+                    <Input placeholder='Name' value={name} onChange={this.changeName}/>
                 </td>
                 <td style={{width: 80}}>
                     <WideSelect inputRef={node => { this.type = node; }} onChange={this.onTypeChange}>

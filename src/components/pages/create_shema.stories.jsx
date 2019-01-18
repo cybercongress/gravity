@@ -6,7 +6,7 @@ import {
     Code,
     Checkbox,
     WideSelect,
-    WideInput,
+    Input,
     CircleLable,
     ProgressBar,
     FlexContainer,
@@ -89,7 +89,7 @@ const Pages = ({ databaseId, disabled, disabledPopup, message  }) => (
                             <tbody>
                                 <tr>
                                     <td>
-                                        <WideInput placeholder='Name' />
+                                        <Input placeholder='Name' />
                                     </td>
                                     <td>
                                         <WideSelect>

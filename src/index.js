@@ -28,9 +28,9 @@ import {
     FormControl,
 } from './components/FormControl/FormControl';
 import {
-    WideInput,
+    Input,
     WideSelect,
-} from './components/Input/WideInput';
+} from './components/Input/Input';
 import {
     FlexContainerLeft,
     FlexContainerRight,
@@ -187,7 +187,7 @@ export {
     StatusBar,
     Code,
     FormControl,
-    WideInput,
+    //Input,
     WideSelect,
     Checkbox,
     AddNewRecordButton,
@@ -251,6 +251,7 @@ export {
     IconAccounts,
     IconBlockHeight,
     IconBlockDelay,
+    Input,
 
     Status,
 };

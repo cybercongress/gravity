@@ -7,7 +7,7 @@ import {
     MainContainer,
     PopupSkillBar,
 
-    WideInput,
+    Input,
     CentredPanel,
     Section,
     SectionContent,
@@ -98,7 +98,7 @@ class App extends Component {
                     </div>
                 </FlexContainer>
                 <FlexContainer>
-                    <WideInput
+                    <Input
                       defaultValue={ searchQuery }
                       ref='searchInput'
                       onKeyPress={ this._handleKeyPress }
@@ -237,7 +237,7 @@ class App extends Component {
                             will understand it!
                         </Text>
                         <FlexContainer>
-                            <WideInput placeholder='type your link her...' ref='cidToInput' />
+                            <Input placeholder='type your link her...' ref='cidToInput' />
                             <Button
                               color='ogange'
                               transformtext
@@ -269,7 +269,7 @@ class App extends Component {
                             </Text>
 
                             <FlexContainer>
-                                <WideInput placeholder='type your link her...' ref='cidToInput' />
+                                <Input placeholder='type your link her...' ref='cidToInput' />
                                 <Button
                                   color='greenyellow'
                                   transformtext

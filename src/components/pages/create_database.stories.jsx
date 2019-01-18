@@ -6,7 +6,7 @@ import {
     AddButton,
     Code,
     WideSelect,
-    WideInput,
+    //Input,
     CircleLable,
     ProgressBar,
     FlexContainerRight,
@@ -26,6 +26,7 @@ import {
     SideBar,
     PopupBar,
     PopupBarFooter,
+    Input,
 } from '../..';
 
 import code from './code';
@@ -86,10 +87,10 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
             <SideBar title='Input'>
                 <Panel title='General Parameters'>
                     <FormControl>
-                        <WideInput placeholder='Name' defaultValue='' />
+                        <Input placeholder='Name' defaultValue='' />
                     </FormControl>
                     <FormControl>
-                        <WideInput defaultValue='' placeholder='Symbol' />
+                        <Input defaultValue='' placeholder='Symbol' />
                     </FormControl>
                     <FormControl>
                         <WideSelect>
@@ -132,10 +133,10 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
                         <tbody>
                             <tr>
                                 <td>
-                                    <WideInput placeholder='Address' />
+                                    <Input placeholder='Address' />
                                 </td>
                                 <td>
-                                    <WideInput placeholder='Stake' />
+                                    <Input placeholder='Stake' />
                                 </td>
                                 <td>
                                     <span>0</span>
