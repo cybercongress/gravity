@@ -126,10 +126,6 @@ import {
 import {
     Content,
     ContainerRegister,
-    SideBar,
-    FieldsTable,
-    Panel,
-    CreateButton,
     Control,
     PageTitle,
     RemoveButton,
@@ -151,6 +147,10 @@ import {
 import Code from './components/SolidityHighlight';
 import { Status } from './components/Popup/status';
 import { IconLinks, IconCIDs, IconAccounts, IconBlockHeight, IconBlockDelay } from './components/Icons/Icons';
+
+import { Panel } from './components/Panel/Panel';
+import { SideBar } from './components/SideBar/SideBar';
+import { FieldsTable } from './components/FieldsTable/FieldsTable';
 
 
 export {
@@ -178,7 +178,6 @@ export {
     SideBar,
     FieldsTable,
     Panel,
-    CreateButton,
     Control,
     PageTitle,
     RemoveButton,

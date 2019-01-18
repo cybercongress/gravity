@@ -1,0 +1,31 @@
+.fieldsTable {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 14px;
+  padding: 20px 0;
+  padding-top: 20px;
+}
+
+.fieldsTable th {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.fieldsTable input {
+  width: 100%;
+}
+/* ---------- */
+.fieldsTable tbody {
+  /* border: 1px solid #dedede; */
+}
+/* ----- */
+.fieldsTable td {
+  /* padding: 10px 10px; */
+}
+.fieldsTable th {
+  padding: 5px 10px;
+}
+
+.fieldsTable th {
+  text-align: left;
+}

@@ -3,36 +3,6 @@ import { DarkPanel } from '../..';
 
 const styles = require('./newregistry.css');
 
-export const FieldsTable = ({ children, ...props }) => (
-  <table {...props} className={styles.fieldsTable}>
-    {children}
-  </table>
-);
-
-export const Panel = ({ children, title, noPadding, ...props }) => (
-  <div {...props} className={styles.panel}>
-    {title && <h3 className={styles.panelTitle}>{title}</h3>}
-    {noPadding ? children : <div className={styles.panelContent}>{children}</div>}
-  </div>
-);
-
-export const CreateButton = ({ children, ...props }) => (
-  <button className={styles.createButton} {...props}>
-    {children}
-  </button>
-);
-
-export const SideBar = ({ children, title, ...props }) => (
-  <div {...props} className={styles.sideBar}>
-    {title && (
-      <div className={styles.label} style={{ background: '#4a90e2' }}>
-        {title}
-      </div>
-    )}
-    {children}
-  </div>
-);
-
 export const Content = ({ children, title, ...props }) => (
     <div {...props} className={styles.content}>
     {title && (
