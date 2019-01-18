@@ -139,9 +139,9 @@ class App extends Component {
                         <Title style={ { marginLeft: '0px', marginBottom: '30px', textAlign: 'center' } }>
                             Search statistics
                         </Title>
-                        <Section noMargin noWrap>
-                            <SectionContent style={ { width: '25%' } }>
-                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                        <Section noMargin>
+                            <SectionContent style={{padding: '0 5px'}}>
+                                <CentredPanel>
                                     <IconLinks />
                                     <Text uppercase color='blue'>
                                         links
@@ -156,8 +156,8 @@ class App extends Component {
                                    
                                 </CentredPanel>
                             </SectionContent>
-                            <SectionContent style={ { width: '25%' } }>
-                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                            <SectionContent style={{padding: '0 5px'}}>
+                                <CentredPanel>
                                 <IconCIDs />
                                 <Text uppercase color='blue'>
                                         CIDs
@@ -172,8 +172,8 @@ class App extends Component {
                                     
                                 </CentredPanel>
                             </SectionContent>
-                            <SectionContent style={ { width: '25%' } }>
-                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                            <SectionContent style={{padding: '0 5px'}}>
+                                <CentredPanel>
                                 <IconAccounts />
                                 <Text uppercase color='blue'>
                                         accounts
@@ -188,8 +188,8 @@ class App extends Component {
                                     
                                 </CentredPanel>
                             </SectionContent>
-                            <SectionContent style={ { width: '25%' } }>
-                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                            <SectionContent style={{padding: '0 5px'}}>
+                                <CentredPanel>
                                 <IconBlockHeight />
                                 <Text uppercase color='blue'>
                                         last block height
@@ -204,8 +204,8 @@ class App extends Component {
                                     
                                 </CentredPanel>
                             </SectionContent>
-                            <SectionContent style={ { width: '23%' } }>
-                                <CentredPanel style={{justifyContent: 'space-evenly'}}>
+                            <SectionContent style={{padding: '0 5px'}}>
+                                <CentredPanel>
                                 <IconBlockDelay />
                                 <Text uppercase color='blue'>
                                         last block delay

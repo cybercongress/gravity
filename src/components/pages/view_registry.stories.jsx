@@ -150,7 +150,7 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                 </DbMenu>
             </FlexContainerRight>
         </FlexContainer>
-        <Section noMargin noWrap title='General'>
+        <Section title='General'>
             <SectionContent style={ { width: '25%' } }>
                 <CentredPanel>
                     <Text uppercase color='black' style={{marginBottom: '20px'}}>Created:</Text>
@@ -194,7 +194,7 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
             </SectionContent>
         </Section>
 
-        <Section noMargin>
+        <Section>
             <SectionContent title='Overview' style={ { width: '70%' } } grow={ 3 }>
                 <FormField label='Description' value='{description}' onUpdate='isOwner' />
                 <FormField label='Tags' value='{tag}' />

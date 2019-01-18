@@ -58,7 +58,7 @@ export const SectionTitle = ({ children }) => (
 export const Section = ({ children, title, noWrap, noMargin, ...props }) => (
     <div>
         {title && <SectionTitle>{title}</SectionTitle>}
-        <div {...props} className={cx(styles.section, { [styles.sectionNoWrap]: noWrap, [styles.sectionNoMargin]: noMargin })}>
+        <div {...props} className={cx(styles.section, { [styles.sectionNoMargin]: noMargin })}>
             {children} 
         </div>
     </div>
