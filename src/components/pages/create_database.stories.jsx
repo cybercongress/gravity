@@ -5,7 +5,7 @@ import {
     LinkHash,
     AddButton,
     Code,
-    WideSelect,
+    Select,
     //Input,
     CircleLable,
     ProgressBar,
@@ -93,10 +93,10 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
                         <Input defaultValue='' placeholder='Symbol' />
                     </FormControl>
                     <FormControl>
-                        <WideSelect>
+                        <Select>
                             <option value=''>Version</option>
                             <option value='V1'>V1 (Basic Database)</option>
-                        </WideSelect>
+                        </Select>
                     </FormControl>
                     <FormControl>
                         <Text size='sm' lineheight justify>

@@ -34,7 +34,7 @@ import {
     DatabaseItemsContainer,
     DbMenuPoints,
     Text,
-    WideSelect,
+    Select,
     PopupBarFooter,
     PopupBar,
 } from '../..';
@@ -210,7 +210,7 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                   onUpdate='isDbPaused'
                   icon={ <InfoButton /> }
                 >
-                    <WideSelect
+                    <Select
                         //   inputRef={ (node) => {
                         //         dbPage.permissionGroup = node;
                         //   } }
@@ -223,7 +223,7 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                                     <option value={ n } key={ n }>{label}</option>
                                 );
                             })}
-                    </WideSelect>
+                    </Select>
                 </FormField>
                 <FormField label='Entries' value='{rows.length}' />
                 <FormField label='Version' value='{contractVersion}' />

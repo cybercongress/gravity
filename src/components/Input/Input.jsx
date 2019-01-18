@@ -15,7 +15,7 @@ export const Input = ({ inputRef, errorMessage, ...props }) => (
     </div>
 );
 
-export const WideSelect = ({ children, inputRef, ...props }) => (
+export const Select = ({ children, inputRef, ...props }) => (
     <select { ...props } ref={ inputRef } className={ styles.Input }>
         {children}
     </select>

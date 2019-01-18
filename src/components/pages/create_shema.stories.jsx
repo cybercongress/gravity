@@ -5,7 +5,7 @@ import {
     AddButton,
     Code,
     Checkbox,
-    WideSelect,
+    Select,
     Input,
     CircleLable,
     ProgressBar,
@@ -92,10 +92,10 @@ const Pages = ({ databaseId, disabled, disabledPopup, message  }) => (
                                         <Input placeholder='Name' />
                                     </td>
                                     <td>
-                                        <WideSelect>
+                                        <Select>
                                             <option value=''>Type</option>
                                             <option value='V1'>V1 (Basic Database)</option>
-                                        </WideSelect>
+                                        </Select>
                                     </td>
                                     <td>
                                         <Checkbox>unique</Checkbox>

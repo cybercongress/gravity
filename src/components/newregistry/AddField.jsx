@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 import {
-    AddButton, Input, WideSelect
+    AddButton, Input, Select
 } from '../..';
 
 class AddField extends Component {
@@ -67,14 +67,14 @@ class AddField extends Component {
                     <Input placeholder='Name' value={name} onChange={this.changeName}/>
                 </td>
                 <td style={{width: 80}}>
-                    <WideSelect inputRef={node => { this.type = node; }} onChange={this.onTypeChange}>
+                    <Select inputRef={node => { this.type = node; }} onChange={this.onTypeChange}>
                         <option value=''>Type</option>
                         <option value='string'>string</option>
                         <option value='address'>address</option>
                         <option value='bool'>bool</option>
                         <option value='uint256'>uint256</option>
                         <option value='int256'>int256</option>
-                    </WideSelect>
+                    </Select>
                 </td>
                 <td style={{
                     textAlign: 'center',

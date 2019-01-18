@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
 import FormField from './FormFild';
-import { InfoButton, WideSelect } from '../..';
+import { InfoButton, Select } from '../..';
 
 const Permission = {
     OnlyAdmin: 0,
@@ -42,7 +42,7 @@ storiesOf('commponents/FormField', module).add('FormField', () => (
           onUpdate='isDbPaused'
           icon={ <InfoButton /> }
         >
-            <WideSelect
+            <Select
               defaultValue='{ permissionGroup }'
             >
                 {Object.keys(CreateEntryPermissionGroup).map((n) => {
@@ -54,7 +54,7 @@ storiesOf('commponents/FormField', module).add('FormField', () => (
                         </option>
                     );
                 })}
-            </WideSelect>
+            </Select>
         </FormField>
         <FormField label='Entries' value='{rows.length}' />
         <FormField label='Version' value='{contractVersion}' />

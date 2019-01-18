@@ -29,7 +29,7 @@ import {
 } from './components/FormControl/FormControl';
 import {
     Input,
-    WideSelect,
+    Select,
 } from './components/Input/Input';
 import {
     FlexContainerLeft,
@@ -188,7 +188,7 @@ export {
     Code,
     FormControl,
     //Input,
-    WideSelect,
+    Select,
     Checkbox,
     AddNewRecordButton,
     MenuPopupEditIcon,

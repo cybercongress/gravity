@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { WideSelect } from './Input';
+import { Select } from './Input';
 
 const Permission = {
     OnlyAdmin: 0,
@@ -20,10 +20,10 @@ const CreateEntryPermissionGroup = {
     },
 };
 
-storiesOf('commponents/WideSelect', module)
+storiesOf('commponents/Select', module)
     .addDecorator(centered)
-    .add('WideSelect', () => (
-        <WideSelect
+    .add('Select', () => (
+        <Select
             //   inputRef={ (node) => {
             //         dbPage.permissionGroup = node;
             //   } }
@@ -38,5 +38,5 @@ storiesOf('commponents/WideSelect', module)
                     </option>
                 );
             })}
-        </WideSelect>
+        </Select>
     ));
