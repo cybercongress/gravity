@@ -151,25 +151,25 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
             </FlexContainerRight>
         </FlexContainer>
         <Section title='General'>
-            <SectionContent style={ { width: '25%' } }>
+            <SectionContent>
                 <CentredPanel>
-                    <Text uppercase color='black' style={{marginBottom: '20px'}}>Created:</Text>
+                    <Text uppercase color='black'>Created:</Text>
                     <Text uppercase color='black'>7/2/2018 17:13:33</Text>
                 </CentredPanel>
             </SectionContent>
 
-            <SectionContent style={ { width: '25%' } }>
+            <SectionContent>
                 <CentredPanel>
-                    <Text uppercase color='black' style={{marginBottom: '20px'}}>Admin:</Text>
+                    <Text uppercase color='black'>Admin:</Text>
                     <div>
                         <LinkHash value={ admin } />
                     </div>
                 </CentredPanel>
             </SectionContent>
 
-            <SectionContent style={ { width: '25%' } }>
+            <SectionContent>
                 <CentredPanel>
-                    <Text uppercase color='black' style={{marginBottom: '20px'}}>FUNDED:</Text>
+                    <Text uppercase color='black'>FUNDED:</Text>
 
                     <Text uppercase color='black'>
                         
@@ -180,9 +180,9 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
                 </CentredPanel>
             </SectionContent>
 
-            <SectionContent style={ { width: '25%' } }>
+            <SectionContent>
                 <CentredPanel>
-                    <Text uppercase color='black' style={{marginBottom: '20px'}}>FEES:</Text>
+                    <Text uppercase color='black'>FEES:</Text>
 
                     <Text uppercase color='black'>
                 
