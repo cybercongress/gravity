@@ -1,0 +1,12 @@
+
+.container2 {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  box-sizing: border-box; */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  /* ------ */
+  margin-bottom: 20px;
+}

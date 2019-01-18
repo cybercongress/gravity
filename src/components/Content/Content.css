@@ -1,6 +1,6 @@
-.sideBar {
+.content {
   width: 50%;
-  padding-right: 20px;
+  max-height: 585px;
 }
 
 .label {
@@ -15,3 +15,5 @@
   align-items: center;
   box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
 }
+
+

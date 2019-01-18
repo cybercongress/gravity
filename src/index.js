@@ -124,17 +124,9 @@ import {
 } from './components/DatabaseItem/index';
 
 import {
-    Content,
-    ContainerRegister,
-    Control,
-    PageTitle,
     RemoveButton,
     AddButton,
-} from './components/newregistry';
-
-import {
-    AddField,
-} from './components/newregistry/AddField';
+} from './components/Button/tableButton';
 
 import StatusBar from './components/StatusBar';
 import {
@@ -151,7 +143,10 @@ import { IconLinks, IconCIDs, IconAccounts, IconBlockHeight, IconBlockDelay } fr
 import { Panel } from './components/Panel/Panel';
 import { SideBar } from './components/SideBar/SideBar';
 import { FieldsTable } from './components/FieldsTable/FieldsTable';
-
+import { Content } from './components/Content/Content';
+import { PageTitle } from './components/PageTitle/PageTitle';
+import { ContainerRegister } from './components/ContainerRegister/ContainerRegister';
+import { Control } from './components/Control/Control';
 
 export {
     Title,
@@ -182,7 +177,6 @@ export {
     PageTitle,
     RemoveButton,
     AddButton,
-    AddField,
     StatusBar,
     Code,
     FormControl,

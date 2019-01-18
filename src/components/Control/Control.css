@@ -1,0 +1,23 @@
+.control {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+
+.controlLabel {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.controlComponent {
+  width: 155px;
+}
+
+.controlComponent input {
+  width: 100%;
+  padding: 6px 9px;
+  box-sizing: border-box;
+}

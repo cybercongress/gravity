@@ -7,8 +7,7 @@ import Table, {
   TableAddRow,
   HomeTable,
 } from './Table';
-import { AddButton, RemoveButton } from '../newregistry';
-import { LinkHash, Checkbox } from '../..';
+import { LinkHash, Checkbox,AddButton, RemoveButton  } from '../..';
 
 storiesOf('commponents/Table', module)
   .addDecorator(centered)
