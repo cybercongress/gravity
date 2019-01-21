@@ -5,7 +5,6 @@ import {
     MainContainer,
     Section,
     SectionContent,
-    Centred,
     CentredPanel,
     FlexContainerLeft,
     FlexContainerRight,
@@ -240,14 +239,14 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
             </SectionContent>
 
             <SectionContent title='Beneficiaries' grow={ 0 } style={ { width: '29%' } }>
-                <Centred>
+                <CentredPanel style={{ height: '100%'}}>
                     <BenContainer>
                         <BenPieChart
                           bens={ beneficiaries }
                           calculateBensShares={ calculateBensShares }
                         />
                     </BenContainer>
-                </Centred>
+                </CentredPanel>
             </SectionContent>
         </Section>
         {!showTable && (
