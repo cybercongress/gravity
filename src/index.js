@@ -5,9 +5,9 @@ import Title from './components/Title/Title';
 import {
     Badge,
     FooterButton,
-    Section,
-    SectionTabs,
-    SectionContent,
+    // Section,
+    // SectionTabs,
+    // SectionContent,
     // Container as MainContainer,
     FundContainer,
     Centred,
@@ -149,6 +149,11 @@ import { ContainerRegister } from './components/ContainerRegister/ContainerRegis
 import { Control } from './components/Control/Control';
 
 import { Container as MainContainer } from './components/Container/Container';
+import {
+    Section,
+    SectionTabs,
+    SectionContent,
+} from './components/Section/Section';
 
 export {
     Title,

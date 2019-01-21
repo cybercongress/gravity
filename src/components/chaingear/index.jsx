@@ -5,13 +5,13 @@ import cx from 'classnames';
 
 import { Link } from 'react-router';
 
-export const Container = ({ children }) => (
-  <div className={styles.container}>
-    <div className={styles.containerInner}>
-    {children}
-    </div>
-  </div>
-);
+// export const Container = ({ children }) => (
+//   <div className={styles.container}>
+//     <div className={styles.containerInner}>
+//     {children}
+//     </div>
+//   </div>
+// );
 
 
 export const Paper = ({ children }) => (

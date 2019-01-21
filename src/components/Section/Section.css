@@ -1,0 +1,57 @@
+.paper {
+  height: 100%;
+  background: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.14);
+  flex-grow: 1;
+}
+
+
+
+.section {
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  margin-left: -15px;
+  margin-right: -15px;
+  flex-direction: row;
+}
+
+.sectionNoMargin{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.sectionContent {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-left: 30px;
+  color: #7c7c7c;
+  font-family: Play;
+  line-height: 23px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+}
+
+
+.sectionTabContainer {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
