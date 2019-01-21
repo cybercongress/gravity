@@ -11,15 +11,26 @@ button {
   cursor: pointer;
   position: relative;
   text-align: center;
-  width: 153px;
+  min-width: 153px;
   height: 33px;
   border-radius: 20px;
   font-family: Play;
   font-size: 14px;
+  padding: 0 10px;
+}
+
+.AddNewRecordButton span{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.AddNewRecordButton i{
+  content: url(./ic-plus.svg);
 }
 
 .AddNewRecordButton:hover{
-  background-color: #dedede;
   opacity: 0.8;
 }
 

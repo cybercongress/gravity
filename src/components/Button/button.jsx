@@ -7,8 +7,8 @@ const styles = require('./button.css');
 
 export const AddNewRecordButton = ({ children, ...props }) => (
     <button className={ styles.AddNewRecordButton } { ...props }>
-        <span>{children}</span>
-        {/* {icon} */}
+        <span>{children}<i /></span>
+        
     </button>
 );
 
