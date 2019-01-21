@@ -10,7 +10,7 @@
     padding-top: 65px;
     padding-bottom: 65px;
 } */
-
+/* 
 .paper {
     height: 100%;
     background: #fff;
@@ -18,10 +18,10 @@
     box-sizing: border-box;
     box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.14);
     flex-grow: 1;
-}
+} */
 
 
-.titile {
+/* .titile {
   font-size: 24px;
   line-height: 24px;
   color: #7c7c7c;
@@ -38,7 +38,7 @@
     // font-size: 24px;
     // line-height: 24p;
     font-weight: bold;
-}
+} */
 
 .badge {
   background: #438cef;
@@ -98,7 +98,7 @@
 
 
 
-.section {
+/* .section {
   margin-bottom: 50px;
   display: flex;
   flex-wrap: nowrap;
@@ -143,7 +143,7 @@
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
-}
+} */
 
 .centred {
     display: flex;

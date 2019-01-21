@@ -14,17 +14,17 @@ import { Link } from 'react-router';
 // );
 
 
-export const Paper = ({ children }) => (
-  <div className={styles.paper}>
-    {children}
-  </div>
-);
+// export const Paper = ({ children }) => (
+//   <div className={styles.paper}>
+//     {children}
+//   </div>
+// );
 
-export const Title = ({ children }) => (
-  <h2 className={styles.titile}>
-    {children}
-  </h2>
-);
+// export const Title = ({ children }) => (
+//   <h2 className={styles.titile}>
+//     {children}
+//   </h2>
+// );
 
 export const Badge = ({ children }) => (
   <span className={styles.badge} >
@@ -43,35 +43,35 @@ export const TotalCost = ({ value }) => (
   </div>
 );
 
-export const SectionTabs = ({ children }) => (
-  <div className={styles.sectionTabContainer}>
-    {children}
-  </div>
-);
+// export const SectionTabs = ({ children }) => (
+//   <div className={styles.sectionTabContainer}>
+//     {children}
+//   </div>
+// );
 
-export const SectionTitle = ({ children }) => (
-  <h3 className={styles.sectionTitle}>
-    {children}
-  </h3>
-);
+// export const SectionTitle = ({ children }) => (
+//     <h3 className={ styles.sectionTitle }>
+//         {children}
+//     </h3>
+// );
 
-export const Section = ({ children, title, noWrap, noMargin, ...props }) => (
-    <div>
-        {title && <SectionTitle>{title}</SectionTitle>}
-        <div {...props} className={cx(styles.section, { [styles.sectionNoMargin]: noMargin })}>
-            {children} 
-        </div>
-    </div>
-);
+// export const Section = ({ children, title, noWrap, noMargin, ...props }) => (
+//     <div>
+//         {title && <SectionTitle>{title}</SectionTitle>}
+//         <div {...props} className={cx(styles.section, { [styles.sectionNoMargin]: noMargin })}>
+//             {children} 
+//         </div>
+//     </div>
+// );
 
-export const SectionContent = ({ children, title, grow = 1, style }) => (
-  <div className={styles.sectionContent} style={{ flexGrow: grow, ...style }}>
-    {title && <SectionTitle>{title}</SectionTitle>}
-    <Paper>
-    {children}
-    </Paper>
-  </div>
-);
+// export const SectionContent = ({ children, title, grow = 1, style }) => (
+//   <div className={styles.sectionContent} style={{ flexGrow: grow, ...style }}>
+//     {title && <SectionTitle>{title}</SectionTitle>}
+//     <Paper>
+//     {children}
+//     </Paper>
+//   </div>
+// );
 
 export const Centred = (props) => (
     <div {...props} className={styles.centred}/>
