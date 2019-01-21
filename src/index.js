@@ -9,8 +9,8 @@ import {
     // SectionContent,
     // Container as MainContainer,
     FundContainer,
-    Centred,
-    CentredPanel,
+    // Centred,
+    // CentredPanel,
     // TotalCost,
 } from './components/chaingear';
 import {
@@ -156,6 +156,7 @@ import {
 } from './components/Section/Section';
 import { TotalCost } from './components/TotalCost/TotalCost';
 import { Badge } from './components/Badge/Badge';
+import { CentredPanel } from './components/CentredPanel/CentredPanel';
 
 export {
     Title,
@@ -171,7 +172,7 @@ export {
     MainContainer,
     FundContainer,
     LinkHash,
-    Centred,
+    // Centred,
     CentredPanel,
     TotalCost,
     Message,

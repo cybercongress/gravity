@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-const styles = require("./Chaingear.css");
-import cx from 'classnames'; 
+const styles = require('./Chaingear.css');
+// import cx from 'classnames'; 
 
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 
 // export const Container = ({ children }) => (
 //   <div className={styles.container}>
@@ -73,9 +73,9 @@ import { Link } from 'react-router';
 //   </div>
 // );
 
-export const Centred = (props) => (
-    <div {...props} className={styles.centred}/>
-);
+// export const Centred = (props) => (
+//     <div {...props} className={styles.centred}/>
+// );
 
 export const CentredPanel = (props) => (
   <div {...props} className={styles.CentredPanel}/>

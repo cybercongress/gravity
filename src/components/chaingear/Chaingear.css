@@ -79,7 +79,7 @@
 
 
 
-.addItemButton {
+/* .addItemButton {
     display: block;
     width: 100%;
     background: #438cef;
@@ -92,7 +92,7 @@
     display: inline-block;
     margin-right: 20px;
     text-transform: uppercase;
-}
+} */
 
 
 
@@ -145,7 +145,7 @@
   padding-right: 15px;
 } */
 
-.centred {
+/* .centred {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,20 +154,20 @@
     padding-top: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
-}
+} */
 
 .CentredPanel{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 170px;
+    min-height: 170px;
     padding-top: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
 }
 
-.button {
+/* .button {
     padding: 10px;
     font-size: 14px;
     text-transform: uppercase;
@@ -184,7 +184,7 @@
 .button.second {
     background-color: #03cba0;
     border: 1px solid #03cba0;
-}
+} */
 
 .fundContainer {
     width: 100%;
@@ -199,11 +199,9 @@
     /* // margin-bottom: 10px; */
 }
 
-.boxTitle {
-    /* margin-top: 50px;
-    margin-bottom: 30px; */
+/* .boxTitle {
     text-transform: uppercase;
     color: #000000;
     font-size: 14px;
     padding-bottom: 20px;
-}
+} */
