@@ -4,7 +4,6 @@ import Title from './components/Title/Title';
 
 import {
     Badge,
-    FooterButton,
     // Section,
     // SectionTabs,
     // SectionContent,
@@ -87,6 +86,7 @@ import {
 import {
     AddNewRecordButton,
     Button,
+    FooterButton,
 } from './components/Button/button';
 import FormField from './components/FormField/FormFild';
 import ValueInput from './components/ValueInput';

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router';
 import { ActionLink } from '../..';
 
 const styles = require('./button.css');
@@ -9,6 +10,10 @@ export const AddNewRecordButton = ({ children, ...props }) => (
         <span>{children}</span>
         {/* {icon} */}
     </button>
+);
+
+export const FooterButton = (props) => (
+    <Link {...props} className={styles.footerButton}/>
 );
 // export const ButtonIcon = ({children, ...props}) => (
 //   <i {...props} className={cx(styles.BttnIcon, styles.BttnIconAdd)}>

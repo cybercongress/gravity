@@ -32,9 +32,9 @@ export const Badge = ({ children }) => (
   </span>
 );
 
-export const FooterButton = (props) => (
-    <Link {...props} className={styles.footerButton}/>
-);
+// export const FooterButton = (props) => (
+//     <Link {...props} className={styles.footerButton}/>
+// );
 
 export const TotalCost = ({ value }) => (
   <div className={styles.totalCost}>
