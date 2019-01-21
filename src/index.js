@@ -8,7 +8,7 @@ import {
     Section,
     SectionTabs,
     SectionContent,
-    Container as MainContainer,
+    // Container as MainContainer,
     FundContainer,
     Centred,
     CentredPanel,
@@ -147,6 +147,8 @@ import { Content } from './components/Content/Content';
 import { PageTitle } from './components/PageTitle/PageTitle';
 import { ContainerRegister } from './components/ContainerRegister/ContainerRegister';
 import { Control } from './components/Control/Control';
+
+import { Container as MainContainer } from './components/Container/Container';
 
 export {
     Title,
