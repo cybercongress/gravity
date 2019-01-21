@@ -5,21 +5,11 @@ import {
 } from '../..';
 
 storiesOf('commponents/chain', module)
-    .add('FooterButton', () => <FooterButton>jdnffd</FooterButton>)
-
-    .add('TotalCost', () => <TotalCost value={ 4 } />)
+    // .add('FooterButton', () => <FooterButton>jdnffd</FooterButton>)
 
     .add('Badge', () => (
         <span>
             <span>My registries</span>
             <Badge>1</Badge>
         </span>
-    ))
-
-    .add('Title', () => (
-        <div>
-            <span>wqerew</span>
-            <Title>dsfsd</Title>
-            <span>wqerew</span>
-        </div>
     ));

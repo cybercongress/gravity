@@ -26,22 +26,22 @@ import { Link } from 'react-router';
 //   </h2>
 // );
 
-export const Badge = ({ children }) => (
-  <span className={styles.badge} >
-    {children}
-  </span>
-);
+// export const Badge = ({ children }) => (
+//   <span className={styles.badge} >
+//     {children}
+//   </span>
+// );
 
 // export const FooterButton = (props) => (
 //     <Link {...props} className={styles.footerButton}/>
 // );
 
-export const TotalCost = ({ value }) => (
-  <div className={styles.totalCost}>
-    <span>Total cost:</span>
-    <span>{value} gwei</span>
-  </div>
-);
+// export const TotalCost = ({ value }) => (
+//   <div className={styles.totalCost}>
+//     <span>Total cost:</span>
+//     <span>{value} gwei</span>
+//   </div>
+// );
 
 // export const SectionTabs = ({ children }) => (
 //   <div className={styles.sectionTabContainer}>
