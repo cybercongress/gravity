@@ -12,6 +12,7 @@ import {
     HomeTable,
     Text,
 } from '../..';
+import { Button } from '../Button/button';
 
 function formatDate() {
     return '20/11/2018 03:01';
@@ -76,7 +77,7 @@ storiesOf('pages/home', module)
                     <SectionContent>
                         <Container>
                             <Text size='xlg' color='blue' bold style={{ marginBottom: '20px' }}>You haven&#39;t created registries yet!</Text>
-                            <ActionLink to='/new'>create and deploy right now</ActionLink>
+                            <Button color='blue' to='/new'>create and deploy right now</Button>
                         </Container>
                     </SectionContent>
                 </Section>
