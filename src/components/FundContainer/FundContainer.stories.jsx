@@ -1,15 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-    CentredPanel, FundContainer
+     FundContainer
 } from '../..';
 
-storiesOf('commponents/chain', module)
+storiesOf('commponents/FundContainer', module)
 
-    .add('CentredPanel', () => (
-        <CentredPanel>
+    .add('FundContainer', () => (
+        <FundContainer>
             <span>CentredPanel</span>
             <span>CentredPanel</span>
-        </CentredPanel>
+            <span>CentredPanel</span>
+        </FundContainer>
     ));
     

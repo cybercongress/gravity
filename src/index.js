@@ -3,17 +3,6 @@ import './index.less';
 import Title from './components/Title/Title';
 
 import {
-    // Badge,
-    // Section,
-    // SectionTabs,
-    // SectionContent,
-    // Container as MainContainer,
-    FundContainer,
-    // Centred,
-    // CentredPanel,
-    // TotalCost,
-} from './components/chaingear';
-import {
     Container,
     Link as ActionLink,
 } from './components/CallToAction';
@@ -157,6 +146,7 @@ import {
 import { TotalCost } from './components/TotalCost/TotalCost';
 import { Badge } from './components/Badge/Badge';
 import { CentredPanel } from './components/CentredPanel/CentredPanel';
+import { FundContainer } from './components/FundContainer/FundContainer';
 
 export {
     Title,
