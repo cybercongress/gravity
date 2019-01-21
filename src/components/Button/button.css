@@ -157,3 +157,7 @@ button {
   cursor: pointer;
   font-size: 26px;
 }
+
+.footerButton:hover{
+  opacity: 0.8;
+}
