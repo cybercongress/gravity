@@ -1,6 +1,7 @@
 import React from 'react';
-
-import './Indicator.css';
+import cx from 'classnames';
+// import './Indicator.css';
+const styles = require('./Indicator.css');
 
 const Indicator = ({ children }) => {
     const style = {
@@ -12,18 +13,18 @@ const Indicator = ({ children }) => {
     }
 
     return (
-        <span style={ style } className='indicator'>{children}</span>
+        <span style={ style } className={styles.indicator}>{children}</span>
     );
 };
 
 export const SettingsIndicator = ({ status }) => {
-    const style = {
-        background: '#fff',
-    };
+    // const style = {
+    //     background: '#fff',
+    // };
 
-    if (status) {
-        style.background = status === 'fail' ? '#d0021b' : status === 'local' ? '#7ed321' : '#f8e71c';
-    }
+    // if (status) {
+    //     // style.background = status === 'fail' ? '#d0021b' : status === 'local' ? '#7ed321' : '#f8e71c';
+    // }
 
     let placeholder;
 
@@ -46,12 +47,19 @@ export const SettingsIndicator = ({ status }) => {
     }
 
     return (
-        <span style={ style } className='settings-indicator'>{placeholder}</span>
+        <span className={ cx(styles.settings_indicator, {
+                    [styles.statusFail]: status === 'fail',
+                    [styles.statusLocal]: status === 'local',
+                })
+            }
+        >
+            {placeholder}
+        </span>
     );
 };
 
 export const StatusContainer = ({ children }) => (
-    <div className='StatusContainer'>
+    <div className={styles.StatusContainer}>
         {children}
     </div>
 );

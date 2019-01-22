@@ -7,6 +7,18 @@
   flex-grow: 1;
 }
 
+.paperFlex{
+  display: flex;
+}
+
+.paperDirectionColumn{
+  flex-direction: column;
+}
+
+.paperDirectionRow{
+  flex-direction: row;
+}
+
 
 
 .section {

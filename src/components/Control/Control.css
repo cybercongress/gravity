@@ -1,9 +1,8 @@
 .control {
   display: flex;
-  justify-content: space-between;
-  /* margin-bottom: 15px; */
-  margin-top: 15px;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 /* 
@@ -15,8 +14,16 @@
 
 .controlComponent {
   /* width: 155px; */
-  width: 100%;
+  width: 70%;
   margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.noText{
+  width: 100%;
+  margin-left: 0;
 }
 /* 
 .controlComponent  {
