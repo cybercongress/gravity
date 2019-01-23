@@ -28,6 +28,7 @@ export const Button = ({
     transformtext,
     disabled,
     transparent,
+    sizeSm,
     outline,
     ...props
 }) => {
@@ -43,7 +44,9 @@ export const Button = ({
                     [styles.ButtonBlue]: color === 'blue',
                     [styles.ButtonGreenYellow]: color === 'greenyellow',
                     [styles.ButtonOrange]: color === 'ogange',
+                    [styles.ButtonTurquoise]: color === 'turquoise',
                     [styles.ButtonOutline]: outline,
+                    [styles.ButtonSize]: sizeSm,
                     [styles.TextTransform]: transformtext,
                     [styles.Disabled]: disabled,
                 }) }
@@ -62,7 +65,9 @@ export const Button = ({
                 [styles.ButtonBlue]: color === 'blue',
                 [styles.ButtonGreenYellow]: color === 'greenyellow',
                 [styles.ButtonOrange]: color === 'ogange',
+                [styles.ButtonTurquoise]: color === 'turquoise',
                 [styles.ButtonOutline]: outline,
+                [styles.ButtonSize]: sizeSm,
                 [styles.TextTransform]: transformtext,
                 [styles.Transparent]: transparent,
                 [styles.Disabled]: disabled,

@@ -61,6 +61,10 @@ button {
   min-width: 105px;
 }
 
+.ButtonSize{
+  height: 30px;
+}
+
 .TextTransform{
   text-transform: none;
 }
@@ -112,6 +116,12 @@ button {
 
 .ButtonOrange{
   background-color: #f5a623;
+  color:#ffffff;
+  padding: 0 20px;
+}
+
+.ButtonTurquoise{
+  background-color: #50e3c2;
   color:#ffffff;
   padding: 0 20px;
 }

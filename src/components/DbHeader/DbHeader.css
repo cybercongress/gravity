@@ -22,3 +22,7 @@
     flex-direction: row;
 }
 
+.noPadding{
+    padding-bottom: 0px;
+}
+
