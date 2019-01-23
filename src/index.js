@@ -148,6 +148,9 @@ import { Badge } from './components/Badge/Badge';
 import { CentredPanel } from './components/CentredPanel/CentredPanel';
 import { FundContainer } from './components/FundContainer/FundContainer';
 
+import { CybLink } from './components/CybLink/CybLink';
+import { TableCybLink } from './components/TableCybLink/Table';
+
 export {
     Title,
     Badge,
@@ -247,4 +250,6 @@ export {
     Input,
 
     Status,
+    CybLink,
+    TableCybLink,
 };
