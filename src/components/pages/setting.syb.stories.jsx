@@ -166,7 +166,7 @@ class Settings extends Component {
                             CYB ROOT REGISTRY
                         </Button>
                     </FlexContainerLeft>
-                    <FlexContainerRight>
+                    <FlexContainerRight style={{paddingRight: 20}}>
                         <Button color='blue' onClick={ resetAllSettings }>
                             RESET SETTINGS
                         </Button>

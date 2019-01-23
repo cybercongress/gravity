@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import { navigate } from '../redux/browser';
-import './CybLink.css'
+const styles = require('./CybLink.css');
 
 
 export class CybLink extends Component {
@@ -19,7 +19,7 @@ export class CybLink extends Component {
 	    } = this.props;
 
 	    return (
-    <a
+    <a className={styles.link}
   href={ `cyb://${dura}` }
 	            { ...props }
 	            onClick={ this.onLinkClick }
