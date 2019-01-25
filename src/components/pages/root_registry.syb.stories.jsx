@@ -7,6 +7,8 @@ import {
     MainContainer, PageTitle, TableCybLink, Button, Input, FlexContainer, Text,
 } from '../..';
 
+import { RadioButton } from '../RadioButton/RadioButton';
+
 class RootRegistryPage extends Component {
     addRegistryItem = () => {
         const name = this.name.value;
@@ -81,23 +83,31 @@ class RootRegistryPage extends Component {
                                 </td>
                                 <td>
                                     <FlexContainer noPadding>
-                                        <Text color='black' size='lg'>ipfs</Text>
-                                        <input
+                                        
+                                        <RadioButton
+                                          width={17}
+                                          height={17}
                                           type='radio'
                                           defaultChecked
                                           ref='ipfs'
                                           name='protocol'
-                                        />
+                                        >
+                                            <Text color='black' size='lg'>ipfs</Text>
+                                        </RadioButton>
                                     </FlexContainer>
 
                                     <FlexContainer noPadding>
-                                        <Text color='black' size='lg'>ipns</Text>
-                                        <input
+                                        
+                                        <RadioButton
+                                          width={17}
+                                          height={17}
                                           type='radio'
                                           defaultChecked={ false }
                                           ref='ipns'
                                           name='protocol'
-                                        />
+                                        >
+                                            <Text color='black' size='lg'>ipns</Text>
+                                        </RadioButton>
                                     </FlexContainer>
                                 </td>
                                 <td>
