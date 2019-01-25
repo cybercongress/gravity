@@ -35,8 +35,7 @@ class History extends Component {
         return (
             <MainContainer>
                 <PageTitle>History</PageTitle>
-                <div style={ { display: 'flex' } }>
-                    <TableCybLink style={ { marginTop: '45px' } }>
+                    <TableCybLink>
                         <thead>
                             <tr>
                                 <th>Address</th>
@@ -45,7 +44,6 @@ class History extends Component {
                         </thead>
                         <tbody>{historyWithoutLast.map(this.renderItem)}</tbody>
                     </TableCybLink>
-                </div>
             </MainContainer>
         );
     }

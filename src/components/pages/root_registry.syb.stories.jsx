@@ -45,7 +45,7 @@ class RootRegistryPage extends Component {
         return (
             <MainContainer>
                 <PageTitle>Cyb root registry</PageTitle>
-                <div style={ { paddingBottom: 20, paddingTop: 45 } }>
+                <div style={ { paddingBottom: 20 } }>
                     <Button sizeSm color='blue' onClick={ this.props.resetToDefault }>
                         RESET TO DEFAULT
                     </Button>
