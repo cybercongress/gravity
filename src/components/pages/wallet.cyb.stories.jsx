@@ -18,7 +18,7 @@ import {CyberImport} from './Wallet/CyberImport';
 import {CyberSend} from './Wallet/CyberSend';
 
 import {PageTitle, MainContainer } from '../..';
-import { WalletContainer } from '../Wallet/Wallet';
+// import { WalletContainer } from '../Wallet/Wallet';
 
 import WalletLauout, { WalletSidebar, WalletContent } from '../Wallet/WalletLauout/WalletLauout';
 import WalletTabs, { WalletTab } from '../Wallet/WalletTabs/WalletTabs';
@@ -99,9 +99,8 @@ class Page extends Component {
 
         return (
             <MainContainer>
-                <WalletContainer>
-                    <PageTitle>/Wallet</PageTitle>
-                    <WalletLauout>
+                    <PageTitle>Wallet</PageTitle>
+                    <WalletLauout style={{paddingTop: 45}}>
                         <WalletSidebar>
                             <div>
                                 <WalletTabs>
@@ -154,7 +153,7 @@ class Page extends Component {
                             {content}
                         </WalletContent>
                     </WalletLauout>
-                </WalletContainer>
+              
             </MainContainer>
         );
     }

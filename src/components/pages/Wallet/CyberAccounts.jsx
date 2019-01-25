@@ -4,14 +4,9 @@ import React from 'react';
 import {
     Avatar
 } from '../../../components/Wallet/Wallet';
-import {Button} from '../../..';
-
-import AccountCard, {
-    AccountCardLeft, AccountCardRight,
+import { Button, AccountCardLeft, AccountCardRight,
     AccountCardContent, AccountCardContentItem,
-    MainIndecator, CreateButtonContainer,
-} from '../../../components/Wallet/AccountCard/AccountCard';
-
+    MainIndecator, CreateButtonContainer, AccountCard } from '../../..';
 
 export const CyberAccounts = (props) => {
     const {

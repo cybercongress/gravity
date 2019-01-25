@@ -127,7 +127,9 @@ import {
 
 import Code from './components/SolidityHighlight';
 import { Status } from './components/Popup/status';
-import { IconLinks, IconCIDs, IconAccounts, IconBlockHeight, IconBlockDelay } from './components/Icons/Icons';
+import {
+    IconLinks, IconCIDs, IconAccounts, IconBlockHeight, IconBlockDelay,
+} from './components/Icons/Icons';
 
 import { Panel } from './components/Panel/Panel';
 import { SideBar } from './components/SideBar/SideBar';
@@ -150,7 +152,19 @@ import { FundContainer } from './components/FundContainer/FundContainer';
 
 import { CybLink } from './components/CybLink/CybLink';
 import { TableCybLink } from './components/TableCybLink/Table';
-import { Block, BlockRow} from './components/Block/Block';
+import { Block, BlockRow } from './components/Block/Block';
+
+import {
+    AccountCard,
+    AccountCardLeft,
+    AccountCardRight,
+    AccountCardContent,
+    AccountCardContentItem,
+    MainIndecator,
+    CreateButtonContainer,
+} from './components/AccountCard/AccountCard';
+
+import { Avatar } from './components/Avatar/Avatar';
 
 export {
     Title,
@@ -184,7 +198,7 @@ export {
     StatusBar,
     Code,
     FormControl,
-    //Input,
+    // Input,
     Select,
     Checkbox,
     AddNewRecordButton,
@@ -255,4 +269,9 @@ export {
     TableCybLink,
     Block,
     BlockRow,
+
+    AccountCard, AccountCardLeft, AccountCardRight,
+    AccountCardContent, AccountCardContentItem,
+    MainIndecator, CreateButtonContainer,
+    Avatar,
 };

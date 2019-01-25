@@ -4,7 +4,7 @@ const styles = require('./AccountCard.css');
 
 //import './AccountCard.css';
 
-const AccountCard = props => (
+export const AccountCard = props => (
     <div { ...props } className={styles.account_card} />
 );
 
@@ -36,6 +36,3 @@ export const SelectButton = props => (
 export const CreateButtonContainer = props => (
     <div { ...props } className={styles.account_card__create_button_container} />
 );
-
-
-export default AccountCard;

@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 // import connect from 'react-redux/es/connect/connect';
 // import web3 from 'web3';
 // import * as actions from '../../redux/wallet';
-import { Avatar, SendFunds } from '../../Wallet/Wallet';
-import AccountCard, {
+import { SendFunds } from '../../Wallet/Wallet';
+import { AccountCardLeft, AccountCardRight,
     AccountCardContent, AccountCardContentItem,
-    AccountCardLeft, AccountCardRight,
-    MainIndecator,
-} from '../../Wallet/AccountCard/AccountCard';
+    MainIndecator, AccountCard, Avatar } from '../../..';
 
 export class EthSend extends Component {
     sendFunds = (defaultAddress, recipientAddress, amount) => {

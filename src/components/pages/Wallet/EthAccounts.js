@@ -8,15 +8,9 @@ import React, { Component } from 'react';
 //     onCopyKey,
 //     setDefaultAccount
 // } from '../../redux/wallet';
-import { Avatar } from '../../Wallet/Wallet';
-import {Button} from '../../..';
-
-import AccountCard, {
-    AccountCardLeft, AccountCardRight,
+import {Button, AccountCardLeft, AccountCardRight,
     AccountCardContent, AccountCardContentItem,
-    MainIndecator, CreateButtonContainer,
-} from '../../Wallet/AccountCard/AccountCard';
-
+    MainIndecator, CreateButtonContainer, AccountCard, Avatar } from '../../..';
 
 export class EthAccounts extends Component {
     // loadAccounts = () => {

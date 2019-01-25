@@ -1,71 +1,68 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 // import { WideInput } from '@cybercongress/ui';
-import './wallet.css';
 // import Block, { BlockRow } from './Settings/Block';
-import { Button, Input, Block, BlockRow, Text, Control } from '../..';
+import { Button, Input, Block, BlockRow, Control } from '../..';
 // import { SettingLabel } from './Settings/Settings';
 
-const styles = require('./wallet.css');
+// export const WalletContainer = props => (
+//     <div className='WalletContainer'>
+//         <div { ...props } className='WalletContainer__inner' />
+//     </div>
+// );
 
-export const WalletContainer = props => (
-    <div className='WalletContainer'>
-        <div { ...props } className='WalletContainer__inner' />
-    </div>
-);
+// export const Avatar = ({ hash }) => {
+//     return (
+//         <img className={styles.avatar} src={`https://robohash.org/${hash}`} />
+//     );
+// }
 
-export const Avatar = ({ hash }) => {
-    return (
-        <img className={styles.avatar} src={`https://robohash.org/${hash}`} />
-    );
-}
+// export const WalletAccountsList = ({
+//     accounts, defaultAccountAddress, setDefaultCallback, forgetCallback,
+// }) => accounts.map((account) => {
+//     const isDefaultAccount = account.address === defaultAccountAddress;
 
-export const WalletAccountsList = ({
-    accounts, defaultAccountAddress, setDefaultCallback, forgetCallback,
-}) => accounts.map((account) => {
-    const isDefaultAccount = account.address === defaultAccountAddress;
+//     return (
+//         <WalletAccount
+//             key={ account.address }
+//           address={ account.address }
+//             balance={ account.balance }
+//           clickCallback={ () => setDefaultCallback(account.address) }
+//             forgetCallback={ e => forgetCallback(account.address, e) }
+//             isDefaultAccount={ isDefaultAccount }
+//         />
+//     );
+// });
 
-    return (
-        <WalletAccount
-            key={ account.address }
-          address={ account.address }
-            balance={ account.balance }
-          clickCallback={ () => setDefaultCallback(account.address) }
-            forgetCallback={ e => forgetCallback(account.address, e) }
-            isDefaultAccount={ isDefaultAccount }
-        />
-    );
-});
+// export const WalletAccount = ({
+//     address, balance, clickCallback, forgetCallback, isDefaultAccount,
+// }) => {
+//     const className = isDefaultAccount ? 'default-account' : '';
 
-export const WalletAccount = ({
-    address, balance, clickCallback, forgetCallback, isDefaultAccount,
-}) => {
-    const className = isDefaultAccount ? 'default-account' : '';
-
-    return (
-        <div className='user-card'>
-            <div className='user-card__avatar'>
-                <Avatar />
-                <Button onClick={ clickCallback } color='yellow'>MAKE MAIN</Button>
-            </div>
-            <Block className={ className }>
-                <BlockRow>
-                Address:
-                    {' '}
-                    {address}
-                </BlockRow>
-                <BlockRow>
-                Balance:
-                    {' '}
-                    {balance}
-                </BlockRow>
-                <BlockRow>
-                    <Button onClick={ forgetCallback }>Remove</Button>
-                </BlockRow>
-            </Block>
-        </div>
-    );
-};
+//     return (
+//         <div className='user-card'>
+//             <div className='user-card__avatar'>
+//                 <Avatar />
+//                 <Button onClick={ clickCallback } color='yellow'>MAKE MAIN</Button>
+//             </div>
+//             <Block className={ className }>
+//                 <BlockRow>
+//                 Address:
+//                     {' '}
+//                     {address}
+//                 </BlockRow>
+//                 <BlockRow>
+//                 Balance:
+//                     {' '}
+//                     {balance}
+//                 </BlockRow>
+//                 <BlockRow>
+//                     <Button onClick={ forgetCallback }>Remove</Button>
+//                 </BlockRow>
+//             </Block>
+//         </div>
+//     );
+// };
 
 export class AddAccount extends React.Component {
     _handleClick = () => {
