@@ -1,6 +1,8 @@
 .content {
   width: 50%;
   max-height: 585px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .label {
