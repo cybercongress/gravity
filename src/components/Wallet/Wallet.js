@@ -1,95 +1,12 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-// import { WideInput } from '@cybercongress/ui';
-// import Block, { BlockRow } from './Settings/Block';
-import { Button, Input, Block, BlockRow, Control } from '../..';
-// import { SettingLabel } from './Settings/Settings';
-
-// export const WalletContainer = props => (
-//     <div className='WalletContainer'>
-//         <div { ...props } className='WalletContainer__inner' />
-//     </div>
-// );
-
-// export const Avatar = ({ hash }) => {
-//     return (
-//         <img className={styles.avatar} src={`https://robohash.org/${hash}`} />
-//     );
-// }
-
-// export const WalletAccountsList = ({
-//     accounts, defaultAccountAddress, setDefaultCallback, forgetCallback,
-// }) => accounts.map((account) => {
-//     const isDefaultAccount = account.address === defaultAccountAddress;
-
-//     return (
-//         <WalletAccount
-//             key={ account.address }
-//           address={ account.address }
-//             balance={ account.balance }
-//           clickCallback={ () => setDefaultCallback(account.address) }
-//             forgetCallback={ e => forgetCallback(account.address, e) }
-//             isDefaultAccount={ isDefaultAccount }
-//         />
-//     );
-// });
-
-// export const WalletAccount = ({
-//     address, balance, clickCallback, forgetCallback, isDefaultAccount,
-// }) => {
-//     const className = isDefaultAccount ? 'default-account' : '';
-
-//     return (
-//         <div className='user-card'>
-//             <div className='user-card__avatar'>
-//                 <Avatar />
-//                 <Button onClick={ clickCallback } color='yellow'>MAKE MAIN</Button>
-//             </div>
-//             <Block className={ className }>
-//                 <BlockRow>
-//                 Address:
-//                     {' '}
-//                     {address}
-//                 </BlockRow>
-//                 <BlockRow>
-//                 Balance:
-//                     {' '}
-//                     {balance}
-//                 </BlockRow>
-//                 <BlockRow>
-//                     <Button onClick={ forgetCallback }>Remove</Button>
-//                 </BlockRow>
-//             </Block>
-//         </div>
-//     );
-// };
-
-export class AddAccount extends React.Component {
-    _handleClick = () => {
-        const inputValue = this.addAccountInput.value;
-
-        this.props.addCallback(inputValue);
-    };
-
-    render() {
-        return (
-            <Block noMargin={true}>
-                <BlockRow>
-                    <Input inputRef={node => { this.addAccountInput = node; }} placeholder={ this.props.placeholder } />
-                </BlockRow>
-                <BlockRow>
-                    <Button color='blue' onClick={ this._handleClick }>{this.props.addMethodName}</Button>
-                </BlockRow>
-            </Block>
-        );
-    }
-}
-
-AddAccount.propTypes = {
-    addCallback: PropTypes.func,
-    addMethodName: PropTypes.string,
-    placeholder: PropTypes.string,
-};
+import {
+    Button,
+    Input,
+    Block,
+    BlockRow,
+    Control,
+} from '../..';
 
 export class SendFunds extends React.Component {
     state = {
@@ -138,18 +55,23 @@ export class SendFunds extends React.Component {
         return (
             <Block noMargin={true}>
                 <BlockRow>
-                    <Control title='Recipient Address'> <Input valid={addressValid} errorMessage='incorrect ETH address' value={address} onChange={this.updateAddress} /></Control>
-                    {/* <Text style={{ width: 160 }}>Recipient Address</Text>
-                    <div style={{ width: 350, display: 'inline-block' }}>
-                        
-                    </div> */}
+                    <Control title='Recipient Address'> 
+                        <Input 
+                            valid={addressValid} 
+                            errorMessage='incorrect ETH address' 
+                            value={address} 
+                            onChange={this.updateAddress} 
+                        />
+                    </Control>
+
                 </BlockRow>
                 <BlockRow>
-                    <Control title='Amount'> <Input value={amount} onChange={this.updateAmount} /></Control>
-                    {/* <Text style={{ width: 160 }}>Amount</Text>
-                    <div style={{ width: 350, display: 'inline-block' }}>
-                        
-                    </div> */}
+                    <Control title='Amount'> 
+                        <Input 
+                            value={amount} 
+                            onChange={this.updateAmount} 
+                        />
+                    </Control>
                 </BlockRow>
                 <BlockRow>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>

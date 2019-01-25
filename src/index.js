@@ -165,6 +165,7 @@ import {
 } from './components/AccountCard/AccountCard';
 
 import { Avatar } from './components/Avatar/Avatar';
+import { AddAccount } from './components/Wallet/AddAccount';
 
 export {
     Title,
@@ -274,4 +275,5 @@ export {
     AccountCardContent, AccountCardContentItem,
     MainIndecator, CreateButtonContainer,
     Avatar,
+    AddAccount,
 };

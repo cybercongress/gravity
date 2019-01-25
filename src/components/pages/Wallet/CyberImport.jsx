@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import * as cyberActions from '../../redux/cyber';
 import {
     AddAccount,
-} from '../../Wallet/Wallet';
+} from '../../..';
 
 export class CyberImport extends Component {
     restoreAccount = (seedPhrase) => {
