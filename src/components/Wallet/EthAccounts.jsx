@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 // } from '../../redux/wallet';
 import {Button, AccountCardLeft, AccountCardRight,
     AccountCardContent, AccountCardContentItem,
-    MainIndecator, CreateButtonContainer, AccountCard, Avatar } from '../../..';
+    MainIndecator, CreateButtonContainer, AccountCard, Avatar } from '../..';
 
 export class EthAccounts extends Component {
     // loadAccounts = () => {

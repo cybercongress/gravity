@@ -4,7 +4,7 @@ import cx from 'classnames';
 const styles = require('./WalletTabs.css');
 // import './WalletTabs.css';
 
-const WalletTabs = ({ vertical, ...props }) => (
+export const WalletTabs = ({ vertical, ...props }) => (
     <div { ...props } className={cx(styles.wallet_tabs,{[styles.wallet_tabs__vertical]: vertical})} />
 );
 
@@ -16,5 +16,3 @@ export const WalletTab = ({ children, isActive, onClick }) => (
         {children}
     </button>
 );
-
-export default WalletTabs;

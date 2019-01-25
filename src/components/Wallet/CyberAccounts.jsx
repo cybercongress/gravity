@@ -1,12 +1,9 @@
 import React from 'react';
 // import connect from 'react-redux/es/connect/connect';
 // import * as cyberActions from '../../redux/cyber';
-import {
-    Avatar
-} from '../../../components/Wallet/Wallet';
 import { Button, AccountCardLeft, AccountCardRight,
     AccountCardContent, AccountCardContentItem,
-    MainIndecator, CreateButtonContainer, AccountCard } from '../../..';
+    MainIndecator, CreateButtonContainer, AccountCard, Avatar, } from '../..';
 
 export const CyberAccounts = (props) => {
     const {

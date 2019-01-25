@@ -166,6 +166,10 @@ import {
 
 import { Avatar } from './components/Avatar/Avatar';
 import { AddAccount } from './components/Wallet/AddAccount';
+import { SendFunds } from './components/Wallet/SendFunds';
+import { WalletLauout, WalletSidebar, WalletContent } from './components/Wallet/WalletLauout/WalletLauout';
+import { WalletTabs, WalletTab } from './components/Wallet/WalletTabs/WalletTabs';
+
 
 export {
     Title,
@@ -276,4 +280,7 @@ export {
     MainIndecator, CreateButtonContainer,
     Avatar,
     AddAccount,
+    SendFunds,
+    WalletTabs, WalletTab,
+    WalletLauout, WalletSidebar, WalletContent,
 };

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 // import connect from 'react-redux/es/connect/connect';
 // import * as cyberActions from '../../redux/cyber';
-import {
-    SendFunds,
-} from '../../Wallet/Wallet';
 import { Button, AccountCard, AccountCardContent, AccountCardContentItem,
-    AccountCardLeft, AccountCardRight, MainIndecator, Avatar } from '../../..';
+    AccountCardLeft, AccountCardRight, MainIndecator, Avatar,SendFunds } from '../..';
 
 
 export class CyberSend extends Component {

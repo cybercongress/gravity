@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import connect from 'react-redux/es/connect/connect';
 // import * as actions from '../../redux/wallet';
-import { AddAccount } from '../../..';
+import { AddAccount } from '../..';
 
 export class ETHImport extends Component {
     importAccount = (privatekey) => {

@@ -1,32 +1,13 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
-
-// import {CyberAccounts} from '../pages/Wallet/CyberAccounts';
-
-// const styles = require('./wallet.css');
-
-
-// import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-
-import {EthAccounts} from './Wallet/EthAccounts';
-import {ETHImport} from './Wallet/ETHImport';
-import {EthSend} from './Wallet/EthSend';
-
-import {CyberAccounts} from './Wallet/CyberAccounts';
-import {CyberImport} from './Wallet/CyberImport';
-import {CyberSend} from './Wallet/CyberSend';
-
-import {PageTitle, MainContainer } from '../..';
-// import { WalletContainer } from '../Wallet/Wallet';
-
-import WalletLauout, { WalletSidebar, WalletContent } from '../Wallet/WalletLauout/WalletLauout';
-import WalletTabs, { WalletTab } from '../Wallet/WalletTabs/WalletTabs';
-
-// import RequirePassword from '../Application/Login';
-// import ChangePassword from '../Application/ChangePassword';
-// import ScrollContainer from '../../components/ScrollContainer/ScrollContainer';
-
+import {EthAccounts} from '../Wallet/EthAccounts';
+import {ETHImport} from '../Wallet/ETHImport';
+import {EthSend} from '../Wallet/EthSend';
+import {CyberAccounts} from '../Wallet/CyberAccounts';
+import {CyberImport} from '../Wallet/CyberImport';
+import {CyberSend} from '../Wallet/CyberSend';
+import {ChangePassword} from '../Wallet/ChangePassword';
+import {PageTitle, MainContainer, WalletTabs, WalletTab, WalletLauout, WalletSidebar, WalletContent } from '../..';
 
 class Page extends Component {
     state = {
@@ -91,11 +72,11 @@ class Page extends Component {
             );
         }
 
-        // if (menu === 'changePassword') {
-        //     content = (
-        //         <ChangePassword />
-        //     );
-        // }
+        if (menu === 'changePassword') {
+            content = (
+                <ChangePassword />
+            );
+        }
 
         return (
             <MainContainer>

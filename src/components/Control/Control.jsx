@@ -4,9 +4,9 @@ import { Text } from '../..';
 
 const styles = require('./Control.css');
 
-export const Control = ({ children, title, noText, ...props }) => (
+export const Control = ({ children, title, noText, textWidth, ...props }) => (
   <div {...props} className={styles.control}>
-    {title&&(<Text uppercase> {title} </Text>)}
+    {title&&(<Text style={{width: `${textWidth}px`}} uppercase> {title} </Text>)}
     <div className={cx(styles.controlComponent, {[styles.noText]: noText})}>{children}</div>
   </div>
 );
