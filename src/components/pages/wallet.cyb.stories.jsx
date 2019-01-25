@@ -146,16 +146,6 @@ class Page extends Component {
 
 
 
-const styless = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    width: '100%',
-    background: '#eff3f6',
-};
-const CenterDecorator = storyFn => <div style={ styless }>{storyFn()}</div>;
-
 const account = {
     balance: '10',
     address:'1adsjnald56dajsandDNDlkmsdfmkkKM',
@@ -173,7 +163,6 @@ const accounts = [
 ];
 
 storiesOf('cyb/pages/Wallet', module)
-.addDecorator(CenterDecorator)
 .add('Wallet', () => (
         <Page accounts={accounts} />
 

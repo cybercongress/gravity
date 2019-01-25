@@ -169,6 +169,7 @@ import { AddAccount } from './components/Wallet/AddAccount';
 import { SendFunds } from './components/Wallet/SendFunds';
 import { WalletLauout, WalletSidebar, WalletContent } from './components/Wallet/WalletLauout/WalletLauout';
 import { WalletTabs, WalletTab } from './components/Wallet/WalletTabs/WalletTabs';
+import { Hash } from './components/TxQueue/TxQueue';
 
 
 export {
@@ -283,4 +284,5 @@ export {
     SendFunds,
     WalletTabs, WalletTab,
     WalletLauout, WalletSidebar, WalletContent,
+    Hash,
 };
