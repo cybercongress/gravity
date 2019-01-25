@@ -139,8 +139,8 @@ class App extends Component {
                         <Title style={ { marginLeft: '0px', marginBottom: '30px', textAlign: 'center' } }>
                             Search statistics
                         </Title>
-                        <Section noMargin>
-                            <SectionContent style={{padding: '0 5px'}}>
+                        <Section>
+                            <SectionContent>
                                 <CentredPanel>
                                     <IconLinks />
                                     <Text uppercase color='blue'>
@@ -156,7 +156,7 @@ class App extends Component {
                                    
                                 </CentredPanel>
                             </SectionContent>
-                            <SectionContent style={{padding: '0 5px'}}>
+                            <SectionContent>
                                 <CentredPanel>
                                 <IconCIDs />
                                 <Text uppercase color='blue'>
@@ -172,7 +172,7 @@ class App extends Component {
                                     
                                 </CentredPanel>
                             </SectionContent>
-                            <SectionContent style={{padding: '0 5px'}}>
+                            <SectionContent>
                                 <CentredPanel>
                                 <IconAccounts />
                                 <Text uppercase color='blue'>
@@ -188,7 +188,7 @@ class App extends Component {
                                     
                                 </CentredPanel>
                             </SectionContent>
-                            <SectionContent style={{padding: '0 5px'}}>
+                            <SectionContent>
                                 <CentredPanel>
                                 <IconBlockHeight />
                                 <Text uppercase color='blue'>
@@ -204,7 +204,7 @@ class App extends Component {
                                     
                                 </CentredPanel>
                             </SectionContent>
-                            <SectionContent style={{padding: '0 5px'}}>
+                            <SectionContent>
                                 <CentredPanel>
                                 <IconBlockDelay />
                                 <Text uppercase color='blue'>
