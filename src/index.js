@@ -150,6 +150,7 @@ import { FundContainer } from './components/FundContainer/FundContainer';
 
 import { CybLink } from './components/CybLink/CybLink';
 import { TableCybLink } from './components/TableCybLink/Table';
+import { Block, BlockRow} from './components/Block/Block';
 
 export {
     Title,
@@ -252,4 +253,6 @@ export {
     Status,
     CybLink,
     TableCybLink,
+    Block,
+    BlockRow,
 };
