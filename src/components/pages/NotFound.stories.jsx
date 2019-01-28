@@ -16,7 +16,7 @@ const NotFound = () => {
                                 Seems that Cyb doesn`t know
                                 <b>
                                 "
-                                dura
+                                {' dura '}
                                 "
                                 </b>
                                 app
@@ -30,7 +30,7 @@ const NotFound = () => {
                         <Button color='green' dura='rr.cyb'>Go to Root Registry!</Button>
                     </FlexContainerLeft>
                     <FlexContainerRight>
-                        <Vitalick style={ { float: 'right' } } />
+                        <Vitalick />
                     </FlexContainerRight>
                 </FlexContainer>
             </NotFoundPage>
