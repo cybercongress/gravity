@@ -181,6 +181,8 @@ import {
     LinkList, LinkItem,
 } from './components/Home/Home';
 
+import JsonView from './components/JsonView/JsonView';
+
 
 export {
     Title,
@@ -302,4 +304,5 @@ export {
     Image,
     Arrow,
     LinkList, LinkItem,
+    JsonView,
 };

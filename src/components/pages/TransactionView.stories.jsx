@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 // import { getTransaction } from '../../redux/wallet';
 // import ScrollContainer from '../../components/ScrollContainer/ScrollContainer';
-import JsonView from '../JsonView/JsonView';
-import { MainContainer, PageTitle } from '../..';
+import { MainContainer, PageTitle, JsonView } from '../..';
 
 class TransactionView extends Component {
     // componentDidMount() {
