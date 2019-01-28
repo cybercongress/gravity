@@ -2,6 +2,6 @@
     text-decoration: none;
 }
 
-a:hover{
+.link:hover{
     opacity: 0.8;
 }
