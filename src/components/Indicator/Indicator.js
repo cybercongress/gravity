@@ -4,16 +4,19 @@ import cx from 'classnames';
 const styles = require('./Indicator.css');
 
 const Indicator = ({ children }) => {
-    const style = {
-        background: '#fff',
-    };
+    // const style = {
+    //     background: '#fff',
+    // };
 
-    if (status) {
-        style.background = status === 'fail' ? '#d0021b' : status === 'local' ? '#7ed321' : '#f8e71c';
-    }
+    // if (status) {
+    //     style.background = status === 'fail' ? '#d0021b' : status === 'local' ? '#7ed321' : '#f8e71c';
+    // }
 
     return (
-        <span style={ style } className={styles.indicator}>{children}</span>
+        <span className={cx(styles.indicator,{
+                                                        [styles.statusFail]: status === 'fail',
+                                                        [styles.statusLocal]: status === 'local',
+                                                        })}>{children}</span>
     );
 };
 
