@@ -171,6 +171,16 @@ import { WalletLauout, WalletSidebar, WalletContent } from './components/Wallet/
 import { WalletTabs, WalletTab } from './components/Wallet/WalletTabs/WalletTabs';
 import { Hash } from './components/TxQueue/TxQueue';
 
+import {
+    Home,
+    Items,
+    Item,
+    ItemTitle,
+    Image,
+    Arrow,
+    LinkList, LinkItem,
+} from './components/Home/Home';
+
 
 export {
     Title,
@@ -285,4 +295,11 @@ export {
     WalletTabs, WalletTab,
     WalletLauout, WalletSidebar, WalletContent,
     Hash,
+    Home,
+    Items,
+    Item,
+    ItemTitle,
+    Image,
+    Arrow,
+    LinkList, LinkItem,
 };

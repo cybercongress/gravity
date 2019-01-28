@@ -5,7 +5,7 @@ import cx from 'classnames';
 
 const styles = require('./Home.css');
 
-const Home = props => (
+export const Home = props => (
     <div { ...props } className={styles.home} />
 );
 
@@ -84,6 +84,3 @@ export const LinkItem = ({
         {children}
     </a>
 );
-
-
-export default Home;

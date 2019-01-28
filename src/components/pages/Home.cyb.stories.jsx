@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Home, {
+import {
+    Home,
     Items,
     Item,
     ItemTitle,
     Image,
     Arrow,
     LinkList, LinkItem,
-} from '../Home/Home';
+} from '../..';
 
 const HomePage = props => (
     <div>
