@@ -1,7 +1,7 @@
 import React from 'react';
 
-// import './jsonView.css';
-const styles = require('./jsonView.css');
+import './jsonView.less';
+// const styles = require('./jsonView.css');
 
 function syntaxHighlight(json) {
     if (typeof json != 'string') {
@@ -26,7 +26,7 @@ function syntaxHighlight(json) {
 }
 
 const JsonView = ({ data }) => (
-    <div className={styles.tx_view}>
+    <div className='tx_view'>
         {data ? (
             <pre dangerouslySetInnerHTML={ { __html: syntaxHighlight(data) } } />
         ) : (
