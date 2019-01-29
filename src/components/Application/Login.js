@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import connect from 'react-redux/es/connect/connect';
-import { Message } from '@cybercongress/ui';
-import Block, { BlockRow } from '../../components/Settings/Block';
-import { SettingLabel, SettingRow } from '../../components/Settings/Settings';
-import Input from '../../components/Input/Input';
-import Button from '../../components/Button/Button';
-import { createPassword, login, isLoginExist } from '../../redux/wallet';
-import Titile from '../../components/Titile/Titile';
+// import connect from 'react-redux/es/connect/connect';
+// import { Message } from '@cybercongress/ui';
+// import Block, { BlockRow } from '../../components/Settings/Block';
+import {
+    SettingLabel, SettingRow, Block, BlockRow,
+    Message, Input, Button, Title,
+} from '../..';
+// import Input from '../../components/Input/Input';
+// import Button from '../../components/Button/Button';
+// import { createPassword, login, isLoginExist } from '../../redux/wallet';
+// import Titile from '../../components/Titile/Titile';
 import LoginContainer from '../../components/LoginContainer/LoginContainer';
 
 class Login extends Component {
@@ -40,7 +43,7 @@ class Login extends Component {
         return (
             <LoginContainer>
                 <div>
-                    <Titile inline>/ {label}</Titile>
+                    <Title inline>/ {label}</Title>
                     <Block style={ { width: 400 } }>
                         {!isUserExist ? (
                             <div>

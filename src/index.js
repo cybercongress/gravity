@@ -153,6 +153,7 @@ import { FundContainer } from './components/FundContainer/FundContainer';
 import { CybLink } from './components/CybLink/CybLink';
 import { TableCybLink } from './components/TableCybLink/Table';
 import { Block, BlockRow, Row } from './components/Block/Block';
+import { SettingLabel, SettingRow } from './components/Block/Settings';
 
 import {
     AccountCard,
@@ -188,8 +189,11 @@ import App, {
 } from './components/App/App';
 
 import Navigation, {
-    NavigationLeft, NavigationRight, NavigationCenter,
-} from './components/Navigation/Navigation';
+    NavigationLeft,
+    NavigationRight,
+    NavigationCenter,
+    MenuButton,
+} from './components/Application/Navigation/Navigation';
 
 import Indicator, { SettingsIndicator, StatusContainer } from './components/Indicator/Indicator';
 
@@ -202,19 +206,19 @@ import MenuContainer, {
     AddMenuItemReject,
     ReportLinkContainer,
     AddMenuItemContainer,
-} from './components/AppMenu/AppMenu';
+} from './components/Application/AppMenu/AppMenu';
 
 import IdBarComponent, {
     SettingsLink,
     CurrentUser,
-} from './components/IdBar/IdBar';
+} from './components/Application/IdBar/IdBar';
 
 import SearchInput, {
     BackButton, ForwardButton, NavigationContainer,
     FavoriteButton,
     FavoriteButtonContainer,
     SearchIcon,
-} from './components/SearchInput/SearchInput';
+} from './components/Application/SearchInput/SearchInput';
 
 import {
     ConfirmationPopup,
@@ -223,11 +227,7 @@ import {
     PopupLabel,
     TxDetailsContainer,
     ConfirmationPopupButtons,
-} from './components/ConfirmationPopup/ConfirmationPopup';
-
-import {
-    MenuButton,
-} from './components/Navigation/Navigation';
+} from './components/Application/ConfirmationPopup/ConfirmationPopup';
 
 export {
     Title,
@@ -385,4 +385,6 @@ export {
     PopupLabel,
     TxDetailsContainer,
     ConfirmationPopupButtons,
+
+    SettingLabel, SettingRow,
 };

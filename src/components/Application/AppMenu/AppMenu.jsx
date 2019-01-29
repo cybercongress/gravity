@@ -1,5 +1,5 @@
 import React from 'react';
-import {CybLink} from '../..';
+import { CybLink } from '../../..';
 // import './AppMenu.css';
 
 const styles = require('./AppMenu.css');

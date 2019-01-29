@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import classNames from 'classnames';
-import { CybLink } from '../..';
+import { CybLink } from '../../..';
 
 const styles = require('./IdBar.css');
 

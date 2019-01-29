@@ -29,4 +29,37 @@
     padding-bottom: 20px;
 }
 
+.block__row__item {
+    display: inline-block;
+}
+
+
+
+.SettingsContainer {
+    display: flex;
+}
+
+.ConnectionContainer {
+    width: 70%;
+}
+
+.NodeStatusContainer {
+    width: 30%;
+}
+
+.SettingLabel {
+    width: 100px;
+    text-transform: uppercase;
+    color: #2e3842;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.SettingRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
 

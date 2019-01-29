@@ -22,3 +22,9 @@ export const Row = ({ children }) => (
     </div>
 );
 
+export const RowItem = ({ children, ...props }) => (
+    <div className='block__row__item' { ...props }>
+        {children}
+    </div>
+);
+
