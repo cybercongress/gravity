@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 // import { receiveMessage } from '../../redux/wallet';
 // import { getPreloadPath, isDevMode } from '../../utils';
 import BrowserWindow, { BrowserContainer, Loading } from '../BrowserWindow/BrowserWindow';
-
+import Application from '../Application/Application';
 /*
 TODO: fix bug /#/ => /#/page => click /#/
 */
@@ -91,6 +91,9 @@ class Browser extends Component {
 
 storiesOf('cyb/pages/Browser', module)
 .add('Browser', () => (
-        <Browser />
+    <Application>
+         <Browser />
+    </Application>
+       
 
 ))

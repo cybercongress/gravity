@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 // import { getTransaction } from '../../redux/wallet';
 // import ScrollContainer from '../../components/ScrollContainer/ScrollContainer';
 import { MainContainer, PageTitle, JsonView } from '../..';
+import Application from '../Application/Application';
 
 class TransactionView extends Component {
     // componentDidMount() {
@@ -47,7 +48,8 @@ const txHash = [
 
 storiesOf('cyb/pages/TransactionView', module)
 .add('TransactionView', () => (
+    <Application>
         <TransactionView transaction={txHash}  receipt={txHash}/>
-
+    </Application>
 ))
 

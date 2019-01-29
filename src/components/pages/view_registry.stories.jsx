@@ -37,6 +37,7 @@ import {
     PopupBarFooter,
     PopupBar,
 } from '../..';
+import Application from '../Application/Application';
 
 const totalFee = 3;
 const funded = '5';
@@ -476,6 +477,18 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
 );
 
 storiesOf('pages/view_registry', module)
-    .add('registry', () => <PagesViewRegistry />)
-    .add('registry_disabled_table', () => <PagesViewRegistry disabled />)
-    .add('registry_no_table', () => <PagesViewRegistry showTable='1' />);
+    .add('registry', () => (
+        <Application>
+            <PagesViewRegistry />
+        </Application>
+    ))
+    .add('registry_disabled_table', () => (
+        <Application>
+            <PagesViewRegistry disabled />
+        </Application>
+        ))
+    .add('registry_no_table', () => (
+        <Application>
+            <PagesViewRegistry showTable='1' />
+        </Application>
+        ));

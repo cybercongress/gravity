@@ -7,6 +7,7 @@ import moment from 'moment';
 import {
     MainContainer, PageTitle, CybLink, TableCybLink,
 } from '../..';
+import Application from '../Application/Application';
 
 class History extends Component {
     renderItem = (item, index) => {
@@ -71,4 +72,8 @@ const history = [
     },
 ];
 
-storiesOf('cyb/pages/History', module).add('History', () => <History history={ history } />);
+storiesOf('cyb/pages/History', module).add('History', () => (
+    <Application>
+        <History history={ history } />
+    </Application>
+));

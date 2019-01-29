@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { PageTitle, CybLink, TableCybLink, MainContainer, Hash } from '../..';
 // import { connect } from 'react-redux';
 import moment from 'moment';
+import Application from '../Application/Application';
 
 // import { getTransactions, resend } from '../../redux/wallet';
 // import CybLink from '../../components/CybLink';
@@ -92,7 +93,8 @@ const txHash = [
 
 storiesOf('cyb/pages/TxQueue', module)
 .add('TxQueue', () => (
-        <TxQueue transactions={txHash} />
-
+    <Application>
+       <TxQueue transactions={txHash} />
+    </Application>
 ))
 

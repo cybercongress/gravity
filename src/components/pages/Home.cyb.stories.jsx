@@ -10,12 +10,9 @@ import {
     Arrow,
     LinkList, LinkItem,
 } from '../..';
+import Application from '../Application/Application';
 
 const HomePage = props => (
-    <div>
-
-    
-    <div style={{height: 200, backgroundColor:'#438cef'}}></div>
     <Home>
         <Items>
             <Item dura='.chaingear'>
@@ -64,7 +61,10 @@ const HomePage = props => (
 
         </LinkList>
     </Home>
-    </div>
 );
 
-storiesOf('cyb/pages/HomePage', module).add('HomePage', () => <HomePage />);
+storiesOf('cyb/pages/HomePage', module).add('HomePage', () =>(
+    <Application homePage>
+        <HomePage />
+    </Application>
+));

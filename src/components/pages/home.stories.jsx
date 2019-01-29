@@ -13,6 +13,7 @@ import {
     Text,
 } from '../..';
 import { Button } from '../Button/button';
+import Application from '../Application/Application';
 
 function formatDate() {
     return '20/11/2018 03:01';
@@ -76,8 +77,12 @@ storiesOf('pages/home', module)
                 >
                     <SectionContent>
                         <Container>
-                            <Text size='xlg' color='blue' bold style={{ marginBottom: '20px' }}>You haven&#39;t created registries yet!</Text>
-                            <Button color='blue' to='/new'>create and deploy right now</Button>
+                            <Text size='xlg' color='blue' bold style={ { marginBottom: '20px' } }>
+                                You haven&#39;t created registries yet!
+                            </Text>
+                            <Button color='blue' to='/new'>
+                                create and deploy right now
+                            </Button>
                         </Container>
                     </SectionContent>
                 </Section>
@@ -117,36 +122,38 @@ storiesOf('pages/home', module)
         }
 
         return (
-            <MainContainer>
-                <div>
-                    <div>{content}</div>
+            <Application>
+                <MainContainer>
+                    <div>
+                        <div>{content}</div>
 
-                    <Section
-                      title={ (
-                          <span>
-                              <span>chaingear registries</span>
-                              <Badge>{rows.length}</Badge>
-                          </span>
+                        <Section
+                          title={ (
+                              <span>
+                                  <span>chaingear registries</span>
+                                  <Badge>{rows.length}</Badge>
+                              </span>
 ) }
-                    >
-                        <SectionContent>
-                            <HomeTable>
-                                <thead>
-                                    <tr>
-                                        <th>NAME</th>
-                                        <th>SYMBOL</th>
-                                        <th>ENTRIES</th>
-                                        <th>VERSION</th>
-                                        <th>ADMIN</th>
-                                        <th>CREATED</th>
-                                    </tr>
-                                </thead>
-                                <tbody>{rows}</tbody>
-                            </HomeTable>
-                        </SectionContent>
-                    </Section>
-                </div>
-            </MainContainer>
+                        >
+                            <SectionContent>
+                                <HomeTable>
+                                    <thead>
+                                        <tr>
+                                            <th>NAME</th>
+                                            <th>SYMBOL</th>
+                                            <th>ENTRIES</th>
+                                            <th>VERSION</th>
+                                            <th>ADMIN</th>
+                                            <th>CREATED</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>{rows}</tbody>
+                                </HomeTable>
+                            </SectionContent>
+                        </Section>
+                    </div>
+                </MainContainer>
+            </Application>
         );
     })
     .add('items', () => {
@@ -206,7 +213,9 @@ storiesOf('pages/home', module)
                 >
                     <SectionContent>
                         <Container>
-                            <Text size='xlg' color='blue' bold style={{ marginBottom: '20px' }}>You haven&#39;t created registries yet!</Text>
+                            <Text size='xlg' color='blue' bold style={ { marginBottom: '20px' } }>
+                                You haven&#39;t created registries yet!
+                            </Text>
                             <ActionLink to='/new'>create and deploy right now</ActionLink>
                         </Container>
                     </SectionContent>
@@ -247,35 +256,37 @@ storiesOf('pages/home', module)
         }
 
         return (
-            <MainContainer>
-                <div>
-                    <div>{content}</div>
+            <Application>
+                <MainContainer>
+                    <div>
+                        <div>{content}</div>
 
-                    <Section
-                      title={ (
-                          <span>
-                              <span>chaingear registries</span>
-                              <Badge>{rows.length}</Badge>
-                          </span>
+                        <Section
+                          title={ (
+                              <span>
+                                  <span>chaingear registries</span>
+                                  <Badge>{rows.length}</Badge>
+                              </span>
 ) }
-                    >
-                        <SectionContent>
-                            <HomeTable>
-                                <thead>
-                                    <tr>
-                                        <th>NAME</th>
-                                        <th>SYMBOL</th>
-                                        <th>ENTRIES</th>
-                                        <th>VERSION</th>
-                                        <th>ADMIN</th>
-                                        <th>CREATED</th>
-                                    </tr>
-                                </thead>
-                                <tbody>{rows}</tbody>
-                            </HomeTable>
-                        </SectionContent>
-                    </Section>
-                </div>
-            </MainContainer>
+                        >
+                            <SectionContent>
+                                <HomeTable>
+                                    <thead>
+                                        <tr>
+                                            <th>NAME</th>
+                                            <th>SYMBOL</th>
+                                            <th>ENTRIES</th>
+                                            <th>VERSION</th>
+                                            <th>ADMIN</th>
+                                            <th>CREATED</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>{rows}</tbody>
+                                </HomeTable>
+                            </SectionContent>
+                        </Section>
+                    </div>
+                </MainContainer>
+            </Application>
         );
     });

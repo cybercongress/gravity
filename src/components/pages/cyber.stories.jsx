@@ -6,7 +6,6 @@ import {
     PageTitle,
     MainContainer,
     PopupSkillBar,
-
     Input,
     CentredPanel,
     Section,
@@ -23,6 +22,7 @@ import {
     IconBlockDelay,
     Text,
 } from '../..';
+import Application from '../Application/Application';
 
 class App extends Component {
     state = {
@@ -85,9 +85,7 @@ class App extends Component {
                 <FlexContainer>
                     <PageTitle>Cyberd search</PageTitle>
                     <div style={ { width: '30%' } }>
-                        <Text style={ { paddingBottom: '10px' } }>
-                            Your bandwidth:
-                        </Text>
+                        <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text>
                         <SkillBar value={ 10 }>
                             {PopupNotification && (
                                 <PopupSkillBar>
@@ -117,9 +115,7 @@ class App extends Component {
                         <Title style={ { marginLeft: '0px', marginBottom: '0px' } }>
                             Search results:
                         </Title>
-                        <LinkContainer column>
-                            {searchResults}
-                        </LinkContainer>
+                        <LinkContainer column>{searchResults}</LinkContainer>
                         {links.length > 10 && (
                             <Button
                               color='blue'
@@ -136,7 +132,9 @@ class App extends Component {
 
                 {index && (
                     <div>
-                        <Title style={ { marginLeft: '0px', marginBottom: '30px', textAlign: 'center' } }>
+                        <Title
+                          style={ { marginLeft: '0px', marginBottom: '30px', textAlign: 'center' } }
+                        >
                             Search statistics
                         </Title>
                         <Section>
@@ -146,78 +144,53 @@ class App extends Component {
                                     <Text uppercase color='blue'>
                                         links
                                     </Text>
-                                    <Text
-                                      color='blue'
-                                      
-                                      size='xlg'
-                                    >
+                                    <Text color='blue' size='xlg'>
                                         1000
                                     </Text>
-                                   
                                 </CentredPanel>
                             </SectionContent>
                             <SectionContent>
                                 <CentredPanel>
-                                <IconCIDs />
-                                <Text uppercase color='blue'>
+                                    <IconCIDs />
+                                    <Text uppercase color='blue'>
                                         CIDs
                                     </Text>
-                                    <Text
-                                      color='blue'
-                                      size='xlg'
-                                      
-                                    >
+                                    <Text color='blue' size='xlg'>
                                         1000
                                     </Text>
-                                    
                                 </CentredPanel>
                             </SectionContent>
                             <SectionContent>
                                 <CentredPanel>
-                                <IconAccounts />
-                                <Text uppercase color='blue'>
+                                    <IconAccounts />
+                                    <Text uppercase color='blue'>
                                         accounts
                                     </Text>
-                                    <Text
-                                      color='blue'
-                                      
-                                      size='xlg'
-                                    >
+                                    <Text color='blue' size='xlg'>
                                         1000
                                     </Text>
-                                    
                                 </CentredPanel>
                             </SectionContent>
                             <SectionContent>
                                 <CentredPanel>
-                                <IconBlockHeight />
-                                <Text uppercase color='blue'>
+                                    <IconBlockHeight />
+                                    <Text uppercase color='blue'>
                                         last block height
                                     </Text>
-                                    <Text
-                                      color='blue'
-                                      
-                                      size='xlg'
-                                    >
+                                    <Text color='blue' size='xlg'>
                                         1000
                                     </Text>
-                                    
                                 </CentredPanel>
                             </SectionContent>
                             <SectionContent>
                                 <CentredPanel>
-                                <IconBlockDelay />
-                                <Text uppercase color='blue'>
+                                    <IconBlockDelay />
+                                    <Text uppercase color='blue'>
                                         last block delay
                                     </Text>
-                                    <Text
-                                      color='blue'
-                                      
-                                      size='xlg'
-                                    >
+                                    <Text color='blue' size='xlg'>
                                         100 sec
                                     </Text>
-                                    
                                 </CentredPanel>
                             </SectionContent>
                         </Section>
@@ -229,12 +202,11 @@ class App extends Component {
                         <Text size='lg' style={ { marginBottom: '20px' } }>
                             Have your own option for
                             <b>
-                                "
+"
                                 {searchQuery}
-                                "
+"
                             </b>
-                            ? Link your query and Cyb
-                            will understand it!
+? Link your query and Cyb will understand it!
                         </Text>
                         <FlexContainer>
                             <Input placeholder='type your link her...' ref='cidToInput' />
@@ -257,9 +229,9 @@ class App extends Component {
                             <Text size='lg' style={ { marginBottom: '10px' } }>
                                 Seems that you are first one who are searching for
                                 <b>
-                                    "
+"
                                     {searchQuery}
-                                    "
+"
                                 </b>
                             </Text>
 
@@ -379,27 +351,39 @@ const links3 = [
 
 storiesOf('cyber/pages', module)
     .add('anonym no result', () => (
-        <App searchQuery='test' links={ links2 } defaultAddress='test' balance='0' />
+        <Application>
+            <App searchQuery='test' links={ links2 } defaultAddress='test' balance='0' />
+        </Application>
     ))
     .add('index', () => (
-        <App
-          searchQuery='test'
-          links={ links2 }
-          defaultAddress='test'
-          PopupNotification
-          balance='0'
-          index='1'
-        />
+        <Application>
+            <App
+              searchQuery='test'
+              links={ links2 }
+              defaultAddress='test'
+              PopupNotification
+              balance='0'
+              index='1'
+            />
+        </Application>
     ))
     .add('anonym there are results', () => (
-        <App searchQuery='test' links={ links3 } defaultAddress='test' balance='0' />
+        <Application>
+            <App searchQuery='test' links={ links3 } defaultAddress='test' balance='0' />
+        </Application>
     ))
     .add('few results', () => (
-        <App searchQuery='test' links={ links3 } defaultAddress='test' balance='1000' />
+        <Application>
+            <App searchQuery='test' links={ links3 } defaultAddress='test' balance='1000' />
+        </Application>
     ))
     .add('lot result', () => (
-        <App searchQuery='test' links={ links } defaultAddress='test' balance='1000' />
+        <Application>
+            <App searchQuery='test' links={ links } defaultAddress='test' balance='1000' />
+        </Application>
     ))
     .add('no result', () => (
-        <App searchQuery='test' links={ links2 } defaultAddress='test' balance='1' />
+        <Application>
+            <App searchQuery='test' links={ links2 } defaultAddress='test' balance='1' />
+        </Application>
     ));

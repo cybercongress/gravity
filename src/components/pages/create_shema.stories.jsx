@@ -26,6 +26,7 @@ import {
     PopupBarFooter,
     Text,
 } from '../..';
+import Application from '../Application/Application';
 // import {
 //     ContainerRegister,
 //     Content,
@@ -40,25 +41,29 @@ import code from './code';
 const type = '';
 
 const canCreate = true;
-const Pages = ({ databaseId, disabled, disabledPopup, message  }) => (
+const Pages = ({
+    databaseId, disabled, disabledPopup, message,
+}) => (
     <MainContainer>
         <PageTitle>New database creation</PageTitle>
         <ProgressBar>
-            <CircleLable type="complete" number="1" text="Registry initialization" />
-            <CircleLable number="1" text="Schema definition">
-               {disabledPopup &&(
-                   <PopupBar>
+            <CircleLable type='complete' number='1' text='Registry initialization' />
+            <CircleLable number='1' text='Schema definition'>
+                {disabledPopup && (
+                    <PopupBar>
                         <Text lineheight>To operate with records, please, define schema</Text>
                         <PopupBarFooter>
-                            <Button transparent style={{color: '#b00020'}}>complete step</Button>
+                            <Button transparent style={ { color: '#b00020' } }>
+                                complete step
+                            </Button>
                         </PopupBarFooter>
                     </PopupBar>
-               )} 
+                )}
             </CircleLable>
         </ProgressBar>
         <ContainerRegister>
             <SideBar title='Input'>
-                <Panel noPadding title='Record Structure' style={{minHeight: '403px'}}>
+                <Panel noPadding title='Record Structure' style={ { minHeight: '403px' } }>
                     <FieldsTable>
                         <TableRegistry>
                             <tbody>
@@ -123,7 +128,11 @@ const Pages = ({ databaseId, disabled, disabledPopup, message  }) => (
             <FlexContainerRight>
                 {databaseId ? (
                     <span>
-                        <Button color='blue' style={ { marginRight: '10px' } } to={ `/databases/${databaseId}` }>
+                        <Button
+                          color='blue'
+                          style={ { marginRight: '10px' } }
+                          to={ `/databases/${databaseId}` }
+                        >
                             Go to database
                         </Button>
                         <Button color='blue' to={ `/schema/${databaseId}` }>
@@ -141,8 +150,28 @@ const Pages = ({ databaseId, disabled, disabledPopup, message  }) => (
 );
 
 storiesOf('pages/create_shema', module)
-    .add('index', () => <Pages />)
-    .add('have_id', () => <Pages databaseId='1' />)
-    .add('error', () => <Pages message='error' />)
-    .add('disabledBttn', () => <Pages disabled='1' />)
-    .add('popupProgressBar', () => <Pages disabledPopup='1' />);
+    .add('index', () => (
+        <Application>
+            <Pages />
+        </Application>
+    ))
+    .add('have_id', () => (
+        <Application>
+            <Pages databaseId='1' />
+        </Application>
+    ))
+    .add('error', () => (
+        <Application>
+            <Pages message='error' />
+        </Application>
+    ))
+    .add('disabledBttn', () => (
+        <Application>
+            <Pages disabled='1' />
+        </Application>
+    ))
+    .add('popupProgressBar', () => (
+        <Application>
+            <Pages disabledPopup='1' />
+        </Application>
+    ));

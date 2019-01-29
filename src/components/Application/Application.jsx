@@ -15,25 +15,38 @@ import AppMenu from './AppMenu';
 import Status from './Status';
 import NavigationComponents from './Navigation';
 import ToggleMenu from './ToggleMenu';
-// import SignerPopup from '../Application/SignerPopup';
+import SignerPopup from './SignerPopup';
 
-export const Application = (props) => {
+const menuItems = [
+    {
+        items: '1',
+        rootDura: 'ds',
+        name: 'dffd',
+    },
+    {
+        items: '2',
+        name: 'dffd.dsd',
+        rootDura: 'tbcds',
+    },
+    {
+        items: '3',
+        name: 'lhitv',
+        rootDura: 'tyds',
+    },
+]
+
+const Application = (props) => {
     const {
         homePage,
         openMenu,
         children,
         toggleMenu,
-        dura,
-        activeBttnBack,
-        activeBttnFavorited,
-        ipfs,
-        NodeStatus,
     } = props;
 
     return (
         <App openMenu={ openMenu }>
-            {/* <SignerPopup /> */}
-            <Status ipfsStatus={ ipfs } cyberNodeStatus={ NodeStatus } />
+            <SignerPopup />
+            <Status />
             <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
                 <AppMenu menuItems={ menuItems } />
             </AppSideBar>
@@ -43,7 +56,7 @@ export const Application = (props) => {
                         <ToggleMenu />
                     </NavigationLeft>
                     <NavigationCenter>
-                        <NavigationComponents dura={dura} canBack={activeBttnBack} isFavorited={activeBttnFavorited} />
+                        <NavigationComponents />
                     </NavigationCenter>
                     <NavigationRight>
                         <IdBar />
@@ -56,6 +69,8 @@ export const Application = (props) => {
         </App>
     );
 };
+
+export default Application;
 
 // export default connect(
 //     state => ({

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Vitalick, Button, MainContainer, Text, CentredPanel, FlexContainer, FlexContainerLeft, FlexContainerRight } from '../..';
 import NotFoundPage from '../NotFound/NotFound';
+import Application from '../Application/Application';
 
 const NotFound = () => {
     // const { location: { query: { dura } } } = props;
@@ -38,4 +39,8 @@ const NotFound = () => {
     );
 };
 
-storiesOf('cyb/pages/NotFound', module).add('NotFound', () => <NotFound />);
+storiesOf('cyb/pages/NotFound', module).add('NotFound', () =>(
+    <Application>
+        <NotFound />
+    </Application>
+    )); 

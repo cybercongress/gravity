@@ -8,6 +8,7 @@ import {
 } from '../..';
 
 import { RadioButton } from '../RadioButton/RadioButton';
+import Application from '../Application/Application';
 
 class RootRegistryPage extends Component {
     addRegistryItem = () => {
@@ -147,5 +148,7 @@ const addRegistryItem = [
 ];
 
 storiesOf('cyb/pages/Root Registry', module).add('Root Registry', () => (
-    <RootRegistryPage registryItems={ addRegistryItem } />
+    <Application>
+        <RootRegistryPage registryItems={ addRegistryItem } />
+    </Application>
 ));

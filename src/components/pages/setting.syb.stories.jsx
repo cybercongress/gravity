@@ -17,6 +17,7 @@ import {
     FormControl,
 } from '../..';
 import { SettingsIndicator } from '../Indicator/Indicator';
+import Application from '../Application/Application';
 
 class Settings extends Component {
     render() {
@@ -178,15 +179,18 @@ class Settings extends Component {
 }
 
 storiesOf('cyb/pages/Settings', module).add('Settings', () => (
-    <Settings
-      IPFS_END_POINT
-      PARITY_END_POINT
-      CYBERD_END_POINT
-      CYBERD_WS_END_POINT
-      ipfsStatus='local'
-      parityStatus='fail'
-      cyberdStatus
-      resetAllSettings
-      ipfsWriteUrl
-    />
+    <Application>
+        <Settings
+            IPFS_END_POINT
+            PARITY_END_POINT
+            CYBERD_END_POINT
+            CYBERD_WS_END_POINT
+            ipfsStatus='local'
+            parityStatus='fail'
+            cyberdStatus
+            resetAllSettings
+            ipfsWriteUrl
+        />
+    </Application>
+    
 ));

@@ -6,7 +6,7 @@ import {
     AddButton,
     Code,
     Select,
-    //Input,
+    // Input,
     CircleLable,
     ProgressBar,
     FlexContainerRight,
@@ -28,6 +28,7 @@ import {
     PopupBarFooter,
     Input,
 } from '../..';
+import Application from '../Application/Application';
 
 import code from './code';
 
@@ -66,20 +67,24 @@ const beneficiaries = [
 
 const canCreate = true;
 
-const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
+const Pages = ({
+    databaseId, disabled, disabledPopup, message,
+}) => (
     <MainContainer>
         <PageTitle>New database creation</PageTitle>
         <ProgressBar>
-            <CircleLable type="complete" number="1" text="Registry initialization" />
-            <CircleLable number="1" text="Schema definition">
-               {disabledPopup &&(
-                   <PopupBar>
+            <CircleLable type='complete' number='1' text='Registry initialization' />
+            <CircleLable number='1' text='Schema definition'>
+                {disabledPopup && (
+                    <PopupBar>
                         <Text lineheight>To operate with records, please, define schema</Text>
                         <PopupBarFooter>
-                            <Button transparent style={{color: '#b00020'}}>complete step</Button>
+                            <Button transparent style={ { color: '#b00020' } }>
+                                complete step
+                            </Button>
                         </PopupBarFooter>
                     </PopupBar>
-               )} 
+                )}
             </CircleLable>
         </ProgressBar>
 
@@ -119,7 +124,7 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
                                     <td>{ben.stake}</td>
                                     <td>
                                         {ben.share}
-                                        %
+%
                                     </td>
                                     <td>
                                         <RemoveButton />
@@ -151,7 +156,7 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
                 </Panel>
             </SideBar>
 
-            <Content title='Database code' style={{ maxHeight: '660px'}}>
+            <Content title='Database code' style={ { maxHeight: '660px' } }>
                 <Code>{code}</Code>
             </Content>
         </ContainerRegister>
@@ -162,7 +167,11 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
             <FlexContainerRight>
                 {databaseId ? (
                     <span>
-                        <Button color='blue' style={ { marginRight: '10px' } } to={ `/databases/${databaseId}` }>
+                        <Button
+                          color='blue'
+                          style={ { marginRight: '10px' } }
+                          to={ `/databases/${databaseId}` }
+                        >
                             Go to database
                         </Button>
                         <Button color='blue' to={ `/schema/${databaseId}` }>
@@ -180,8 +189,28 @@ const Pages = ({ databaseId, disabled, disabledPopup, message }) => (
 );
 
 storiesOf('pages/create_database', module)
-    .add('create_db', () => <Pages />)
-    .add('create_db_have_id', () => <Pages databaseId='1' />)
-    .add('create_db_disabledBttn', () => <Pages disabled='1' />)
-    .add('create_db_popupProgressBar', () => <Pages disabledPopup='1' />)
-    .add('create_db_error', () => <Pages message='error' />);
+    .add('create_db', () => (
+        <Application>
+            <Pages />
+        </Application>
+    ))
+    .add('create_db_have_id', () => (
+        <Application>
+            <Pages databaseId='1' />
+        </Application>
+    ))
+    .add('create_db_disabledBttn', () => (
+        <Application>
+            <Pages disabled='1' />
+        </Application>
+    ))
+    .add('create_db_popupProgressBar', () => (
+        <Application>
+            <Pages disabledPopup='1' />
+        </Application>
+    ))
+    .add('create_db_error', () => (
+        <Application>
+            <Pages message='error' />
+        </Application>
+    ));

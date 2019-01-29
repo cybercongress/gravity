@@ -8,6 +8,7 @@ import {CyberImport} from '../Wallet/CyberImport';
 import {CyberSend} from '../Wallet/CyberSend';
 import {ChangePassword} from '../Wallet/ChangePassword';
 import {PageTitle, MainContainer, WalletTabs, WalletTab, WalletLauout, WalletSidebar, WalletContent } from '../..';
+import Application from '../Application/Application';
 
 class Page extends Component {
     state = {
@@ -164,6 +165,7 @@ const accounts = [
 
 storiesOf('cyb/pages/Wallet', module)
 .add('Wallet', () => (
+    <Application>
         <Page accounts={accounts} />
-
+    </Application>
 ))
