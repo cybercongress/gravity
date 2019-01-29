@@ -41,13 +41,13 @@ const Application = (props) => {
             <AppHeader isHome={ homePage } isMenuOpen={ openMenu }>
                 <Navigation isHome={ homePage }>
                     <NavigationLeft>
-                        <ToggleMenu />
+                        <ToggleMenu openMenu={ openMenu } />
                     </NavigationLeft>
                     <NavigationCenter>
                         <NavigationComponents dura={dura} canBack={activeBttnBack} isFavorited={activeBttnFavorited} />
                     </NavigationCenter>
                     <NavigationRight>
-                        <IdBar />
+                        <IdBar defaultEthAccount />
                     </NavigationRight>
                 </Navigation>
             </AppHeader>

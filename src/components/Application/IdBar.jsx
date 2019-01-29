@@ -46,7 +46,7 @@ class IdBar extends Component {
 
         return (
             <IdBarComponent>
-                <ClickOutside onClickOutside={ this.close }>
+                <div onClickOutside={ this.close }>
                     <CurrentUser
                       defaultEthAccount={ defaultEthAccount }
                       defaultCyberAccount={ defaultCyberAccount }
@@ -56,9 +56,9 @@ class IdBar extends Component {
                       ethBalance={ defaultAccountBalance }
                       cybBalance={ defaultAccountBalanceCyb }
                     />
-                </ClickOutside>
+                </div>
                 {defaultEthAccount && <SettingsLink />}
-                {defaultEthAccount && <CybLink dura='txq.cyb' className='id_bar__txq'>txq</CybLink>}
+                {defaultEthAccount && <CybLink defaultAccount={defaultEthAccount} dura='txq.cyb'>txq</CybLink>}
             </IdBarComponent>
         );
     }

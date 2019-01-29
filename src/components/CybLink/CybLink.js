@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
 // import { connect } from 'react-redux';
 // import { navigate } from '../redux/browser';
 const styles = require('./CybLink.css');
+
 
 
 export class CybLink extends Component {
@@ -15,17 +17,17 @@ export class CybLink extends Component {
 
 	render() {
 	    const {
-	        children, dura, navigate, ...props
+	        children, dura, defaultAccount, navigate, ...props
 	    } = this.props;
 
 	    return (
-    <a className={styles.link}
-  href={ `cyb://${dura}` }
-	            { ...props }
-	            onClick={ this.onLinkClick }
-	        >
-    {this.props.children}
-	        </a>
+			<a className={cx(styles.link,{[styles.id_bar__txq]: defaultAccount })}
+				href={ `cyb://${dura}` }
+				{ ...props }
+				onClick={ this.onLinkClick }
+			>
+					{this.props.children}
+			</a>
 	    );
 	}
 }
