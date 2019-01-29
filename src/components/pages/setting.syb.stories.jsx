@@ -15,6 +15,7 @@ import {
     Control,
     PageTitle,
     FormControl,
+    ScrollContainer,
 } from '../..';
 import { SettingsIndicator } from '../Indicator/Indicator';
 import Application from '../Application/Application';
@@ -36,6 +37,7 @@ class Settings extends Component {
         } = this.props;
 
         return (
+            <ScrollContainer>
             <MainContainer>
                 <PageTitle>Settings</PageTitle>
                 <Section>
@@ -174,6 +176,7 @@ class Settings extends Component {
                     </FlexContainerRight>
                 </FlexContainer>
             </MainContainer>
+            </ScrollContainer>
         );
     }
 }

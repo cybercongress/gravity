@@ -7,7 +7,7 @@ import {CyberAccounts} from '../Wallet/CyberAccounts';
 import {CyberImport} from '../Wallet/CyberImport';
 import {CyberSend} from '../Wallet/CyberSend';
 import {ChangePassword} from '../Wallet/ChangePassword';
-import {PageTitle, MainContainer, WalletTabs, WalletTab, WalletLauout, WalletSidebar, WalletContent } from '../..';
+import {PageTitle, MainContainer, WalletTabs, WalletTab, WalletLauout, WalletSidebar, WalletContent, ScrollContainer } from '../..';
 import Application from '../Application/Application';
 
 class Page extends Component {
@@ -80,6 +80,7 @@ class Page extends Component {
         }
 
         return (
+            <ScrollContainer>
             <MainContainer>
                     <PageTitle>Wallet</PageTitle>
                     <WalletLauout style={{paddingTop: 45}}>
@@ -137,6 +138,7 @@ class Page extends Component {
                     </WalletLauout>
               
             </MainContainer>
+            </ScrollContainer>
         );
     }
 }

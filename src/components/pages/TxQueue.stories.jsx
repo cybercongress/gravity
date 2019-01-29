@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { PageTitle, CybLink, TableCybLink, MainContainer, Hash } from '../..';
+import { PageTitle, CybLink, TableCybLink, MainContainer, Hash, ScrollContainer, } from '../..';
 // import { connect } from 'react-redux';
 import moment from 'moment';
 import Application from '../Application/Application';
@@ -26,6 +26,7 @@ class TxQueue extends Component {
         const { transactions } = this.props;
 
         return (
+            <ScrollContainer>
             <MainContainer>
                 <PageTitle>Transaction</PageTitle>
                 <TableCybLink>
@@ -65,6 +66,7 @@ class TxQueue extends Component {
                     </tbody>
                 </TableCybLink>
             </MainContainer>
+            </ScrollContainer>
         );
     }
 }

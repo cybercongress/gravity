@@ -36,6 +36,7 @@ import {
     Select,
     PopupBarFooter,
     PopupBar,
+    ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -95,6 +96,7 @@ const isSchemaExist = false;
 const canCreate = true;
 
 const PagesViewRegistry = ({ showTable, disabled }) => (
+    <ScrollContainer>
     <MainContainer>
         <Section>
             <div style={ { marginLeft: '15px' } }>
@@ -474,6 +476,7 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
             </div>
         )}
     </MainContainer>
+    </ScrollContainer>
 );
 
 storiesOf('pages/view_registry', module)

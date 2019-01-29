@@ -27,6 +27,7 @@ import {
     PopupBar,
     PopupBarFooter,
     Input,
+    ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -70,6 +71,7 @@ const canCreate = true;
 const Pages = ({
     databaseId, disabled, disabledPopup, message,
 }) => (
+    <ScrollContainer>
     <MainContainer>
         <PageTitle>New database creation</PageTitle>
         <ProgressBar>
@@ -186,6 +188,7 @@ const Pages = ({
             </FlexContainerRight>
         </FlexContainer>
     </MainContainer>
+    </ScrollContainer>
 );
 
 storiesOf('pages/create_database', module)

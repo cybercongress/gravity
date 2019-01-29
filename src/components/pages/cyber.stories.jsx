@@ -21,6 +21,7 @@ import {
     IconBlockHeight,
     IconBlockDelay,
     Text,
+    ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -81,6 +82,7 @@ class App extends Component {
         console.log(' defaultAddress ', this.state.defaultAddress);
 
         return (
+            <ScrollContainer>
             <MainContainer>
                 <FlexContainer>
                     <PageTitle>Cyberd search</PageTitle>
@@ -260,6 +262,8 @@ class App extends Component {
                     </LinkContainer>
                 )}
             </MainContainer>
+            </ScrollContainer>
+            
         );
     }
 }

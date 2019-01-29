@@ -11,6 +11,7 @@ import {
     LinkHash,
     HomeTable,
     Text,
+    ScrollContainer,
 } from '../..';
 import { Button } from '../Button/button';
 import Application from '../Application/Application';
@@ -123,6 +124,7 @@ storiesOf('pages/home', module)
 
         return (
             <Application>
+                <ScrollContainer>
                 <MainContainer>
                     <div>
                         <div>{content}</div>
@@ -153,6 +155,7 @@ storiesOf('pages/home', module)
                         </Section>
                     </div>
                 </MainContainer>
+                </ScrollContainer>
             </Application>
         );
     })
@@ -257,6 +260,7 @@ storiesOf('pages/home', module)
 
         return (
             <Application>
+                <ScrollContainer>
                 <MainContainer>
                     <div>
                         <div>{content}</div>
@@ -287,6 +291,7 @@ storiesOf('pages/home', module)
                         </Section>
                     </div>
                 </MainContainer>
+                </ScrollContainer>
             </Application>
         );
     });

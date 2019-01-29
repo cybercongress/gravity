@@ -182,6 +182,7 @@ import {
 } from './components/Home/Home';
 
 import JsonView from './components/JsonView/JsonView';
+import ScrollContainer from './components/ScrollContainer/ScrollContainer';
 
 
 export {
@@ -306,4 +307,5 @@ export {
     Arrow,
     LinkList, LinkItem,
     JsonView,
+    ScrollContainer,
 };

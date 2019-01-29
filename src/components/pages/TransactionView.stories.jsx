@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 // import { getTransaction } from '../../redux/wallet';
 // import ScrollContainer from '../../components/ScrollContainer/ScrollContainer';
-import { MainContainer, PageTitle, JsonView } from '../..';
+import { MainContainer, PageTitle, JsonView, ScrollContainer, } from '../..';
 import Application from '../Application/Application';
 
 class TransactionView extends Component {
@@ -18,11 +18,13 @@ class TransactionView extends Component {
         const { transaction, receipt } = this.props;
 
         return (
+            <ScrollContainer>
             <MainContainer>
                 <PageTitle>transaction</PageTitle>
                 <JsonView data={ transaction } />
                 <JsonView data={ receipt } />
             </MainContainer>
+            </ScrollContainer>
         );
     }
 }

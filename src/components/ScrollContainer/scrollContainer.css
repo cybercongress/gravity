@@ -1,0 +1,11 @@
+
+/* .scrollContainerInner {
+	width: 1000px;
+	margin: 0 auto;
+} */
+
+.scrollContainer {
+	height: 100%;
+	overflow-y: auto;
+}
+

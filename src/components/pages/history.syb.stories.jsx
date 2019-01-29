@@ -5,7 +5,7 @@ import moment from 'moment';
 
 // import * as actions from '../../redux/settings';
 import {
-    MainContainer, PageTitle, CybLink, TableCybLink,
+    MainContainer, PageTitle, CybLink, TableCybLink, ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -34,6 +34,7 @@ class History extends Component {
         historyWithoutLast.reverse();
 
         return (
+            <ScrollContainer>
             <MainContainer>
                 <PageTitle>History</PageTitle>
                     <TableCybLink>
@@ -46,6 +47,7 @@ class History extends Component {
                         <tbody>{historyWithoutLast.map(this.renderItem)}</tbody>
                     </TableCybLink>
             </MainContainer>
+            </ScrollContainer>
         );
     }
 }

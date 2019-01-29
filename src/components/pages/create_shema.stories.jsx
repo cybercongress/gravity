@@ -25,6 +25,7 @@ import {
     PopupBar,
     PopupBarFooter,
     Text,
+    ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
 // import {
@@ -44,6 +45,7 @@ const canCreate = true;
 const Pages = ({
     databaseId, disabled, disabledPopup, message,
 }) => (
+    <ScrollContainer>
     <MainContainer>
         <PageTitle>New database creation</PageTitle>
         <ProgressBar>
@@ -147,6 +149,7 @@ const Pages = ({
             </FlexContainerRight>
         </FlexContainer>
     </MainContainer>
+    </ScrollContainer>
 );
 
 storiesOf('pages/create_shema', module)
