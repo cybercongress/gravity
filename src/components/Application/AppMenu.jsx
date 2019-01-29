@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import ClickOutside from 'react-click-outside';
-import { Message } from '../..';
-// import * as actions from '../../redux/appMenu';
-
-import MenuContainer, {
+import {
+    Message,
+    MenuContainer,
     Bookmarks,
     LogoLink,
     AddMenuItem,
     AddMenuItemReject,
     ReportLinkContainer,
     AddMenuItemContainer,
-} from '../AppMenu/AppMenu';
+} from '../..';
+// import * as actions from '../../redux/appMenu';
 
 class AppMenu extends Component {
     addToFavorites = () => {
@@ -62,7 +62,7 @@ class AppMenu extends Component {
                 />
                 {pendingAddToFavorites
                 && (
-                    <ClickOutside onClickOutside={ this.rejectFavorite }>
+                    <div onClickOutside={ this.rejectFavorite }>
                         <AddMenuItemContainer>
                             <AddMenuItem>
                                 <input
@@ -72,7 +72,7 @@ class AppMenu extends Component {
                                 <AddMenuItemReject onClick={ this.addToFavorites } />
                             </AddMenuItem>
                         </AddMenuItemContainer>
-                    </ClickOutside>
+                    </div>
                 )}
                 <ReportLinkContainer>
                     <a

@@ -3,12 +3,12 @@ import React from 'react';
 // import { toggleMenu as toggleMenuAction } from '../../redux/appMenu';
 import { storiesOf } from '@storybook/react';
 
-import App, {
+import {
+    App,
     AppHeader, AppContent, AppSideBar,
-} from '../App/App';
-import Navigation, {
+    Navigation,
     NavigationLeft, NavigationRight, NavigationCenter,
-} from '../Navigation/Navigation';
+} from '../..';
 
 import IdBar from '../Application/IdBar';
 import AppMenu from '../Application/AppMenu';
@@ -29,6 +29,7 @@ const Application = (props) => {
         ipfs,
         NodeStatus,
         signerPopup,
+        newApp,
     } = props;
 
     return (
@@ -36,7 +37,7 @@ const Application = (props) => {
             <SignerPopup isSignerPopup={signerPopup} toAddress='sfsdfsfsd' fromAddress='sdfjnsfdjndfsjk' defaultAccountBalance='10' />
             <Status ipfsStatus={ ipfs } cyberNodeStatus={ NodeStatus } />
             <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
-                <AppMenu menuItems={ menuItems } />
+                <AppMenu pendingAddToFavorites={newApp} menuItems={ menuItems } />
             </AppSideBar>
             <AppHeader isHome={ homePage } isMenuOpen={ openMenu }>
                 <Navigation isHome={ homePage }>
@@ -90,6 +91,9 @@ storiesOf('cyb/pages/Application', module)
     ))
     .add('openMenu', () => (
             <Application openMenu />
+    ))
+    .add('NewApp', () => (
+        <Application openMenu newApp />
     ))
     .add('homePage', () => (
         <Application homePage />

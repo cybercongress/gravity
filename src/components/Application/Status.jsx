@@ -1,27 +1,22 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 
-import Indicator, { StatusContainer } from '../Indicator/Indicator';
+import { StatusContainer, Indicator } from '../..';
 
 const NoConnection = ({ status, children }) => {
     if (status === 'fail') {
-        return (
-            <div>
-                No connection
-            </div>
-        );
+        return <div>No connection</div>;
     }
 
-    return (
-        <div>
-            {children}
-        </div>
-    );
+    return <div>{children}</div>;
 };
 
 const Status = ({
-    pending, ipfsStatus,
-    ethNodeStatus, cyberNodeStatus, ethNetworkName,
+    pending,
+    ipfsStatus,
+    ethNodeStatus,
+    cyberNodeStatus,
+    ethNetworkName,
     IPFS_END_POINT,
     PARITTY_END_POINT,
     SEARCH_END_POINT,
@@ -46,7 +41,6 @@ const Status = ({
         </NoConnection>
     );
 
-
     const cyberContent = (
         <NoConnection status={ cyberNodeStatus }>
             <div>{cyberNetwork}</div>
@@ -55,30 +49,21 @@ const Status = ({
         </NoConnection>
     );
 
-
     return (
         <StatusContainer>
-            <Indicator
-              tooltipContent={ ipfsContent }
-              status={ pending ? null : ipfsStatus }
-            >
+            <Indicator tooltipContent={ ipfsContent } status={ pending ? null : ipfsStatus }>
                 ipfs
             </Indicator>
-            <Indicator
-              tooltipContent={ ethContent }
-              status={ pending ? null : ethNodeStatus }
-            >
+            <Indicator tooltipContent={ ethContent } status={ pending ? null : ethNodeStatus }>
                 eth
             </Indicator>
-            <Indicator
-              tooltipContent={ cyberContent }
-              status={ pending ? null : cyberNodeStatus }
-            >
+            <Indicator tooltipContent={ cyberContent } status={ pending ? null : cyberNodeStatus }>
                 cyber
             </Indicator>
         </StatusContainer>
     );
 };
+
 export default Status;
 // export default connect(
 //     state => ({
@@ -88,7 +73,6 @@ export default Status;
 //         cyberNodeStatus: state.settings.cyberNodeStatus,
 //         pending: state.settings.pending,
 //         ethNetworkName: state.settings.ethNetworkName,
-
 
 //         IPFS_END_POINT: state.settings.IPFS_END_POINT,
 //         PARITTY_END_POINT: state.settings.PARITTY_END_POINT,

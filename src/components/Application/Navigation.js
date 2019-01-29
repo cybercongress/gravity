@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import { navigate, goBack, canBack } from '../../redux/browser';
-import SearchInput, {
+import {
+    SearchInput,
     BackButton, ForwardButton, NavigationContainer,
     FavoriteButton,
     FavoriteButtonContainer,
     SearchIcon,
-} from '../SearchInput/SearchInput';
+} from '../..';
 // import { isFavoritedPage, toggleFavorited } from '../../redux/appMenu';
 
 

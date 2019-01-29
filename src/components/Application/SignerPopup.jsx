@@ -1,17 +1,31 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 // import web3 from 'web3';
-import { Title, Message, Block, BlockRow, Input, Button, Row } from '../..';
-
-// import Block, { BlockRow, Row } from '../../components/Settings/Block';
 import {
+    Title,
+    Message,
+    Block,
+    BlockRow,
+    Input,
+    Button,
+    Row,
     ConfirmationPopup,
     Address,
     ConfirmationPopupContent,
     PopupLabel,
     TxDetailsContainer,
     ConfirmationPopupButtons,
-} from '../ConfirmationPopup/ConfirmationPopup';
+} from '../..';
+
+// import Block, { BlockRow, Row } from '../../components/Settings/Block';
+// import {
+//     ConfirmationPopup,
+//     Address,
+//     ConfirmationPopupContent,
+//     PopupLabel,
+//     TxDetailsContainer,
+//     ConfirmationPopupButtons,
+// } from '../ConfirmationPopup/ConfirmationPopup';
 // import Input from '../../components/Input/Input';
 // import Button from '../../components/Button/Button';
 

@@ -3,12 +3,12 @@ import React from 'react';
 // import { toggleMenu as toggleMenuAction } from '../../redux/appMenu';
 // import { storiesOf } from '@storybook/react';
 
-import App, {
+import {
+    App,
     AppHeader, AppContent, AppSideBar,
-} from '../App/App';
-import Navigation, {
+    Navigation,
     NavigationLeft, NavigationRight, NavigationCenter,
-} from '../Navigation/Navigation';
+} from '../..';
 
 import IdBar from './IdBar';
 import AppMenu from './AppMenu';

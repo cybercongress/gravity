@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import ClickOutside from 'react-click-outside';
 import { CybLink } from '../..';
-import IdBarComponent, {
+import {
+    IdBarComponent,
     SettingsLink,
     CurrentUser,
-} from '../IdBar/IdBar';
+} from '../..';
 // import { toggleMenu } from '../../redux/appMenu';
 // import { getDefaultAccountBalance } from '../../redux/wallet';
 // import { getDefaultAccountBalance as getDefaultAccountBalanceCyb } from '../../redux/cyber';

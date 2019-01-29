@@ -4,7 +4,7 @@ import React from 'react';
 
 import {
     MenuButton,
-} from '../../components/Navigation/Navigation';
+} from '../..';
 
 const Menu = ({ openMenu, toggleMenu }) => (
     <MenuButton
