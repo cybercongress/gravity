@@ -15,7 +15,7 @@ import AppMenu from '../Application/AppMenu';
 import Status from '../Application/Status';
 import NavigationComponents from '../Application/Navigation';
 import ToggleMenu from '../Application/ToggleMenu';
-// import SignerPopup from '../Application/SignerPopup';
+import SignerPopup from '../Application/SignerPopup';
 
 const Application = (props) => {
     const {
@@ -23,14 +23,20 @@ const Application = (props) => {
         openMenu,
         children,
         toggleMenu,
+        dura,
+        activeBttnBack,
+        activeBttnFavorited,
+        ipfs,
+        NodeStatus,
+        signerPopup,
     } = props;
 
     return (
         <App openMenu={ openMenu }>
-            {/* <SignerPopup /> */}
-            <Status />
+            <SignerPopup isSignerPopup={signerPopup} toAddress='sfsdfsfsd' fromAddress='sdfjnsfdjndfsjk' defaultAccountBalance='10' />
+            <Status ipfsStatus={ ipfs } cyberNodeStatus={ NodeStatus } />
             <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
-                <AppMenu menuItems={menuItems} />
+                <AppMenu menuItems={ menuItems } />
             </AppSideBar>
             <AppHeader isHome={ homePage } isMenuOpen={ openMenu }>
                 <Navigation isHome={ homePage }>
@@ -38,7 +44,7 @@ const Application = (props) => {
                         <ToggleMenu />
                     </NavigationLeft>
                     <NavigationCenter>
-                        <NavigationComponents />
+                        <NavigationComponents dura={dura} canBack={activeBttnBack} isFavorited={activeBttnFavorited} />
                     </NavigationCenter>
                     <NavigationRight>
                         <IdBar />
@@ -62,20 +68,39 @@ const Application = (props) => {
 
 const menuItems = [
     {
-        items: '2',
+        items: '1',
         rootDura: 'ds',
         name: 'dffd',
     },
     {
-        items: 'weds2',
+        items: '2',
+        name: 'dffd.dsd',
+        rootDura: 'tbcds',
     },
     {
-        items: '222',
+        items: '3',
+        name: 'lhitv',
+        rootDura: 'tyds',
     },
 ]
 
 storiesOf('cyb/pages/Application', module)
-.add('Application', () => (
-        <Application openMenu />
+    .add('Application', () => (
+        <Application />
+    ))
+    .add('openMenu', () => (
+            <Application openMenu />
+    ))
+    .add('homePage', () => (
+        <Application homePage />
+    ))
+    .add('ActiveNavigationComponents', () => (
+        <Application activeBttnBack activeBttnFavorited dura='rr.cyb' />
+    ))
 
-))
+    .add('StatusIndicator', () => (
+        <Application ipfs='local' NodeStatus='fail' />
+    ))
+    .add('SignerPopup', () => (
+        <Application signerPopup />
+    ));

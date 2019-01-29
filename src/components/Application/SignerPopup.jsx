@@ -1,21 +1,22 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import web3 from 'web3';
-import { Title, Message } from '@cybercongress/ui';
+// import { connect } from 'react-redux';
+// import web3 from 'web3';
+import { Title, Message, Block, BlockRow, Input, Button, Row } from '../..';
 
-import Block, { BlockRow, Row } from '../../components/Settings/Block';
-import ConfirmationPopup, {
+// import Block, { BlockRow, Row } from '../../components/Settings/Block';
+import {
+    ConfirmationPopup,
     Address,
     ConfirmationPopupContent,
     PopupLabel,
     TxDetailsContainer,
     ConfirmationPopupButtons,
-} from '../../components/ConfirmationPopup/ConfirmationPopup';
-import Input from '../../components/Input/Input';
-import Button from '../../components/Button/Button';
+} from '../ConfirmationPopup/ConfirmationPopup';
+// import Input from '../../components/Input/Input';
+// import Button from '../../components/Button/Button';
 
-import { getDefaultAccountBalance } from '../../redux/wallet';
-import { approve, reject } from '../../redux/signer';
+// import { getDefaultAccountBalance } from '../../redux/wallet';
+// import { approve, reject } from '../../redux/signer';
 
 class SignerPopup extends React.Component {
     state = {
@@ -195,17 +196,17 @@ class SignerPopup extends React.Component {
     }
 }
 
+export default SignerPopup;
+// export default connect(
+//     state => ({
+//         defaultAccountBalance: getDefaultAccountBalance(state),
 
-export default connect(
-    state => ({
-        defaultAccountBalance: getDefaultAccountBalance(state),
-
-        isSignerPopup: state.signer.isSignerPopup,
-        fromAddress: state.signer.fromAddress,
-        toAddress: state.signer.toAddress,
-        value: state.signer.value,
-        gasPrice: state.signer.gasPrice,
-        gasLimit: state.signer.gasLimit,
-    }),
-    { approve, reject },
-)(SignerPopup);
+//         isSignerPopup: state.signer.isSignerPopup,
+//         fromAddress: state.signer.fromAddress,
+//         toAddress: state.signer.toAddress,
+//         value: state.signer.value,
+//         gasPrice: state.signer.gasPrice,
+//         gasLimit: state.signer.gasLimit,
+//     }),
+//     { approve, reject },
+// )(SignerPopup);

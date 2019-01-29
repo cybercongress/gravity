@@ -16,3 +16,9 @@ export const BlockRow = ({ children, ...props }) => (
     </div>
 );
 
+export const Row = ({ children }) => (
+    <div className={styles.row}>
+        {children}
+    </div>
+);
+

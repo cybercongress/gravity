@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import ClickOutside from 'react-click-outside';
-import {CybLink} from '../..';
+import { CybLink } from '../..';
 import IdBarComponent, {
     SettingsLink,
     CurrentUser,
@@ -58,7 +58,7 @@ class IdBar extends Component {
                     />
                 </ClickOutside>
                 {defaultEthAccount && <SettingsLink />}
-                {defaultEthAccount && <CybLink dura='txq.cyb' className='id-bar__txq'>txq</CybLink>}
+                {defaultEthAccount && <CybLink dura='txq.cyb' className='id_bar__txq'>txq</CybLink>}
             </IdBarComponent>
         );
     }

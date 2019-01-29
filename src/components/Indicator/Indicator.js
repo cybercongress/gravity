@@ -3,7 +3,7 @@ import cx from 'classnames';
 // import './Indicator.css';
 const styles = require('./Indicator.css');
 
-const Indicator = ({ children }) => {
+const Indicator = ({ status, children }) => {
     // const style = {
     //     background: '#fff',
     // };

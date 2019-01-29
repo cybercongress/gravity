@@ -152,7 +152,7 @@ import { FundContainer } from './components/FundContainer/FundContainer';
 
 import { CybLink } from './components/CybLink/CybLink';
 import { TableCybLink } from './components/TableCybLink/Table';
-import { Block, BlockRow } from './components/Block/Block';
+import { Block, BlockRow, Row } from './components/Block/Block';
 
 import {
     AccountCard,
@@ -287,6 +287,7 @@ export {
     TableCybLink,
     Block,
     BlockRow,
+    Row,
 
     AccountCard, AccountCardLeft, AccountCardRight,
     AccountCardContent, AccountCardContentItem,
