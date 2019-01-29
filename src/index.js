@@ -228,6 +228,7 @@ import {
     TxDetailsContainer,
     ConfirmationPopupButtons,
 } from './components/Application/ConfirmationPopup/ConfirmationPopup';
+import LoginContainer from './components/Application/LoginContainer/LoginContainer';
 
 export {
     Title,
@@ -387,4 +388,5 @@ export {
     ConfirmationPopupButtons,
 
     SettingLabel, SettingRow,
+    LoginContainer,
 };

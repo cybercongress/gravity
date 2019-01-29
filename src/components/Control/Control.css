@@ -25,6 +25,11 @@
   width: 100%;
   margin-left: 0;
 }
+
+.noMargin{
+  margin-bottom: 0;
+  margin-top: 10px;
+}
 /* 
 .controlComponent  {
   width: 100%;

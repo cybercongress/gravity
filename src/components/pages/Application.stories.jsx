@@ -8,6 +8,7 @@ import {
     AppHeader, AppContent, AppSideBar,
     Navigation,
     NavigationLeft, NavigationRight, NavigationCenter,
+    ScrollContainer,
 } from '../..';
 
 import IdBar from '../Application/IdBar';
@@ -16,6 +17,7 @@ import Status from '../Application/Status';
 import NavigationComponents from '../Application/Navigation';
 import ToggleMenu from '../Application/ToggleMenu';
 import SignerPopup from '../Application/SignerPopup';
+import Login from '../Application/Login';
 
 const Application = (props) => {
     const {
@@ -107,4 +109,15 @@ storiesOf('cyb/pages/Application', module)
     ))
     .add('SignerPopup', () => (
         <Application signerPopup />
+    ))
+    .add('Create Account', () => (
+        <Application>
+            <Login />
+        </Application>
+    ))
+    .add('Login', () => (
+        <Application>
+            <Login isUserExist />
+        </Application>
     ));
+    

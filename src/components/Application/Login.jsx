@@ -4,13 +4,14 @@ import React, { Component } from 'react';
 // import Block, { BlockRow } from '../../components/Settings/Block';
 import {
     SettingLabel, SettingRow, Block, BlockRow,
-    Message, Input, Button, Title,
+    Message, Input, Button, Title, LoginContainer,
+    Control,
 } from '../..';
 // import Input from '../../components/Input/Input';
 // import Button from '../../components/Button/Button';
 // import { createPassword, login, isLoginExist } from '../../redux/wallet';
 // import Titile from '../../components/Titile/Titile';
-import LoginContainer from '../../components/LoginContainer/LoginContainer';
+
 
 class Login extends Component {
 
@@ -36,8 +37,8 @@ class Login extends Component {
     }
 
     render() {
-        const { incorrectPassword } = this.props;
-        const isUserExist = isLoginExist();
+        const { incorrectPassword, isUserExist } = this.props;
+        // const isUserExist = isLoginExist();
         const label = isUserExist ? 'Login' : 'Create account';
 
         return (
@@ -48,16 +49,22 @@ class Login extends Component {
                         {!isUserExist ? (
                             <div>
                                 <BlockRow key='create1'>
-                                    <SettingRow>
+                                    {/* <SettingRow>
                                         <SettingLabel>password</SettingLabel>
                                         <Input type='password' inputRef={ node => this.password1 = node } />
-                                    </SettingRow>
+                                    </SettingRow> */}
+                                    <Control noMargin textWidth={100} title='password'>
+                                        <Input type='password' inputRef={ node => this.password1 = node } />
+                                    </Control>
                                 </BlockRow>
                                 <BlockRow key='create2'>
-                                    <SettingRow>
+                                    {/* <SettingRow>
                                         <SettingLabel>confirm password</SettingLabel>
                                         <Input type='password' inputRef={ node => this.password2 = node } />
-                                    </SettingRow>
+                                    </SettingRow> */}
+                                    <Control noMargin textWidth={100} title='confirm password'>
+                                        <Input type='password' inputRef={ node => this.password2 = node } />
+                                    </Control>
                                 </BlockRow>
                                 <BlockRow>
                                     <div style={ {
@@ -65,7 +72,7 @@ class Login extends Component {
                                         justifyContent: 'space-between',
                                     } }
                                     >
-                                        <Button onClick={ this.createPassword } color='green'>Create</Button>
+                                        <Button sizeSm onClick={ this.createPassword } color='greenyellow'>Create</Button>
                                     </div>
                                 </BlockRow>
                             </div>
@@ -77,10 +84,10 @@ class Login extends Component {
                                     </BlockRow>
                                 )}
                                 <BlockRow>
-                                    <form onSubmit={this.login}>
-                                        <SettingLabel style={{ width: 90 }}>password</SettingLabel>
+                                    <form onSubmit={this.login} style={{display: 'flex', alignItems: 'center'}}>
+                                        <SettingLabel style={{ width: 90, marginRight: 10 }}>password</SettingLabel>
                                         <Input style={{ width: 150 }} type='password' inputRef={ node => this.password = node } />
-                                        <Button style={{ marginLeft: 25 }} onClick={ this.login } color='green'>Login</Button>
+                                        <Button sizeSm style={{ marginLeft: 25, minWidth: 80, textTransform: 'none' }} onClick={ this.login } color='greenyellow'>Login</Button>
                                     </form>
                                 </BlockRow>
                             </div>
@@ -92,7 +99,8 @@ class Login extends Component {
     }
 }
 
-export default connect(state => ({
-    password: state.wallet.password,
-    incorrectPassword: state.wallet.incorrectPassword,
-}), { setPassword: login, createPassword, isLoginExist })(Login);
+export default Login;
+// export default connect(state => ({
+//     password: state.wallet.password,
+//     incorrectPassword: state.wallet.incorrectPassword,
+// }), { setPassword: login, createPassword, isLoginExist })(Login);

@@ -4,8 +4,8 @@ import { Text } from '../..';
 
 const styles = require('./Control.css');
 
-export const Control = ({ children, title, noText, textWidth, ...props }) => (
-  <div {...props} className={styles.control}>
+export const Control = ({ children, noMargin, title, noText, textWidth, ...props }) => (
+  <div {...props} className={cx(styles.control, { [styles.noMargin]: noMargin})}>
     {title&&(<Text style={{width: `${textWidth}px`}} uppercase> {title} </Text>)}
     <div className={cx(styles.controlComponent, {[styles.noText]: noText})}>{children}</div>
   </div>
