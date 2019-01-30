@@ -22,18 +22,18 @@
     border-radius: 2px;
     box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.15);
     padding: 3px 5px;
-    background-color: #f8e71c;
+    background-color: #e8a823;
     cursor: default;
 }
 
 .statusFail{
-	background-color: #d0021b;
+	background-color: #d32f2f;
 }
 
 .statusLocal{
-	background-color: #7ed321;
+	background-color: #3fb990;
 }
 
 .statusDefault{
-	background-color: #f8e71c;
+	background-color: #e8a823;
 }
