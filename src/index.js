@@ -230,6 +230,8 @@ import {
 } from './components/Application/ConfirmationPopup/ConfirmationPopup';
 import LoginContainer from './components/Application/LoginContainer/LoginContainer';
 
+import BrowserWindow, { BrowserContainer, Loading } from './components/BrowserWindow/BrowserWindow';
+
 export {
     Title,
     Badge,
@@ -389,4 +391,6 @@ export {
 
     SettingLabel, SettingRow,
     LoginContainer,
+
+    BrowserWindow, BrowserContainer, Loading,
 };
