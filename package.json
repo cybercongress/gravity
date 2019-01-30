@@ -27,6 +27,7 @@
     "less": "^3.9.0",
     "moment": "^2.24.0",
     "prop-types": "^15.6.2",
+    "rc-tooltip": "^3.7.3",
     "react": "16.6.3",
     "react-chartjs-2": "2.7.4",
     "react-click-outside": "^3.0.1",
