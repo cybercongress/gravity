@@ -1,7 +1,9 @@
 
 .NotFound {
-	padding-top: 150px;
 	color: #7c7c7c;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 150px 50px 0 50px;
 }
 
 .NotFound p:first-of-type {
