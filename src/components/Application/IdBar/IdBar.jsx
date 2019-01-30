@@ -7,14 +7,14 @@ const styles = require('./IdBar.css');
 
 const IdBarComponent = ({ children }) => <div className={ styles.id_bar }>{children}</div>;
 
-export const SettingsLink = () => (
-    <CybLink dura='settings.cyb' className={ styles.id_bar__settings }>
+export const SettingsLink = ( props ) => (
+    <CybLink {...props } dura='settings.cyb' className={ styles.id_bar__settings }>
         Settings
     </CybLink>
 );
 
-export const WalletLink = () => (
-    <CybLink dura='wallet.cyb' className={ styles.id_bar__wallet }>
+export const WalletLink = (props) => (
+    <CybLink {...props} dura='wallet.cyb' className={ styles.id_bar__wallet }>
         Wallet
     </CybLink>
 );
@@ -34,7 +34,7 @@ export const CurrentUser = (props) => {
                   src={ `https://robohash.org/${defaultEthAccount}` }
                 />
             ) : (
-                <CybLink dura='wallet.cyb'>
+                <CybLink { ...props } dura='wallet.cyb'>
                     <div
                       className={ classNames({
                             [styles.id_bar__user]: true,
@@ -73,8 +73,8 @@ CYB
                         </span>
                     </div>
                     <div className={ styles.id_bar_link_container }>
-                        <WalletLink />
-                        <CybLink dura='history.cyb' className={ styles.id_bar__history }>
+                        <WalletLink { ...props } />
+                        <CybLink { ...props } dura='history.cyb' className={ styles.id_bar__history }>
                             history
                         </CybLink>
                         <a className={ styles.id_bar__favorite } href='/' onClick={ favoriteClick }>

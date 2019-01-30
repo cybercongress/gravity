@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
 import { Link } from 'react-router';
-import { ActionLink } from '../..';
+import { ActionLink , CybLink } from '../..';
 
 const styles = require('./button.css');
 
@@ -30,6 +30,7 @@ export const Button = ({
     transparent,
     sizeSm,
     outline,
+    dura,
     ...props
 }) => {
     if (to) {
@@ -54,6 +55,29 @@ export const Button = ({
                 {children}
             </ActionLink>
         );
+    }
+    if (dura) {
+        return (
+            <CybLink
+              dura={dura}
+                { ...props }
+                className={ cx(styles.ActionLink, {
+                    [styles.ButtonCancel]: color === 'cancel',
+                    [styles.ButtonGreen]: color === 'green',
+                    [styles.ButtonRed]: color === 'red',
+                    [styles.ButtonBlue]: color === 'blue',
+                    [styles.ButtonGreenYellow]: color === 'greenyellow',
+                    [styles.ButtonOrange]: color === 'ogange',
+                    [styles.ButtonTurquoise]: color === 'turquoise',
+                    [styles.ButtonOutline]: outline,
+                    [styles.ButtonSize]: sizeSm,
+                    [styles.TextTransform]: transformtext,
+                    [styles.Disabled]: disabled,
+                }) }
+            >
+                {children}
+            </CybLink>
+        )
     }
     return (
         <button
