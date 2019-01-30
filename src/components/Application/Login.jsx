@@ -85,9 +85,13 @@ class Login extends Component {
                                 )}
                                 <BlockRow>
                                     <form onSubmit={this.login} style={{display: 'flex', alignItems: 'center'}}>
-                                        <SettingLabel style={{ width: 90, marginRight: 10 }}>password</SettingLabel>
-                                        <Input style={{ width: 150 }} type='password' inputRef={ node => this.password = node } />
-                                        <Button sizeSm style={{ marginLeft: 25, minWidth: 80, textTransform: 'none' }} onClick={ this.login } color='greenyellow'>Login</Button>
+                                        <Control style={{marginBottom: 0, justifyContent:'flex-start' }} title='password'>
+                                            <Input style={{ width: 150 }} type='password' inputRef={ node => this.password = node } />
+                                            <Button sizeSm style={{ marginLeft: 15, minWidth: 80, textTransform: 'none' }} onClick={ this.login } color='green'>Login</Button>
+                                        </Control>
+                                        {/* <SettingLabel style={{ width: 90 }}>password</SettingLabel> */}
+                                        {/* <Input style={{ width: 150 }} type='password' inputRef={ node => this.password = node } />
+                                        <Button sizeSm style={{ marginLeft: 25, minWidth: 80, textTransform: 'none' }} onClick={ this.login } color='green'>Login</Button> */}
                                     </form>
                                 </BlockRow>
                             </div>
