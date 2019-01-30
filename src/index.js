@@ -150,7 +150,7 @@ import { Badge } from './components/Badge/Badge';
 import { CentredPanel } from './components/CentredPanel/CentredPanel';
 import { FundContainer } from './components/FundContainer/FundContainer';
 
-import { CybLink } from './components/CybLink/CybLink';
+import CybLink from './components/CybLink/CybLink';
 import { TableCybLink } from './components/TableCybLink/Table';
 import { Block, BlockRow, Row } from './components/Block/Block';
 import { SettingLabel, SettingRow } from './components/Block/Settings';

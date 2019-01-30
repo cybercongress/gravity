@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-// import cx from 'classnames';
+import cx from 'classnames';
 // // import { connect } from 'react-redux';
 // // import { navigate } from '../redux/browser';
-// const styles = require('./CybLink.css');
+const styles = require('./CybLink.css');
 
 class CybLink extends Component {
     onLinkClick = (e) => {
@@ -15,11 +15,11 @@ class CybLink extends Component {
 
     render() {
         const {
-            children, dura, ...props
+            children, defaultAccount, dura, ...props
         } = this.props;
 
         return (
-            <a
+            <a className={cx(styles.link,{[styles.id_bar__txq]: defaultAccount })}
                 href={ `cyb://${ dura }` }
                 { ...props }
                 onClick={ this.onLinkClick }

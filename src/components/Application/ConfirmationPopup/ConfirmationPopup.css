@@ -25,7 +25,7 @@
 .confirmation_popup__buttons {
     padding-top: 15px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .popup_label {
