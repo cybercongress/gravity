@@ -232,6 +232,8 @@ import LoginContainer from './components/Application/LoginContainer/LoginContain
 
 import BrowserWindow, { BrowserContainer, Loading } from './components/BrowserWindow/BrowserWindow';
 
+import NotFoundPage from './components/NotFound/NotFound'; 
+
 export {
     Title,
     Badge,
@@ -393,4 +395,6 @@ export {
     LoginContainer,
 
     BrowserWindow, BrowserContainer, Loading,
+
+    NotFoundPage,
 };
