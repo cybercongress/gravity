@@ -16,11 +16,11 @@ const Status = ({
     ipfsStatus,
     ethNodeStatus,
     cyberNodeStatus,
-    ethNetworkName,
-    IPFS_END_POINT,
-    PARITTY_END_POINT,
-    SEARCH_END_POINT,
-    cyberNetwork,
+    // ethNetworkName,
+    // IPFS_END_POINT,
+    // PARITTY_END_POINT,
+    // SEARCH_END_POINT,
+    // cyberNetwork,
     homePage,
 }) => {
     if (homePage) {
@@ -29,23 +29,23 @@ const Status = ({
 
     const ipfsContent = (
         <NoConnection status={ ipfsStatus }>
-            <div>{IPFS_END_POINT}</div>
+            <div>{'IPFS_END_POINT'}</div>
         </NoConnection>
     );
 
     const ethContent = (
         <NoConnection status={ ethNodeStatus }>
-            <div>{ethNetworkName}</div>
+            <div>{'ethNetworkName'}</div>
             <hr />
-            <div>{PARITTY_END_POINT}</div>
+            <div>{'PARITTY_END_POINT'}</div>
         </NoConnection>
     );
 
     const cyberContent = (
         <NoConnection status={ cyberNodeStatus }>
-            <div>{cyberNetwork}</div>
+            <div>{'cyberNetwork'}</div>
             <hr />
-            <div>{SEARCH_END_POINT}</div>
+            <div>{'SEARCH_END_POINT'}</div>
         </NoConnection>
     );
 

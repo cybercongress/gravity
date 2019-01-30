@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 import Tooltip from 'rc-tooltip';
-//import './tooltip.less';
 
 import 'rc-tooltip/assets/bootstrap.less';
 // import './Indicator.css';
