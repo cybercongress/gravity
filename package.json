@@ -6,16 +6,23 @@
     "name": "cybercongress",
     "email": "cybercongress42@gmail.com"
   },
+  "storybook-deployer": {
+    "gitUsername": "cybercongress",
+    "gitEmail": "cybercongress42@gmail.com",
+    "commitMessage": "Deploy Storybook to gh-pages"
+  },
   "main": "lib/index.js",
   "scripts": {
     "prepublishOnly": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
-    "build": "webpack --mode development"
+    "build": "webpack --mode development",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "license": "WTFPL",
   "dependencies": {
     "@storybook/addon-centered": "4.0.12",
+    "@storybook/storybook-deployer": "^2.8.1",
     "acorn-jsx": "^5.0.1",
     "babel-eslint": "^10.0.1",
     "chart.js": "^2.7.3",
