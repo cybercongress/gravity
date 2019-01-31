@@ -19,6 +19,12 @@ export const WalletLink = (props) => (
     </CybLink>
 );
 
+export const NotificationLink = ({ notificationLinkCounter, ...props }) => (
+    <CybLink dura='txq.cyb'
+    { ...props }
+             className={styles.id_bar__txq}><span>{ notificationLinkCounter !== 0 ? notificationLinkCounter : '' }</span></CybLink>
+);
+
 export const CurrentUser = (props) => {
     const {
         defaultEthAccount, open, toggle, favoriteClick, ethBalance, cybBalance,

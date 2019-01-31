@@ -210,6 +210,7 @@ import MenuContainer, {
 
 import IdBarComponent, {
     SettingsLink,
+    NotificationLink,
     CurrentUser,
 } from './components/Application/IdBar/IdBar';
 
@@ -377,6 +378,7 @@ export {
     IdBarComponent,
     SettingsLink,
     CurrentUser,
+    NotificationLink,
 
     SearchInput,
     BackButton, ForwardButton, NavigationContainer,

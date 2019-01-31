@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import Tooltip from 'rc-tooltip';
 
-//import 'rc-tooltip/assets/bootstrap.less';
+import 'rc-tooltip/assets/bootstrap.less';
 // import './Indicator.css';
 const styles = require('./Indicator.css');
 
