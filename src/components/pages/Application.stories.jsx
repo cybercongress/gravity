@@ -32,12 +32,14 @@ const Application = (props) => {
         NodeStatus,
         signerPopup,
         newApp,
+        textIpfs,
+        textEthNode,
     } = props;
 
     return (
         <App openMenu={ openMenu }>
             <SignerPopup isSignerPopup={signerPopup} toAddress='sfsdfsfsd' fromAddress='sdfjnsfdjndfsjk' defaultAccountBalance='10' />
-            <Status ipfsStatus={ ipfs } cyberNodeStatus={ NodeStatus } />
+            <Status IPFS_END_POINT={textIpfs} ethNetworkName='dsf' PARITTY_END_POINT={textEthNode} ipfsStatus={ ipfs } cyberNodeStatus={ NodeStatus } />
             <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
                 <AppMenu pendingAddToFavorites={newApp} menuItems={ menuItems } />
             </AppSideBar>
@@ -105,7 +107,7 @@ storiesOf('cyb/pages/Application', module)
     ))
 
     .add('StatusIndicator', () => (
-        <Application ipfs='local' NodeStatus='fail' />
+        <Application ipfs='local' textIpfs='textIpfs' textEthNode='textEthNode' NodeStatus='fail' />
     ))
     .add('SignerPopup', () => (
         <Application signerPopup />
