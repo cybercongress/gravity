@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 // // import { connect } from 'react-redux';
 // // import { navigate } from '../redux/browser';
-const styles = require('./CybLink.css');
+const styles = require('./CybLink.less');
 
 class CybLink extends Component {
     onLinkClick = (e) => {

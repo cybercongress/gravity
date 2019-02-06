@@ -2,7 +2,7 @@ import * as React from 'react';
 import cx from 'classnames';
 import ClickOutside from 'react-click-outside';
 
-const styles = require('./DbMenuPoints.css');
+const styles = require('./DbMenuPoints.less');
 
 export class DbMenuPoints extends React.Component {
     state = {
@@ -23,7 +23,7 @@ export class DbMenuPoints extends React.Component {
 
     render() {
         const { open } = this.state;
-        const css = cx(styles.dbMenuPoints, { [styles.dbMenuPointsOpen]: open });
+        const less = cx(styles.dbMenuPoints, { [styles.dbMenuPointsOpen]: open });
 
         return (
             <div className={ styles.dbMenuP }>
@@ -35,7 +35,7 @@ export class DbMenuPoints extends React.Component {
                       }) }
                     />
                 </ClickOutside>
-                <div className={ css }>
+                <div className={ less }>
                     {this.props.children}
                 </div>
             </div>

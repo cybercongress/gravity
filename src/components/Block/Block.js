@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-const styles = require('./settings.css');
+const styles = require('./settings.less');
 
 
 export const Block = ({ children, noMargin,  ...props }) => (

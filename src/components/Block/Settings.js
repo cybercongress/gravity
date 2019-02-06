@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import React from 'react';
 
-const styles = require('./settings.css');
+const styles = require('./settings.less');
 
 export const SettingsContainer = props => (
     <div { ...props } className={styles.SettingsContainer} />

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
 
-const styles = require('./Popup.css');
+const styles = require('./Popup.less');
 
 export const Popup = ({ children, open, onClose, ...props }) => (
     <div className={cx(styles.popup, { [styles.popupOpen]: open })}>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
 
-const styles = require('./Text.css');
+const styles = require('./Text.less');
 
 export const Text = ({ bold, uppercase, justify, lineheight, color, size, ...props }) => (
     <div

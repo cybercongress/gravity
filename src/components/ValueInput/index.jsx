@@ -9,7 +9,7 @@ import {Button} from '../..';
 //     Button,
 // } from '@cybercongress/ui';
 
-const styles = require('./valueInput.css');
+const styles = require('./valueInput.less');
 
 class ValueInput extends Component {
     state = {

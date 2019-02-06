@@ -2,7 +2,7 @@
 import * as React from "react";
 import { Link } from 'react-router';
 
-const styles = require("./LinkHash.css");
+const styles = require("./LinkHash.less");
 
 import cx from 'classnames';
 

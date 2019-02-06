@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cx from 'classnames';
-import styles from './status.css';
+import styles from './status.less';
 import { Text } from '../..';
 
 export const Status = ({ children, ...props }) => (

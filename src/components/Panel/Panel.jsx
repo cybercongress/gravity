@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./Panel.css');
+const styles = require('./Panel.less');
 
 export const Panel = ({ children, title, noPadding, ...props }) => (
     <div {...props} className={styles.panel}>

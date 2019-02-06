@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-const styles = require('./Navigation.css');
+const styles = require('./Navigation.less');
 
 
 const Navigation = ({ children, isHome }) => (

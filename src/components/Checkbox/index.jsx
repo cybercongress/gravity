@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./checkbox.css');
+const styles = require('./checkbox.less');
 
 export const Checkbox = ({ children, inputRef, ...props }) => (
   <span className={styles.CheckboxBtn}>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const styles = require('./AccountCard.css');
+const styles = require('./AccountCard.less');
 
 //import './AccountCard.css';
 

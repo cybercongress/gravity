@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './jsonView.less';
-// const styles = require('./jsonView.css');
+import './jsonView.css';
+// const styles = require('./jsonView.less');
 
 function syntaxHighlight(json) {
     if (typeof json != 'string') {

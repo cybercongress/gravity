@@ -1,4 +1,4 @@
-import './index.less';
+import './index.css';
 
 import Title from './components/Title/Title';
 

@@ -3,7 +3,7 @@ import {LinkHash} from "../../index";
 import {Doughnut} from "react-chartjs-2";
 const palette = require('google-palette');
 
-const styles = require('./Ben.css');
+const styles = require('./Ben.less');
 
 export const BenContainer = ({children, ...props}) => (
     <div {...props} className={styles.benContainer}>

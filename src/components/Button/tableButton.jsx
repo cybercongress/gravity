@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./tableButton.css');
+const styles = require('./tableButton.less');
 
 export const RemoveButton = props => <button {...props} className={styles.removeButton} />;
 

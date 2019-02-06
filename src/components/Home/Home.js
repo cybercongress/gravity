@@ -3,7 +3,7 @@ import { Link as LinkRouter } from 'react-router';
 import { CybLink } from '../..';
 import cx from 'classnames';
 
-const styles = require('./Home.css');
+const styles = require('./Home.less');
 
 export const Home = props => (
     <div { ...props } className={styles.home} />

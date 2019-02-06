@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './ProgressBar.css';
+import styles from './ProgressBar.less';
 
 // const NumberText = [
 //   {

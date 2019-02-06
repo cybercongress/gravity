@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require("./StatusBar.css");
+const styles = require("./StatusBar.less");
 
 // TODO: move in browser
 const StatusBar = ({ open, message, type = 'processing', onClose }) => (

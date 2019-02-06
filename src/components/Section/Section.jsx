@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
 
-const styles = require('./Section.css');
+const styles = require('./Section.less');
 
 export const Paper = ({ children, flex, direction }) =>(
     <div className={ cx(styles.paper, {

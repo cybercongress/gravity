@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./SideBar.css');
+const styles = require('./SideBar.less');
 
 export const SideBar = ({ children, title, ...props }) => (
   <div {...props} className={styles.sideBar}>

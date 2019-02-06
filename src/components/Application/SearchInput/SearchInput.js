@@ -1,8 +1,8 @@
 import React from 'react';
-import style from './FavoriteButton.css';
+import style from './FavoriteButton.less';
 import cx from 'classnames';
 
-const styles = require('./SearchInput.css');
+const styles = require('./SearchInput.less');
 
 const SearchInput = ({ inputRef, ...props }) => (
     <input { ...props } ref={ inputRef } className={styles.SearchInput} />

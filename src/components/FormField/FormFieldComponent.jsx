@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./FormField.css');
+const styles = require('./FormField.less');
 
 
 export const FormFieldContainer = ({ children }) => (

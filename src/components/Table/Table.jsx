@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require("./Table.css");
+const styles = require("./Table.less");
 
 export const HomeTable = ({ children }) => (
     <table className={styles.table}>

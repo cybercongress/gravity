@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './vitalick.css';
+import styles from './vitalick.less';
 // import cx from 'classnames';
 
 export const Vitalick = () => (
