@@ -29,18 +29,31 @@ module.exports = {
     },
     module: {
         rules: [
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,
+            //         {
+            //             loader: 'css-loader', options:
+            //                 {
+            //                     modules: true,
+            //                     localIdentName: '[name]_[local]',
+            //                 }
+            //         },
+            //     ]
+            // },
             {
                 test: /\.css$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    { loader: 'style-loader' },
                     {
-                        loader: 'css-loader', options:
-                            {
-                                modules: true,
-                                localIdentName: '[name]_[local]',
-                            }
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[hash]_[local]',
+                        },
                     },
-                ]
+                ],
             },
             {
                 test: /\.less$/,
@@ -48,6 +61,9 @@ module.exports = {
                     { loader: 'style-loader' },
                     {
                         loader: 'css-loader',
+                        options: {
+                            modules: true,
+                        },
                     },
                 ],
             },

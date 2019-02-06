@@ -1,25 +1,20 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js deploy-storybook
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add less-loader --dev
 
 PATH: 
-  C:\Users\dima\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\dima\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Python27;C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Users\dima\AppData\Roaming\npm\node_modules\windows-build-tools\node_modules\.bin;C:\Users\dima\AppData\Roaming\npm\node_modules\.bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Users\dima\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dima\AppData\Roaming\npm;C:\Users\dima\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 Yarn version: 
-  1.12.3
+  1.13.0
 
 Node version: 
-  10.13.0
+  8.10.0
 
 Platform: 
-  win32 x64
+  linux x64
 
 Trace: 
-  SyntaxError: D:\USR\git\cybercongress\cyb.ui\package.json: Unexpected token } in JSON at position 622
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1631:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+  Error: EACCES: permission denied, unlink '/home/dima/git/ui.cyb/node_modules/.bin/autoprefixer'
 
 npm manifest: 
   {
@@ -31,8 +26,8 @@ npm manifest:
       "email": "cybercongress42@gmail.com"
     },
     "storybook-deployer": {
-      "gitUsername": "dimakorzhovnik",
-      "gitEmail": "korzhovnik.dima@gmail.com",
+      "gitUsername": "cybercongress",
+      "gitEmail": "cybercongress42@gmail.com",
       "commitMessage": "Deploy Storybook to gh-pages"
     },
     "main": "lib/index.js",
@@ -41,7 +36,7 @@ npm manifest:
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "start-storybook -p 6006",
       "build": "webpack --mode development",
-      "deploy-storybook": "storybook-to-ghpages",
+      "deploy-storybook": "storybook-to-ghpages"
     },
     "license": "WTFPL",
     "dependencies": {
