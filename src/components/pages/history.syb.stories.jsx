@@ -5,7 +5,7 @@ import moment from 'moment';
 
 // import * as actions from '../../redux/settings';
 import {
-    MainContainer, PageTitle, CybLink, TableCybLink, ScrollContainer,
+    MainContainer, PageTitle, CybLink, Table, ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -37,7 +37,7 @@ class History extends Component {
             <ScrollContainer>
             <MainContainer>
                 <PageTitle>History</PageTitle>
-                    <TableCybLink>
+                    <Table>
                         <thead>
                             <tr>
                                 <th>Address</th>
@@ -45,7 +45,7 @@ class History extends Component {
                             </tr>
                         </thead>
                         <tbody>{historyWithoutLast.map(this.renderItem)}</tbody>
-                    </TableCybLink>
+                    </Table>
             </MainContainer>
             </ScrollContainer>
         );

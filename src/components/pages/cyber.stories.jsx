@@ -24,7 +24,7 @@ import {
     ScrollContainer,
     WalletTabs,
     WalletTab,
-    TableCybLink,
+    Table,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -78,7 +78,7 @@ class Validators extends React.Component {
                         Jailed
                     </WalletTab>
                 </WalletTabs>
-                <TableCybLink style={{ borderRadius: 0 }}>
+                <Table style={{ borderRadius: 0 }}>
                     <thead>
                         <tr>
                             <th>#</th>
@@ -91,7 +91,7 @@ class Validators extends React.Component {
                     <tbody>
                         {validatorRows}
                     </tbody>
-                </TableCybLink>
+                </Table>
             </div>
         );
     }

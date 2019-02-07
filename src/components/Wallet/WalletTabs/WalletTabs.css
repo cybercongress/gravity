@@ -25,6 +25,10 @@
 	background-color: #dedede;
 }
 
+.wallet_tabs__tab:hover{
+	opacity: 0.8;
+}
+
 .wallet_tabs__vertical .wallet_tabs__tab {
 	border-right: none;
 	border-bottom: 1px solid #aa8080;

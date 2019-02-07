@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 // import * as actions from '../../redux/settings';
 import {
-    MainContainer, PageTitle, TableCybLink, Button, Input, FlexContainer, Text, ScrollContainer,
+    MainContainer, PageTitle, Table, Button, Input, FlexContainer, Text, ScrollContainer,
 } from '../..';
 
 import { RadioButton } from '../RadioButton/RadioButton';
@@ -55,7 +55,7 @@ class RootRegistryPage extends Component {
                     </Button>
                 </div>
                 <div>
-                    <TableCybLink>
+                    <Table>
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -119,7 +119,7 @@ class RootRegistryPage extends Component {
                                 </td>
                             </tr>
                         </tbody>
-                    </TableCybLink>
+                    </Table>
                 </div>
             </MainContainer>
             </ScrollContainer>
