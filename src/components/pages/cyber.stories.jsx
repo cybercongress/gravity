@@ -78,7 +78,7 @@ class Validators extends React.Component {
                         Jailed
                     </WalletTab>
                 </WalletTabs>
-                <TableCybLink>
+                <TableCybLink style={{ borderRadius: 0 }}>
                     <thead>
                         <tr>
                             <th>#</th>

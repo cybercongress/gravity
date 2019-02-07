@@ -1,9 +1,9 @@
 
 .wallet_tabs {
 	font-size: 18px;
-	border: 1px solid #979797;
+	/* border: 1px solid #979797; */
 	display: inline-flex;
-	margin-bottom: 40px;
+	/* margin-bottom: 40px; */
 	border-radius: 2px;
 }
 
@@ -15,18 +15,19 @@
 .wallet_tabs__tab {
 	/*border: 1px solid #979797;*/
 	border: none;
-	border-right: 1px solid #979797;
+	/* border-right: 1px solid #979797; */
 	background: none;
 	color: #7c7c7c;
 	cursor: pointer;
 	padding: 10px 20px;
 	text-transform: uppercase;
 	outline:0;
+	background-color: #dedede;
 }
 
 .wallet_tabs__vertical .wallet_tabs__tab {
 	border-right: none;
-	border-bottom: 1px solid #979797;
+	border-bottom: 1px solid #aa8080;
 }
 
 .wallet-tabs__tab:last-child {
@@ -39,10 +40,10 @@
 
 .wallet_tabs__tab:focus {
 	outline:0;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.5)
+	/* box-shadow: 0 2px 4px rgba(0,0,0,0.5) */
 }
 
 .wallet_tabs__active {
-	background: #9b9b9b;
-	color: #fff;
+	background: #fff;
+	color: #9b9b9b;
 }
