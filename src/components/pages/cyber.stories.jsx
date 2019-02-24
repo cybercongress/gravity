@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import { Pane, Heading, TextInput, Button, Text } from 'evergreen-ui';
 import {
-    Button,
+    //Button,
     Title,
     PageTitle,
     MainContainer,
@@ -20,7 +21,7 @@ import {
     IconAccounts,
     IconBlockHeight,
     IconBlockDelay,
-    Text,
+    //Text,
     ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
@@ -70,7 +71,12 @@ class App extends Component {
 
         const searchResults = links.slice(0, seeAll ? links.length : 10).map(
             link => (
-                <SearchItem onClick={ e => this.openLink(e, link) } hash={ link.hash } rank={ link.rank }>
+                <SearchItem
+                  onClick={ e => this.openLink(e, link) }
+                  hash={ link.hash }
+                  rank={ link.rank }
+                  status={ link.status }
+                >
                     {link.content}
                 </SearchItem>
             ),
@@ -82,10 +88,10 @@ class App extends Component {
         console.log(' defaultAddress ', this.state.defaultAddress);
 
         return (
-            <ScrollContainer>
-            <MainContainer>
-                <FlexContainer>
-                    <PageTitle>Cyberd search</PageTitle>
+            <div>
+                <ScrollContainer style={ { paddingBottom: 70 } }>
+                    <MainContainer>
+                        {/* <FlexContainer>
                     <div style={ { width: '30%' } }>
                         <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text>
                         <SkillBar value={ 10 }>
@@ -96,110 +102,99 @@ class App extends Component {
                             )}
                         </SkillBar>
                     </div>
-                </FlexContainer>
-                <FlexContainer>
-                    <Input
-                      defaultValue={ searchQuery }
-                      ref='searchInput'
-                      onKeyPress={ this._handleKeyPress }
-                    />
-                    <Button
-                      type='button'
-                      color='blue'
-                      transformtext
-                      style={ { height: '30px', marginLeft: '10px' } }
-                    >
-                        search
-                    </Button>
-                </FlexContainer>
-                {links.length > 0 && (
-                    <div>
-                        <Title style={ { marginLeft: '0px', marginBottom: '0px' } }>
-                            Search results:
-                        </Title>
-                        <LinkContainer column>{searchResults}</LinkContainer>
-                        {links.length > 10 && (
-                            <Button
-                              color='blue'
-                              style={ { marginLeft: '0px' } }
-                              transformtext
-                              type='button'
-                              onClick={ () => this.seeAll() }
-                            >
-                                {!seeAll ? 'see all' : 'top 10'}
-                            </Button>
+                </FlexContainer> */}
+
+                        {links.length > 0 && (
+                            <div>
+                                <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
+                                    The answer for 42 is
+                                </Heading>
+                                <Pane>{searchResults}</Pane>
+                                {links.length > 10 && (
+                                    <Button
+                                    //   appearance="primary"
+                                      fontSize='1em'
+                                      marginY={15}
+                                      onClick={ () => this.seeAll() }
+                                    >
+                                        {!seeAll ? 'see all' : 'top 10'}
+                                    </Button>
+                                )}
+                            </div>
                         )}
-                    </div>
-                )}
 
-                {index && (
-                    <div>
-                        <Title
-                          style={ { marginLeft: '0px', marginBottom: '30px', textAlign: 'center' } }
-                        >
-                            Search statistics
-                        </Title>
-                        <Section>
-                            <SectionContent>
-                                <CentredPanel>
-                                    <IconLinks />
-                                    <Text uppercase color='blue'>
-                                        links
-                                    </Text>
-                                    <Text color='blue' size='xlg'>
-                                        1000
-                                    </Text>
-                                </CentredPanel>
-                            </SectionContent>
-                            <SectionContent>
-                                <CentredPanel>
-                                    <IconCIDs />
-                                    <Text uppercase color='blue'>
-                                        CIDs
-                                    </Text>
-                                    <Text color='blue' size='xlg'>
-                                        1000
-                                    </Text>
-                                </CentredPanel>
-                            </SectionContent>
-                            <SectionContent>
-                                <CentredPanel>
-                                    <IconAccounts />
-                                    <Text uppercase color='blue'>
-                                        accounts
-                                    </Text>
-                                    <Text color='blue' size='xlg'>
-                                        1000
-                                    </Text>
-                                </CentredPanel>
-                            </SectionContent>
-                            <SectionContent>
-                                <CentredPanel>
-                                    <IconBlockHeight />
-                                    <Text uppercase color='blue'>
-                                        last block height
-                                    </Text>
-                                    <Text color='blue' size='xlg'>
-                                        1000
-                                    </Text>
-                                </CentredPanel>
-                            </SectionContent>
-                            <SectionContent>
-                                <CentredPanel>
-                                    <IconBlockDelay />
-                                    <Text uppercase color='blue'>
-                                        last block delay
-                                    </Text>
-                                    <Text color='blue' size='xlg'>
-                                        100 sec
-                                    </Text>
-                                </CentredPanel>
-                            </SectionContent>
-                        </Section>
-                    </div>
-                )}
+                        {index && (
+                            <div>
+                                <Title
+                                  style={ {
+                                        marginLeft: '0px',
+                                        marginBottom: '30px',
+                                        textAlign: 'center',
+                                    } }
+                                >
+                                    Search statistics
+                                </Title>
+                                <Section>
+                                    <SectionContent>
+                                        <CentredPanel>
+                                            <IconLinks />
+                                            <Text uppercase color='blue'>
+                                                links
+                                            </Text>
+                                            <Text color='blue' size='xlg'>
+                                                1000
+                                            </Text>
+                                        </CentredPanel>
+                                    </SectionContent>
+                                    <SectionContent>
+                                        <CentredPanel>
+                                            <IconCIDs />
+                                            <Text uppercase color='blue'>
+                                                CIDs
+                                            </Text>
+                                            <Text color='blue' size='xlg'>
+                                                1000
+                                            </Text>
+                                        </CentredPanel>
+                                    </SectionContent>
+                                    <SectionContent>
+                                        <CentredPanel>
+                                            <IconAccounts />
+                                            <Text uppercase color='blue'>
+                                                accounts
+                                            </Text>
+                                            <Text color='blue' size='xlg'>
+                                                1000
+                                            </Text>
+                                        </CentredPanel>
+                                    </SectionContent>
+                                    <SectionContent>
+                                        <CentredPanel>
+                                            <IconBlockHeight />
+                                            <Text uppercase color='blue'>
+                                                last block height
+                                            </Text>
+                                            <Text color='blue' size='xlg'>
+                                                1000
+                                            </Text>
+                                        </CentredPanel>
+                                    </SectionContent>
+                                    <SectionContent>
+                                        <CentredPanel>
+                                            <IconBlockDelay />
+                                            <Text uppercase color='blue'>
+                                                last block delay
+                                            </Text>
+                                            <Text color='blue' size='xlg'>
+                                                100 sec
+                                            </Text>
+                                        </CentredPanel>
+                                    </SectionContent>
+                                </Section>
+                            </div>
+                        )}
 
-                {defaultAddress && balance > 0 && searchQuery && links.length > 0 && (
+                        {/* {defaultAddress && balance > 0 && searchQuery && links.length > 0 && (
                     <LinkContainer column>
                         <Text size='lg' style={ { marginBottom: '20px' } }>
                             Have your own option for
@@ -223,106 +218,151 @@ class App extends Component {
                             </Button>
                         </FlexContainer>
                     </LinkContainer>
-                )}
+                )} */}
 
-                {defaultAddress && balance > 0 && searchQuery && links.length === 0 && (
-                    <LinkContainer style={ { paddingTop: '100px' } } center>
-                        <div style={ { width: '60%' } }>
-                            <Text size='lg' style={ { marginBottom: '10px' } }>
-                                Seems that you are first one who are searching for
-                                <b>
+                        {defaultAddress && balance > 0 && searchQuery && links.length === 0 && (
+                            <LinkContainer style={ { paddingTop: '100px' } } center>
+                                <div style={ { width: '60%' } }>
+                                    <Text size='lg' style={ { marginBottom: '10px' } }>
+                                        Seems that you are first one who are searching for
+                                        <b>
 "
-                                    {searchQuery}
+                                            {searchQuery}
 "
-                                </b>
-                            </Text>
+                                        </b>
+                                    </Text>
 
-                            <Text size='lg' style={ { marginBottom: '20px' } }>
-                                <b>Link your query</b>
-                                and Cyb will understand it!
-                            </Text>
+                                    <Text size='lg' style={ { marginBottom: '20px' } }>
+                                        <b>Link your query</b>
+                                        and Cyb will understand it!
+                                    </Text>
 
-                            <FlexContainer>
-                                <Input placeholder='type your link her...' ref='cidToInput' />
-                                <Button
-                                  color='greenyellow'
-                                  transformtext
-                                  type='button'
-                                  style={ { height: '30px', marginLeft: '10px' } }
-                                  onClick={ () => this.link() }
-                                >
-                                    Link it!
-                                </Button>
-                            </FlexContainer>
-                        </div>
+                                    <FlexContainer>
+                                        <Input
+                                          placeholder='type your link her...'
+                                          ref='cidToInput'
+                                        />
+                                        <Button
+                                          color='greenyellow'
+                                          transformtext
+                                          type='button'
+                                          style={ { height: '30px', marginLeft: '10px' } }
+                                          onClick={ () => this.link() }
+                                        >
+                                            Link it!
+                                        </Button>
+                                    </FlexContainer>
+                                </div>
 
-                        <div style={ { width: '30%' } }>
-                            <Vitalick />
-                        </div>
-                    </LinkContainer>
-                )}
-            </MainContainer>
-            </ScrollContainer>
-            
+                                <div style={ { width: '30%' } }>
+                                    <Vitalick />
+                                </div>
+                            </LinkContainer>
+                        )}
+                    </MainContainer>
+                </ScrollContainer>
+                <Pane
+                  display='flex'
+                  alignItems='center'
+                  justifyContent='center'
+                  position='absolute'
+                  bottom={ 0 }
+                  height={ 65 }
+                  width='100%'
+                  backgroundColor='#438cef'
+                  paddingY={12}
+                  zIndex={2}
+                >
+                <Pane alignItems='center' justifyContent='space-between' display='flex' width={1000}>
+                    <Pane width='35%' display='flex' alignItems='center'>
+                        {/* <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text> */}
+                        <SkillBar value={ 25 } />
+                        <Text paddingLeft={17} color='#fff' size={500}>Upgrade</Text>
+                    </Pane>
+                    {defaultAddress && balance > 0 && searchQuery && links.length > 0 && (
+                    <Pane display='flex' flexDirection='row' marginLeft={80} width='65%'>
+                            <TextInput height={42} width='100%' ref='cidToInput' marginRight={15} placeholder='Have your own answer?' />
+                            <Button
+                                whiteSpace='nowrap'
+                                paddingX={50}
+                                height={42}
+                                onClick={ () => this.link()}
+                            >
+                                Cyber it
+                            </Button>
+                    </Pane>
+                    )}
+                    </Pane>
+                </Pane>
+            </div>
         );
     }
 }
 
 const links = [
     {
-        content: '312',
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: 1,
+        status: 'remote',
     },
     {
         content: 'test',
         hash: 'test',
-        rank: 2,
+        rank: '',
+        status: 'local',
     },
 
     {
-        content: 'test',
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
-        rank: '1',
+        rank: '3',
+        status: 'local',
     },
     {
         content: 'test',
         hash: '45412',
-        rank: '1',
+        rank: '4',
+        status: 'fail',
     },
     {
-        content: 'test',
+        content: 'fotrty two',
+        hash: '45412',
+        rank: '5',
+    },
+    {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
+        hash: '45412',
+        rank: '6',
+        status: 'local',
+    },
+    {
+        content: 'fotrty two',
         hash: '45412',
         rank: '1',
+        status: 'remote',
+    },
+
+    {
+        content: 'fotrty two',
+        hash: '45412',
+        rank: '7',
+        status: 'remote',
+    },
+    {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
+        hash: '45412',
+        rank: '2',
+        status: 'local',
     },
     {
         content: '312',
         hash: '45412',
-        rank: '1',
+        rank: '4',
+        status: 'fail',
     },
     {
-        content: 'test',
-        hash: '45412',
-        rank: '1',
-    },
-
-    {
-        content: 'test',
-        hash: '45412',
-        rank: '12',
-    },
-    {
-        content: 'test',
-        hash: '45412',
-        rank: '12',
-    },
-    {
-        content: '312',
-        hash: '45412',
-        rank: '14',
-    },
-    {
-        content: 'test',
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: '1',
     },
@@ -333,7 +373,89 @@ const links = [
         rank: '16',
     },
     {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
+        hash: '45412',
+        rank: '1',
+    },
+    {
+        content: 'fotrty two',
+        hash: '45412',
+        rank: '1',
+        status: 'remote',
+    },
+
+    {
+        content: 'fotrty two',
+        hash: '45412',
+        rank: '7',
+        status: 'remote',
+    },
+    {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
+        hash: '45412',
+        rank: '2',
+        status: 'local',
+    },
+    {
+        content: '312',
+        hash: '45412',
+        rank: '4',
+        status: 'fail',
+    },
+    {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
+        hash: '45412',
+        rank: '1',
+    },
+
+    {
         content: 'test',
+        hash: '45412',
+        rank: '16',
+    },
+    {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
+        hash: '45412',
+        rank: '1',
+    },
+    {
+        content: 'fotrty two',
+        hash: '45412',
+        rank: '1',
+        status: 'remote',
+    },
+
+    {
+        content: 'fotrty two',
+        hash: '45412',
+        rank: '7',
+        status: 'remote',
+    },
+    {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
+        hash: '45412',
+        rank: '2',
+        status: 'local',
+    },
+    {
+        content: '312',
+        hash: '45412',
+        rank: '4',
+        status: 'fail',
+    },
+    {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
+        hash: '45412',
+        rank: '1',
+    },
+
+    {
+        content: 'test',
+        hash: '45412',
+        rank: '16',
+    },
+    {
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: '1',
     },
@@ -342,7 +464,7 @@ const links = [
 const links2 = [];
 const links3 = [
     {
-        content: 'dds',
+        content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: 'sds12',
         rank: '2',
     },

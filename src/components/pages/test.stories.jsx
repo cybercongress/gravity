@@ -4,189 +4,144 @@ import { storiesOf } from '@storybook/react';
 
 // import * as actions from '../../redux/settings';
 import {
-    Button, Pane, Text, Icon, Heading, IconButton,
+    Button, Pane, Text, Icon, Heading, IconButton, Strong,
 } from 'evergreen-ui';
+import { Row, Col } from 'react-flexbox-grid';
 import {
     MainContainer,
     ScrollContainer,
+    Avatar,
     // Text,
 } from '../..';
 import Application from '../Application/Application';
 
-class Settings extends Component {
-    render() {
-        return (
-            <ScrollContainer>
-                <MainContainer>
-                    <Heading marginBottom={ 70 } size={ 900 }>
-                        / CYB settings
-                    </Heading>
-                    <Pane marginBottom={ 55 }>
-                        <Heading marginBottom={ 32 } size={ 800 }>
-                            Cryptoidentities
-                        </Heading>
+const Settings = () => (
+    <Pane height='100%'>
+        <Row style={ { height: '100%' } }>
+            <Col xs={ 8 } style={ { height: '100%' } }>
+                <Pane display='flex' alignItems='center' justifyContent='center' height='100%'>
+                    <Pane
+                      width={ 513 }
+                      height={ 628 }
+                      borderRadius={ 4 }
+                      position='relative'
+                      style={ {
+                            backgroundImage: 'linear-gradient(to right, #667eea, #764ba2)',
+                        } }
+                    >
                         <Pane
-                          display='flex'
-                          alignItems='center'
-                          justifyContent='center'
-                          padding={ 15 }
-                          backgroundColor='white'
-                          elevation={ 0 }
-                          height={ 70 }
+                          width={ 513 }
+                          height={ 628 }
+                          borderRadius={ 4 }
+                          left={ -18 }
+                          top={ -18 }
+                          position='relative'
+                          style={ {
+                                backgroundImage: 'linear-gradient(213deg, #b721ff, #77dff7)',
+                            } }
                         >
-                            <Pane flex={ 1 } display='flex' alignItems='center'>
-                                <Icon
-                                  icon='user'
-                                  size={ 20 }
-                                  style={ { color: '#3d70b2' } }
-                                  marginRight={ 10 }
-                                  title=''
-                                />
-                                <Text size={ 500 }>Account</Text>
-                            </Pane>
-                            <Pane>
-                                <Button appearance='primary' height={ 40 } onClick={ this.updateIPFS }>
-                                    Login
-                                </Button>
+                            <Pane
+                              width={ 513 }
+                              height={ 628 }
+                              borderRadius={ 4 }
+                              left={ -18 }
+                              top={ -18 }
+                              position='relative'
+                              style={ {
+                                    backgroundImage: 'linear-gradient(321deg, #9599e2, #8bc6ec)',
+                                } }
+                            >
+                                <Pane
+                                  display='flex'
+                                  justifyContent='center'
+                                  alignItems='center'
+                                  flexDirection='column'
+                                >
+                                    <Heading
+                                      size={ 600 }
+                                      fontWeight={ 600 }
+                                      color='white'
+                                      marginTop={ 45 }
+                                      marginBottom={ 45 }
+                                    >
+                                        Check your imported account
+                                    </Heading>
+                                    <Pane border borderRadius='50%' marginBottom={ 45 }>
+                                        <Pane margin={ 20 }>
+                                            <Avatar />
+                                        </Pane>
+                                    </Pane>
+                                    <Pane>
+                                        <Pane
+                                          marginBottom={ 45 }
+                                          display='flex'
+                                          flexDirection='column'
+                                          alignItems='flex-start'
+                                        >
+                                            <Heading color='white' size={ 800 } marginBottom={ 10 }>
+                                                1.44 ETH
+                                            </Heading>
+                                            <Text
+                                              color='white'
+                                              size={ 300 }
+                                              textTransform='uppercase'
+                                            >
+                                                0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5
+                                            </Text>
+                                        </Pane>
+                                        <Pane
+                                          display='flex'
+                                          flexDirection='column'
+                                          alignItems='flex-start'
+                                        >
+                                            <Heading color='white' size={ 800 } marginBottom={ 10 }>
+                                                146 GCYB
+                                            </Heading>
+                                            <Text
+                                              color='white'
+                                              size={ 300 }
+                                              textTransform='uppercase'
+                                            >
+                                                cyber1f9yjqmxh6prsmgpcaqj8lmjnxg644n5074zznm
+                                            </Text>
+                                        </Pane>
+                                    </Pane>
+                                </Pane>
                             </Pane>
                         </Pane>
                     </Pane>
-                    <Pane marginBottom={ 55 }>
-                        <Heading marginBottom={ 32 } size={ 800 }>
-                            Providers
-                        </Heading>
-                        <Pane
-                          display='flex'
-                          alignItems='center'
-                          justifyContent='center'
-                          padding={ 15 }
-                          backgroundColor='white'
-                          elevation={ 0 }
-                          height={ 70 }
-                        >
-                            <Pane flex={ 1 } display='flex' alignItems='center'>
-                                <Icon
-                                  icon='flash'
-                                  size={ 20 }
-                                  style={ { color: '#3d70b2' } }
-                                  marginRight={ 10 }
-                                  title=''
-                                />
-                                <Text size={ 500 }>IPFS</Text>
-                            </Pane>
-                            <Pane>
-                                <IconButton
-                                  icon='chevron-right'
-                                  iconSize={ 20 }
-                                  intent='#3d70b2'
-                                  title=''
-                                  appearance='minimal'
-                                />
-                            </Pane>
-                        </Pane>
-                        <Pane
-                          display='flex'
-                          alignItems='center'
-                          justifyContent='center'
-                          padding={ 15 }
-                          backgroundColor='white'
-                          elevation={ 0 }
-                          height={ 70 }
-                        >
-                            <Pane flex={ 1 } display='flex' alignItems='center'>
-                                <Icon
-                                  icon='th-derived'
-                                  size={ 20 }
-                                  style={ { color: '#3d70b2' } }
-                                  marginRight={ 10 }
-                                  title=''
-                                />
-                                <Text size={ 500 }>CYBERD</Text>
-                            </Pane>
-                            <Pane>
-                                <IconButton
-                                  icon='chevron-right'
-                                  iconSize={ 20 }
-                                  intent='#3d70b2'
-                                  title=''
-                                  appearance='minimal'
-                                />
-                            </Pane>
+                </Pane>
+            </Col>
+
+            <Col xs={ 4 }>
+                <Pane
+                  display='flex'
+                  flexDirection='column'
+                  alignItems='center'
+                  justifyContent='center'
+                  backgroundColor='#2b3239'
+                  height='100%'
+                  paddingLeft='26%'
+                  paddingRight='21%'
+                >
+                    <Pane marginBottom={ 80 }>
+                        <Strong color='white' size={ 500 }>
+                            If it’s not your account you can go back and import another
+                        </Strong>
+                    </Pane>
+                    <Pane width='100%'>
+                        <Pane display='flex' justifyContent='space-between'>
+                            <Button iconBefore='arrow-left'>Back</Button>
+                            <Button appearance='primary' marginRight='4%' iconAfter='arrow-right'>
+                                Next Step
+                            </Button>
                         </Pane>
                     </Pane>
-                    <Pane marginBottom={ 55 }>
-                        <Heading marginBottom={ 32 } size={ 800 }>
-                            Root Registry
-                        </Heading>
-                        <Pane
-                          display='flex'
-                          alignItems='center'
-                          justifyContent='center'
-                          padding={ 15 }
-                          backgroundColor='white'
-                          elevation={ 0 }
-                          height={ 70 }
-                        >
-                            <Pane flex={ 1 } display='flex' alignItems='center'>
-                                <Icon
-                                  icon='properties'
-                                  size={ 20 }
-                                  style={ { color: '#3d70b2' } }
-                                  marginRight={ 10 }
-                                  title=''
-                                />
-                                <Text size={ 500 }>Cyb Root Registry</Text>
-                            </Pane>
-                            <Pane>
-                                <IconButton
-                                  icon='chevron-right'
-                                  iconSize={ 20 }
-                                  intent='#3d70b2'
-                                  title=''
-                                  appearance='minimal'
-                                />
-                            </Pane>
-                        </Pane>
-                    </Pane>
-                    <Pane marginBottom={ 55 }>
-                        <Heading marginBottom={ 32 } size={ 800 }>
-                            Help
-                        </Heading>
-                        <Pane
-                          display='flex'
-                          alignItems='center'
-                          justifyContent='center'
-                          padding={ 15 }
-                          backgroundColor='white'
-                          elevation={ 0 }
-                          height={ 70 }
-                        >
-                            <Pane flex={ 1 } display='flex' alignItems='center'>
-                                <Icon
-                                  icon='help'
-                                  size={ 20 }
-                                  style={ { color: '#3d70b2' } }
-                                  marginRight={ 10 }
-                                  title=''
-                                />
-                                <Text size={ 500 }>Help articles</Text>
-                            </Pane>
-                            <Pane>
-                                <IconButton
-                                  icon='chevron-right'
-                                  iconSize={ 20 }
-                                  intent='#3d70b2'
-                                  title=''
-                                  appearance='minimal'
-                                />
-                            </Pane>
-                        </Pane>
-                    </Pane>
-                </MainContainer>
-            </ScrollContainer>
-        );
-    }
-}
+                </Pane>
+            </Col>
+        </Row>
+    </Pane>
+);
 
 storiesOf('test', module).add('Settings', () => (
     <Application>
