@@ -63,7 +63,9 @@ class Validators extends React.Component {
             .filter(x => x.jailed === jailedFilter)
             .map((validator, index) => (
                 <Table.Row isSelectable key={ validator.description.moniker }>
-                    <Table.TextCell flexBasis={80} flexShrink={0} flexGrow={0} isNumber>{index}</Table.TextCell>
+                    <Table.TextCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 } isNumber>
+                        {index}
+                    </Table.TextCell>
                     <Table.TextCell>{validator.description.moniker}</Table.TextCell>
                     <Table.TextCell isNumber>{validator.tokens}</Table.TextCell>
                     <Table.TextCell>{validator.operator_address}</Table.TextCell>
@@ -72,9 +74,10 @@ class Validators extends React.Component {
             ));
 
         return (
-            <ScrollContainer>
+            <Pane>
+                <ScrollContainer style={{paddingBottom: 80}}>
                     <MainContainer>
-                {/* <WalletTabs>
+                        {/* <WalletTabs>
                     <WalletTab
                       onClick={ this.showActive }
                       isActive={ !jailedFilter }
@@ -89,56 +92,91 @@ class Validators extends React.Component {
                     </WalletTab>
                 </WalletTabs> */}
 
+                        <Pane
+                          display='flex'
+                          flexDirection='column'
+                          alignItems='center'
+                          justifyContent='center'
+                        >
+                            <Tablist marginBottom={ 24 }>
+                                {/* {this.state.tabs.map((tab, index) => ( */}
+                                <Tab
+                                  key='Active'
+                                  id='Active'
+                                  isSelected={ !jailedFilter }
+                                  onClick={ this.showActive }
+                                  paddingX={ 50 }
+                                  paddingY={ 20 }
+                                  style={ { boxShadow: 'inset 0px 0px 0.1px 0.3px' } }
+                                >
+                                    Active
+                                </Tab>
+                                <Tab
+                                  key='Jailed'
+                                  id='Jailed'
+                                  isSelected={ jailedFilter }
+                                  onClick={ this.showJailed }
+                                  paddingX={ 50 }
+                                  paddingY={ 20 }
+                                  style={ { boxShadow: 'inset 0px 0px 0.1px 0.3px' } }
+                                >
+                                    Jailed
+                                </Tab>
+                                {/* ))} */}
+                            </Tablist>
+                        </Pane>
+
+                        <Table>
+                            <Table.Head>
+                                {/* <tr> */}
+                                <Table.TextHeaderCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 }>
+                                    #
+                                </Table.TextHeaderCell>
+                                <Table.TextHeaderCell>Name</Table.TextHeaderCell>
+                                <Table.TextHeaderCell>Power</Table.TextHeaderCell>
+                                <Table.TextHeaderCell>Address</Table.TextHeaderCell>
+                                <Table.TextHeaderCell>Boun height</Table.TextHeaderCell>
+                                {/* </tr> */}
+                            </Table.Head>
+                            <Table.Body style={ { maxHeight: 600, backgroundColor: '#fff' } }>
+                                {validatorRows}
+                            </Table.Body>
+                        </Table>
+                    </MainContainer>
+                </ScrollContainer>
                 <Pane
                   display='flex'
-                  flexDirection='column'
                   alignItems='center'
                   justifyContent='center'
+                  position='absolute'
+                  bottom={ 0 }
+                  height={ 65 }
+                  width='100%'
+                  backgroundColor='#000000'
+                  paddingY={ 12 }
+                  zIndex={ 2 }
                 >
-                    <Tablist marginBottom={ 24 }>
-                        {/* {this.state.tabs.map((tab, index) => ( */}
-                        <Tab
-                          key='Active'
-                          id='Active'
-                          isSelected={ !jailedFilter }
-                          onClick={ this.showActive }
-                          paddingX={ 50 }
-                          paddingY={ 20 }
-                          style={ { boxShadow: 'inset 0px 0px 0.1px 0.3px' } }
-                        >
-                            Active
-                        </Tab>
-                        <Tab
-                          key='Jailed'
-                          id='Jailed'
-                          isSelected={ jailedFilter }
-                          onClick={ this.showJailed }
-                          paddingX={ 50 }
-                          paddingY={ 20 }
-                          style={ { boxShadow: 'inset 0px 0px 0.1px 0.3px' } }
-                        >
-                            Jailed
-                        </Tab>
-                        {/* ))} */}
-                    </Tablist>
-                </Pane>
+                    <Pane
+                      alignItems='center'
+                      justifyContent='space-between'
+                      display='flex'
+                      width={ 1000 }
+                    >
+                        <Pane display='flex' alignItems='center'>
+                            {/* <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text> */}
+                            <Text color='#fff' fontSize='18px'>
+                                Everybody can become validator staking 1872 GCYB right now
+                            </Text>
+                        </Pane>
 
-                <Table>
-                    <Table.Head>
-                        {/* <tr> */}
-                        <Table.TextHeaderCell flexBasis={80} flexShrink={0} flexGrow={0}>#</Table.TextHeaderCell>
-                        <Table.TextHeaderCell>Name</Table.TextHeaderCell>
-                        <Table.TextHeaderCell>Power</Table.TextHeaderCell>
-                        <Table.TextHeaderCell>Address</Table.TextHeaderCell>
-                        <Table.TextHeaderCell>Boun height</Table.TextHeaderCell>
-                        {/* </tr> */}
-                    </Table.Head>
-                    <Table.Body style={ { maxHeight: 600, backgroundColor: '#fff' } }>
-                        {validatorRows}
-                    </Table.Body>
-                </Table>
-           </MainContainer>
-           </ScrollContainer>
+                        <Pane display='flex' marginLeft={ 80 }>
+                            <Button whiteSpace='nowrap' paddingX={ 50 } height={ 42 }>
+                                Become validator
+                            </Button>
+                        </Pane>
+                    </Pane>
+                </Pane>
+            </Pane>
         );
     }
 }

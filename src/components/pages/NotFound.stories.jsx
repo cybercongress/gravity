@@ -63,7 +63,7 @@ const NotFound = () => (
     </div>
 );
 
-storiesOf('cyb/pages/NotFound', module).add('NotFound', () => (
+storiesOf('cyber/pages', module).add('NotFound', () => (
     <Application>
         <NotFound />
     </Application>
