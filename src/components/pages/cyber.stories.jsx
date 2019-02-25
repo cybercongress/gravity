@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-    Pane, Heading, TextInput, Button, Text, Card, Link, Icon,
+    Pane,
+    Heading,
+    TextInput,
+    Button,
+    Text,
+    Card,
+    Link,
+    Icon,
+    Table,
+    Tablist,
+    Tab,
 } from 'evergreen-ui';
 import {
     // Button,
@@ -28,7 +38,112 @@ import {
 } from '../..';
 import Application from '../Application/Application';
 
-class App extends Component {
+import validatorsData from './validatorsData';
+
+class Validators extends React.Component {
+    state = {
+        jailedFilter: false,
+    };
+
+    showActive = () => {
+        this.setState({ jailedFilter: false });
+    };
+
+    showJailed = () => {
+        this.setState({ jailedFilter: true });
+    };
+
+    render() {
+        const { validators } = this.props;
+        const { jailedFilter } = this.state;
+        const validatorsSorted = validators
+            .slice(0)
+            .sort((a, b) => (+a.tokens > +b.tokens ? 1 : -1));
+        const validatorRows = validatorsSorted
+            .filter(x => x.jailed === jailedFilter)
+            .map((validator, index) => (
+                <Table.Row isSelectable key={ validator.description.moniker }>
+                    <Table.TextCell isNumber>{index}</Table.TextCell>
+                    <Table.TextCell>{validator.description.moniker}</Table.TextCell>
+                    <Table.TextCell isNumber>{validator.tokens}</Table.TextCell>
+                    <Table.TextCell>{validator.operator_address}</Table.TextCell>
+                    <Table.TextCell isNumber>{validator.bond_height}</Table.TextCell>
+                </Table.Row>
+            ));
+
+        return (
+            <ScrollContainer>
+                    <MainContainer>
+                {/* <WalletTabs>
+                    <WalletTab
+                      onClick={ this.showActive }
+                      isActive={ !jailedFilter }
+                    >
+                        Active
+                    </WalletTab>
+                    <WalletTab
+                      onClick={ this.showJailed }
+                      isActive={ jailedFilter }
+                    >
+                        Jailed
+                    </WalletTab>
+                </WalletTabs> */}
+
+                <Pane
+                  display='flex'
+                  flexDirection='column'
+                  alignItems='center'
+                  justifyContent='center'
+                >
+                    <Tablist marginBottom={ 24 }>
+                        {/* {this.state.tabs.map((tab, index) => ( */}
+                        <Tab
+                          key='Active'
+                          id='Active'
+                          isSelected={ !jailedFilter }
+                          onClick={ this.showActive }
+                          paddingX={ 50 }
+                          paddingY={ 20 }
+                          style={ { boxShadow: 'inset 0px 0px 0.1px 0.3px' } }
+                        >
+                            Active
+                        </Tab>
+                        <Tab
+                          key='Jailed'
+                          id='Jailed'
+                          isSelected={ jailedFilter }
+                          onClick={ this.showJailed }
+                          paddingX={ 50 }
+                          paddingY={ 20 }
+                          style={ { boxShadow: 'inset 0px 0px 0.1px 0.3px' } }
+                        >
+                            Jailed
+                        </Tab>
+                        {/* ))} */}
+                    </Tablist>
+                </Pane>
+
+                <Table>
+                    <Table.Head>
+                        {/* <tr> */}
+                        <Table.TextHeaderCell>#</Table.TextHeaderCell>
+                        <Table.TextHeaderCell>Name</Table.TextHeaderCell>
+                        <Table.TextHeaderCell>Power</Table.TextHeaderCell>
+                        <Table.TextHeaderCell>Address</Table.TextHeaderCell>
+                        <Table.TextHeaderCell>Boun height</Table.TextHeaderCell>
+                        {/* </tr> */}
+                    </Table.Head>
+                    <Table.Body style={ { maxHeight: 600, backgroundColor: '#fff' } }>
+                        {validatorRows}
+                    </Table.Body>
+                </Table>
+           </MainContainer>
+           </ScrollContainer>
+        );
+    }
+}
+
+class App extends React.Component {
     state = {
         links: [],
         defaultAddress: null,
@@ -159,7 +274,9 @@ class App extends Component {
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>674 555</Text>
+                                                <Text color='#5f7385' fontSize='30px'>
+                                                    674 555
+                                                </Text>
                                             </Pane>
                                             <Pane>
                                                 <Text color='#5f7385'>cyberlinks</Text>
@@ -176,10 +293,12 @@ class App extends Component {
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>267 582</Text>
+                                                <Text color='#5f7385' fontSize='30px'>
+                                                    267 582
+                                                </Text>
                                             </Pane>
                                             <Pane>
-                                                <Text color='#5f7385' >content ids</Text>
+                                                <Text color='#5f7385'>content ids</Text>
                                             </Pane>
                                         </Card>
                                         <Card
@@ -193,7 +312,9 @@ class App extends Component {
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>132 331</Text>
+                                                <Text color='#5f7385' fontSize='30px'>
+                                                    132 331
+                                                </Text>
                                             </Pane>
                                             <Pane>
                                                 <Text color='#5f7385'>accounts</Text>
@@ -210,7 +331,9 @@ class App extends Component {
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>13 M</Text>
+                                                <Text color='#5f7385' fontSize='30px'>
+                                                    13 M
+                                                </Text>
                                             </Pane>
                                             <Pane>
                                                 <Text color='#5f7385'>transactions</Text>
@@ -234,7 +357,9 @@ class App extends Component {
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>155</Text>
+                                                <Text color='#5f7385' fontSize='30px'>
+                                                    155
+                                                </Text>
                                             </Pane>
                                             <Pane>
                                                 <Text color='#5f7385'>supply</Text>
@@ -284,7 +409,9 @@ class App extends Component {
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>15%</Text>
+                                                <Text color='#5f7385' fontSize='30px'>
+                                                    15%
+                                                </Text>
                                             </Pane>
                                             <Pane>
                                                 <Text color='#5f7385'>validating stake</Text>
@@ -301,7 +428,9 @@ class App extends Component {
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>789 900</Text>
+                                                <Text color='#5f7385' fontSize='30px'>
+                                                    789 900
+                                                </Text>
                                             </Pane>
                                             <Pane>
                                                 <Text color='#5f7385'>last block</Text>
@@ -414,30 +543,30 @@ class App extends Component {
                             </Pane>
                         )}
                         {index && (
-                             <Pane display='flex' flexDirection='row' marginLeft={ 80 } width='65%'>
-                             <TextInput
-                               height={ 42 }
-                               width='100%'
-                               ref='cidToInput'
-                               marginRight={ 15 }
-                               placeholder='Question'
-                             />
-                              <TextInput
-                               height={ 42 }
-                               width='100%'
-                               ref='cidToInput'
-                               marginRight={ 15 }
-                               placeholder='Answer'
-                             />
-                             <Button
-                               whiteSpace='nowrap'
-                               paddingX={ 50 }
-                               height={ 42 }
-                               onClick={ () => this.link() }
-                             >
-                                 Cyber it
-                             </Button>
-                         </Pane>
+                            <Pane display='flex' flexDirection='row' marginLeft={ 80 } width='65%'>
+                                <TextInput
+                                  height={ 42 }
+                                  width='100%'
+                                  ref='cidToInput'
+                                  marginRight={ 15 }
+                                  placeholder='Question'
+                                />
+                                <TextInput
+                                  height={ 42 }
+                                  width='100%'
+                                  ref='cidToInput'
+                                  marginRight={ 15 }
+                                  placeholder='Answer'
+                                />
+                                <Button
+                                  whiteSpace='nowrap'
+                                  paddingX={ 50 }
+                                  height={ 42 }
+                                  onClick={ () => this.link() }
+                                >
+                                    Cyber it
+                                </Button>
+                            </Pane>
                         )}
                     </Pane>
                 </Pane>
@@ -633,6 +762,11 @@ storiesOf('cyber/pages', module)
               balance='0'
               index='1'
             />
+        </Application>
+    ))
+    .add('validators', () => (
+        <Application>
+            <Validators validators={ validatorsData } />
         </Application>
     ))
     .add('few results', () => (
