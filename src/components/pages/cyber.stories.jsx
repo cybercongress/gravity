@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-    Pane, Heading, TextInput, Button, Text,
+    Pane, Heading, TextInput, Button, Text, Card, Link, Icon,
 } from 'evergreen-ui';
 import {
     // Button,
-    Title,
-    PageTitle,
+    // Title,
+    // PageTitle,
     MainContainer,
-    PopupSkillBar,
-    Input,
-    CentredPanel,
-    Section,
-    SectionContent,
-    FlexContainer,
+    // PopupSkillBar,
+    // Input,
+    // CentredPanel,
+    // Section,
+    // SectionContent,
+    // FlexContainer,
     SkillBar,
     SearchItem,
-    LinkContainer,
+    // LinkContainer,
     Vitalick,
-    IconLinks,
-    IconCIDs,
-    IconAccounts,
-    IconBlockHeight,
-    IconBlockDelay,
+    // IconLinks,
+    // IconCIDs,
+    // IconAccounts,
+    // IconBlockHeight,
+    // IconBlockDelay,
     // Text,
     ScrollContainer,
 } from '../..';
@@ -128,74 +128,188 @@ class App extends Component {
                         )}
 
                         {index && (
-                            <div>
-                                <Title
-                                  style={ {
-                                        marginLeft: '0px',
-                                        marginBottom: '30px',
-                                        textAlign: 'center',
-                                    } }
-                                >
-                                    Search statistics
-                                </Title>
-                                <Section>
-                                    <SectionContent>
-                                        <CentredPanel>
-                                            <IconLinks />
-                                            <Text uppercase color='blue'>
-                                                links
-                                            </Text>
-                                            <Text color='blue' size='xlg'>
-                                                1000
-                                            </Text>
-                                        </CentredPanel>
-                                    </SectionContent>
-                                    <SectionContent>
-                                        <CentredPanel>
-                                            <IconCIDs />
-                                            <Text uppercase color='blue'>
-                                                CIDs
-                                            </Text>
-                                            <Text color='blue' size='xlg'>
-                                                1000
-                                            </Text>
-                                        </CentredPanel>
-                                    </SectionContent>
-                                    <SectionContent>
-                                        <CentredPanel>
-                                            <IconAccounts />
-                                            <Text uppercase color='blue'>
-                                                accounts
-                                            </Text>
-                                            <Text color='blue' size='xlg'>
-                                                1000
-                                            </Text>
-                                        </CentredPanel>
-                                    </SectionContent>
-                                    <SectionContent>
-                                        <CentredPanel>
-                                            <IconBlockHeight />
-                                            <Text uppercase color='blue'>
-                                                last block height
-                                            </Text>
-                                            <Text color='blue' size='xlg'>
-                                                1000
-                                            </Text>
-                                        </CentredPanel>
-                                    </SectionContent>
-                                    <SectionContent>
-                                        <CentredPanel>
-                                            <IconBlockDelay />
-                                            <Text uppercase color='blue'>
-                                                last block delay
-                                            </Text>
-                                            <Text color='blue' size='xlg'>
-                                                100 sec
-                                            </Text>
-                                        </CentredPanel>
-                                    </SectionContent>
-                                </Section>
-                            </div>
+                            <Pane>
+                                <Pane marginBottom={ 50 }>
+                                    <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
+                                        Network load
+                                    </Heading>
+                                    <Card paddingY={ 20 } paddingX={ 24 } backgroundColor='white'>
+                                        <Text color='#234361' lineHeight={ 2 }>
+                                            Current network capacity is 4 877 888 399 888 347 BP per
+                                            24 hours. Last day load is 834 883 888 883 or 17%. Given
+                                            that link price is 400 BP fractional reserve coefficient
+                                            is around 5.8. So you can bring 5 time more cyberlinks!
+                                            Dont waste your time!
+                                        </Text>
+                                    </Card>
+                                </Pane>
+                                <Pane marginBottom={ 50 }>
+                                    <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
+                                        Search stats
+                                    </Heading>
+                                    <Pane display='flex' marginX={ -8 }>
+                                        <Card
+                                          elevation={ 2 }
+                                          flex={ 1 }
+                                          display='flex'
+                                          alignItems='center'
+                                          flexDirection='column'
+                                          backgroundColor='white'
+                                          paddingY={ 50 }
+                                          marginX={ 8 }
+                                        >
+                                            <Pane marginBottom={ 10 }>
+                                                <Text color='#5f7385' fontSize='30px'>674 555</Text>
+                                            </Pane>
+                                            <Pane>
+                                                <Text color='#5f7385'>cyberlinks</Text>
+                                            </Pane>
+                                        </Card>
+                                        <Card
+                                          elevation={ 2 }
+                                          flex={ 1 }
+                                          paddingY={ 50 }
+                                          display='flex'
+                                          alignItems='center'
+                                          flexDirection='column'
+                                          backgroundColor='white'
+                                          marginX={ 8 }
+                                        >
+                                            <Pane marginBottom={ 10 }>
+                                                <Text color='#5f7385' fontSize='30px'>267 582</Text>
+                                            </Pane>
+                                            <Pane>
+                                                <Text color='#5f7385' >content ids</Text>
+                                            </Pane>
+                                        </Card>
+                                        <Card
+                                          elevation={ 2 }
+                                          flex={ 1 }
+                                          paddingY={ 50 }
+                                          display='flex'
+                                          alignItems='center'
+                                          flexDirection='column'
+                                          backgroundColor='white'
+                                          marginX={ 8 }
+                                        >
+                                            <Pane marginBottom={ 10 }>
+                                                <Text color='#5f7385' fontSize='30px'>132 331</Text>
+                                            </Pane>
+                                            <Pane>
+                                                <Text color='#5f7385'>accounts</Text>
+                                            </Pane>
+                                        </Card>
+                                        <Card
+                                          elevation={ 2 }
+                                          flex={ 1 }
+                                          paddingY={ 50 }
+                                          display='flex'
+                                          alignItems='center'
+                                          flexDirection='column'
+                                          backgroundColor='white'
+                                          marginX={ 8 }
+                                        >
+                                            <Pane marginBottom={ 10 }>
+                                                <Text color='#5f7385' fontSize='30px'>13 M</Text>
+                                            </Pane>
+                                            <Pane>
+                                                <Text color='#5f7385'>transactions</Text>
+                                            </Pane>
+                                        </Card>
+                                    </Pane>
+                                </Pane>
+                                <Pane marginBottom={ 50 }>
+                                    <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
+                                        Consensus stats
+                                    </Heading>
+                                    <Pane display='flex' marginX={ -8 }>
+                                        <Card
+                                          elevation={ 2 }
+                                          flex={ 1 }
+                                          display='flex'
+                                          alignItems='center'
+                                          flexDirection='column'
+                                          backgroundColor='white'
+                                          paddingY={ 50 }
+                                          marginX={ 8 }
+                                        >
+                                            <Pane marginBottom={ 10 }>
+                                                <Text color='#5f7385' fontSize='30px'>155</Text>
+                                            </Pane>
+                                            <Pane>
+                                                <Text color='#5f7385'>supply</Text>
+                                            </Pane>
+                                        </Card>
+                                        <Card
+                                          elevation={ 2 }
+                                          flex={ 1 }
+                                          paddingY={ 50 }
+                                          display='flex'
+                                          alignItems='center'
+                                          flexDirection='column'
+                                          backgroundColor='white'
+                                          marginX={ 8 }
+                                        >
+                                            <Pane marginBottom={ 10 }>
+                                                <Text color='#4caf50' fontSize='30px'>
+                                                    12
+                                                </Text>
+                                            </Pane>
+                                            <Pane>
+                                                <Link cursor='pointer' textDecoration='none'>
+                                                    {' '}
+                                                    <Pane display='flex' alignItems='center'>
+                                                        {' '}
+                                                        <Text color='#4caf50'>
+                                                            active validators
+                                                        </Text>
+                                                        <Icon
+                                                          icon='arrow-right'
+                                                          color='#4caf50'
+                                                          marginLeft={ 5 }
+                                                        />
+                                                        {' '}
+                                                    </Pane>
+                                                </Link>
+                                            </Pane>
+                                        </Card>
+                                        <Card
+                                          elevation={ 2 }
+                                          flex={ 1 }
+                                          paddingY={ 50 }
+                                          display='flex'
+                                          alignItems='center'
+                                          flexDirection='column'
+                                          backgroundColor='white'
+                                          marginX={ 8 }
+                                        >
+                                            <Pane marginBottom={ 10 }>
+                                                <Text color='#5f7385' fontSize='30px'>15%</Text>
+                                            </Pane>
+                                            <Pane>
+                                                <Text color='#5f7385'>validating stake</Text>
+                                            </Pane>
+                                        </Card>
+                                        <Card
+                                          elevation={ 2 }
+                                          flex={ 1 }
+                                          paddingY={ 50 }
+                                          display='flex'
+                                          alignItems='center'
+                                          flexDirection='column'
+                                          backgroundColor='white'
+                                          marginX={ 8 }
+                                        >
+                                            <Pane marginBottom={ 10 }>
+                                                <Text color='#5f7385' fontSize='30px'>789 900</Text>
+                                            </Pane>
+                                            <Pane>
+                                                <Text color='#5f7385'>last block</Text>
+                                            </Pane>
+                                        </Card>
+                                    </Pane>
+                                </Pane>
+                            </Pane>
                         )}
 
                         {/* {defaultAddress && balance > 0 && searchQuery && links.length > 0 && (
@@ -229,9 +343,14 @@ class App extends Component {
                                 <Pane>
                                     <Vitalick />
                                 </Pane>
-                                <Pane display='flex' alignItems='center' justifyContent='center' flexDirection='column'>
-                                    <Pane width={323} textAlign='center' marginBottom={ 25 }>
-                                        <Text size={600} color='#7c7c7c'>
+                                <Pane
+                                  display='flex'
+                                  alignItems='center'
+                                  justifyContent='center'
+                                  flexDirection='column'
+                                >
+                                    <Pane width={ 323 } textAlign='center' marginBottom={ 25 }>
+                                        <Text size={ 600 } color='#7c7c7c'>
                                             You are the first one who are searching for
                                             <b>
                                                 {' '}
@@ -240,8 +359,10 @@ class App extends Component {
                                             </b>
                                         </Text>
                                     </Pane>
-                                    <Pane width={323} textAlign='center'>
-                                        <Text size={600} color='#7c7c7c'>Cyber your query and Cyb will understand it!</Text>
+                                    <Pane width={ 323 } textAlign='center'>
+                                        <Text size={ 600 } color='#7c7c7c'>
+                                            Cyber your query and Cyb will understand it!
+                                        </Text>
                                     </Pane>
                                 </Pane>
                             </Pane>
@@ -291,6 +412,32 @@ class App extends Component {
                                     Cyber it
                                 </Button>
                             </Pane>
+                        )}
+                        {index && (
+                             <Pane display='flex' flexDirection='row' marginLeft={ 80 } width='65%'>
+                             <TextInput
+                               height={ 42 }
+                               width='100%'
+                               ref='cidToInput'
+                               marginRight={ 15 }
+                               placeholder='Question'
+                             />
+                              <TextInput
+                               height={ 42 }
+                               width='100%'
+                               ref='cidToInput'
+                               marginRight={ 15 }
+                               placeholder='Answer'
+                             />
+                             <Button
+                               whiteSpace='nowrap'
+                               paddingX={ 50 }
+                               height={ 42 }
+                               onClick={ () => this.link() }
+                             >
+                                 Cyber it
+                             </Button>
+                         </Pane>
                         )}
                     </Pane>
                 </Pane>
@@ -476,11 +623,6 @@ const links3 = [
 ];
 
 storiesOf('cyber/pages', module)
-    .add('anonym no result', () => (
-        <Application>
-            <App searchQuery='test' links={ links2 } defaultAddress='test' balance='0' />
-        </Application>
-    ))
     .add('index', () => (
         <Application>
             <App
@@ -491,11 +633,6 @@ storiesOf('cyber/pages', module)
               balance='0'
               index='1'
             />
-        </Application>
-    ))
-    .add('anonym there are results', () => (
-        <Application>
-            <App searchQuery='test' links={ links3 } defaultAddress='test' balance='0' />
         </Application>
     ))
     .add('few results', () => (
