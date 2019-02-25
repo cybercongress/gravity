@@ -225,11 +225,11 @@ class App extends Component {
                 )} */}
 
                         {defaultAddress && balance > 0 && searchQuery && links.length === 0 && (
-                            <Pane display='flex' paddingTop={ 100 }>
-                                <Pane width='30%'>
+                            <Pane display='flex' justifyContent='space-around' paddingTop='5%'>
+                                <Pane>
                                     <Vitalick />
                                 </Pane>
-                                <Pane display='flex' alignItems='center' justifyContent='center' flexDirection='column' width='60%'>
+                                <Pane display='flex' alignItems='center' justifyContent='center' flexDirection='column'>
                                     <Pane width={323} textAlign='center' marginBottom={ 25 }>
                                         <Text size={600} color='#7c7c7c'>
                                             You are the first one who are searching for
