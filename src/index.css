@@ -9,6 +9,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+    font-family: 'Play', sans-serif !important;
+}
+
 html, body, #root {
 	height: 100%;
 }

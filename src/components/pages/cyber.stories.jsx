@@ -75,7 +75,7 @@ class Validators extends React.Component {
 
         return (
             <Pane>
-                <ScrollContainer style={{paddingBottom: 80}}>
+                <ScrollContainer style={ { paddingBottom: 80 } }>
                     <MainContainer>
                         {/* <WalletTabs>
                     <WalletTab
