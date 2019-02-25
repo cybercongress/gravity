@@ -152,7 +152,7 @@ export const SearchItem = ({ children, ...props }) => (
                   paddingY={ 5 }
                   display='flex'
                   alignItems='center'
-                  width={ 23 }
+                //   width={ 23 }
                     //   height={16}
                   style={ { color: '#fff' } }
                   color={
@@ -178,6 +178,35 @@ export const SearchItem = ({ children, ...props }) => (
                 </Pill>
             </Tooltip>
         )}
-        {props.rank == '' && <Spinner size={ 16 } />}
+        {props.rank == '' &&             <Tooltip
+              appearance='card'
+              content={ (
+                  <Pane paddingX={ 18 } paddingY={ 14 }>
+                      <Pane marginBottom={ 12 }>
+                          <Text>You have 337 993 BP out of 789 877 BP.</Text>
+                      </Pane>
+                      <Pane marginBottom={ 12 }>
+                          <Text>Full regeneration of bandwidth points or BP happens in 24 hours.</Text>
+                      </Pane>
+                      <Pane display='flex' marginBottom={ 12 }>
+                          <Text>
+                          Current rate for 1 cyberlink is 400 BP.
+                          </Text>
+                          
+                      </Pane>
+                      <Pane>
+                          <Text>
+                                More on
+                              {' '}
+                              <Link textDecoration='none' color='green' cursor='pointer'>
+                              Bandwidth
+                              </Link>
+                          </Text>
+                      </Pane>
+                  </Pane>
+) }
+            >
+                <Spinner size={ 16 } />
+            </Tooltip> }
     </Pane>
 );

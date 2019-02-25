@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Pane, Heading, TextInput, Button, Text } from 'evergreen-ui';
 import {
-    //Button,
+    Pane, Heading, TextInput, Button, Text,
+} from 'evergreen-ui';
+import {
+    // Button,
     Title,
     PageTitle,
     MainContainer,
@@ -21,7 +23,7 @@ import {
     IconAccounts,
     IconBlockHeight,
     IconBlockDelay,
-    //Text,
+    // Text,
     ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
@@ -111,14 +113,16 @@ class App extends Component {
                                 </Heading>
                                 <Pane>{searchResults}</Pane>
                                 {links.length > 10 && (
-                                    <Button
-                                    //   appearance="primary"
-                                      fontSize='1em'
-                                      marginY={15}
-                                      onClick={ () => this.seeAll() }
-                                    >
-                                        {!seeAll ? 'see all' : 'top 10'}
-                                    </Button>
+                                    <Pane display='flex' justifyContent='center'>
+                                        <Button
+                                            //   appearance="primary"
+                                          fontSize='1em'
+                                          marginY={ 15 }
+                                          onClick={ () => this.seeAll() }
+                                        >
+                                            {!seeAll ? 'see all' : 'top 10'}
+                                        </Button>
+                                    </Pane>
                                 )}
                             </div>
                         )}
@@ -221,43 +225,26 @@ class App extends Component {
                 )} */}
 
                         {defaultAddress && balance > 0 && searchQuery && links.length === 0 && (
-                            <LinkContainer style={ { paddingTop: '100px' } } center>
-                                <div style={ { width: '60%' } }>
-                                    <Text size='lg' style={ { marginBottom: '10px' } }>
-                                        Seems that you are first one who are searching for
-                                        <b>
-"
-                                            {searchQuery}
-"
-                                        </b>
-                                    </Text>
-
-                                    <Text size='lg' style={ { marginBottom: '20px' } }>
-                                        <b>Link your query</b>
-                                        and Cyb will understand it!
-                                    </Text>
-
-                                    <FlexContainer>
-                                        <Input
-                                          placeholder='type your link her...'
-                                          ref='cidToInput'
-                                        />
-                                        <Button
-                                          color='greenyellow'
-                                          transformtext
-                                          type='button'
-                                          style={ { height: '30px', marginLeft: '10px' } }
-                                          onClick={ () => this.link() }
-                                        >
-                                            Link it!
-                                        </Button>
-                                    </FlexContainer>
-                                </div>
-
-                                <div style={ { width: '30%' } }>
+                            <Pane display='flex' paddingTop={ 100 }>
+                                <Pane width='30%'>
                                     <Vitalick />
-                                </div>
-                            </LinkContainer>
+                                </Pane>
+                                <Pane display='flex' alignItems='center' justifyContent='center' flexDirection='column' width='60%'>
+                                    <Pane width={323} textAlign='center' marginBottom={ 25 }>
+                                        <Text size={600} color='#7c7c7c'>
+                                            You are the first one who are searching for
+                                            <b>
+                                                {' '}
+                                                {searchQuery}
+                                                {' '}
+                                            </b>
+                                        </Text>
+                                    </Pane>
+                                    <Pane width={323} textAlign='center'>
+                                        <Text size={600} color='#7c7c7c'>Cyber your query and Cyb will understand it!</Text>
+                                    </Pane>
+                                </Pane>
+                            </Pane>
                         )}
                     </MainContainer>
                 </ScrollContainer>
@@ -269,29 +256,42 @@ class App extends Component {
                   bottom={ 0 }
                   height={ 65 }
                   width='100%'
-                  backgroundColor='#438cef'
-                  paddingY={12}
-                  zIndex={2}
+                  backgroundColor='#000000'
+                  paddingY={ 12 }
+                  zIndex={ 2 }
                 >
-                <Pane alignItems='center' justifyContent='space-between' display='flex' width={1000}>
-                    <Pane width='35%' display='flex' alignItems='center'>
-                        {/* <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text> */}
-                        <SkillBar value={ 25 } />
-                        <Text paddingLeft={17} color='#fff' size={500}>Upgrade</Text>
-                    </Pane>
-                    {defaultAddress && balance > 0 && searchQuery && links.length > 0 && (
-                    <Pane display='flex' flexDirection='row' marginLeft={80} width='65%'>
-                            <TextInput height={42} width='100%' ref='cidToInput' marginRight={15} placeholder='Have your own answer?' />
-                            <Button
-                                whiteSpace='nowrap'
-                                paddingX={50}
-                                height={42}
-                                onClick={ () => this.link()}
-                            >
-                                Cyber it
-                            </Button>
-                    </Pane>
-                    )}
+                    <Pane
+                      alignItems='center'
+                      justifyContent='space-between'
+                      display='flex'
+                      width={ 1000 }
+                    >
+                        <Pane width='35%' display='flex' alignItems='center'>
+                            {/* <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text> */}
+                            <SkillBar value={ 25 } />
+                            <Text paddingLeft={ 17 } color='#fff' size={ 500 }>
+                                Upgrade
+                            </Text>
+                        </Pane>
+                        {defaultAddress && balance > 0 && searchQuery && links.length >= 0 && (
+                            <Pane display='flex' flexDirection='row' marginLeft={ 80 } width='65%'>
+                                <TextInput
+                                  height={ 42 }
+                                  width='100%'
+                                  ref='cidToInput'
+                                  marginRight={ 15 }
+                                  placeholder='Have your own answer?'
+                                />
+                                <Button
+                                  whiteSpace='nowrap'
+                                  paddingX={ 50 }
+                                  height={ 42 }
+                                  onClick={ () => this.link() }
+                                >
+                                    Cyber it
+                                </Button>
+                            </Pane>
+                        )}
                     </Pane>
                 </Pane>
             </div>
