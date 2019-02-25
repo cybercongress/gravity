@@ -63,7 +63,7 @@ class Validators extends React.Component {
             .filter(x => x.jailed === jailedFilter)
             .map((validator, index) => (
                 <Table.Row isSelectable key={ validator.description.moniker }>
-                    <Table.TextCell isNumber>{index}</Table.TextCell>
+                    <Table.TextCell flexBasis={80} flexShrink={0} flexGrow={0} isNumber>{index}</Table.TextCell>
                     <Table.TextCell>{validator.description.moniker}</Table.TextCell>
                     <Table.TextCell isNumber>{validator.tokens}</Table.TextCell>
                     <Table.TextCell>{validator.operator_address}</Table.TextCell>
@@ -126,7 +126,7 @@ class Validators extends React.Component {
                 <Table>
                     <Table.Head>
                         {/* <tr> */}
-                        <Table.TextHeaderCell>#</Table.TextHeaderCell>
+                        <Table.TextHeaderCell flexBasis={80} flexShrink={0} flexGrow={0}>#</Table.TextHeaderCell>
                         <Table.TextHeaderCell>Name</Table.TextHeaderCell>
                         <Table.TextHeaderCell>Power</Table.TextHeaderCell>
                         <Table.TextHeaderCell>Address</Table.TextHeaderCell>
