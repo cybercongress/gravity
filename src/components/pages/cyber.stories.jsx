@@ -40,6 +40,37 @@ import Application from '../Application/Application';
 
 import validatorsData from './validatorsData';
 
+class CardHover extends React.Component {
+    state = {
+        hover: false,
+    };
+
+    handleHover() {
+        this.setState({ hover: !this.state.hover });
+    }
+
+    seeAll = () => {
+        this.setState({
+            seeAll: !this.state.seeAll,
+        });
+    };
+    
+    render(){
+        const {
+            children,
+        } = this.props;
+        return(
+            <Card
+                elevation={ this.state.hover ? 3 : 0 }
+                onMouseEnter={ () => this.handleHover() }
+                onMouseLeave={ () => this.handleHover() }
+                {...this.props}
+            >
+                {children}
+            </Card>
+        )
+    }
+}
 class Validators extends React.Component {
     state = {
         jailedFilter: false,
@@ -66,10 +97,10 @@ class Validators extends React.Component {
                     <Table.TextCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 } isNumber>
                         {index}
                     </Table.TextCell>
-                    <Table.TextCell>{validator.description.moniker}</Table.TextCell>
-                    <Table.TextCell isNumber>{validator.tokens}</Table.TextCell>
-                    <Table.TextCell>{validator.operator_address}</Table.TextCell>
-                    <Table.TextCell isNumber>{validator.bond_height}</Table.TextCell>
+                    <Table.TextCell >{validator.description.moniker}</Table.TextCell>
+                    <Table.TextCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 } isNumber>{validator.tokens}</Table.TextCell>
+                    <Table.TextCell flexGrow={ 2 } >{validator.operator_address}</Table.TextCell>
+                    <Table.TextCell flexShrink={ 0 } flexGrow={ 1 } isNumber>{validator.bond_height}</Table.TextCell>
                 </Table.Row>
             ));
 
@@ -132,13 +163,13 @@ class Validators extends React.Component {
                                 <Table.TextHeaderCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 }>
                                     #
                                 </Table.TextHeaderCell>
-                                <Table.TextHeaderCell>Name</Table.TextHeaderCell>
-                                <Table.TextHeaderCell>Power</Table.TextHeaderCell>
-                                <Table.TextHeaderCell>Address</Table.TextHeaderCell>
-                                <Table.TextHeaderCell>Boun height</Table.TextHeaderCell>
+                                <Table.TextHeaderCell  flexGrow={ 1 } >Name</Table.TextHeaderCell>
+                                <Table.TextHeaderCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 }>Power</Table.TextHeaderCell>
+                                <Table.TextHeaderCell flexGrow={ 2 }>Address</Table.TextHeaderCell>
+                                <Table.TextHeaderCell flexShrink={ 1 } flexGrow={ 1 }>Boun height</Table.TextHeaderCell>
                                 {/* </tr> */}
                             </Table.Head>
-                            <Table.Body style={ { maxHeight: 600, backgroundColor: '#fff' } }>
+                            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
                                 {validatorRows}
                             </Table.Body>
                         </Table>
@@ -306,10 +337,7 @@ class App extends React.Component {
                                         Search stats
                                     </Heading>
                                     <Pane display='flex' marginX={ -8 }>
-                                        <Card
-                                          elevation={ this.state.hover ? 3 : 0 }
-                                          onMouseEnter={ () => this.handleHover() }
-                                          onMouseLeave={ () => this.handleHover() }
+                                        <CardHover
                                           flex={ 1 }
                                           display='flex'
                                           alignItems='center'
@@ -326,11 +354,8 @@ class App extends React.Component {
                                             <Pane>
                                                 <Text color='#5f7385'>cyberlinks</Text>
                                             </Pane>
-                                        </Card>
-                                        <Card
-                                          elevation={ this.state.hover ? 3 : 0 }
-                                          onMouseEnter={ () => this.handleHover() }
-                                          onMouseLeave={ () => this.handleHover() }
+                                        </CardHover>
+                                        <CardHover
                                           flex={ 1 }
                                           paddingY={ 50 }
                                           display='flex'
@@ -347,9 +372,8 @@ class App extends React.Component {
                                             <Pane>
                                                 <Text color='#5f7385'>content ids</Text>
                                             </Pane>
-                                        </Card>
-                                        <Card
-                                          elevation={ 2 }
+                                        </CardHover>
+                                        <CardHover
                                           flex={ 1 }
                                           paddingY={ 50 }
                                           display='flex'
@@ -366,9 +390,9 @@ class App extends React.Component {
                                             <Pane>
                                                 <Text color='#5f7385'>accounts</Text>
                                             </Pane>
-                                        </Card>
-                                        <Card
-                                          elevation={ 2 }
+                                        </CardHover>
+                                        <CardHover
+                                          
                                           flex={ 1 }
                                           paddingY={ 50 }
                                           display='flex'
@@ -385,7 +409,7 @@ class App extends React.Component {
                                             <Pane>
                                                 <Text color='#5f7385'>transactions</Text>
                                             </Pane>
-                                        </Card>
+                                        </CardHover>
                                     </Pane>
                                 </Pane>
                                 <Pane marginBottom={ 50 }>
@@ -393,8 +417,8 @@ class App extends React.Component {
                                         Consensus stats
                                     </Heading>
                                     <Pane display='flex' marginX={ -8 }>
-                                        <Card
-                                          elevation={ 2 }
+                                        <CardHover
+                                          
                                           flex={ 1 }
                                           display='flex'
                                           alignItems='center'
@@ -411,9 +435,9 @@ class App extends React.Component {
                                             <Pane>
                                                 <Text color='#5f7385'>supply</Text>
                                             </Pane>
-                                        </Card>
-                                        <Card
-                                          elevation={ 2 }
+                                        </CardHover>
+                                        <CardHover
+                                          
                                           flex={ 1 }
                                           paddingY={ 50 }
                                           display='flex'
@@ -444,9 +468,9 @@ class App extends React.Component {
                                                     </Pane>
                                                 </Link>
                                             </Pane>
-                                        </Card>
-                                        <Card
-                                          elevation={ 2 }
+                                        </CardHover>
+                                        <CardHover
+                                          
                                           flex={ 1 }
                                           paddingY={ 50 }
                                           display='flex'
@@ -463,9 +487,9 @@ class App extends React.Component {
                                             <Pane>
                                                 <Text color='#5f7385'>validating stake</Text>
                                             </Pane>
-                                        </Card>
-                                        <Card
-                                          elevation={ 2 }
+                                        </CardHover>
+                                        <CardHover
+                                          
                                           flex={ 1 }
                                           paddingY={ 50 }
                                           display='flex'
@@ -482,7 +506,7 @@ class App extends React.Component {
                                             <Pane>
                                                 <Text color='#5f7385'>last block</Text>
                                             </Pane>
-                                        </Card>
+                                        </CardHover>
                                     </Pane>
                                 </Pane>
                             </Pane>
