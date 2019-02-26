@@ -150,7 +150,7 @@ class CardAccaunt extends React.Component {
 const Lottery = ({ index, account, balanceGCYB }) => (
     <ScrollContainer>
         <MainContainer>
-            <Pane display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
+            <Pane display='flex' flexDirection='column' justifyContent='center' alignItems='center' paddingBottom={60}>
                 <Pane display='flex' flexDirection='column' alignItems='center' marginBottom={ 42 }>
                     <Text lineHeight={ 1.5 } color='#425a70' fontSize='29px'>
                         Try your luck!
