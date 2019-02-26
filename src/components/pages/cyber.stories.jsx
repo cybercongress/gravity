@@ -190,7 +190,12 @@ class App extends React.Component {
         seeAll: false,
         balance: 0,
         PopupNotification: false,
+        hover: false,
     };
+
+    handleHover() {
+        this.setState({ hover: !this.state.hover });
+    }
 
     seeAll = () => {
         this.setState({
@@ -302,7 +307,9 @@ class App extends React.Component {
                                     </Heading>
                                     <Pane display='flex' marginX={ -8 }>
                                         <Card
-                                          elevation={ 2 }
+                                          elevation={ this.state.hover ? 3 : 0 }
+                                          onMouseEnter={ () => this.handleHover() }
+                                          onMouseLeave={ () => this.handleHover() }
                                           flex={ 1 }
                                           display='flex'
                                           alignItems='center'
@@ -321,7 +328,9 @@ class App extends React.Component {
                                             </Pane>
                                         </Card>
                                         <Card
-                                          elevation={ 2 }
+                                          elevation={ this.state.hover ? 3 : 0 }
+                                          onMouseEnter={ () => this.handleHover() }
+                                          onMouseLeave={ () => this.handleHover() }
                                           flex={ 1 }
                                           paddingY={ 50 }
                                           display='flex'
