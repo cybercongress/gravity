@@ -201,7 +201,7 @@ class Validators extends React.Component {
                         </Pane>
 
                         <Pane display='flex' marginLeft={ 80 }>
-                            <Button whiteSpace='nowrap' paddingX={ 50 } height={ 42 }>
+                            <Button whiteSpace='nowrap' className='btn' paddingX={ 50 } height={ 42 }>
                                 Become validator
                             </Button>
                         </Pane>
@@ -307,6 +307,7 @@ class App extends React.Component {
                                             //   appearance="primary"
                                           fontSize='1em'
                                           marginY={ 15 }
+                                        
                                           onClick={ () => this.seeAll() }
                                         >
                                             {!seeAll ? 'see all' : 'top 10'}
@@ -607,7 +608,8 @@ class App extends React.Component {
                                   whiteSpace='nowrap'
                                   paddingX={ 50 }
                                   height={ 42 }
-                                  onClick={ () => this.link() }
+                                  className='btn'
+                                //   onClick={ () => this.link() }
                                 >
                                     Cyber it
                                 </Button>
@@ -633,7 +635,8 @@ class App extends React.Component {
                                   whiteSpace='nowrap'
                                   paddingX={ 50 }
                                   height={ 42 }
-                                  onClick={ () => this.link() }
+                                  className='btn'
+                                //   onClick={ () => this.link()}
                                 >
                                     Cyber it
                                 </Button>

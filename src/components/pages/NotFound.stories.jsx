@@ -54,7 +54,7 @@ const NotFound = () => (
                 </Pane>
 
                 <Pane display='flex' marginLeft={ 80 }>
-                    <Button whiteSpace='nowrap' paddingX={ 50 } height={ 42 }>
+                    <Button whiteSpace='nowrap' className='btn' paddingX={ 50 } height={ 42 }>
                         Add app
                     </Button>
                 </Pane>

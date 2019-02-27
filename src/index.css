@@ -17,11 +17,15 @@ html, body, #root {
 	height: 100%;
 }
 
+.btn:active {
+    background-image: none !important;
+    background-color: rgba(204, 204, 204, 0.91) !important;
+}
+
 .btn-check:hover {
     opacity: 0.9;
 }
 
 .btn-check:active {
-  background-color: #3e8e41;
   transform: translateY(2px);
 }
