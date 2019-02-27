@@ -173,6 +173,7 @@ const Lottery = ({ index, account, balanceGCYB }) => (
                         } }
                       paddingX={ 50 }
                       height={ 42 }
+                      className='btn-check'
                     >
                         Check
                     </Button>
