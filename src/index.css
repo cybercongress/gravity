@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
 
+:root {
+    --slate-9:rgba(67, 90, 111, 0.09);
+    --black: #000000;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -17,10 +22,25 @@ html, body, #root {
 	height: 100%;
 }
 
-.btn:active {
-    background-image: none !important;
-    background-color: rgba(204, 204, 204, 0.91) !important;
+::-webkit-scrollbar {
+    width: 0px;
+  }
+
+.btn:hover {
+    /* background-image: none !important; */
+    background-image:linear-gradient(to top, #181818, #000000) !important;
+    box-shadow: 0 0 20px 0px #38d6ae !important;
 }
+
+.btn:active {
+    box-shadow: 0 0 20px 0px #36d6ae !important;
+    background-image: none !important;
+    background-color: rgba(67, 90, 111, 0.09) !important;
+}
+
+/* .📦bs_17sc08g {
+    box-shadow: 0 0 1px rgba(56, 214, 174, 0.7), 0 8px 10px -4px rgba(56, 214, 174, 0.7) !important;
+} */
 
 .btn-check:hover {
     opacity: 0.9;
@@ -28,4 +48,39 @@ html, body, #root {
 
 .btn-check:active {
   transform: translateY(2px);
+}
+
+.opacityItems
+{
+    position: relative;
+}
+
+.opacityItems::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: -114px;
+    /* background: black; */
+    /* opacity: 0.7; */
+    z-index: 1;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 57%, var(--black));
+}
+
+.opacityItemsBefore{
+    position: relative;
+}
+
+.opacityItemsBefore::before {
+    content: '';
+    position: absolute;
+    top: -58px;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    /* background: black; */
+    opacity: 0.7;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 57%, var(--black));
 }

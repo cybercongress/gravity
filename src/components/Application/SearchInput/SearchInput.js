@@ -1,11 +1,14 @@
 import React from 'react';
+import{
+    TextInput
+} from 'evergreen-ui';
 import style from './FavoriteButton.less';
 import cx from 'classnames';
 
 const styles = require('./SearchInput.less');
 
 const SearchInput = ({ inputRef, ...props }) => (
-    <input { ...props } ref={ inputRef } className={styles.SearchInput} />
+    <TextInput { ...props } ref={ inputRef } className={styles.SearchInput} />
 );
 
 

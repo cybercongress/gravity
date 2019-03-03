@@ -19,6 +19,8 @@ import ToggleMenu from '../Application/ToggleMenu';
 import SignerPopup from '../Application/SignerPopup';
 import Login from '../Application/Login';
 
+const img = require('../Application/SearchInput/earth-active.svg');
+
 const Application = (props) => {
     const {
         homePage,
@@ -75,16 +77,71 @@ const menuItems = [
     {
         items: '1',
         rootDura: 'ds',
-        name: 'dffd',
+        name: 'Chaingear',
     },
     {
         items: '2',
-        name: 'dffd.dsd',
+        name: 'cyber•Congress',
         rootDura: 'tbcds',
     },
     {
         items: '3',
-        name: 'lhitv',
+        name: 'cyb.ai',
+        rootDura: 'tyds',
+    },
+
+    {
+        items: '4',
+        name: '.cyber',
+        rootDura: 'tyds',
+    },
+    {
+        items: '5',
+        name: '.cyb',
+        rootDura: 'tyds',
+    },
+    {
+        items: '6',
+        name: 'One day Earth',
+        rootDura: 'tyds',
+        img: `${img}`,
+    },
+
+    {
+        items: '7',
+        name: 'IPFS',
+        rootDura: 'tyds',
+    },
+    {
+        items: '8',
+        name: '.root',
+        rootDura: 'tyds',
+    },
+    {
+        items: '9',
+        name: '.cyber',
+        rootDura: 'tyds',
+    },
+    {
+        items: '10',
+        name: '.cyb',
+        rootDura: 'tyds',
+    },
+    {
+        items: '11',
+        name: 'One day Earth',
+        rootDura: 'tyds',
+        img: `${img}`,
+    },
+
+    {
+        items: '12',
+        name: 'IPFS',
+        rootDura: 'tyds',
+    },
+    {
+        items: '13',
+        name: '.root',
         rootDura: 'tyds',
     },
 ]

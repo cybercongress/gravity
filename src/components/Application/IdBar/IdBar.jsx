@@ -2,6 +2,10 @@ import React from 'react';
 import cx from 'classnames';
 import classNames from 'classnames';
 import { CybLink } from '../../..';
+import{
+    Pane,
+    Text,
+} from 'evergreen-ui';
 
 const styles = require('./IdBar.less');
 
@@ -33,12 +37,17 @@ export const CurrentUser = (props) => {
     return (
         <div className={ styles.user_popup__container }>
             {defaultEthAccount ? (
+                <Pane display='flex' alignItems='center'>
+                    <Text marginRight={10} color='#fff' fontSize='1em'>
+                        User
+                    </Text>
                 <img
                   alt='user'
                   className={ styles.id_bar__user }
                   onClick={ toggle }
                   src={ `https://robohash.org/${defaultEthAccount}` }
                 />
+                </Pane>
             ) : (
                 <CybLink { ...props } dura='wallet.cyb'>
                     <div

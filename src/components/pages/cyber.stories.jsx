@@ -24,6 +24,7 @@ import {
     // Section,
     // SectionContent,
     // FlexContainer,
+    SearchInput,
     SkillBar,
     SearchItem,
     // LinkContainer,
@@ -576,38 +577,47 @@ class App extends React.Component {
                   justifyContent='center'
                   position='absolute'
                   bottom={ 0 }
-                  height={ 65 }
+                //   height={ 65 }
                   width='100%'
                   backgroundColor='#000000'
-                  paddingY={ 12 }
+                  paddingY={ 35 }
                   zIndex={ 2 }
                 >
                     <Pane
                       alignItems='center'
-                      justifyContent='space-between'
+                      justifyContent='center'
                       display='flex'
                       width={ 1000 }
                     >
-                        <Pane width='35%' display='flex' alignItems='center'>
-                            {/* <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text> */}
+                        {/* <Pane width='35%' display='flex' alignItems='center'>
+                           
                             <SkillBar value={ 25 } />
                             <Text paddingLeft={ 17 } color='#fff' size={ 500 }>
                                 Upgrade
                             </Text>
-                        </Pane>
+                        </Pane> */}
                         {defaultAddress && balance > 0 && searchQuery && links.length >= 0 && (
                             <Pane display='flex' flexDirection='row' marginLeft={ 80 } width='65%'>
-                                <TextInput
+                                <SearchInput
                                   height={ 42 }
-                                  width='100%'
+                                  width='50%'
                                   ref='cidToInput'
                                   marginRight={ 15 }
+                                  fontSize='18px'
                                   placeholder='Have your own answer?'
+                                  textAlign='left'
+                                  caretСolor='#36d6ae'
                                 />
                                 <Button
                                   whiteSpace='nowrap'
                                   paddingX={ 50 }
                                   height={ 42 }
+                                //   boxShadow='0 0 20px 0px #36d6ae'
+                                  textShadow='0 0 40px #36d6ae'
+                                  color='#36d6ae'
+                                  fontSize='18px'
+                                  borderRadius={3}
+                                  backgroundImage='linear-gradient(to top, #181818, #000000)'
                                   className='btn'
                                 //   onClick={ () => this.link() }
                                 >

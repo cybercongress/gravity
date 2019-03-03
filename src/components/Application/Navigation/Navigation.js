@@ -1,5 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
+import{
+    Text,
+    Pane,
+} from 'evergreen-ui';
+const imgCyb= require('../cyb.svg');
 
 const styles = require('./Navigation.less');
 
@@ -29,12 +34,18 @@ export const NavigationCenter = ({ children }) => (
     </div>
 );
 
-export const MenuButton = ({ openMenu, ...props}) => (
-    <button { ...props } className={cx(styles.MenuButton, {[styles.MenuButton__open]: openMenu})}>
-        <span className={styles.MenuButton_line1} />
-        <span className={styles.MenuButton_line2} />
-        <span className={styles.MenuButton_line3} />
-    </button>
+export const MenuButton = ({ ...props }) => (
+    <Pane
+    { ...props } 
+    display='flex' 
+    alignItems='center'
+    cursor='pointer'
+    >
+        <Pane width={32} height={32} marginRight={10}>
+            <img className={styles.imgCyb} src={imgCyb} />
+        </Pane>
+        <Text fontSize='16px' color='#ffffff'>My cyb</Text>
+    </Pane>
 );
 
 export default Navigation;

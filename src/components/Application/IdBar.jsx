@@ -6,7 +6,11 @@ import {
     IdBarComponent,
     SettingsLink,
     CurrentUser,
+    SkillBar,
 } from '../..';
+import{
+    Pane,
+} from 'evergreen-ui';
 // import { toggleMenu } from '../../redux/appMenu';
 // import { getDefaultAccountBalance } from '../../redux/wallet';
 // import { getDefaultAccountBalance as getDefaultAccountBalanceCyb } from '../../redux/cyber';
@@ -58,8 +62,7 @@ class IdBar extends Component {
                       cybBalance={ defaultAccountBalanceCyb }
                     />
                 </div>
-                {defaultEthAccount && <SettingsLink />}
-                {defaultEthAccount && <CybLink defaultAccount={defaultEthAccount} dura='txq.cyb'>txq</CybLink>}
+                {defaultEthAccount && <SkillBar fontSize='10px' marginRight={30} style={{height: 14, maxWidth: 200 }} value={25} />}
             </IdBarComponent>
         );
     }

@@ -38,6 +38,10 @@ class Navigation extends Component {
                 <FavoriteButtonContainer>
                     {!!homePage && <SearchIcon />}
                     <SearchInput
+                       textAlign='center'
+                       width='100%'
+                       height={41}
+                       fontSize='35px'
                         inputRef={ (node) => {
                             this.input = node;
                         } }

@@ -1,26 +1,28 @@
 
 .NavigationContainer {
 	display: flex;
+	align-items: center;
 }
 
 .SearchInput {
-
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0.15);
+	background-color: transparent;
 	border-radius: 2px;
 	border: none;
-	font-size: 16px;
 	color: #fff;
 	padding: 5px 20px;
 	/*padding-right: 60px;*/
 	box-sizing: border-box;
 	font-family: 'Play', sans-serif;
-	font-weight: bold;
-  text-align: center;
+	outline: 0;
+	outline-offset: 0;
+	box-shadow: none;
+	caret-color: #36d6ae;
+
 }
 
 .SearchInput:focus {
 	-webkit-app-region: no-drag;
+	box-shadow: 0 0 20px 0 rgba(0, 255, 163, 0.53);
 }
 
 .BackButton {
@@ -28,7 +30,7 @@
 	height: 30px;
 	padding: 0;
 	margin-right: 10px;
-	background: rgba(255, 255, 255, .15) url(./baseline-arrow-back-24-px.svg) center center;
+	background: url(./rocket.svg) no-repeat center center;
 	border: none;
 }
 
@@ -37,8 +39,15 @@
 	height: 30px;
 	padding: 0;
 	margin-left: 10px;
-	background: rgba(255, 255, 255, .15) url(./baseline-arrow-forward-24-px.svg) center center;
+	background: url(./rocket.svg) no-repeat center center;
 	border: none;
+	transform: rotate(180deg);
+	// -moz-transform: scale(-1, 1);
+	// -webkit-transform: scale(-1, 1);
+	// -o-transform: scale(-1, 1);
+	// transform: scale(-1, 1);
+	// filter: FlipH;
+	// -ms-filter: "FlipH";
 }
 
 .BackButton:disabled {

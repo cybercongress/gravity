@@ -3,7 +3,7 @@ import { Pane, Text, Tooltip, Link } from 'evergreen-ui';
 import styles from './SkillBar.less';
 // import cx from 'classnames';
 
-export const SkillBar = ({ children, value }) => (
+export const SkillBar = ({ children, fontSize, value, ...props }) => (
     <Tooltip
               appearance='card'
               content={ (
@@ -32,7 +32,7 @@ export const SkillBar = ({ children, value }) => (
                   </Pane>
 ) }
             >
-    <Pane height={ 25 } width='100%' backgroundColor='#fff' borderRadius={ 4 } position='relative'>
+    <Pane {...props} height={ 25 } width='100%' className={ value <= 25 ? styles.skillBarHoverRed : value < 50 ? styles.skillBarHoverOrange : value < 76 ? styles.skillBarHoverYellow : styles.skillBarHoverGreen } backgroundColor='#fff' borderRadius={ 4 } position='relative'>
         <Pane
           height='100%'
           borderRadius='inherit'
@@ -45,7 +45,7 @@ export const SkillBar = ({ children, value }) => (
             <Pane display='flex' alignItems='center' width='100%' height='100%' position='absolute' paddingX={20} 
             justifyContent={ value < 26 ? 'flex-end' : 'flex-start' }
             >
-                <Text fontSize={ 18 } fontWeight='bold' color={ value < 26 ? '#d32f2f' : '#ffffff'}>
+                <Text fontSize={ fontSize ? fontSize : 18 } fontWeight='bold' color={ value < 26 ? '#d32f2f' : '#ffffff'}>
                     {`${value} %`}
                 </Text>
             </Pane>
