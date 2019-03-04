@@ -35,7 +35,7 @@ class CybCard extends Component {
 
         return (
             <Pane
-            {...this.props}
+              { ...this.props }
               width={ active ? 411 : 210 }
               height={ active ? 525 : 267 }
               boxShadow={
@@ -55,7 +55,7 @@ class CybCard extends Component {
               display='flex'
               alignItems='center'
               justifyContent='center'
-              flexShrink={0}
+              flexShrink={ 0 }
             >
                 <Pane
                   display='flex'
@@ -171,30 +171,76 @@ class CybCard extends Component {
                         </Text>
                     </Pane>
                 )}
+                {active && (
+                    <Pane
+                      position='absolute'
+                      bottom={ -65 }
+                      display='flex'
+                      alignItems='center'
+                      justifyContent='center'
+                    >
+                        <Text textShadow='0px 0px 20px #3ab793' color='#3ab793' fontSize='28px'>
+                            Unlimited
+                        </Text>
+                    </Pane>
+                )}
             </Pane>
         );
     }
 }
 
 const Settings = () => (
-    
-<ScrollContainer style={ { paddingBottom: 70 } }>
-                    <MainContainer >
-                <Pane
-                  display='flex'
-                  alignItems='center'
-                  justifyContent='space-around'
-                >
-                    
-                    <CybCard marginX={20} />
-                    <CybCard marginX={20} />
-                    <CybCard marginX={20} active />
-                    <CybCard marginX={20} />
-                    <CybCard marginX={20} />
-                </Pane>
-</MainContainer>
-</ScrollContainer>
-    
+    <Pane>
+    <ScrollContainer style={ { paddingBottom: 170 } }>
+        <MainContainer>
+            <Pane marginBottom={ 80 } display='flex' justifyContent='center'>
+                <Heading fontSize='29px' color='#fff'>
+                    Your virtual robot
+                </Heading>
+            </Pane>
+            <Pane display='flex' alignItems='center' justifyContent='space-around'>
+                <CybCard marginX={ 50 } />
+                <CybCard marginX={ 50 } active />
+                <CybCard marginX={ 50 } />
+            </Pane>
+        </MainContainer>
+    </ScrollContainer>
+    <Pane
+    display='flex'
+    alignItems='center'
+    justifyContent='center'
+    width='100%'
+    position='absolute'
+    bottom={ 0 }
+    paddingY={ 30 }
+    backgroundColor='#000000'
+  >
+      <Pane
+        flexGrow={ 1 }
+        maxWidth={ 1000 }
+        display='flex'
+        alignItems='center'
+        justifyContent='center'
+        flexDirection='row'
+      >
+          <Pane>
+              <Text color='#fff' fontSize='18px'>
+                  1 April
+              </Text>
+          </Pane>
+          <Pane display='flex' justifyContent='center' flexGrow={ 1 }>
+              <Text color='#fff' fontSize='18px'>
+                  14 day 13 hour 15 minute 42 seconds
+              </Text>
+          </Pane>
+          <Pane>
+              <Button paddingX={ 50 } className='btn'>
+                  Download
+              </Button>
+          </Pane>
+      </Pane>
+  </Pane>
+  </Pane>
 );
 
 storiesOf('test', module).add('Settings', () => (
