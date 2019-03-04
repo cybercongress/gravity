@@ -15,132 +15,186 @@ import {
 } from '../..';
 import Application from '../Application/Application';
 
-const Settings = () => (
-    <Pane height='100%'>
-        <Row style={ { height: '100%' } }>
-            <Col xs={ 8 } style={ { height: '100%' } }>
-                <Pane display='flex' alignItems='center' justifyContent='center' height='100%'>
-                    <Pane
-                      width={ 513 }
-                      height={ 628 }
-                      borderRadius={ 4 }
-                      position='relative'
-                      style={ {
-                            backgroundImage: 'linear-gradient(to right, #667eea, #764ba2)',
-                        } }
-                    >
-                        <Pane
-                          width={ 513 }
-                          height={ 628 }
-                          borderRadius={ 4 }
-                          left={ -18 }
-                          top={ -18 }
-                          position='relative'
-                          style={ {
-                                backgroundImage: 'linear-gradient(213deg, #b721ff, #77dff7)',
-                            } }
-                        >
-                            <Pane
-                              width={ 513 }
-                              height={ 628 }
-                              borderRadius={ 4 }
-                              left={ -18 }
-                              top={ -18 }
-                              position='relative'
-                              style={ {
-                                    backgroundImage: 'linear-gradient(321deg, #9599e2, #8bc6ec)',
-                                } }
-                            >
-                                <Pane
-                                  display='flex'
-                                  justifyContent='center'
-                                  alignItems='center'
-                                  flexDirection='column'
-                                >
-                                    <Heading
-                                      size={ 600 }
-                                      fontWeight={ 600 }
-                                      color='white'
-                                      marginTop={ 45 }
-                                      marginBottom={ 45 }
-                                    >
-                                        Check your imported account
-                                    </Heading>
-                                    <Pane border borderRadius='50%' marginBottom={ 45 }>
-                                        <Pane margin={ 20 }>
-                                            <Avatar />
-                                        </Pane>
-                                    </Pane>
-                                    <Pane>
-                                        <Pane
-                                          marginBottom={ 45 }
-                                          display='flex'
-                                          flexDirection='column'
-                                          alignItems='flex-start'
-                                        >
-                                            <Heading color='white' size={ 800 } marginBottom={ 10 }>
-                                                1.44 ETH
-                                            </Heading>
-                                            <Text
-                                              color='white'
-                                              size={ 300 }
-                                              textTransform='uppercase'
-                                            >
-                                                0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5
-                                            </Text>
-                                        </Pane>
-                                        <Pane
-                                          display='flex'
-                                          flexDirection='column'
-                                          alignItems='flex-start'
-                                        >
-                                            <Heading color='white' size={ 800 } marginBottom={ 10 }>
-                                                146 GCYB
-                                            </Heading>
-                                            <Text
-                                              color='white'
-                                              size={ 300 }
-                                              textTransform='uppercase'
-                                            >
-                                                cyber1f9yjqmxh6prsmgpcaqj8lmjnxg644n5074zznm
-                                            </Text>
-                                        </Pane>
-                                    </Pane>
-                                </Pane>
-                            </Pane>
-                        </Pane>
-                    </Pane>
-                </Pane>
-            </Col>
+class CybCard extends Component {
+    state = {
+        hover: false,
+    };
 
-            <Col xs={ 4 }>
+    handleHover() {
+        this.setState({ hover: !this.state.hover });
+    }
+
+    seeAll = () => {
+        this.setState({
+            seeAll: !this.state.seeAll,
+        });
+    };
+
+    render() {
+        const { children, active } = this.props;
+
+        return (
+            <Pane
+            {...this.props}
+              width={ active ? 411 : 210 }
+              height={ active ? 525 : 267 }
+              boxShadow={
+                    active
+                        ? '0 0 80px 2px #36d6ae'
+                        : this.state.hover
+                        ? '0 0 50px 0px #36d6ae'
+                        : '0'
+                }
+              onMouseEnter={ () => this.handleHover() }
+              onMouseLeave={ () => this.handleHover() }
+              borderRadius={ 5 }
+              position='relative'
+              backgroundColor='#000'
+              paddingY={ 50 }
+              paddingX={ 30 }
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              flexShrink={0}
+            >
                 <Pane
                   display='flex'
-                  flexDirection='column'
-                  alignItems='center'
                   justifyContent='center'
-                  backgroundColor='#2b3239'
-                  height='100%'
-                  paddingLeft='26%'
-                  paddingRight='21%'
+                  alignItems='center'
+                  flexDirection='column'
                 >
-                    <Pane marginBottom={ 80 }>
-                        <Strong color='white' size={ 500 }>
-                            If it’s not your account you can go back and import another
-                        </Strong>
-                    </Pane>
-                    <Pane width='100%'>
-                        <Pane display='flex' justifyContent='space-between'>
-                            <Button iconBefore='arrow-left'>Back</Button>
-                            <Button appearance='primary' marginRight='4%' iconAfter='arrow-right'>
-                                Next Step
-                            </Button>
+                    <Heading
+                      fontSize='29px'
+                      color={ active ? 'white' : '#757575' }
+                      marginBottom={ active ? 45 : 20 }
+                    >
+                        cyb
+                    </Heading>
+                    {!active && (
+                        <Text fontSize='16px' color='#757575' marginBottom={ 40 }>
+                            {' '}
+                            1 ETH
+                            {' '}
+                        </Text>
+                    )}
+                    {!active && (
+                        <Pane
+                          style={ { border: '2px solid #3ab793' } }
+                          width={ 64 }
+                          height={ 64 }
+                          display='flex'
+                          opacity={ this.state.hover ? '1' : '0' }
+                          alignItems='center'
+                          justifyContent='space-around'
+                          borderRadius='50%'
+                          boxShadow='0 2px 25px 1px #3ab793'
+                          marginBottom={ 0 }
+                        >
+                            <Pane
+                              style={ {
+                                    border: '2px solid #3ab793',
+                                    transform: 'rotate(25deg)',
+                                } }
+                              width={ 16.6 }
+                              height={ 9.4 }
+                              borderRadius='50%'
+                            />
+                            <Pane
+                              style={ {
+                                    border: '2px solid #3ab793',
+                                    transform: 'rotate(-25deg)',
+                                } }
+                              width={ 16.6 }
+                              height={ 9.4 }
+                              borderRadius='50%'
+                            />
                         </Pane>
-                    </Pane>
+                    )}
+                    {active && (
+                        <Pane
+                          style={ { border: '2px solid #3ab793' } }
+                          width={ 160 }
+                          height={ 160 }
+                          display='flex'
+                          alignItems='center'
+                          justifyContent='space-around'
+                          borderRadius='50%'
+                          boxShadow='0 2px 25px 1px #3ab793'
+                          marginBottom={ active ? 70 : 0 }
+                        >
+                            <Pane
+                              style={ {
+                                    border: '2px solid #3ab793',
+                                    transform: 'rotate(25deg)',
+                                } }
+                              width={ active ? 41 : 16.6 }
+                              height={ active ? 23 : 9.4 }
+                              borderRadius='50%'
+                            />
+                            <Pane
+                              style={ {
+                                    border: '2px solid #3ab793',
+                                    transform: 'rotate(-25deg)',
+                                } }
+                              width={ active ? 41 : 16.6 }
+                              height={ active ? 23 : 9.4 }
+                              borderRadius='50%'
+                            />
+                        </Pane>
+                    )}
+                    {active && (
+                        <Pane>
+                            <Pane>
+                                <Text lineHeight='1.71' color='white' size={ 400 }>
+                                    It is a long established fact that a reader will be distracted
+                                    by the readable content of a page when looking at its layout.
+                                    The point of using Lorem Ipsum is that it has a more-or-less
+                                </Text>
+                            </Pane>
+                        </Pane>
+                    )}
                 </Pane>
-            </Col>
-        </Row>
-    </Pane>
+                {active && (
+                    <Pane
+                      width={ 130 }
+                      height={ 42 }
+                      borderRadius={ 5 }
+                      backgroundColor='#3ab793'
+                      position='absolute'
+                      bottom={ -20 }
+                      display='flex'
+                      alignItems='center'
+                      justifyContent='center'
+                    >
+                        <Text color='#fff' fontWeight={ 600 } fontSize='29px'>
+                            0 ETH
+                        </Text>
+                    </Pane>
+                )}
+            </Pane>
+        );
+    }
+}
+
+const Settings = () => (
+    
+<ScrollContainer style={ { paddingBottom: 70 } }>
+                    <MainContainer >
+                <Pane
+                  display='flex'
+                  alignItems='center'
+                  justifyContent='space-around'
+                >
+                    
+                    <CybCard marginX={20} />
+                    <CybCard marginX={20} />
+                    <CybCard marginX={20} active />
+                    <CybCard marginX={20} />
+                    <CybCard marginX={20} />
+                </Pane>
+</MainContainer>
+</ScrollContainer>
+    
 );
 
 storiesOf('test', module).add('Settings', () => (

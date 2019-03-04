@@ -26,6 +26,14 @@ html, body, #root {
     width: 0px;
   }
 
+  .btn {
+    /* background-image: none !important; */
+    background-image:linear-gradient(to top, #181818, #000000) !important;
+    box-shadow: 0 0 20px 0px #38d6ae !important;
+    text-shadow: 0 0 40px #36d6ae !important;
+    color: #36d6ae !important;
+}
+
 .btn:hover {
     /* background-image: none !important; */
     background-image:linear-gradient(to top, #181818, #000000) !important;
@@ -70,6 +78,7 @@ html, body, #root {
 
 .opacityItemsBefore{
     position: relative;
+    box-shadow: -35px -20px 40px 13px #000;
 }
 
 .opacityItemsBefore::before {

@@ -580,7 +580,7 @@ class App extends React.Component {
                 //   height={ 65 }
                   width='100%'
                   backgroundColor='#000000'
-                  paddingY={ 35 }
+                  paddingY={ 11 }
                   zIndex={ 2 }
                 >
                     <Pane
@@ -597,27 +597,28 @@ class App extends React.Component {
                             </Text>
                         </Pane> */}
                         {defaultAddress && balance > 0 && searchQuery && links.length >= 0 && (
-                            <Pane display='flex' flexDirection='row' marginLeft={ 80 } width='65%'>
-                                <SearchInput
+                            <Pane display='flex' justifyContent='center' flexDirection='row' width='100%'>
+                                <TextInput
                                   height={ 42 }
-                                  width='50%'
+                                  width='40%'
                                   ref='cidToInput'
                                   marginRight={ 15 }
                                   fontSize='18px'
                                   placeholder='Have your own answer?'
                                   textAlign='left'
-                                  caretСolor='#36d6ae'
+                                  backgroundColor='transparent'
+                                  outline='0'
+                                  outlineOffset='0'
+                                  style={{caretColor: '#36d6ae', boxShadow: 'none'}}
+                                
                                 />
                                 <Button
                                   whiteSpace='nowrap'
                                   paddingX={ 50 }
                                   height={ 42 }
                                 //   boxShadow='0 0 20px 0px #36d6ae'
-                                  textShadow='0 0 40px #36d6ae'
-                                  color='#36d6ae'
                                   fontSize='18px'
                                   borderRadius={3}
-                                  backgroundImage='linear-gradient(to top, #181818, #000000)'
                                   className='btn'
                                 //   onClick={ () => this.link() }
                                 >
@@ -633,6 +634,11 @@ class App extends React.Component {
                                   ref='cidToInput'
                                   marginRight={ 15 }
                                   placeholder='Question'
+                                  fontSize='18px'
+                                  backgroundColor='transparent'
+                                  outline='0'
+                                  outlineOffset='0'
+                                  style={{caretColor: '#36d6ae', boxShadow: 'none'}}
                                 />
                                 <TextInput
                                   height={ 42 }
@@ -640,12 +646,19 @@ class App extends React.Component {
                                   ref='cidToInput'
                                   marginRight={ 15 }
                                   placeholder='Answer'
+                                  fontSize='18px'
+                                  backgroundColor='transparent'
+                                  outline='0'
+                                  outlineOffset='0'
+                                  style={{caretColor: '#36d6ae', boxShadow: 'none'}}
                                 />
                                 <Button
                                   whiteSpace='nowrap'
                                   paddingX={ 50 }
                                   height={ 42 }
+                                  fontSize='18px'
                                   className='btn'
+                                  borderRadius={3}
                                 //   onClick={ () => this.link()}
                                 >
                                     Cyber it
