@@ -243,8 +243,8 @@ const Settings = () => (
   </Pane>
 );
 
-storiesOf('test', module).add('Settings', () => (
+storiesOf('Cyb.ai', module).add('cyb.ai', () => (
     <Application>
         <Settings />
     </Application>
-));
+));Settings
