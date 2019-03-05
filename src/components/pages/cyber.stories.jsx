@@ -62,7 +62,7 @@ class CardHover extends React.Component {
         } = this.props;
         return(
             <Card
-                elevation={ this.state.hover ? 3 : 0 }
+                boxShadow={ this.state.hover ? '0 0 40px 2px #36d6ae' : '' }
                 onMouseEnter={ () => this.handleHover() }
                 onMouseLeave={ () => this.handleHover() }
                 {...this.props}
@@ -324,8 +324,8 @@ class App extends React.Component {
                                     <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
                                         Network load
                                     </Heading>
-                                    <Card paddingY={ 20 } paddingX={ 24 } backgroundColor='white'>
-                                        <Text color='#234361' lineHeight={ 2 }>
+                                    <Card paddingY={ 20 } paddingX={ 24 } boxShadow='0 0 20px 2px #36d6ae' backgroundColor='#000000'>
+                                        <Text color='#fff' lineHeight={ 2 }>
                                             Current network capacity is 4 877 888 399 888 347 BP per
                                             24 hours. Last day load is 834 883 888 883 or 17%. Given
                                             that link price is 400 BP fractional reserve coefficient
@@ -344,12 +344,12 @@ class App extends React.Component {
                                           display='flex'
                                           alignItems='center'
                                           flexDirection='column'
-                                          backgroundColor='white'
+                                          backgroundColor='#000000'
                                           paddingY={ 50 }
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>
+                                                <Text color='#fff' fontSize='30px'>
                                                     674 555
                                                 </Text>
                                             </Pane>
@@ -363,11 +363,11 @@ class App extends React.Component {
                                           display='flex'
                                           alignItems='center'
                                           flexDirection='column'
-                                          backgroundColor='white'
+                                          backgroundColor='#000000'
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>
+                                                <Text color='#fff' fontSize='30px'>
                                                     267 582
                                                 </Text>
                                             </Pane>
@@ -381,11 +381,11 @@ class App extends React.Component {
                                           display='flex'
                                           alignItems='center'
                                           flexDirection='column'
-                                          backgroundColor='white'
+                                          backgroundColor='#000000'
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>
+                                                <Text color='#fff' fontSize='30px'>
                                                     132 331
                                                 </Text>
                                             </Pane>
@@ -400,11 +400,11 @@ class App extends React.Component {
                                           display='flex'
                                           alignItems='center'
                                           flexDirection='column'
-                                          backgroundColor='white'
+                                          backgroundColor='#000000'
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>
+                                                <Text color='#fff' fontSize='30px'>
                                                     13 M
                                                 </Text>
                                             </Pane>
@@ -420,17 +420,16 @@ class App extends React.Component {
                                     </Heading>
                                     <Pane display='flex' marginX={ -8 }>
                                         <CardHover
-                                          
                                           flex={ 1 }
                                           display='flex'
                                           alignItems='center'
                                           flexDirection='column'
-                                          backgroundColor='white'
+                                          backgroundColor='#000'
                                           paddingY={ 50 }
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>
+                                                <Text color='#fff' fontSize='30px'>
                                                     155
                                                 </Text>
                                             </Pane>
@@ -445,7 +444,7 @@ class App extends React.Component {
                                           display='flex'
                                           alignItems='center'
                                           flexDirection='column'
-                                          backgroundColor='white'
+                                          backgroundColor='#000000'
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
@@ -478,11 +477,11 @@ class App extends React.Component {
                                           display='flex'
                                           alignItems='center'
                                           flexDirection='column'
-                                          backgroundColor='white'
+                                          backgroundColor='#000000'
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>
+                                                <Text color='#fff' fontSize='30px'>
                                                     15%
                                                 </Text>
                                             </Pane>
@@ -497,11 +496,11 @@ class App extends React.Component {
                                           display='flex'
                                           alignItems='center'
                                           flexDirection='column'
-                                          backgroundColor='white'
+                                          backgroundColor='#000000'
                                           marginX={ 8 }
                                         >
                                             <Pane marginBottom={ 10 }>
-                                                <Text color='#5f7385' fontSize='30px'>
+                                                <Text color='#fff' fontSize='30px'>
                                                     789 900
                                                 </Text>
                                             </Pane>
