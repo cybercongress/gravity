@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import ClickOutside from 'react-click-outside';
-import { Pane, Text, Pill } from 'evergreen-ui';
+import { Pane, Text, Pill, TextInput } from 'evergreen-ui';
 import {
     Message,
     MenuContainer,
@@ -14,6 +14,102 @@ import {
 } from '../..';
 // import * as actions from '../../redux/appMenu';
 const imgEth = require('./AppMenu/eth.svg');
+
+export const WaleetAppMenuEth = ({ ethBalance }) => (
+    <Pane marginBottom={ 20 } display='flex' alignItems='center'>
+        <Pane marginRight={ 13 }>
+            <Text color='#fff' fontSize='24px'>
+                {ethBalance}
+            </Text>
+        </Pane>
+
+        <Pane display='flex' alignItems='center'>
+            <Pane width={ 32 } height={ 32 }>
+                <img src={ imgEth } />
+            </Pane>
+            <Pane width={ 32 } height={ 32 }>
+                <img src={ imgEth } />
+            </Pane>
+        </Pane>
+    </Pane>
+);
+
+export const WaleetAppMenuCyb = ({ cybBalance }) => (
+    <Pane display='flex' alignItems='center'>
+        <Pane marginRight={ 13 }>
+            <Text color='#fff' fontSize='24px'>
+                {cybBalance}
+            </Text>
+        </Pane>
+
+        <Pane display='flex' alignItems='center'>
+            <Pane paddingX={ 7 }>
+                <Pill
+                  height={ 7.8 }
+                  width={ 7.8 }
+                  borderRadius='50%'
+                  paddingX={ 0 }
+                  isSolid
+                  boxShadow='0 0 9px 1.5px #4ed6ae'
+                  backgroundColor='#36d6ae'
+                />
+            </Pane>
+            <Pane paddingX={ 7 }>
+                <Pill
+                  height={ 7.8 }
+                  width={ 7.8 }
+                  borderRadius='50%'
+                  paddingX={ 0 }
+                  isSolid
+                  boxShadow='0 0 9px 1.5px #4ed6ae'
+                  backgroundColor='#36d6ae'
+                />
+            </Pane>
+            <Pane paddingX={ 7 }>
+                <Pill
+                  height={ 7.8 }
+                  width={ 7.8 }
+                  borderRadius='50%'
+                  paddingX={ 0 }
+                  isSolid
+                  boxShadow='0 0 9px 1.5px #4ed6ae'
+                  backgroundColor='#36d6ae'
+                />
+            </Pane>
+            <Pane paddingX={ 7 }>
+                <Pill
+                  height={ 7.8 }
+                  width={ 7.8 }
+                  borderRadius='50%'
+                  paddingX={ 0 }
+                  isSolid
+                  boxShadow='0 0 9px 1.5px #4ed6ae'
+                  backgroundColor='#36d6ae'
+                />
+            </Pane>
+        </Pane>
+    </Pane>
+);
+
+export const WaleetAppMenu = ({ ethBalance, cybBalance, ...props }) => (
+    <Pane { ...props } flexDirection='column' alignItems='flex-start' display='flex' flexShrink={ 0 }>
+        {ethBalance && <WaleetAppMenuEth ethBalance={ ethBalance } />}
+        {cybBalance && <WaleetAppMenuCyb cybBalance={ cybBalance } />}
+    </Pane>
+);
+
+export const UserCard = ({ ...props }) => (
+    <Pane { ...props } width='100%' flexShrink={ 0 } display='flex' justifyContent='center'>
+        <Pane display='flex' alignItems='center'>
+            <Pane marginX={ 5 } width={ 32 } height={ 32 }>
+                <img src={ imgEth } />
+            </Pane>
+            <Pane marginX={ 5 } width={ 32 } height={ 32 }>
+                <img src={ imgEth } />
+            </Pane>
+        </Pane>
+    </Pane>
+);
 
 class AppMenu extends Component {
     addToFavorites = () => {
@@ -55,102 +151,35 @@ class AppMenu extends Component {
                 >
                 Cyb in Ethereum Mainnet may not be secure yet. We recommend to operate accounts with small balance at your own risk.
                 </Message> */}
-                <Pane
-                  flexDirection='column'
-                  alignItems='flex-start'
-                  display='flex'
-                  marginBottom={ 66 }
-                  flexShrink={0}
-                >
-                    <Pane marginBottom={ 20 } display='flex' alignItems='center'>
-                        <Pane marginRight={ 13 }>
-                            <Text color='#fff' fontSize='24px'>
-                                7
-                            </Text>
-                        </Pane>
+                <WaleetAppMenu marginBottom={ 66 } ethBalance={17} cybBalance={10} />
+                <UserCard className='opacityItems' marginBottom={ 20 } />
 
-                        <Pane display='flex' alignItems='center'>
-                            <Pane width={ 32 } height={ 32 }>
-                                <img src={ imgEth } />
-                            </Pane>
-                            <Pane width={ 32 } height={ 32 }>
-                                <img src={ imgEth } />
-                            </Pane>
-                        </Pane>
-                    </Pane>
-                    <Pane display='flex' alignItems='center'>
-                        <Pane marginRight={ 13 }>
-                            <Text color='#fff' fontSize='24px'>
-                                7
-                            </Text>
-                        </Pane>
-
-                        <Pane display='flex' alignItems='center'>
-                            <Pane paddingX={ 7 }>
-                                <Pill
-                                  height={ 7.8 }
-                                  width={ 7.8 }
-                                  borderRadius='50%'
-                                  paddingX={ 0 }
-                                  isSolid
-                                  boxShadow='0 0 9px 1.5px #4ed6ae'
-                                  backgroundColor='#36d6ae'
-                                />
-                            </Pane>
-                            <Pane paddingX={ 7 }>
-                                <Pill
-                                  height={ 7.8 }
-                                  width={ 7.8 }
-                                  borderRadius='50%'
-                                  paddingX={ 0 }
-                                  isSolid
-                                  boxShadow='0 0 9px 1.5px #4ed6ae'
-                                  backgroundColor='#36d6ae'
-                                />
-                            </Pane>
-                            <Pane paddingX={ 7 }>
-                                <Pill
-                                  height={ 7.8 }
-                                  width={ 7.8 }
-                                  borderRadius='50%'
-                                  paddingX={ 0 }
-                                  isSolid
-                                  boxShadow='0 0 9px 1.5px #4ed6ae'
-                                  backgroundColor='#36d6ae'
-                                />
-                            </Pane>
-                            <Pane paddingX={ 7 }>
-                                <Pill
-                                  height={ 7.8 }
-                                  width={ 7.8 }
-                                  borderRadius='50%'
-                                  paddingX={ 0 }
-                                  isSolid
-                                  boxShadow='0 0 9px 1.5px #4ed6ae'
-                                  backgroundColor='#36d6ae'
-                                />
-                            </Pane>
-                        </Pane>
-                    </Pane>
-                </Pane>
-                <Pane className='opacityItems' width='100%' flexShrink={0} display='flex' justifyContent='center' marginBottom={ 20 }>
-                    <Pane display='flex' alignItems='center'>
-                        <Pane marginX={ 5 } width={ 32 } height={ 32 }>
-                            <img src={ imgEth } />
-                        </Pane>
-                        <Pane marginX={ 5 } width={ 32 } height={ 32 }>
-                            <img src={ imgEth } />
-                        </Pane>
-                    </Pane>
-                </Pane>
                 {/* <Pane overflow='auto' flexGrow={1} width='100%'> */}
-                    <Bookmarks items={ menuItems } deleteMenuItem={ deleteMenuItem } />
+                <Bookmarks items={ menuItems } deleteMenuItem={ deleteMenuItem } />
                 {/* </Pane> */}
-                {pendingAddToFavorites && (
-                    <div onClickOutside={ this.rejectFavorite }>
-                        <AddMenuItemContainer>
+               
+                <Pane
+                  width='100%'
+                  paddingY={ 10 }
+                  display='flex'
+                  justifyContent='center'
+                  alignItems='center'
+                  className='opacityItemsBefore'
+                  flexDirection='column'
+                >
+                 {pendingAddToFavorites && (
+                    <Pane zIndex={2} onClickOutside={ this.rejectFavorite }>
+                        <AddMenuItemContainer paddingBottom={10}>
                             <AddMenuItem>
-                                <input
+                                <TextInput
+                                    boxSizing='border-box'
+                                    paddingRigt={40}
+                                    paddingLeft={10}
+                                    paddingY={10}
+                                    width='80%'
+                                    fontSize='14px'
+                                    backgroundColor='transparent'
+                                    style={{caretColor: '#36d6ae' }}
                                   ref={ (node) => {
                                         this.input = node;
                                     } }
@@ -159,14 +188,13 @@ class AppMenu extends Component {
                                 <AddMenuItemReject onClick={ this.addToFavorites } />
                             </AddMenuItem>
                         </AddMenuItemContainer>
-                    </div>
+                    </Pane>
                 )}
-                <Pane width='100%' paddingY={10} display='flex' justifyContent='center' className='opacityItemsBefore'>
-                <ReportLinkContainer>
-                    <a target='__blank' href='https://github.com/cybercongress/cyb'>
-                        Find a bug?
-                    </a>
-                </ReportLinkContainer>
+                    <ReportLinkContainer>
+                        <a target='__blank' href='#'>
+                            Files
+                        </a>
+                    </ReportLinkContainer>
                 </Pane>
             </MenuContainer>
         );

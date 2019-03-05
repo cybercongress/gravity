@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pane, Pill } from 'evergreen-ui';
+import { Pane, Pill, Button } from 'evergreen-ui';
 import { CybLink } from '../../..';
 
 const img = require('../cyb.svg');
@@ -34,7 +34,7 @@ const Items = ({ item, deleteAppFromMenu, ...props }) => (
       key={ item.rootDura }
     >
     <Pane display='flex' width='100%' paddingLeft={20} paddingRight={20} justifyContent='space-between' alignItems='center'>
-        <Pane alignItems='center' display='flex'>
+        <Pane alignItems='center' flexGrow={1} display='flex'>
             <Pane className={ styles.imgItems } marginRight={ 17 } width={ 24 } height={ 24 }>
                 <img src={ item.img ? item.img : img } />
             </Pane>
@@ -42,6 +42,7 @@ const Items = ({ item, deleteAppFromMenu, ...props }) => (
                 {item.name}
             </CybLink>
         </Pane>
+        {item.pill &&
         <Pill
         //   position='absolute'
           isSolid
@@ -52,16 +53,17 @@ const Items = ({ item, deleteAppFromMenu, ...props }) => (
           boxShadow='0px 0px 17px 2px #36d6ae'
           style={{ backgroundColor: '#36d6ae', color: '#000' }}
         >
-            3
+            {item.pill}
         </Pill>
-        </Pane>
-        {/* <button
+        }
+        <button
           type='button'
           className={styles.bookmarks__remove_btn}
           onClick={ () => deleteAppFromMenu(item.rootDura) }
         >
         &#128465;
-        </button> */}
+        </button>
+    </Pane>
     </Pane>
 );
 
@@ -85,16 +87,26 @@ export const ReportLinkContainer = ({ children }) => (
 
 const MenuContainer = ({ children }) => <div className={ styles.menuContainer2 }>{children}</div>;
 
-export const AddMenuItem = ({ children }) => <span className={ styles.AddMenuItem }>{children}</span>;
+export const AddMenuItem = ({ children, ...props }) => <Pane {...props} className={ styles.AddMenuItem }>{children}</Pane>;
 
 export const AddMenuItemReject = ({ onClick }) => (
-    <button type='button' onClick={ onClick } className={ styles.AddMenuItem__reject }>
+    <Button
+    type='button'
+    position='absolute'
+    width={34}
+    right={20}
+    top={0}
+    fontSize='16px'
+    bottom={0}
+    paddingX={13}
+    onClick={ onClick }
+    className='btn'>
         &#10004;
-    </button>
+    </Button>
 );
 
 export const AddMenuItemContainer = props => (
-    <div { ...props } className={ styles.AddMenuItemContainer } />
+    <Pane { ...props } className={ styles.AddMenuItemContainer } />
 );
 
 export default MenuContainer;

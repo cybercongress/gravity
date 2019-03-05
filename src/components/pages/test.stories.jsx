@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 // import { connect } from 'react-redux';
-
 // import * as actions from '../../redux/settings';
 import {
     Button, Pane, Text, Icon, Heading, IconButton, Strong,
@@ -191,7 +190,7 @@ class CybCard extends Component {
 
 const Settings = () => (
     <Pane>
-    <ScrollContainer style={ { paddingBottom: 170 } }>
+    <ScrollContainer>
         <MainContainer>
             <Pane marginBottom={ 80 } display='flex' justifyContent='center'>
                 <Heading fontSize='29px' color='#fff'>
@@ -213,6 +212,7 @@ const Settings = () => (
     position='absolute'
     bottom={ 0 }
     paddingY={ 30 }
+    paddingX={30}
     backgroundColor='#000000'
   >
       <Pane
@@ -222,6 +222,7 @@ const Settings = () => (
         alignItems='center'
         justifyContent='center'
         flexDirection='row'
+
       >
           <Pane>
               <Text color='#fff' fontSize='18px'>

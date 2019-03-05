@@ -54,7 +54,7 @@ const Application = (props) => {
                         <NavigationComponents dura={dura} canBack={activeBttnBack} isFavorited={activeBttnFavorited} />
                     </NavigationCenter>
                     <NavigationRight>
-                        <IdBar defaultEthAccount />
+                        <IdBar menuItems={menuItems} defaultEthAccount />
                     </NavigationRight>
                 </Navigation>
             </AppHeader>
@@ -78,6 +78,7 @@ const menuItems = [
         items: '1',
         rootDura: 'ds',
         name: 'Chaingear',
+        pill: '7'
     },
     {
         items: '2',
@@ -88,6 +89,7 @@ const menuItems = [
         items: '3',
         name: 'cyb.ai',
         rootDura: 'tyds',
+        address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
     },
 
     {

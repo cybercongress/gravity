@@ -113,16 +113,18 @@ display: none;
 
 .user_popup {
   font-family: 'Play', sans-serif;
-  position: absolute;
-  width: 156px;
-  background: white;
+  position: fixed;
+  width: 250px;
+  background: #000000;
   color: #000;
-  border-radius: 2px;
-  box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.14);
+  // border-radius: 2px;
+  // box-shadow: 1px 5px 4px 0 rgba(0, 0, 0, 0.14);
   right: 0;
-  top: 53px;
+  top: 50px;
+  bottom: 0;
   display: none;
-  padding: 20px;
+  padding-top: 50px;
+  padding-right: 0;
   box-sizing: border-box;
   z-index: 2;
   box-sizing: border-box;
@@ -136,23 +138,74 @@ display: none;
 }
 
 .user_popup:before {
-  position: absolute;
-  top: -5px;
-  right: 15px;
-  content: '';
-  width: 0.73em;
-  height: 0.73em;
-  background: #FFFFFF;
-  transform: rotate(45deg);
+  // position: absolute;
+  // top: -5px;
+  // right: 15px;
+  // content: '';
+  // width: 0.73em;
+  // height: 0.73em;
+  // background: #FFFFFF;
+  // transform: rotate(45deg);
 }
 
 .user_popup__open {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  text-align: center;
+  align-items: center;
+  // text-align: center;
 }
 
 .tokenName {
   display: inline-block;
+}
+
+.bookmarks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  flex-grow: 1;
+  overflow: auto;
+  position: relative;
+}
+
+.bookmarks__item {
+  // padding-left: 24px;
+  // padding-right: 14px;
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.bookmarks__item:first-child {
+  margin-top: 55px;
+}
+
+.bookmarks__item:last-child {
+  margin-bottom: 50px;
+}
+
+.imgItems img{
+  width: 24px;
+  height: 24px;
+}
+
+.activeTL::after {
+  content: '';
+  height: 37px;
+  width: 3px;
+  background-color: #4ed6ae;
+  filter: blur(0.7px);
+  box-shadow: -3px 0px 20px 1.5px #4ed6ae;
+}
+
+.bookmarks__item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.bookmarks__item:hover a {
+  color: #438cef;
 }

@@ -47,6 +47,7 @@ class IdBar extends Component {
             defaultCyberAccount,
             defaultAccountBalance,
             defaultAccountBalanceCyb,
+            menuItems,
         } = this.props;
 
         return (
@@ -60,6 +61,7 @@ class IdBar extends Component {
                       favoriteClick={ this.favoriteClick }
                       ethBalance={ defaultAccountBalance }
                       cybBalance={ defaultAccountBalanceCyb }
+                      menuItems={menuItems}
                     />
                 </div>
                 {defaultEthAccount && <SkillBar fontSize='10px' marginRight={30} style={{height: 14, maxWidth: 200 }} value={25} />}
