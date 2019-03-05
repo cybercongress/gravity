@@ -78,18 +78,21 @@ const menuItems = [
         items: '1',
         rootDura: 'ds',
         name: 'Chaingear',
-        pill: '7'
+        pill: '7',
+        status: 'remote',
     },
     {
         items: '2',
         name: 'cyber•Congress',
         rootDura: 'tbcds',
+        status: 'local',
     },
     {
         items: '3',
         name: 'cyb.ai',
         rootDura: 'tyds',
         address: '0x000F3754f028c704FDCe4e8ab9aAdba220f39618',
+        status: 'fail',
     },
 
     {

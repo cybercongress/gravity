@@ -46,7 +46,13 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
             <Pane alignItems='flex-start' flexDirection='column' display='flex'>
                 <Pane alignItems='center' display='flex'>
                 <Pane width={ 14 } height={ 14 } alignItems='center' display='flex'>
-                        <Pill marginRight={ 7 } width={ 6 } height={ 6 } paddingX={ 0 } isSolid borderRadius='50%' />
+                        <Pill marginRight={ 7 } width={ 6 } height={ 6 } paddingX={ 0 } isSolid borderRadius='50%' color={
+                                            item.status == 'local'
+                                                ? 'green'
+                                                : item.status == 'fail'
+                                                ? 'red'
+                                                : 'yellow'
+                                        }/>
                    </Pane>
                     {item.address ?
                     <Pane alignItems='center' display='flex'>
@@ -125,6 +131,7 @@ export const CurrentUser = (props) => {
                     <Pane
                       width='100%'
                       paddingBottom={ 30 }
+                      paddingTop={10}
                       display='flex'
                       justifyContent='center'
                       alignItems='center'
