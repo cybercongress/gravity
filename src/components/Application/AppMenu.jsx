@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import ClickOutside from 'react-click-outside';
-import { Pane, Text, Pill, TextInput } from 'evergreen-ui';
+import {
+    Pane, Text, Pill, TextInput, Tooltip,
+} from 'evergreen-ui';
 import {
     Message,
     MenuContainer,
@@ -35,60 +37,71 @@ export const WaleetAppMenuEth = ({ ethBalance }) => (
 );
 
 export const WaleetAppMenuCyb = ({ cybBalance }) => (
-    <Pane display='flex' alignItems='center'>
-        <Pane marginRight={ 13 }>
-            <Text color='#fff' fontSize='24px'>
-                {cybBalance}
-            </Text>
-        </Pane>
-
+    <Tooltip
+      position='left'
+      content={ (
+          <Pane paddingY={ 16 } paddingX={ 16 }>
+              <Text lineHeight={ 1.33 } fontSize='12px' color='#fff'>
+                    142 76483221311 explanation of number scales
+              </Text>
+          </Pane>
+) }
+    >
         <Pane display='flex' alignItems='center'>
-            <Pane paddingX={ 7 }>
-                <Pill
-                  height={ 7.8 }
-                  width={ 7.8 }
-                  borderRadius='50%'
-                  paddingX={ 0 }
-                  isSolid
-                  boxShadow='0 0 9px 1.5px #4ed6ae'
-                  backgroundColor='#36d6ae'
-                />
+            <Pane marginRight={ 13 }>
+                <Text color='#fff' fontSize='24px'>
+                    {cybBalance}
+                </Text>
             </Pane>
-            <Pane paddingX={ 7 }>
-                <Pill
-                  height={ 7.8 }
-                  width={ 7.8 }
-                  borderRadius='50%'
-                  paddingX={ 0 }
-                  isSolid
-                  boxShadow='0 0 9px 1.5px #4ed6ae'
-                  backgroundColor='#36d6ae'
-                />
-            </Pane>
-            <Pane paddingX={ 7 }>
-                <Pill
-                  height={ 7.8 }
-                  width={ 7.8 }
-                  borderRadius='50%'
-                  paddingX={ 0 }
-                  isSolid
-                  boxShadow='0 0 9px 1.5px #4ed6ae'
-                  backgroundColor='#36d6ae'
-                />
-            </Pane>
-            <Pane paddingX={ 7 }>
-                <Pill
-                  height={ 7.8 }
-                  width={ 7.8 }
-                  borderRadius='50%'
-                  paddingX={ 0 }
-                  isSolid
-                  boxShadow='0 0 9px 1.5px #4ed6ae'
-                  backgroundColor='#36d6ae'
-                />
+
+            <Pane display='flex' alignItems='center'>
+                <Pane paddingX={ 7 }>
+                    <Pill
+                      height={ 7.8 }
+                      width={ 7.8 }
+                      borderRadius='50%'
+                      paddingX={ 0 }
+                      isSolid
+                      boxShadow='0 0 9px 1.5px #4ed6ae'
+                      backgroundColor='#36d6ae'
+                    />
+                </Pane>
+                <Pane paddingX={ 7 }>
+                    <Pill
+                      height={ 7.8 }
+                      width={ 7.8 }
+                      borderRadius='50%'
+                      paddingX={ 0 }
+                      isSolid
+                      boxShadow='0 0 9px 1.5px #4ed6ae'
+                      backgroundColor='#36d6ae'
+                    />
+                </Pane>
+                <Pane paddingX={ 7 }>
+                    <Pill
+                      height={ 7.8 }
+                      width={ 7.8 }
+                      borderRadius='50%'
+                      paddingX={ 0 }
+                      isSolid
+                      boxShadow='0 0 9px 1.5px #4ed6ae'
+                      backgroundColor='#36d6ae'
+                    />
+                </Pane>
+                <Pane paddingX={ 7 }>
+                    <Pill
+                      height={ 7.8 }
+                      width={ 7.8 }
+                      borderRadius='50%'
+                      paddingX={ 0 }
+                      isSolid
+                      boxShadow='0 0 9px 1.5px #4ed6ae'
+                      backgroundColor='#36d6ae'
+                    />
+                </Pane>
             </Pane>
         </Pane>
-    </Pane>
+    </Tooltip>
 );
 
 export const WaleetAppMenu = ({ ethBalance, cybBalance, ...props }) => (
@@ -151,13 +164,13 @@ class AppMenu extends Component {
                 >
                 Cyb in Ethereum Mainnet may not be secure yet. We recommend to operate accounts with small balance at your own risk.
                 </Message> */}
-                <WaleetAppMenu marginBottom={ 66 } ethBalance={17} cybBalance={10} />
+                <WaleetAppMenu marginBottom={ 66 } ethBalance={ 17 } cybBalance={ 10 } />
                 <UserCard className='opacityItems' marginBottom={ 20 } />
 
                 {/* <Pane overflow='auto' flexGrow={1} width='100%'> */}
                 <Bookmarks items={ menuItems } deleteMenuItem={ deleteMenuItem } />
                 {/* </Pane> */}
-               
+
                 <Pane
                   width='100%'
                   paddingY={ 10 }
@@ -167,29 +180,29 @@ class AppMenu extends Component {
                   className='opacityItemsBefore'
                   flexDirection='column'
                 >
-                 {pendingAddToFavorites && (
-                    <Pane zIndex={2} onClickOutside={ this.rejectFavorite }>
-                        <AddMenuItemContainer paddingBottom={10}>
-                            <AddMenuItem>
-                                <TextInput
-                                    boxSizing='border-box'
-                                    paddingRigt={40}
-                                    paddingLeft={10}
-                                    paddingY={10}
-                                    width='80%'
-                                    fontSize='14px'
-                                    backgroundColor='transparent'
-                                    style={{caretColor: '#36d6ae' }}
-                                  ref={ (node) => {
-                                        this.input = node;
-                                    } }
-                                  defaultValue='New App'
-                                />
-                                <AddMenuItemReject onClick={ this.addToFavorites } />
-                            </AddMenuItem>
-                        </AddMenuItemContainer>
-                    </Pane>
-                )}
+                    {pendingAddToFavorites && (
+                        <Pane zIndex={ 2 } onClickOutside={ this.rejectFavorite }>
+                            <AddMenuItemContainer paddingBottom={ 10 }>
+                                <AddMenuItem>
+                                    <TextInput
+                                      boxSizing='border-box'
+                                      paddingRigt={ 40 }
+                                      paddingLeft={ 10 }
+                                      paddingY={ 10 }
+                                      width='80%'
+                                      fontSize='14px'
+                                      backgroundColor='transparent'
+                                      style={ { caretColor: '#36d6ae' } }
+                                      ref={ (node) => {
+                                            this.input = node;
+                                        } }
+                                      defaultValue='New App'
+                                    />
+                                    <AddMenuItemReject onClick={ this.addToFavorites } />
+                                </AddMenuItem>
+                            </AddMenuItemContainer>
+                        </Pane>
+                    )}
                     <ReportLinkContainer>
                         <a target='__blank' href='#'>
                             Files
