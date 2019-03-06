@@ -34,6 +34,7 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
       alignItems='center'
       className={ `${styles.bookmarks__item} ${styles.activeTL}` }
       key={ item.rootDura }
+      style={{ direction: 'ltr' }}
     >
         <Pane
           display='flex'
@@ -79,7 +80,7 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
 );
 
 export const BookmarksTimeline = ({ items, ...props }) => (
-    <div className={ styles.bookmarks }>
+    <div style={{ direction: 'rtl' }} className={ styles.bookmarks }>
         {items.map(item => (
             <ItemsTimeline { ...props } key={ item.rootDura } item={ item } />
         ))}

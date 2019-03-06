@@ -22,8 +22,26 @@ html, body, #root {
 	height: 100%;
 }
 
+/* width */
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #272728;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #525254;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5c5c5c;
   }
 
   .btn {
