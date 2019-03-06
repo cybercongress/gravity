@@ -19,7 +19,8 @@ export class SearchItem extends React.Component {
 
         return (
             <Pane
-              elevation={ this.state.hover ? 3 : 0 }
+            //   elevation={ this.state.hover ? 3 : 0 }
+              boxShadow={ this.state.hover ? '0px 2px 18px 0px #36d6ae' : '0px 0px 0.4px 0px #36d6ae' }
               onMouseEnter={ () => this.handleHover() }
               onMouseLeave={ () => this.handleHover() }
               paddingLeft={ 20 }
@@ -28,7 +29,7 @@ export class SearchItem extends React.Component {
               display='flex'
               justifyContent='space-between'
               key={ this.props.hash }
-              backgroundColor='white'
+              backgroundColor='#000'
               borderRadius={ 5 }
               marginBottom={ 10 }
                 // className={ styles.searchItem }
@@ -98,6 +99,7 @@ export class SearchItem extends React.Component {
                     </Tooltip>
                     <Text
                         // style={ { textDecoration: 'none' } }
+                      color='#fff'
                       size={ 400 }
                         // href={ `cyb://${children}` }
                     >

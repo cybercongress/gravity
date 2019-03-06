@@ -107,7 +107,7 @@ class Validators extends React.Component {
 
         return (
             <Pane>
-                <ScrollContainer style={ { paddingBottom: 80 } }>
+                <ScrollContainer>
                     <MainContainer>
                         {/* <WalletTabs>
                     <WalletTab
@@ -281,21 +281,8 @@ class App extends React.Component {
 
         return (
             <div>
-                <ScrollContainer style={ { paddingBottom: 70 } }>
+                <ScrollContainer >
                     <MainContainer>
-                        {/* <FlexContainer>
-                    <div style={ { width: '30%' } }>
-                        <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text>
-                        <SkillBar value={ 10 }>
-                            {PopupNotification && (
-                                <PopupSkillBar>
-                                    <Text color='white'>600000 of 1000000 left (60%) </Text>
-                                </PopupSkillBar>
-                            )}
-                        </SkillBar>
-                    </div>
-                </FlexContainer> */}
-
                         {links.length > 0 && (
                             <div>
                                 <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
@@ -308,7 +295,7 @@ class App extends React.Component {
                                             //   appearance="primary"
                                           fontSize='1em'
                                           marginY={ 15 }
-                                        
+                                          className='btn'
                                           onClick={ () => this.seeAll() }
                                         >
                                             {!seeAll ? 'see all' : 'top 10'}
