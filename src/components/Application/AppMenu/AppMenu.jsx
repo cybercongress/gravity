@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pane, Pill, Button } from 'evergreen-ui';
+import { Pane, Pill, Button, IconButton } from 'evergreen-ui';
 import { CybLink } from '../../..';
 
 const img = require('../cyb.svg');
@@ -33,7 +33,7 @@ const Items = ({ item, deleteAppFromMenu, ...props }) => (
       className={ `${styles.bookmarks__item} ${styles.active}` }
       key={ item.rootDura }
     >
-    <Pane display='flex' width='100%' paddingLeft={20} paddingRight={20} justifyContent='space-between' alignItems='center'>
+    <Pane display='flex' width='100%' paddingLeft={20} paddingRight={10} justifyContent='space-between' alignItems='center'>
         <Pane alignItems='center' flexGrow={1} display='flex'>
             <Pane className={ styles.imgItems } marginRight={ 17 } width={ 24 } height={ 24 }>
                 <img src={ item.img ? item.img : img } />
@@ -56,13 +56,18 @@ const Items = ({ item, deleteAppFromMenu, ...props }) => (
             {item.pill}
         </Pill>
         }
+        <div className={styles.bookmarks__group_btn}>
+        <button
+          type='button'
+          className={styles.bookmarks__edit_btn}
+          onClick={ () => deleteAppFromMenu(item.rootDura) }
+        />
         <button
           type='button'
           className={styles.bookmarks__remove_btn}
           onClick={ () => deleteAppFromMenu(item.rootDura) }
-        >
-        &#128465;
-        </button>
+        />
+        </div>
     </Pane>
     </Pane>
 );
