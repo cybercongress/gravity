@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import Slider from "react-slick";
 // import { connect } from 'react-redux';
 // import * as actions from '../../redux/settings';
 import {
@@ -13,7 +14,34 @@ import {
     // Text,
 } from '../..';
 import Application from '../Application/Application';
+import { throws } from 'assert';
 
+const card = [
+    {
+        name: 'cyb1',
+        balance: '1',
+    },
+    {
+        name: 'cyb2',
+        balance: '2',
+    },
+    {
+        name: 'cyb3',
+        balance: '3',
+    },
+    {
+        name: 'cyb4',
+        balance: '1',
+    },
+    {
+        name: 'cyb5',
+        balance: '2',
+    },
+    {
+        name: 'cyb6',
+        balance: '3',
+    }
+]
 class CybCard extends Component {
     state = {
         hover: false,
@@ -30,7 +58,7 @@ class CybCard extends Component {
     };
 
     render() {
-        const { children, active } = this.props;
+        const { eth, cybName, children, active } = this.props;
 
         return (
             <Pane
@@ -67,12 +95,12 @@ class CybCard extends Component {
                       color={ active ? 'white' : '#757575' }
                       marginBottom={ active ? 45 : 20 }
                     >
-                        cyb
+                        {cybName}
                     </Heading>
                     {!active && (
                         <Text fontSize='16px' color='#757575' marginBottom={ 40 }>
                             {' '}
-                            1 ETH
+                            {eth} ETH
                             {' '}
                         </Text>
                     )}
@@ -188,6 +216,32 @@ class CybCard extends Component {
     }
 }
 
+class SimpleSlider extends React.Component {
+    render() {
+        const searchResults = card.map(
+            card => (
+                <Pane paddingTop='20%' height={500}>
+                <CybCard active={ false } cybName={card.name} eth={card.balance} />
+                </Pane>
+            ),
+        );
+      var settings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        speed: 500,
+        centerPadding: "60px",
+        slidesToShow: 3,
+        // slidesToScroll: 1,
+      };
+      return (
+        <Slider {...settings}>
+          {searchResults}
+        </Slider>
+      );
+    }
+  }
+
 const Settings = () => (
     <Pane>
     <ScrollContainer>
@@ -197,10 +251,13 @@ const Settings = () => (
                     Your virtual robot
                 </Heading>
             </Pane>
-            <Pane display='flex' alignItems='center' justifyContent='space-around'>
+            {/* <Pane display='flex' alignItems='center' justifyContent='space-around'>
                 <CybCard marginX={ 50 } />
                 <CybCard marginX={ 50 } active />
                 <CybCard marginX={ 50 } />
+            </Pane> */}
+            <Pane height={500} width={1000}>
+                <SimpleSlider />
             </Pane>
         </MainContainer>
     </ScrollContainer>

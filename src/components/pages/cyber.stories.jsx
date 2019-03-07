@@ -139,7 +139,7 @@ class Validators extends React.Component {
                                   onClick={ this.showActive }
                                   paddingX={ 50 }
                                   paddingY={ 20 }
-                                  style={ { boxShadow: 'inset 0px 0px 0.1px 0.3px' } }
+                                  boxShadow={ !jailedFilter ? '0px 0px 12px 0.3px #3ab793' : 'inset 0px 0px 0.5px 0.3px #3ab793' }
                                 >
                                     Active
                                 </Tab>
@@ -150,7 +150,7 @@ class Validators extends React.Component {
                                   onClick={ this.showJailed }
                                   paddingX={ 50 }
                                   paddingY={ 20 }
-                                  style={ { boxShadow: 'inset 0px 0px 0.1px 0.3px' } }
+                                  boxShadow={ !jailedFilter ? 'inset 0px 0px 0.5px 0.3px #3ab793' : '0px 0px 12px 0.3px #3ab793' }
                                 >
                                     Jailed
                                 </Tab>

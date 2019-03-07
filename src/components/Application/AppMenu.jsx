@@ -16,6 +16,9 @@ import {
 } from '../..';
 // import * as actions from '../../redux/appMenu';
 const imgEth = require('./AppMenu/eth.svg');
+const imggroup3= require('./AppMenu/group-3.svg');
+const imginfinity2 = require('./AppMenu/infinity-2.svg');
+const imgbody = require('./AppMenu/body.svg');
 
 export const WaleetAppMenuEth = ({ ethBalance }) => (
     <Pane marginBottom={ 20 } display='flex' alignItems='center'>
@@ -114,11 +117,14 @@ export const WaleetAppMenu = ({ ethBalance, cybBalance, ...props }) => (
 export const UserCard = ({ ...props }) => (
     <Pane { ...props } width='100%' flexShrink={ 0 } display='flex' justifyContent='center'>
         <Pane display='flex' alignItems='center'>
-            <Pane marginX={ 5 } width={ 32 } height={ 32 }>
-                <img src={ imgEth } />
+            <Pane marginX={ 5 } width={ 32 } height={ 40 }>
+                <img src={ imginfinity2 } />
             </Pane>
-            <Pane marginX={ 5 } width={ 32 } height={ 32 }>
-                <img src={ imgEth } />
+            <Pane marginX={ 5 } width={ 32 } height={ 40 }>
+                <img src={ imgbody } />
+            </Pane>
+            <Pane marginX={ 5 } width={ 32 } height={ 40 }>
+                <img src={ imggroup3 } />
             </Pane>
         </Pane>
     </Pane>

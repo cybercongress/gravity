@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 :root {
     --slate-9:rgba(67, 90, 111, 0.09);
     --black: #000000;
+}
+
+
+.slick-center{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
 body {
