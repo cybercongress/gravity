@@ -69,7 +69,7 @@ class CybCard extends Component {
                     active
                         ? '0 0 80px 2px #36d6ae'
                         : this.state.hover
-                        ? '0 0 50px 0px #36d6ae'
+                        ? '0 0 20px 0px #36d6ae'
                         : '0'
                 }
               onMouseEnter={ () => this.handleHover() }
@@ -83,6 +83,7 @@ class CybCard extends Component {
               alignItems='center'
               justifyContent='center'
               flexShrink={ 0 }
+              className='active-slide-card'
             >
                 <Pane
                   display='flex'
@@ -94,16 +95,17 @@ class CybCard extends Component {
                       fontSize='29px'
                       color={ active ? 'white' : '#757575' }
                       marginBottom={ active ? 45 : 20 }
+                      className='active-slide-heading'
                     >
                         {cybName}
                     </Heading>
-                    {!active && (
-                        <Text fontSize='16px' color='#757575' marginBottom={ 40 }>
+                    <Pane marginBottom={ 40 } className='noactive-slide-balance'>
+                        <Text fontSize='16px' color='#757575'>
                             {' '}
                             {eth} ETH
                             {' '}
                         </Text>
-                    )}
+                    </Pane>
                     {!active && (
                         <Pane
                           style={ { border: '2px solid #3ab793' } }
@@ -116,6 +118,8 @@ class CybCard extends Component {
                           borderRadius='50%'
                           boxShadow='0 2px 25px 1px #3ab793'
                           marginBottom={ 0 }
+                          className='oval'
+
                         >
                             <Pane
                               style={ {
@@ -125,6 +129,7 @@ class CybCard extends Component {
                               width={ 16.6 }
                               height={ 9.4 }
                               borderRadius='50%'
+                              className='oval-children'
                             />
                             <Pane
                               style={ {
@@ -134,43 +139,11 @@ class CybCard extends Component {
                               width={ 16.6 }
                               height={ 9.4 }
                               borderRadius='50%'
+                              className='oval-children'
                             />
                         </Pane>
                     )}
-                    {active && (
-                        <Pane
-                          style={ { border: '2px solid #3ab793' } }
-                          width={ 160 }
-                          height={ 160 }
-                          display='flex'
-                          alignItems='center'
-                          justifyContent='space-around'
-                          borderRadius='50%'
-                          boxShadow='0 2px 25px 1px #3ab793'
-                          marginBottom={ active ? 70 : 0 }
-                        >
-                            <Pane
-                              style={ {
-                                    border: '2px solid #3ab793',
-                                    transform: 'rotate(25deg)',
-                                } }
-                              width={ active ? 41 : 16.6 }
-                              height={ active ? 23 : 9.4 }
-                              borderRadius='50%'
-                            />
-                            <Pane
-                              style={ {
-                                    border: '2px solid #3ab793',
-                                    transform: 'rotate(-25deg)',
-                                } }
-                              width={ active ? 41 : 16.6 }
-                              height={ active ? 23 : 9.4 }
-                              borderRadius='50%'
-                            />
-                        </Pane>
-                    )}
-                    {active && (
-                        <Pane>
+                        <Pane className='active-slide-text'>
                             <Pane>
                                 <Text lineHeight='1.71' color='white' size={ 400 }>
                                     It is a long established fact that a reader will be distracted
@@ -179,48 +152,50 @@ class CybCard extends Component {
                                 </Text>
                             </Pane>
                         </Pane>
-                    )}
                 </Pane>
-                {active && (
                     <Pane
+                      className='active-slide-balance'
                       width={ 130 }
                       height={ 42 }
                       borderRadius={ 5 }
                       backgroundColor='#3ab793'
                       position='absolute'
                       bottom={ -20 }
-                      display='flex'
                       alignItems='center'
                       justifyContent='center'
                     >
                         <Text color='#fff' fontWeight={ 600 } fontSize='29px'>
-                            0 ETH
+                            {eth} ETH
                         </Text>
                     </Pane>
-                )}
-                {active && (
                     <Pane
                       position='absolute'
                       bottom={ -65 }
-                      display='flex'
                       alignItems='center'
                       justifyContent='center'
+                      className='active-slide-balance-text'
                     >
                         <Text textShadow='0px 0px 20px #3ab793' color='#3ab793' fontSize='28px'>
                             Unlimited
                         </Text>
                     </Pane>
-                )}
             </Pane>
         );
     }
 }
 
 class SimpleSlider extends React.Component {
+    componentDidMount(){
+        let slickListDiv = document.getElementsByClassName('slick-list')[0]
+        slickListDiv.addEventListener('wheel', event => {
+          event.preventDefault()
+          event.deltaY > 0 ? this.slider.slickNext() : this.slider.slickPrev()
+        })
+      }
     render() {
         const searchResults = card.map(
             card => (
-                <Pane paddingTop='20%' height={500}>
+                <Pane className='slide' alignItems='center' height={700}>
                 <CybCard active={ false } cybName={card.name} eth={card.balance} />
                 </Pane>
             ),
@@ -230,12 +205,13 @@ class SimpleSlider extends React.Component {
         centerMode: true,
         infinite: true,
         speed: 500,
-        centerPadding: "60px",
+        centerPadding: "0px",
         slidesToShow: 3,
+        arrows: false,
         // slidesToScroll: 1,
       };
       return (
-        <Slider {...settings}>
+        <Slider {...settings} ref={slider => this.slider = slider.innerSlider}>
           {searchResults}
         </Slider>
       );
@@ -256,7 +232,7 @@ const Settings = () => (
                 <CybCard marginX={ 50 } active />
                 <CybCard marginX={ 50 } />
             </Pane> */}
-            <Pane height={500} width={1000}>
+            <Pane width='100%'>
                 <SimpleSlider />
             </Pane>
         </MainContainer>
