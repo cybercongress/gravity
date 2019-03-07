@@ -78,8 +78,8 @@
     display: none;
 }
 
-.slick-centers .active-slide-balance-text{
-    display: flex;
+.slick-center .active-slide-balance-text{
+    display: flex !important;
 }
 
 body {
