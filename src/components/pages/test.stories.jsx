@@ -222,7 +222,7 @@ const Settings = () => (
     <Pane>
     <ScrollContainer>
         <MainContainer>
-            <Pane marginBottom={ 80 } display='flex' justifyContent='center'>
+            <Pane display='flex' justifyContent='center'>
                 <Heading fontSize='29px' color='#fff'>
                     Your virtual robot
                 </Heading>
