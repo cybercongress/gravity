@@ -185,13 +185,13 @@ class CybCard extends Component {
 }
 
 class SimpleSlider extends React.Component {
-    componentDidMount(){
-        let slickListDiv = document.getElementsByClassName('slick-list')[0]
-        slickListDiv.addEventListener('wheel', event => {
-          event.preventDefault()
-          event.deltaY > 0 ? this.slider.slickNext() : this.slider.slickPrev()
-        })
-      }
+    // componentDidMount(){
+    //     let slickListDiv = document.getElementsByClassName('slick-list')[0]
+    //     slickListDiv.addEventListener('wheel', event => {
+    //       event.preventDefault()
+    //       event.deltaY > 0 ? this.slider.slickNext() : this.slider.slickPrev()
+    //     })
+    //   }
     render() {
         const searchResults = card.map(
             card => (
@@ -203,15 +203,16 @@ class SimpleSlider extends React.Component {
       var settings = {
         className: "center",
         centerMode: true,
+        focusOnSelect: true,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         centerPadding: "0px",
         slidesToShow: 3,
         arrows: false,
         // slidesToScroll: 1,
       };
       return (
-        <Slider {...settings} ref={slider => this.slider = slider.innerSlider}>
+        <Slider {...settings}>
           {searchResults}
         </Slider>
       );

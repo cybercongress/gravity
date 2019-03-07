@@ -124,7 +124,7 @@ class Validators extends React.Component {
                                   onClick={ this.showActive }
                                   paddingX={ 50 }
                                   paddingY={ 20 }
-                                  boxShadow={ !jailedFilter ? '0px 0px 12px 0.3px #3ab793' : 'inset 0px 0px 0.5px 0.3px #3ab793' }
+                                  boxShadow='inset 0px 0px 0px 0.9px #b4b4b425'
                                 >
                                     Active
                                 </Tab>
@@ -135,7 +135,7 @@ class Validators extends React.Component {
                                   onClick={ this.showJailed }
                                   paddingX={ 50 }
                                   paddingY={ 20 }
-                                  boxShadow={ !jailedFilter ? 'inset 0px 0px 0.5px 0.3px #3ab793' : '0px 0px 12px 0.3px #3ab793' }
+                                  boxShadow='inset 0px 0px 0px 0.9px #b4b4b425'
                                 >
                                     Jailed
                                 </Tab>
@@ -296,7 +296,7 @@ class App extends React.Component {
                                     <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
                                         Network load
                                     </Heading>
-                                    <Card paddingY={ 20 } paddingX={ 24 } boxShadow='0 0 20px 2px #36d6ae' backgroundColor='#000000'>
+                                    <CardHover paddingY={ 20 } paddingX={ 24 } backgroundColor='#000000'>
                                         <Text color='#fff' lineHeight={ 2 }>
                                             Current network capacity is 4 877 888 399 888 347 BP per
                                             24 hours. Last day load is 834 883 888 883 or 17%. Given
@@ -304,7 +304,7 @@ class App extends React.Component {
                                             is around 5.8. So you can bring 5 time more cyberlinks!
                                             Dont waste your time!
                                         </Text>
-                                    </Card>
+                                    </CardHover>
                                 </Pane>
                                 <Pane marginBottom={ 50 }>
                                     <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>

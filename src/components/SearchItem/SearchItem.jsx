@@ -20,7 +20,7 @@ export class SearchItem extends React.Component {
         return (
             <Pane
             //   elevation={ this.state.hover ? 3 : 0 }
-              boxShadow={ this.state.hover ? '0px 2px 18px 0px #36d6ae' : '0px 0px 0.4px 0px #36d6ae' }
+              boxShadow={ '0px 0px 0.4px 0px #dedede' }
               onMouseEnter={ () => this.handleHover() }
               onMouseLeave={ () => this.handleHover() }
               paddingLeft={ 20 }
@@ -29,7 +29,7 @@ export class SearchItem extends React.Component {
               display='flex'
               justifyContent='space-between'
               key={ this.props.hash }
-              backgroundColor='#000'
+              backgroundColor={this.state.hover ? '#b4b4b425' :'#000'}
               borderRadius={ 5 }
               marginBottom={ 10 }
                 // className={ styles.searchItem }

@@ -204,3 +204,10 @@ input:focus{
     z-index: 1;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 57%, var(--black));
 }
+
+.css-11bc0q4[aria-current="page"], [data-css-11bc0q4][aria-current="page"], .css-11bc0q4[aria-selected="true"], [data-css-11bc0q4][aria-selected="true"], .css-11bc0q4:active, [data-css-11bc0q4]:active{
+    color: #36d6ae !important;
+    text-shadow: 0 0 30px;
+    background-color: transparent !important;
+    box-shadow: inset 0px 0px 0px 0.9px #b4b4b425 !important;
+}
