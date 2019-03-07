@@ -109,21 +109,6 @@ class Validators extends React.Component {
             <Pane>
                 <ScrollContainer>
                     <MainContainer>
-                        {/* <WalletTabs>
-                    <WalletTab
-                      onClick={ this.showActive }
-                      isActive={ !jailedFilter }
-                    >
-                        Active
-                    </WalletTab>
-                    <WalletTab
-                      onClick={ this.showJailed }
-                      isActive={ jailedFilter }
-                    >
-                        Jailed
-                    </WalletTab>
-                </WalletTabs> */}
-
                         <Pane
                           display='flex'
                           flexDirection='column'
@@ -500,32 +485,6 @@ class App extends React.Component {
                             </Pane>
                         )}
 
-                        {/* {defaultAddress && balance > 0 && searchQuery && links.length > 0 && (
-                    <LinkContainer column>
-                        <Text size='lg' style={ { marginBottom: '20px' } }>
-                            Have your own option for
-                            <b>
-"
-                                {searchQuery}
-"
-                            </b>
-? Link your query and Cyb will understand it!
-                        </Text>
-                        <FlexContainer>
-                            <Input placeholder='type your link her...' ref='cidToInput' />
-                            <Button
-                              color='ogange'
-                              transformtext
-                              type='button'
-                              style={ { height: '30px', marginLeft: '10px' } }
-                              onClick={ () => this.link() }
-                            >
-                                Link it!
-                            </Button>
-                        </FlexContainer>
-                    </LinkContainer>
-                )} */}
-
                         {defaultAddress && balance > 0 && searchQuery && links.length === 0 && (
                             <Pane display='flex' justifyContent='space-around' paddingTop='5%'>
                                 <Pane>
@@ -575,13 +534,6 @@ class App extends React.Component {
                       display='flex'
                       width={ 1000 }
                     >
-                        {/* <Pane width='35%' display='flex' alignItems='center'>
-                           
-                            <SkillBar value={ 25 } />
-                            <Text paddingLeft={ 17 } color='#fff' size={ 500 }>
-                                Upgrade
-                            </Text>
-                        </Pane> */}
                         {defaultAddress && balance > 0 && searchQuery && links.length >= 0 && (
                             <Pane display='flex' justifyContent='center' flexDirection='row' width='100%'>
                                 <TextInput

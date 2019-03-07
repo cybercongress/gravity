@@ -49,22 +49,10 @@ class AppMenu extends Component {
 
         return (
             <MenuContainer>
-                {/* <LogoLink onClick={ this.clickLogo } /> */}
-
-                {/* <Message
-                  style={ {
-                    margin: 15,
-                  } }
-                  type='error'
-                >
-                Cyb in Ethereum Mainnet may not be secure yet. We recommend to operate accounts with small balance at your own risk.
-                </Message> */}
                 <WaleetAppMenu marginBottom={ 66 } ethBalance={ 17 } cybBalance={ 10 } />
                 <UserCard className='opacityItems' marginBottom={ 20 } />
 
-                {/* <Pane overflow='auto' flexGrow={1} width='100%'> */}
                 <Bookmarks items={ menuItems } deleteMenuItem={ deleteMenuItem } />
-                {/* </Pane> */}
 
                 <Pane
                   width='100%'

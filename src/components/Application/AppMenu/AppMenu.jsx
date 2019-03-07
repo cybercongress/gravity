@@ -159,12 +159,9 @@ const Items = ({ item, deleteAppFromMenu, ...props }) => (
         </Pane>
         {item.pill &&
         <Pill
-        //   position='absolute'
           isSolid
           width={ 22 }
           height={ 16 }
-            //   className={ styles.pillItems }
-        //   right={ 50 }
           boxShadow='0px 0px 17px 2px #36d6ae'
           style={{ backgroundColor: '#36d6ae', color: '#000' }}
         >

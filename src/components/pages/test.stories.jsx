@@ -227,11 +227,6 @@ const Settings = () => (
                     Your virtual robot
                 </Heading>
             </Pane>
-            {/* <Pane display='flex' alignItems='center' justifyContent='space-around'>
-                <CybCard marginX={ 50 } />
-                <CybCard marginX={ 50 } active />
-                <CybCard marginX={ 50 } />
-            </Pane> */}
             <Pane width='100%'>
                 <SimpleSlider />
             </Pane>
