@@ -3,7 +3,10 @@ import cx from 'classnames';
 import classNames from 'classnames';
 import { Pane, Text, Pill } from 'evergreen-ui';
 import { CybLink, LinkHash } from '../../..';
-import { UserCard, WaleetAppMenu } from '../AppMenu';
+import {
+    WaleetAppMenu,
+    UserCard,
+} from '../AppMenu/AppMenu';
 
 const styles = require('./IdBar.less');
 

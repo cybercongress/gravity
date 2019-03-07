@@ -1,11 +1,126 @@
 import React from 'react';
-import { Pane, Pill, Button, IconButton } from 'evergreen-ui';
+import { Pane, Pill, Button, IconButton, Text, Tooltip } from 'evergreen-ui';
 import { CybLink } from '../../..';
 
 const img = require('../cyb.svg');
 // import './AppMenu.less';
 
 const styles = require('./AppMenu.less');
+
+const imgEth = require('./eth.svg');
+const imggroup3= require('./group-3.svg');
+const imginfinity2 = require('./infinity-2.svg');
+const imgbody = require('./body.svg');
+
+export const WaleetAppMenuEth = ({ ethBalance }) => (
+    <Pane marginBottom={ 20 } display='flex' alignItems='center'>
+        <Pane marginRight={ 13 }>
+            <Text color='#fff' fontSize='24px'>
+                {ethBalance}
+            </Text>
+        </Pane>
+
+        <Pane display='flex' alignItems='center'>
+            <Pane width={ 32 } height={ 32 }>
+                <img src={ imgEth } />
+            </Pane>
+            <Pane width={ 32 } height={ 32 }>
+                <img src={ imgEth } />
+            </Pane>
+        </Pane>
+    </Pane>
+);
+
+export const WaleetAppMenuCyb = ({ cybBalance }) => (
+    <Tooltip
+      position='left'
+      content={ (
+          <Pane paddingY={ 16 } paddingX={ 16 }>
+              <Text lineHeight={ 1.33 } fontSize='12px' color='#fff'>
+                    142 76483221311 explanation of number scales
+              </Text>
+          </Pane>
+) }
+    >
+        <Pane display='flex' alignItems='center'>
+            <Pane marginRight={ 13 }>
+                <Text color='#fff' fontSize='24px'>
+                    {cybBalance}
+                </Text>
+            </Pane>
+
+            <Pane display='flex' alignItems='center'>
+                <Pane paddingX={ 7 }>
+                    <Pill
+                      height={ 7.8 }
+                      width={ 7.8 }
+                      borderRadius='50%'
+                      paddingX={ 0 }
+                      isSolid
+                      boxShadow='0 0 9px 1.5px #4ed6ae'
+                      backgroundColor='#36d6ae'
+                    />
+                </Pane>
+                <Pane paddingX={ 7 }>
+                    <Pill
+                      height={ 7.8 }
+                      width={ 7.8 }
+                      borderRadius='50%'
+                      paddingX={ 0 }
+                      isSolid
+                      boxShadow='0 0 9px 1.5px #4ed6ae'
+                      backgroundColor='#36d6ae'
+                    />
+                </Pane>
+                <Pane paddingX={ 7 }>
+                    <Pill
+                      height={ 7.8 }
+                      width={ 7.8 }
+                      borderRadius='50%'
+                      paddingX={ 0 }
+                      isSolid
+                      boxShadow='0 0 9px 1.5px #4ed6ae'
+                      backgroundColor='#36d6ae'
+                    />
+                </Pane>
+                <Pane paddingX={ 7 }>
+                    <Pill
+                      height={ 7.8 }
+                      width={ 7.8 }
+                      borderRadius='50%'
+                      paddingX={ 0 }
+                      isSolid
+                      boxShadow='0 0 9px 1.5px #4ed6ae'
+                      backgroundColor='#36d6ae'
+                    />
+                </Pane>
+            </Pane>
+        </Pane>
+    </Tooltip>
+);
+
+export const WaleetAppMenu = ({ ethBalance, cybBalance, ...props }) => (
+    <Pane { ...props } flexDirection='column' alignItems='flex-start' display='flex' flexShrink={ 0 }>
+        <WaleetAppMenuEth ethBalance={ ethBalance ? ethBalance : 0 } />
+        <WaleetAppMenuCyb cybBalance={ cybBalance ? cybBalance : 0 } />
+    </Pane>
+);
+
+export const UserCard = ({ ...props }) => (
+    <Pane { ...props } width='100%' flexShrink={ 0 } display='flex' justifyContent='center'>
+        <Pane display='flex' alignItems='center'>
+            <Pane marginX={ 5 } width={ 32 } height={ 40 }>
+                <img src={ imginfinity2 } />
+            </Pane>
+            <Pane marginX={ 5 } width={ 32 } height={ 40 }>
+                <img src={ imgbody } />
+            </Pane>
+            <Pane marginX={ 5 } width={ 32 } height={ 40 }>
+                <img src={ imggroup3 } />
+            </Pane>
+        </Pane>
+    </Pane>
+);
 
 const Logo = props => (
     <CybLink { ...props } className={ styles.logo }>
