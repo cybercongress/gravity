@@ -82,6 +82,18 @@
     display: flex !important;
 }
 
+.validators-table-row span {
+    color: #dedede;
+}
+
+.validators-table-row:hover{
+ background-color: #b4b4b425 !important;
+}
+
+.validators-table-head span{
+    color: #dedede
+}
+
 body {
     box-sizing: border-box;
     margin: 0;

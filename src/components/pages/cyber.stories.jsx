@@ -94,7 +94,7 @@ class Validators extends React.Component {
         const validatorRows = validatorsSorted
             .filter(x => x.jailed === jailedFilter)
             .map((validator, index) => (
-                <Table.Row isSelectable key={ validator.description.moniker }>
+                <Table.Row style={{ border: 0 }} boxShadow='0px 0px 0.1px 0px #ddd' className='validators-table-row' isSelectable key={ validator.description.moniker }>
                     <Table.TextCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 } isNumber>
                         {index}
                     </Table.TextCell>
@@ -144,7 +144,7 @@ class Validators extends React.Component {
                         </Pane>
 
                         <Table>
-                            <Table.Head>
+                            <Table.Head style={ { backgroundColor: '#b4b4b425', border: 0 } } className='validators-table-head' >
                                 {/* <tr> */}
                                 <Table.TextHeaderCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 }>
                                     #
@@ -155,7 +155,7 @@ class Validators extends React.Component {
                                 <Table.TextHeaderCell flexShrink={ 1 } flexGrow={ 1 }>Boun height</Table.TextHeaderCell>
                                 {/* </tr> */}
                             </Table.Head>
-                            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
+                            <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
                                 {validatorRows}
                             </Table.Body>
                         </Table>
