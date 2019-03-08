@@ -205,7 +205,7 @@ class SimpleSlider extends React.Component {
         centerMode: true,
         focusOnSelect: true,
         infinite: true,
-        speed: 1000,
+        speed: 800,
         centerPadding: "0px",
         slidesToShow: 3,
         arrows: false,
