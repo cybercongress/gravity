@@ -277,4 +277,4 @@ storiesOf('Cyb.ai', module).add('cyb.ai', () => (
     <Application>
         <Settings />
     </Application>
-));Settings
+));
