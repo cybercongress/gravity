@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+@import './components//pages//btn.group.css';
 
 :root {
     --slate-9:rgba(67, 90, 111, 0.09);

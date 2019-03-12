@@ -1,0 +1,63 @@
+
+.btn-group{
+    height: 45px !important;
+    width: 45px !important;
+    box-shadow: none !important;
+    margin: 20px 0 !important;
+}
+
+.btn-group-soul{
+    background: url(./soul.svg) no-repeat center center !important;
+}
+
+.btn-group-soul:hover{
+    background: url(./soul-focus.svg) no-repeat center center !important;
+}
+.btn-group-soul:focus{
+    background: url(./soul-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-boby{
+    background: url(./body.svg) no-repeat center center !important;
+}
+
+.btn-group-boby:hover{
+    background: url(./body-focus.svg) no-repeat center center !important;
+}
+.btn-group-boby:focus{
+    background: url(./body-focus.svg) no-repeat center center !important;
+}
+
+
+.btn-group-imortality{
+    background: url(./imortality.svg) no-repeat center center !important;
+}
+
+.btn-group-imortality:hover{
+    background: url(./imortality-focus.svg) no-repeat center center !important;
+}
+.btn-group-imortality:focus{
+    background: url(./imortality-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-security{
+    background: url(./security.svg) no-repeat center center !important;
+}
+
+.btn-group-security:hover{
+    background: url(./security-focus.svg) no-repeat center center !important;
+}
+.btn-group-security:focus{
+    background: url(./security-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-intelligence{
+    background: url(./intelligence.svg) no-repeat center center !important;
+}
+
+.btn-group-intelligence:hover{
+    background: url(./intelligence-focus.svg) no-repeat center center !important;
+}
+.btn-group-intelligence:focus{
+    background: url(./intelligence-focus.svg) no-repeat center center !important;
+}
