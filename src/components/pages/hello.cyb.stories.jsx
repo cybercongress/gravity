@@ -15,6 +15,7 @@ import {
     Card,
     Textarea,
     TextInput,
+    Tooltip,
 } from 'evergreen-ui';
 import { Row, Col } from 'react-flexbox-grid';
 import { throws } from 'assert';
@@ -26,7 +27,7 @@ import {
 } from '../..';
 import Application from '../Application/Application';
 
-const imgCybMatrix = require('./group-3.png');
+const imgCybMatrix = require('./cyb.png');
 
 const HelloState2 = () => (
     <Pane>
@@ -217,12 +218,152 @@ const HelloState5ab = () => (
 );
 
 const BntGroup = () => (
-    <Pane position='absolute' top='15%' display='flex' flexDirection='column'>
-        <Button className='btn-group-soul btn-group' />
-        <Button className='btn-group-boby btn-group' />
-        <Button className='btn-group-imortality btn-group' />
-        <Button className='btn-group-security btn-group' />
-        <Button className='btn-group-intelligence btn-group' />
+    <Pane display='flex' flexDirection='column'>
+        <Tooltip
+          position='left'
+          content={ (
+              <Pane
+                paddingX={ 10 }
+                paddingY={ 10 }
+                display='flex'
+                flexDirection='column'
+                alignItems='center'
+              >
+                  <Pane
+                    marginBottom={ 7 }
+                    width='100%'
+                    display='flex'
+                    alignItems='center'
+                    justifyContent='center'
+                  >
+                      <Text fontWeight='bold' color='#fff'>
+                            Soul
+                      </Text>
+                  </Pane>
+                  <Pane>
+                      <Text color='#fff'>Enlightened new web user</Text>
+                  </Pane>
+              </Pane>
+) }
+        >
+            <Button className='btn-group-soul btn-group' />
+        </Tooltip>
+        <Tooltip
+          position='left'
+          content={ (
+              <Pane
+                paddingX={ 10 }
+                paddingY={ 10 }
+                display='flex'
+                flexDirection='column'
+                alignItems='center'
+              >
+                  <Pane
+                    marginBottom={ 7 }
+                    width='100%'
+                    display='flex'
+                    alignItems='center'
+                    justifyContent='center'
+                  >
+                      <Text fontWeight='bold' color='#fff'>
+                            Body
+                      </Text>
+                  </Pane>
+                  <Pane>
+                      <Text color='#fff'>Created identity</Text>
+                  </Pane>
+              </Pane>
+) }
+        >
+            <Button className='btn-group-boby btn-group' />
+        </Tooltip>
+        <Tooltip
+          position='left'
+          content={ (
+              <Pane
+                paddingX={ 10 }
+                paddingY={ 10 }
+                display='flex'
+                flexDirection='column'
+                alignItems='center'
+              >
+                  <Pane
+                    marginBottom={ 7 }
+                    width='100%'
+                    display='flex'
+                    alignItems='center'
+                    justifyContent='center'
+                  >
+                      <Text fontWeight='bold' color='#fff'>
+                            Immortality
+                      </Text>
+                  </Pane>
+                  <Pane>
+                      <Text color='#fff'>Master of keys</Text>
+                  </Pane>
+              </Pane>
+) }
+        >
+            <Button className='btn-group-imortality btn-group' />
+        </Tooltip>
+        <Tooltip
+          position='left'
+          content={ (
+              <Pane
+                paddingX={ 10 }
+                paddingY={ 10 }
+                display='flex'
+                flexDirection='column'
+                alignItems='center'
+              >
+                  <Pane
+                    marginBottom={ 7 }
+                    width='100%'
+                    display='flex'
+                    alignItems='center'
+                    justifyContent='center'
+                  >
+                      <Text fontWeight='bold' color='#fff'>
+                            Security
+                      </Text>
+                  </Pane>
+                  <Pane>
+                      <Text color='#fff'>Defended identity</Text>
+                  </Pane>
+              </Pane>
+) }
+        >
+            <Button className='btn-group-security btn-group' />
+        </Tooltip>
+        <Tooltip
+          position='left'
+          content={ (
+              <Pane
+                paddingX={ 10 }
+                paddingY={ 10 }
+                display='flex'
+                flexDirection='column'
+                alignItems='center'
+              >
+                  <Pane
+                    marginBottom={ 7 }
+                    width='100%'
+                    display='flex'
+                    alignItems='center'
+                    justifyContent='center'
+                  >
+                      <Text fontWeight='bold' color='#fff'>
+                            Connection
+                      </Text>
+                  </Pane>
+                  <Pane>
+                      <Text color='#fff'>Flexible comunication</Text>
+                  </Pane>
+              </Pane>
+) }
+        >
+            <Button className='btn-group-intelligence btn-group' />
+        </Tooltip>
     </Pane>
 );
 
@@ -458,7 +599,7 @@ const HelloState11 = () => (
 );
 
 const TextAreaSate7a = () => (
-    <Pane position='relative' display='flex' justifyContent='center' height='100%' width='100%'>
+    <Pane position='relative' display='flex' justifyContent='center' height={ 500 } width='100%'>
         <Textarea
           height='100%'
           paddingX={ 20 }
@@ -485,21 +626,24 @@ const HelloState8 = () => (
         //   backgroundColor='white'
       boxShadow='0 0 1px #fff'
       maxWidth='80%'
-      paddingX='10%'
-      paddingY='10%'
-      minWidth={500}
+      paddingX={ 90 }
+      paddingY={ 90 }
+      minWidth={ 500 }
+      minHeight={ 570 }
         //   position='absolute'
         //   top='10%'
     >
-        <Pane width='100%' marginBottom='20%'>
+        <Pane width='100%' flexGrow={ 1 } marginBottom='20%'>
             <Pane width='100%' marginBottom='5%'>
                 <Pane marginBottom='3%'>
-                    <Text fontSize='18px' color='#fff'>Password</Text>
+                    <Text fontSize='18px' color='#fff'>
+                        Password
+                    </Text>
                 </Pane>
                 <Pane width='100%'>
                     <TextInput
                       width='100%'
-                      height={42}
+                      height={ 42 }
                       backgroundColor='transparent'
                       isInvalid
                       color='#fff'
@@ -508,12 +652,14 @@ const HelloState8 = () => (
             </Pane>
             <Pane width='100%'>
                 <Pane marginBottom='3%'>
-                    <Text fontSize='18px' color='#fff'>Confirm password</Text>
+                    <Text fontSize='18px' color='#fff'>
+                        Confirm password
+                    </Text>
                 </Pane>
                 <Pane width='100%'>
                     <TextInput
                       width='100%'
-                      height={42}
+                      height={ 42 }
                       backgroundColor='transparent'
                       color='#fff'
                     />
@@ -523,12 +669,14 @@ const HelloState8 = () => (
         <Pane width='100%'>
             <Pane width='100%'>
                 <Pane marginBottom='3%'>
-                    <Text fontSize='18px' color='#fff'>Confirm password</Text>
+                    <Text fontSize='18px' color='#fff'>
+                        Confirm password
+                    </Text>
                 </Pane>
                 <Pane width='100%'>
                     <TextInput
                       width='100%'
-                      height={42}
+                      height={ 42 }
                       backgroundColor='transparent'
                       color='#fff'
                     />
@@ -559,12 +707,12 @@ const HelloState4bLeftCol = () => (
       alignItems='center'
       justifyContent='flex-start'
       flexDirection='column'
-      paddingTop='10%'
+        //   paddingTop='10%'
     >
         <Pane>
             <img style={ { width: 390, height: 370 } } src={ imgCybMatrix } />
         </Pane>
-        <Pane width='75%'>
+        <Pane width='90%'>
             <Pane marginBottom={ 20 }>
                 <Text
                   fontSize='16px'
@@ -600,12 +748,12 @@ const HelloState6aLeftCol = () => (
       alignItems='center'
       justifyContent='flex-start'
       flexDirection='column'
-      paddingTop='10%'
+        //   paddingTop='10%'
     >
         <Pane>
             <img style={ { height: 224 } } src={ imgCybMatrix } />
         </Pane>
-        <Pane width='75%'>
+        <Pane width='90%'>
             <Pane marginBottom={ 20 }>
                 <Text
                   fontSize='16px'
@@ -661,12 +809,12 @@ const HelloState7aLeftCol = () => (
       alignItems='center'
       justifyContent='flex-start'
       flexDirection='column'
-      paddingTop='10%'
+        //   paddingTop='10%'
     >
         <Pane>
             <img style={ { height: 224 } } src={ imgCybMatrix } />
         </Pane>
-        <Pane width='75%'>
+        <Pane width='90%'>
             <Pane marginBottom={ 20 }>
                 <Text
                   fontSize='16px'
@@ -721,13 +869,13 @@ const HelloState3bLeftCol = () => (
       alignItems='center'
       justifyContent='space-between'
       flexDirection='column'
-      paddingTop='10%'
+        //   paddingTop='10%'
       paddingBottom='30%'
     >
         <Pane>
             <img style={ { height: 224 } } src={ imgCybMatrix } />
         </Pane>
-        <Pane width='75%'>
+        <Pane width='90%'>
             <Pane marginBottom={ 20 }>
                 <Text
                   fontSize='16px'
@@ -752,12 +900,12 @@ const HelloState8LeftCol = () => (
       alignItems='center'
       justifyContent='flex-start'
       flexDirection='column'
-      paddingTop='10%'
+        //   paddingTop='10%'
     >
         <Pane>
             <img style={ { height: 400 } } src={ imgCybMatrix } />
         </Pane>
-        <Pane width='75%'>
+        <Pane width='90%'>
             <Pane marginBottom={ 20 }>
                 <Text
                   fontSize='16px'
@@ -793,270 +941,285 @@ const HelloState8LeftCol = () => (
 );
 
 const Hello = ({ state, open, matrix }) => (
-    <Pane height='100%' maxWidth={ 1200 } marginX='auto' marginY={ 0 }>
-        <Pane float='left' width='50%' height='100%'>
-            {matrix && <LeftColMatrix />}
-            {state === '4b' && <HelloState4bLeftCol />}
-            {state === '3b' && <HelloState3bLeftCol />}
-            {state === '6a' && <HelloState6aLeftCol />}
-            {state === '7a' && <HelloState7aLeftCol />}
-            {state === '8' && <HelloState8LeftCol />}
-        </Pane>
-        <Pane
-          float='right'
-          display='flex'
-          flexDirection='row'
-          justifyContent='center'
-            //   alignItems='center'
-          width='50%'
-          height='100%'
-          position='relative'
-        >
-            <Pane display='flex' justifyContent='center' flexDirection='column' flexGrow={ 1 }>
+    <ScrollContainer style={ { height: 'calc(100vh - 60px)' } }>
+        <MainContainer style={ { width: 1200 } }>
+            <Pane display='flex' alignItems='stretch' flexDirection='row'>
                 <Pane
-                  display='flex'
-                  justifyContent='center'
-                  flexDirection='column'
-                  alignItems='center'
-                  width='100%'
-                  height='60%'
-                  marginBottom={ 50 }
+                    //  float='left'
+                  width='50%'
+                  height='inherit'
                 >
-                    {state === '2' && <HelloState2 />}
-                    {state === '3a' && <HelloState3a />}
-                    {state === '3b' && <TextAreaSate7a />}
-                    {state === '4a' && <HelloState4a />}
-                    {state === '4b' && <HelloCardAccaunt />}
-                    {state === '5ab' && <HelloState5ab />}
-                    {state === '5aa' && <HelloState5aa />}
-                    {state === '5ac' && <HelloState5ac />}
-                    {state === '6a' && <HelloCardAccaunt />}
-                    {state === '7a' && <TextAreaSate7a />}
-                    {state === '8' && <HelloState8 />}
-                    {state === '11' && <HelloState11 />}
+                    {matrix && <LeftColMatrix />}
+                    {state === '4b' && <HelloState4bLeftCol />}
+                    {state === '3b' && <HelloState3bLeftCol />}
+                    {state === '6a' && <HelloState6aLeftCol />}
+                    {state === '7a' && <HelloState7aLeftCol />}
+                    {state === '8' && <HelloState8LeftCol />}
                 </Pane>
-                <Pane width='100%'>
-                    {state === '2' && (
-                        <Pane display='flex' justifyContent='space-between'>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 50 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn-white'
-                              letterSpacing={ 0 }
-                            >
-                                I know the keys
-                            </Button>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 30 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn'
-                            >
-                                What truth?
-                            </Button>
+                <Pane
+                    // float='right'
+                  display='flex'
+                  flexDirection='row'
+                  justifyContent='center'
+                  alignItems='center'
+                  width='50%'
+                  height='inherit'
+                  position='relative'
+                >
+                    <Pane
+                      display='flex'
+                      justifyContent='center'
+                      flexDirection='column'
+                      flexGrow={ 1 }
+                      height='100%'
+                    >
+                        <Pane
+                          display='flex'
+                          justifyContent='center'
+                          flexDirection='column'
+                          alignItems='center'
+                          width='100%'
+                          height='100%'
+                          marginBottom={ 50 }
+                          flexGrow={ 1 }
+                        >
+                            {state === '2' && <HelloState2 />}
+                            {state === '3a' && <HelloState3a />}
+                            {state === '3b' && <TextAreaSate7a />}
+                            {state === '4a' && <HelloState4a />}
+                            {state === '4b' && <HelloCardAccaunt />}
+                            {state === '5ab' && <HelloState5ab />}
+                            {state === '5aa' && <HelloState5aa />}
+                            {state === '5ac' && <HelloState5ac />}
+                            {state === '6a' && <HelloCardAccaunt />}
+                            {state === '7a' && <TextAreaSate7a />}
+                            {state === '8' && <HelloState8 />}
+                            {state === '11' && <HelloState11 />}
                         </Pane>
-                    )}
-                    {state === '3a' && (
-                        <Pane width='100%' display='flex' justifyContent='center'>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 50 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn'
-                              letterSpacing={ 0 }
-                            >
-                                Show me the Matrix
-                            </Button>
+                        <Pane width='100%'>
+                            {state === '2' && (
+                                <Pane display='flex' justifyContent='space-between'>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 50 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn-white'
+                                      letterSpacing={ 0 }
+                                    >
+                                        I know the keys
+                                    </Button>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 30 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn'
+                                    >
+                                        What truth?
+                                    </Button>
+                                </Pane>
+                            )}
+                            {state === '3a' && (
+                                <Pane width='100%' display='flex' justifyContent='center'>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 50 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn'
+                                      letterSpacing={ 0 }
+                                    >
+                                        Show me the Matrix
+                                    </Button>
+                                </Pane>
+                            )}
+                            {state === '3b' && (
+                                <Pane justifyContent='center' display='flex'>
+                                    <Pane display='flex' width='80%' justifyContent='space-between'>
+                                        <Button
+                                          whiteSpace='nowrap'
+                                          paddingX={ 50 }
+                                          height={ 42 }
+                                          fontSize='18px'
+                                          borderRadius={ 3 }
+                                          className='btn-white'
+                                          letterSpacing={ 0 }
+                                        >
+                                            Back
+                                        </Button>
+                                        <Button
+                                          whiteSpace='nowrap'
+                                          paddingX={ 30 }
+                                          height={ 42 }
+                                          fontSize='18px'
+                                          borderRadius={ 3 }
+                                          className='btn'
+                                        >
+                                            Show account
+                                        </Button>
+                                    </Pane>
+                                </Pane>
+                            )}
+                            {state === '4a' && (
+                                <Pane display='flex' justifyContent='space-between'>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 50 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn-blue'
+                                      letterSpacing={ 0 }
+                                    >
+                                        Stay asleep
+                                    </Button>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 30 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn-red'
+                                    >
+                                        Wake up
+                                    </Button>
+                                </Pane>
+                            )}
+                            {state === '4b' && (
+                                <Pane justifyContent='center' display='flex'>
+                                    <Pane display='flex' width='80%' justifyContent='space-between'>
+                                        <Button
+                                          whiteSpace='nowrap'
+                                          paddingX={ 50 }
+                                          height={ 42 }
+                                          fontSize='18px'
+                                          borderRadius={ 3 }
+                                          className='btn-white'
+                                          letterSpacing={ 0 }
+                                        >
+                                            Back
+                                        </Button>
+                                        <Button
+                                          whiteSpace='nowrap'
+                                          paddingX={ 30 }
+                                          height={ 42 }
+                                          fontSize='18px'
+                                          borderRadius={ 3 }
+                                          className='btn'
+                                        >
+                                            Encrypt
+                                        </Button>
+                                    </Pane>
+                                </Pane>
+                            )}
+                            {state === '5aa' && (
+                                <Pane width='100%' display='flex' justifyContent='center'>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 50 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn'
+                                      letterSpacing={ 0 }
+                                    >
+                                        Encrypt
+                                    </Button>
+                                </Pane>
+                            )}
+                            {state === '5ac' && (
+                                <Pane width='100%' display='flex' justifyContent='center'>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 50 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn'
+                                      letterSpacing={ 0 }
+                                    >
+                                        Show my identity
+                                    </Button>
+                                </Pane>
+                            )}
+                            {state === '6a' && (
+                                <Pane width='100%' display='flex' justifyContent='center'>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 50 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn'
+                                      letterSpacing={ 0 }
+                                    >
+                                        Back up mnemonic
+                                    </Button>
+                                </Pane>
+                            )}
+                            {state === '7a' && (
+                                <Pane width='100%' display='flex' justifyContent='center'>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 50 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn'
+                                      letterSpacing={ 0 }
+                                    >
+                                        I swear, I save
+                                    </Button>
+                                </Pane>
+                            )}
+                            {state === '8' && (
+                                <Pane justifyContent='center' display='flex'>
+                                    <Pane display='flex' width='80%' justifyContent='center'>
+                                        <Button
+                                          whiteSpace='nowrap'
+                                          paddingX={ 50 }
+                                          height={ 42 }
+                                          fontSize='18px'
+                                          borderRadius={ 3 }
+                                          className='btn'
+                                          letterSpacing={ 0 }
+                                        >
+                                            Encrypt mnemonic
+                                        </Button>
+                                    </Pane>
+                                </Pane>
+                            )}
+                            {state === '11' && (
+                                <Pane width='100%' display='flex' justifyContent='center'>
+                                    <Button
+                                      whiteSpace='nowrap'
+                                      paddingX={ 50 }
+                                      height={ 42 }
+                                      fontSize='18px'
+                                      borderRadius={ 3 }
+                                      className='btn'
+                                      letterSpacing={ 0 }
+                                    >
+                                        Get off the matrix
+                                    </Button>
+                                </Pane>
+                            )}
                         </Pane>
-                    )}
-                    {state === '3b' && (
-                        <Pane justifyContent='center' display='flex'>
-                            <Pane display='flex' width='80%' justifyContent='space-between'>
-                                <Button
-                                  whiteSpace='nowrap'
-                                  paddingX={ 50 }
-                                  height={ 42 }
-                                  fontSize='18px'
-                                  borderRadius={ 3 }
-                                  className='btn-white'
-                                  letterSpacing={ 0 }
-                                >
-                                    Back
-                                </Button>
-                                <Button
-                                  whiteSpace='nowrap'
-                                  paddingX={ 30 }
-                                  height={ 42 }
-                                  fontSize='18px'
-                                  borderRadius={ 3 }
-                                  className='btn'
-                                >
-                                    Show account
-                                </Button>
-                            </Pane>
-                        </Pane>
-                    )}
-                    {state === '4a' && (
-                        <Pane display='flex' justifyContent='space-between'>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 50 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn-blue'
-                              letterSpacing={ 0 }
-                            >
-                                Stay asleep
-                            </Button>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 30 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn-red'
-                            >
-                                Wake up
-                            </Button>
-                        </Pane>
-                    )}
-                    {state === '4b' && (
-                        <Pane justifyContent='center' display='flex'>
-                            <Pane display='flex' width='80%' justifyContent='space-between'>
-                                <Button
-                                  whiteSpace='nowrap'
-                                  paddingX={ 50 }
-                                  height={ 42 }
-                                  fontSize='18px'
-                                  borderRadius={ 3 }
-                                  className='btn-white'
-                                  letterSpacing={ 0 }
-                                >
-                                    Back
-                                </Button>
-                                <Button
-                                  whiteSpace='nowrap'
-                                  paddingX={ 30 }
-                                  height={ 42 }
-                                  fontSize='18px'
-                                  borderRadius={ 3 }
-                                  className='btn'
-                                >
-                                    Encrypt
-                                </Button>
-                            </Pane>
-                        </Pane>
-                    )}
-                    {state === '5aa' && (
-                        <Pane width='100%' display='flex' justifyContent='center'>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 50 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn'
-                              letterSpacing={ 0 }
-                            >
-                                Encrypt
-                            </Button>
-                        </Pane>
-                    )}
-                    {state === '5ac' && (
-                        <Pane width='100%' display='flex' justifyContent='center'>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 50 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn'
-                              letterSpacing={ 0 }
-                            >
-                                Show my identity
-                            </Button>
-                        </Pane>
-                    )}
-                    {state === '6a' && (
-                        <Pane width='100%' display='flex' justifyContent='center'>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 50 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn'
-                              letterSpacing={ 0 }
-                            >
-                                Back up mnemonic
-                            </Button>
-                        </Pane>
-                    )}
-                    {state === '7a' && (
-                        <Pane width='100%' display='flex' justifyContent='center'>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 50 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn'
-                              letterSpacing={ 0 }
-                            >
-                                I swear, I save
-                            </Button>
-                        </Pane>
-                    )}
-                    {state === '8' && (
-                        <Pane justifyContent='center' display='flex'>
-                            <Pane display='flex' width='80%' justifyContent='center'>
-                                <Button
-                                  whiteSpace='nowrap'
-                                  paddingX={ 50 }
-                                  height={ 42 }
-                                  fontSize='18px'
-                                  borderRadius={ 3 }
-                                  className='btn'
-                                  letterSpacing={ 0 }
-                                >
-                                    Encrypt mnemonic
-                                </Button>
-                            </Pane>
-                        </Pane>
-                    )}
-                    {state === '11' && (
-                        <Pane width='100%' display='flex' justifyContent='center'>
-                            <Button
-                              whiteSpace='nowrap'
-                              paddingX={ 50 }
-                              height={ 42 }
-                              fontSize='18px'
-                              borderRadius={ 3 }
-                              className='btn'
-                              letterSpacing={ 0 }
-                            >
-                                Get off the matrix
-                            </Button>
+                    </Pane>
+
+                    {open && (
+                        <Pane position='fixed' right='3%' top='20%'>
+                            <BntGroup />
                         </Pane>
                     )}
                 </Pane>
             </Pane>
-
-            {open && (
-                <Pane flexGrow={ 0 }>
-                    <BntGroup />
-                </Pane>
-            )}
-        </Pane>
-    </Pane>
+        </MainContainer>
+    </ScrollContainer>
 );
 
 storiesOf('Hello', module)
