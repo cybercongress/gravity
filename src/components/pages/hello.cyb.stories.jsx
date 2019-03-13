@@ -19,6 +19,7 @@ import {
 } from 'evergreen-ui';
 import { Row, Col } from 'react-flexbox-grid';
 import { throws } from 'assert';
+import Terminal from 'terminal-in-react';
 import {
     MainContainer,
     ScrollContainer,
@@ -686,6 +687,40 @@ const HelloState8 = () => (
     </Card>
 );
 
+const TerminalCyb = () => (
+    <Pane boxShadow='0 0 1px #fff' height={ 400 }>
+        <Pane
+          width='100%'
+          style={ { borderBottom: '0.1px solid #585757' } }
+          paddingY={ 5 }
+          display='flex'
+          justifyContent='center'
+        >
+            <Text color='#fff'>cyb</Text>
+        </Pane>
+        <Terminal
+          color='#4ed6ae'
+          backgroundColor='black'
+          barColor='black'
+          style={ {
+ fontWeight: 'bold', height: 'inherit', paddingBottom: 50, fontSize: '1em',
+} }
+          commands={ {
+                'open-google': () => window.open('https://www.google.com/', '_blank'),
+                showmsg: 'hello',
+                popup: () => alert('Terminal in React'),
+            } }
+          descriptions={ {
+                'open-google': 'opens google.com',
+                showmsg: 'shows a message',
+                alert: 'alert',
+                popup: 'alert',
+            } }
+          msg='You can write anything here. Example - Hello! My name is Foo and I like Bar.'
+        />
+    </Pane>
+);
+
 // left col -----
 
 const LeftColMatrix = () => (
@@ -983,6 +1018,7 @@ const Hello = ({ state, open, matrix }) => (
                           marginBottom={ 50 }
                           flexGrow={ 1 }
                         >
+                            {state === '1' && <TerminalCyb />}
                             {state === '2' && <HelloState2 />}
                             {state === '3a' && <HelloState3a />}
                             {state === '3b' && <TextAreaSate7a />}
@@ -1223,6 +1259,11 @@ const Hello = ({ state, open, matrix }) => (
 );
 
 storiesOf('Hello', module)
+    .add('1', () => (
+        <Application>
+            <Hello state='1' matrix />
+        </Application>
+    ))
     .add('2', () => (
         <Application>
             <Hello state='2' matrix />
