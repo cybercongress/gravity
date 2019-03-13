@@ -16,6 +16,7 @@ import {
     Textarea,
     TextInput,
     Tooltip,
+    Table,
 } from 'evergreen-ui';
 import { Row, Col } from 'react-flexbox-grid';
 import { throws } from 'assert';
@@ -703,8 +704,11 @@ const TerminalCyb = () => (
           backgroundColor='black'
           barColor='black'
           style={ {
- fontWeight: 'bold', height: 'inherit', paddingBottom: 50, fontSize: '1em',
-} }
+                fontWeight: 'bold',
+                height: 'inherit',
+                paddingBottom: 50,
+                fontSize: '1em',
+            } }
           commands={ {
                 'open-google': () => window.open('https://www.google.com/', '_blank'),
                 showmsg: 'hello',
@@ -718,6 +722,94 @@ const TerminalCyb = () => (
             } }
           msg='You can write anything here. Example - Hello! My name is Foo and I like Bar.'
         />
+    </Pane>
+);
+
+const ConnectionTable = () => (
+    <Pane width='100%' paddingRight='10%'>
+        <Table>
+            <Table.Head>
+                <Table.TextHeaderCell>Provider</Table.TextHeaderCell>
+                <Table.TextHeaderCell>Endpoint</Table.TextHeaderCell>
+            </Table.Head>
+            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
+                <Table.Row isSelectable>
+                    <Table.TextCell> <Pill
+                              height={ 8 }
+                              width={ 8 }
+                              borderRadius='50%'
+                              color='yellow'
+                              paddingX={ 0 }
+                              isSolid
+                              marginLeft={20}
+                              marginRight={ 25 }
+                            /><Text>IPFS read</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <TextInput width='80%' />
+                    </Table.TextCell>
+                </Table.Row>
+                <Table.Row isSelectable>
+                    <Table.TextCell><Pill
+                              height={ 8 }
+                              width={ 8 }
+                              borderRadius='50%'
+                              color='yellow'
+                              paddingX={ 0 }
+                              isSolid
+                              marginLeft={20}
+                              marginRight={ 25 }
+                            /><Text>IPFS  write</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <TextInput width='80%' />
+                    </Table.TextCell>
+                </Table.Row>
+                <Table.Row isSelectable>
+                    <Table.TextCell><Pill
+                              height={ 8 }
+                              width={ 8 }
+                              borderRadius='50%'
+                              color='yellow'
+                              paddingX={ 0 }
+                              isSolid
+                              marginLeft={20}
+                              marginRight={ 25 }
+                            /><Text>Ethereum HTTP</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <TextInput width='80%' />
+                    </Table.TextCell>
+                </Table.Row>
+                <Table.Row isSelectable>
+                    <Table.TextCell><Pill
+                              height={ 8 }
+                              width={ 8 }
+                              borderRadius='50%'
+                              color='yellow'
+                              paddingX={ 0 }
+                              isSolid
+                              marginLeft={20}
+                              marginRight={ 25 }
+                            /><Text>Cyberd HTTP</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <TextInput width='80%' />
+                    </Table.TextCell>
+                </Table.Row>
+                <Table.Row>
+                    <Table.TextCell><Pill
+                              height={ 8 }
+                              width={ 8 }
+                              borderRadius='50%'
+                              color='yellow'
+                              paddingX={ 0 }
+                              isSolid
+                              marginLeft={20}
+                              marginRight={ 25 }
+                            /><Text>Cyberd Ws</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <TextInput width='80%' />
+                    </Table.TextCell>
+                </Table.Row>
+            </Table.Body>
+        </Table>
     </Pane>
 );
 
@@ -973,6 +1065,128 @@ const HelloState8LeftCol = () => (
             </Pane>
         </Pane>
     </Pane>
+);
+
+const HelloState10LeftCol = () => (
+    <Pane
+      height='100%'
+      display='flex'
+      alignItems='center'
+      justifyContent='flex-start'
+      flexDirection='column'
+        //   paddingTop='10%'
+    >
+        <Pane>
+            <img style={ { width: 390, height: 370 } } src={ imgCybMatrix } />
+        </Pane>
+        <Pane width='90%'>
+            <Pane marginBottom={ 20 }>
+                <Text
+                  fontSize='16px'
+                  lineHeight={ 1.88 }
+                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
+                  color='#4ed6ae'
+                  letterSpacing={ 1.6 }
+                  style={ { wordSpacing: 5 } }
+                >
+                    This is your connection state. You can change it, if you want.
+                </Text>
+            </Pane>
+        </Pane>
+    </Pane>
+);
+
+const HelloContainer = ({ children }) => (
+    <ScrollContainer style={ { height: 'calc(100vh - 60px)' } }>
+        <MainContainer style={ { width: 1200 } }>
+            <Pane display='flex' alignItems='stretch' flexDirection='row'>
+                {children}
+            </Pane>
+        </MainContainer>
+    </ScrollContainer>
+);
+
+const HelloContainerLeftCol = ({ children }) => (
+    <Pane
+        //  float='left'
+      width='50%'
+      height='inherit'
+    >
+        {children}
+    </Pane>
+);
+
+const HelloContainerRightCol = ({ children, open }) => (
+    <Pane
+        // float='right'
+      display='flex'
+      flexDirection='row'
+      justifyContent='center'
+      alignItems='center'
+      width='50%'
+      height='inherit'
+      position='relative'
+    >
+        <Pane
+          display='flex'
+          justifyContent='center'
+          flexDirection='column'
+          flexGrow={ 1 }
+          height='100%'
+        >
+            {children}
+        </Pane>
+        {open && (
+            <Pane position='fixed' right='3%' top='20%'>
+                <BntGroup />
+            </Pane>
+        )}
+    </Pane>
+);
+
+const HelloContainerRightColContent = ({ children }) => (
+    <Pane
+      display='flex'
+      justifyContent='center'
+      flexDirection='column'
+      alignItems='center'
+      width='100%'
+      height='100%'
+      marginBottom={ 50 }
+      flexGrow={ 1 }
+    >
+        {children}
+    </Pane>
+);
+
+const HelloContainerRightColBtn = ({ children }) => <Pane width='100%'>{children}</Pane>;
+
+const ConnectionPages = ({ open }) => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <HelloState10LeftCol />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol open={ open }>
+            <HelloContainerRightColContent>
+                <ConnectionTable />
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn>
+                <Pane width='100%' display='flex' justifyContent='center'>
+                    <Button
+                      whiteSpace='nowrap'
+                      paddingX={ 50 }
+                      height={ 42 }
+                      fontSize='18px'
+                      borderRadius={ 3 }
+                      className='btn'
+                      letterSpacing={ 0 }
+                    >
+                        Check
+                    </Button>
+                </Pane>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
 );
 
 const Hello = ({ state, open, matrix }) => (
@@ -1322,5 +1536,10 @@ storiesOf('Hello', module)
     .add('11', () => (
         <Application>
             <Hello state='11' open matrix />
+        </Application>
+    ))
+    .add('ConnectionPages', () => (
+        <Application>
+            <ConnectionPages open />
         </Application>
     ));

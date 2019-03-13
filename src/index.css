@@ -8,6 +8,7 @@
     --black: #000000;
 }
 
+/* terminal */
 .blCJWW{
     height: inherit !important;
 }
@@ -22,7 +23,9 @@
 .dMFuoo{
     overflow: auto !important;
 }
+/*  */
 
+/* slider */
 .slick-center{
     display: flex !important;
     align-items: center;
@@ -96,7 +99,9 @@
 .slick-center .active-slide-balance-text{
     display: flex !important;
 }
+/*  */
 
+/* table validators */
 .validators-table-row span {
     color: #dedede;
 }
@@ -108,6 +113,7 @@
 .validators-table-head span{
     color: #dedede
 }
+/*  */
 
 body {
     box-sizing: border-box;
