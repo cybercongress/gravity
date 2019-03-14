@@ -235,6 +235,24 @@ import BrowserWindow, { BrowserContainer, Loading } from './components/BrowserWi
 
 import NotFoundPage from './components/NotFound/NotFound'; 
 
+import {
+    ThatYouSlave,
+    WelcomeNewWorld,
+    MatrixEverywhere,
+    LastChance,
+    GeneratedSecure,
+    ConnectionPages,
+    SecurityImportSettingsPages,
+    SecurityCreatePasswordPages,
+    TerminalCybPages,
+    CardWalletPages,
+    CardWalletPagesBackUpMnemonic,
+    ImportAccountPages,
+    ImportAccountShowMnemonic,
+    GetOffTheMatrix,
+    UserChoice,
+} from './components/Application/Hello/hello.cyb';
+
 export {
     Title,
     Badge,
@@ -399,4 +417,20 @@ export {
     BrowserWindow, BrowserContainer, Loading,
 
     NotFoundPage,
+
+    ThatYouSlave,
+    WelcomeNewWorld,
+    MatrixEverywhere,
+    LastChance,
+    GeneratedSecure,
+    ConnectionPages,
+    SecurityImportSettingsPages,
+    SecurityCreatePasswordPages,
+    TerminalCybPages,
+    CardWalletPages,
+    CardWalletPagesBackUpMnemonic,
+    ImportAccountPages,
+    ImportAccountShowMnemonic,
+    GetOffTheMatrix,
+    UserChoice,
 };
