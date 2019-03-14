@@ -1194,7 +1194,7 @@ const HelloContainerRightColContent = ({ children }) => (
 
 const HelloContainerRightColBtn = ({ children }) => <Pane width='100%'>{children}</Pane>;
 
-const ConnectionPages = ({ bntGroup, status }) => (
+const ConnectionPages = ({ status }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
             <HelloState10LeftCol />
@@ -1222,7 +1222,7 @@ const ConnectionPages = ({ bntGroup, status }) => (
     </HelloContainer>
 );
 
-const SecurityPages = ({bntGroup}) => (
+const SecurityPages = () => (
     <HelloContainer>
         <HelloContainerLeftCol>
             <HelloState10LeftCol />
