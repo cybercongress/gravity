@@ -17,6 +17,7 @@ import {
     TextInput,
     Tooltip,
     Table,
+    FilePicker,
 } from 'evergreen-ui';
 import { Row, Col } from 'react-flexbox-grid';
 import { throws } from 'assert';
@@ -725,7 +726,7 @@ const TerminalCyb = () => (
     </Pane>
 );
 
-const ConnectionTable = () => (
+const ConnectionTable = ({ status }) => (
     <Pane width='100%' paddingRight='10%'>
         <Table>
             <Table.Head>
@@ -734,76 +735,106 @@ const ConnectionTable = () => (
             </Table.Head>
             <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
                 <Table.Row isSelectable>
-                    <Table.TextCell> <Pill
-                              height={ 8 }
-                              width={ 8 }
-                              borderRadius='50%'
-                              color='yellow'
-                              paddingX={ 0 }
-                              isSolid
-                              marginLeft={20}
-                              marginRight={ 25 }
-                            /><Text>IPFS read</Text></Table.TextCell>
+                    <Table.TextCell>
+                        {' '}
+                        <Pill
+                          height={ 8 }
+                          width={ 8 }
+                          borderRadius='50%'
+                          paddingX={ 0 }
+                          isSolid
+                          marginLeft={ 20 }
+                          marginRight={ 25 }
+                          color={
+                                status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
+                            }
+                        />
+                        <Text>IPFS read</Text>
+                    </Table.TextCell>
                     <Table.TextCell>
                         <TextInput width='80%' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
-                    <Table.TextCell><Pill
-                              height={ 8 }
-                              width={ 8 }
-                              borderRadius='50%'
-                              color='yellow'
-                              paddingX={ 0 }
-                              isSolid
-                              marginLeft={20}
-                              marginRight={ 25 }
-                            /><Text>IPFS  write</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <Pill
+                          height={ 8 }
+                          width={ 8 }
+                          borderRadius='50%'
+                          color='yellow'
+                          paddingX={ 0 }
+                          isSolid
+                          marginLeft={ 20 }
+                          marginRight={ 25 }
+                          color={
+                                status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
+                            }
+                        />
+                        <Text>IPFS write</Text>
+                    </Table.TextCell>
                     <Table.TextCell>
                         <TextInput width='80%' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
-                    <Table.TextCell><Pill
-                              height={ 8 }
-                              width={ 8 }
-                              borderRadius='50%'
-                              color='yellow'
-                              paddingX={ 0 }
-                              isSolid
-                              marginLeft={20}
-                              marginRight={ 25 }
-                            /><Text>Ethereum HTTP</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <Pill
+                          height={ 8 }
+                          width={ 8 }
+                          borderRadius='50%'
+                          color='yellow'
+                          paddingX={ 0 }
+                          isSolid
+                          marginLeft={ 20 }
+                          marginRight={ 25 }
+                          color={
+                                status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
+                            }
+                        />
+                        <Text>Ethereum HTTP</Text>
+                    </Table.TextCell>
                     <Table.TextCell>
                         <TextInput width='80%' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
-                    <Table.TextCell><Pill
-                              height={ 8 }
-                              width={ 8 }
-                              borderRadius='50%'
-                              color='yellow'
-                              paddingX={ 0 }
-                              isSolid
-                              marginLeft={20}
-                              marginRight={ 25 }
-                            /><Text>Cyberd HTTP</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <Pill
+                          height={ 8 }
+                          width={ 8 }
+                          borderRadius='50%'
+                          color='yellow'
+                          paddingX={ 0 }
+                          isSolid
+                          marginLeft={ 20 }
+                          marginRight={ 25 }
+                          color={
+                                status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
+                            }
+                        />
+                        <Text>Cyberd HTTP</Text>
+                    </Table.TextCell>
                     <Table.TextCell>
                         <TextInput width='80%' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row>
-                    <Table.TextCell><Pill
-                              height={ 8 }
-                              width={ 8 }
-                              borderRadius='50%'
-                              color='yellow'
-                              paddingX={ 0 }
-                              isSolid
-                              marginLeft={20}
-                              marginRight={ 25 }
-                            /><Text>Cyberd Ws</Text></Table.TextCell>
+                    <Table.TextCell>
+                        <Pill
+                          height={ 8 }
+                          width={ 8 }
+                          borderRadius='50%'
+                          color='yellow'
+                          paddingX={ 0 }
+                          isSolid
+                          marginLeft={ 20 }
+                          marginRight={ 25 }
+                          color={
+                                status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
+                            }
+                        />
+                        <Text>Cyberd Ws</Text>
+                    </Table.TextCell>
                     <Table.TextCell>
                         <TextInput width='80%' />
                     </Table.TextCell>
@@ -1096,10 +1127,10 @@ const HelloState10LeftCol = () => (
     </Pane>
 );
 
-const HelloContainer = ({ children }) => (
-    <ScrollContainer style={ { height: 'calc(100vh - 60px)' } }>
-        <MainContainer style={ { width: 1200 } }>
-            <Pane display='flex' alignItems='stretch' flexDirection='row'>
+const HelloContainer = ({ children, ...props }) => (
+    <ScrollContainer style={ { height: '100vh', paddingBottom: 0 } }>
+        <MainContainer style={ { width: 1200, height: 'inherit' } }>
+            <Pane display='flex' alignItems='stretch' height='100%' flexDirection='row'>
                 {children}
             </Pane>
         </MainContainer>
@@ -1124,8 +1155,9 @@ const HelloContainerRightCol = ({ children, open }) => (
       justifyContent='center'
       alignItems='center'
       width='50%'
-      height='inherit'
+      height='initial'
       position='relative'
+      marginRight={50}
     >
         <Pane
           display='flex'
@@ -1161,14 +1193,14 @@ const HelloContainerRightColContent = ({ children }) => (
 
 const HelloContainerRightColBtn = ({ children }) => <Pane width='100%'>{children}</Pane>;
 
-const ConnectionPages = ({ open }) => (
+const ConnectionPages = ({ open, status }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
             <HelloState10LeftCol />
         </HelloContainerLeftCol>
         <HelloContainerRightCol open={ open }>
             <HelloContainerRightColContent>
-                <ConnectionTable />
+                <ConnectionTable status={ status } />
             </HelloContainerRightColContent>
             <HelloContainerRightColBtn>
                 <Pane width='100%' display='flex' justifyContent='center'>
@@ -1189,8 +1221,67 @@ const ConnectionPages = ({ open }) => (
     </HelloContainer>
 );
 
+const SecurityPages = ({open}) => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <HelloState10LeftCol />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol open={ open }>
+            <HelloContainerRightColContent>
+            <Card
+      display='flex'
+      flexDirection='column'
+      alignItems='center'
+        //   backgroundColor='white'
+      boxShadow='0 0 1px #fff'
+      maxWidth='80%'
+      paddingX={ 90 }
+      paddingY={ 90 }
+      minWidth={ 500 }
+    //   minHeight={ 570 }
+      height='100%'
+        //   position='absolute'
+        //   top='10%'
+    >
+        <Pane width='100%' flexGrow={ 1 } marginBottom='20%'>
+            <Pane width='100%' display='flex'>
+                <Pane width='100%'>
+                <FilePicker
+                    multiple
+                    width='100%'
+                    marginBottom={32} />
+                </Pane>
+                <Pane>
+                    <IconButton appearance="minimal" icon="cross" iconSize={18} />
+                </Pane>
+                
+            </Pane>
+        </Pane>
+    </Card>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn>
+                <Pane width='100%' display='flex' flexDirection='column' alignItems='center'>
+                    <Button
+                      whiteSpace='nowrap'
+                      paddingX={ 50 }
+                      height={ 42 }
+                      fontSize='18px'
+                      borderRadius={ 3 }
+                      className='btn'
+                      letterSpacing={ 0 }
+                      maxWidth={210}
+                      marginY={10}
+                    >
+                        Check
+                    </Button>
+                </Pane>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
 const Hello = ({ state, open, matrix }) => (
-    <ScrollContainer style={ { height: 'calc(100vh - 60px)' } }>
+    <ScrollContainer style={ { height: '100vh' } }>
         <MainContainer style={ { width: 1200 } }>
             <Pane display='flex' alignItems='stretch' flexDirection='row'>
                 <Pane
@@ -1539,7 +1630,8 @@ storiesOf('Hello', module)
         </Application>
     ))
     .add('ConnectionPages', () => (
-        <Application>
             <ConnectionPages open />
-        </Application>
+    ))
+    .add('SecurityPages', () => (
+            <SecurityPages open />
     ));
