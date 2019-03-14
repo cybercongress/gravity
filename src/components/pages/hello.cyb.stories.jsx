@@ -1394,7 +1394,7 @@ const TerminalCybPages = () => (
                 <img style={ { width: '100%' } } src={ imgCybMatrix } />
             </Pane>
         </HelloContainerLeftCol>
-        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+        <HelloContainerRightCol>
             <HelloContainerRightColContent>
                 <Pane width='90%' height={ 400 } boxShadow='0 0 1px #fff'>
                     <Pane
