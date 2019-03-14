@@ -64,7 +64,8 @@ class AppMenu extends Component {
                   flexDirection='column'
                 >
                     {pendingAddToFavorites && (
-                        <Pane zIndex={ 2 } onClickOutside={ this.rejectFavorite }>
+                        <ClickOutside  onClickOutside={ this.rejectFavorite }>
+                        <Pane zIndex={ 2 }>
                             <AddMenuItemContainer paddingBottom={ 10 }>
                                 <AddMenuItem>
                                     <TextInput
@@ -85,6 +86,7 @@ class AppMenu extends Component {
                                 </AddMenuItem>
                             </AddMenuItemContainer>
                         </Pane>
+                        </ClickOutside>
                     )}
                     <ReportLinkContainer>
                         <a target='__blank' href='#'>

@@ -107,7 +107,7 @@ class Validators extends React.Component {
 
         return (
             <Pane>
-                <ScrollContainer>
+                <ScrollContainer style={{height: 'calc(100vh - 140px)'}}>
                     <MainContainer>
                         <Pane
                           display='flex'
@@ -266,7 +266,7 @@ class App extends React.Component {
 
         return (
             <div>
-                <ScrollContainer >
+                <ScrollContainer style={{height: 'calc(100vh - 140px)'}}>
                     <MainContainer>
                         {links.length > 0 && (
                             <div>

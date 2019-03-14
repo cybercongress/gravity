@@ -20,205 +20,16 @@ import {
     FilePicker,
 } from 'evergreen-ui';
 import { Row, Col } from 'react-flexbox-grid';
-import { throws } from 'assert';
 import Terminal from 'terminal-in-react';
 import {
-    MainContainer,
-    ScrollContainer,
     Avatar,
     // Text,
 } from '../..';
-import Application from '../Application/Application';
 
-const imgCybMatrix = require('./cyb.png');
-
-const HelloState2 = () => (
-    <Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                <Text fontSize='16px' lineHeight={ 1.88 } color='#fff'>
-                    xhipster
-                </Text>
-                , The Matrix is everywhere. It is all around us.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                Even now, in this room. You can see it when you look into your Chrome window, or
-                when you turn on your Youtube.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                You can feel it when you Google something, when you go to Facebook, when you pay
-                with Paypal. It is the world that has been put over your eyes to blind you from the
-                truth.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                I assume that you are enlightened and already know the private keys from your
-                Kingdom though. Otherwise you should identify the truth
-            </Text>
-        </Pane>
-    </Pane>
-);
-
-const HelloState3a = () => (
-    <Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                That you are a slave, xhipster.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                Like everyone else, you were born into bondage, born into a prison that you cannot
-                smell, taste, or touch.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                A prison for your mind without an ability to control your identity, your values,
-                your data.
-            </Text>
-        </Pane>
-    </Pane>
-);
-
-const HelloState4a = () => (
-    <Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                Unfortunately, no one can be told what the Matrix is. You have to see it for
-                yourself. This is your last chance.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                You take the blue pill - the story ends, you wake up in web2 and you believe
-                whatever you want to.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                You take the red pill - you stay in Wonderland and I show you how deep the rabbit
-                hole goes.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                What I'm offering is the truth, nothing more.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                Remember, once you enter new web world there will be no way back…
-            </Text>
-        </Pane>
-    </Pane>
-);
-
-const HelloState5ab = () => (
-    <Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                You already did your choise. I have nothing to you.
-            </Text>
-        </Pane>
-    </Pane>
-);
+const CybMatrix = require('./cyb.png');
+const cybRed = require('./cyb-red.png');
+const cybEye = require('./eye.jpg');
+const cybEye2 = require('./cybEye2.png');
 
 const BntGroup = () => (
     <Pane display='flex' flexDirection='column'>
@@ -370,101 +181,6 @@ const BntGroup = () => (
     </Pane>
 );
 
-const HelloState5aa = () => (
-    <Pane paddingRight={ 50 }>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                Welcome to the new world,
-                {' '}
-                <Text fontSize='16px' lineHeight={ 1.88 } color='#fff'>
-                    xhipster
-                </Text>
-                .
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                I&apos;m trying to free your mind,
-                {' '}
-                <Text fontSize='16px' lineHeight={ 1.88 } color='#fff'>
-                    xhipster
-                </Text>
-                , but I can only show you the door, you&apos;re the one that has to walk through it
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                I used the game approach to train you faster and the icons below will reflect your
-                progress.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                Let’s make our first training!
-            </Text>
-        </Pane>
-    </Pane>
-);
-
-const HelloState5ac = () => (
-    <Pane paddingRight={ 50 }>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                I generated secure, random identity for you. Now there are no forces that can
-                control your character and values. You're in control of it. Nobody, even me can not
-                know it after encryption.
-            </Text>
-        </Pane>
-        <Pane marginBottom={ 20 }>
-            <Text
-              fontSize='16px'
-              lineHeight={ 1.88 }
-              textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-              color='#4ed6ae'
-              letterSpacing={ 1.6 }
-              style={ { wordSpacing: 5 } }
-            >
-                So, don’t be afraid, make your first step - take a look!
-            </Text>
-        </Pane>
-    </Pane>
-);
-
 class PaneBalance extends React.Component {
     state = {
         iconCopy: false,
@@ -503,105 +219,228 @@ const HelloCardAccaunt = () => (
       boxShadow='0 0 1px #fff'
       maxWidth='80%'
       paddingX={ 60 }
-      paddingY={ 40 }
-        //   position='absolute'
-        //   top='10%'
+      paddingY='10%'
+      maxHeight={ 500 }
     >
         <Pane
-            //   width='100%'
           display='flex'
-          flexDirection='column'
           alignItems='center'
-          marginBottom={ 35 }
+          justifyContent='center'
+          flexDirection='column'
+          marginBottom='25%'
         >
-            <Pane marginBottom={ 70 }>
-                <Pane
-                  display='flex'
-                  alignItems='center'
-                  justifyContent='center'
-                  flexDirection='column'
-                  width={ 90 }
-                  height={ 90 }
-                  borderRadius='50%'
-                >
-                    <Avatar />
-                    <Pane marginTop={ 15 }>
-                        <Text fontSize='22px' color='#fff'>
-                            xhipster
-                        </Text>
-                    </Pane>
-                </Pane>
+            <Pane maxHeight={ 90 } height='10vh'>
+                <Avatar style={ { maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' } } />
             </Pane>
+            <Text display='inline-block' marginTop='10%' fontSize='22px' color='#fff'>
+                xhipster
+            </Text>
         </Pane>
-        <Pane marginBottom={ 30 }>
-            <Pane display='flex' flexDirection='row' marginBottom={ 45 }>
-                <Pane>
-                    <Pill
-                      height={ 10 }
-                      width={ 10 }
-                      borderRadius='50%'
-                      color='yellow'
-                      paddingX={ 0 }
-                      isSolid
-                      marginRight={ 15 }
-                    />
-                    {/* <Text fontSize={ 30 }>148 ETH</Text> */}
-                </Pane>
-                <PaneBalance position='relative'>
-                    <Pane marginBottom={ 11 }>
-                        <Text color='#fff' fontSize={ 30 }>
-                            148 ETH
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#fff'>0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5</Text>
-                    </Pane>
-                </PaneBalance>
+        <Pane display='flex' flexDirection='row' marginBottom='15%'>
+            <Pane>
+                <Pill
+                  height={ 10 }
+                  width={ 10 }
+                  borderRadius='50%'
+                  color='yellow'
+                  paddingX={ 0 }
+                  isSolid
+                  marginRight={ 15 }
+                />
+                {/* <Text fontSize={ 30 }>148 ETH</Text> */}
             </Pane>
-            <Pane display='flex' flexDirection='row' marginBottom={ 40 }>
-                <Pane>
-                    <Pill
-                      height={ 10 }
-                      width={ 10 }
-                      borderRadius='50%'
-                      color='blue'
-                      paddingX={ 0 }
-                      isSolid
-                      marginRight={ 15 }
-                    />
-                    {/* <Text fontSize={ 30 }>148 ETH</Text> */}
-                </Pane>
-                <PaneBalance position='relative'>
-                    <Pane marginBottom={ 11 }>
-                        <Text color='#fff' fontSize={ 30 }>
-                            10 GCYB
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#fff'>cyber1f9yjqmxh6prsmgpcaqj8lmjnxg644n5074zznm</Text>
-                    </Pane>
-                </PaneBalance>
+            <PaneBalance position='relative'>
+                <Text display='inline-block' marginBottom='5%' color='#fff' fontSize={ 30 }>
+                    148 ETH
+                </Text>
+                <Text display='inline-block' color='#fff'>
+                    0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5
+                </Text>
+            </PaneBalance>
+        </Pane>
+        <Pane display='flex' flexDirection='row'>
+            <Pane>
+                <Pill
+                  height={ 10 }
+                  width={ 10 }
+                  borderRadius='50%'
+                  color='blue'
+                  paddingX={ 0 }
+                  isSolid
+                  marginRight={ 15 }
+                />
             </Pane>
+            {/* <Text fontSize={ 30 }>148 ETH</Text> */}
+            <PaneBalance position='relative'>
+                <Text display='inline-block' marginBottom='5%' color='#fff' fontSize={ 30 }>
+                    10 GCYB
+                </Text>
+                <Text display='inline-block' color='#fff'>
+                    cyber1f9yjqmxh6prsmgpcaqj8lmjnxg644n5074zznm
+                </Text>
+            </PaneBalance>
         </Pane>
     </Card>
 );
 
-const HelloState11 = () => (
-    <Pane marginBottom={ 20 }>
-        <Text
-          fontSize='16px'
-          lineHeight={ 1.88 }
-          textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-          color='#4ed6ae'
-          letterSpacing={ 1.6 }
-          style={ { wordSpacing: 5 } }
+const HelloContainer = ({ children, ...props }) => (
+    // <ScrollContainer>
+    <Pane
+      position='absolute'
+      height='100%'
+      width='100%'
+      top={ 0 }
+      left={ 0 }
+      overflowY='auto'
+      backgroundColor='#000'
+    >
+        <Pane
+          maxWidth={ 1269 }
+          position='absolute'
+          top={ 0 }
+          right={ 0 }
+          left={ 0 }
+          bottom={ 0 }
+          marginY='auto'
+          marginX='auto'
+          paddingY={ 65 }
         >
-            Well, now you are ready to enjoy your web3 experience!
-        </Text>
+            {/* <MainContainer style={ { width: 1200 } }>  */}
+            <Pane display='flex' alignItems='stretch' height='100%' flexDirection='row'>
+                {children}
+            </Pane>
+            {/* </MainContainer> */}
+        </Pane>
+    </Pane>
+    // </ScrollContainer>
+);
+
+const HelloContainerLeftCol = ({ children }) => (
+    <Pane
+        //  float='left'
+      width='50%'
+      height='inherit'
+      marginX={ 30 }
+    >
+        {children}
     </Pane>
 );
 
-const TextAreaSate7a = () => (
+const HelloContainerRightCol = ({ children, bntGroup }) => (
+    <Pane
+        // float='right'
+      display='flex'
+      flexDirection='row'
+      justifyContent='center'
+      alignItems='center'
+      width='50%'
+      height='initial'
+      position='relative'
+      marginX={ 50 }
+    >
+        <Pane
+          display='flex'
+          justifyContent='center'
+          flexDirection='column'
+          flexGrow={ 1 }
+          height='100%'
+        >
+            {children}
+        </Pane>
+        {bntGroup && (
+            <Pane position='fixed' right='3%' top='20%'>
+                {bntGroup}
+                {/* <BntGroup /> */}
+            </Pane>
+        )}
+    </Pane>
+);
+
+const HelloContainerRightColContent = ({ children }) => (
+    <Pane
+      display='flex'
+      justifyContent='center'
+      flexDirection='column'
+      alignItems='center'
+      width='100%'
+      height='100%'
+      marginBottom={ 50 }
+      flexGrow={ 1 }
+    >
+        {children}
+    </Pane>
+);
+
+const HelloContainerRightColBtn = ({ children, center, ...props }) => (
+    <Pane
+      width='100%'
+      { ...props }
+      display='flex'
+      justifyContent={ center ? 'center' : 'space-between' }
+    >
+        {children}
+    </Pane>
+);
+
+const BigImg = ({ srcBigImg }) => (
+    <Pane
+      height='100%'
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      flexDirection='column'
+    >
+        <img style={ { width: '100%' } } src={ srcBigImg || CybMatrix } />
+    </Pane>
+);
+
+const SlallImgText = ({ imgCyb, children }) => (
+    <Pane
+      display='flex'
+      flexDirection='column'
+      alignItems='center'
+      justifyContent='space-evenly'
+      height='100%'
+    >
+        <img style={ { height: 270 } } src={ imgCyb } />
+        <Pane>{children}</Pane>
+    </Pane>
+);
+
+const ButtonEverGreen = ({ children, custonClass, ...props }) => (
+    <Button
+      whiteSpace='nowrap'
+      paddingX={ 50 }
+      height={ 42 }
+      minWidth={ 200 }
+      display='flex'
+      justifyContent='center'
+      fontSize='18px'
+      borderRadius={ 3 }
+      className={ custonClass || 'btn' }
+      letterSpacing={ 0 }
+      { ...props }
+    >
+        {children}
+    </Button>
+);
+
+const TextIlineBlock = ({ children, ...props }) => (
+    <Text
+      fontSize='16px'
+      lineHeight={ 1.88 }
+      textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
+      color='#4ed6ae'
+      letterSpacing={ 1.6 }
+      style={ { wordSpacing: 5 } }
+      display='inline-block'
+      { ...props }
+    >
+        {children}
+    </Text>
+);
+
+const TextAreaImportMnemonic = () => (
     <Pane position='relative' display='flex' justifyContent='center' height={ 500 } width='100%'>
         <Textarea
           height='100%'
@@ -609,7 +448,7 @@ const TextAreaSate7a = () => (
           paddingY={ 20 }
           fontSize='18px'
           placeholder='Add trees...'
-          width='80%'
+          width='90%'
           backgroundColor='#000'
           color='#fff'
           boxShadow='0 0 1px #fff'
@@ -621,76 +460,8 @@ const TextAreaSate7a = () => (
     </Pane>
 );
 
-const HelloState8 = () => (
-    <Card
-      display='flex'
-      flexDirection='column'
-      alignItems='center'
-        //   backgroundColor='white'
-      boxShadow='0 0 1px #fff'
-      maxWidth='80%'
-      paddingX={ 90 }
-      paddingY={ 90 }
-      minWidth={ 500 }
-      minHeight={ 570 }
-        //   position='absolute'
-        //   top='10%'
-    >
-        <Pane width='100%' flexGrow={ 1 } marginBottom='20%'>
-            <Pane width='100%' marginBottom='5%'>
-                <Pane marginBottom='3%'>
-                    <Text fontSize='18px' color='#fff'>
-                        Password
-                    </Text>
-                </Pane>
-                <Pane width='100%'>
-                    <TextInput
-                      width='100%'
-                      height={ 42 }
-                      backgroundColor='transparent'
-                      isInvalid
-                      color='#fff'
-                    />
-                </Pane>
-            </Pane>
-            <Pane width='100%'>
-                <Pane marginBottom='3%'>
-                    <Text fontSize='18px' color='#fff'>
-                        Confirm password
-                    </Text>
-                </Pane>
-                <Pane width='100%'>
-                    <TextInput
-                      width='100%'
-                      height={ 42 }
-                      backgroundColor='transparent'
-                      color='#fff'
-                    />
-                </Pane>
-            </Pane>
-        </Pane>
-        <Pane width='100%'>
-            <Pane width='100%'>
-                <Pane marginBottom='3%'>
-                    <Text fontSize='18px' color='#fff'>
-                        Confirm password
-                    </Text>
-                </Pane>
-                <Pane width='100%'>
-                    <TextInput
-                      width='100%'
-                      height={ 42 }
-                      backgroundColor='transparent'
-                      color='#fff'
-                    />
-                </Pane>
-            </Pane>
-        </Pane>
-    </Card>
-);
-
 const TerminalCyb = () => (
-    <Pane boxShadow='0 0 1px #fff' height={ 400 }>
+    <Pane width='100%' height={ 400 } boxShadow='0 0 1px #fff'>
         <Pane
           width='100%'
           style={ { borderBottom: '0.1px solid #585757' } }
@@ -721,13 +492,13 @@ const TerminalCyb = () => (
                 alert: 'alert',
                 popup: 'alert',
             } }
-          msg='You can write anything here. Example - Hello! My name is Foo and I like Bar.'
+          msg='You.'
         />
     </Pane>
 );
 
 const ConnectionTable = ({ status }) => (
-    <Pane width='100%' paddingRight='10%'>
+    <Pane width='100%'>
         <Table>
             <Table.Head>
                 <Table.TextHeaderCell>Provider</Table.TextHeaderCell>
@@ -844,538 +615,21 @@ const ConnectionTable = ({ status }) => (
     </Pane>
 );
 
-// left col -----
-
-const LeftColMatrix = () => (
-    <Pane
-      height='100%'
-      display='flex'
-      alignItems='center'
-      justifyContent='center'
-      flexDirection='column'
-    >
-        <img src={ imgCybMatrix } />
-    </Pane>
-);
-
-const HelloState4bLeftCol = () => (
-    <Pane
-      height='100%'
-      display='flex'
-      alignItems='center'
-      justifyContent='flex-start'
-      flexDirection='column'
-        //   paddingTop='10%'
-    >
-        <Pane>
-            <img style={ { width: 390, height: 370 } } src={ imgCybMatrix } />
-        </Pane>
-        <Pane width='90%'>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    Check your identity.
-                </Text>
-            </Pane>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    If it’s not your what you expected to see, you can go back and import another.
-                </Text>
-            </Pane>
-        </Pane>
-    </Pane>
-);
-
-const HelloState6aLeftCol = () => (
-    <Pane
-      height='100%'
-      display='flex'
-      alignItems='center'
-      justifyContent='flex-start'
-      flexDirection='column'
-        //   paddingTop='10%'
-    >
-        <Pane>
-            <img style={ { height: 224 } } src={ imgCybMatrix } />
-        </Pane>
-        <Pane width='90%'>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    This is your new body,
-                    {' '}
-                    <Text fontSize='16px' lineHeight={ 1.88 } color='#fff'>
-                        xhipster
-                    </Text>
-                    . In new web world it is a pair of Ethereum and Cyber cryptoaddresses. You need
-                    them to operate with funds and interact with apps.
-                </Text>
-            </Pane>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    Your body is weak now - balances are empty. But you can deposit funds on them
-                    anytime.
-                </Text>
-            </Pane>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    So, enough for it - take the keys of your identity and become master of your
-                    life.
-                </Text>
-            </Pane>
-        </Pane>
-    </Pane>
-);
-
-const HelloState7aLeftCol = () => (
-    <Pane
-      height='100%'
-      display='flex'
-      alignItems='center'
-      justifyContent='flex-start'
-      flexDirection='column'
-        //   paddingTop='10%'
-    >
-        <Pane>
-            <img style={ { height: 224 } } src={ imgCybMatrix } />
-        </Pane>
-        <Pane width='90%'>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    This is your mnemonic phrase. Keep it safe, do not store this phrase on computer
-                    or mobile phone! If you lose it - your funds will gone forever.
-                </Text>
-            </Pane>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    You can write this phrase down to a paper, split to several parts and dig them
-                    into the ground.
-                </Text>
-            </Pane>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    I didn&apos;t say it would be easy,
-                    {' '}
-                    <Text fontSize='16px' lineHeight={ 1.88 } color='#fff'>
-                        xhipster
-                    </Text>
-                    . I just said it would be the truth.
-                </Text>
-            </Pane>
-        </Pane>
-    </Pane>
-);
-
-const HelloState3bLeftCol = () => (
-    <Pane
-      height='100%'
-      display='flex'
-      alignItems='center'
-      justifyContent='space-between'
-      flexDirection='column'
-        //   paddingTop='10%'
-      paddingBottom='30%'
-    >
-        <Pane>
-            <img style={ { height: 224 } } src={ imgCybMatrix } />
-        </Pane>
-        <Pane width='90%'>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    We need to import your account. Just paste or type mnemonic phrase in the text
-                    field
-                </Text>
-            </Pane>
-        </Pane>
-    </Pane>
-);
-
-const HelloState8LeftCol = () => (
-    <Pane
-      height='100%'
-      display='flex'
-      alignItems='center'
-      justifyContent='flex-start'
-      flexDirection='column'
-        //   paddingTop='10%'
-    >
-        <Pane>
-            <img style={ { height: 400 } } src={ imgCybMatrix } />
-        </Pane>
-        <Pane width='90%'>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    Okay. What do you need now,
-                    {' '}
-                    <Text fontSize='16px' lineHeight={ 1.88 } color='#fff'>
-                        xhipster
-                    </Text>
-                    ? More security! I’ll encrypt your mnemonic phrase, but you need to create a
-                    password.
-                </Text>
-            </Pane>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    Remember, there is no way to restore it, so keep it also safe.
-                </Text>
-            </Pane>
-        </Pane>
-    </Pane>
-);
-
-const HelloState10LeftCol = () => (
-    <Pane
-      height='100%'
-      display='flex'
-      alignItems='center'
-      justifyContent='flex-start'
-      flexDirection='column'
-        //   paddingTop='10%'
-    >
-        <Pane>
-            <img style={ { width: 390, height: 370 } } src={ imgCybMatrix } />
-        </Pane>
-        <Pane width='90%'>
-            <Pane marginBottom={ 20 }>
-                <Text
-                  fontSize='16px'
-                  lineHeight={ 1.88 }
-                  textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                  color='#4ed6ae'
-                  letterSpacing={ 1.6 }
-                  style={ { wordSpacing: 5 } }
-                >
-                    This is your connection state. You can change it, if you want.
-                </Text>
-            </Pane>
-        </Pane>
-    </Pane>
-);
-
-const HelloContainer = ({ children, ...props }) => (
-    <ScrollContainer style={ { height: '100vh', paddingBottom: 0 } }>
-        <MainContainer style={ { width: 1200, height: 'inherit' } }>
-            <Pane display='flex' alignItems='stretch' height='100%' flexDirection='row'>
-                {children}
-            </Pane>
-        </MainContainer>
-    </ScrollContainer>
-);
-
-const HelloContainerLeftCol = ({ children }) => (
-    <Pane
-        //  float='left'
-      width='50%'
-      height='inherit'
-    >
-        {children}
-    </Pane>
-);
-
-const HelloContainerRightCol = ({ children, bntGroup }) => (
-    <Pane
-        // float='right'
-      display='flex'
-      flexDirection='row'
-      justifyContent='center'
-      alignItems='center'
-      width='50%'
-      height='initial'
-      position='relative'
-      marginRight={ 50 }
-    >
-        <Pane
-          display='flex'
-          justifyContent='center'
-          flexDirection='column'
-          flexGrow={ 1 }
-          height='100%'
-        >
-            {children}
-        </Pane>
-        {bntGroup && (
-            <Pane position='fixed' right='3%' top='20%'>
-                {bntGroup}
-                {/* <BntGroup /> */}
-            </Pane>
-        )}
-    </Pane>
-);
-
-const HelloContainerRightColContent = ({ children }) => (
-    <Pane
-      display='flex'
-      justifyContent='center'
-      flexDirection='column'
-      alignItems='center'
-      width='100%'
-      height='100%'
-      marginBottom={ 50 }
-      flexGrow={ 1 }
-    >
-        {children}
-    </Pane>
-);
-
-const HelloContainerRightColBtn = ({ children }) => <Pane width='100%'>{children}</Pane>;
-
 const ConnectionPages = ({ status }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <Pane
-              height='100%'
-              display='flex'
-              alignItems='center'
-              justifyContent='flex-start'
-              flexDirection='column'
-                //   paddingTop='10%'
-            >
-                <Pane>
-                    <img style={ { width: 390, height: 370 } } src={ imgCybMatrix } />
-                </Pane>
-                <Pane width='90%'>
-                    <Pane marginBottom={ 20 }>
-                        <Text
-                          fontSize='16px'
-                          lineHeight={ 1.88 }
-                          textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                          color='#4ed6ae'
-                          letterSpacing={ 1.6 }
-                          style={ { wordSpacing: 5 } }
-                        >
-                            This is your connection state. You can change it, if you want.
-                        </Text>
-                    </Pane>
-                </Pane>
-            </Pane>
+            <SlallImgText imgCyb={ cybEye }>
+                <TextIlineBlock>
+                    This is your connection state. You can change it, if you want.
+                </TextIlineBlock>
+            </SlallImgText>
         </HelloContainerLeftCol>
         <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
-                <Pane width='100%' paddingRight='10%'>
-                    <Table>
-                        <Table.Head>
-                            <Table.TextHeaderCell>Provider</Table.TextHeaderCell>
-                            <Table.TextHeaderCell>Endpoint</Table.TextHeaderCell>
-                        </Table.Head>
-                        <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
-                            <Table.Row isSelectable>
-                                <Table.TextCell>
-                                    {' '}
-                                    <Pill
-                                      height={ 8 }
-                                      width={ 8 }
-                                      borderRadius='50%'
-                                      paddingX={ 0 }
-                                      isSolid
-                                      marginLeft={ 20 }
-                                      marginRight={ 25 }
-                                      color={
-                                            status == 'local'
-                                                ? 'green'
-                                                : status == 'fail'
-                                                ? 'red'
-                                                : 'yellow'
-                                        }
-                                    />
-                                    <Text>IPFS read</Text>
-                                </Table.TextCell>
-                                <Table.TextCell>
-                                    <TextInput width='80%' />
-                                </Table.TextCell>
-                            </Table.Row>
-                            <Table.Row isSelectable>
-                                <Table.TextCell>
-                                    <Pill
-                                      height={ 8 }
-                                      width={ 8 }
-                                      borderRadius='50%'
-                                      color='yellow'
-                                      paddingX={ 0 }
-                                      isSolid
-                                      marginLeft={ 20 }
-                                      marginRight={ 25 }
-                                      color={
-                                            status == 'local'
-                                                ? 'green'
-                                                : status == 'fail'
-                                                ? 'red'
-                                                : 'yellow'
-                                        }
-                                    />
-                                    <Text>IPFS write</Text>
-                                </Table.TextCell>
-                                <Table.TextCell>
-                                    <TextInput width='80%' />
-                                </Table.TextCell>
-                            </Table.Row>
-                            <Table.Row isSelectable>
-                                <Table.TextCell>
-                                    <Pill
-                                      height={ 8 }
-                                      width={ 8 }
-                                      borderRadius='50%'
-                                      color='yellow'
-                                      paddingX={ 0 }
-                                      isSolid
-                                      marginLeft={ 20 }
-                                      marginRight={ 25 }
-                                      color={
-                                            status == 'local'
-                                                ? 'green'
-                                                : status == 'fail'
-                                                ? 'red'
-                                                : 'yellow'
-                                        }
-                                    />
-                                    <Text>Ethereum HTTP</Text>
-                                </Table.TextCell>
-                                <Table.TextCell>
-                                    <TextInput width='80%' />
-                                </Table.TextCell>
-                            </Table.Row>
-                            <Table.Row isSelectable>
-                                <Table.TextCell>
-                                    <Pill
-                                      height={ 8 }
-                                      width={ 8 }
-                                      borderRadius='50%'
-                                      color='yellow'
-                                      paddingX={ 0 }
-                                      isSolid
-                                      marginLeft={ 20 }
-                                      marginRight={ 25 }
-                                      color={
-                                            status == 'local'
-                                                ? 'green'
-                                                : status == 'fail'
-                                                ? 'red'
-                                                : 'yellow'
-                                        }
-                                    />
-                                    <Text>Cyberd HTTP</Text>
-                                </Table.TextCell>
-                                <Table.TextCell>
-                                    <TextInput width='80%' />
-                                </Table.TextCell>
-                            </Table.Row>
-                            <Table.Row>
-                                <Table.TextCell>
-                                    <Pill
-                                      height={ 8 }
-                                      width={ 8 }
-                                      borderRadius='50%'
-                                      color='yellow'
-                                      paddingX={ 0 }
-                                      isSolid
-                                      marginLeft={ 20 }
-                                      marginRight={ 25 }
-                                      color={
-                                            status == 'local'
-                                                ? 'green'
-                                                : status == 'fail'
-                                                ? 'red'
-                                                : 'yellow'
-                                        }
-                                    />
-                                    <Text>Cyberd Ws</Text>
-                                </Table.TextCell>
-                                <Table.TextCell>
-                                    <TextInput width='80%' />
-                                </Table.TextCell>
-                            </Table.Row>
-                        </Table.Body>
-                    </Table>
-                </Pane>
+                <ConnectionTable status={ status } />
             </HelloContainerRightColContent>
-            <HelloContainerRightColBtn>
-                <Pane width='100%' display='flex' justifyContent='center'>
-                    <Button
-                      whiteSpace='nowrap'
-                      paddingX={ 50 }
-                      height={ 42 }
-                      fontSize='18px'
-                      borderRadius={ 3 }
-                      className='btn'
-                      letterSpacing={ 0 }
-                    >
-                        Check
-                    </Button>
-                </Pane>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>Check</ButtonEverGreen>
             </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>
@@ -1384,98 +638,27 @@ const ConnectionPages = ({ status }) => (
 const TerminalCybPages = () => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <Pane
-              height='100%'
-              display='flex'
-              alignItems='center'
-              justifyContent='center'
-              flexDirection='column'
-            >
-                <img style={ { width: '100%' } } src={ imgCybMatrix } />
-            </Pane>
+            <BigImg />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
-                <Pane width='90%' height={ 400 } boxShadow='0 0 1px #fff'>
-                    <Pane
-                      width='100%'
-                      style={ { borderBottom: '0.1px solid #585757' } }
-                      paddingY={ 5 }
-                      display='flex'
-                      justifyContent='center'
-                    >
-                        <Text color='#fff'>cyb</Text>
-                    </Pane>
-                    <Terminal
-                      color='#4ed6ae'
-                      backgroundColor='black'
-                      barColor='black'
-                      style={ {
-                            fontWeight: 'bold',
-                            height: 'inherit',
-                            paddingBottom: 50,
-                            fontSize: '1em',
-                        } }
-                      commands={ {
-                            'open-google': () => window.open('https://www.google.com/', '_blank'),
-                            showmsg: 'hello',
-                            popup: () => alert('Terminal in React'),
-                        } }
-                      descriptions={ {
-                            'open-google': 'opens google.com',
-                            showmsg: 'shows a message',
-                            alert: 'alert',
-                            popup: 'alert',
-                        } }
-                      msg='You.'
-                    />
-                </Pane>
+                <TerminalCyb />
             </HelloContainerRightColContent>
         </HelloContainerRightCol>
     </HelloContainer>
 );
 
-const SecurityPages = () => (
+const SecurityImportSettingsPages = () => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <Pane
-              height='100%'
-              display='flex'
-              alignItems='center'
-              justifyContent='flex-start'
-              flexDirection='column'
-                //   paddingTop='10%'
-            >
-                <Pane flexGrow={ 2 }>
-                    <img style={ { height: 350 } } src={ imgCybMatrix } />
-                </Pane>
-                <Pane flexGrow={ 1 } width='90%'>
-                    <Pane marginBottom={ 10 }>
-                        <Text
-                          fontSize='16px'
-                          lineHeight={ 1.88 }
-                          textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                          color='#4ed6ae'
-                          letterSpacing={ 1.6 }
-                          style={ { wordSpacing: 5 } }
-                        >
-                            You can skip this step if you are the firsrt time outside the matrix.
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text
-                          fontSize='16px'
-                          lineHeight={ 1.88 }
-                          textShadow='0 16px 32px rgba(0, 0, 0, 0.4)'
-                          color='#4ed6ae'
-                          letterSpacing={ 1.6 }
-                          style={ { wordSpacing: 5 } }
-                        >
-                            If you have backup of your state, you can import it.
-                        </Text>
-                    </Pane>
-                </Pane>
-            </Pane>
+            <SlallImgText imgCyb={ cybRed }>
+                <TextIlineBlock marginBottom={ 10 }>
+                    You can skip this step if you are the firsrt time outside the matrix.
+                </TextIlineBlock>
+                <TextIlineBlock>
+                    If you have backup of your state, you can import it.
+                </TextIlineBlock>
+            </SlallImgText>
         </HelloContainerLeftCol>
         <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
@@ -1483,397 +666,449 @@ const SecurityPages = () => (
                   display='flex'
                   flexDirection='column'
                   alignItems='center'
-                    //   backgroundColor='white'
                   boxShadow='0 0 1px #fff'
                   maxWidth='80%'
                   paddingX={ 90 }
                   paddingY={ 90 }
                   minWidth={ 500 }
-                    //   minHeight={ 570 }
+                  maxHeight={ 500 }
                   height='100%'
-                    //   position='absolute'
-                    //   top='10%'
                 >
-                    <Pane width='100%' flexGrow={ 1 } marginBottom='20%'>
-                        <Pane width='100%' display='flex'>
-                            <Pane width='100%'>
-                                <FilePicker multiple width='100%' marginBottom={ 32 } />
-                            </Pane>
-                            <Pane>
-                                <IconButton appearance='minimal' icon='cross' iconSize={ 18 } />
-                            </Pane>
-                        </Pane>
+                    <Pane width='100%' display='flex' alignItems='center'>
+                        <FilePicker marginRight={ 10 } multiple width='100%' />
+                        <IconButton
+                          paddingX={ 5 }
+                          paddingY={ 5 }
+                          appearance='minimal'
+                          icon='cross'
+                          iconSize={ 18 }
+                        />
                     </Pane>
                 </Card>
             </HelloContainerRightColContent>
-            <HelloContainerRightColBtn>
-                <Pane width='100%' display='flex' justifyContent='center'>
-                    <Button
-                      whiteSpace='nowrap'
-                      paddingX={ 50 }
-                      height={ 42 }
-                      fontSize='18px'
-                      borderRadius={ 3 }
-                      className='btn'
-                      letterSpacing={ 0 }
-                    >
-                        Start from scratch
-                    </Button>
-                </Pane>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>Start from scratch</ButtonEverGreen>
             </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>
 );
 
-const Hello = ({ state, open, matrix }) => (
-    <ScrollContainer style={ { height: '100vh' } }>
-        <MainContainer style={ { width: 1200 } }>
-            <Pane display='flex' alignItems='stretch' flexDirection='row'>
-                <Pane
-                    //  float='left'
-                  width='50%'
-                  height='inherit'
-                >
-                    {matrix && <LeftColMatrix />}
-                    {state === '4b' && <HelloState4bLeftCol />}
-                    {state === '3b' && <HelloState3bLeftCol />}
-                    {state === '6a' && <HelloState6aLeftCol />}
-                    {state === '7a' && <HelloState7aLeftCol />}
-                    {state === '8' && <HelloState8LeftCol />}
-                </Pane>
-                <Pane
-                    // float='right'
+const SecurityCreatePasswordPages = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <SlallImgText imgCyb={ cybRed }>
+                <TextIlineBlock marginBottom={ 10 }>
+                    Okay. What do you need now,
+                    {' '}
+                    <Text fontSize='16px' lineHeight={ 1.88 } color='#fff'>
+                        xhipster
+                    </Text>
+                    ? More security! I’ll encrypt your mnemonic phrase, but you need to create a
+                    password.
+                </TextIlineBlock>
+                <TextIlineBlock>
+                    Remember, there is no way to restore it, so keep it also safe.
+                </TextIlineBlock>
+            </SlallImgText>
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <Card
                   display='flex'
-                  flexDirection='row'
-                  justifyContent='center'
+                  flexDirection='column'
                   alignItems='center'
-                  width='50%'
-                  height='inherit'
-                  position='relative'
+                  boxShadow='0 0 1px #fff'
+                  maxWidth='80%'
+                  paddingX='8vh'
+                  paddingY='8vh'
+                  minWidth={ 500 }
+                  maxHeight={ 500 }
+                  height='100%'
                 >
-                    <Pane
-                      display='flex'
-                      justifyContent='center'
-                      flexDirection='column'
-                      flexGrow={ 1 }
-                      height='100%'
-                    >
-                        <Pane
-                          display='flex'
-                          justifyContent='center'
-                          flexDirection='column'
-                          alignItems='center'
-                          width='100%'
-                          height='100%'
-                          marginBottom={ 50 }
-                          flexGrow={ 1 }
-                        >
-                            {state === '1' && <TerminalCyb />}
-                            {state === '2' && <HelloState2 />}
-                            {state === '3a' && <HelloState3a />}
-                            {state === '3b' && <TextAreaSate7a />}
-                            {state === '4a' && <HelloState4a />}
-                            {state === '4b' && <HelloCardAccaunt />}
-                            {state === '5ab' && <HelloState5ab />}
-                            {state === '5aa' && <HelloState5aa />}
-                            {state === '5ac' && <HelloState5ac />}
-                            {state === '6a' && <HelloCardAccaunt />}
-                            {state === '7a' && <TextAreaSate7a />}
-                            {state === '8' && <HelloState8 />}
-                            {state === '11' && <HelloState11 />}
+                    <Pane width='100%' flexGrow={ 1 } marginBottom='5%'>
+                        <Pane width='100%' marginBottom='5%'>
+                            <Text
+                              marginBottom='3%'
+                              display='inline-block'
+                              fontSize='1.12rem'
+                              color='#fff'
+                            >
+                                Password
+                            </Text>
+                            <TextInput
+                              width='100%'
+                              height={ 42 }
+                              backgroundColor='transparent'
+                              isInvalid
+                              color='#fff'
+                              height='6vh'
+                              maxHeight={ 42 }
+                            />
                         </Pane>
                         <Pane width='100%'>
-                            {state === '2' && (
-                                <Pane display='flex' justifyContent='space-between'>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 50 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn-white'
-                                      letterSpacing={ 0 }
-                                    >
-                                        I know the keys
-                                    </Button>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 30 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn'
-                                    >
-                                        What truth?
-                                    </Button>
-                                </Pane>
-                            )}
-                            {state === '3a' && (
-                                <Pane width='100%' display='flex' justifyContent='center'>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 50 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn'
-                                      letterSpacing={ 0 }
-                                    >
-                                        Show me the Matrix
-                                    </Button>
-                                </Pane>
-                            )}
-                            {state === '3b' && (
-                                <Pane justifyContent='center' display='flex'>
-                                    <Pane display='flex' width='80%' justifyContent='space-between'>
-                                        <Button
-                                          whiteSpace='nowrap'
-                                          paddingX={ 50 }
-                                          height={ 42 }
-                                          fontSize='18px'
-                                          borderRadius={ 3 }
-                                          className='btn-white'
-                                          letterSpacing={ 0 }
-                                        >
-                                            Back
-                                        </Button>
-                                        <Button
-                                          whiteSpace='nowrap'
-                                          paddingX={ 30 }
-                                          height={ 42 }
-                                          fontSize='18px'
-                                          borderRadius={ 3 }
-                                          className='btn'
-                                        >
-                                            Show account
-                                        </Button>
-                                    </Pane>
-                                </Pane>
-                            )}
-                            {state === '4a' && (
-                                <Pane display='flex' justifyContent='space-between'>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 50 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn-blue'
-                                      letterSpacing={ 0 }
-                                    >
-                                        Stay asleep
-                                    </Button>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 30 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn-red'
-                                    >
-                                        Wake up
-                                    </Button>
-                                </Pane>
-                            )}
-                            {state === '4b' && (
-                                <Pane justifyContent='center' display='flex'>
-                                    <Pane display='flex' width='80%' justifyContent='space-between'>
-                                        <Button
-                                          whiteSpace='nowrap'
-                                          paddingX={ 50 }
-                                          height={ 42 }
-                                          fontSize='18px'
-                                          borderRadius={ 3 }
-                                          className='btn-white'
-                                          letterSpacing={ 0 }
-                                        >
-                                            Back
-                                        </Button>
-                                        <Button
-                                          whiteSpace='nowrap'
-                                          paddingX={ 30 }
-                                          height={ 42 }
-                                          fontSize='18px'
-                                          borderRadius={ 3 }
-                                          className='btn'
-                                        >
-                                            Encrypt
-                                        </Button>
-                                    </Pane>
-                                </Pane>
-                            )}
-                            {state === '5aa' && (
-                                <Pane width='100%' display='flex' justifyContent='center'>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 50 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn'
-                                      letterSpacing={ 0 }
-                                    >
-                                        Encrypt
-                                    </Button>
-                                </Pane>
-                            )}
-                            {state === '5ac' && (
-                                <Pane width='100%' display='flex' justifyContent='center'>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 50 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn'
-                                      letterSpacing={ 0 }
-                                    >
-                                        Show my identity
-                                    </Button>
-                                </Pane>
-                            )}
-                            {state === '6a' && (
-                                <Pane width='100%' display='flex' justifyContent='center'>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 50 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn'
-                                      letterSpacing={ 0 }
-                                    >
-                                        Back up mnemonic
-                                    </Button>
-                                </Pane>
-                            )}
-                            {state === '7a' && (
-                                <Pane width='100%' display='flex' justifyContent='center'>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 50 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn'
-                                      letterSpacing={ 0 }
-                                    >
-                                        I swear, I save
-                                    </Button>
-                                </Pane>
-                            )}
-                            {state === '8' && (
-                                <Pane justifyContent='center' display='flex'>
-                                    <Pane display='flex' width='80%' justifyContent='center'>
-                                        <Button
-                                          whiteSpace='nowrap'
-                                          paddingX={ 50 }
-                                          height={ 42 }
-                                          fontSize='18px'
-                                          borderRadius={ 3 }
-                                          className='btn'
-                                          letterSpacing={ 0 }
-                                        >
-                                            Encrypt mnemonic
-                                        </Button>
-                                    </Pane>
-                                </Pane>
-                            )}
-                            {state === '11' && (
-                                <Pane width='100%' display='flex' justifyContent='center'>
-                                    <Button
-                                      whiteSpace='nowrap'
-                                      paddingX={ 50 }
-                                      height={ 42 }
-                                      fontSize='18px'
-                                      borderRadius={ 3 }
-                                      className='btn'
-                                      letterSpacing={ 0 }
-                                    >
-                                        Get off the matrix
-                                    </Button>
-                                </Pane>
-                            )}
+                            <Text
+                              marginBottom='3%'
+                              display='inline-block'
+                              fontSize='1.12rem'
+                              color='#fff'
+                            >
+                                Confirm password
+                            </Text>
+                            <TextInput
+                              width='100%'
+                              height={ 42 }
+                              backgroundColor='transparent'
+                              color='#fff'
+                              height='6vh'
+                              maxHeight={ 42 }
+                            />
                         </Pane>
                     </Pane>
+                    <Pane width='100%'>
+                        <Text
+                          marginBottom='3%'
+                          display='inline-block'
+                          fontSize='1.12rem'
+                          color='#fff'
+                        >
+                            Confirm password
+                        </Text>
+                        <TextInput
+                          width='100%'
+                          height={ 42 }
+                          backgroundColor='transparent'
+                          color='#fff'
+                          height='6vh'
+                          maxHeight={ 42 }
+                        />
+                    </Pane>
+                </Card>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen disabled={ false }>Encrypt mnemonic</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
 
-                    {open && (
-                        <Pane position='fixed' right='3%' top='20%'>
-                            <BntGroup />
-                        </Pane>
-                    )}
+const CardWalletPages = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <SlallImgText imgCyb={ cybEye }>
+                <TextIlineBlock marginBottom={ 10 }>Check your identity.</TextIlineBlock>
+                <TextIlineBlock>
+                    If it’s not your what you expected to see, you can go back and import another.
+                </TextIlineBlock>
+            </SlallImgText>
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <HelloCardAccaunt />
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn paddingX='10%'>
+                <ButtonEverGreen custonClass='btn-white'>Back</ButtonEverGreen>
+                <ButtonEverGreen>Encrypt</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const CardWalletPagesBackUpMnemonic = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <SlallImgText imgCyb={ cybEye2 }>
+                <TextIlineBlock marginBottom={ 10 }>
+                    This is your new body,
+                    {' '}
+                    <Text fontSize='16px' color='#fff'>
+                        xhipster
+                    </Text>
+                    . In new web world it is a pair of Ethereum and Cyber cryptoaddresses. You need
+                    them to operate with funds and interact with apps.
+                </TextIlineBlock>
+                <TextIlineBlock marginBottom={ 10 }>
+                    Your body is weak now - balances are empty. But you can deposit funds on them
+                    anytime.
+                </TextIlineBlock>
+                <TextIlineBlock>
+                    So, enough for it - take the keys of your identity and become master of your
+                    life.
+                </TextIlineBlock>
+            </SlallImgText>
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <HelloCardAccaunt />
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>Back up mnemonic</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const ImportAccountPages = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <SlallImgText imgCyb={ cybEye }>
+                <TextIlineBlock>
+                    We need to import your account. Just paste or type mnemonic phrase in the text
+                    field
+                </TextIlineBlock>
+            </SlallImgText>
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <TextAreaImportMnemonic />
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn paddingX='5%'>
+                <ButtonEverGreen custonClass='btn-white'>Back</ButtonEverGreen>
+                <ButtonEverGreen>Show account</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const ImportAccountShowMnemonic = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <SlallImgText imgCyb={ cybEye2 }>
+                <TextIlineBlock marginBottom={ 10 }>
+                    This is your mnemonic phrase. Keep it safe, do not store this phrase on computer
+                    or mobile phone! If you lose it - your funds will gone forever.
+                </TextIlineBlock>
+                <TextIlineBlock marginBottom={ 10 }>
+                    You can write this phrase down to a paper, split to several parts and dig them
+                    into the ground.
+                </TextIlineBlock>
+                <TextIlineBlock marginBottom={ 10 }>
+                    I didn't say it would be easy,
+                    {' '}
+                    <Text fontSize='16px' color='#fff'>
+                        xhipster
+                    </Text>
+                    . I just said it would be the truth.
+                </TextIlineBlock>
+            </SlallImgText>
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <TextAreaImportMnemonic />
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>I swear, I save</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const GetOffTheMatrix = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <TextIlineBlock>
+                    Well, now you are ready to enjoy your web3 experience!
+                </TextIlineBlock>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>Get off the matrix</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const UserChoice = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+                <TextIlineBlock>You already did your choise. I have nothing to you.</TextIlineBlock>
+            </HelloContainerRightColContent>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const WelcomeNewWorld = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ cybEye } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        Welcome to the new world,
+                        {' '}
+                        <Text fontSize='18px' color='#fff'>
+                            xhipster
+                        </Text>
+                        .
+                    </TextIlineBlock>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        I'm trying to free your mind,
+                        {' '}
+                        <Text fontSize='18px' color='#fff'>
+                            xhipster
+                        </Text>
+                        , but I can only show you the door, you're the one that has to walk through
+                        it.
+                    </TextIlineBlock>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        I used the game approach to train you faster and the icons below will
+                        reflect your progress.
+                    </TextIlineBlock>
+                    <TextIlineBlock>Let’s make our first training!</TextIlineBlock>
                 </Pane>
-            </Pane>
-        </MainContainer>
-    </ScrollContainer>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>Encrypt</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const GeneratedSecure = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ cybEye } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        I generated secure, random identity for you. Now there are no forces that
+                        can control your character and values. You're in control of it. Nobody, even
+                        me can not know it after encryption.
+                    </TextIlineBlock>
+                    <TextIlineBlock>
+                        So, don’t be afraid, make your first step - take a look!
+                    </TextIlineBlock>
+                </Pane>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>Show my identity</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const ThatYouSlave = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ CybMatrix } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        That you are a slave, xhipster.
+                        {' '}
+                    </TextIlineBlock>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        Like everyone else, you were born into bondage, born into a prison that you
+                        cannot smell, taste, or touch.
+                    </TextIlineBlock>
+                    <TextIlineBlock>
+                        A prison for your mind without an ability to control your identity, your
+                        values, your data.
+                    </TextIlineBlock>
+                </Pane>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>Show me the Matrix</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const LastChance = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ CybMatrix } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        Unfortunately, no one can be told what the Matrix is. You have to see it for
+                        yourself. This is your last chance.
+                    </TextIlineBlock>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        You take the blue pill - the story ends, you wake up in web2 and you believe
+                        whatever you want to.
+                    </TextIlineBlock>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        You take the red pill - you stay in Wonderland and I show you how deep the
+                        rabbit hole goes. What I'm offering is the truth, nothing more.
+                    </TextIlineBlock>
+                    <TextIlineBlock>
+                        Remember, once you enter new web world there will be no way back…
+                    </TextIlineBlock>
+                </Pane>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn>
+                <ButtonEverGreen custonClass='btn-blue'>Stay asleep</ButtonEverGreen>
+                <ButtonEverGreen custonClass='btn-red'>Wake up</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+const MatrixEverywhere = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ CybMatrix } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        <Text color='#fff' fontSize='18px'>
+                            xhipster
+                        </Text>
+                        , The Matrix is everywhere. It is all around us.
+                    </TextIlineBlock>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        Even now, in this room. You can see it when you look into your Chrome
+                        window, or when you turn on your Youtube.
+                    </TextIlineBlock>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        You can feel it when you Google something, when you go to Facebook, when you
+                        pay with Paypal. It is the world that has been put over your eyes to blind
+                        you from the truth.
+                    </TextIlineBlock>
+                    <TextIlineBlock>
+                        I assume that you are enlightened and already know the private keys from
+                        your Kingdom though. Otherwise you should identify the truth
+                    </TextIlineBlock>
+                </Pane>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn>
+                <ButtonEverGreen custonClass='btn-white'>I know the keys</ButtonEverGreen>
+                <ButtonEverGreen>What truth?</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
 );
 
 storiesOf('Hello', module)
-    .add('1', () => (
-        <Application>
-            <Hello state='1' matrix />
-        </Application>
-    ))
-    .add('2', () => (
-        <Application>
-            <Hello state='2' matrix />
-        </Application>
-    ))
-    .add('3a', () => (
-        <Application>
-            <Hello state='3a' matrix />
-        </Application>
-    ))
-    .add('3b', () => (
-        <Application>
-            <Hello state='3b' open />
-        </Application>
-    ))
-    .add('4a', () => (
-        <Application>
-            <Hello state='4a' matrix />
-        </Application>
-    ))
-    .add('4b', () => (
-        <Application>
-            <Hello state='4b' open />
-        </Application>
-    ))
-    .add('5ab', () => (
-        <Application>
-            <Hello state='5ab' matrix />
-        </Application>
-    ))
-    .add('5aa', () => (
-        <Application>
-            <Hello state='5aa' open matrix />
-        </Application>
-    ))
-    .add('5ac', () => (
-        <Application>
-            <Hello state='5ac' open matrix />
-        </Application>
-    ))
-    .add('6a', () => (
-        <Application>
-            <Hello state='6a' open />
-        </Application>
-    ))
-    .add('7a', () => (
-        <Application>
-            <Hello state='7a' open />
-        </Application>
-    ))
-    .add('8', () => (
-        <Application>
-            <Hello state='8' open />
-        </Application>
-    ))
-    .add('11', () => (
-        <Application>
-            <Hello state='11' open matrix />
-        </Application>
-    ))
-    .add('ConnectionPages', () => <ConnectionPages />)
-    .add('SecurityPages', () => <SecurityPages />)
-    .add('TerminalCybPages', () => <TerminalCybPages />);
+    .add('ThatYouSlave', () => <ThatYouSlave />)
+    .add('WelcomeNewWorld', () => <WelcomeNewWorld />)
+    .add('MatrixEverywhere', () => <MatrixEverywhere />)
+    .add('LastChance', () => <LastChance />)
+    .add('GeneratedSecure', () => <GeneratedSecure />)
+    .add('ConnectionPages', () => <ConnectionPages status='local' />)
+    .add('SecurityPages', () => <SecurityImportSettingsPages />)
+    .add('SecurityPagesPassword', () => <SecurityCreatePasswordPages />)
+    .add('TerminalCybPages', () => <TerminalCybPages />)
+    .add('CardWalletPages', () => <CardWalletPages />)
+    .add('CardWalletPagesBackUpMnemonic', () => <CardWalletPagesBackUpMnemonic />)
+    .add('ImportAccountPages', () => <ImportAccountPages />)
+    .add('ImportAccountShowMnemonic', () => <ImportAccountShowMnemonic />)
+    .add('GetOffTheMatrix', () => <GetOffTheMatrix />)
+    .add('UserChoice', () => <UserChoice />);
