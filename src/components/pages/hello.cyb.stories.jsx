@@ -1147,7 +1147,7 @@ const HelloContainerLeftCol = ({ children }) => (
     </Pane>
 );
 
-const HelloContainerRightCol = ({ children, open }) => (
+const HelloContainerRightCol = ({ children, bntGroup }) => (
     <Pane
         // float='right'
       display='flex'
@@ -1168,9 +1168,10 @@ const HelloContainerRightCol = ({ children, open }) => (
         >
             {children}
         </Pane>
-        {open && (
+        {bntGroup && (
             <Pane position='fixed' right='3%' top='20%'>
-                <BntGroup />
+            {bntGroup}
+                {/* <BntGroup /> */}
             </Pane>
         )}
     </Pane>
@@ -1193,12 +1194,12 @@ const HelloContainerRightColContent = ({ children }) => (
 
 const HelloContainerRightColBtn = ({ children }) => <Pane width='100%'>{children}</Pane>;
 
-const ConnectionPages = ({ open, status }) => (
+const ConnectionPages = ({ bntGroup, status }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
             <HelloState10LeftCol />
         </HelloContainerLeftCol>
-        <HelloContainerRightCol open={ open }>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
                 <ConnectionTable status={ status } />
             </HelloContainerRightColContent>
@@ -1221,12 +1222,12 @@ const ConnectionPages = ({ open, status }) => (
     </HelloContainer>
 );
 
-const SecurityPages = ({open}) => (
+const SecurityPages = ({bntGroup}) => (
     <HelloContainer>
         <HelloContainerLeftCol>
             <HelloState10LeftCol />
         </HelloContainerLeftCol>
-        <HelloContainerRightCol open={ open }>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
             <Card
       display='flex'
