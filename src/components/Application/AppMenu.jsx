@@ -49,9 +49,9 @@ class AppMenu extends Component {
 
         return (
             <MenuContainer>
-                <WaleetAppMenu marginBottom={ 66 } ethBalance={ 17 } cybBalance={ 10 } />
-                <UserCard className='opacityItems' marginBottom={ 20 } />
-
+                {/* <WaleetAppMenu marginBottom={ 66 } ethBalance={ 17 } cybBalance={ 10 } /> */}
+                {/* <UserCard className='opacityItems' marginBottom={ 20 } /> */}
+                <Pane position='relative' width='100%' className='opacityItems' />
                 <Bookmarks items={ menuItems } deleteMenuItem={ deleteMenuItem } />
 
                 <Pane

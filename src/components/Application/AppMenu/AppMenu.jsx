@@ -16,18 +16,18 @@ export const WaleetAppMenuEth = ({ ethBalance }) => (
     <Pane marginBottom={ 20 } display='flex' alignItems='center'>
         <Pane marginRight={ 13 }>
             <Text color='#fff' fontSize='24px'>
-                {ethBalance}
+                {ethBalance} ETH
             </Text>
         </Pane>
 
-        <Pane display='flex' alignItems='center'>
+        {/* <Pane display='flex' alignItems='center'>
             <Pane width={ 32 } height={ 32 }>
                 <img src={ imgEth } />
             </Pane>
             <Pane width={ 32 } height={ 32 }>
                 <img src={ imgEth } />
             </Pane>
-        </Pane>
+        </Pane> */}
     </Pane>
 );
 
@@ -45,10 +45,10 @@ export const WaleetAppMenuCyb = ({ cybBalance }) => (
         <Pane display='flex' alignItems='center'>
             <Pane marginRight={ 13 }>
                 <Text color='#fff' fontSize='24px'>
-                    {cybBalance}
+                    {cybBalance} GCYB
                 </Text>
             </Pane>
-
+{/* 
             <Pane display='flex' alignItems='center'>
                 <Pane paddingX={ 7 }>
                     <Pill
@@ -94,7 +94,7 @@ export const WaleetAppMenuCyb = ({ cybBalance }) => (
                       backgroundColor='#36d6ae'
                     />
                 </Pane>
-            </Pane>
+            </Pane> */}
         </Pane>
     </Tooltip>
 );
