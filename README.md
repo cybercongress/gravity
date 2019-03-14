@@ -1,17 +1,31 @@
-yarn version 1.12.3
+## UI sources for cyberprojects
 
+
+### Getting started Useful links
+
+- [Gravity design system](https://github.com/cybercongress/ui.cyb/tree/gravity)
+
+- [React components](https://github.com/cybercongress/ui.cyb/tree/master/src/components)
+
+- [Sketch layouts](https://github.com/cybercongress/ui.cyb/tree/graphics)
+
+### How to work with Storybook
+
+Requirements:
+
+node 10.x.x
+
+yarn 1.12+
+
+How to run:
+
+```
 yarn install
 yarn start
+```
 
+For link in project:
 
-for link in project:
-yarn link 
-
-in your project 
+```
 yarn link '@cybercongress/ui'
-
-
-for publish:
-change version in package.json
-npm login
-npm publish
+```
