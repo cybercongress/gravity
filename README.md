@@ -3,7 +3,7 @@
 
 ### Getting started Useful links
 
-- [Gravity design system]()
+- [Gravity design system](https://github.com/cybercongress/ui.cyb/tree/gravity)
 
 - [React components](https://github.com/cybercongress/ui.cyb/tree/master/src/components)
 
@@ -14,6 +14,7 @@
 Requirements:
 
 node 10.x.x
+
 yarn 1.12+
 
 How to run:
