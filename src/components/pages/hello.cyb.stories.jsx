@@ -693,6 +693,39 @@ const SecurityImportSettingsPages = () => (
     </HelloContainer>
 );
 
+const TextInputError = ({ isInvalid, ...props }) => (
+    <Pane position='relative'>
+        <TextInput
+          width='100%'
+          height={ 42 }
+          backgroundColor='transparent'
+          color='#fff'
+          height='6vh'
+          maxHeight={ 42 }
+          isInvalid={ isInvalid }
+          paddingX={ 10 }
+          { ...props }
+        />
+        {isInvalid && (
+            <Pane
+              position='absolute'
+              left={ 0 }
+              bottom='-50%'
+              width='100%'
+              display='flex'
+              alignItems='center'
+            >
+                <Icon icon='info-sign' color='danger' size={ 11 } marginRight={ 5 } />
+                <Pane>
+                    <Text fontSize='11px' color='#ec4c47'>
+                        Passwords don't mutch
+                    </Text>
+                </Pane>
+            </Pane>
+        )}
+    </Pane>
+);
+
 const SecurityCreatePasswordPages = () => (
     <HelloContainer>
         <HelloContainerLeftCol>
@@ -725,8 +758,8 @@ const SecurityCreatePasswordPages = () => (
                   maxHeight={ 500 }
                   height='100%'
                 >
-                    <Pane width='100%' flexGrow={ 1 } marginBottom='5%'>
-                        <Pane width='100%' marginBottom='5%'>
+                    <Pane width='100%' flexGrow={ 1 } marginBottom='6%'>
+                        <Pane width='100%' marginBottom='6%'>
                             <Text
                               marginBottom='3%'
                               display='inline-block'
@@ -735,15 +768,7 @@ const SecurityCreatePasswordPages = () => (
                             >
                                 Password
                             </Text>
-                            <TextInput
-                              width='100%'
-                              height={ 42 }
-                              backgroundColor='transparent'
-                              isInvalid
-                              color='#fff'
-                              height='6vh'
-                              maxHeight={ 42 }
-                            />
+                            <TextInputError />
                         </Pane>
                         <Pane width='100%'>
                             <Text
@@ -754,14 +779,7 @@ const SecurityCreatePasswordPages = () => (
                             >
                                 Confirm password
                             </Text>
-                            <TextInput
-                              width='100%'
-                              height={ 42 }
-                              backgroundColor='transparent'
-                              color='#fff'
-                              height='6vh'
-                              maxHeight={ 42 }
-                            />
+                            <TextInputError />
                         </Pane>
                     </Pane>
                     <Pane width='100%'>
@@ -773,14 +791,7 @@ const SecurityCreatePasswordPages = () => (
                         >
                             Confirm password
                         </Text>
-                        <TextInput
-                          width='100%'
-                          height={ 42 }
-                          backgroundColor='transparent'
-                          color='#fff'
-                          height='6vh'
-                          maxHeight={ 42 }
-                        />
+                        <TextInputError isInvalid />
                     </Pane>
                 </Card>
             </HelloContainerRightColContent>
