@@ -13,7 +13,7 @@ import {
     Card,
     Textarea,
     TextInput,
-    Tooltip,
+    //  Tooltip,
     Table,
     FilePicker,
 } from 'evergreen-ui';
@@ -22,6 +22,7 @@ import Terminal from 'terminal-in-react';
 import {
     Avatar,
     // Text,
+    ToolTip,
 } from '../../..';
 
 const CybMatrix = require('./cyb.png');
@@ -31,8 +32,11 @@ const cybEye2 = require('./cybEye2.png');
 
 const BntGroup = () => (
     <Pane display='flex' flexDirection='column'>
-        <Tooltip
-          position='left'
+        <ToolTip
+        //   left={0}
+        //   top={0}
+        top={0}
+        right='100%'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -40,6 +44,7 @@ const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
+                width={200}
               >
                   <Pane
                     marginBottom={ 7 }
@@ -59,9 +64,10 @@ const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-soul btn-group' />
-        </Tooltip>
-        <Tooltip
-          position='left'
+        </ToolTip>
+        <ToolTip
+        top={0}
+        right='100%'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -69,6 +75,7 @@ const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
+                width={200}
               >
                   <Pane
                     marginBottom={ 7 }
@@ -88,9 +95,10 @@ const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-boby btn-group' />
-        </Tooltip>
-        <Tooltip
-          position='left'
+        </ToolTip>
+        <ToolTip
+          top={0}
+          right='100%'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -98,6 +106,7 @@ const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
+                width={200}
               >
                   <Pane
                     marginBottom={ 7 }
@@ -117,9 +126,10 @@ const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-imortality btn-group' />
-        </Tooltip>
-        <Tooltip
-          position='left'
+        </ToolTip>
+        <ToolTip
+          top={0}
+          right='100%'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -127,6 +137,7 @@ const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
+                width={200}
               >
                   <Pane
                     marginBottom={ 7 }
@@ -146,9 +157,10 @@ const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-security btn-group' />
-        </Tooltip>
-        <Tooltip
-          position='left'
+        </ToolTip>
+        <ToolTip
+          top={0}
+          right='100%'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -156,6 +168,7 @@ const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
+                width={200}
               >
                   <Pane
                     marginBottom={ 7 }
@@ -175,7 +188,7 @@ const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-intelligence btn-group' />
-        </Tooltip>
+        </ToolTip>
     </Pane>
 );
 

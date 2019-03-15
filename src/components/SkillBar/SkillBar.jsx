@@ -1,51 +1,19 @@
 import * as React from 'react';
 import { Pane, Text, Link } from 'evergreen-ui';
 import styles from './SkillBar.less';
+import {
+    ToolTip
+} from '../..';
 // import cx from 'classnames';
-export class ToolTip extends React.Component {
-    state = {
-        hover: false,
-    };
-
-    handleHover() {
-        this.setState({ hover: !this.state.hover });
-    }
-
-    seeAll = () => {
-        this.setState({
-            seeAll: !this.state.seeAll,
-        });
-    };
-
-    render() {
-        const { content, children } = this.props;
-
-        return (
-            <Pane position='relative' width='100%'>
-                <Pane
-                  onMouseEnter={ () => this.handleHover() }
-                  onMouseLeave={ () => this.handleHover() }
-                  width='100%'
-                >
-                    {children}
-                </Pane>
-                {this.state.hover && (
-                    <Pane maxWidth={ 300 } left='-50%' right='50%' top={ 20 } position='absolute'>
-                        {content}
-                    </Pane>
-                )}
-            </Pane>
-        );
-    }
-}
 
 export const SkillBar = ({
     children, fontSize, value, ...props
 }) => (
     <ToolTip
+    top={20}
       content={ (
           <Pane
-            width={ 250 }
+            maxWidth={ 200 }
                 // position='absolute'
             paddingX={ 18 }
             paddingY={ 14 }

@@ -296,3 +296,7 @@ input:focus{
     background-color: transparent !important;
     box-shadow: inset 0px 0px 0px 0.9px #b4b4b425 !important;
 }
+
+.tooltip{
+    opacity: 1 !important;
+}

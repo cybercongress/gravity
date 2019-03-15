@@ -46,6 +46,7 @@ import {
     PopupSkillBar,
     PopupBar,
     PopupBarFooter,
+    ToolTip,
 } from './components/Popup/Popup';
 
 import {
@@ -433,4 +434,5 @@ export {
     ImportAccountShowMnemonic,
     GetOffTheMatrix,
     UserChoice,
+    ToolTip,
 };

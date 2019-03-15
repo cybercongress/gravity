@@ -64,7 +64,7 @@ class IdBar extends Component {
                       menuItems={menuItems}
                     />
                 </div>
-                {!defaultEthAccount &&
+                {defaultEthAccount &&
                      <SkillBar fontSize='10px' marginRight={30} style={{height: 14, maxWidth: 200 }} value={25} />
                      
                      }
