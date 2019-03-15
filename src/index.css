@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
 @import './components/Application/Hello/btn.group.css';
 
 :root {
