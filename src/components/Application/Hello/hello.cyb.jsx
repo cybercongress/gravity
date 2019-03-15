@@ -16,6 +16,7 @@ import {
     //  Tooltip,
     Table,
     FilePicker,
+    Checkbox,
 } from 'evergreen-ui';
 import { Row, Col } from 'react-flexbox-grid';
 import Terminal from 'terminal-in-react';
@@ -29,6 +30,28 @@ const CybMatrix = require('./cyb.png');
 const cybRed = require('./cyb-red.png');
 const cybEye = require('./eye.jpg');
 const cybEye2 = require('./cybEye2.png');
+const idrobot = require('./idrobot.png');
+const imgEth = require('../AppMenu/eth.svg');
+
+const Eth = () => (
+    <Pane width={ 32 } height={ 32 }>
+        <img src={ imgEth } />
+    </Pane>
+);
+
+const GCyb = () => (
+    <Pane display='flex' paddingX={ 7 }>
+        <Pill
+            height={ 7.8 }
+            width={ 7.8 }
+            borderRadius='50%'
+            paddingX={ 0 }
+            isSolid
+            boxShadow='0 0 9px 1.5px #4ed6ae'
+            backgroundColor='#36d6ae'
+        />
+    </Pane>
+);
 
 const BntGroup = () => (
     <Pane display='flex' flexDirection='column'>
@@ -628,6 +651,70 @@ const ConnectionTable = ({ status }) => (
     </Pane>
 );
 
+const StateCybTable = () => (
+    <Pane width='100%'>
+        <Table>
+            <Table.Head>
+                <Table.TextHeaderCell flexGrow={6}>Component</Table.TextHeaderCell>
+                <Table.TextHeaderCell textAlign='center' flexGrow={1}>Export</Table.TextHeaderCell>
+            </Table.Head>
+            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
+                <Table.Row isSelectable>
+                    <Table.TextCell paddingX={20} flexGrow={6}>
+                        <Text>tx.cyb</Text>
+                    </Table.TextCell>
+                    <Table.TextCell flexGrow={1}>
+                        <Pane width='100%' display='flex' justifyContent='center' >
+                            <Checkbox />
+                        </Pane>
+                    </Table.TextCell>
+                </Table.Row>
+                <Table.Row isSelectable>
+                    <Table.TextCell paddingX={20} flexGrow={6}>
+                        <Text>path.cyb</Text>
+                    </Table.TextCell>
+                    <Table.TextCell flexGrow={1}>
+                        <Pane width='100%' display='flex' justifyContent='center' >
+                            <Checkbox checked />
+                        </Pane>
+                    </Table.TextCell>
+                </Table.Row>
+                <Table.Row isSelectable>
+                    <Table.TextCell paddingX={20} flexGrow={6}>
+                        <Text>root.cyb</Text>
+                    </Table.TextCell>
+                    <Table.TextCell flexGrow={1}>
+                        <Pane width='100%' display='flex' justifyContent='center' >
+                            <Checkbox />
+                        </Pane>
+                    </Table.TextCell>
+                </Table.Row>
+                <Table.Row isSelectable>
+                    <Table.TextCell paddingX={20} flexGrow={6}>
+                        <Text>connect.cyb</Text>
+                    </Table.TextCell>
+                    <Table.TextCell flexGrow={1}>
+                        <Pane width='100%' display='flex' justifyContent='center' >
+                            <Checkbox checked />
+                        </Pane>
+                    </Table.TextCell>
+                </Table.Row>
+                <Table.Row isSelectable>
+                    <Table.TextCell paddingX={20} flexGrow={6}>
+                        <Text>pins.cyb</Text>
+                    </Table.TextCell>
+                    <Table.TextCell flexGrow={1}>
+                        <Pane width='100%' display='flex' justifyContent='center' >
+                            <Checkbox />
+                        </Pane>
+                    </Table.TextCell>
+                </Table.Row>
+            </Table.Body>
+        </Table>
+    </Pane>
+);
+
+
 export const ConnectionPages = ({ status }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
@@ -1115,6 +1202,375 @@ export const MatrixEverywhere = () => (
             <HelloContainerRightColBtn>
                 <ButtonEverGreen custonClass='btn-white'>I know the keys</ButtonEverGreen>
                 <ButtonEverGreen>What truth?</ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const FollowYourWeb3 = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <TextIlineBlock>
+                    Follow your web3 soul bravely, xhipster!
+                </TextIlineBlock>
+            </HelloContainerRightColContent>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const IdCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <Pane
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='flex-start'
+                >
+                <Pane marginBottom={ 40 } display='flex' flexDirection='column' alignItems='flex-start'>
+                    <Pane alignItems='center' display='flex' flexDirection='row' marginBottom={10}>
+                        <Text display='inline-block' marginRight={ 13 } color='#fff' fontSize='24px'>
+                            10
+                        </Text>
+                        <Pane display='flex' alignItems='center'>
+                            <Eth />
+                            <Eth />
+                        </Pane>
+                    </Pane>
+                    <Text fontSize='14px' color='#d1d1d1'>0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5</Text>
+                </Pane>
+                <Pane display='flex' flexDirection='column' alignItems='flex-start'>
+                    <Pane display='flex' alignItems='center' flexDirection='row' marginBottom={10}>
+                        <Text display='inline-block' marginRight={ 13 } color='#fff' fontSize='24px'>
+                            10
+                        </Text>
+                        <Pane display='flex' alignItems='center'>
+                            <GCyb />
+                            <GCyb />
+                            <GCyb />
+                            <GCyb />
+                        </Pane>
+                    </Pane>
+                    <Text fontSize='14px' color='#d1d1d1'>0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5</Text>
+                </Pane>
+                </Pane>
+            </HelloContainerRightColContent>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const KeysCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <TextAreaImportMnemonic />
+            </HelloContainerRightColContent>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const ConnectCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <ConnectionTable />
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>
+                    Check
+                </ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const ShieldCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+            <HelloContainerRightColContent>
+                <Card
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='center'
+                    boxShadow='0 0 1px #fff'
+                    maxWidth='80%'
+                    paddingX='8vh'
+                    paddingY='8vh'
+                    minWidth={ 500 }
+                    maxHeight={ 500 }
+                    height='100%'
+                    >
+                    <Pane width='100%' marginBottom='6%'>
+                        <Pane width='100%' marginBottom='6%'>
+                            <Text
+                              marginBottom='3%'
+                              display='inline-block'
+                              fontSize='1.12rem'
+                              color='#fff'
+                            >
+                                Current password
+                            </Text>
+                            <TextInputError />
+                        </Pane>
+                        <Pane width='100%'>
+                            <Text
+                              marginBottom='3%'
+                              display='inline-block'
+                              fontSize='1.12rem'
+                              color='#fff'
+                            >
+                                New password
+                            </Text>
+                            <TextInputError />
+                        </Pane>
+                    </Pane>
+                    <Pane width='100%'>
+                        <Text
+                          marginBottom='3%'
+                          display='inline-block'
+                          fontSize='1.12rem'
+                          color='#fff'
+                        >
+                            Confirm new password
+                        </Text>
+                        <TextInputError isInvalid />
+                    </Pane>
+                </Card>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>
+                    Save Password
+                </ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const RootCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        <Text color='#fff' fontSize='18px'>
+                            xhipster
+                        </Text>
+                        , The Matrix is everywhere. It is all around us.
+                    </TextIlineBlock>
+                    <TextIlineBlock>
+                        Even now, in this room. You can see it when you look into your Chrome
+                        window, or when you turn on your Youtube.
+                    </TextIlineBlock>
+                </Pane>
+            </HelloContainerRightColContent>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const TxCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        <Text color='#fff' fontSize='18px'>
+                            xhipster
+                        </Text>
+                        , The Matrix is everywhere. It is all around us.
+                    </TextIlineBlock>
+                    <TextIlineBlock>
+                        Even now, in this room. You can see it when you look into your Chrome
+                        window, or when you turn on your Youtube.
+                    </TextIlineBlock>
+                </Pane>
+            </HelloContainerRightColContent>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const PathCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        <Text color='#fff' fontSize='18px'>
+                            xhipster
+                        </Text>
+                        , The Matrix is everywhere. It is all around us.
+                    </TextIlineBlock>
+                    <TextIlineBlock>
+                        Even now, in this room. You can see it when you look into your Chrome
+                        window, or when you turn on your Youtube.
+                    </TextIlineBlock>
+                </Pane>
+            </HelloContainerRightColContent>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const PinsCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+                <Pane>
+                    <TextIlineBlock marginBottom={ 20 }>
+                        <Text color='#fff' fontSize='18px'>
+                            xhipster
+                        </Text>
+                        , The Matrix is everywhere. It is all around us.
+                    </TextIlineBlock>
+                    <TextIlineBlock>
+                        Even now, in this room. You can see it when you look into your Chrome
+                        window, or when you turn on your Youtube.
+                    </TextIlineBlock>
+                </Pane>
+            </HelloContainerRightColContent>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const StateCyb = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg srcBigImg={ idrobot } />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol bntGroup={ <BntGroup />}>
+            <HelloContainerRightColContent>
+                <StateCybTable />
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>
+                    Export selected
+                </ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const SuccessfulLogin = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+            <Card
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='center'
+                    boxShadow='0 0 1px #fff'
+                    maxWidth='80%'
+                    paddingX='3vh'
+                    paddingY='3vh'
+                    minWidth={ 500 }
+                    maxHeight={ 500 }
+                    height='100%'
+                    >
+                    <Pane width='100%' display='flex' flexDirection='column' alignItems='flex-center'>
+                    <TextIlineBlock style={{ wordSpacing: '1px', lineHeight: 1.5 }} marginBottom={5}>
+                            Welcome back, xhipster.
+                        </TextIlineBlock>
+                        <TextIlineBlock style={{ wordSpacing: '1px' }}>
+                            Please, unlock your state.
+                        </TextIlineBlock>
+                    </Pane>
+                    <Pane width='80%' display='flex' flexDirection='column' justifyContent='center' height='100%' marginBottom='6%'>
+                        <Pane width='100%' marginBottom='6%'>
+                            <TextInputError />
+                        </Pane>
+                    </Pane>
+                </Card>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>
+                Unlock
+                </ButtonEverGreen>
+            </HelloContainerRightColBtn>
+        </HelloContainerRightCol>
+    </HelloContainer>
+);
+
+export const FailLogin = () => (
+    <HelloContainer>
+        <HelloContainerLeftCol>
+            <BigImg />
+        </HelloContainerLeftCol>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent>
+            <Card
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='center'
+                    boxShadow='0 0 1px #fff'
+                    maxWidth='80%'
+                    paddingX='3vh'
+                    paddingY='3vh'
+                    minWidth={ 500 }
+                    maxHeight={ 500 }
+                    height='100%'
+                    >
+                    <TextIlineBlock style={{ wordSpacing: '1px', lineHeight: 1.5 }} letterSpacing={0} >
+                    I see you can’t recover your state. I have no choice but to offer you to reset your current identity and create the new one. Remember, all your state will gone forever, if you don’t have a backup. 
+                    </TextIlineBlock>
+                    <Pane width='80%' display='flex' flexDirection='column' justifyContent='center' height='100%' marginBottom='6%'>
+                        <Pane width='100%' marginBottom='6%'>
+                            <Text
+                              marginBottom='3%'
+                              display='inline-block'
+                              fontSize='1.12rem'
+                              color='#fff'
+                            >
+                                New password
+                            </Text>
+                            <TextInputError />
+                        </Pane>
+                        <Pane width='100%'>
+                            <Text
+                              marginBottom='3%'
+                              display='inline-block'
+                              fontSize='1.12rem'
+                              color='#fff'
+                            >
+                                Confirm new password
+                            </Text>
+                            <TextInputError />
+                        </Pane>
+                    </Pane>
+                </Card>
+            </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>
+                    Reset identity
+                </ButtonEverGreen>
             </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>
