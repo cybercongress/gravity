@@ -25,6 +25,7 @@ import {
     // Text,
     ToolTip,
 } from '../../..';
+import { BntGroupFull } from './btn.group.full';
 
 const CybMatrix = require('./cyb.png');
 const cybRed = require('./cyb-red.png');
@@ -384,7 +385,7 @@ const HelloContainerRightCol = ({ children, bntGroup }) => (
             {children}
         </Pane>
         {bntGroup && (
-            <Pane position='fixed' right='3%' top='20%'>
+            <Pane position='fixed' right='3%' top={0} height='100vh' display='flex' alignItems='center' >
                 {bntGroup}
                 {/* <BntGroup /> */}
             </Pane>
@@ -1271,7 +1272,7 @@ export const KeysCyb = () => (
         <HelloContainerLeftCol>
             <BigImg srcBigImg={ idrobot } />
         </HelloContainerLeftCol>
-        <HelloContainerRightCol bntGroup={ <BntGroup /> }>
+        <HelloContainerRightCol bntGroup={ <BntGroupFull /> }>
             <HelloContainerRightColContent>
                 <TextAreaImportMnemonic />
             </HelloContainerRightColContent>

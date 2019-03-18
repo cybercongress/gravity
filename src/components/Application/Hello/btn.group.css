@@ -1,9 +1,9 @@
 
 .btn-group{
-    height: 45px !important;
-    width: 45px !important;
+    height: 32px !important;
+    width: 32px !important;
     box-shadow: none !important;
-    margin: 20px 0 !important;
+    margin: 2vh 0 !important;
 }
 
 .btn-group-soul{
@@ -60,4 +60,80 @@
 }
 .btn-group-intelligence:focus{
     background: url(./intelligence-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-root{
+    background: url(./root.svg) no-repeat center center !important;
+}
+
+.btn-group-root:hover{
+    background: url(./root-focus.svg) no-repeat center center !important;
+}
+.btn-group-root:focus{
+    background: url(./root-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-diplomat{
+    background: url(./diplomat.svg) no-repeat center center !important;
+}
+
+.btn-group-diplomat:hover{
+    background: url(./diplomat-focus.svg) no-repeat center center !important;
+}
+.btn-group-diplomat:focus{
+    background: url(./diplomat-focus.svg) no-repeat center center !important;
+}
+.btn-group-map{
+    background: url(./map.svg) no-repeat center center !important;
+}
+
+.btn-group-map:hover{
+    background: url(./map-focus.svg) no-repeat center center !important;
+}
+.btn-group-map:focus{
+    background: url(./map-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-earth{
+    background: url(./earth.svg) no-repeat center center !important;
+}
+
+.btn-group-earth:hover{
+    background: url(./earth-focus.svg) no-repeat center center !important;
+}
+.btn-group-earth:focus{
+    background: url(./earth-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-heritage{
+    background: url(./heritage.svg) no-repeat center center !important;
+}
+
+.btn-group-heritage:hover{
+    background: url(./heritage-focus.svg) no-repeat center center !important;
+}
+.btn-group-heritage:focus{
+    background: url(./heritage-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-wiki{
+    background: url(./wiki.svg) no-repeat center center !important;
+}
+
+.btn-group-wiki:hover{
+    background: url(./wiki-focus.svg) no-repeat center center !important;
+}
+.btn-group-wiki:focus{
+    background: url(./wiki-focus.svg) no-repeat center center !important;
+}
+
+.btn-group-oracul{
+    background: url(./oracul.svg) no-repeat center center !important;
+}
+
+.btn-group-oracul:hover{
+    background: url(./oracul-focus.svg) no-repeat center center !important;
+}
+.btn-group-oracul:focus{
+    background: url(./oracul-focus.svg) no-repeat center center !important;
 }
