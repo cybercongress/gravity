@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-    Table, Pane, IconButton, Menu, Popover, Dialog, Text, TextInput, Button,
+    Table, Pane, IconButton, Menu, Popover, Dialog, Text, TextInput,
 } from 'evergreen-ui';
 // import { connect } from 'react-redux';
 
@@ -10,7 +10,7 @@ import {
     MainContainer,
     PageTitle,
     TableCybLink,
-    //Button,
+    Button,
     Input,
     FlexContainer,
     // Text,
@@ -20,7 +20,7 @@ import {
 import { RadioButton } from '../RadioButton/RadioButton';
 import Application from '../Application/Application';
 
-class RootRegistryPage extends Component {
+class PinsCyb extends Component {
     addRegistryItem = () => {
         const name = this.name.value;
         const hash = this.hash.value;
@@ -47,7 +47,7 @@ class RootRegistryPage extends Component {
 .
                     {item.name}
                 </Table.TextCell>
-                <Table.TextCell flexShrink={ 0 } flexGrow={ 3 }>
+                <Table.TextCell flexShrink={ 0 } flexGrow={ 1.5 }>
                     {item.hash}
                 </Table.TextCell>
                 {/* <Table.TextCell>{item.protocol}</Table.TextCell> */}
@@ -81,16 +81,11 @@ class RootRegistryPage extends Component {
         return (
             <ScrollContainer>
                 <MainContainer>
-                    <Pane marginBottom={10} width='100%' display='flex' justifyContent='flex-end' >
-                        <Button iconBefore="add" height={32} paddingX={15}>
-                            Add
-                        </Button>
-                    </Pane>
                     <Table>
                         <Table.Head paddingLeft={ 20 }>
                             <Table.TextHeaderCell>Name</Table.TextHeaderCell>
-                            <Table.TextHeaderCell flexShrink={ 0 } flexGrow={ 3 }>
-                                hash
+                            <Table.TextHeaderCell flexShrink={ 0 } flexGrow={ 1.5 }>
+                                DURA
                             </Table.TextHeaderCell>
                             <Table.TextHeaderCell width={ 60 } flex='none' />
                         </Table.Head>
@@ -98,49 +93,10 @@ class RootRegistryPage extends Component {
                             {rows}
                         </Table.Body>
                     </Table>
-                    <Dialog
-                      isShown={ isShown }
-                      title='Remove domain'
-                      intent='danger'
-                        // onCloseComplete={() => setState({ isShown: false })}
-                      confirmLabel='Delete'
-                      width={ 450 }
-                    >
-                        Are you sure you want to delete Presentation?
-                    </Dialog>
 
                     <Dialog
                       isShown={ isShownRename }
-                      title='Rename domain'
-                        //  onCloseComplete={() => setState({ isShown: false })}
-                      confirmLabel='Update'
-                      width={450}
-                    >
-                        <Pane
-                          paddingTop={ 20 }
-                          paddingBottom={ 30 }
-                          paddingX={ 40 }
-                          display='flex'
-                          flexDirection='column'
-                        >
-                            <Pane display='flex' flexDirection='column' marginBottom={ 25 }>
-                                <Text display='inline-block' marginBottom={ 10 }>
-                                    Name
-                                </Text>
-                                <TextInput width='100%' />
-                            </Pane>
-                            <Pane display='flex' flexDirection='column'>
-                                <Text display='inline-block' marginBottom={ 10 }>
-                                    IPFS Hash
-                                </Text>
-                                <TextInput width='100%' />
-                            </Pane>
-                        </Pane>
-                    </Dialog>
-
-                    <Dialog
-                      isShown={ isShownAdd }
-                      title='Add domain'
+                      title='Rename pin'
                         //  onCloseComplete={() => setState({ isShown: false })}
                       confirmLabel='Update'
                       width={450}
@@ -173,47 +129,36 @@ class RootRegistryPage extends Component {
 }
 const addRegistryItem = [
     {
-        name: 'yyg',
-        hash: 'QmS2F1UgmYHAekcvezFLCrBibEBjJezSDqwq8fuwF5Qqvi',
+        name: 'Wikipedia',
+        hash: '.wiki',
         protocol: 'ipfs',
     },
     {
-        name: 'dfgd',
-        hash: 'QmS2F1UgmYHAekcvezFLCrBibEBjJezSDqwq8fuwF5Qqvi',
+        name: 'Cyber Search',
+        hash: '.cyber',
         protocol: 'ipfs',
     },
     {
-        name: 'dfgd',
-        hash: 'QmS2F1UgmYHAekcvezFLCrBibEBjJezSDqwq8fuwF5Qqvi',
+        name: 'My dragons',
+        hash: '.dragons/account',
         protocol: 'ipfs',
     },
     {
-        name: 'dfgd',
+        name: 'Presentation',
         hash: 'QmS2F1UgmYHAekcvezFLCrBibEBjJezSDqwq8fuwF5Qqvi',
         protocol: 'ipfs',
     },
 ];
 
-storiesOf('cyb/pages/Root Registry', module)
-    .add('Root Registry', () => (
+storiesOf('cyb/pages/Pins', module)
+    .add('Pins', () => (
         <Application>
-            <RootRegistryPage registryItems={ addRegistryItem } />
-        </Application>
-    ))
-    .add('Root Registry Popup Delete', () => (
-        <Application>
-            <RootRegistryPage isShown registryItems={ addRegistryItem } />
+            <PinsCyb registryItems={ addRegistryItem } />
         </Application>
     ))
 
-    .add('Root Registry Popup Rename', () => (
+    .add('Pins Rename Pin', () => (
         <Application>
-            <RootRegistryPage isShownRename registryItems={ addRegistryItem } />
-        </Application>
-    ))
-
-    .add('Root Registry Popup Add', () => (
-        <Application>
-            <RootRegistryPage isShownAdd registryItems={ addRegistryItem } />
+            <PinsCyb isShownRename registryItems={ addRegistryItem } />
         </Application>
     ));

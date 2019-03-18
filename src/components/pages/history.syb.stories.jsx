@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import {
+    Table, Pane, IconButton, Menu, Popover, Dialog, Text, TextInput,
+} from 'evergreen-ui';
 import moment from 'moment';
 // import { connect } from 'react-redux';
 
@@ -12,17 +15,17 @@ import Application from '../Application/Application';
 class History extends Component {
     renderItem = (item, index) => {
         const { dura, date } = item;
-        let content = <CybLink dura={ dura }>{dura}</CybLink>;
+        let content = <CybLink style={{color: '#1976d2'}} dura={ dura }>{dura}</CybLink>;
 
         if (dura === 'history.cyb') {
             content = <span>{dura}</span>;
         }
 
         return (
-            <tr key={ index }>
-                <td>{content}</td>
-                <td>{moment(date).format('D/MM YYYY h:mm:ss')}</td>
-            </tr>
+            <Table.Row paddingLeft={ 20 } isSelectable key={ index }>
+                <Table.TextCell>{content}</Table.TextCell>
+                <Table.TextCell width={160} flex='none' alginItems='center' isNumber>{moment(date).format('D/MM YYYY h:mm:ss')}</Table.TextCell>
+            </Table.Row>
         );
     };
 
@@ -36,16 +39,13 @@ class History extends Component {
         return (
             <ScrollContainer>
             <MainContainer>
-                <PageTitle>History</PageTitle>
-                    <TableCybLink>
-                        <thead>
-                            <tr>
-                                <th>Address</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>{historyWithoutLast.map(this.renderItem)}</tbody>
-                    </TableCybLink>
+                    <Table>
+                        <Table.Head paddingLeft={ 20 }>
+                                <Table.TextHeaderCell>Dura</Table.TextHeaderCell>
+                                <Table.TextHeaderCell textAlign='center' width={160} flex='none'>Date</Table.TextHeaderCell>
+                        </Table.Head>
+                        <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>{historyWithoutLast.map(this.renderItem)}</Table.Body>
+                    </Table>
             </MainContainer>
             </ScrollContainer>
         );
