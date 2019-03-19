@@ -16,16 +16,6 @@ import {
     ImportAccountShowMnemonic,
     GetOffTheMatrix,
     UserChoice,
-    FollowYourWeb3,
-    IdCyb,
-    KeysCyb,
-    ConnectCyb,
-    ShieldCyb,
-    RootCyb,
-    TxCyb,
-    PathCyb,
-    PinsCyb,
-    StateCyb,
     SuccessfulLogin,
     FailLogin,
 } from '../..';
@@ -46,15 +36,5 @@ storiesOf('Hello', module)
     .add('ImportAccountShowMnemonic', () => <ImportAccountShowMnemonic />)
     .add('GetOffTheMatrix', () => <GetOffTheMatrix />)
     .add('UserChoice', () => <UserChoice />)
-    .add('FollowYourWeb3', () => <FollowYourWeb3 />)
-    .add('IdCyb', () => <IdCyb />)
-    .add('KeysCyb', () => <KeysCyb />)
-    .add('ConnectCyb', () => <ConnectCyb />)
-    .add('ShieldCyb', () => <ShieldCyb />)
-    .add('RootCyb', () => <RootCyb />)
-    .add('TxCyb', () => <TxCyb />)
-    .add('PathCyb', () => <PathCyb />)
-    .add('PinsCyb', () => <PinsCyb />)
-    .add('StateCyb', () => <StateCyb />)
     .add('SuccessfulLogin', () => <SuccessfulLogin />)
     .add('FailLogin', () => <FailLogin />);

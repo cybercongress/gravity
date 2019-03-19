@@ -10,10 +10,12 @@ export const SkillBar = ({
     children, fontSize, value, ...props
 }) => (
     <ToolTip
-    top={20}
+    top={25}
+    right={0}
       content={ (
           <Pane
-            maxWidth={ 200 }
+            minWidth={ 200 }
+
                 // position='absolute'
             paddingX={ 18 }
             paddingY={ 14 }
