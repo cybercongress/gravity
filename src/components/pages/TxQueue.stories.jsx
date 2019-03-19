@@ -51,7 +51,7 @@ class TxQueue extends Component {
                         )}
                 </Table.TextCell>
                 <Table.TextCell textAlign='center'>{moment(item.date).format('D/MM YYYY h:mm:ss')}</Table.TextCell>
-                <Table.TextCell width={66} flex='none'> <Pane paddingY={ 5 } paddingX={ 5 } width='100%'><IconButton appearance="minimal" icon='refresh' /></Pane></Table.TextCell>
+                <Table.TextCell width={66} flex='none'> <Pane paddingY={ 5 } paddingX={ 5 } width='100%'>{ (item.status !== 'local' && item.status !=='fail') && <IconButton appearance="minimal" icon='refresh' />}</Pane></Table.TextCell>
             </Table.Row>
         ));
 
