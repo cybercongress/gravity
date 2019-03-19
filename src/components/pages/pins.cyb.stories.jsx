@@ -21,6 +21,9 @@ import { RadioButton } from '../RadioButton/RadioButton';
 import Application from '../Application/Application';
 
 class PinsCyb extends Component {
+    state = {
+        isShownRename: false,
+    };
     addRegistryItem = () => {
         const name = this.name.value;
         const hash = this.hash.value;
@@ -35,6 +38,12 @@ class PinsCyb extends Component {
     deleteRegistryItem = (itemName) => {
         this.props.deleteRegistryItem(itemName);
     };
+
+    isShownRename = () => {
+        this.setState({
+            isShownRename: !this.state.isShownRename,
+        });
+    }
 
     render() {
         const {
@@ -58,7 +67,7 @@ class PinsCyb extends Component {
                       content={ (
                           <Menu>
                               <Menu.Group>
-                                  <Menu.Item icon='edit'>Rename</Menu.Item>
+                                  <Menu.Item icon='edit' onClick={ () => this.isShownRename()}>Rename</Menu.Item>
                               </Menu.Group>
                               <Menu.Divider />
                               <Menu.Group>
@@ -95,7 +104,7 @@ class PinsCyb extends Component {
                     </Table>
 
                     <Dialog
-                      isShown={ isShownRename }
+                      isShown={ this.state.isShownRename }
                       title='Rename pin'
                         //  onCloseComplete={() => setState({ isShown: false })}
                       confirmLabel='Update'
@@ -154,11 +163,5 @@ storiesOf('cyb/pages/Pins', module)
     .add('Pins', () => (
         <Application>
             <PinsCyb registryItems={ addRegistryItem } />
-        </Application>
-    ))
-
-    .add('Pins Rename Pin', () => (
-        <Application>
-            <PinsCyb isShownRename registryItems={ addRegistryItem } />
         </Application>
     ));
