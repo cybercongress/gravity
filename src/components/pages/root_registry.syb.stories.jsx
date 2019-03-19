@@ -21,6 +21,11 @@ import { RadioButton } from '../RadioButton/RadioButton';
 import Application from '../Application/Application';
 
 class RootRegistryPage extends Component {
+    state = {
+        isShownRemove: false,
+        isShownRename: false,
+        isShownAdd: false,
+    };
     addRegistryItem = () => {
         const name = this.name.value;
         const hash = this.hash.value;
@@ -32,13 +37,34 @@ class RootRegistryPage extends Component {
         });
     };
 
+    isShownAdd = () => {
+        this.setState({
+            isShownAdd: !this.state.isShownAdd,
+        });
+    };
+
+    isShownRemove = () => {
+        this.setState({
+            isShownRemove: !this.state.isShownRemove,
+        });
+    }
+
+    isShownRename = () => {
+        this.setState({
+            isShownRename: !this.state.isShownRename,
+        });
+    }
+
     deleteRegistryItem = (itemName) => {
         this.props.deleteRegistryItem(itemName);
     };
 
     render() {
         const {
-            registryItems, isShown, isShownRename, isShownAdd,
+            registryItems,
+            //isShown
+            //isShownRename,
+            //isShownAdd,
         } = this.props;
 
         const rows = registryItems.map(item => (
@@ -58,11 +84,11 @@ class RootRegistryPage extends Component {
                       content={ (
                           <Menu>
                               <Menu.Group>
-                                  <Menu.Item icon='edit'>Rename</Menu.Item>
+                                  <Menu.Item icon='edit' onClick={ () => this.isShownRename()}>Rename</Menu.Item>
                               </Menu.Group>
                               <Menu.Divider />
                               <Menu.Group>
-                                  <Menu.Item icon='trash' intent='danger'>
+                                  <Menu.Item icon='trash' intent='danger' onClick={ () => this.isShownRemove()}>
                                         Remove
                                   </Menu.Item>
                               </Menu.Group>
@@ -81,8 +107,8 @@ class RootRegistryPage extends Component {
         return (
             <ScrollContainer>
                 <MainContainer>
-                    <Pane marginBottom={10} width='100%' display='flex' justifyContent='flex-end' >
-                        <Button iconBefore="add" height={32} paddingX={15}>
+                    <Pane marginBottom={10} width='100%' display='flex' justifyContent='flex-end'>
+                        <Button iconBefore="add" height={32} paddingX={15} onClick={ () => this.isShownAdd()}>
                             Add
                         </Button>
                     </Pane>
@@ -99,10 +125,10 @@ class RootRegistryPage extends Component {
                         </Table.Body>
                     </Table>
                     <Dialog
-                      isShown={ isShown }
+                      isShown={ this.state.isShownRemove }
                       title='Remove domain'
                       intent='danger'
-                        // onCloseComplete={() => setState({ isShown: false })}
+                      //onCloseComplete={() => setState({ isShown: false })}
                       confirmLabel='Delete'
                       width={ 450 }
                     >
@@ -110,9 +136,9 @@ class RootRegistryPage extends Component {
                     </Dialog>
 
                     <Dialog
-                      isShown={ isShownRename }
+                      isShown={ this.state.isShownRename }
                       title='Rename domain'
-                        //  onCloseComplete={() => setState({ isShown: false })}
+                      //onCloseComplete={() => setState({ isShown: false })}
                       confirmLabel='Update'
                       width={450}
                     >
@@ -139,9 +165,9 @@ class RootRegistryPage extends Component {
                     </Dialog>
 
                     <Dialog
-                      isShown={ isShownAdd }
+                      isShown={ this.state.isShownAdd }
                       title='Add domain'
-                        //  onCloseComplete={() => setState({ isShown: false })}
+                      //onCloseComplete={() => this.setState({ isShown: false })}
                       confirmLabel='Update'
                       width={450}
                     >
@@ -198,22 +224,5 @@ storiesOf('cyb/pages/Root Registry', module)
     .add('Root Registry', () => (
         <Application>
             <RootRegistryPage registryItems={ addRegistryItem } />
-        </Application>
-    ))
-    .add('Root Registry Popup Delete', () => (
-        <Application>
-            <RootRegistryPage isShown registryItems={ addRegistryItem } />
-        </Application>
-    ))
-
-    .add('Root Registry Popup Rename', () => (
-        <Application>
-            <RootRegistryPage isShownRename registryItems={ addRegistryItem } />
-        </Application>
-    ))
-
-    .add('Root Registry Popup Add', () => (
-        <Application>
-            <RootRegistryPage isShownAdd registryItems={ addRegistryItem } />
         </Application>
     ));
