@@ -42,13 +42,13 @@ export const Eth = () => (
 export const GCyb = () => (
     <Pane display='flex' paddingX={ 7 }>
         <Pill
-            height={ 7.8 }
-            width={ 7.8 }
-            borderRadius='50%'
-            paddingX={ 0 }
-            isSolid
-            boxShadow='0 0 9px 1.5px #4ed6ae'
-            backgroundColor='#36d6ae'
+          height={ 7.8 }
+          width={ 7.8 }
+          borderRadius='50%'
+          paddingX={ 0 }
+          isSolid
+          boxShadow='0 0 9px 1.5px #4ed6ae'
+          backgroundColor='#36d6ae'
         />
     </Pane>
 );
@@ -56,10 +56,10 @@ export const GCyb = () => (
 export const BntGroup = () => (
     <Pane display='flex' flexDirection='column'>
         <ToolTip
-        //   left={0}
-        //   top={0}
-        top={0}
-        right='100%'
+            //   left={0}
+            //   top={0}
+          top={ 0 }
+          right='100%'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -67,7 +67,7 @@ export const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
-                width={200}
+                width={ 200 }
               >
                   <Pane
                     marginBottom={ 7 }
@@ -89,8 +89,8 @@ export const BntGroup = () => (
             <Button className='btn-group-soul btn-group' />
         </ToolTip>
         <ToolTip
-        top={0}
-        right='100%'
+          top={ 0 }
+          right='100%'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -98,7 +98,7 @@ export const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
-                width={200}
+                width={ 200 }
               >
                   <Pane
                     marginBottom={ 7 }
@@ -120,7 +120,7 @@ export const BntGroup = () => (
             <Button className='btn-group-boby btn-group' />
         </ToolTip>
         <ToolTip
-          top={0}
+          top={ 0 }
           right='100%'
           content={ (
               <Pane
@@ -129,7 +129,7 @@ export const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
-                width={200}
+                width={ 200 }
               >
                   <Pane
                     marginBottom={ 7 }
@@ -151,7 +151,7 @@ export const BntGroup = () => (
             <Button className='btn-group-imortality btn-group' />
         </ToolTip>
         <ToolTip
-          top={0}
+          top={ 0 }
           right='100%'
           content={ (
               <Pane
@@ -160,7 +160,7 @@ export const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
-                width={200}
+                width={ 200 }
               >
                   <Pane
                     marginBottom={ 7 }
@@ -182,7 +182,7 @@ export const BntGroup = () => (
             <Button className='btn-group-security btn-group' />
         </ToolTip>
         <ToolTip
-          top={0}
+          top={ 0 }
           right='100%'
           content={ (
               <Pane
@@ -191,7 +191,7 @@ export const BntGroup = () => (
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
-                width={200}
+                width={ 200 }
               >
                   <Pane
                     marginBottom={ 7 }
@@ -354,8 +354,8 @@ export const HelloContainerLeftCol = ({ children }) => (
         //  float='left'
       width='calc((100% - 20px * 2) / 2)'
       height='inherit'
-      paddingX={20}
-    //   marginX={ 30 }
+      paddingX={ 20 }
+        //   marginX={ 30 }
     >
         {children}
     </Pane>
@@ -371,8 +371,8 @@ export const HelloContainerRightCol = ({ children, bntGroup }) => (
       width='calc((100% - 20px * 2) / 2)'
       height='initial'
       position='relative'
-    //   marginX={ 50 }
-      paddingX={20}
+        //   marginX={ 50 }
+      paddingX={ 20 }
     >
         <Pane
           display='flex'
@@ -384,7 +384,14 @@ export const HelloContainerRightCol = ({ children, bntGroup }) => (
             {children}
         </Pane>
         {bntGroup && (
-            <Pane position='fixed' right='3%' top={0} height='100vh' display='flex' alignItems='center' >
+            <Pane
+              position='fixed'
+              right='3%'
+              top={ 0 }
+              height='100vh'
+              display='flex'
+              alignItems='center'
+            >
                 {bntGroup}
                 {/* <BntGroup /> */}
             </Pane>
@@ -533,7 +540,16 @@ export const TerminalCyb = () => (
     </Pane>
 );
 
-export const ConnectionTable = ({ status }) => (
+export const ConnectionTable = ({
+    ipfsStatus,
+    cyberdStatus,
+    parityStatus,
+    IPFS_END_POINT,
+    ipfsWriteUrl,
+    CYBERD_END_POINT,
+    CYBERD_WS_END_POINT,
+    PARITY_END_POINT,
+}) => (
     <Pane width='100%'>
         <Table>
             <Table.Head>
@@ -553,13 +569,17 @@ export const ConnectionTable = ({ status }) => (
                           marginLeft={ 20 }
                           marginRight={ 25 }
                           color={
-                                status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
+                                ipfsStatus == 'local'
+                                    ? 'green'
+                                    : ipfsStatus == 'fail'
+                                    ? 'red'
+                                    : 'yellow'
                             }
                         />
                         <Text>IPFS read</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput width='80%' />
+                        <TextInput defaultValue={ IPFS_END_POINT } width='80%' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
@@ -580,7 +600,7 @@ export const ConnectionTable = ({ status }) => (
                         <Text>IPFS write</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput width='80%' />
+                        <TextInput defaultValue={ ipfsWriteUrl } width='80%' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
@@ -595,13 +615,17 @@ export const ConnectionTable = ({ status }) => (
                           marginLeft={ 20 }
                           marginRight={ 25 }
                           color={
-                                status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
+                                parityStatus == 'local'
+                                    ? 'green'
+                                    : parityStatus == 'fail'
+                                    ? 'red'
+                                    : 'yellow'
                             }
                         />
                         <Text>Ethereum HTTP</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput width='80%' />
+                        <TextInput defaultValue={ PARITY_END_POINT } width='80%' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
@@ -622,7 +646,7 @@ export const ConnectionTable = ({ status }) => (
                         <Text>Cyberd HTTP</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput width='80%' />
+                        <TextInput defaultValue={ CYBERD_END_POINT } width='80%' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row>
@@ -637,13 +661,17 @@ export const ConnectionTable = ({ status }) => (
                           marginLeft={ 20 }
                           marginRight={ 25 }
                           color={
-                                status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
+                                cyberdStatus == 'local'
+                                    ? 'green'
+                                    : cyberdStatus == 'fail'
+                                    ? 'red'
+                                    : 'yellow'
                             }
                         />
                         <Text>Cyberd Ws</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput width='80%' />
+                        <TextInput defaultValue={ CYBERD_WS_END_POINT } width='80%' />
                     </Table.TextCell>
                 </Table.Row>
             </Table.Body>
@@ -655,56 +683,58 @@ export const StateCybTable = () => (
     <Pane width='100%'>
         <Table>
             <Table.Head>
-                <Table.TextHeaderCell flexGrow={6}>Component</Table.TextHeaderCell>
-                <Table.TextHeaderCell textAlign='center' flexGrow={1}>Export</Table.TextHeaderCell>
+                <Table.TextHeaderCell flexGrow={ 6 }>Component</Table.TextHeaderCell>
+                <Table.TextHeaderCell textAlign='center' flexGrow={ 1 }>
+                    Export
+                </Table.TextHeaderCell>
             </Table.Head>
             <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
                 <Table.Row isSelectable>
-                    <Table.TextCell paddingX={20} flexGrow={6}>
+                    <Table.TextCell paddingX={ 20 } flexGrow={ 6 }>
                         <Text>tx.cyb</Text>
                     </Table.TextCell>
-                    <Table.TextCell flexGrow={1}>
-                        <Pane width='100%' display='flex' justifyContent='center' >
+                    <Table.TextCell flexGrow={ 1 }>
+                        <Pane width='100%' display='flex' justifyContent='center'>
                             <Checkbox />
                         </Pane>
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
-                    <Table.TextCell paddingX={20} flexGrow={6}>
+                    <Table.TextCell paddingX={ 20 } flexGrow={ 6 }>
                         <Text>path.cyb</Text>
                     </Table.TextCell>
-                    <Table.TextCell flexGrow={1}>
-                        <Pane width='100%' display='flex' justifyContent='center' >
+                    <Table.TextCell flexGrow={ 1 }>
+                        <Pane width='100%' display='flex' justifyContent='center'>
                             <Checkbox checked />
                         </Pane>
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
-                    <Table.TextCell paddingX={20} flexGrow={6}>
+                    <Table.TextCell paddingX={ 20 } flexGrow={ 6 }>
                         <Text>root.cyb</Text>
                     </Table.TextCell>
-                    <Table.TextCell flexGrow={1}>
-                        <Pane width='100%' display='flex' justifyContent='center' >
+                    <Table.TextCell flexGrow={ 1 }>
+                        <Pane width='100%' display='flex' justifyContent='center'>
                             <Checkbox />
                         </Pane>
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
-                    <Table.TextCell paddingX={20} flexGrow={6}>
+                    <Table.TextCell paddingX={ 20 } flexGrow={ 6 }>
                         <Text>connect.cyb</Text>
                     </Table.TextCell>
-                    <Table.TextCell flexGrow={1}>
-                        <Pane width='100%' display='flex' justifyContent='center' >
+                    <Table.TextCell flexGrow={ 1 }>
+                        <Pane width='100%' display='flex' justifyContent='center'>
                             <Checkbox checked />
                         </Pane>
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable>
-                    <Table.TextCell paddingX={20} flexGrow={6}>
+                    <Table.TextCell paddingX={ 20 } flexGrow={ 6 }>
                         <Text>pins.cyb</Text>
                     </Table.TextCell>
-                    <Table.TextCell flexGrow={1}>
-                        <Pane width='100%' display='flex' justifyContent='center' >
+                    <Table.TextCell flexGrow={ 1 }>
+                        <Pane width='100%' display='flex' justifyContent='center'>
                             <Checkbox />
                         </Pane>
                     </Table.TextCell>
@@ -747,7 +777,6 @@ export const TextInputError = ({ isInvalid, ...props }) => (
     </Pane>
 );
 
-
 export const SuccessfulLogin = () => (
     <HelloContainer>
         <HelloContainerLeftCol>
@@ -755,27 +784,42 @@ export const SuccessfulLogin = () => (
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
-            <Card
-                    display='flex'
-                    flexDirection='column'
-                    alignItems='center'
-                    boxShadow='0 0 1px #fff'
-                    maxWidth='80%'
-                    paddingX='3vh'
-                    paddingY='3vh'
-                    minWidth={ 500 }
-                    maxHeight={ 500 }
-                    height='100%'
+                <Card
+                  display='flex'
+                  flexDirection='column'
+                  alignItems='center'
+                  boxShadow='0 0 1px #fff'
+                  maxWidth='80%'
+                  paddingX='3vh'
+                  paddingY='3vh'
+                  minWidth={ 500 }
+                  maxHeight={ 500 }
+                  height='100%'
+                >
+                    <Pane
+                      width='100%'
+                      display='flex'
+                      flexDirection='column'
+                      alignItems='flex-center'
                     >
-                    <Pane width='100%' display='flex' flexDirection='column' alignItems='flex-center'>
-                    <TextIlineBlock style={{ wordSpacing: '1px', lineHeight: 1.5 }} marginBottom={5}>
+                        <TextIlineBlock
+                          style={ { wordSpacing: '1px', lineHeight: 1.5 } }
+                          marginBottom={ 5 }
+                        >
                             Welcome back, xhipster.
                         </TextIlineBlock>
-                        <TextIlineBlock style={{ wordSpacing: '1px' }}>
+                        <TextIlineBlock style={ { wordSpacing: '1px' } }>
                             Please, unlock your state.
                         </TextIlineBlock>
                     </Pane>
-                    <Pane width='80%' display='flex' flexDirection='column' justifyContent='center' height='100%' marginBottom='6%'>
+                    <Pane
+                      width='80%'
+                      display='flex'
+                      flexDirection='column'
+                      justifyContent='center'
+                      height='100%'
+                      marginBottom='6%'
+                    >
                         <Pane width='100%' marginBottom='6%'>
                             <TextInputError />
                         </Pane>
@@ -783,9 +827,7 @@ export const SuccessfulLogin = () => (
                 </Card>
             </HelloContainerRightColContent>
             <HelloContainerRightColBtn center>
-                <ButtonEverGreen>
-                Unlock
-                </ButtonEverGreen>
+                <ButtonEverGreen>Unlock</ButtonEverGreen>
             </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>
@@ -798,22 +840,34 @@ export const FailLogin = () => (
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
-            <Card
-                    display='flex'
-                    flexDirection='column'
-                    alignItems='center'
-                    boxShadow='0 0 1px #fff'
-                    maxWidth='80%'
-                    paddingX='3vh'
-                    paddingY='3vh'
-                    minWidth={ 500 }
-                    maxHeight={ 500 }
-                    height='100%'
+                <Card
+                  display='flex'
+                  flexDirection='column'
+                  alignItems='center'
+                  boxShadow='0 0 1px #fff'
+                  maxWidth='80%'
+                  paddingX='3vh'
+                  paddingY='3vh'
+                  minWidth={ 500 }
+                  maxHeight={ 500 }
+                  height='100%'
+                >
+                    <TextIlineBlock
+                      style={ { wordSpacing: '1px', lineHeight: 1.5 } }
+                      letterSpacing={ 0 }
                     >
-                    <TextIlineBlock style={{ wordSpacing: '1px', lineHeight: 1.5 }} letterSpacing={0} >
-                    I see you can’t recover your state. I have no choice but to offer you to reset your current identity and create the new one. Remember, all your state will gone forever, if you don’t have a backup. 
+                        I see you can’t recover your state. I have no choice but to offer you to
+                        reset your current identity and create the new one. Remember, all your state
+                        will gone forever, if you don’t have a backup.
                     </TextIlineBlock>
-                    <Pane width='80%' display='flex' flexDirection='column' justifyContent='center' height='100%' marginBottom='6%'>
+                    <Pane
+                      width='80%'
+                      display='flex'
+                      flexDirection='column'
+                      justifyContent='center'
+                      height='100%'
+                      marginBottom='6%'
+                    >
                         <Pane width='100%' marginBottom='6%'>
                             <Text
                               marginBottom='3%'
@@ -840,9 +894,7 @@ export const FailLogin = () => (
                 </Card>
             </HelloContainerRightColContent>
             <HelloContainerRightColBtn center>
-                <ButtonEverGreen>
-                    Reset identity
-                </ButtonEverGreen>
+                <ButtonEverGreen>Reset identity</ButtonEverGreen>
             </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>

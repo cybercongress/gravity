@@ -32,7 +32,16 @@ const cybEye2 = require('./Hello/cybEye2.png');
 const idrobot = require('./Hello/idrobot.png');
 const imgEth = require('./AppMenu/eth.svg');
 
-export const ConnectionPages = ({ status }) => (
+export const ConnectionPages = ({
+    ipfsStatus,
+    cyberdStatus,
+    parityStatus,
+    IPFS_END_POINT,
+    PARITY_END_POINT,
+    CYBERD_END_POINT,
+    CYBERD_WS_END_POINT,
+    ipfsWriteUrl,
+}) => (
     <HelloContainer>
         <HelloContainerLeftCol>
             <SlallImgText imgCyb={ cybEye }>
@@ -43,7 +52,16 @@ export const ConnectionPages = ({ status }) => (
         </HelloContainerLeftCol>
         <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
-                <ConnectionTable status={ status } />
+                <ConnectionTable
+                  IPFS_END_POINT={IPFS_END_POINT}
+                  PARITY_END_POINT={PARITY_END_POINT}
+                  CYBERD_END_POINT={CYBERD_END_POINT}
+                  CYBERD_WS_END_POINT={CYBERD_WS_END_POINT}
+                  ipfsWriteUrl={ipfsWriteUrl}
+                  cyberdStatus={cyberdStatus}
+                  ipfsStatus={ ipfsStatus }
+                  parityStatus={parityStatus}
+                />
             </HelloContainerRightColContent>
             <HelloContainerRightColBtn center>
                 <ButtonEverGreen>Check</ButtonEverGreen>

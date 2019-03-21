@@ -16,9 +16,11 @@ import {
     PageTitle,
     FormControl,
     ScrollContainer,
+    ConnectCyb,
 } from '../..';
 import { SettingsIndicator } from '../Indicator/Indicator';
 import Application from '../Application/Application';
+
 
 class Settings extends Component {
     render() {
@@ -195,5 +197,19 @@ storiesOf('cyb/pages/Settings', module).add('Settings', () => (
             ipfsWriteUrl
         />
     </Application>
-    
+))
+.add('Settings v2', () => (
+    <Application>
+        <ConnectCyb
+            IPFS_END_POINT='0.0.0.0'
+            PARITY_END_POINT='http://localhost'
+            CYBERD_END_POINT='http://localhost'
+            CYBERD_WS_END_POINT='http://localhost'
+            ipfsStatus='local'
+            parityStatus='fail'
+            cyberdStatus='local'
+            resetAllSettings
+            ipfsWriteUrl='http://localhost'
+        />
+    </Application>
 ));
