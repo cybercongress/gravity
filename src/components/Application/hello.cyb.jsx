@@ -25,7 +25,8 @@ import {
     FilePicker,
 } from 'evergreen-ui';
 
-const CybMatrix = require('./Hello/cyb.png');
+// const CybMatrix = require('./Hello/cyb.png');
+const CybMatrix = require('./Hello/cyb_animation.gif');
 const cybRed = require('./Hello/cyb-red.png');
 const cybEye = require('./Hello/eye.jpg');
 const cybEye2 = require('./Hello/cybEye2.png');

@@ -26,7 +26,8 @@ import {
     ToolTip,
 } from '../../..';
 
-const CybMatrix = require('./cyb.png');
+// const CybMatrix = require('./cyb.png');
+const CybMatrix = require('./cyb_animation.gif');
 const cybRed = require('./cyb-red.png');
 const cybEye = require('./eye.jpg');
 const cybEye2 = require('./cybEye2.png');
