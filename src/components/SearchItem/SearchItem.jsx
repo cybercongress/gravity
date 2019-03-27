@@ -29,7 +29,7 @@ export class SearchItem extends React.Component {
               display='flex'
               justifyContent='space-between'
               key={ this.props.hash }
-              backgroundColor={this.state.hover ? '#b4b4b425' :'#000'}
+              backgroundColor={'#fff'}
               borderRadius={ 5 }
               marginBottom={ 10 }
                 // className={ styles.searchItem }
@@ -39,7 +39,7 @@ export class SearchItem extends React.Component {
                       content={ (
                           <Pane paddingX={ 18 } paddingY={ 18 }>
                               <Pane display='flex' alignItems='center' marginBottom={ 10 }>
-                                  <Pill
+                                  {/* <Pill
                                     height={ 6 }
                                     width={ 6 }
                                     borderRadius='50%'
@@ -53,7 +53,7 @@ export class SearchItem extends React.Component {
                                                 ? 'red'
                                                 : 'yellow'
                                         }
-                                  />
+                                  /> */}
                                   <Text>answer recieved from IPFS</Text>
                               </Pane>
                               {this.props.status != 'fail' && (
@@ -81,7 +81,7 @@ export class SearchItem extends React.Component {
 ) }
                       appearance='card'
                     >
-                        <Pill
+                        {/* <Pill
                           height={ 6 }
                           width={ 6 }
                           borderRadius='50%'
@@ -95,16 +95,17 @@ export class SearchItem extends React.Component {
                                     ? 'red'
                                     : 'yellow'
                             }
-                        />
-                    </Tooltip>
+                        /> */}
+                    
                     <Text
                         // style={ { textDecoration: 'none' } }
-                      color='#fff'
+                      color={ this.state.hover ? '#979797' : '#000'}
                       size={ 400 }
                         // href={ `cyb://${children}` }
                     >
                         {this.props.children}
                     </Text>
+                    </Tooltip>
                 </Pane>
                 {this.props.rank != '' && (
                     <Tooltip

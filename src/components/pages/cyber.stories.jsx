@@ -24,8 +24,8 @@ import {
     // Section,
     // SectionContent,
     // FlexContainer,
-    //SearchInput,
-    //SkillBar,
+    // SearchInput,
+    // SkillBar,
     SearchItem,
     // LinkContainer,
     Vitalick,
@@ -37,6 +37,7 @@ import {
     // Text,
     ScrollContainer,
     CardHover,
+    SkillBar,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -64,20 +65,44 @@ class Validators extends React.Component {
         const validatorRows = validatorsSorted
             .filter(x => x.jailed === jailedFilter)
             .map((validator, index) => (
-                <Table.Row style={{ border: 0 }} boxShadow='0px 0px 0.1px 0px #ddd' className='validators-table-row' isSelectable key={ validator.description.moniker }>
-                    <Table.TextCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 } isNumber>
+                <Table.Row
+                  style={ { border: 0 } }
+                  boxShadow='0px 0px 0.1px 0px #ddd'
+                  className='validators-table-row'
+                  isSelectable
+                  key={ validator.description.moniker }
+                >
+                    <Table.TextCell
+                      textAlign='center'
+                      flexBasis={ 80 }
+                      flexShrink={ 0 }
+                      flexGrow={ 0 }
+                      isNumber
+                    >
                         {index}
                     </Table.TextCell>
-                    <Table.TextCell >{validator.description.moniker}</Table.TextCell>
-                    <Table.TextCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 } isNumber>{validator.tokens}</Table.TextCell>
-                    <Table.TextCell flexGrow={ 2 } >{validator.operator_address}</Table.TextCell>
-                    <Table.TextCell flexShrink={ 0 } flexGrow={ 1 } isNumber>{validator.bond_height}</Table.TextCell>
+                    <Table.TextCell>{validator.description.moniker}</Table.TextCell>
+                    <Table.TextCell
+                      textAlign='center'
+                      flexBasis={ 80 }
+                      flexShrink={ 0 }
+                      flexGrow={ 0 }
+                      isNumber
+                    >
+                        {validator.tokens}
+                    </Table.TextCell>
+                    <Table.TextCell textAlign='center' flexGrow={ 2 }>
+                        {validator.operator_address}
+                    </Table.TextCell>
+                    <Table.TextCell textAlign='center' flexShrink={ 0 } flexGrow={ 1 } isNumber>
+                        {validator.bond_height}
+                    </Table.TextCell>
                 </Table.Row>
             ));
 
         return (
             <Pane>
-                <ScrollContainer style={{height: 'calc(100vh - 140px)'}}>
+                <ScrollContainer style={ { height: 'calc(100vh - 140px)' } }>
                     <MainContainer>
                         <Pane
                           display='flex'
@@ -94,7 +119,10 @@ class Validators extends React.Component {
                                   onClick={ this.showActive }
                                   paddingX={ 50 }
                                   paddingY={ 20 }
-                                  boxShadow='inset 0px 0px 0px 0.9px #b4b4b425'
+                                  marginX={ 0 }
+                                  borderRadius={ 0 }
+                                  color='#fff'
+                                  boxShadow='inset 0px 0px 0px 0.9px #4ed6ae'
                                 >
                                     Active
                                 </Tab>
@@ -105,7 +133,10 @@ class Validators extends React.Component {
                                   onClick={ this.showJailed }
                                   paddingX={ 50 }
                                   paddingY={ 20 }
-                                  boxShadow='inset 0px 0px 0px 0.9px #b4b4b425'
+                                  marginX={ 0 }
+                                  borderRadius={ 0 }
+                                  color='#fff'
+                                  boxShadow='inset 0px 0px 0px 0.9px #4ed6ae'
                                 >
                                     Jailed
                                 </Tab>
@@ -114,18 +145,39 @@ class Validators extends React.Component {
                         </Pane>
 
                         <Table>
-                            <Table.Head style={ { backgroundColor: '#b4b4b425', border: 0 } } className='validators-table-head' >
+                            <Table.Head>
                                 {/* <tr> */}
-                                <Table.TextHeaderCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 }>
-                                    #
+                                <Table.TextHeaderCell
+                                  textAlign='center'
+                                  flexBasis={ 80 }
+                                  flexShrink={ 0 }
+                                  flexGrow={ 0 }
+                                >
+                                    Rank
                                 </Table.TextHeaderCell>
-                                <Table.TextHeaderCell  flexGrow={ 1 } >Name</Table.TextHeaderCell>
-                                <Table.TextHeaderCell flexBasis={ 80 } flexShrink={ 0 } flexGrow={ 0 }>Power</Table.TextHeaderCell>
-                                <Table.TextHeaderCell flexGrow={ 2 }>Address</Table.TextHeaderCell>
-                                <Table.TextHeaderCell flexShrink={ 1 } flexGrow={ 1 }>Boun height</Table.TextHeaderCell>
+                                <Table.TextHeaderCell flexGrow={ 1 }>Name</Table.TextHeaderCell>
+                                <Table.TextHeaderCell
+                                  textAlign='center'
+                                  flexBasis={ 80 }
+                                  flexShrink={ 0 }
+                                  flexGrow={ 0 }
+                                >
+                                    {' '}
+                                    Power
+                                </Table.TextHeaderCell>
+                                <Table.TextHeaderCell textAlign='center' flexGrow={ 2 }>
+                                    Address
+                                </Table.TextHeaderCell>
+                                <Table.TextHeaderCell
+                                  textAlign='center'
+                                  flexShrink={ 1 }
+                                  flexGrow={ 1 }
+                                >
+                                    Boun height
+                                </Table.TextHeaderCell>
                                 {/* </tr> */}
                             </Table.Head>
-                            <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
+                            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
                                 {validatorRows}
                             </Table.Body>
                         </Table>
@@ -167,6 +219,398 @@ class Validators extends React.Component {
         );
     }
 }
+
+const Index = () => (
+    <Pane>
+        <Pane marginBottom={ 50 }>
+            <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
+                Network load
+            </Heading>
+            <CardHover paddingY={ 20 } paddingX={ 24 } backgroundColor='#000000'>
+                <Text color='#fff' lineHeight={ 2 }>
+                    Current network capacity is 4 877 888 399 888 347 BP per 24 hours. Last day load
+                    is 834 883 888 883 or 17%. Given that link price is 400 BP fractional reserve
+                    coefficient is around 5.8. So you can bring 5 time more cyberlinks! Dont waste
+                    your time!
+                </Text>
+            </CardHover>
+        </Pane>
+        <Pane marginBottom={ 50 }>
+            <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
+                Search stats
+            </Heading>
+            <Pane display='flex' marginX={ -8 }>
+                <CardHover
+                  flex={ 1 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  paddingY={ 50 }
+                  marginX={ 8 }
+                >
+                    <Pane marginBottom={ 10 }>
+                        <Text color='#fff' fontSize='30px'>
+                            674 555
+                        </Text>
+                    </Pane>
+                    <Pane>
+                        <Text color='#5f7385'>cyberlinks</Text>
+                    </Pane>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 8 }
+                >
+                    <Pane marginBottom={ 10 }>
+                        <Text color='#fff' fontSize='30px'>
+                            267 582
+                        </Text>
+                    </Pane>
+                    <Pane>
+                        <Text color='#5f7385'>content ids</Text>
+                    </Pane>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 8 }
+                >
+                    <Pane marginBottom={ 10 }>
+                        <Text color='#fff' fontSize='30px'>
+                            132 331
+                        </Text>
+                    </Pane>
+                    <Pane>
+                        <Text color='#5f7385'>accounts</Text>
+                    </Pane>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 8 }
+                >
+                    <Pane marginBottom={ 10 }>
+                        <Text color='#fff' fontSize='30px'>
+                            13 M
+                        </Text>
+                    </Pane>
+                    <Pane>
+                        <Text color='#5f7385'>transactions</Text>
+                    </Pane>
+                </CardHover>
+            </Pane>
+        </Pane>
+        <Pane marginBottom={ 50 }>
+            <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
+                Consensus stats
+            </Heading>
+            <Pane display='flex' marginX={ -8 }>
+                <CardHover
+                  flex={ 1 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000'
+                  paddingY={ 50 }
+                  marginX={ 8 }
+                >
+                    <Pane marginBottom={ 10 }>
+                        <Text color='#fff' fontSize='30px'>
+                            155
+                        </Text>
+                    </Pane>
+                    <Pane>
+                        <Text color='#5f7385'>supply</Text>
+                    </Pane>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 8 }
+                >
+                    <Pane marginBottom={ 10 }>
+                        <Text color='#4caf50' fontSize='30px'>
+                            12
+                        </Text>
+                    </Pane>
+                    <Pane>
+                        <Link cursor='pointer' textDecoration='none'>
+                            {' '}
+                            <Pane display='flex' alignItems='center'>
+                                {' '}
+                                <Text color='#4caf50'>active validators</Text>
+                                <Icon icon='arrow-right' color='#4caf50' marginLeft={ 5 } />
+                                {' '}
+                            </Pane>
+                        </Link>
+                    </Pane>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 8 }
+                >
+                    <Pane marginBottom={ 10 }>
+                        <Text color='#fff' fontSize='30px'>
+                            15%
+                        </Text>
+                    </Pane>
+                    <Pane>
+                        <Text color='#5f7385'>validating stake</Text>
+                    </Pane>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 8 }
+                >
+                    <Pane marginBottom={ 10 }>
+                        <Text color='#fff' fontSize='30px'>
+                            789 900
+                        </Text>
+                    </Pane>
+                    <Pane>
+                        <Text color='#5f7385'>last block</Text>
+                    </Pane>
+                </CardHover>
+            </Pane>
+        </Pane>
+    </Pane>
+);
+
+const IndexV2 = () => (
+    <Pane>
+        <Pane marginBottom={ 56 }>
+            <Heading size={ 600 } color='#fff' marginBottom={ 24 }>
+                My bandwidth
+            </Heading>
+            {/* <CardHover paddingY={ 20 } paddingX={ 24 } backgroundColor='#000000'>
+            <Text color='#fff' lineHeight={ 2 }>
+                Current network capacity is 4 877 888 399 888 347 BP per
+                24 hours. Last day load is 834 883 888 883 or 17%. Given
+                that link price is 400 BP fractional reserve coefficient
+                is around 5.8. So you can bring 5 time more cyberlinks!
+                Dont waste your time!
+            </Text>
+        </CardHover> */}
+            <SkillBar style={ { height: 16 } } value={ 80 } />
+        </Pane>
+        <Pane marginBottom={ 50 }>
+            <Heading size={ 600 } color='#fff' marginBottom={ 24 }>
+                Knowledge grapth
+            </Heading>
+            <Pane display='flex' marginX={ -15 }>
+                <CardHover
+                  indexV2
+                  flex={ 1 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  paddingY={ 50 }
+                  marginX={ 15 }
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        674 555
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        cyberlinks
+                    </Text>
+                </CardHover>
+                <CardHover
+                  indexV2
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 15 }
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        267 582
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        content ids
+                    </Text>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 15 }
+                  indexV2
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        132 331
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        accounts
+                    </Text>
+                </CardHover>
+            </Pane>
+        </Pane>
+        <Pane marginBottom={ 50 }>
+            <Heading size={ 600 } color='#fff' marginBottom={ 24 }>
+                Cybernomics
+            </Heading>
+            <Pane display='flex' marginX={ -15 }>
+                <CardHover
+                  flex={ 1 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000'
+                  paddingY={ 50 }
+                  marginX={ 15 }
+                  indexV2
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        155 874
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        Total CYB
+                    </Text>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 15 }
+                  indexV2
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        12 %
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        Staked CYB
+                        {' '}
+                    </Text>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 15 }
+                  indexV2
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        400
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        Price of cyberlink
+                        {' '}
+                    </Text>
+                </CardHover>
+            </Pane>
+        </Pane>
+        <Pane marginBottom={ 50 }>
+            <Heading size={ 600 } color='#fff' marginBottom={ 24 }>
+                Consensus
+            </Heading>
+            <Pane display='flex' marginX={ -15 }>
+                <CardHover
+                  flex={ 1 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000'
+                  paddingY={ 50 }
+                  marginX={ 15 }
+                  indexV2
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        12
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        active validators
+                    </Text>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 15 }
+                  indexV2
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        13 M
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        transactions
+                        {' '}
+                    </Text>
+                </CardHover>
+                <CardHover
+                  flex={ 1 }
+                  paddingY={ 50 }
+                  display='flex'
+                  alignItems='center'
+                  flexDirection='column'
+                  backgroundColor='#000000'
+                  marginX={ 15 }
+                  indexV2
+                >
+                    <Text display='inline-block' marginBottom={ 15 } color='#4ed6ae' fontSize='30px'>
+                        789 900
+                    </Text>
+
+                    <Text display='inline-block' color='#4ed6ae'>
+                        {' '}
+                        last block
+                        {' '}
+                    </Text>
+                </CardHover>
+            </Pane>
+        </Pane>
+    </Pane>
+);
 
 class App extends React.Component {
     state = {
@@ -213,6 +657,7 @@ class App extends React.Component {
             defaultAddress,
             balance,
             index,
+            indexV2,
             PopupNotification,
         } = this.props;
 
@@ -236,7 +681,7 @@ class App extends React.Component {
 
         return (
             <div>
-                <ScrollContainer style={{height: 'calc(100vh - 140px)'}}>
+                <ScrollContainer style={ { height: 'calc(100vh - 140px)' } }>
                     <MainContainer>
                         {links.length > 0 && (
                             <div>
@@ -260,200 +705,8 @@ class App extends React.Component {
                             </div>
                         )}
 
-                        {index && (
-                            <Pane>
-                                <Pane marginBottom={ 50 }>
-                                    <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
-                                        Network load
-                                    </Heading>
-                                    <CardHover paddingY={ 20 } paddingX={ 24 } backgroundColor='#000000'>
-                                        <Text color='#fff' lineHeight={ 2 }>
-                                            Current network capacity is 4 877 888 399 888 347 BP per
-                                            24 hours. Last day load is 834 883 888 883 or 17%. Given
-                                            that link price is 400 BP fractional reserve coefficient
-                                            is around 5.8. So you can bring 5 time more cyberlinks!
-                                            Dont waste your time!
-                                        </Text>
-                                    </CardHover>
-                                </Pane>
-                                <Pane marginBottom={ 50 }>
-                                    <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
-                                        Search stats
-                                    </Heading>
-                                    <Pane display='flex' marginX={ -8 }>
-                                        <CardHover
-                                          flex={ 1 }
-                                          display='flex'
-                                          alignItems='center'
-                                          flexDirection='column'
-                                          backgroundColor='#000000'
-                                          paddingY={ 50 }
-                                          marginX={ 8 }
-                                        >
-                                            <Pane marginBottom={ 10 }>
-                                                <Text color='#fff' fontSize='30px'>
-                                                    674 555
-                                                </Text>
-                                            </Pane>
-                                            <Pane>
-                                                <Text color='#5f7385'>cyberlinks</Text>
-                                            </Pane>
-                                        </CardHover>
-                                        <CardHover
-                                          flex={ 1 }
-                                          paddingY={ 50 }
-                                          display='flex'
-                                          alignItems='center'
-                                          flexDirection='column'
-                                          backgroundColor='#000000'
-                                          marginX={ 8 }
-                                        >
-                                            <Pane marginBottom={ 10 }>
-                                                <Text color='#fff' fontSize='30px'>
-                                                    267 582
-                                                </Text>
-                                            </Pane>
-                                            <Pane>
-                                                <Text color='#5f7385'>content ids</Text>
-                                            </Pane>
-                                        </CardHover>
-                                        <CardHover
-                                          flex={ 1 }
-                                          paddingY={ 50 }
-                                          display='flex'
-                                          alignItems='center'
-                                          flexDirection='column'
-                                          backgroundColor='#000000'
-                                          marginX={ 8 }
-                                        >
-                                            <Pane marginBottom={ 10 }>
-                                                <Text color='#fff' fontSize='30px'>
-                                                    132 331
-                                                </Text>
-                                            </Pane>
-                                            <Pane>
-                                                <Text color='#5f7385'>accounts</Text>
-                                            </Pane>
-                                        </CardHover>
-                                        <CardHover
-                                          
-                                          flex={ 1 }
-                                          paddingY={ 50 }
-                                          display='flex'
-                                          alignItems='center'
-                                          flexDirection='column'
-                                          backgroundColor='#000000'
-                                          marginX={ 8 }
-                                        >
-                                            <Pane marginBottom={ 10 }>
-                                                <Text color='#fff' fontSize='30px'>
-                                                    13 M
-                                                </Text>
-                                            </Pane>
-                                            <Pane>
-                                                <Text color='#5f7385'>transactions</Text>
-                                            </Pane>
-                                        </CardHover>
-                                    </Pane>
-                                </Pane>
-                                <Pane marginBottom={ 50 }>
-                                    <Heading size={ 600 } color='#7c7c7c' marginBottom={ 24 }>
-                                        Consensus stats
-                                    </Heading>
-                                    <Pane display='flex' marginX={ -8 }>
-                                        <CardHover
-                                          flex={ 1 }
-                                          display='flex'
-                                          alignItems='center'
-                                          flexDirection='column'
-                                          backgroundColor='#000'
-                                          paddingY={ 50 }
-                                          marginX={ 8 }
-                                        >
-                                            <Pane marginBottom={ 10 }>
-                                                <Text color='#fff' fontSize='30px'>
-                                                    155
-                                                </Text>
-                                            </Pane>
-                                            <Pane>
-                                                <Text color='#5f7385'>supply</Text>
-                                            </Pane>
-                                        </CardHover>
-                                        <CardHover
-                                          
-                                          flex={ 1 }
-                                          paddingY={ 50 }
-                                          display='flex'
-                                          alignItems='center'
-                                          flexDirection='column'
-                                          backgroundColor='#000000'
-                                          marginX={ 8 }
-                                        >
-                                            <Pane marginBottom={ 10 }>
-                                                <Text color='#4caf50' fontSize='30px'>
-                                                    12
-                                                </Text>
-                                            </Pane>
-                                            <Pane>
-                                                <Link cursor='pointer' textDecoration='none'>
-                                                    {' '}
-                                                    <Pane display='flex' alignItems='center'>
-                                                        {' '}
-                                                        <Text color='#4caf50'>
-                                                            active validators
-                                                        </Text>
-                                                        <Icon
-                                                          icon='arrow-right'
-                                                          color='#4caf50'
-                                                          marginLeft={ 5 }
-                                                        />
-                                                        {' '}
-                                                    </Pane>
-                                                </Link>
-                                            </Pane>
-                                        </CardHover>
-                                        <CardHover
-                                          
-                                          flex={ 1 }
-                                          paddingY={ 50 }
-                                          display='flex'
-                                          alignItems='center'
-                                          flexDirection='column'
-                                          backgroundColor='#000000'
-                                          marginX={ 8 }
-                                        >
-                                            <Pane marginBottom={ 10 }>
-                                                <Text color='#fff' fontSize='30px'>
-                                                    15%
-                                                </Text>
-                                            </Pane>
-                                            <Pane>
-                                                <Text color='#5f7385'>validating stake</Text>
-                                            </Pane>
-                                        </CardHover>
-                                        <CardHover
-                                          
-                                          flex={ 1 }
-                                          paddingY={ 50 }
-                                          display='flex'
-                                          alignItems='center'
-                                          flexDirection='column'
-                                          backgroundColor='#000000'
-                                          marginX={ 8 }
-                                        >
-                                            <Pane marginBottom={ 10 }>
-                                                <Text color='#fff' fontSize='30px'>
-                                                    789 900
-                                                </Text>
-                                            </Pane>
-                                            <Pane>
-                                                <Text color='#5f7385'>last block</Text>
-                                            </Pane>
-                                        </CardHover>
-                                    </Pane>
-                                </Pane>
-                            </Pane>
-                        )}
+                        {index && <Index />}
+                        {indexV2 && <IndexV2 />}
 
                         {defaultAddress && balance > 0 && searchQuery && links.length === 0 && (
                             <Pane display='flex' justifyContent='space-around' paddingTop='5%'>
@@ -467,7 +720,7 @@ class App extends React.Component {
                                   flexDirection='column'
                                 >
                                     <Pane width={ 323 } textAlign='center' marginBottom={ 25 }>
-                                        <Text size={ 600 } color='#7c7c7c'>
+                                        <Text size={ 600 } color='#fff'>
                                             You are the first one who are searching for
                                             <b>
                                                 {' '}
@@ -477,7 +730,7 @@ class App extends React.Component {
                                         </Text>
                                     </Pane>
                                     <Pane width={ 323 } textAlign='center'>
-                                        <Text size={ 600 } color='#7c7c7c'>
+                                        <Text size={ 600 } color='#fff'>
                                             Cyber your query and Cyb will understand it!
                                         </Text>
                                     </Pane>
@@ -492,20 +745,20 @@ class App extends React.Component {
                   justifyContent='center'
                   position='absolute'
                   bottom={ 0 }
-                //   height={ 65 }
+                    //   height={ 65 }
                   width='100%'
                   backgroundColor='#000000'
                   paddingY={ 11 }
                   zIndex={ 2 }
                 >
-                    <Pane
-                      alignItems='center'
-                      justifyContent='center'
-                      display='flex'
-                      width={ 1000 }
-                    >
+                    <Pane alignItems='center' justifyContent='center' display='flex' width={ 1000 }>
                         {defaultAddress && balance > 0 && searchQuery && links.length >= 0 && (
-                            <Pane display='flex' justifyContent='center' flexDirection='row' width='100%'>
+                            <Pane
+                              display='flex'
+                              justifyContent='center'
+                              flexDirection='row'
+                              width='100%'
+                            >
                                 <TextInput
                                   height={ 42 }
                                   width='40%'
@@ -517,18 +770,17 @@ class App extends React.Component {
                                   backgroundColor='transparent'
                                   outline='0'
                                   outlineOffset='0'
-                                  style={{caretColor: '#36d6ae', boxShadow: 'none'}}
-                                
+                                  style={ { caretColor: '#36d6ae', boxShadow: 'none' } }
                                 />
                                 <Button
                                   whiteSpace='nowrap'
                                   paddingX={ 50 }
                                   height={ 42 }
-                                //   boxShadow='0 0 20px 0px #36d6ae'
+                                    //   boxShadow='0 0 20px 0px #36d6ae'
                                   fontSize='18px'
-                                  borderRadius={3}
+                                  borderRadius={ 3 }
                                   className='btn'
-                                //   onClick={ () => this.link() }
+                                    //   onClick={ () => this.link() }
                                 >
                                     Cyber it
                                 </Button>
@@ -546,7 +798,7 @@ class App extends React.Component {
                                   backgroundColor='transparent'
                                   outline='0'
                                   outlineOffset='0'
-                                  style={{caretColor: '#36d6ae', boxShadow: 'none'}}
+                                  style={ { caretColor: '#36d6ae', boxShadow: 'none' } }
                                 />
                                 <TextInput
                                   height={ 42 }
@@ -558,7 +810,7 @@ class App extends React.Component {
                                   backgroundColor='transparent'
                                   outline='0'
                                   outlineOffset='0'
-                                  style={{caretColor: '#36d6ae', boxShadow: 'none'}}
+                                  style={ { caretColor: '#36d6ae', boxShadow: 'none' } }
                                 />
                                 <Button
                                   whiteSpace='nowrap'
@@ -566,8 +818,8 @@ class App extends React.Component {
                                   height={ 42 }
                                   fontSize='18px'
                                   className='btn'
-                                  borderRadius={3}
-                                //   onClick={ () => this.link()}
+                                  borderRadius={ 3 }
+                                    //   onClick={ () => this.link()}
                                 >
                                     Cyber it
                                 </Button>
@@ -766,6 +1018,18 @@ storiesOf('cyber/pages', module)
               PopupNotification
               balance='0'
               index='1'
+            />
+        </Application>
+    ))
+    .add('indexV2', () => (
+        <Application>
+            <App
+              searchQuery='test'
+              links={ links2 }
+              defaultAddress='test'
+              PopupNotification
+              balance='0'
+              indexV2
             />
         </Application>
     ))

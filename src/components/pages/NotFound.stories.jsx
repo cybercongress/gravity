@@ -16,7 +16,7 @@ const NotFound = () => (
                     </Pane>
                     <Pane display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
                         <Pane marginBottom={20}>
-                            <Text color='#7c7c7c' size={600}>
+                            <Text color='#fff' size={600}>
                                 Cyb doesn’t know
                                 <b>
                                     { ' ' }
@@ -27,7 +27,7 @@ const NotFound = () => (
                             </Text>
                         </Pane>
                         <Pane>
-                            <Text color='#7c7c7c' size={600}>Go to Chaingear and add it.</Text>
+                            <Text color='#fff' size={600}>Go to Chaingear and add it.</Text>
                         </Pane>
                     </Pane>
                 </Pane>

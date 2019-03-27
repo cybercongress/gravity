@@ -10,7 +10,7 @@ export const SkillBar = ({
     children, fontSize, value, ...props
 }) => (
     <ToolTip
-    top={25}
+    top={35}
     right={0}
       content={ (
           <Pane
