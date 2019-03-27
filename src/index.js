@@ -1,4 +1,6 @@
 import './index.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import Title from './components/Title/Title';
 
@@ -288,6 +290,13 @@ import {
     StateCyb,
 } from './components/Application/id';
 
+import {
+    CardHover,
+} from './components/CardHover/CardHover';
+import {
+    CardAccount,
+} from './components/CardAccount/CardAccount';
+
 export {
     Title,
     Badge,
@@ -501,4 +510,7 @@ export {
     ConnectionTable,
     StateCybTable,
     TextInputError,
+
+    CardHover,
+    CardAccount,
 };

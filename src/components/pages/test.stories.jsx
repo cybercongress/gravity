@@ -219,20 +219,7 @@ class SimpleSlider extends React.Component {
     }
   }
 
-const Settings = () => (
-    <Pane>
-    <ScrollContainer>
-        <MainContainer>
-            <Pane display='flex' justifyContent='center'>
-                <Heading fontSize='29px' color='#fff'>
-                    Your virtual robot
-                </Heading>
-            </Pane>
-            <Pane width='100%'>
-                <SimpleSlider />
-            </Pane>
-        </MainContainer>
-    </ScrollContainer>
+const FooterCyb = () =>(
     <Pane
     display='flex'
     alignItems='center'
@@ -270,11 +257,26 @@ const Settings = () => (
           </Pane>
       </Pane>
   </Pane>
-  </Pane>
+);
+
+const Settings = () => (
+    <ScrollContainer>
+        <MainContainer style={{ paddingBottom: 100 }}>
+            <Pane display='flex' justifyContent='center'>
+                <Heading fontSize='29px' color='#fff'>
+                    Your virtual robot
+                </Heading>
+            </Pane>
+            <Pane width='100%'>
+                <SimpleSlider />
+            </Pane>
+        </MainContainer>
+    </ScrollContainer>
 );
 
 storiesOf('Cyb.ai', module).add('cyb.ai', () => (
     <Application>
         <Settings />
+        <FooterCyb />
     </Application>
 ));

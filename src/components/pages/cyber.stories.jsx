@@ -24,8 +24,8 @@ import {
     // Section,
     // SectionContent,
     // FlexContainer,
-    SearchInput,
-    SkillBar,
+    //SearchInput,
+    //SkillBar,
     SearchItem,
     // LinkContainer,
     Vitalick,
@@ -36,42 +36,12 @@ import {
     // IconBlockDelay,
     // Text,
     ScrollContainer,
+    CardHover,
 } from '../..';
 import Application from '../Application/Application';
 
 import validatorsData from './validatorsData';
 
-class CardHover extends React.Component {
-    state = {
-        hover: false,
-    };
-
-    handleHover() {
-        this.setState({ hover: !this.state.hover });
-    }
-
-    seeAll = () => {
-        this.setState({
-            seeAll: !this.state.seeAll,
-        });
-    };
-    
-    render(){
-        const {
-            children,
-        } = this.props;
-        return(
-            <Card
-                boxShadow={ this.state.hover ? '0 0 40px 2px #36d6ae' : '' }
-                onMouseEnter={ () => this.handleHover() }
-                onMouseLeave={ () => this.handleHover() }
-                {...this.props}
-            >
-                {children}
-            </Card>
-        )
-    }
-}
 class Validators extends React.Component {
     state = {
         jailedFilter: false,
