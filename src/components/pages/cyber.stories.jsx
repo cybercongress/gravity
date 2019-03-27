@@ -410,15 +410,6 @@ const IndexV2 = () => (
             <Heading size={ 600 } color='#fff' marginBottom={ 24 }>
                 My bandwidth
             </Heading>
-            {/* <CardHover paddingY={ 20 } paddingX={ 24 } backgroundColor='#000000'>
-            <Text color='#fff' lineHeight={ 2 }>
-                Current network capacity is 4 877 888 399 888 347 BP per
-                24 hours. Last day load is 834 883 888 883 or 17%. Given
-                that link price is 400 BP fractional reserve coefficient
-                is around 5.8. So you can bring 5 time more cyberlinks!
-                Dont waste your time!
-            </Text>
-        </CardHover> */}
             <SkillBar style={ { height: 16 } } value={ 80 } />
         </Pane>
         <Pane marginBottom={ 50 }>

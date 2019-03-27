@@ -13,18 +13,22 @@ const Lottery = ({ index, account, balanceGCYB }) => (
         <MainContainer>
             <Pane display='flex' flexDirection='column' justifyContent='center' alignItems='center' paddingBottom={60}>
                 <Pane display='flex' flexDirection='column' alignItems='center' marginBottom={ 42 }>
-                    <Text lineHeight={ 1.5 } color='#425a70' fontSize='29px'>
+                    <Text lineHeight={ 1.5 } color='#fff' fontSize='29px'>
                         Try your luck!
                     </Text>
-                    <Text lineHeight={ 1.5 } color='#425a70' fontSize='29px'>
+                    <Text lineHeight={ 1.5 } color='#fff' fontSize='29px'>
                         Check if you have some CYB tokens
                     </Text>
                 </Pane>
-                <Pane width='100%' display='flex' flexDirection='row' marginBottom={ 30 }>
+                <Pane width='100%' display='flex' flexDirection='row' marginBottom={ 50 }>
                     <TextInput
                       width='100%'
                       height={ 42 }
                       marginRight={ 20 }
+                      backgroundColor='transparent'
+                      outline='0'
+                      outlineOffset='0'
+                      style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
                       placeholder='paste your Ethereum address'
                     />
                     <Button
@@ -41,7 +45,7 @@ const Lottery = ({ index, account, balanceGCYB }) => (
                 </Pane>
                 {index && (
                     <Pane>
-                        <Link fontSize='18px' textDecoration='none' href='#' color='blue'>
+                        <Link fontSize='18px' textDecoration='none' href='#' color='green'>
                             Details of Satoshi Lottery
                         </Link>
                     </Pane>
