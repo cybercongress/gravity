@@ -3,19 +3,15 @@ import React, { Component } from 'react';
 // import * as actions from '../../redux/settings';
 import { Pane, Text, Card } from 'evergreen-ui';
 import {
-    BntGroup,
-    HelloCardAccaunt,
     HelloContainer,
     HelloContainerLeftCol,
     HelloContainerRightCol,
     HelloContainerRightColContent,
     HelloContainerRightColBtn,
     BigImg,
-    SlallImgText,
     ButtonEverGreen,
     TextIlineBlock,
     TextAreaImportMnemonic,
-    TerminalCyb,
     ConnectionTable,
     TextInputError,
     StateCybTable,
@@ -25,12 +21,7 @@ import {
 
 import { BntGroupFull } from './Hello/btn.group.full';
 
-const CybMatrix = require('./Hello/cyb.png');
-const cybRed = require('./Hello/cyb-red.png');
-const cybEye = require('./Hello/eye.jpg');
-const cybEye2 = require('./Hello/cybEye2.png');
 const idrobot = require('./Hello/idrobot.png');
-const imgEth = require('./AppMenu/eth.svg');
 
 export const FollowYourWeb3 = () => (
     <HelloContainer>

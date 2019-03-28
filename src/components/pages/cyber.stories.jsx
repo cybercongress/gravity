@@ -6,7 +6,6 @@ import {
     TextInput,
     Button,
     Text,
-    Card,
     Link,
     Icon,
     Table,
@@ -14,30 +13,7 @@ import {
     Tab,
 } from 'evergreen-ui';
 import {
-    // Button,
-    // Title,
-    // PageTitle,
-    MainContainer,
-    // PopupSkillBar,
-    // Input,
-    // CentredPanel,
-    // Section,
-    // SectionContent,
-    // FlexContainer,
-    // SearchInput,
-    // SkillBar,
-    SearchItem,
-    // LinkContainer,
-    Vitalick,
-    // IconLinks,
-    // IconCIDs,
-    // IconAccounts,
-    // IconBlockHeight,
-    // IconBlockDelay,
-    // Text,
-    ScrollContainer,
-    CardHover,
-    SkillBar,
+    MainContainer, SearchItem, Vitalick, ScrollContainer, CardHover, SkillBar,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -111,7 +87,6 @@ class Validators extends React.Component {
                           justifyContent='center'
                         >
                             <Tablist marginBottom={ 24 }>
-                                {/* {this.state.tabs.map((tab, index) => ( */}
                                 <Tab
                                   key='Active'
                                   id='Active'
@@ -140,13 +115,11 @@ class Validators extends React.Component {
                                 >
                                     Jailed
                                 </Tab>
-                                {/* ))} */}
                             </Tablist>
                         </Pane>
 
                         <Table>
                             <Table.Head>
-                                {/* <tr> */}
                                 <Table.TextHeaderCell
                                   textAlign='center'
                                   flexBasis={ 80 }
@@ -175,7 +148,6 @@ class Validators extends React.Component {
                                 >
                                     Boun height
                                 </Table.TextHeaderCell>
-                                {/* </tr> */}
                             </Table.Head>
                             <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
                                 {validatorRows}
@@ -202,7 +174,6 @@ class Validators extends React.Component {
                       width={ 1000 }
                     >
                         <Pane display='flex' alignItems='center'>
-                            {/* <Text style={ { paddingBottom: '10px' } }>Your bandwidth:</Text> */}
                             <Text color='#fff' fontSize='18px'>
                                 Everybody can become validator staking 1872 GCYB right now
                             </Text>
@@ -249,14 +220,12 @@ const Index = () => (
                   paddingY={ 50 }
                   marginX={ 8 }
                 >
-                    <Pane marginBottom={ 10 }>
-                        <Text color='#fff' fontSize='30px'>
-                            674 555
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#5f7385'>cyberlinks</Text>
-                    </Pane>
+                    <Text display='inline-block' marginBottom={ 15 } color='#fff' fontSize='30px'>
+                        674 555
+                    </Text>
+                    <Text display='inline-block' color='#5f7385'>
+                        cyberlinks
+                    </Text>
                 </CardHover>
                 <CardHover
                   flex={ 1 }
@@ -267,14 +236,12 @@ const Index = () => (
                   backgroundColor='#000000'
                   marginX={ 8 }
                 >
-                    <Pane marginBottom={ 10 }>
-                        <Text color='#fff' fontSize='30px'>
-                            267 582
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#5f7385'>content ids</Text>
-                    </Pane>
+                    <Text display='inline-block' marginBottom={ 15 } color='#fff' fontSize='30px'>
+                        267 582
+                    </Text>
+                    <Text display='inline-block' color='#5f7385'>
+                        content ids
+                    </Text>
                 </CardHover>
                 <CardHover
                   flex={ 1 }
@@ -285,14 +252,12 @@ const Index = () => (
                   backgroundColor='#000000'
                   marginX={ 8 }
                 >
-                    <Pane marginBottom={ 10 }>
-                        <Text color='#fff' fontSize='30px'>
-                            132 331
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#5f7385'>accounts</Text>
-                    </Pane>
+                    <Text display='inline-block' marginBottom={ 15 } color='#fff' fontSize='30px'>
+                        132 331
+                    </Text>
+                    <Text display='inline-block' color='#5f7385'>
+                        accounts
+                    </Text>
                 </CardHover>
                 <CardHover
                   flex={ 1 }
@@ -303,14 +268,12 @@ const Index = () => (
                   backgroundColor='#000000'
                   marginX={ 8 }
                 >
-                    <Pane marginBottom={ 10 }>
-                        <Text color='#fff' fontSize='30px'>
-                            13 M
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#5f7385'>transactions</Text>
-                    </Pane>
+                    <Text display='inline-block' marginBottom={ 15 } color='#fff' fontSize='30px'>
+                        13 M
+                    </Text>
+                    <Text display='inline-block' color='#5f7385'>
+                        transactions
+                    </Text>
                 </CardHover>
             </Pane>
         </Pane>
@@ -328,14 +291,12 @@ const Index = () => (
                   paddingY={ 50 }
                   marginX={ 8 }
                 >
-                    <Pane marginBottom={ 10 }>
-                        <Text color='#fff' fontSize='30px'>
-                            155
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#5f7385'>supply</Text>
-                    </Pane>
+                    <Text display='inline-block' marginBottom={ 15 } color='#fff' fontSize='30px'>
+                        155
+                    </Text>
+                    <Text display='inline-block' color='#5f7385'>
+                        supply
+                    </Text>
                 </CardHover>
                 <CardHover
                   flex={ 1 }
@@ -346,22 +307,18 @@ const Index = () => (
                   backgroundColor='#000000'
                   marginX={ 8 }
                 >
-                    <Pane marginBottom={ 10 }>
-                        <Text color='#4caf50' fontSize='30px'>
-                            12
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Link cursor='pointer' textDecoration='none'>
+                    <Text display='inline-block' marginBottom={ 15 } color='#4caf50' fontSize='30px'>
+                        12
+                    </Text>
+                    <Link cursor='pointer' textDecoration='none'>
+                        {' '}
+                        <Pane display='flex' alignItems='center'>
                             {' '}
-                            <Pane display='flex' alignItems='center'>
-                                {' '}
-                                <Text color='#4caf50'>active validators</Text>
-                                <Icon icon='arrow-right' color='#4caf50' marginLeft={ 5 } />
-                                {' '}
-                            </Pane>
-                        </Link>
-                    </Pane>
+                            <Text color='#4caf50'>active validators</Text>
+                            <Icon icon='arrow-right' color='#4caf50' marginLeft={ 5 } />
+                            {' '}
+                        </Pane>
+                    </Link>
                 </CardHover>
                 <CardHover
                   flex={ 1 }
@@ -372,14 +329,13 @@ const Index = () => (
                   backgroundColor='#000000'
                   marginX={ 8 }
                 >
-                    <Pane marginBottom={ 10 }>
-                        <Text color='#fff' fontSize='30px'>
-                            15%
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#5f7385'>validating stake</Text>
-                    </Pane>
+                    <Text display='inline-block' marginBottom={ 15 } color='#fff' fontSize='30px'>
+                        15%
+                    </Text>
+
+                    <Text display='inline-block' color='#5f7385'>
+                        validating stake
+                    </Text>
                 </CardHover>
                 <CardHover
                   flex={ 1 }
@@ -390,14 +346,13 @@ const Index = () => (
                   backgroundColor='#000000'
                   marginX={ 8 }
                 >
-                    <Pane marginBottom={ 10 }>
-                        <Text color='#fff' fontSize='30px'>
-                            789 900
-                        </Text>
-                    </Pane>
-                    <Pane>
-                        <Text color='#5f7385'>last block</Text>
-                    </Pane>
+                    <Text display='inline-block' marginBottom={ 15 } color='#fff' fontSize='30px'>
+                        789 900
+                    </Text>
+
+                    <Text display='inline-block' color='#5f7385'>
+                        last block
+                    </Text>
                 </CardHover>
             </Pane>
         </Pane>
@@ -736,7 +691,6 @@ class App extends React.Component {
                   justifyContent='center'
                   position='absolute'
                   bottom={ 0 }
-                    //   height={ 65 }
                   width='100%'
                   backgroundColor='#000000'
                   paddingY={ 11 }
@@ -767,7 +721,6 @@ class App extends React.Component {
                                   whiteSpace='nowrap'
                                   paddingX={ 50 }
                                   height={ 42 }
-                                    //   boxShadow='0 0 20px 0px #36d6ae'
                                   fontSize='18px'
                                   borderRadius={ 3 }
                                   className='btn'
@@ -777,7 +730,7 @@ class App extends React.Component {
                                 </Button>
                             </Pane>
                         )}
-                        {index && (
+                        {(index || indexV2) && (
                             <Pane display='flex' flexDirection='row' marginLeft={ 80 } width='65%'>
                                 <TextInput
                                   height={ 42 }

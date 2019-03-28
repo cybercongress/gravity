@@ -4,7 +4,7 @@ import Slider from "react-slick";
 // import { connect } from 'react-redux';
 // import * as actions from '../../redux/settings';
 import {
-    Button, Pane, Text, Icon, Heading, IconButton, Strong,
+    Button, Pane, Text, Heading,
 } from 'evergreen-ui';
 import { Row, Col } from 'react-flexbox-grid';
 import {
@@ -63,8 +63,8 @@ class CybCard extends Component {
         return (
             <Pane
               { ...this.props }
-              width={ active ? 411 : 210 }
-              height={ active ? 525 : 267 }
+              width={ 210 }
+              height={ 267 }
               boxShadow={
                     active
                         ? '0 0 80px 2px #36d6ae'
@@ -227,9 +227,9 @@ const FooterCyb = () =>(
     width='100%'
     position='absolute'
     bottom={ 0 }
-    paddingY={ 30 }
-    paddingX={30}
+    paddingY={ 20 }
     backgroundColor='#000000'
+    zIndex={2}
   >
       <Pane
         flexGrow={ 1 }
@@ -240,28 +240,24 @@ const FooterCyb = () =>(
         flexDirection='row'
 
       >
-          <Pane>
               <Text color='#fff' fontSize='18px'>
                   1 April
               </Text>
-          </Pane>
           <Pane display='flex' justifyContent='center' flexGrow={ 1 }>
               <Text color='#fff' fontSize='18px'>
                   14 day 13 hour 15 minute 42 seconds
               </Text>
           </Pane>
-          <Pane>
               <Button paddingX={ 50 } className='btn'>
                   Download
               </Button>
-          </Pane>
       </Pane>
   </Pane>
 );
 
 const Settings = () => (
     <ScrollContainer>
-        <MainContainer style={{ paddingBottom: 100 }}>
+        <MainContainer style={{ paddingBottom: 65, paddingTop: 40 }}>
             <Pane display='flex' justifyContent='center'>
                 <Heading fontSize='29px' color='#fff'>
                     Your virtual robot

@@ -6,7 +6,7 @@
 @font-face {
     font-family: "SF Regular";
     font-style: normal;
-    src: url( ./SFMono-Regular.otf);
+    src: url( ../fonts/SFMono-Regular.otf);
 }
 
 .fontSF {

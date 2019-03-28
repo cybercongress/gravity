@@ -1,37 +1,24 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import * as actions from '../../redux/settings';
 import {
     Button,
     Pane,
     Text,
     Icon,
-    Heading,
     IconButton,
-    Strong,
     Pill,
     Card,
     Textarea,
     TextInput,
-    //  Tooltip,
     Table,
-    FilePicker,
     Checkbox,
 } from 'evergreen-ui';
-import { Row, Col } from 'react-flexbox-grid';
 import Terminal from 'terminal-in-react';
 import {
     Avatar,
-    // Text,
     ToolTip,
 } from '../../..';
 
-// const CybMatrix = require('./cyb.png');
 const CybMatrix = require('./cyb_animation.gif');
-const cybRed = require('./cyb-red.png');
-const cybEye = require('./eye.jpg');
-const cybEye2 = require('./cybEye2.png');
-const idrobot = require('./idrobot.png');
 const imgEth = require('../AppMenu/eth.svg');
 
 export const Eth = () => (
@@ -57,8 +44,6 @@ export const GCyb = () => (
 export const BntGroup = () => (
     <Pane display='flex' flexDirection='column'>
         <ToolTip
-            //   left={0}
-            //   top={0}
           top={ 0 }
           right='100%'
           content={ (
@@ -250,7 +235,6 @@ export const HelloCardAccaunt = () => (
       display='flex'
       flexDirection='column'
       alignItems='center'
-        //   backgroundColor='white'
       boxShadow='0 0 1px #fff'
       maxWidth='80%'
       paddingX={ 60 }
@@ -282,7 +266,6 @@ export const HelloCardAccaunt = () => (
                   isSolid
                   marginRight={ 15 }
                 />
-                {/* <Text fontSize={ 30 }>148 ETH</Text> */}
             </Pane>
             <PaneBalance position='relative'>
                 <Text display='inline-block' marginBottom='5%' color='#fff' fontSize={ 30 }>
@@ -305,7 +288,6 @@ export const HelloCardAccaunt = () => (
                   marginRight={ 15 }
                 />
             </Pane>
-            {/* <Text fontSize={ 30 }>148 ETH</Text> */}
             <PaneBalance position='relative'>
                 <Text display='inline-block' marginBottom='5%' color='#fff' fontSize={ 30 }>
                     10 GCYB
@@ -319,7 +301,6 @@ export const HelloCardAccaunt = () => (
 );
 
 export const HelloContainer = ({ children, ...props }) => (
-    // <ScrollContainer>
     <Pane
       position='absolute'
       height='100%'
@@ -340,23 +321,18 @@ export const HelloContainer = ({ children, ...props }) => (
           marginX='auto'
           paddingY={ 65 }
         >
-            {/* <MainContainer style={ { width: 1200 } }>  */}
             <Pane display='flex' alignItems='stretch' height='100%' flexDirection='row'>
                 {children}
             </Pane>
-            {/* </MainContainer> */}
         </Pane>
     </Pane>
-    // </ScrollContainer>
 );
 
 export const HelloContainerLeftCol = ({ children }) => (
     <Pane
-        //  float='left'
       width='calc((100% - 20px * 2) / 2)'
       height='inherit'
       paddingX={ 20 }
-        //   marginX={ 30 }
     >
         {children}
     </Pane>
@@ -364,7 +340,6 @@ export const HelloContainerLeftCol = ({ children }) => (
 
 export const HelloContainerRightCol = ({ children, bntGroup }) => (
     <Pane
-        // float='right'
       display='flex'
       flexDirection='row'
       justifyContent='center'
@@ -372,7 +347,6 @@ export const HelloContainerRightCol = ({ children, bntGroup }) => (
       width='calc((100% - 20px * 2) / 2)'
       height='initial'
       position='relative'
-        //   marginX={ 50 }
       paddingX={ 20 }
     >
         <Pane
@@ -394,7 +368,6 @@ export const HelloContainerRightCol = ({ children, bntGroup }) => (
               alignItems='center'
             >
                 {bntGroup}
-                {/* <BntGroup /> */}
             </Pane>
         )}
     </Pane>
