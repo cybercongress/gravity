@@ -3,6 +3,16 @@
 @import "~slick-carousel/slick/slick-theme.css"; */
 @import './components/Application/Hello/btn.group.css';
 
+@font-face {
+    font-family: "SF Regular";
+    font-style: normal;
+    src: url( ./SFMono-Regular.otf);
+}
+
+.fontSF {
+    font-family: SF Regular !important;
+}
+
 :root {
     --slate-9:rgba(67, 90, 111, 0.09);
     --black: #000000;

@@ -25,9 +25,9 @@ export class CardAccount extends React.Component {
               flexDirection='column'
               alignItems='center'
               backgroundColor='#000'
-              paddingX={ 60 }
-              paddingY={ 100 }
-                // height={500}
+              paddingX='3vw'
+              paddingY='10vh'
+              maxHeight={500}
             >
                 <Text
                   display='inline-block'
@@ -35,6 +35,7 @@ export class CardAccount extends React.Component {
                   color='#fff'
                   fontSize={ 24 }
                   fontWeight={ 600 }
+                  className='fontSF'
                 >
                     {balanceGCYB != 0 ? 'Congratulations :-)' : 'You Loose :-('}
                     {' '}
