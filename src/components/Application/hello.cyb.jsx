@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {
+    Pane, Text, IconButton, Card, FilePicker,
+} from 'evergreen-ui';
+import {
     BntGroup,
     HelloCardAccaunt,
     HelloContainer,
@@ -17,13 +20,6 @@ import {
     TextInputError,
 } from '../..';
 
-import {
-    Pane,
-    Text,
-    IconButton,
-    Card,
-    FilePicker,
-} from 'evergreen-ui';
 
 // const CybMatrix = require('./Hello/cyb.png');
 const CybMatrix = require('./Hello/cyb_animation.gif');
@@ -54,14 +50,14 @@ export const ConnectionPages = ({
         <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
                 <ConnectionTable
-                  IPFS_END_POINT={IPFS_END_POINT}
-                  PARITY_END_POINT={PARITY_END_POINT}
-                  CYBERD_END_POINT={CYBERD_END_POINT}
-                  CYBERD_WS_END_POINT={CYBERD_WS_END_POINT}
-                  ipfsWriteUrl={ipfsWriteUrl}
-                  cyberdStatus={cyberdStatus}
+                  IPFS_END_POINT={ IPFS_END_POINT }
+                  PARITY_END_POINT={ PARITY_END_POINT }
+                  CYBERD_END_POINT={ CYBERD_END_POINT }
+                  CYBERD_WS_END_POINT={ CYBERD_WS_END_POINT }
+                  ipfsWriteUrl={ ipfsWriteUrl }
+                  cyberdStatus={ cyberdStatus }
                   ipfsStatus={ ipfsStatus }
-                  parityStatus={parityStatus}
+                  parityStatus={ parityStatus }
                 />
             </HelloContainerRightColContent>
             <HelloContainerRightColBtn center>
@@ -71,15 +67,59 @@ export const ConnectionPages = ({
     </HelloContainer>
 );
 
-export const TerminalCybPages = () => (
+export const StartCybPages = () => (
     <HelloContainer>
         <HelloContainerLeftCol>
             <BigImg />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
-                <TerminalCyb />
+                <Card
+                  display='flex'
+                  flexDirection='column'
+                  alignItems='center'
+                  boxShadow='0 0 1px #fff'
+                  maxWidth='80%'
+                  paddingX='4vh'
+                  paddingY='4.5vh'
+                  minWidth={ 500 }
+                  maxHeight={ 500 }
+                  height='100%'
+                >
+                    <Pane
+                      width='100%'
+                      display='flex'
+                      flexDirection='column'
+                      alignItems='flex-center'
+                    >
+                        <TextIlineBlock
+                          style={ { wordSpacing: '2px', lineHeight: 2 } }
+                          marginBottom={ 5 }
+                        >
+                            Hi, I’m cyb - your friendly robot, and I want to show you the new
+                            Internet.
+                        </TextIlineBlock>
+                        <TextIlineBlock style={ { wordSpacing: '2px' } }>
+                            How do I call you?
+                        </TextIlineBlock>
+                    </Pane>
+                    <Pane
+                      width='75%'
+                      display='flex'
+                      flexDirection='column'
+                      justifyContent='center'
+                      height='100%'
+                      marginBottom='6%'
+                    >
+                        <Pane width='100%' marginBottom='6%'>
+                            <TextInputError color='#4ed6ae' isInvalid={ false } message='error' />
+                        </Pane>
+                    </Pane>
+                </Card>
             </HelloContainerRightColContent>
+            <HelloContainerRightColBtn center>
+                <ButtonEverGreen>Let's go</ButtonEverGreen>
+            </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>
 );
@@ -128,7 +168,6 @@ export const SecurityImportSettingsPages = () => (
         </HelloContainerRightCol>
     </HelloContainer>
 );
-
 
 export const SecurityCreatePasswordPages = () => (
     <HelloContainer>

@@ -9,7 +9,7 @@ import {
     ConnectionPages,
     SecurityImportSettingsPages,
     SecurityCreatePasswordPages,
-    TerminalCybPages,
+    StartCybPages,
     CardWalletPages,
     CardWalletPagesBackUpMnemonic,
     ImportAccountPages,
@@ -29,7 +29,7 @@ storiesOf('Hello', module)
     .add('ConnectionPages', () => <ConnectionPages status='local' />)
     .add('SecurityPages', () => <SecurityImportSettingsPages />)
     .add('SecurityPagesPassword', () => <SecurityCreatePasswordPages />)
-    .add('TerminalCybPages', () => <TerminalCybPages />)
+    .add('StartCybPages', () => <StartCybPages />)
     .add('CardWalletPages', () => <CardWalletPages />)
     .add('CardWalletPagesBackUpMnemonic', () => <CardWalletPagesBackUpMnemonic />)
     .add('ImportAccountPages', () => <ImportAccountPages />)

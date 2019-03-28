@@ -745,7 +745,7 @@ export const StateCybTable = () => (
     </Pane>
 );
 
-export const TextInputError = ({ isInvalid, ...props }) => (
+export const TextInputError = ({ isInvalid, message, ...props }) => (
     <Pane position='relative'>
         <TextInput
           width='100%'
@@ -770,7 +770,7 @@ export const TextInputError = ({ isInvalid, ...props }) => (
                 <Icon icon='info-sign' color='danger' size={ 11 } marginRight={ 5 } />
                 <Pane>
                     <Text fontSize='11px' color='#ec4c47'>
-                        Passwords don't mutch
+                        { message ? message : "Passwords don't mutch"}
                     </Text>
                 </Pane>
             </Pane>
