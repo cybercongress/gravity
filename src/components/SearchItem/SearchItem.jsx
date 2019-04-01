@@ -15,12 +15,10 @@ export class SearchItem extends React.Component {
     }
 
     render() {
-        const { status, rank, rankGrade, onClick, children } = this.props;
-
-        const rankGradeValue = rankGrade.grade;
+        const { status, rank, grade, onClick, children } = this.props;
 
         let rankGradeColor = 'neutral';
-        switch (rankGradeValue) {
+        switch (grade.value) {
           case 1:
             rankGradeColor = 'red';
             break;
@@ -81,42 +79,44 @@ export class SearchItem extends React.Component {
           </Pane>
         );
 
+        const gradeTooltipContent = (
+          <Pane paddingX={ 18 } paddingY={ 18 }>
+            <Pane marginBottom={ 12 }>
+              <Text>Answer rank is {rank}</Text>
+            </Pane>
+            <Pane display='flex' marginBottom={ 12 }>
+              <Text>
+                Answers between	&nbsp;{grade.from}&nbsp; and &nbsp;{grade.to}&nbsp; recieve grade
+                <Pill
+                  paddingX={ 8 }
+                  paddingY={ 5 }
+                  width={ 23 }
+                  marginLeft={ 5 }
+                  display='inline-flex'
+                  alignItems='center'
+                  style={ { color: '#fff' } }
+                  color={ rankGradeColor }
+                  isSolid
+                >
+                  {grade.value}
+                </Pill>
+              </Text>
+            </Pane>
+            <Pane>
+              <Text>
+                More on{' '}
+                <Link textDecoration='none' color='green' cursor='pointer'>
+                  cyber•Rating
+                </Link>
+              </Text>
+            </Pane>
+          </Pane>
+        );
+
         const rankGradeWithTooltip = (
           <Tooltip
             appearance='card'
-            content={ (
-              <Pane paddingX={ 18 } paddingY={ 18 }>
-                <Pane marginBottom={ 12 }>
-                  <Text>Answer rank is {rank}</Text>
-                </Pane>
-                <Pane display='flex' marginBottom={ 12 }>
-                  <Text>
-                    Answers between {rankGrade.from} and {rankGrade.to} recieve grade
-                    <Pill
-                      paddingX={ 8 }
-                      paddingY={ 5 }
-                      width={ 23 }
-                      marginLeft={ 5 }
-                      display='inline-flex'
-                      alignItems='center'
-                      style={ { color: '#fff' } }
-                      color={ rankGradeColor }
-                      isSolid
-                    >
-                      {rankGradeValue}
-                    </Pill>
-                  </Text>
-                </Pane>
-                <Pane>
-                  <Text>
-                    More on{' '}
-                    <Link textDecoration='none' color='green' cursor='pointer'>
-                      cyber•Rating
-                    </Link>
-                  </Text>
-                </Pane>
-              </Pane>
-            ) }
+            content={ gradeTooltipContent }
           >
             <Pill
               paddingX={ 8 }
@@ -127,12 +127,12 @@ export class SearchItem extends React.Component {
               color={ rankGradeColor }
               isSolid
             >
-              {rankGradeValue}
+              {grade.value}
             </Pill>
           </Tooltip>
         );
 
-        const searchItem = (
+        const item = (
           <Pane
             boxShadow={ '0px 0px 0.4px 0px #dedede' }
             onMouseEnter={ () => this.handleHover() }
@@ -150,9 +150,7 @@ export class SearchItem extends React.Component {
           >
             {linkWithTooltip}
 
-            {status === 'success' && (
-              {rankGradeWithTooltip}
-            )}
+            {status === 'success' && rankGradeWithTooltip }
 
             {status === 'loading' && (
               <Spinner size={ 16 } />
@@ -163,12 +161,17 @@ export class SearchItem extends React.Component {
         return (
           <span>
             {status === 'success' ? (
-              <a href={`cyb://${children}`}>
-                {searchItem}
+              <a
+                style={{
+                  textDecoration: "none"
+                }}
+                href={`cyb://${children}`}
+              >
+                {item}
               </a>
-            ) : (
-              {searchItem}
-            )}
+            ) :
+              item
+            }
           </span>
         );
     }

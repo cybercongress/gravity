@@ -607,12 +607,19 @@ class App extends React.Component {
             PopupNotification,
         } = this.props;
 
+        const grade = {
+            from: 0.0001,
+            to: 0.1,
+            value: 4,
+        };
+
         const searchResults = links.slice(0, seeAll ? links.length : 10).map(
             link => (
                 <SearchItem
                   onClick={ e => this.openLink(e, link) }
                   hash={ link.hash }
                   rank={ link.rank }
+                  grade={ grade }
                   status={ link.status }
                 >
                     {link.content}
@@ -781,26 +788,26 @@ const links = [
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: 1,
-        status: 'remote',
+        status: 'success',
     },
     {
         content: 'test',
         hash: 'test',
         rank: '',
-        status: 'local',
+        status: 'loading',
     },
 
     {
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: '3',
-        status: 'local',
+        status: 'loading',
     },
     {
         content: 'test',
         hash: '45412',
         rank: '4',
-        status: 'fail',
+        status: 'failed',
     },
     {
         content: 'fotrty two',
@@ -811,32 +818,32 @@ const links = [
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: '6',
-        status: 'local',
+        status: 'loading',
     },
     {
         content: 'fotrty two',
         hash: '45412',
         rank: '1',
-        status: 'remote',
+        status: 'success',
     },
 
     {
         content: 'fotrty two',
         hash: '45412',
         rank: '7',
-        status: 'remote',
+        status: 'success',
     },
     {
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: '2',
-        status: 'local',
+        status: 'loading',
     },
     {
         content: '312',
         hash: '45412',
         rank: '4',
-        status: 'fail',
+        status: 'failed',
     },
     {
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
@@ -858,26 +865,26 @@ const links = [
         content: 'fotrty two',
         hash: '45412',
         rank: '1',
-        status: 'remote',
+        status: 'success',
     },
 
     {
         content: 'fotrty two',
         hash: '45412',
         rank: '7',
-        status: 'remote',
+        status: 'success',
     },
     {
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: '2',
-        status: 'local',
+        status: 'loading',
     },
     {
         content: '312',
         hash: '45412',
         rank: '4',
-        status: 'fail',
+        status: 'failed',
     },
     {
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
@@ -899,26 +906,26 @@ const links = [
         content: 'fotrty two',
         hash: '45412',
         rank: '1',
-        status: 'remote',
+        status: 'success',
     },
 
     {
         content: 'fotrty two',
         hash: '45412',
         rank: '7',
-        status: 'remote',
+        status: 'success',
     },
     {
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
         hash: '45412',
         rank: '2',
-        status: 'local',
+        status: 'loading',
     },
     {
         content: '312',
         hash: '45412',
         rank: '4',
-        status: 'fail',
+        status: 'failed',
     },
     {
         content: 'QmbdNXgajo4Hr1pgeWq55uqTnW1Qn13rsC8gConW4Xe1Do',
