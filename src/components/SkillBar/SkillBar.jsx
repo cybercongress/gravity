@@ -7,7 +7,7 @@ import {
 // import cx from 'classnames';
 
 export const SkillBar = ({
-    children, fontSize, value, ...props
+    children, fontSize, bwPercent, bwRemained, bwMaxValue, linkPrice, ...props
 }) => (
     <ToolTip
     top={35}
@@ -22,7 +22,7 @@ export const SkillBar = ({
             backgroundColor='#fff'
           >
               <Pane marginBottom={ 12 }>
-                  <Text size={ 300 }>You have 337 993 BP out of 789 877 BP.</Text>
+                  <Text size={ 300 }>You have {bwRemained} BP out of {bwMaxValue} BP.</Text>
               </Pane>
               <Pane marginBottom={ 12 }>
                   <Text size={ 300 }>
@@ -30,7 +30,7 @@ export const SkillBar = ({
                   </Text>
               </Pane>
               <Pane display='flex' marginBottom={ 12 }>
-                  <Text size={ 300 }>Current rate for 1 cyberlink is 400 BP.</Text>
+                  <Text size={ 300 }>Current rate for 1 cyberlink is {linkPrice} BP.</Text>
               </Pane>
               <Pane>
                   <Text size={ 300 }>
@@ -49,11 +49,11 @@ export const SkillBar = ({
           height={ 25 }
           width='100%'
           className={
-                value <= 25
+              bwPercent <= 25
                     ? styles.skillBarHoverRed
-                    : value < 50
+                    : bwPercent < 50
                     ? styles.skillBarHoverOrange
-                    : value < 76
+                    : bwPercent < 76
                     ? styles.skillBarHoverYellow
                     : styles.skillBarHoverGreen
             }
@@ -65,13 +65,13 @@ export const SkillBar = ({
               height='100%'
               borderRadius='inherit'
               style={ { transition: 'width .2s ease-in' } }
-              width={ `${value}%` }
+              width={ `${bwPercent}%` }
               backgroundColor={
-                    value <= 25
+                  bwPercent <= 25
                         ? '#d32f2f'
-                        : value < 50
+                        : bwPercent < 50
                         ? '#f57c00'
-                        : value < 76
+                        : bwPercent < 76
                         ? '#fbc02d'
                         : '#4caf50'
                 }
@@ -83,14 +83,14 @@ export const SkillBar = ({
                   height='100%'
                   position='absolute'
                   paddingX={ 20 }
-                  justifyContent={ value < 26 ? 'flex-end' : 'flex-start' }
+                  justifyContent={ bwPercent < 26 ? 'flex-end' : 'flex-start' }
                 >
                     <Text
                       fontSize={ fontSize || 18 }
                       fontWeight='bold'
-                      color={ value < 26 ? '#d32f2f' : '#ffffff' }
+                      color={ bwPercent < 26 ? '#d32f2f' : '#ffffff' }
                     >
-                        {`${value} %`}
+                        {`${bwPercent} %`}
                     </Text>
                 </Pane>
             </Pane>

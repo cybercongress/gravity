@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { 
+import {
     Card,
 } from 'evergreen-ui';
 
@@ -18,15 +18,15 @@ export class CardHover extends React.Component {
             seeAll: !this.state.seeAll,
         });
     };
-    
+
     render(){
         const {
             children,
-            indexV2,
         } = this.props;
+
         return(
             <Card
-                boxShadow={ this.state.hover ? '0 0 40px 2px #36d6ae' : indexV2 ? '0 0 10px 1px #36d6ae' : '' }
+                boxShadow={ this.state.hover ? '0 0 40px 2px #36d6ae' : '0 0 10px 1px #36d6ae' }
                 onMouseEnter={ () => this.handleHover() }
                 onMouseLeave={ () => this.handleHover() }
                 {...this.props}

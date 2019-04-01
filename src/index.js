@@ -2,6 +2,8 @@ import './index.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { Heading, Pane, Button, Text as TextEv } from 'evergreen-ui';
+
 import Title from './components/Title/Title';
 
 import {
@@ -77,7 +79,7 @@ import {
 } from './components/Checkbox/index';
 import {
     AddNewRecordButton,
-    Button,
+    Button as ButtonOld,
     FooterButton,
 } from './components/Button/button';
 import FormField from './components/FormField/FormFild';
@@ -236,12 +238,12 @@ import LoginContainer from './components/Application/LoginContainer/LoginContain
 
 import BrowserWindow, { BrowserContainer, Loading } from './components/BrowserWindow/BrowserWindow';
 
-import NotFoundPage from './components/NotFound/NotFound'; 
+import NotFoundPage from './components/NotFound/NotFound';
 
 import {
     SuccessfulLogin,
     FailLogin,
-    
+
     GCyb,
     BntGroup,
     PaneBalance,
@@ -301,7 +303,7 @@ export {
     Title,
     Badge,
     FooterButton,
-    Button,
+    ButtonOld,
     Container,
     Text,
     ActionLink,
@@ -420,7 +422,7 @@ export {
     LinkList, LinkItem,
     JsonView,
     ScrollContainer,
-    
+
     App, AppHeader, AppContent, AppSideBar,
 
     Navigation, NavigationLeft, NavigationRight, NavigationCenter,
@@ -513,4 +515,6 @@ export {
 
     CardHover,
     CardAccount,
+
+    Heading, Pane, Button, TextEv,
 };

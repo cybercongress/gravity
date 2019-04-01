@@ -15,186 +15,161 @@ export class SearchItem extends React.Component {
     }
 
     render() {
-        const { props } = this.props;
+        const { status, rank, rankGrade, onClick, children } = this.props;
+
+        const rankGradeValue = rankGrade.grade;
+
+        let rankGradeColor = 'neutral';
+        switch (rankGradeValue) {
+          case 1:
+            rankGradeColor = 'red';
+            break;
+          case 2:
+            rankGradeColor = 'orange';
+            break;
+          case 3:
+            rankGradeColor = 'yellow';
+            break;
+          case 4:
+            rankGradeColor = 'green';
+            break;
+          case 5:
+            rankGradeColor = 'teal';
+            break;
+          case 6:
+            rankGradeColor = 'blue';
+            break;
+          case 7:
+            rankGradeColor = 'purple';
+            break;
+          default:
+            rankGradeColor = 'neutral';
+            break;
+        }
+
+        const linkWithTooltip = (
+          <Pane display='flex' alignItems='center'>
+            <Tooltip
+              appearance='card'
+              content={ (
+                <Pane paddingX={ 18 } paddingY={ 18 }>
+                  <Pane display='flex' alignItems='center' marginBottom={ 10 }>
+                    <Text>
+                      {status === 'loading' && 'Receiving answer from IPFS'}
+                      {status === 'failed' && 'Can’t receive answer from IPFS'}
+                      {status === 'success' && 'Answer received from IPFS'}
+                    </Text>
+                  </Pane>
+                  <Pane>
+                    <Text>
+                      More on{' '}
+                      <Link textDecoration='none' color='green' cursor='pointer'>
+                        IPFS
+                      </Link>
+                    </Text>
+                  </Pane>
+                </Pane>
+              ) }
+            >
+              <Text
+                color={ this.state.hover ? '#979797' : '#000'}
+                size={ 400 }
+              >
+                {children}
+              </Text>
+            </Tooltip>
+          </Pane>
+        );
+
+        const rankGradeWithTooltip = (
+          <Tooltip
+            appearance='card'
+            content={ (
+              <Pane paddingX={ 18 } paddingY={ 18 }>
+                <Pane marginBottom={ 12 }>
+                  <Text>Answer rank is {rank}</Text>
+                </Pane>
+                <Pane display='flex' marginBottom={ 12 }>
+                  <Text>
+                    Answers between {rankGrade.from} and {rankGrade.to} recieve grade
+                    <Pill
+                      paddingX={ 8 }
+                      paddingY={ 5 }
+                      width={ 23 }
+                      marginLeft={ 5 }
+                      display='inline-flex'
+                      alignItems='center'
+                      style={ { color: '#fff' } }
+                      color={ rankGradeColor }
+                      isSolid
+                    >
+                      {rankGradeValue}
+                    </Pill>
+                  </Text>
+                </Pane>
+                <Pane>
+                  <Text>
+                    More on{' '}
+                    <Link textDecoration='none' color='green' cursor='pointer'>
+                      cyber•Rating
+                    </Link>
+                  </Text>
+                </Pane>
+              </Pane>
+            ) }
+          >
+            <Pill
+              paddingX={ 8 }
+              paddingY={ 5 }
+              display='flex'
+              alignItems='center'
+              style={ { color: '#fff' } }
+              color={ rankGradeColor }
+              isSolid
+            >
+              {rankGradeValue}
+            </Pill>
+          </Tooltip>
+        );
+
+        const searchItem = (
+          <Pane
+            boxShadow={ '0px 0px 0.4px 0px #dedede' }
+            onMouseEnter={ () => this.handleHover() }
+            onMouseLeave={ () => this.handleHover() }
+            paddingLeft={ 20 }
+            paddingRight={ 10 }
+            paddingY={ 12 }
+            display='flex'
+            justifyContent='space-between'
+            key={ this.props.hash }
+            backgroundColor={'#fff'}
+            borderRadius={ 5 }
+            marginBottom={ 10 }
+            onClick={ onClick }
+          >
+            {linkWithTooltip}
+
+            {status === 'success' && (
+              {rankGradeWithTooltip}
+            )}
+
+            {status === 'loading' && (
+              <Spinner size={ 16 } />
+            )}
+          </Pane>
+        );
 
         return (
-            <Pane
-            //   elevation={ this.state.hover ? 3 : 0 }
-              boxShadow={ '0px 0px 0.4px 0px #dedede' }
-              onMouseEnter={ () => this.handleHover() }
-              onMouseLeave={ () => this.handleHover() }
-              paddingLeft={ 20 }
-              paddingRight={ 10 }
-              paddingY={ 12 }
-              display='flex'
-              justifyContent='space-between'
-              key={ this.props.hash }
-              backgroundColor={'#fff'}
-              borderRadius={ 5 }
-              marginBottom={ 10 }
-                // className={ styles.searchItem }
-            >
-                <Pane display='flex' alignItems='center'>
-                    <Tooltip
-                      content={ (
-                          <Pane paddingX={ 18 } paddingY={ 18 }>
-                              <Pane display='flex' alignItems='center' marginBottom={ 10 }>
-                                  {/* <Pill
-                                    height={ 6 }
-                                    width={ 6 }
-                                    borderRadius='50%'
-                                    marginRight={ 5 }
-                                    paddingX={ 0 }
-                                    isSolid
-                                    color={
-                                            this.props.status == 'local'
-                                                ? 'green'
-                                                : this.props.status == 'fail'
-                                                ? 'red'
-                                                : 'yellow'
-                                        }
-                                  /> */}
-                                  <Text>answer recieved from IPFS</Text>
-                              </Pane>
-                              {this.props.status != 'fail' && (
-                              <Pane marginBottom={ 10 }>
-                                  <Text>
-                                      {this.props.status == 'local'
-                                                ? 'File size:'
-                                                : 'Dowloaded:'}
-                                      {' '}
-                                            163 kB
-                                  </Text>
-                              </Pane>
-                                )}
-
-                              <Pane>
-                                  <Text>
-                                        More on
-                                      {' '}
-                                      <Link textDecoration='none' color='green' cursor='pointer'>
-                                            IPFS
-                                      </Link>
-                                  </Text>
-                              </Pane>
-                          </Pane>
-) }
-                      appearance='card'
-                    >
-                        {/* <Pill
-                          height={ 6 }
-                          width={ 6 }
-                          borderRadius='50%'
-                          marginRight={ 16 }
-                          paddingX={ 0 }
-                          isSolid
-                          color={
-                                this.props.status == 'local'
-                                    ? 'green'
-                                    : this.props.status == 'fail'
-                                    ? 'red'
-                                    : 'yellow'
-                            }
-                        /> */}
-                    
-                    <Text
-                        // style={ { textDecoration: 'none' } }
-                      color={ this.state.hover ? '#979797' : '#000'}
-                      size={ 400 }
-                        // href={ `cyb://${children}` }
-                    >
-                        {this.props.children}
-                    </Text>
-                    </Tooltip>
-                </Pane>
-                {this.props.rank != '' && (
-                    <Tooltip
-                      appearance='card'
-                      content={ (
-                          <Pane paddingX={ 18 } paddingY={ 18 }>
-                              <Pane marginBottom={ 12 }>
-                                  <Text>Answer rank is 2 007 177 CYBER</Text>
-                              </Pane>
-                              <Pane display='flex' marginBottom={ 12 }>
-                                  <Text>
-                                        Answers between 1 GCYBER and 200 GCYBER recieve grade
-                                      <Pill
-                                        paddingX={ 8 }
-                                        paddingY={ 5 }
-                                        width={ 23 }
-                                        marginLeft={ 5 }
-                                        display='inline-flex'
-                                        alignItems='center'
-                                            //   height={16}
-                                        style={ { color: '#fff' } }
-                                        color={
-                                                this.props.rank == 1
-                                                    ? 'red'
-                                                    : this.props.rank == 2
-                                                    ? 'orange'
-                                                    : this.props.rank == 3
-                                                    ? 'yellow'
-                                                    : this.props.rank == 4
-                                                    ? 'green'
-                                                    : this.props.rank == 5
-                                                    ? 'teal'
-                                                    : this.props.rank == 6
-                                                    ? 'blue'
-                                                    : this.props.rank == 7
-                                                    ? 'purple'
-                                                    : 'neutral'
-                                            }
-                                        isSolid
-                                      >
-                                          {this.props.rank}
-                                      </Pill>
-                                  </Text>
-                              </Pane>
-                              <Pane>
-                                  <Text>
-                                        More on
-                                      {' '}
-                                      <Link textDecoration='none' color='green' cursor='pointer'>
-                                            cyber•Rating
-                                      </Link>
-                                  </Text>
-                              </Pane>
-                          </Pane>
-) }
-                    >
-                        <Pill
-                          paddingX={ 8 }
-                          paddingY={ 5 }
-                          display='flex'
-                          alignItems='center'
-                            //   width={ 23 }
-                            //   height={16}
-                          style={ { color: '#fff' } }
-                          color={
-                                this.props.rank == 1
-                                    ? 'red'
-                                    : this.props.rank == 2
-                                    ? 'orange'
-                                    : this.props.rank == 3
-                                    ? 'yellow'
-                                    : this.props.rank == 4
-                                    ? 'green'
-                                    : this.props.rank == 5
-                                    ? 'teal'
-                                    : this.props.rank == 6
-                                    ? 'blue'
-                                    : this.props.rank == 7
-                                    ? 'purple'
-                                    : 'neutral'
-                            }
-                          isSolid
-                        >
-                            {this.props.rank}
-                        </Pill>
-                    </Tooltip>
-                )}
-                {this.props.rank == '' && <Spinner size={ 16 } />}
-            </Pane>
+          <span>
+            {status === 'success' ? (
+              <a href={`cyb://${children}`}>
+                {searchItem}
+              </a>
+            ) : (
+              {searchItem}
+            )}
+          </span>
         );
     }
 }

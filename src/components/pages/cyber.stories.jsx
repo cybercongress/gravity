@@ -635,7 +635,7 @@ class App extends React.Component {
                                     The answer for 42 is
                                 </Heading>
                                 <Pane>{searchResults}</Pane>
-                                {links.length > 10 && (
+                  !              {links.length > 10 && (
                                     <Pane display='flex' justifyContent='center'>
                                         <Button
                                             //   appearance="primary"
