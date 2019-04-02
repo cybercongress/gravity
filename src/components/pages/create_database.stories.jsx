@@ -191,7 +191,7 @@ const Pages = ({
     </ScrollContainer>
 );
 
-storiesOf('pages/create_database', module)
+storiesOf('chaingear/create_database', module)
     .add('create_db', () => (
         <Application>
             <Pages />

@@ -152,7 +152,7 @@ const Pages = ({
     </ScrollContainer>
 );
 
-storiesOf('pages/create_shema', module)
+storiesOf('chaingear/create_shema', module)
     .add('index', () => (
         <Application>
             <Pages />

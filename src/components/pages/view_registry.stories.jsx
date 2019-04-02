@@ -479,7 +479,7 @@ const PagesViewRegistry = ({ showTable, disabled }) => (
     </ScrollContainer>
 );
 
-storiesOf('pages/view_registry', module)
+storiesOf('chaingear/view_registry', module)
     .add('registry', () => (
         <Application>
             <PagesViewRegistry />
