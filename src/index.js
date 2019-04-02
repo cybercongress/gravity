@@ -2,7 +2,7 @@ import './index.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { Heading, Pane, Button, Text as TextEv } from 'evergreen-ui';
+import { Heading, Pane, Button, Text as TextEv, TextInput } from 'evergreen-ui';
 
 import Title from './components/Title/Title';
 
@@ -516,5 +516,5 @@ export {
     CardHover,
     CardAccount,
 
-    Heading, Pane, Button, TextEv,
+    Heading, Pane, Button, TextEv, TextInput,
 };
