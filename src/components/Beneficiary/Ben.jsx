@@ -47,7 +47,7 @@ export class BenPieChart extends React.Component {
         };
 
         return <div className={styles.benPieChart}>
-            <Doughnut data={chartData} options={options} />
+            <Doughnut data={chartData} width={150} options={options} />
                 <BenList>
                     {
                         bens.map((ben, index) => (

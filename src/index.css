@@ -358,3 +358,7 @@ input:focus{
     background: transparent !important;
     box-shadow: none !important;
 }
+
+.color-white-svg svg {
+    fill: #ffffffe1 !important;
+}
