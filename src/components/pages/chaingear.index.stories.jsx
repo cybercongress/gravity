@@ -64,7 +64,7 @@ class CybCard extends Component {
               borderRadius='50%'
               boxShadow='0 2px 25px 1px #3ab793'
               marginBottom={ 0 }
-              className='oval'
+              className='oval-chaingear'
             >
                 <Pane
                   style={ {
@@ -72,7 +72,7 @@ class CybCard extends Component {
                         transform: 'rotate(25deg)',
                     } }
                   width={ 16.6 }
-                  height={ 9.4 }
+                  height={ 10 }
                   borderRadius='50%'
                   className='oval-children'
                 />
@@ -82,7 +82,7 @@ class CybCard extends Component {
                         transform: 'rotate(-25deg)',
                     } }
                   width={ 16.6 }
-                  height={ 9.4 }
+                  height={ 10 }
                   borderRadius='50%'
                   className='oval-children'
                 />
@@ -92,8 +92,10 @@ class CybCard extends Component {
         return (
             <Pane
               { ...this.props }
-              width={ 210 }
-              height={ 267 }
+              width='25vw'
+              height='35vh'
+              maxWidth={ 210 }
+              maxHeight={ 267 }
               boxShadow={ this.state.hover ? '0 0 20px 0px #36d6ae' : '0' }
               onMouseEnter={ () => this.handleHover() }
               onMouseLeave={ () => this.handleHover() }
@@ -106,6 +108,7 @@ class CybCard extends Component {
               alignItems='center'
               justifyContent='center'
               flexShrink={ 0 }
+              boxSizing='border-box'
               className='active-slide-card-chaingear'
             >
                 <Pane
@@ -115,7 +118,8 @@ class CybCard extends Component {
                   flexDirection='column'
                 >
                     <Heading
-                      fontSize='29px'
+                    //   fontSize='29px'
+                      fontSize='4vh'
                       color='#757575'
                       marginBottom={ 45 }
                       className='active-slide-heading'
@@ -258,9 +262,9 @@ const Statistics = () => (
 
 const Settings = () => (
     <ScrollContainer>
-        <MainContainer style={ { paddingBottom: 80, paddingTop: 40 } }>
+        <MainContainer style={ { paddingBottom: 80, paddingTop: 40, maxWidth: 1000, width: 'auto' } }>
             <Pane display='flex' justifyContent='center' marginBottom={ 20 }>
-                <Heading fontSize='29px' color='#fff'>
+                <Heading fontSize='3.5vh' color='#fff'>
                     The consensus computer driven database framework
                 </Heading>
             </Pane>
