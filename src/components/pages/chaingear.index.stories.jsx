@@ -119,7 +119,7 @@ class CybCard extends Component {
                 >
                     <Heading
                     //   fontSize='29px'
-                      fontSize='4vh'
+                      fontSize='3vh'
                       color='#757575'
                       marginBottom={ 45 }
                       className='active-slide-heading'
@@ -264,7 +264,7 @@ const Settings = () => (
     <ScrollContainer>
         <MainContainer style={ { paddingBottom: 80, paddingTop: 40, maxWidth: 1000, width: 'auto' } }>
             <Pane display='flex' justifyContent='center' marginBottom={ 20 }>
-                <Heading fontSize='3.5vh' color='#fff'>
+                <Heading fontSize='2em' color='#fff' lineHeight={1} textAlign='center'>
                     The consensus computer driven database framework
                 </Heading>
             </Pane>

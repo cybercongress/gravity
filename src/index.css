@@ -138,11 +138,14 @@
         width: 16vw;
         height: 16vw;
         opacity: 1;
-        margin-bottom: 4vh;
+        margin-bottom: 2rem;
     }
     .slick-center .oval-children{
         width: 5vw;
         height: 3vw;
+    }
+    .slick-center .active-slide-heading{
+        margin-bottom: 2rem;
     }
   }
 
