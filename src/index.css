@@ -147,6 +147,7 @@
     .slick-center .active-slide-heading{
         margin-bottom: 2rem;
     }
+    .text-menuButton{ display: none;}
   }
 
 /* table validators */

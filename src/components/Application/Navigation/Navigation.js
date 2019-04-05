@@ -44,7 +44,7 @@ export const MenuButton = ({ ...props }) => (
         <Pane width={32} height={32} marginRight={10}>
             <img className={styles.imgCyb} src={imgCyb} />
         </Pane>
-        <Text fontSize='16px' color='#ffffff'>My cyb</Text>
+        <Text fontSize='16px' className='text-menuButton' color='#ffffff'>My cyb</Text>
     </Pane>
 );
 
