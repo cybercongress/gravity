@@ -20,7 +20,7 @@ function formatDate() {
     return '20/11/2018 03:01';
 }
 
-storiesOf('pages/home', module)
+storiesOf('chaingear/home', module)
     .add('not items', () => {
         const registries = [
             // {
