@@ -58,14 +58,14 @@ export class SearchItem extends React.Component {
                       {status === 'success' && 'Answer received from IPFS'}
                     </Text>
                   </Pane>
-                  <Pane>
+{/*                  <Pane>
                     <Text>
                       More on{' '}
                       <Link textDecoration='none' color='green' cursor='pointer'>
                         IPFS
                       </Link>
                     </Text>
-                  </Pane>
+                  </Pane>*/}
                 </Pane>
               ) }
             >
@@ -102,14 +102,14 @@ export class SearchItem extends React.Component {
                 </Pill>
               </Text>
             </Pane>
-            <Pane>
+{/*            <Pane>
               <Text>
                 More on{' '}
                 <Link textDecoration='none' color='green' cursor='pointer'>
                   cyber•Rating
                 </Link>
               </Text>
-            </Pane>
+            </Pane>*/}
           </Pane>
         );
 

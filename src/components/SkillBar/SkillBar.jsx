@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Pane, Text, Link } from 'evergreen-ui';
+import { Pane, Text, Link, Tooltip } from "evergreen-ui";
 import styles from './SkillBar.less';
 import {
     ToolTip
@@ -10,15 +10,14 @@ export const SkillBar = ({
     children, fontSize, bwPercent, bwRemained, bwMaxValue, linkPrice, ...props
 }) => (
     <ToolTip
-    top={35}
-    right={0}
+      appearance='card'
+      top={ 30 }
       content={ (
           <Pane
             minWidth={ 200 }
-
-                // position='absolute'
             paddingX={ 18 }
             paddingY={ 14 }
+            borderRadius={ 4 }
             backgroundColor='#fff'
           >
               <Pane marginBottom={ 12 }>
@@ -32,17 +31,16 @@ export const SkillBar = ({
               <Pane display='flex' marginBottom={ 12 }>
                   <Text size={ 300 }>Current rate for 1 cyberlink is {linkPrice} BP.</Text>
               </Pane>
-              <Pane>
+{/*              <Pane>
                   <Text size={ 300 }>
-                        More on
-                      {' '}
+                        More on{' '}
                       <Link textDecoration='none' color='green' cursor='pointer'>
                             Bandwidth
                       </Link>
                   </Text>
-              </Pane>
+              </Pane>*/}
           </Pane>
-) }
+      ) }
     >
         <Pane
           { ...props }
