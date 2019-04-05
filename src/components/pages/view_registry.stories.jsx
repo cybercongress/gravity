@@ -1,46 +1,47 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-    Pane, Card, Text, Menu, Popover, Button, IconButton, Pill,
+    Pane, Text, Menu, Popover, Button, IconButton, Pill, Table, TextInput,
 } from 'evergreen-ui';
 import {
     LinkHash,
     MainContainer,
     //  Section,
-    SectionContent,
-    CentredPanel,
-    FlexContainerLeft,
-    FlexContainerRight,
-    FlexContainer,
-    DbMenu,
-    MenuPopup,
-    MenuPopupItem,
-    MenuSeparator,
-    MenuPopupDeleteIcon,
-    MenuPopupTransferIcon,
-    MenuPopupAccountIcon,
-    MenuPopupEditIcon,
+    // SectionContent,
+    // CentredPanel,
+    // FlexContainerLeft,
+    // FlexContainerRight,
+    // FlexContainer,
+    // DbMenu,
+    // MenuPopup,
+    // MenuPopupItem,
+    // MenuSeparator,
+    // MenuPopupDeleteIcon,
+    // MenuPopupTransferIcon,
+    // MenuPopupAccountIcon,
+    // MenuPopupEditIcon,
     BenContainer,
     BenPieChart,
-    MenuPopupResumeIcon,
-    MenuPopupPauseIcon,
-    ProgressBar,
-    CircleLable,
-    PageTitle,
-    AddNewRecordButton,
+    // MenuPopupResumeIcon,
+    // MenuPopupPauseIcon,
+    // ProgressBar,
+    // CircleLable,
+    // PageTitle,
+    // AddNewRecordButton,
     FormField,
-    TableRecords,
+    // TableRecords,
     // Button,
     calculateBensShares,
     InfoButton,
     DatabaseItemsContainer,
-    DbMenuPoints,
+    // DbMenuPoints,
     // Text,
     Select,
-    PopupBarFooter,
-    PopupBar,
+    // PopupBarFooter,
+    // PopupBar,
     ScrollContainer,
     CardHover,
+    Avatar,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -98,6 +99,41 @@ const databaseSymbol = 'appstore';
 const isSchemaExist = false;
 const canCreate = true;
 
+const databases = [
+    {
+        name: 'database_1',
+        funded: '5',
+        developer: 'Cybercongress',
+        version: 'v1',
+        date: '12/12/2010 4:26:20',
+        hash: '0x885dD5291406D081c9900916E1ACdb070d5b4DD5',
+    },
+    {
+        name: 'database_2',
+        funded: '5',
+        developer: 'Cybercongress',
+        version: 'v1',
+        date: '12/12/2010 4:26:20',
+        hash: '0x885dD5291406D081c9900916E1ACdb070d5b4DD5',
+    },
+    {
+        name: 'database_1',
+        funded: '5',
+        developer: 'Cybercongress',
+        version: 'v1',
+        date: '12/12/2010 4:26:20',
+        hash: '0x885dD5291406D081c9900916E1ACdb070d5b4DD5',
+    },
+    {
+        name: 'database_1',
+        funded: '5',
+        developer: 'Cybercongress',
+        version: 'v1',
+        date: '12/12/2010 4:26:20',
+        hash: '0x885dD5291406D081c9900916E1ACdb070d5b4DD5',
+    },
+];
+
 const CardGeneral = ({ value, title }) => (
     <CardHover
       flex={ 1 }
@@ -130,8 +166,63 @@ const Section = ({ title, children, ...props }) => (
     </Pane>
 );
 
-const PagesViewRegistry = ({ showTable, disabled, isDbPaused }) => (
-    <ScrollContainer>
+
+class PagesViewRegistry extends Component {
+    renderRowMenu = () => {
+        return (
+          <Menu>
+            <Menu.Group>
+                <Menu.Item icon='people'>Transfer Ownership</Menu.Item>
+            </Menu.Group>
+            <Menu.Divider />
+            <Menu.Group>
+                <Menu.Item icon='exchange'>Fund Registry</Menu.Item>
+                <Menu.Item icon='exchange'>Claim Fee</Menu.Item>
+            </Menu.Group>
+            <Menu.Divider />
+            <Menu.Group>
+                <Menu.Item icon='edit'>Edit Record</Menu.Item>
+                <Menu.Item icon='trash'>Delete Record </Menu.Item>
+            </Menu.Group>
+          </Menu>
+        )
+      }
+    renderItem = (item, index ) => {
+        const {
+            hash, name, funded, developer, version,
+        } = item;
+    
+        return (
+            <Table.Row isSelectable key={ name } width='fit-content' position='relative'>
+                <Table.TextCell width={48} flex='none'>{index}</Table.TextCell>
+                <Table.TextCell flex='none' width={150}>{name}</Table.TextCell>
+                <Table.TextCell flex='none' width={150}>
+                    <LinkHash value={hash} />
+                </Table.TextCell>
+                <Table.TextCell flex='none' width={150}>{developer}</Table.TextCell>
+                <Table.TextCell flex='none' width={150}>{version}</Table.TextCell>
+                <Table.TextCell flex='none' width={150}>{funded} ETH</Table.TextCell>
+                <Table.TextCell flex='none' width={150}>
+                    <Avatar style={{ height: 25, width: 25 }} hash={hash} />
+                </Table.TextCell>
+
+                <Table.TextCell flex='none' width={150}>{funded} ETH</Table.TextCell>
+                
+                <Table.Cell position='sticky' right={0} backgroundColor='#fff' flexBasis='auto' width={48} flex="none">
+                    <Popover
+                        content={this.renderRowMenu}
+                        position='top'
+                    >
+                        <IconButton icon="more" height={24} appearance="minimal" />
+                    </Popover>
+                </Table.Cell>
+            </Table.Row>
+        );
+    };
+    render(){
+        const { showTable, disabled, isDbPaused, databasesItem } = this.props;
+        return(
+            <ScrollContainer>
         <MainContainer>
             <Section>
                 <div style={ { marginLeft: '15px' } }>
@@ -259,7 +350,7 @@ const PagesViewRegistry = ({ showTable, disabled, isDbPaused }) => (
                                     })}
                                 </Select>
                             </FormField>
-                            <FormField label='Entries' value='{rows.length}' />
+                            <FormField label='developer' value='{rows.length}' />
                             <FormField label='Version' value='{contractVersion}' />
                             <FormField
                               label='Database address'
@@ -313,251 +404,253 @@ const PagesViewRegistry = ({ showTable, disabled, isDbPaused }) => (
             </Section>
             {!showTable && (
                 <div>
-                    <FlexContainer line>
-                        <FlexContainerLeft>RECORDS</FlexContainerLeft>
+                    <Section title='Records'>
+                         <DatabaseItemsContainer disabled={ disabled }>
+                     <Table>
+                         
+                         <Table.Body style={ { overflowY: 'hidden'}}>
+                         <Table.Row width='fit-content'>
+                            <Table.TextCell width={48} flex='none'>ID</Table.TextCell>
+                            <Table.TextCell flex='none' width={150}>Name</Table.TextCell>
+                            <Table.TextCell flex='none' width={150}>Address</Table.TextCell>
+                            <Table.TextCell flex='none' width={150}>Developer</Table.TextCell>
+                            <Table.TextCell flex='none' width={150}>Version</Table.TextCell>
+                            <Table.TextCell flex='none' width={150}>Funded</Table.TextCell>
+                            <Table.TextCell flex='none' width={150}>Owner</Table.TextCell>
 
-                        <FlexContainerRight>
-                            <AddNewRecordButton>Add New Record</AddNewRecordButton>
-                        </FlexContainerRight>
-                    </FlexContainer>
-                    <DatabaseItemsContainer disabled={ disabled }>
-                        <TableRecords>
-                            <thead>
-                                <tr>
-                                    <th>Action</th>
-                                    <th>
-                                        <DbMenuPoints>
-                                            <MenuPopup>
-                                                <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
-                                                    Transfer Ownership
-                                                </MenuPopupItem>
-                                                <MenuSeparator />
-                                                <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
-                                                    Fund Registry
-                                                </MenuPopupItem>
-                                                <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
-                                                    Claim Funds
-                                                </MenuPopupItem>
-                                                <MenuSeparator />
-                                                <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
-                                                    Delete Registry
-                                                </MenuPopupItem>
-                                                <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
-                                                    Delete Registry
-                                                </MenuPopupItem>
-                                            </MenuPopup>
-                                        </DbMenuPoints>
-                                    </th>
-                                    <th>
-                                        <DbMenuPoints>
-                                            <MenuPopup>
-                                                <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
-                                                    Transfer Ownership
-                                                </MenuPopupItem>
-                                                <MenuSeparator />
-                                                <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
-                                                    Fund Registry
-                                                </MenuPopupItem>
-                                                <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
-                                                    Claim Funds
-                                                </MenuPopupItem>
-                                                <MenuSeparator />
-                                                <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
-                                                    Delete Registry
-                                                </MenuPopupItem>
-                                                <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
-                                                    Delete Registry
-                                                </MenuPopupItem>
-                                            </MenuPopup>
-                                        </DbMenuPoints>
-                                    </th>
-                                    <th>
-                                        <DbMenuPoints>
-                                            <MenuPopup>
-                                                <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
-                                                    Transfer Ownership
-                                                </MenuPopupItem>
-                                                <MenuSeparator />
-                                                <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
-                                                    Fund Registry
-                                                </MenuPopupItem>
-                                                <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
-                                                    Claim Funds
-                                                </MenuPopupItem>
-                                                <MenuSeparator />
-                                                <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
-                                                    Delete Registry
-                                                </MenuPopupItem>
-                                                <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
-                                                    Delete Registry
-                                                </MenuPopupItem>
-                                            </MenuPopup>
-                                        </DbMenuPoints>
-                                    </th>
-                                    <th>
-                                        <DbMenuPoints>
-                                            <MenuPopup>
-                                                <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>
-                                                    Transfer Ownership
-                                                </MenuPopupItem>
-                                                <MenuSeparator />
-                                                <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
-                                                    Fund Registry
-                                                </MenuPopupItem>
-                                                <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>
-                                                    Claim Funds
-                                                </MenuPopupItem>
-                                                <MenuSeparator />
-                                                <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }>
-                                                    Delete Registry
-                                                </MenuPopupItem>
-                                                <MenuPopupItem icon={ <MenuPopupEditIcon /> }>
-                                                    Delete Registry
-                                                </MenuPopupItem>
-                                            </MenuPopup>
-                                        </DbMenuPoints>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>1</th>
-                                    <th>2</th>
-                                    <th>3</th>
-                                    <th>4</th>
-                                </tr>
-                                <tr>
-                                    <th>Funded</th>
-                                    <th>3 ETH</th>
-                                    <th>3 ETH</th>
-                                    <th>3 ETH</th>
-                                    <th>3 ETH</th>
-                                </tr>
-                                <tr>
-                                    <th>Owner</th>
-                                    <th>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </th>
-                                    <th>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </th>
-                                    <th>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </th>
-                                    <th>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Wallet</td>
-                                    <td>Chaingear</td>
-                                    <td>Dragons</td>
-                                    <td>ContractDeveloper</td>
-                                </tr>
-                                <tr>
-                                    <td>Address</td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Developer</td>
-                                    <td>Congress</td>
-                                    <td>Congress</td>
-                                    <td>Dragonereum</td>
-                                    <td>ParityTech</td>
-                                </tr>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Wallet</td>
-                                    <td>Chaingear</td>
-                                    <td>Dragons</td>
-                                    <td>ContractDeveloper</td>
-                                </tr>
-                                <tr>
-                                    <td>Address</td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Developer</td>
-                                    <td>Congress</td>
-                                    <td>Congress</td>
-                                    <td>Dragonereum</td>
-                                    <td>ParityTech</td>
-                                </tr>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Wallet</td>
-                                    <td>Chaingear</td>
-                                    <td>Dragons</td>
-                                    <td>ContractDeveloper</td>
-                                </tr>
-                                <tr>
-                                    <td>Address</td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                    <td>
-                                        <LinkHash value='0x727b557aeec8203A8e0f3f43FD30885d94399010' />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Developer</td>
-                                    <td>Congress</td>
-                                    <td>Congress</td>
-                                    <td>Dragonereum</td>
-                                    <td>ParityTech</td>
-                                </tr>
-                            </tbody>
-                        </TableRecords>
+                            <Table.TextCell flex='none' width={150}>Funded</Table.TextCell>
+
+                            <Table.TextCell position='sticky' right={0} backgroundColor='#fff' width={48} flex="none"></Table.TextCell>
+                         </Table.Row>
+                            {databasesItem.map(this.renderItem)}
+                         </Table.Body>
+                     </Table>
                     </DatabaseItemsContainer>
+                    </Section>
+                   
                 </div>
             )}
         </MainContainer>
     </ScrollContainer>
-);
+        );
+    }
+}
+
+
+class FooterCyb extends Component{
+    render(){
+    const { transfer, fundDatabase, claimfunds, update } = this.props
+    
+    const updateFooter = (
+        <Pane
+        width='100%'
+        display='flex'
+        alignItems='center'
+        justifyContent='center'
+    >
+                 <TextInput
+                    height={ 42 }
+                    width='40%'
+                    // ref='cidToInput'
+                    marginRight={ 15 }
+                    fontSize='18px'
+                    placeholder='Name'
+                    textAlign='left'
+                    backgroundColor='transparent'
+                    outline='0'
+                    outlineOffset='0'
+                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                />
+                <TextInput
+                    height={ 42 }
+                    width='40%'
+                    // ref='cidToInput'
+                    marginRight={ 15 }
+                    fontSize='18px'
+                    placeholder='Name'
+                    textAlign='left'
+                    backgroundColor='transparent'
+                    outline='0'
+                    outlineOffset='0'
+                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                />
+                <TextInput
+                    height={ 42 }
+                    width='40%'
+                    // ref='cidToInput'
+                    marginRight={ 15 }
+                    fontSize='18px'
+                    placeholder='Name'
+                    textAlign='left'
+                    backgroundColor='transparent'
+                    outline='0'
+                    outlineOffset='0'
+                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                />
+                <TextInput
+                    height={ 42 }
+                    width='40%'
+                    // ref='cidToInput'
+                    marginRight={ 15 }
+                    fontSize='18px'
+                    placeholder='Name'
+                    textAlign='left'
+                    backgroundColor='transparent'
+                    outline='0'
+                    outlineOffset='0'
+                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                />
+                <TextInput
+                    height={ 42 }
+                    width='40%'
+                    // ref='cidToInput'
+                    marginRight={ 15 }
+                    fontSize='18px'
+                    placeholder='Name'
+                    textAlign='left'
+                    backgroundColor='transparent'
+                    outline='0'
+                    outlineOffset='0'
+                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                />
+                <Button paddingX={ 50 } height={ 42 } className='btn'>
+                    Update
+                </Button>
+                </Pane>
+    );
+    const transferFooter = (
+        <Pane
+            width='100%'
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
+        >
+         <TextInput
+            height={ 42 }
+            width='40%'
+            // ref='cidToInput'
+            marginRight={ 15 }
+            fontSize='18px'
+            placeholder='New owner address'
+            textAlign='left'
+            backgroundColor='transparent'
+            outline='0'
+            outlineOffset='0'
+            style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+        />
+        <Button paddingX={ 50 } height={ 42 } className='btn'>
+            Transfer
+        </Button>
+        </Pane>
+    );
+    const fundDatabaseFooter = (
+        <Pane
+            width='100%'
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
+        >
+         <TextInput
+            height={ 42 }
+            width='40%'
+            // ref='cidToInput'
+            marginRight={ 15 }
+            fontSize='18px'
+            placeholder='ETH'
+            textAlign='left'
+            backgroundColor='transparent'
+            outline='0'
+            outlineOffset='0'
+            style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+        />
+        <Button paddingX={ 50 } height={ 42 } className='btn'>
+            Fund database
+        </Button>
+        </Pane>
+        );
+
+        const claimfundsFooter = (
+            <Pane
+            width='100%'
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
+        >
+         <TextInput
+            height={ 42 }
+            width='40%'
+            // ref='cidToInput'
+            marginRight={ 15 }
+            fontSize='18px'
+            placeholder='ETH'
+            textAlign='left'
+            backgroundColor='transparent'
+            outline='0'
+            outlineOffset='0'
+            style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+        />
+        <Button paddingX={ 50 } height={ 42 } className='btn'>
+            Claim funds
+        </Button>
+        </Pane>
+        );
+    return(
+    <Pane
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      width='100%'
+      position='absolute'
+      bottom={ 0 }
+      paddingY={ 20 }
+      backgroundColor='#000000'
+      zIndex={ 2 }
+    >
+        <Pane
+          flexGrow={ 1 }
+          maxWidth={ 1000 }
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          flexDirection='row'
+        >
+            {
+                transfer ? (transferFooter)
+                : fundDatabase 
+                ? (fundDatabaseFooter)
+                : claimfunds 
+                ? (claimfundsFooter)
+                : update 
+                ? (updateFooter) 
+                : (
+                    <Button paddingX={ 50 } height={ 42 } className='btn'>
+                        Add record
+                    </Button>
+                )
+            }
+        </Pane>
+    </Pane>
+    );
+}
+}
+
 
 storiesOf('chaingear/view_registry', module)
     .add('registry', () => (
         <Application>
-            <PagesViewRegistry />
+            <PagesViewRegistry databasesItem={ databases } />
+            <FooterCyb update/>
         </Application>
     ))
     .add('registry_disabled_table', () => (
         <Application>
-            <PagesViewRegistry disabled isDbPaused />
+            <PagesViewRegistry disabled isDbPaused databasesItem={ databases } />
+            <FooterCyb />
         </Application>
     ))
     .add('registry_no_table', () => (
         <Application>
             <PagesViewRegistry showTable='1' />
+            <FooterCyb />
         </Application>
     ));
