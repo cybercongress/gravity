@@ -12,10 +12,7 @@ import {
     IconButton,
 } from 'evergreen-ui';
 import {
-    MainContainer,
-    Code,
-    Message,
-    ScrollContainer,
+    MainContainer, Code, Message, ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -67,24 +64,19 @@ const Section = ({ title, children, ...props }) => (
 
 class Pages extends React.Component {
     state = {
-        showInput: true,
-        showOutput: false,
+        tab: 'input',
     };
 
-    showInput = () => {
-        this.setState({ showInput: true });
-        this.setState({ showOutput: false });
-    };
-
-    showOutput = () => {
-        this.setState({ showInput: false });
-        this.setState({ showOutput: true });
+    select = (tab) => {
+        this.setState({ tab });
     };
 
     render() {
-        const {
-           message, beneficiariesItem,
-        } = this.props;
+        const { message, beneficiariesItem } = this.props;
+
+        const { tab } = this.state;
+
+        let content;
 
         const beneficiariesRows = beneficiariesItem.map(item => (
             <Table.Row
@@ -106,6 +98,123 @@ class Pages extends React.Component {
                 </Table.TextCell>
             </Table.Row>
         ));
+        const TabInput = () => (
+            <Pane>
+                <Section title='General database parameters'>
+                    <Pane
+                      backgroundColor='#fff'
+                      display='grid'
+                      gridTemplateColumns='1fr 1fr'
+                      gridGap={ 30 }
+                      paddingX='2rem'
+                      paddingY='2rem'
+                      borderRadius={ 5 }
+                    >
+                        <Pane>
+                            <TextInput
+                              placeholder='Name'
+                              defaultValue=''
+                              width='100%'
+                              marginBottom='1rem'
+                            />
+                            <TextInput
+                              defaultValue=''
+                              placeholder='Symbol'
+                              width='100%'
+                              marginBottom='1rem'
+                            />
+                            <Select width='100%'>
+                                <option value=''>Version</option>
+                                <option value='V1'>V1 (Basic Database)</option>
+                            </Select>
+                        </Pane>
+                        <Pane>
+                            <Text
+                              fontSize='14px'
+                              lineHeight={ 1.5 }
+                              color='#425a70'
+                              textAlign='justify'
+                            >
+                                <b>Description: </b>
+                                One morning, when Gregor Samsa woke from troubled dreams, he found
+                                himself transformed in his bed into a horrible vermin. He lay on his
+                                armour-like back, and if he lifted his head a little he could see
+                                his brown belly, slightly domed and divided by arches.
+                            </Text>
+                        </Pane>
+                    </Pane>
+                </Section>
+                <Section title='Beneficiaries and shares (optional)'>
+                    <Pane width='100%'>
+                        <Table>
+                            <Table.Head paddingLeft='1rem'>
+                                <Table.TextHeaderCell textAlign='start' flexGrow={ 2 }>
+                                    Address
+                                </Table.TextHeaderCell>
+                                <Table.TextHeaderCell textAlign='end' flexGrow={ 1 }>
+                                    Stake
+                                </Table.TextHeaderCell>
+                                <Table.TextHeaderCell textAlign='center' flexGrow={ 1 }>
+                                    Share
+                                </Table.TextHeaderCell>
+                                <Table.TextHeaderCell flex='none' width={ 48 } />
+                            </Table.Head>
+                            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
+                                <Table.Row
+                                  paddingLeft='0.5rem'
+                                  style={ { border: 0 } }
+                                  boxShadow='0px 0px 0.1px 0px #ddd'
+                                >
+                                    <Table.TextCell textAlign='start' flexGrow={ 2 }>
+                                        <TextInput width='80%' />
+                                    </Table.TextCell>
+                                    <Table.TextCell>
+                                        <TextInput width='100%' />
+                                    </Table.TextCell>
+                                    <Table.TextCell textAlign='center' flexGrow={ 1 }>
+                                        0%
+                                    </Table.TextCell>
+                                    <Table.TextCell flex='none' width={ 48 }>
+                                        <IconButton
+                                          icon='add'
+                                          appearance='minimal'
+                                          className='icon-btn'
+                                        />
+                                    </Table.TextCell>
+                                </Table.Row>
+
+                                <Pane>{beneficiariesRows}</Pane>
+                            </Table.Body>
+                        </Table>
+                    </Pane>
+                </Section>
+            </Pane>
+        );
+
+        const TabOutput = () => (
+            <Pane
+              maxHeight={ 560 }
+              height='60vh'
+              paddingLeft='2rem'
+              paddingRight='0.1rem'
+              paddingY='1.5rem'
+              borderRadius={ 4 }
+              boxShadow='0px 0px 10px #36d6ae'
+              marginBottom='2rem'
+            >
+                <Pane overflow='auto' height='100%'>
+                    <Code>{code}</Code>
+                </Pane>
+            </Pane>
+        );
+
+        if (tab === 'input') {
+            content = <TabInput />;
+        }
+
+        if (tab === 'output') {
+            content = <TabOutput />;
+        }
 
         return (
             <ScrollContainer>
@@ -125,8 +234,8 @@ class Pages extends React.Component {
                             <Tab
                               key='Input'
                               id='Input'
-                              isSelected={ this.state.showInput }
-                              onClick={ this.showInput }
+                              isSelected={ tab === 'input' }
+                              onClick={ () => this.select('input') }
                               paddingX={ 50 }
                               paddingY={ 20 }
                               marginX={ 3 }
@@ -140,8 +249,8 @@ class Pages extends React.Component {
                             <Tab
                               key='Output'
                               id='Output'
-                              isSelected={ this.state.showOutput }
-                              onClick={ this.showOutput }
+                              isSelected={ tab === 'output' }
+                              onClick={ () => this.select('output') }
                               paddingX={ 50 }
                               paddingY={ 20 }
                               marginX={ 3 }
@@ -154,118 +263,14 @@ class Pages extends React.Component {
                             </Tab>
                         </Tablist>
                     </Pane>
-                    {this.state.showInput && (
-                        <Pane>
-                            <Section title='General database parameters'>
-                                <Pane
-                                  backgroundColor='#fff'
-                                  display='grid'
-                                  gridTemplateColumns='1fr 1fr'
-                                  gridGap={ 30 }
-                                  paddingX='2rem'
-                                  paddingY='2rem'
-                                  borderRadius={ 5 }
-                                >
-                                    <Pane>
-                                        <TextInput
-                                          placeholder='Name'
-                                          defaultValue=''
-                                          width='100%'
-                                          marginBottom='1rem'
-                                        />
-                                        <TextInput
-                                          defaultValue=''
-                                          placeholder='Symbol'
-                                          width='100%'
-                                          marginBottom='1rem'
-                                        />
-                                        <Select width='100%'>
-                                            <option value=''>Version</option>
-                                            <option value='V1'>V1 (Basic Database)</option>
-                                        </Select>
-                                    </Pane>
-                                    <Pane>
-                                        <Text
-                                          fontSize='14px'
-                                          lineHeight={ 1.5 }
-                                          color='#425a70'
-                                          textAlign='justify'
-                                        >
-                                            <b>Description: </b>
-                                            One morning, when Gregor Samsa woke from troubled
-                                            dreams, he found himself transformed in his bed into a
-                                            horrible vermin. He lay on his armour-like back, and if
-                                            he lifted his head a little he could see his brown
-                                            belly, slightly domed and divided by arches.
-                                        </Text>
-                                    </Pane>
-                                </Pane>
-                            </Section>
-                            <Section title='Beneficiaries and shares (optional)'>
-                                <Pane width='100%'>
-                                    <Table>
-                                        <Table.Head paddingLeft='1rem'>
-                                            <Table.TextHeaderCell textAlign='start' flexGrow={ 2 }>
-                                                Address
-                                            </Table.TextHeaderCell>
-                                            <Table.TextHeaderCell textAlign='end' flexGrow={ 1 }>
-                                                Stake
-                                            </Table.TextHeaderCell>
-                                            <Table.TextHeaderCell textAlign='center' flexGrow={ 1 }>
-                                                Share
-                                            </Table.TextHeaderCell>
-                                            <Table.TextHeaderCell flex='none' width={ 48 } />
-                                        </Table.Head>
-                                        <Table.Body
-                                          style={ { backgroundColor: '#fff', overflowY: 'hidden' } }
-                                        >
-                                            <Table.Row
-                                              paddingLeft='0.5rem'
-                                              style={ { border: 0 } }
-                                              boxShadow='0px 0px 0.1px 0px #ddd'
-                                            >
-                                                <Table.TextCell textAlign='start' flexGrow={ 2 }>
-                                                    <TextInput width='80%' />
-                                                </Table.TextCell>
-                                                <Table.TextCell>
-                                                    <TextInput width='100%' />
-                                                </Table.TextCell>
-                                                <Table.TextCell textAlign='center' flexGrow={ 1 }>
-                                                    0%
-                                                </Table.TextCell>
-                                                <Table.TextCell flex='none' width={ 48 }>
-                                                    <IconButton
-                                                      icon='add'
-                                                      appearance='minimal'
-                                                      className='icon-btn'
-                                                    />
-                                                </Table.TextCell>
-                                            </Table.Row>
 
-                                            <Pane>{beneficiariesRows}</Pane>
-                                        </Table.Body>
-                                    </Table>
-                                </Pane>
-                            </Section>
-                        </Pane>
+                    {content}
+
+                    {message && (
+                        <Message style={ { position: 'sticky', bottom: '10%' } } type='error'>
+                            {message}
+                        </Message>
                     )}
-                    {this.state.showOutput && (
-                        <Pane
-                          maxHeight={ 560 }
-                          height='60vh'
-                          paddingLeft='2rem'
-                          paddingRight='0.1rem'
-                          paddingY='1.5rem'
-                          borderRadius={ 4 }
-                          boxShadow='0px 0px 10px #36d6ae'
-                          marginBottom='2rem'
-                        >
-                            <Pane overflow='auto' height='100%'>
-                                <Code>{code}</Code>
-                            </Pane>
-                        </Pane>
-                    )}
-                {message && <Message style={{position: 'sticky', bottom: '10%'}} type='error'>{message}</Message>}
                 </MainContainer>
             </ScrollContainer>
         );
