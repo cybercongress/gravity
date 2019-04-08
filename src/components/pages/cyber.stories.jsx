@@ -94,10 +94,11 @@ class Validators extends React.Component {
                                   onClick={ this.showActive }
                                   paddingX={ 50 }
                                   paddingY={ 20 }
-                                  marginX={ 0 }
-                                  borderRadius={ 0 }
-                                  color='#fff'
-                                  boxShadow='inset 0px 0px 0px 0.9px #4ed6ae'
+                                  marginX={ 3 }
+                                  borderRadius={ 4 }
+                                  color='#36d6ae'
+                                  boxShadow='0px 0px 10px #36d6ae'
+                                  fontSize='16px'
                                 >
                                     Active
                                 </Tab>
@@ -108,10 +109,11 @@ class Validators extends React.Component {
                                   onClick={ this.showJailed }
                                   paddingX={ 50 }
                                   paddingY={ 20 }
-                                  marginX={ 0 }
-                                  borderRadius={ 0 }
-                                  color='#fff'
-                                  boxShadow='inset 0px 0px 0px 0.9px #4ed6ae'
+                                  marginX={ 3 }
+                                  borderRadius={ 4 }
+                                  color='#36d6ae'
+                                  boxShadow='0px 0px 10px #36d6ae'
+                                  fontSize='16px'
                                 >
                                     Jailed
                                 </Tab>
