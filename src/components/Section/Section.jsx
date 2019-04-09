@@ -1,5 +1,9 @@
 import * as React from 'react';
 import cx from 'classnames';
+import {
+    Pane,
+    Text,
+} from 'evergreen-ui';
 
 const styles = require('./Section.less');
 
@@ -24,13 +28,15 @@ export const SectionTitle = ({ children }) => (
     </h3>
 );
 
-export const Section = ({ children, title, noWrap, noMargin, ...props }) => (
-    <div>
-        {title && <SectionTitle>{title}</SectionTitle>}
-        <div { ...props } className={ cx(styles.section, { [styles.sectionNoMargin]: noMargin }) }>
+export const Section = ({ title, children, ...props }) => (
+    <Pane marginBottom={ 40 }>
+        <Text display='inline-block' marginBottom={ 16 } fontSize='20px' color='#ffffff'>
+            {title}
+        </Text>
+        <Pane { ...props } display='flex'>
             {children}
-        </div>
-    </div>
+        </Pane>
+    </Pane>
 );
 
 

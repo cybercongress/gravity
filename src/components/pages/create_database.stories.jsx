@@ -12,7 +12,7 @@ import {
     IconButton,
 } from 'evergreen-ui';
 import {
-    MainContainer, Code, Message, ScrollContainer,
+    MainContainer, Code, Message, ScrollContainer, Section,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -50,17 +50,6 @@ const beneficiaries = [
         share: 20,
     },
 ];
-
-const Section = ({ title, children, ...props }) => (
-    <Pane marginBottom={ 40 }>
-        <Text display='inline-block' marginBottom={ 16 } fontSize='20px' color='#ffffff'>
-            {title}
-        </Text>
-        <Pane { ...props } display='flex'>
-            {children}
-        </Pane>
-    </Pane>
-);
 
 class Pages extends React.Component {
     state = {

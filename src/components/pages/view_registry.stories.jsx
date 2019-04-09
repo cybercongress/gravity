@@ -6,42 +6,17 @@ import {
 import {
     LinkHash,
     MainContainer,
-    //  Section,
-    // SectionContent,
-    // CentredPanel,
-    // FlexContainerLeft,
-    // FlexContainerRight,
-    // FlexContainer,
-    // DbMenu,
-    // MenuPopup,
-    // MenuPopupItem,
-    // MenuSeparator,
-    // MenuPopupDeleteIcon,
-    // MenuPopupTransferIcon,
-    // MenuPopupAccountIcon,
-    // MenuPopupEditIcon,
     BenContainer,
     BenPieChart,
-    // MenuPopupResumeIcon,
-    // MenuPopupPauseIcon,
-    // ProgressBar,
-    // CircleLable,
-    // PageTitle,
-    // AddNewRecordButton,
     FormField,
-    // TableRecords,
-    // Button,
     calculateBensShares,
     InfoButton,
     DatabaseItemsContainer,
-    // DbMenuPoints,
-    // Text,
     Select,
-    // PopupBarFooter,
-    // PopupBar,
     ScrollContainer,
     CardHover,
     Avatar,
+    Section,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -154,18 +129,6 @@ const CardGeneral = ({ value, title }) => (
         </Text>
     </CardHover>
 );
-
-const Section = ({ title, children, ...props }) => (
-    <Pane marginBottom={ 40 }>
-        <Text display='inline-block' marginBottom={ 16 } fontSize='20px' color='#ffffff'>
-            {title}
-        </Text>
-        <Pane { ...props } display='flex'>
-            {children}
-        </Pane>
-    </Pane>
-);
-
 
 class PagesViewRegistry extends Component {
     renderRowMenu = () => {
