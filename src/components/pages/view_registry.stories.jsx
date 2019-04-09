@@ -420,9 +420,7 @@ class FooterCyb extends Component{
                     placeholder='Name'
                     textAlign='left'
                     backgroundColor='transparent'
-                    outline='0'
-                    outlineOffset='0'
-                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                    className='input-green'
                 />
                 <TextInput
                     height={ 42 }
@@ -433,9 +431,7 @@ class FooterCyb extends Component{
                     placeholder='Name'
                     textAlign='left'
                     backgroundColor='transparent'
-                    outline='0'
-                    outlineOffset='0'
-                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                    className='input-green'
                 />
                 <TextInput
                     height={ 42 }
@@ -446,9 +442,7 @@ class FooterCyb extends Component{
                     placeholder='Name'
                     textAlign='left'
                     backgroundColor='transparent'
-                    outline='0'
-                    outlineOffset='0'
-                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                    className='input-green'
                 />
                 <TextInput
                     height={ 42 }
@@ -459,9 +453,7 @@ class FooterCyb extends Component{
                     placeholder='Name'
                     textAlign='left'
                     backgroundColor='transparent'
-                    outline='0'
-                    outlineOffset='0'
-                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                    className='input-green'
                 />
                 <TextInput
                     height={ 42 }
@@ -472,9 +464,7 @@ class FooterCyb extends Component{
                     placeholder='Name'
                     textAlign='left'
                     backgroundColor='transparent'
-                    outline='0'
-                    outlineOffset='0'
-                    style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+                    className='input-green'
                 />
                 <Button paddingX={ 50 } height={ 42 } className='btn'>
                     Update
@@ -497,9 +487,7 @@ class FooterCyb extends Component{
             placeholder='New owner address'
             textAlign='left'
             backgroundColor='transparent'
-            outline='0'
-            outlineOffset='0'
-            style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+            className='input-green'
         />
         <Button paddingX={ 50 } height={ 42 } className='btn'>
             Transfer
@@ -522,9 +510,7 @@ class FooterCyb extends Component{
             placeholder='ETH'
             textAlign='left'
             backgroundColor='transparent'
-            outline='0'
-            outlineOffset='0'
-            style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+            className='input-green'
         />
         <Button paddingX={ 50 } height={ 42 } className='btn'>
             Fund database
@@ -548,9 +534,7 @@ class FooterCyb extends Component{
             placeholder='ETH'
             textAlign='left'
             backgroundColor='transparent'
-            outline='0'
-            outlineOffset='0'
-            style={ { caretColor: '#36d6ae', boxShadow: '0 0 1px #fff' } }
+            className='input-green'
         />
         <Button paddingX={ 50 } height={ 42 } className='btn'>
             Claim funds

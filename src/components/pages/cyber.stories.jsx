@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Provider, Subscribe } from 'unstated';
 import { storiesOf } from '@storybook/react';
 import {
     Pane,
@@ -11,184 +12,239 @@ import {
     Table,
     Tablist,
     Tab,
+    Pill,
+    Tooltip,
 } from 'evergreen-ui';
 import {
     MainContainer, SearchItem, Vitalick, ScrollContainer, CardHover, SkillBar,
 } from '../..';
 import Application from '../Application/Application';
 
+import validatorsContainer from './validatorsContainer';
 import validatorsData from './validatorsData';
 
 class Validators extends React.Component {
-    state = {
-        jailedFilter: false,
-    };
-
-    showActive = () => {
-        this.setState({ jailedFilter: false });
-    };
-
-    showJailed = () => {
-        this.setState({ jailedFilter: true });
-    };
+    async componentWillMount() {
+        await validatorsContainer.getValidators();
+    }
 
     render() {
-        const { validators } = this.props;
-        const { jailedFilter } = this.state;
-        const validatorsSorted = validators
-            .slice(0)
-            .sort((a, b) => (+a.tokens > +b.tokens ? 1 : -1));
-        const validatorRows = validatorsSorted
-            .filter(x => x.jailed === jailedFilter)
-            .map((validator, index) => (
-                <Table.Row
-                  style={ { border: 0 } }
-                  boxShadow='0px 0px 0.1px 0px #ddd'
-                  className='validators-table-row'
-                  isSelectable
-                  key={ validator.description.moniker }
-                >
-                    <Table.TextCell
-                      textAlign='center'
-                      flexBasis={ 80 }
-                      flexShrink={ 0 }
-                      flexGrow={ 0 }
-                      isNumber
-                    >
-                        {index}
-                    </Table.TextCell>
-                    <Table.TextCell>{validator.description.moniker}</Table.TextCell>
-                    <Table.TextCell
-                      textAlign='center'
-                      flexBasis={ 80 }
-                      flexShrink={ 0 }
-                      flexGrow={ 0 }
-                      isNumber
-                    >
-                        {validator.tokens}
-                    </Table.TextCell>
-                    <Table.TextCell textAlign='center' flexGrow={ 2 }>
-                        {validator.operator_address}
-                    </Table.TextCell>
-                    <Table.TextCell textAlign='center' flexShrink={ 0 } flexGrow={ 1 } isNumber>
-                        {validator.bond_height}
-                    </Table.TextCell>
-                </Table.Row>
-            ));
-
         return (
-            <Pane>
-                <ScrollContainer style={ { height: 'calc(100vh - 140px)' } }>
-                    <MainContainer>
-                        <Pane
-                          display='flex'
-                          flexDirection='column'
-                          alignItems='center'
-                          justifyContent='center'
-                        >
-                            <Tablist marginBottom={ 24 }>
-                                <Tab
-                                  key='Active'
-                                  id='Active'
-                                  isSelected={ !jailedFilter }
-                                  onClick={ this.showActive }
-                                  paddingX={ 50 }
-                                  paddingY={ 20 }
-                                  marginX={ 3 }
-                                  borderRadius={ 4 }
-                                  color='#36d6ae'
-                                  boxShadow='0px 0px 10px #36d6ae'
-                                  fontSize='16px'
-                                >
-                                    Active
-                                </Tab>
-                                <Tab
-                                  key='Jailed'
-                                  id='Jailed'
-                                  isSelected={ jailedFilter }
-                                  onClick={ this.showJailed }
-                                  paddingX={ 50 }
-                                  paddingY={ 20 }
-                                  marginX={ 3 }
-                                  borderRadius={ 4 }
-                                  color='#36d6ae'
-                                  boxShadow='0px 0px 10px #36d6ae'
-                                  fontSize='16px'
-                                >
-                                    Jailed
-                                </Tab>
-                            </Tablist>
-                        </Pane>
+            <Provider>
+                <Subscribe to={ [validatorsContainer] }>
+                    {(container) => {
+                        const {
+                            //    validators,
+                            showJailed,
+                        } = container.state;
+                        const { validators } = this.props;
 
-                        <Table>
-                            <Table.Head>
-                                <Table.TextHeaderCell
-                                  textAlign='center'
-                                  flexBasis={ 80 }
-                                  flexShrink={ 0 }
-                                  flexGrow={ 0 }
-                                >
-                                    Rank
-                                </Table.TextHeaderCell>
-                                <Table.TextHeaderCell flexGrow={ 1 }>Name</Table.TextHeaderCell>
-                                <Table.TextHeaderCell
-                                  textAlign='center'
-                                  flexBasis={ 80 }
-                                  flexShrink={ 0 }
-                                  flexGrow={ 0 }
-                                >
-                                    {' '}
-                                    Power
-                                </Table.TextHeaderCell>
-                                <Table.TextHeaderCell textAlign='center' flexGrow={ 2 }>
-                                    Address
-                                </Table.TextHeaderCell>
-                                <Table.TextHeaderCell
-                                  textAlign='center'
-                                  flexShrink={ 1 }
-                                  flexGrow={ 1 }
-                                >
-                                    Boun height
-                                </Table.TextHeaderCell>
-                            </Table.Head>
-                            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
-                                {validatorRows}
-                            </Table.Body>
-                        </Table>
-                    </MainContainer>
-                </ScrollContainer>
-                <Pane
-                  display='flex'
-                  alignItems='center'
-                  justifyContent='center'
-                  position='absolute'
-                  bottom={ 0 }
-                  height={ 65 }
-                  width='100%'
-                  backgroundColor='#000000'
-                  paddingY={ 12 }
-                  zIndex={ 2 }
-                >
-                    <Pane
-                      alignItems='center'
-                      justifyContent='space-between'
-                      display='flex'
-                      width={ 1000 }
-                    >
-                        <Pane display='flex' alignItems='center'>
-                            <Text color='#fff' fontSize='18px'>
-                                Everybody can become validator staking 1872 GCYB right now
-                            </Text>
-                        </Pane>
+                        const validatorRows = validators
+                            .filter(validator => validator.jailed === showJailed)
+                            .map((validator, index) => {
+                                const height = validator.jailed
+                                    ? validator.unbonding_height
+                                    : validator.bond_height || 0;
+                                const commission = (validator.commission.rate * 100).toFixed(0);
+                                const powerFloat = validator.tokens / 1000000000;
+                                const power = Math.round(powerFloat * 1) / 1;
 
-                        <Pane display='flex' marginLeft={ 80 }>
-                            <Button whiteSpace='nowrap' className='btn' paddingX={ 50 } height={ 42 }>
-                                Become validator
-                            </Button>
-                        </Pane>
-                    </Pane>
-                </Pane>
-            </Pane>
+                                let statusColor;
+
+                                switch (validator.status) {
+                                    case 0:
+                                        statusColor = 'red';
+                                        break;
+                                    case 1:
+                                        statusColor = 'yellow';
+                                        break;
+                                    case 2:
+                                        statusColor = 'green';
+                                        break;
+                                    default:
+                                        statusColor = 'neutral';
+                                        break;
+                                }
+
+                                const statusTooltip = (
+                                    <Pane display='flex' alignItems='center'>
+                                        <Tooltip
+                                          appearance='card'
+                                          content={ (
+                                              <Pane
+                                                display='flex'
+                                                alignItems='center'
+                                                paddingX={ 18 }
+                                                paddingY={ 18 }
+                                              >
+                                                  <Text>
+                                                        Validator status:&nbsp;
+                                                      {validator.status === 0 && 'unbonded'}
+                                                      {validator.status === 1 && 'unbonding'}
+                                                      {validator.status === 2 && 'bonded'}
+                                                  </Text>
+                                              </Pane>
+) }
+                                        >
+                                            <Pill
+                                              height={ 7 }
+                                              width={ 7 }
+                                              borderRadius='50%'
+                                              paddingX={ 4 }
+                                              paddingY={ 0 }
+                                              marginX={ 20 }
+                                              isSolid
+                                              color={ statusColor }
+                                            />
+                                        </Tooltip>
+                                    </Pane>
+                                );
+
+                                return (
+                                    <Table.Row
+                                      style={ { border: 0 } }
+                                      boxShadow='0px 0px 0.1px 0px #ddd'
+                                      className='validators-table-row'
+                                      isSelectable
+                                      key={ validator.description.moniker }
+                                    >
+                                        <Table.TextCell textAlign='center' width={ 70 } flex='none'>
+                                            {statusTooltip}
+                                        </Table.TextCell>
+                                        <Table.TextCell
+                                          textAlign='center'
+                                          flexBasis={ 60 }
+                                          flexShrink={ 0 }
+                                          flexGrow={ 0 }
+                                          isNumber
+                                        >
+                                            {index + 1}
+                                        </Table.TextCell>
+                                        <Table.TextCell>
+                                            {validator.description.moniker}
+                                        </Table.TextCell>
+                                        <Table.TextCell
+                                          textAlign='center'
+                                          flexBasis={ 80 }
+                                          flexShrink={ 0 }
+                                          flexGrow={ 0 }
+                                          isNumber
+                                        >
+                                            {power}
+                                        </Table.TextCell>
+                                        <Table.TextCell textAlign='center' flexGrow={ 1 }>
+                                            {commission}
+                                        </Table.TextCell>
+                                        <Table.TextCell textAlign='center' flexGrow={ 2 }>
+                                            {validator.operator_address}
+                                        </Table.TextCell>
+                                        <Table.TextCell
+                                          textAlign='center'
+                                          flexShrink={ 0 }
+                                          flexGrow={ 1 }
+                                          isNumber
+                                        >
+                                            {height}
+                                        </Table.TextCell>
+                                    </Table.Row>
+                                );
+                            });
+
+                        return (
+                            <ScrollContainer style={ { width: '100%' } }>
+                                <MainContainer>
+                                    <Pane
+                                      display='flex'
+                                      flexDirection='column'
+                                      alignItems='center'
+                                      justifyContent='center'
+                                    >
+                                        <Tablist marginBottom={ 24 }>
+                                            <Tab
+                                              key='Active'
+                                              id='Active'
+                                              isSelected={ !showJailed }
+                                              onSelect={ container.showActive }
+                                              paddingX={ 50 }
+                                              paddingY={ 20 }
+                                              marginX={ 3 }
+                                              borderRadius={ 4 }
+                                              color='#36d6ae'
+                                              boxShadow='0px 0px 10px #36d6ae'
+                                              fontSize='16px'
+                                            >
+                                                Active
+                                            </Tab>
+                                            <Tab
+                                              key='Jailed'
+                                              id='Jailed'
+                                              isSelected={ showJailed }
+                                              onSelect={ container.showJailed }
+                                              paddingX={ 50 }
+                                              paddingY={ 20 }
+                                              marginX={ 3 }
+                                              borderRadius={ 4 }
+                                              color='#36d6ae'
+                                              boxShadow='0px 0px 10px #36d6ae'
+                                              fontSize='16px'
+                                            >
+                                                Jailed
+                                            </Tab>
+                                        </Tablist>
+                                    </Pane>
+
+                                    <Table>
+                                        <Table.Head>
+                                            <Table.TextHeaderCell
+                                              textAlign='center'
+                                              width={ 70 }
+                                              flex='none'
+                                            />
+                                            <Table.TextHeaderCell
+                                              textAlign='center'
+                                              flexBasis={ 60 }
+                                              flexShrink={ 0 }
+                                              flexGrow={ 0 }
+                                            >
+                                                Rank
+                                            </Table.TextHeaderCell>
+                                            <Table.TextHeaderCell flexGrow={ 1 }>
+                                                Name
+                                            </Table.TextHeaderCell>
+                                            <Table.TextHeaderCell
+                                              textAlign='center'
+                                              flexBasis={ 80 }
+                                              flexShrink={ 0 }
+                                              flexGrow={ 0 }
+                                            >
+                                                Power (GCYB)
+                                            </Table.TextHeaderCell>
+                                            <Table.TextHeaderCell flexGrow={ 1 } textAlign='center'>
+                                                Commission (%)
+                                            </Table.TextHeaderCell>
+                                            <Table.TextHeaderCell textAlign='center' flexGrow={ 2 }>
+                                                Address
+                                            </Table.TextHeaderCell>
+                                            <Table.TextHeaderCell
+                                              textAlign='center'
+                                              flexShrink={ 1 }
+                                              flexGrow={ 1 }
+                                            >
+                                                {showJailed ? 'Unbonding height' : 'Bond height'}
+                                            </Table.TextHeaderCell>
+                                        </Table.Head>
+                                        <Table.Body
+                                          style={ { backgroundColor: '#fff', overflowY: 'hidden' } }
+                                        >
+                                            {validatorRows}
+                                        </Table.Body>
+                                    </Table>
+                                </MainContainer>
+                            </ScrollContainer>
+                        );
+                    }}
+                </Subscribe>
+            </Provider>
         );
     }
 }
@@ -644,7 +700,9 @@ class App extends React.Component {
                                     The answer for 42 is
                                 </Heading>
                                 <Pane>{searchResults}</Pane>
-                  !              {links.length > 10 && (
+!
+                                {' '}
+                                {links.length > 10 && (
                                     <Pane display='flex' justifyContent='center'>
                                         <Button
                                             //   appearance="primary"
@@ -722,9 +780,7 @@ class App extends React.Component {
                                   placeholder='Have your own answer?'
                                   textAlign='left'
                                   backgroundColor='transparent'
-                                  outline='0'
-                                  outlineOffset='0'
-                                  style={ { caretColor: '#36d6ae', boxShadow: 'none' } }
+                                  className='input-green'
                                 />
                                 <Button
                                   whiteSpace='nowrap'
@@ -749,9 +805,7 @@ class App extends React.Component {
                                   placeholder='Question'
                                   fontSize='18px'
                                   backgroundColor='transparent'
-                                  outline='0'
-                                  outlineOffset='0'
-                                  style={ { caretColor: '#36d6ae', boxShadow: 'none' } }
+                                  className='input-green'
                                 />
                                 <TextInput
                                   height={ 42 }
@@ -761,9 +815,7 @@ class App extends React.Component {
                                   placeholder='Answer'
                                   fontSize='18px'
                                   backgroundColor='transparent'
-                                  outline='0'
-                                  outlineOffset='0'
-                                  style={ { caretColor: '#36d6ae', boxShadow: 'none' } }
+                                  className='input-green'
                                 />
                                 <Button
                                   whiteSpace='nowrap'
