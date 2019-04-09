@@ -304,11 +304,13 @@ const FooterCyb = ({ disabled, databaseId }) => (
                       className='btn'
                       marginX={ 10 }
                       height={ 42 }
+                      minWidth={ 215 }
+                      justifyContent='center'
                       to={ `/databases/${databaseId}` }
                     >
                         Go to database
                     </Button>
-                    <Button marginX={ 10 } height={ 42 } className='btn' to={ `/schema/${databaseId}` }>
+                    <Button marginX={ 10 } minWidth={ 215 } justifyContent='center' height={ 42 } className='btn' to={ `/schema/${databaseId}` }>
                         Go to schema definition
                     </Button>
                 </span>
