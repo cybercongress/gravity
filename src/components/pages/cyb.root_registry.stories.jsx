@@ -220,8 +220,8 @@ const addRegistryItem = [
     },
 ];
 
-storiesOf('cyb/pages/Root Registry', module)
-    .add('Root Registry', () => (
+storiesOf('id', module)
+    .add('root.cyb', () => (
         <Application>
             <RootRegistryPage registryItems={ addRegistryItem } />
         </Application>

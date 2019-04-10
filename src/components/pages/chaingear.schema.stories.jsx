@@ -265,7 +265,7 @@ const FooterCyb = ({ disabled, databaseId }) => (
     </Pane>
 );
 
-storiesOf('chaingear/create_shema', module)
+storiesOf('chaingear/schema', module)
     .add('index', () => (
         <Application>
             <Pages items={ itemsTable } />

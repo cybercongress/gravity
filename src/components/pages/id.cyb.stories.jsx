@@ -11,12 +11,12 @@ import {
     FailLogin,
 } from '../..';
 
-storiesOf('Id', module)
+storiesOf('id', module)
     .add('FollowYourWeb3', () => <FollowYourWeb3 />)
-    .add('IdCyb', () => <IdCyb />)
-    .add('KeysCyb', () => <KeysCyb />)
-    .add('ConnectCyb', () => <ConnectCyb />)
-    .add('ShieldCyb', () => <ShieldCyb />)
-    .add('StateCyb', () => <StateCyb />)
+    .add('id.cyb', () => <IdCyb />)
+    .add('keys.cyb', () => <KeysCyb />)
+    .add('connect.cyb', () => <ConnectCyb />)
+    .add('shield.cyb', () => <ShieldCyb />)
+    .add('state.cyb', () => <StateCyb />)
     .add('SuccessfulLogin', () => <SuccessfulLogin />)
     .add('FailLogin', () => <FailLogin />);

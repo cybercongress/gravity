@@ -115,8 +115,8 @@ const txHash = [
     },
 ];
 
-storiesOf('cyb/pages/TxQueue', module)
-    .add('TxQueue', () => (
+storiesOf('id', module)
+    .add('tx.cyb', () => (
         <Application>
             <TxQueue transactions={txHash} />
         </Application>

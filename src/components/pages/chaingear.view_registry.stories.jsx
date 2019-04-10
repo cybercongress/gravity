@@ -157,7 +157,7 @@ class PagesViewRegistry extends Component {
     
         return (
             <Table.Row isSelectable key={ name } width='fit-content' position='relative'>
-                <Table.TextCell width={48} flex='none'>{index}</Table.TextCell>
+                <Table.TextCell width={48} flex='none'>{index + 1}</Table.TextCell>
                 <Table.TextCell flex='none' width={150}>{name}</Table.TextCell>
                 <Table.TextCell flex='none' width={150}>
                     <LinkHash value={hash} />
@@ -583,19 +583,19 @@ class FooterCyb extends Component{
 
 
 storiesOf('chaingear/view_registry', module)
-    .add('registry', () => (
+    .add('table', () => (
         <Application>
             <PagesViewRegistry databasesItem={ databases } />
             <FooterCyb update/>
         </Application>
     ))
-    .add('registry_disabled_table', () => (
+    .add('pause', () => (
         <Application>
             <PagesViewRegistry disabled isDbPaused databasesItem={ databases } />
             <FooterCyb />
         </Application>
     ))
-    .add('registry_no_table', () => (
+    .add('no_table', () => (
         <Application>
             <PagesViewRegistry showTable='1' />
             <FooterCyb />
