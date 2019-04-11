@@ -7,8 +7,6 @@ import {
     ConnectCyb,
     ShieldCyb,
     StateCyb,
-    SuccessfulLogin,
-    FailLogin,
 } from '../..';
 
 storiesOf('id', module)
@@ -17,6 +15,4 @@ storiesOf('id', module)
     .add('keys.cyb', () => <KeysCyb />)
     .add('connect.cyb', () => <ConnectCyb />)
     .add('shield.cyb', () => <ShieldCyb />)
-    .add('state.cyb', () => <StateCyb />)
-    .add('SuccessfulLogin', () => <SuccessfulLogin />)
-    .add('FailLogin', () => <FailLogin />);
+    .add('state.cyb', () => <StateCyb />);

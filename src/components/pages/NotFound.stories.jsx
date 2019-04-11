@@ -43,6 +43,7 @@ const NotFound = () => (
           width='100%'
           backgroundColor='#000000'
           paddingY={ 12 }
+          paddingX='1rem'
           zIndex={ 2 }
         >
             <Pane alignItems='center' justifyContent='space-between' display='flex' width={ 1000 }>
@@ -63,7 +64,7 @@ const NotFound = () => (
     </div>
 );
 
-storiesOf('cyber/pages', module).add('NotFound', () => (
+storiesOf('cyber', module).add('notFound', () => (
     <Application>
         <NotFound />
     </Application>

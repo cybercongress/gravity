@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
-import Slider from "react-slick";
+import Slider from 'react-slick';
 // import { connect } from 'react-redux';
 // import * as actions from '../../redux/settings';
 import {
     Button, Pane, Text, Heading,
 } from 'evergreen-ui';
-import { Row, Col } from 'react-flexbox-grid';
 import {
     MainContainer,
     ScrollContainer,
-    Avatar,
     // Text,
-} from '../..';
-import Application from '../Application/Application';
-import { throws } from 'assert';
+} from '../../..';
 
 const card = [
     {
@@ -40,8 +35,9 @@ const card = [
     {
         name: 'cyb6',
         balance: '3',
-    }
-]
+    },
+];
+
 class CybCard extends Component {
     state = {
         hover: false,
@@ -58,7 +54,9 @@ class CybCard extends Component {
     };
 
     render() {
-        const { eth, cybName, children, active } = this.props;
+        const {
+            eth, cybName, children, active,
+        } = this.props;
 
         return (
             <Pane
@@ -102,7 +100,9 @@ class CybCard extends Component {
                     <Pane marginBottom={ 40 } className='noactive-slide-balance'>
                         <Text fontSize='16px' color='#757575'>
                             {' '}
-                            {eth} ETH
+                            {eth}
+                            {' '}
+ETH
                             {' '}
                         </Text>
                     </Pane>
@@ -119,7 +119,6 @@ class CybCard extends Component {
                           boxShadow='0 2px 25px 1px #3ab793'
                           marginBottom={ 0 }
                           className='oval'
-
                         >
                             <Pane
                               style={ {
@@ -143,42 +142,44 @@ class CybCard extends Component {
                             />
                         </Pane>
                     )}
-                        <Pane className='active-slide-text'>
-                            <Pane>
-                                <Text lineHeight='1.71' color='white' size={ 400 }>
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                    The point of using Lorem Ipsum is that it has a more-or-less
-                                </Text>
-                            </Pane>
+                    <Pane className='active-slide-text'>
+                        <Pane>
+                            <Text lineHeight='1.71' color='white' size={ 400 }>
+                                It is a long established fact that a reader will be distracted by
+                                the readable content of a page when looking at its layout. The point
+                                of using Lorem Ipsum is that it has a more-or-less
+                            </Text>
                         </Pane>
+                    </Pane>
                 </Pane>
-                    <Pane
-                      className='active-slide-balance'
-                      width={ 130 }
-                      height={ 42 }
-                      borderRadius={ 5 }
-                      backgroundColor='#3ab793'
-                      position='absolute'
-                      bottom={ -20 }
-                      alignItems='center'
-                      justifyContent='center'
-                    >
-                        <Text color='#fff' fontWeight={ 600 } fontSize='29px'>
-                            {eth} ETH
-                        </Text>
-                    </Pane>
-                    <Pane
-                      position='absolute'
-                      bottom={ -65 }
-                      alignItems='center'
-                      justifyContent='center'
-                      className='active-slide-balance-text'
-                    >
-                        <Text textShadow='0px 0px 20px #3ab793' color='#3ab793' fontSize='28px'>
-                            Unlimited
-                        </Text>
-                    </Pane>
+                <Pane
+                  className='active-slide-balance'
+                  width={ 130 }
+                  height={ 42 }
+                  borderRadius={ 5 }
+                  backgroundColor='#3ab793'
+                  position='absolute'
+                  bottom={ -20 }
+                  alignItems='center'
+                  justifyContent='center'
+                >
+                    <Text color='#fff' fontWeight={ 600 } fontSize='29px'>
+                        {eth}
+                        {' '}
+ETH
+                    </Text>
+                </Pane>
+                <Pane
+                  position='absolute'
+                  bottom={ -65 }
+                  alignItems='center'
+                  justifyContent='center'
+                  className='active-slide-balance-text'
+                >
+                    <Text textShadow='0px 0px 20px #3ab793' color='#3ab793' fontSize='28px'>
+                        Unlimited
+                    </Text>
+                </Pane>
             </Pane>
         );
     }
@@ -193,71 +194,66 @@ class SimpleSlider extends React.Component {
     //     })
     //   }
     render() {
-        const searchResults = card.map(
-            card => (
-                <Pane className='slide' alignItems='center' height={700}>
-                <CybCard active={ false } cybName={card.name} eth={card.balance} />
-                </Pane>
-            ),
-        );
-      var settings = {
-        className: "center",
-        centerMode: true,
-        focusOnSelect: true,
-        infinite: true,
-        speed: 800,
-        centerPadding: "0px",
-        slidesToShow: 3,
-        arrows: false,
-        // slidesToScroll: 1,
-      };
-      return (
-        <Slider {...settings}>
-          {searchResults}
-        </Slider>
-      );
+        const searchResults = card.map(card => (
+            <Pane className='slide' alignItems='center' height={ 700 }>
+                <CybCard active={ false } cybName={ card.name } eth={ card.balance } />
+            </Pane>
+        ));
+        const settings = {
+            className: 'center',
+            centerMode: true,
+            focusOnSelect: true,
+            infinite: true,
+            speed: 800,
+            centerPadding: '0px',
+            slidesToShow: 3,
+            arrows: false,
+            // slidesToScroll: 1,
+        };
+
+        return <Slider { ...settings }>{searchResults}</Slider>;
     }
-  }
+}
 
-const FooterCyb = () =>(
+export const FooterCyb = () => (
     <Pane
-    display='flex'
-    alignItems='center'
-    justifyContent='center'
-    width='100%'
-    position='absolute'
-    bottom={ 0 }
-    paddingY={ 20 }
-    backgroundColor='#000000'
-    zIndex={2}
-  >
-      <Pane
-        flexGrow={ 1 }
-        maxWidth={ 1000 }
-        display='flex'
-        alignItems='center'
-        justifyContent='center'
-        flexDirection='row'
-
-      >
-              <Text color='#fff' fontSize='18px'>
-                  1 April
-              </Text>
-          <Pane display='flex' justifyContent='center' flexGrow={ 1 }>
-              <Text color='#fff' fontSize='18px'>
-                  14 day 13 hour 15 minute 42 seconds
-              </Text>
-          </Pane>
-              <Button paddingX={ 50 } className='btn'>
-                  Download
-              </Button>
-      </Pane>
-  </Pane>
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      width='100%'
+      position='absolute'
+      bottom={ 0 }
+      paddingY={ 20 }
+      backgroundColor='#000000'
+      zIndex={ 2 }
+      paddingX='2em'
+    >
+        <Pane
+          flexGrow={ 1 }
+          maxWidth={ 1000 }
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          flexDirection='row'
+        >
+            <Text color='#fff' fontSize='18px'>
+                1 April
+            </Text>
+            <Pane display='flex' justifyContent='center' flexGrow={ 1 }>
+                <Text color='#fff' fontSize='18px'>
+                    14 day 13 hour 15 minute 42 seconds
+                </Text>
+            </Pane>
+            <Button paddingX={ 50 } className='btn'>
+                Download
+            </Button>
+        </Pane>
+    </Pane>
 );
 
-const Settings = () => (
+export const Settings = () => (
     <ScrollContainer>
-        <MainContainer style={{ paddingBottom: 65, paddingTop: 40 }}>
+        <MainContainer style={ { paddingBottom: 65, paddingTop: 40 } }>
             <Pane display='flex' justifyContent='center'>
                 <Heading fontSize='29px' color='#fff'>
                     Your virtual robot
@@ -269,10 +265,3 @@ const Settings = () => (
         </MainContainer>
     </ScrollContainer>
 );
-
-storiesOf('Cyb.ai', module).add('cyb.ai', () => (
-    <Application>
-        <Settings />
-        <FooterCyb />
-    </Application>
-));

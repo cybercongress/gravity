@@ -582,7 +582,7 @@ class FooterCyb extends Component{
 }
 
 
-storiesOf('chaingear/view_registry', module)
+storiesOf('chaingear/app.chaingear', module)
     .add('table', () => (
         <Application>
             <PagesViewRegistry databasesItem={ databases } />

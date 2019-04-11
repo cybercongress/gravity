@@ -215,6 +215,7 @@ export class PaneBalance extends React.Component {
 
         return (
             <Pane
+              width='100%'
               onMouseEnter={ () => this.handleiconCopy() }
               onMouseLeave={ () => this.handleiconCopy() }
               { ...this.props }

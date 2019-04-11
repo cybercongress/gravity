@@ -183,33 +183,20 @@ class Settings extends Component {
     }
 }
 
-storiesOf('cyb/pages/Settings', module).add('Settings', () => (
-    <Application>
-        <Settings
-            IPFS_END_POINT
-            PARITY_END_POINT
-            CYBERD_END_POINT
-            CYBERD_WS_END_POINT
-            ipfsStatus='local'
-            parityStatus='fail'
-            cyberdStatus
-            resetAllSettings
-            ipfsWriteUrl
-        />
-    </Application>
-))
-.add('Settings v2', () => (
-    <Application>
-        <ConnectCyb
-            IPFS_END_POINT='0.0.0.0'
-            PARITY_END_POINT='http://localhost'
-            CYBERD_END_POINT='http://localhost'
-            CYBERD_WS_END_POINT='http://localhost'
-            ipfsStatus='local'
-            parityStatus='fail'
-            cyberdStatus='local'
-            resetAllSettings
-            ipfsWriteUrl='http://localhost'
-        />
-    </Application>
-));
+storiesOf('cyb/pages/Settings', module)
+
+    .add('Settings', () => (
+        <Application>
+            <ConnectCyb
+                IPFS_END_POINT='0.0.0.0'
+                PARITY_END_POINT='http://localhost'
+                CYBERD_END_POINT='http://localhost'
+                CYBERD_WS_END_POINT='http://localhost'
+                ipfsStatus='local'
+                parityStatus='fail'
+                cyberdStatus='local'
+                resetAllSettings
+                ipfsWriteUrl='http://localhost'
+            />
+        </Application>
+    ));

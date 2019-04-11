@@ -8,7 +8,7 @@ import {
 } from '../..';
 import Application from '../Application/Application';
 
-const Lottery = ({ index, account, balanceGCYB }) => (
+const Lottery = ({ index, account, balanceCyb, addressCyb, addressEth, balanceEth }) => (
     <ScrollContainer>
         <MainContainer>
             <Pane display='flex' flexDirection='column' justifyContent='center' alignItems='center' paddingBottom={60}>
@@ -52,7 +52,7 @@ const Lottery = ({ index, account, balanceGCYB }) => (
                 )}
                 {account && (
                     <Pane>
-                        <CardAccount balanceGCYB={balanceGCYB} />
+                        <CardAccount addressEth={addressEth} addressCyberd={addressCyb} balanceEth={balanceEth} balanceCyberd={balanceCyb} />
                     </Pane>
                 )}
             </Pane>
@@ -60,21 +60,32 @@ const Lottery = ({ index, account, balanceGCYB }) => (
     </ScrollContainer>
 );
 
-storiesOf('cyber/pages/lottery', module)
+storiesOf('cyber/lottery', module)
     .add('index', () => (
         <Application>
             <Lottery index />
         </Application>
     ))
 
-    .add('account', () => (
+    .add('congrats', () => (
         <Application>
-            <Lottery account balanceGCYB={1} />
+            <Lottery
+              account
+              addressEth='0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5'
+              addressCyb='cyber1f9yjqmxh6prsmgpcaqj8lmjnxg644n5074zznm'
+              balanceEth={ 2 }
+              balanceCyb={ 2000000000 }
+            />
         </Application>
     ))
 
-    .add('balanceGCYB', () => (
+    .add('loose', () => (
         <Application>
-            <Lottery account balanceGCYB={0} />
+            <Lottery
+              account
+              addressEth='0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5'
+              balanceEth={ 2 }
+              balanceCyb={ 0 }
+            />
         </Application>
     ));
