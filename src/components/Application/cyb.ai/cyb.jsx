@@ -11,6 +11,8 @@ import {
     // Text,
 } from '../../..';
 
+import './index.css';
+
 const card = [
     {
         name: 'cyb1',
@@ -55,7 +57,7 @@ class CybCard extends Component {
 
     render() {
         const {
-            eth, cybName, children, active,
+            eth, cybName,
         } = this.props;
 
         return (
@@ -63,13 +65,7 @@ class CybCard extends Component {
               { ...this.props }
               width={ 210 }
               height={ 267 }
-              boxShadow={
-                    active
-                        ? '0 0 80px 2px #36d6ae'
-                        : this.state.hover
-                        ? '0 0 20px 0px #36d6ae'
-                        : '0'
-                }
+              boxShadow={ this.state.hover ? '0 0 20px 0px #36d6ae' : '0' }
               onMouseEnter={ () => this.handleHover() }
               onMouseLeave={ () => this.handleHover() }
               borderRadius={ 5 }
@@ -91,8 +87,8 @@ class CybCard extends Component {
                 >
                     <Heading
                       fontSize='29px'
-                      color={ active ? 'white' : '#757575' }
-                      marginBottom={ active ? 45 : 20 }
+                      color='#757575'
+                      marginBottom={ 20 }
                       className='active-slide-heading'
                     >
                         {cybName}
@@ -106,42 +102,40 @@ ETH
                             {' '}
                         </Text>
                     </Pane>
-                    {!active && (
+                    <Pane
+                      style={ { border: '2px solid #3ab793' } }
+                      width={ 64 }
+                      height={ 64 }
+                      display='flex'
+                      opacity={ this.state.hover ? '1' : '0' }
+                      alignItems='center'
+                      justifyContent='space-around'
+                      borderRadius='50%'
+                      boxShadow='0 2px 25px 1px #3ab793'
+                      marginBottom={ 0 }
+                      className='oval'
+                    >
                         <Pane
-                          style={ { border: '2px solid #3ab793' } }
-                          width={ 64 }
-                          height={ 64 }
-                          display='flex'
-                          opacity={ this.state.hover ? '1' : '0' }
-                          alignItems='center'
-                          justifyContent='space-around'
+                          style={ {
+                                border: '2px solid #3ab793',
+                                transform: 'rotate(25deg)',
+                            } }
+                          width={ 16.6 }
+                          height={ 9.4 }
                           borderRadius='50%'
-                          boxShadow='0 2px 25px 1px #3ab793'
-                          marginBottom={ 0 }
-                          className='oval'
-                        >
-                            <Pane
-                              style={ {
-                                    border: '2px solid #3ab793',
-                                    transform: 'rotate(25deg)',
-                                } }
-                              width={ 16.6 }
-                              height={ 9.4 }
-                              borderRadius='50%'
-                              className='oval-children'
-                            />
-                            <Pane
-                              style={ {
-                                    border: '2px solid #3ab793',
-                                    transform: 'rotate(-25deg)',
-                                } }
-                              width={ 16.6 }
-                              height={ 9.4 }
-                              borderRadius='50%'
-                              className='oval-children'
-                            />
-                        </Pane>
-                    )}
+                          className='oval-children'
+                        />
+                        <Pane
+                          style={ {
+                                border: '2px solid #3ab793',
+                                transform: 'rotate(-25deg)',
+                            } }
+                          width={ 16.6 }
+                          height={ 9.4 }
+                          borderRadius='50%'
+                          className='oval-children'
+                        />
+                    </Pane>
                     <Pane className='active-slide-text'>
                         <Pane>
                             <Text lineHeight='1.71' color='white' size={ 400 }>
