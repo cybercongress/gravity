@@ -17,6 +17,7 @@ import {
     Avatar,
     ToolTip,
 } from '../../..';
+import './media.css';
 
 const CybMatrix = require('./cyb_animation.gif');
 const imgEth = require('../AppMenu/eth.svg');
@@ -322,7 +323,14 @@ export const HelloContainer = ({ children, ...props }) => (
           marginX='auto'
           paddingY={ 65 }
         >
-            <Pane display='flex' alignItems='stretch' height='100%' flexDirection='row'>
+            <Pane
+            //  display='flex' alignItems='stretch' height='100%' flexDirection='row'
+            height='100%'
+            paddingX='1em'
+            display='grid'
+            gridTemplateColumns='1fr 1fr'
+            gridGap='1em'
+            >
                 {children}
             </Pane>
         </Pane>
@@ -331,9 +339,10 @@ export const HelloContainer = ({ children, ...props }) => (
 
 export const HelloContainerLeftCol = ({ children }) => (
     <Pane
-      width='calc((100% - 20px * 2) / 2)'
+      //  width='calc((100% - 20px * 2) / 2)'
+      width='100%'
       height='inherit'
-      paddingX={ 20 }
+      //  paddingX={ 20 }
     >
         {children}
     </Pane>
@@ -345,10 +354,11 @@ export const HelloContainerRightCol = ({ children, bntGroup }) => (
       flexDirection='row'
       justifyContent='center'
       alignItems='center'
-      width='calc((100% - 20px * 2) / 2)'
+    //   width='calc((100% - 20px * 2) / 2)'
       height='initial'
       position='relative'
-      paddingX={ 20 }
+      width='100%'
+    //   paddingX={ 20 }
     >
         <Pane
           display='flex'
@@ -395,6 +405,7 @@ export const HelloContainerRightColBtn = ({ children, center, ...props }) => (
       { ...props }
       display='flex'
       justifyContent={ center ? 'center' : 'space-between' }
+      className='btn-container'
     >
         {children}
     </Pane>
@@ -420,22 +431,22 @@ export const SlallImgText = ({ imgCyb, children }) => (
       justifyContent='space-evenly'
       height='100%'
     >
-        <img style={ { height: 270 } } src={ imgCyb } />
-        <Pane>{children}</Pane>
+        <img style={{objectFit: 'cover', width: '100%', maxWidth: 400 }} src={ imgCyb } />
+        <Pane textAlign='justify' maxWidth={420}>{children}</Pane>
     </Pane>
 );
 
 export const ButtonEverGreen = ({ children, custonClass, ...props }) => (
     <Button
       whiteSpace='nowrap'
-      paddingX={ 50 }
+      paddingX='2em'
       height={ 42 }
-      minWidth={ 200 }
+      minWidth={ 150 }
       display='flex'
       justifyContent='center'
       fontSize='18px'
       borderRadius={ 3 }
-      className={ custonClass || 'btn' }
+      className={ custonClass || 'btn'}
       letterSpacing={ 0 }
       { ...props }
     >
@@ -459,20 +470,20 @@ export const TextIlineBlock = ({ children, ...props }) => (
 );
 
 export const TextAreaImportMnemonic = () => (
-    <Pane position='relative' display='flex' justifyContent='center' height={ 500 } width='100%'>
+    <Pane position='relative' display='flex' justifyContent='center' height='90%' maxHeight={ 500 } maxWidth={500} width='100%'>
         <Textarea
           height='100%'
           paddingX={ 20 }
           paddingY={ 20 }
           fontSize='18px'
           placeholder='Add trees...'
-          width='90%'
+          width='100%'
           backgroundColor='#000'
           color='#fff'
           boxShadow='0 0 1px #fff'
           style={ { wordSpacing: 20, resize: 'none' } }
         />
-        <Pane bottom='2%' zIndex={ 2 } left='12%' position='absolute'>
+        <Pane bottom='1%' zIndex={ 2 } left='0' position='absolute'>
             <IconButton appearance='minimal' icon='duplicate' />
         </Pane>
     </Pane>

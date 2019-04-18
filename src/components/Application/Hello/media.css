@@ -1,0 +1,11 @@
+@media screen and (max-width: 900px) {
+    .btn, .btn-white, .btn-blue, .btn-red{
+        font-size: 1em !important;
+        padding: 0 !important;
+    }
+    .btn-container{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 2em;
+    }
+}

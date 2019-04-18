@@ -76,10 +76,10 @@ export const StartCybPages = () => (
                   flexDirection='column'
                   alignItems='center'
                   boxShadow='0 0 1px #fff'
-                  maxWidth='80%'
+                  width='100%'
                   paddingX='4vh'
                   paddingY='4.5vh'
-                  minWidth={ 500 }
+                  maxWidth={ 500 }
                   maxHeight={ 500 }
                   height='100%'
                 >
