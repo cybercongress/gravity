@@ -183,7 +183,8 @@ html, body, #root {
 .btn:active {
     box-shadow: 0 0 25px 0px #36d6ae !important;
     background-image: none !important;
-    background-color: rgba(67, 90, 111, 0.09) !important;
+    background-color: #3ab793 !important;
+    color: #ffffff !important;
 }
 
 .btn-white {

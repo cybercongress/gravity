@@ -734,13 +734,13 @@ export const TextInputError = ({ isInvalid, message, ...props }) => (
     <Pane position='relative'>
         <TextInput
           width='100%'
-          height={ 42 }
+          maxHeight={ 42 }
           backgroundColor='transparent'
           color='#fff'
           height='6vh'
-          maxHeight={ 42 }
           isInvalid={ isInvalid }
           paddingX={ 10 }
+          boxShadow='inset 0 0 0px 0.4px #979797'
           { ...props }
         />
         {isInvalid && (

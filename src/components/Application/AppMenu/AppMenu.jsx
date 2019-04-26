@@ -150,9 +150,9 @@ const Items = ({ item, deleteAppFromMenu, ...props }) => (
     >
     <Pane display='flex' width='100%' paddingLeft={20} paddingRight={10} justifyContent='space-between' alignItems='center'>
         <Pane alignItems='center' flexGrow={1} display='flex'>
-            <Pane className={ styles.imgItems } marginRight={ 17 } width={ 24 } height={ 24 }>
+            {/* <Pane className={ styles.imgItems } marginRight={ 17 } width={ 24 } height={ 24 }>
                 <img src={ item.img ? item.img : img } />
-            </Pane>
+            </Pane> */}
             <CybLink { ...props } dura={ item.rootDura }>
                 {item.name}
             </CybLink>
@@ -217,7 +217,8 @@ export const AddMenuItemReject = ({ onClick }) => (
     bottom={0}
     paddingX={13}
     onClick={ onClick }
-    className='btn'>
+    className='btn'
+    >
         &#10004;
     </Button>
 );

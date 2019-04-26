@@ -64,7 +64,7 @@ export const PopupBarFooter = ({ children }) => (
                     {children}
                 </Pane>
                 {this.state.hover && (
-                    <Pane maxWidth={ 300 } {...this.props} position='absolute'>
+                    <Pane maxWidth={ 300 } {...this.props} zIndex='4' position='absolute'>
                         {content}
                     </Pane>
                 )}

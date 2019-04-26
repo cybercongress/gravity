@@ -189,20 +189,31 @@ class SimpleSlider extends React.Component {
     //   }
     render() {
         const searchResults = card.map(card => (
-            <Pane className='slide' alignItems='center' height={ 700 }>
+            <Pane className='slide'style={{ width: 400 }} alignItems='center' height={ 700 }>
                 <CybCard active={ false } cybName={ card.name } eth={ card.balance } />
             </Pane>
         ));
         const settings = {
-            className: 'center',
+           // className: 'center',
             centerMode: true,
             focusOnSelect: true,
             infinite: true,
-            speed: 800,
+            //  speed: 800,
             centerPadding: '0px',
-            slidesToShow: 3,
+            slidesToShow: 1,
             arrows: false,
-            // slidesToScroll: 1,
+            //variableWidth: true,
+             variableWidth: true,
+            slidesToScroll: 1,
+            responsive: [{
+
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 3,
+                  variableWidth: false,
+                }
+          
+              }],
         };
 
         return <Slider { ...settings }>{searchResults}</Slider>;
@@ -220,7 +231,6 @@ export const FooterCyb = () => (
       paddingY={ 20 }
       backgroundColor='#000000'
       zIndex={ 2 }
-      paddingX='2em'
     >
         <Pane
           flexGrow={ 1 }
@@ -229,6 +239,7 @@ export const FooterCyb = () => (
           alignItems='center'
           justifyContent='center'
           flexDirection='row'
+          paddingX='1em'
         >
             <Text color='#fff' fontSize='18px'>
                 1 April

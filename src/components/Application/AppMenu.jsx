@@ -63,8 +63,13 @@ class AppMenu extends Component {
                   className='opacityItemsBefore'
                   flexDirection='column'
                 >
-                    {pendingAddToFavorites && (
-                        <ClickOutside  onClickOutside={ this.rejectFavorite }>
+                    
+                    <ReportLinkContainer>
+                        {/* <a target='__blank' href='#'>
+                            Files
+                        </a> */}
+                        {pendingAddToFavorites && (
+                        <Pane  onClickOutside={ this.rejectFavorite }>
                         <Pane zIndex={ 2 }>
                             <AddMenuItemContainer paddingBottom={ 10 }>
                                 <AddMenuItem>
@@ -86,12 +91,8 @@ class AppMenu extends Component {
                                 </AddMenuItem>
                             </AddMenuItemContainer>
                         </Pane>
-                        </ClickOutside>
+                        </Pane>
                     )}
-                    <ReportLinkContainer>
-                        <a target='__blank' href='#'>
-                            Files
-                        </a>
                     </ReportLinkContainer>
                 </Pane>
             </MenuContainer>

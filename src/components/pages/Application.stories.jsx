@@ -170,18 +170,18 @@ storiesOf('cyb/pages/Application', module)
 
     .add('StatusIndicator', () => (
         <Application ipfs='local' textIpfs='textIpfs' textEthNode='textEthNode' NodeStatus='fail' />
-    ))
-    .add('SignerPopup', () => (
-        <Application signerPopup />
-    ))
-    .add('Create Account', () => (
-        <Application>
-            <Login />
-        </Application>
-    ))
-    .add('Login', () => (
-        <Application>
-            <Login isUserExist />
-        </Application>
     ));
+    // .add('SignerPopup', () => (
+    //     <Application signerPopup />
+    // ))
+    // .add('Create Account', () => (
+    //     <Application>
+    //         <Login />
+    //     </Application>
+    // ))
+    // .add('Login', () => (
+    //     <Application>
+    //         <Login isUserExist />
+    //     </Application>
+    // ));
     

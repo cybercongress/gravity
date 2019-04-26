@@ -46,10 +46,12 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
           paddingRight={ 20 }
           justifyContent='flex-start'
           alignItems='center'
+          overflow='hidden'
         >
-            <Pane alignItems='flex-start' flexDirection='column' display='flex'>
-                <Pane alignItems='center' display='flex'>
-                <Pane width={ 14 } height={ 14 } alignItems='center' display='flex'>
+            <Pane alignItems='flex-start' width='inherit' flexDirection='column' display='flex'>
+                <Pane alignItems='center' width='inherit' display='flex'>
+               {/* v2 */}
+                {/* <Pane width={ 14 } height={ 14 } alignItems='center' display='flex'>
                         <Pill marginRight={ 7 } width={ 6 } height={ 6 } paddingX={ 0 } isSolid borderRadius='50%' color={
                                             item.status == 'local'
                                                 ? 'green'
@@ -57,10 +59,13 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
                                                 ? 'red'
                                                 : 'yellow'
                                         }/>
-                   </Pane>
+                   </Pane> */}
+                   
                     {item.address ?
-                    <Pane alignItems='center' display='flex'>
-                        <LinkHash style={{color: '#fff'}} noCopy noPadding value={ item.address } />
+                    <Pane width='inherit' alignItems='center' display='flex'>
+                        <CybLink { ...props } style={{ textOverflow: 'ellipsis', overflow: 'hidden' }} dura={ item.rootDura }>
+                            {item.address}
+                    </CybLink>
                    </Pane>
                    :
                    <Pane alignItems='center' display='flex'>
@@ -71,12 +76,12 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
                     </Pane>
                  }
                 </Pane>
-
-                <Pane>
+{/* v2 */}
+                {/* <Pane>
                     <Text color='#9d9d9d' fontSize='12px'>
                         20 min
                     </Text>
-                </Pane>
+                </Pane> */}
             </Pane>
         </Pane>
     </Pane>
@@ -130,7 +135,9 @@ export const CurrentUser = (props) => {
             {defaultEthAccount && (
                 <div className={ cx(styles.user_popup, { [styles.user_popup__open]: open }) }>
                     <WaleetAppMenu marginBottom={ 46 } ethBalance={ 17 } cybBalance={ 10 } />
-                    <UserCard className='opacityItems' marginBottom={ 20 } />
+                    <UserCard className='opacityItems'
+                        //marginBottom={ 20 }
+                    />
                     <BookmarksTimeline items={ menuItems } />
                     <Pane
                       width='100%'
@@ -142,9 +149,9 @@ export const CurrentUser = (props) => {
                       className='opacityItemsBefore'
                       flexDirection='column'
                     >
-                        <Text fontSize='16px' color='#fff'>
+                        {/* <Text fontSize='16px' color='#fff'>
                             Timeline
-                        </Text>
+                        </Text> */}
                     </Pane>
                 </div>
             )}

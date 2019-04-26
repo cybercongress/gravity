@@ -144,7 +144,7 @@ class CybCard extends Component {
 class SimpleSlider extends React.Component {
     render() {
         const searchResults = card.map(card => (
-            <Pane className='slide' alignItems='center' height={ 550 }>
+            <Pane className='slide' style={{ width: 400 }} alignItems='center' height={ 550 }>
                 <CybCard cybName={ card.name } text={ card.text } />
             </Pane>
         ));
@@ -155,9 +155,19 @@ class SimpleSlider extends React.Component {
             infinite: true,
             speed: 800,
             centerPadding: '0px',
-            slidesToShow: 3,
+            slidesToShow: 1,
+            variableWidth: true,
             arrows: false,
             // slidesToScroll: 1,
+            responsive: [{
+
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 3,
+                  variableWidth: false,
+                }
+          
+              }],
         };
 
         return <Slider { ...settings }>{searchResults}</Slider>;

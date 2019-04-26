@@ -148,7 +148,7 @@ export const SecurityImportSettingsPages = () => (
                   height='100%'
                 >
                     <Pane width='100%' display='flex' alignItems='center'>
-                        <FilePicker marginRight={ 10 } multiple width='100%' />
+                        <FilePicker marginRight={ 10 } width='100%' />
                         <IconButton
                           paddingX={ 5 }
                           paddingY={ 5 }

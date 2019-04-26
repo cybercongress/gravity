@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Pane, Text, Link, Tooltip } from "evergreen-ui";
 import styles from './SkillBar.less';
 import {
-    ToolTip
+    ToolTip,
 } from '../..';
 // import cx from 'classnames';
 
