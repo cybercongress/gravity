@@ -20,7 +20,6 @@ class TransactionView extends Component {
         return (
             <ScrollContainer>
             <MainContainer>
-                <PageTitle>transaction</PageTitle>
                 <JsonView data={ transaction } />
                 <JsonView data={ receipt } />
             </MainContainer>

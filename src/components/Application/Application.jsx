@@ -59,7 +59,7 @@ const Application = (props) => {
                         <NavigationComponents />
                     </NavigationCenter>
                     <NavigationRight>
-                        <IdBar />
+                        <IdBar menuItems={menuItems} defaultEthAccount />
                     </NavigationRight>
                 </Navigation>
             </AppHeader>

@@ -17,14 +17,14 @@
     background: url(./soul-focus.svg) no-repeat center center !important;
 }
 
-.btn-group-boby{
+.btn-group-body{
     background: url(./body.svg) no-repeat center center !important;
 }
 
-.btn-group-boby:hover{
+.btn-group-body:hover{
     background: url(./body-focus.svg) no-repeat center center !important;
 }
-.btn-group-boby:focus{
+.btn-group-body:focus{
     background: url(./body-focus.svg) no-repeat center center !important;
 }
 
