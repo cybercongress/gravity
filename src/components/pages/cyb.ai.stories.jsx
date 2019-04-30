@@ -6,7 +6,7 @@ import {
 import Application from '../Application/Application';
 import { Settings, FooterCyb } from '../Application/cyb.ai/cyb';
 
-storiesOf('cyb.ai', module).add('cyb.ai', () => (
+storiesOf('Examples', module).add('cyb.ai', () => (
     <Application>
         <Settings />
         <FooterCyb />

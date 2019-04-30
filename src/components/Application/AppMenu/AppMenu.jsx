@@ -3,6 +3,7 @@ import {
     Pane, Pill, Button, IconButton, Text, Tooltip,
 } from 'evergreen-ui';
 import { CybLink } from '../../..';
+import cx from 'classnames';
 
 const img = require('../cyb.svg');
 // import './AppMenu.less';
@@ -227,13 +228,24 @@ export const AppStoreLink = (...props) => (
     </CybLink>
 );
 
-const Items = ({ item, deleteAppFromMenu, ...props }) => (
-    <Pane
+class Items extends React.Component{
+    state = {
+        active: false,
+    };
+    toggleClass() {
+        const currentState = this.state.active;
+        this.setState({ active: !currentState });
+    };
+    render(){
+        const { item, deleteAppFromMenu, ...props } = this.props;
+        return(
+<Pane
       display='flex'
       paddingY={ 10 }
       alignItems='center'
-      className={ `${styles.bookmarks__item} ${styles.active}` }
+      className={ cx(styles.bookmarks__item, { [styles.active]: this.state.active })}
       key={ item.rootDura }
+      onClick={() => this.toggleClass() }
     >
         <Pane
           display='flex'
@@ -276,7 +288,60 @@ const Items = ({ item, deleteAppFromMenu, ...props }) => (
             </div>
         </Pane>
     </Pane>
-);
+        )
+    }
+};
+
+// const Items = ({ item, deleteAppFromMenu, active, ...props }) => (
+//     <Pane
+//       display='flex'
+//       paddingY={ 10 }
+//       alignItems='center'
+//       className={ cx(styles.bookmarks__item, { [styles.active]: active })}
+//       key={ item.rootDura }
+//     >
+//         <Pane
+//           display='flex'
+//           width='100%'
+//           paddingLeft={ 20 }
+//           paddingRight={ 10 }
+//           justifyContent='space-between'
+//           alignItems='center'
+//         >
+//             <Pane alignItems='center' flexGrow={ 1 } display='flex'>
+//                 {/* <Pane className={ styles.imgItems } marginRight={ 17 } width={ 24 } height={ 24 }>
+//                 <img src={ item.img ? item.img : img } />
+//             </Pane> */}
+//                 <CybLink { ...props } dura={ item.rootDura }>
+//                     {item.name}
+//                 </CybLink>
+//             </Pane>
+//             {item.pill && (
+//                 <Pill
+//                   isSolid
+//                   width={ 22 }
+//                   height={ 16 }
+//                   boxShadow='0px 0px 17px 2px #36d6ae'
+//                   style={ { backgroundColor: '#36d6ae', color: '#000' } }
+//                 >
+//                     {item.pill}
+//                 </Pill>
+//             )}
+//             <div className={ styles.bookmarks__group_btn }>
+//                 <button
+//                   type='button'
+//                   className={ styles.bookmarks__edit_btn }
+//                   onClick={ () => deleteAppFromMenu(item.rootDura) }
+//                 />
+//                 <button
+//                   type='button'
+//                   className={ styles.bookmarks__remove_btn }
+//                   onClick={ () => deleteAppFromMenu(item.rootDura) }
+//                 />
+//             </div>
+//         </Pane>
+//     </Pane>
+// );
 
 export const Bookmarks = ({ items, deleteMenuItem, ...props }) => (
     <div className={ styles.bookmarks }>

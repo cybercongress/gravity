@@ -64,7 +64,7 @@ const NotFound = () => (
     </div>
 );
 
-storiesOf('cyber', module).add('notFound', () => (
+storiesOf('Examples/cyber', module).add('not found', () => (
     <Application>
         <NotFound />
     </Application>

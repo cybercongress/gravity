@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Link as RouterLink } from 'react-router';
+import { Link as RouterLink } from 'react-router-dom';
 
 const styles = require("./CallToAction.less");
 
@@ -15,7 +15,7 @@ export const Container = ({ children }) => (
 
 
 export const Link = ({ children, ...props }) => (
-  <RouterLink className={styles.link} {...props} >
-    {children}
-  </RouterLink>
+    <RouterLink className={styles.link} {...props} >
+        {children}
+    </RouterLink>
 );

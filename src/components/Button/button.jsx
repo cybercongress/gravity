@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
-import { Link } from 'react-router';
-import { ActionLink , CybLink } from '../..';
+import { Link, BrowserRouter, Switch } from 'react-router-dom';
+import { ActionLink, CybLink } from '../..';
 
 const styles = require('./button.less');
 
@@ -12,8 +12,12 @@ export const AddNewRecordButton = ({ children, ...props }) => (
     </button>
 );
 
-export const FooterButton = (props) => (
-    <Link {...props} className={styles.footerButton}/>
+export const FooterButton = props => (
+    <BrowserRouter>
+        <Switch>
+            <Link {...props} className={styles.footerButton} />
+        </Switch>
+    </BrowserRouter>
 );
 // export const ButtonIcon = ({children, ...props}) => (
 //   <i {...props} className={cx(styles.BttnIcon, styles.BttnIconAdd)}>

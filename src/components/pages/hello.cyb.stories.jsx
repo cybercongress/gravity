@@ -20,7 +20,7 @@ import {
     FailLogin,
 } from '../..';
 
-storiesOf('Hello', module)
+storiesOf('Examples/hello', module)
     .add('1a', () => <StartCybPages />)
     .add('2', () => <MatrixEverywhere />)
     .add('3a', () => <ThatYouSlave />)

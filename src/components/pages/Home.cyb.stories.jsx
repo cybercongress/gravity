@@ -63,7 +63,7 @@ const HomePage = props => (
     </Home>
 );
 
-storiesOf('cyb/pages/HomePage', module).add('HomePage', () =>(
+storiesOf('Examples/cyb', module).add('HomePage', () =>(
     <Application homePage>
         <HomePage />
     </Application>

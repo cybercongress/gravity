@@ -9,7 +9,7 @@ import {
     StateCyb,
 } from '../..';
 
-storiesOf('id', module)
+storiesOf('Examples/id', module)
     .add('FollowYourWeb3', () => <FollowYourWeb3 />)
     .add('id.cyb', () => <IdCyb />)
     .add('keys.cyb', () => <KeysCyb />)

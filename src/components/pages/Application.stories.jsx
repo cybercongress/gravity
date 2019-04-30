@@ -151,7 +151,7 @@ const menuItems = [
     },
 ]
 
-storiesOf('cyb/pages/Application', module)
+storiesOf('Examples/cyb', module)
     .add('Application', () => (
         <Application />
     ))

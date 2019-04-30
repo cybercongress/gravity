@@ -60,14 +60,14 @@ const Lottery = ({ index, account, balanceCyb, addressCyb, addressEth, balanceEt
     </ScrollContainer>
 );
 
-storiesOf('cyber/lottery', module)
-    .add('index', () => (
+storiesOf('Examples/cyber', module)
+    .add('lottery/index', () => (
         <Application>
             <Lottery index />
         </Application>
     ))
 
-    .add('congrats', () => (
+    .add('lottery/congrats', () => (
         <Application>
             <Lottery
               account
@@ -79,7 +79,7 @@ storiesOf('cyber/lottery', module)
         </Application>
     ))
 
-    .add('loose', () => (
+    .add('lottery/loose', () => (
         <Application>
             <Lottery
               account

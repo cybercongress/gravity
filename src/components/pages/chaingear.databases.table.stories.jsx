@@ -193,7 +193,7 @@ const FooterCyb = () => (
     </Pane>
 );
 
-storiesOf('chaingear', module).add('databases', () => (
+storiesOf('Examples/.chaingear', module).add('databases', () => (
     <Application>
         <DataBaseTable databasesItem={ databases } />
         <FooterCyb />

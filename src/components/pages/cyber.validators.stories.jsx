@@ -244,7 +244,7 @@ class Validators extends React.Component {
     }
 }
 
-storiesOf('cyber', module)
+storiesOf('Examples/cyber', module)
     .add('validators', () => (
         <Application>
             <Validators validators={ validatorsData } />

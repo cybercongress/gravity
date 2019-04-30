@@ -183,7 +183,7 @@ class Settings extends Component {
     }
 }
 
-storiesOf('cyb/pages/Settings', module)
+storiesOf('Examples/cyb', module)
 
     .add('Settings', () => (
         <Application>

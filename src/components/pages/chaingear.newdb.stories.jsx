@@ -312,26 +312,26 @@ const FooterCyb = ({ disabled, databaseId }) => (
     </Pane>
 );
 
-storiesOf('chaingear/newdb', module)
-    .add('index', () => (
+storiesOf('Examples/.chaingear', module)
+    .add('newdb/index', () => (
         <Application>
             <Pages beneficiariesItem={ beneficiaries } />
             <FooterCyb />
         </Application>
     ))
-    .add('have_id', () => (
+    .add('newdb/have_id', () => (
         <Application>
             <Pages beneficiariesItem={ beneficiaries } />
             <FooterCyb databaseId />
         </Application>
     ))
-    .add('disabledBttn', () => (
+    .add('newdb/disabledBttn', () => (
         <Application>
             <Pages beneficiariesItem={ beneficiaries } />
             <FooterCyb disabled />
         </Application>
     ))
-    .add('error', () => (
+    .add('newdb/error', () => (
         <Application>
             <Pages message='error' beneficiariesItem={ beneficiaries } />
             <FooterCyb />

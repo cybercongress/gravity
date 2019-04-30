@@ -582,20 +582,20 @@ class FooterCyb extends Component{
 }
 
 
-storiesOf('chaingear/app.chaingear', module)
-    .add('table', () => (
+storiesOf('Examples/.chaingear', module)
+    .add('app.chaingear/table', () => (
         <Application>
             <PagesViewRegistry databasesItem={ databases } />
             <FooterCyb update/>
         </Application>
     ))
-    .add('pause', () => (
+    .add('app.chaingear/pause', () => (
         <Application>
             <PagesViewRegistry disabled isDbPaused databasesItem={ databases } />
             <FooterCyb />
         </Application>
     ))
-    .add('no_table', () => (
+    .add('app.chaingear/no_table', () => (
         <Application>
             <PagesViewRegistry showTable='1' />
             <FooterCyb />

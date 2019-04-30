@@ -779,7 +779,7 @@ const links3 = [
     },
 ];
 
-storiesOf('cyber', module)
+storiesOf('Examples/cyber', module)
     .add('index', () => (
         <Application>
             <App

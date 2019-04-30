@@ -75,7 +75,7 @@ const Pages = () => (
     </ScrollContainer>
 );
 
-storiesOf('.cyb', module).add('cyb', () => (
+storiesOf('Examples', module).add('.cyb', () => (
     <Application>
         <Pages />
     </Application>

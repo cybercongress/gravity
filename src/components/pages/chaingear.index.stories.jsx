@@ -286,7 +286,7 @@ const Settings = () => (
     </ScrollContainer>
 );
 
-storiesOf('chaingear', module).add('index', () => (
+storiesOf('Examples/.chaingear', module).add('index', () => (
     <Application>
         <Settings />
         <FooterCyb />

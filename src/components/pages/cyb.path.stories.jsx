@@ -74,7 +74,7 @@ const history = [
     },
 ];
 
-storiesOf('id', module).add('path.cyb', () => (
+storiesOf('Examples/id', module).add('path.cyb', () => (
     <Application>
         <History history={ history } />
     </Application>

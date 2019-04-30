@@ -202,7 +202,7 @@ const FooterCyb = () => (
     </Pane>
 );
 
-storiesOf('chaingear', module).add('2', () => (
+storiesOf('Examples/.chaingear', module).add('2', () => (
     <Application>
         <Databases databasesItem={ databases } />
         <FooterCyb />

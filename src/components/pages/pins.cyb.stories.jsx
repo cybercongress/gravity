@@ -159,7 +159,7 @@ const addRegistryItem = [
     },
 ];
 
-storiesOf('id', module)
+storiesOf('Examples/id', module)
     .add('pins.cyb', () => (
         <Application>
             <PinsCyb registryItems={ addRegistryItem } />

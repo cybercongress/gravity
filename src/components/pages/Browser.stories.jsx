@@ -89,7 +89,7 @@ class Browser extends Component {
 // )(Browser);
 
 
-storiesOf('cyb/pages/Browser', module)
+storiesOf('Examples/cyb', module)
 .add('Browser', () => (
     <Application>
          <Browser />

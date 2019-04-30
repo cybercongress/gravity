@@ -5,6 +5,6 @@ import {
     FailLogin,
 } from '../..';
 
-storiesOf('login', module)
+storiesOf('Examples/login', module)
     .add('successful_llogin', () => <SuccessfulLogin />)
     .add('fail_login', () => <FailLogin />);

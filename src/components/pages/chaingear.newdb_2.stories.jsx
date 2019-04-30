@@ -114,7 +114,7 @@ const NewDataBase = ({ addressEth }) => (
     </ScrollContainer>
 );
 
-storiesOf('chaingear', module).add('newdb_2', () => (
+storiesOf('Examples/.chaingear', module).add('newdb_2', () => (
     <Application>
         <NewDataBase addressEth='0x60d0cC2aE15859f69bF74DADb8AE3Bd58434976b' />
     </Application>
