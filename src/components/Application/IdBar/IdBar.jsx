@@ -134,7 +134,7 @@ export const CurrentUser = (props) => {
             )}
             {defaultEthAccount && (
                 <div className={ cx(styles.user_popup, { [styles.user_popup__open]: open }) }>
-                    <WaleetAppMenu marginBottom={ 46 } ethBalance={ 17 } cybBalance={ 10 } />
+                    <WaleetAppMenu marginBottom={ 46 } ethBalance={ ethBalance } cybBalance={ cybBalance } />
                     <UserCard className='opacityItems'
                         //marginBottom={ 20 }
                     />

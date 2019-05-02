@@ -42,7 +42,7 @@ export const WaleetAppMenuCyb = ({ cybBalance }) => (
       content={ (
           <Pane paddingY={ 16 } paddingX={ 16 }>
               <Text lineHeight={ 1.33 } fontSize='12px' color='#fff'>
-                    142 76483221311 explanation of number scales
+                    {cybBalance} explanation of number scales
               </Text>
           </Pane>
 ) }

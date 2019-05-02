@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import {
     Heading, Pane, Button, Text as TextEv, TextInput,
     Tablist, Tab, Table as TableEv, Pill, Tooltip, Card,
-    Icon, IconButton, Textarea,
+    Icon, IconButton, Textarea, Popover,
 } from 'evergreen-ui';
 
 import Title from './components/Title/Title';
@@ -520,5 +520,5 @@ export {
 
     Heading, Pane, Button, TextEv, TextInput,
     Tablist, Tab, TableEv, Pill, Tooltip, Card,
-    Icon, IconButton, Textarea,
+    Icon, IconButton, Textarea, Popover,
 };
