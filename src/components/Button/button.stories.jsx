@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { addDecorator } from '@storybook/react';
 import { AddNewRecordButton, Button } from '../..';
 
 storiesOf('commponents/Button', module)
@@ -69,12 +68,6 @@ storiesOf('commponents/Button', module)
             complete step
         </Button>
     ))
-
-    .add('ActionLink', () => (
-      <Button to={ `/databases/` }>
-        ActionLink
-      </Button>
-  ))
 
   .add('ActionLinkRed', () => (
     <Button color='red' to={ `/databases/` }>

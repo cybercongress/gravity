@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Pane, Text, IconButton, Card, FilePicker,
 } from 'evergreen-ui';
@@ -19,13 +19,6 @@ import {
     TextInputError,
 } from '../..';
 
-
-// const CybMatrix = require('./Hello/cyb.png');
-const CybMatrix = require('./Hello/cyb_animation.gif');
-const cybRed = require('./Hello/cyb-red.png');
-const cybEye = require('./Hello/eye.jpg');
-const cybEye2 = require('./Hello/cybEye2.png');
-
 export const ConnectionPages = ({
     ipfsStatus,
     cyberdStatus,
@@ -35,10 +28,11 @@ export const ConnectionPages = ({
     CYBERD_END_POINT,
     CYBERD_WS_END_POINT,
     ipfsWriteUrl,
+    img,
 }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <SlallImgText imgCyb={ cybEye }>
+            <SlallImgText imgCyb={ img }>
                 <TextIlineBlock>
                     This is your connection state. You can change it, if you want.
                 </TextIlineBlock>
@@ -64,10 +58,10 @@ export const ConnectionPages = ({
     </HelloContainer>
 );
 
-export const StartCybPages = () => (
+export const StartCybPages = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg />
+            <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
@@ -121,10 +115,10 @@ export const StartCybPages = () => (
     </HelloContainer>
 );
 
-export const SecurityImportSettingsPages = () => (
+export const SecurityImportSettingsPages = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <SlallImgText imgCyb={ cybRed }>
+            <SlallImgText imgCyb={ img }>
                 <TextIlineBlock marginBottom={ 10 }>
                     You can skip this step if you are the firsrt time outside the matrix.
                 </TextIlineBlock>
@@ -166,10 +160,10 @@ export const SecurityImportSettingsPages = () => (
     </HelloContainer>
 );
 
-export const SecurityCreatePasswordPages = () => (
+export const SecurityCreatePasswordPages = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <SlallImgText imgCyb={ cybRed }>
+            <SlallImgText imgCyb={ img }>
                 <TextIlineBlock marginBottom={ 10 }>
                     Okay. What do you need now,
                     {' '}
@@ -242,10 +236,10 @@ export const SecurityCreatePasswordPages = () => (
     </HelloContainer>
 );
 
-export const CardWalletPages = () => (
+export const CardWalletPages = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <SlallImgText imgCyb={ cybEye }>
+            <SlallImgText imgCyb={ img }>
                 <TextIlineBlock marginBottom={ 10 }>Check your identity.</TextIlineBlock>
                 <TextIlineBlock>
                     If it’s not your what you expected to see, you can go back and import another.
@@ -264,14 +258,14 @@ export const CardWalletPages = () => (
     </HelloContainer>
 );
 
-export const CardWalletPagesBackUpMnemonic = () => (
+export const CardWalletPagesBackUpMnemonic = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <SlallImgText imgCyb={ cybEye2 }>
+            <SlallImgText imgCyb={ img }>
                 <TextIlineBlock marginBottom={ 10 }>
                     This is your new body,
                     {' '}
-                    <Text fontSize='16px' color='#fff'>
+                    <Text fontSize='16px' color='#fff' display='inline'>
                         xhipster
                     </Text>
                     . In new web world it is a pair of Ethereum and Cyber cryptoaddresses. You need
@@ -298,10 +292,10 @@ export const CardWalletPagesBackUpMnemonic = () => (
     </HelloContainer>
 );
 
-export const ImportAccountPages = () => (
+export const ImportAccountPages = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <SlallImgText imgCyb={ cybEye }>
+            <SlallImgText imgCyb={ img }>
                 <TextIlineBlock>
                     We need to import your account. Just paste or type mnemonic phrase in the text
                     field
@@ -320,10 +314,10 @@ export const ImportAccountPages = () => (
     </HelloContainer>
 );
 
-export const ImportAccountShowMnemonic = () => (
+export const ImportAccountShowMnemonic = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <SlallImgText imgCyb={ cybEye2 }>
+            <SlallImgText imgCyb={ img }>
                 <TextIlineBlock marginBottom={ 10 }>
                     This is your mnemonic phrase. Keep it safe, do not store this phrase on computer
                     or mobile phone! If you lose it - your funds will gone forever.
@@ -353,10 +347,10 @@ export const ImportAccountShowMnemonic = () => (
     </HelloContainer>
 );
 
-export const GetOffTheMatrix = () => (
+export const GetOffTheMatrix = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg />
+            <BigImg srcBigImg={ img }  />
         </HelloContainerLeftCol>
         <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
@@ -371,10 +365,10 @@ export const GetOffTheMatrix = () => (
     </HelloContainer>
 );
 
-export const UserChoice = () => (
+export const UserChoice = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg />
+            <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
@@ -384,10 +378,10 @@ export const UserChoice = () => (
     </HelloContainer>
 );
 
-export const WelcomeNewWorld = () => (
+export const WelcomeNewWorld = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg srcBigImg={ cybEye } />
+            <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
         <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
@@ -423,10 +417,10 @@ export const WelcomeNewWorld = () => (
     </HelloContainer>
 );
 
-export const GeneratedSecure = () => (
+export const GeneratedSecure = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg srcBigImg={ cybEye } />
+            <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
         <HelloContainerRightCol bntGroup={ <BntGroup /> }>
             <HelloContainerRightColContent>
@@ -448,10 +442,10 @@ export const GeneratedSecure = () => (
     </HelloContainer>
 );
 
-export const ThatYouSlave = () => (
+export const ThatYouSlave = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg srcBigImg={ CybMatrix } />
+            <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
@@ -477,10 +471,10 @@ export const ThatYouSlave = () => (
     </HelloContainer>
 );
 
-export const LastChance = () => (
+export const LastChance = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg srcBigImg={ CybMatrix } />
+            <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
@@ -510,10 +504,10 @@ export const LastChance = () => (
     </HelloContainer>
 );
 
-export const MatrixEverywhere = () => (
+export const MatrixEverywhere = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg srcBigImg={ CybMatrix } />
+            <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>

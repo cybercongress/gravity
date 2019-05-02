@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
     ThatYouSlave,
@@ -16,23 +16,26 @@ import {
     ImportAccountShowMnemonic,
     GetOffTheMatrix,
     UserChoice,
-    SuccessfulLogin,
-    FailLogin,
 } from '../..';
 
+const CybMatrix = require('../Application/Hello/img/cyb_animation.gif');
+const cybRed = require('../Application/Hello/img/cyb-red.png');
+const cybEye = require('../Application/Hello/img/eye.jpg');
+const cybEye2 = require('../Application/Hello/img/cybEye2.png');
+
 storiesOf('Examples/hello', module)
-    .add('1a', () => <StartCybPages />)
-    .add('2', () => <MatrixEverywhere />)
-    .add('3a', () => <ThatYouSlave />)
-    .add('3b', () => <ImportAccountPages />)
-    .add('4a', () => <LastChance />)
-    .add('4b', () => <CardWalletPages />)
-    .add('5aa', () => <WelcomeNewWorld />)
-    .add('5ab', () => <UserChoice />)
-    .add('5ac', () => <GeneratedSecure />)
-    .add('6a', () => <CardWalletPagesBackUpMnemonic />)
-    .add('7a', () => <ImportAccountShowMnemonic />)
-    .add('8', () => <SecurityCreatePasswordPages />)
-    .add('9', () => <SecurityImportSettingsPages />)
-    .add('10', () => <ConnectionPages status='local' />)
-    .add('11', () => <GetOffTheMatrix />);
+    .add('1a', () => <StartCybPages img={ CybMatrix } />)
+    .add('2', () => <MatrixEverywhere img={ CybMatrix } />)
+    .add('3a', () => <ThatYouSlave img={ CybMatrix } />)
+    .add('3b', () => <ImportAccountPages img={ cybEye } />)
+    .add('4a', () => <LastChance img={ CybMatrix } />)
+    .add('4b', () => <CardWalletPages img={ cybEye } />)
+    .add('5aa', () => <WelcomeNewWorld img={ cybEye } />)
+    .add('5ab', () => <UserChoice img={ CybMatrix } />)
+    .add('5ac', () => <GeneratedSecure img={ cybEye } />)
+    .add('6a', () => <CardWalletPagesBackUpMnemonic img={ cybEye2 } />)
+    .add('7a', () => <ImportAccountShowMnemonic img={ cybEye2 } />)
+    .add('8', () => <SecurityCreatePasswordPages img={ cybRed } />)
+    .add('9', () => <SecurityImportSettingsPages img={ cybRed } />)
+    .add('10', () => <ConnectionPages status='local' img={ cybEye } />)
+    .add('11', () => <GetOffTheMatrix img={ CybMatrix } />);

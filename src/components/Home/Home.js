@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link as LinkRouter } from 'react-router-dom';
 import { CybLink } from '../..';
 import cx from 'classnames';
 
@@ -49,14 +48,6 @@ export const Image = ({ type }) => (
                             [styles.imageipfs]: type ==='ipfs'
                         })} />
 );
-
-const Link = (props) => {
-    if (/^https?:\/\//.test(props.to)) {
-        return <a href={ props.to } { ...props } />;
-    }
-    return <LinkRouter { ...props } />;
-};
-
 
 export const LinkList = ({ children }) => (
     <nav className={styles.linkList}>

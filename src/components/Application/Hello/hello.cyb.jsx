@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Button,
     Pane,
@@ -19,7 +19,6 @@ import {
 } from '../../..';
 import './media.css';
 
-const CybMatrix = require('./cyb_animation.gif');
 const imgEth = require('../AppMenu/eth.svg');
 
 export const Eth = () => (
@@ -104,7 +103,7 @@ export const BntGroup = () => (
               </Pane>
 ) }
         >
-            <Button className='btn-group-boby btn-group' />
+            <Button className='btn-group-body btn-group' />
         </ToolTip>
         <ToolTip
           top={ 0 }
@@ -419,7 +418,7 @@ export const BigImg = ({ srcBigImg }) => (
       justifyContent='center'
       flexDirection='column'
     >
-        <img style={ { width: '100%' } } src={ srcBigImg || CybMatrix } />
+        <img style={ { width: '100%' } } src={ srcBigImg } />
     </Pane>
 );
 

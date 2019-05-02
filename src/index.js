@@ -4,14 +4,14 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import {
     Heading, Pane, Button, Text as TextEv, TextInput,
-    Tablist, Tab, Table as TableEv, Pill, Tooltip,
+    Tablist, Tab, Table as TableEv, Pill, Tooltip, Card,
+    Icon, IconButton, Textarea,
 } from 'evergreen-ui';
 
 import Title from './components/Title/Title';
 
 import {
     Container,
-    Link as ActionLink,
 } from './components/CallToAction';
 import {
     LinkHash,
@@ -309,7 +309,6 @@ export {
     ButtonOld,
     Container,
     Text,
-    ActionLink,
     Section,
     SectionTabs,
     SectionContent,
@@ -520,5 +519,6 @@ export {
     CardAccount,
 
     Heading, Pane, Button, TextEv, TextInput,
-    Tablist, Tab, TableEv, Pill, Tooltip,
+    Tablist, Tab, TableEv, Pill, Tooltip, Card,
+    Icon, IconButton, Textarea,
 };

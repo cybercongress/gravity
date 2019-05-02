@@ -16,14 +16,11 @@
     "prepublishOnly": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
-    "build": "webpack --mode development",
+    "build": "rimraf lib && webpack",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "license": "WTFPL",
   "dependencies": {
-    "@storybook/addon-centered": "5.0.11",
-    "@storybook/storybook-deployer": "^2.8.1",
-    "acorn-jsx": "^5.0.1",
     "babel-eslint": "^10.0.1",
     "chart.js": "^2.8.0",
     "classnames": "2.2.6",
@@ -35,20 +32,15 @@
     "less": "^3.9.0",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
-    "rc-tooltip": "^3.7.3",
     "react": "16.8.6",
     "react-chartjs-2": "2.7.6",
     "react-click-outside": "^3.0.1",
     "react-dom": "16.8.6",
     "react-flexbox-grid": "^2.1.2",
-    "react-router": "5.0.0",
-    "react-router-dom": "^5.0.0",
     "react-slick": "^0.24.0",
-    "react-tooltip": "^3.10.0",
     "slick-carousel": "^1.8.1",
     "terminal-in-react": "^4.3.1",
-    "unstated": "^2.1.1",
-    "url-loader": "1.1.2"
+    "unstated": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
@@ -56,8 +48,10 @@
     "@babel/preset-env": "7.4.4",
     "@babel/preset-react": "7.0.0",
     "@storybook/addon-actions": "5.0.11",
+    "@storybook/addon-centered": "5.0.11",
     "@storybook/core": "^5.0.11",
     "@storybook/react": "5.0.11",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/theming": "^5.0.11",
     "babel-loader": "8.0.5",
     "css-loader": "2.1.1",
@@ -71,7 +65,9 @@
     "mini-css-extract-plugin": "0.6.0",
     "prettier": "^1.17.0",
     "style-loader": "0.23.1",
+    "url-loader": "1.1.2",
     "webpack": "4.30.0",
-    "webpack-cli": "3.3.1"
+    "webpack-cli": "3.3.1",
+    "rimraf": "2.6.3"
   }
 }

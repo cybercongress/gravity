@@ -6,14 +6,12 @@ import {
     FooterButton,
     Section,
     SectionContent,
-    ActionLink,
     MainContainer,
     LinkHash,
     HomeTable,
     Text,
-    ScrollContainer,
+    ScrollContainer, CybLink,
 } from '../..';
-import { Button } from '../Button/button';
 import Application from '../Application/Application';
 
 function formatDate() {
@@ -219,7 +217,7 @@ storiesOf('Examples/.chaingear', module)
                             <Text size='xlg' color='blue' bold style={ { marginBottom: '20px' } }>
                                 You haven&#39;t created registries yet!
                             </Text>
-                            <ActionLink to='/new'>create and deploy right now</ActionLink>
+                            <CybLink to='/new'>create and deploy right now</CybLink>
                         </Container>
                     </SectionContent>
                 </Section>
