@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Pane, Button, Text } from 'evergreen-ui';
-import { ToolTip } from '../../..';
+import { Pane, Button, Text, Tooltip } from 'evergreen-ui';
 
 const Identity = ({ title, description, btnClass }) => (
-    <ToolTip
-      top={ 0 }
-      right='100%'
+    <Tooltip
+      position='left'
       content={ (
           <Pane
             paddingX={ 10 }
@@ -14,9 +12,7 @@ const Identity = ({ title, description, btnClass }) => (
             flexDirection='column'
             alignItems='center'
             width={ 200 }
-            backgroundColor='#000'
             borderRadius={ 5 }
-            opacity='0.8'
           >
               <Pane
                 marginBottom={ 7 }
@@ -36,7 +32,7 @@ const Identity = ({ title, description, btnClass }) => (
 ) }
     >
         <Button className={ `${btnClass} btn-group` } />
-    </ToolTip>
+    </Tooltip>
 );
 
 export const BntGroupFull = () => (

@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { Pane, Text, Link, Tooltip } from "evergreen-ui";
 import styles from './SkillBar.less';
-import {
-    ToolTip,
-} from '../..';
 // import cx from 'classnames';
 
 export const SkillBar = ({
     children, fontSize, bwPercent, bwRemained, bwMaxValue, linkPrice, ...props
 }) => (
-    <ToolTip
+    <Tooltip
       appearance='card'
       top={ 30 }
       content={ (
@@ -94,5 +91,5 @@ export const SkillBar = ({
             </Pane>
             {children}
         </Pane>
-    </ToolTip>
+    </Tooltip>
 );

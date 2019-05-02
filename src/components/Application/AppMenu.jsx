@@ -69,7 +69,7 @@ class AppMenu extends Component {
                             Files
                         </a> */}
                         {pendingAddToFavorites && (
-                        <Pane  onClickOutside={ this.rejectFavorite }>
+                        <Pane onClickOutside={ this.rejectFavorite }>
                         <Pane zIndex={ 2 }>
                             <AddMenuItemContainer paddingBottom={ 10 }>
                                 <AddMenuItem>

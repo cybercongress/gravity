@@ -11,11 +11,12 @@ import {
     TextInput,
     Table,
     Checkbox,
+    Tooltip,
 } from 'evergreen-ui';
 import Terminal from 'terminal-in-react';
 import {
     Avatar,
-    ToolTip,
+    //ToolTip,
 } from '../../..';
 import './media.css';
 
@@ -43,9 +44,8 @@ export const GCyb = () => (
 
 export const BntGroup = () => (
     <Pane display='flex' flexDirection='column'>
-        <ToolTip
-          top={ 0 }
-          right='100%'
+        <Tooltip
+          position='left'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -73,10 +73,9 @@ export const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-soul btn-group' />
-        </ToolTip>
-        <ToolTip
-          top={ 0 }
-          right='100%'
+        </Tooltip>
+        <Tooltip
+          position='left'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -104,10 +103,9 @@ export const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-body btn-group' />
-        </ToolTip>
-        <ToolTip
-          top={ 0 }
-          right='100%'
+        </Tooltip>
+        <Tooltip
+          position='left'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -135,10 +133,9 @@ export const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-imortality btn-group' />
-        </ToolTip>
-        <ToolTip
-          top={ 0 }
-          right='100%'
+        </Tooltip>
+        <Tooltip
+          position='left'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -166,10 +163,9 @@ export const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-security btn-group' />
-        </ToolTip>
-        <ToolTip
-          top={ 0 }
-          right='100%'
+        </Tooltip>
+        <Tooltip
+          position='left'
           content={ (
               <Pane
                 paddingX={ 10 }
@@ -197,7 +193,7 @@ export const BntGroup = () => (
 ) }
         >
             <Button className='btn-group-intelligence btn-group' />
-        </ToolTip>
+        </Tooltip>
     </Pane>
 );
 

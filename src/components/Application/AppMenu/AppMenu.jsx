@@ -229,27 +229,21 @@ export const AppStoreLink = (...props) => (
 );
 
 class Items extends React.Component{
-    state = {
-        active: false,
-    };
-    toggleClass() {
-        const currentState = this.state.active;
-        this.setState({ active: !currentState });
-    };
+
     render(){
-        const { item, deleteAppFromMenu, ...props } = this.props;
+        const { item, deleteAppFromMenu, selected, ...props } = this.props;
         return(
 <Pane
       display='flex'
       paddingY={ 10 }
       alignItems='center'
-      className={ cx(styles.bookmarks__item, { [styles.active]: this.state.active })}
+      className={ cx(styles.bookmarks__item, { [styles.active]: selected })}
       key={ item.rootDura }
-      onClick={() => this.toggleClass() }
     >
         <Pane
           display='flex'
           width='100%'
+          height={30}
           paddingLeft={ 20 }
           paddingRight={ 10 }
           justifyContent='space-between'
@@ -343,13 +337,34 @@ class Items extends React.Component{
 //     </Pane>
 // );
 
-export const Bookmarks = ({ items, deleteMenuItem, ...props }) => (
-    <div className={ styles.bookmarks }>
-        {items.map(item => (
-            <Items { ...props } key={ item.rootDura } item={ item } deleteAppFromMenu={ deleteMenuItem } />
-        ))}
+export class Bookmarks extends React.Component {
+        state = {
+            selectedIndex: 0,
+        }
+
+        onCustomClick = (index) => {
+            this.setState({
+                selectedIndex: index,
+            })
+            
+            onClick();
+            
+        };
+
+    render(){
+       
+       const { items, deleteMenuItem, ...props } = this.props;
+    
+        return(
+            <div className={ styles.bookmarks }>
+            
+        {items.map((item, index) => (
+            <Items selected={index === this.state.selectedIndex} onClick={ e => this.onCustomClick(index)} { ...props } key={ index } item={ item } deleteAppFromMenu={ deleteMenuItem } />
+       ))}
     </div>
-);
+        )
+    }
+};
 
 export const CloseButton = props => (
     <button type='button' { ...props } className={ styles.CloseButton }>
