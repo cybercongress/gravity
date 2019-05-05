@@ -5,7 +5,7 @@ import {
 import { CybLink } from '../../..';
 import cx from 'classnames';
 
-const img = require('../cyb.svg');
+const img = require('../../../img/cyb.svg');
 // import './AppMenu.less';
 
 const styles = require('./AppMenu.less');

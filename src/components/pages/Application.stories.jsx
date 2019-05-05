@@ -19,7 +19,7 @@ import ToggleMenu from '../Application/ToggleMenu';
 import SignerPopup from '../Application/SignerPopup';
 import Login from '../Application/Login';
 
-const img = require('../Application/SearchInput/earth-active.svg');
+const img = require('../../img/earth-active.svg');
 
 const Application = (props) => {
     const {

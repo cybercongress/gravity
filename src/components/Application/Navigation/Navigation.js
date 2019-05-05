@@ -4,7 +4,7 @@ import{
     Text,
     Pane,
 } from 'evergreen-ui';
-const imgCyb= require('../cyb.svg');
+const imgCyb = require('../../../img/cyb.svg');
 
 const styles = require('./Navigation.less');
 
