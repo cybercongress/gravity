@@ -22,12 +22,11 @@ import {
 import { BntGroupFull } from './Hello/btn.group.full';
 
 const idrobot = require('./Hello/idrobot.png');
-const cybAnimation = require('./Hello/img/cyb_animation.gif');
 
-export const FollowYourWeb3 = () => (
+export const FollowYourWeb3 = ({img}) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg srcBigImg={ cybAnimation } />
+            <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
         <HelloContainerRightCol bntGroup={ <BntGroupFull /> }>
             <HelloContainerRightColContent>

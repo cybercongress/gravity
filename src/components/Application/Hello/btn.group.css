@@ -63,7 +63,7 @@
 }
 
 .btn-group-root{
-    background: url(./root.svg) no-repeat center center !important;
+    background: url(./root.svg) no-repeat !important;
 }
 
 .btn-group-root:hover{

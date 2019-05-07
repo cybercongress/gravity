@@ -144,7 +144,7 @@ export const UserCard = ({ ...props }) => (
                   </Pane>
 ) }
             >
-                <Button className='btn-group-soul btn-group' />
+                <Button className='btn-group-root btn-group' />
             </Tooltip>
             <Tooltip
               content={ (
@@ -204,7 +204,7 @@ export const UserCard = ({ ...props }) => (
                   </Pane>
 ) }
             >
-                <Button className='btn-group-security btn-group' />
+                <Button className='btn-group-oracul btn-group' />
             </Tooltip>
         </Pane>
     </Pane>

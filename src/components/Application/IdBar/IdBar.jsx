@@ -3,10 +3,7 @@ import cx from 'classnames';
 import classNames from 'classnames';
 import { Pane, Text, Pill } from 'evergreen-ui';
 import { CybLink, LinkHash } from '../../..';
-import {
-    WaleetAppMenu,
-    UserCard,
-} from '../AppMenu/AppMenu';
+import { WaleetAppMenu, UserCard } from '../AppMenu/AppMenu';
 
 const styles = require('./IdBar.less');
 
@@ -37,7 +34,7 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
       alignItems='center'
       className={ `${styles.bookmarks__item} ${styles.activeTL}` }
       key={ item.rootDura }
-      style={{ direction: 'ltr' }}
+      style={ { direction: 'ltr' } }
     >
         <Pane
           display='flex'
@@ -50,8 +47,8 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
         >
             <Pane alignItems='flex-start' width='inherit' flexDirection='column' display='flex'>
                 <Pane alignItems='center' width='inherit' display='flex'>
-               {/* v2 */}
-                {/* <Pane width={ 14 } height={ 14 } alignItems='center' display='flex'>
+                    {/* v2 */}
+                    {/* <Pane width={ 14 } height={ 14 } alignItems='center' display='flex'>
                         <Pill marginRight={ 7 } width={ 6 } height={ 6 } paddingX={ 0 } isSolid borderRadius='50%' color={
                                             item.status == 'local'
                                                 ? 'green'
@@ -60,23 +57,26 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
                                                 : 'yellow'
                                         }/>
                    </Pane> */}
-                   
-                    {item.address ?
-                    <Pane width='inherit' alignItems='center' display='flex'>
-                        <CybLink { ...props } style={{ textOverflow: 'ellipsis', overflow: 'hidden' }} dura={ item.rootDura }>
-                            {item.address}
-                    </CybLink>
-                   </Pane>
-                   :
-                   <Pane alignItems='center' display='flex'>
-                    <CybLink { ...props } dura={ item.rootDura }>
-                            {item.name}
-                        
-                    </CybLink>
-                    </Pane>
-                 }
+
+                    {item.address ? (
+                        <Pane width='inherit' alignItems='center' display='flex'>
+                            <CybLink
+                              { ...props }
+                              style={ { textOverflow: 'ellipsis', overflow: 'hidden' } }
+                              dura={ item.dura }
+                            >
+                                {item.address}
+                            </CybLink>
+                        </Pane>
+                    ) : (
+                        <Pane alignItems='center' display='flex'>
+                            <CybLink { ...props } dura={ item.dura }>
+                                {item.dura}
+                            </CybLink>
+                        </Pane>
+                    )}
                 </Pane>
-{/* v2 */}
+                {/* v2 */}
                 {/* <Pane>
                     <Text color='#9d9d9d' fontSize='12px'>
                         20 min
@@ -88,9 +88,9 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
 );
 
 export const BookmarksTimeline = ({ items, ...props }) => (
-    <div style={{ direction: 'rtl' }} className={ styles.bookmarks }>
-        {items.map(item => (
-            <ItemsTimeline { ...props } key={ item.rootDura } item={ item } />
+    <div style={ { direction: 'rtl' } } className={ styles.bookmarks }>
+        {items.map((item, index) => (
+            <ItemsTimeline { ...props } key={ index } item={ item } />
         ))}
     </div>
 );
@@ -134,15 +134,20 @@ export const CurrentUser = (props) => {
             )}
             {defaultEthAccount && (
                 <div className={ cx(styles.user_popup, { [styles.user_popup__open]: open }) }>
-                    <WaleetAppMenu marginBottom={ 46 } ethBalance={ ethBalance } cybBalance={ cybBalance } />
-                    <UserCard className='opacityItems'
-                        //marginBottom={ 20 }
+                    <WaleetAppMenu
+                      marginBottom={ 46 }
+                      ethBalance={ ethBalance }
+                      cybBalance={ cybBalance }
+                    />
+                    <UserCard
+                      className='opacityItems'
+                        // marginBottom={ 20 }
                     />
                     <BookmarksTimeline items={ menuItems } />
                     <Pane
                       width='100%'
                       paddingBottom={ 30 }
-                      paddingTop={10}
+                      paddingTop={ 10 }
                       display='flex'
                       justifyContent='center'
                       alignItems='center'

@@ -9,8 +9,10 @@ import {
     StateCyb,
 } from '../..';
 
+const CybMatrix = require('../Application/Hello/img/cyb_animation.gif');
+
 storiesOf('Examples/id', module)
-    .add('FollowYourWeb3', () => <FollowYourWeb3 />)
+    .add('FollowYourWeb3', () => <FollowYourWeb3 img={ CybMatrix } />)
     .add('id.cyb', () => <IdCyb />)
     .add('keys.cyb', () => <KeysCyb />)
     .add('connect.cyb', () => <ConnectCyb />)
