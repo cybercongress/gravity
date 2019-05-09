@@ -13,7 +13,7 @@ import {
 } from '../..';
 import { DbMenuPoints } from './DbMenuPoints';
 
-storiesOf('commponents/DbMenu', module)
+storiesOf('Elements/DbMenu', module)
     .addDecorator(centered)
     .add('DbMenuPoints', () => (
         <DbMenuPoints>

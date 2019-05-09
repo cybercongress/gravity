@@ -18,7 +18,7 @@ import {
 
 import { LinkHash } from '../..';
 
-storiesOf('commponents/MenuPopup', module)
+storiesOf('Elements/MenuPopup', module)
   .addDecorator(centered)
   .add('MenuPopup', () => (
     <MenuPopup>

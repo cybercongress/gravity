@@ -14,7 +14,7 @@ const styles = {
 };
 const CenterDecorator = storyFn => <div style={ styles }>{storyFn()}</div>;
 
-storiesOf('commponents/ContainerRegister', module)
+storiesOf('Elements/ContainerRegister', module)
     .addDecorator(CenterDecorator)
     .add('ContainerRegister', () => (
         <ContainerRegister title='title'>

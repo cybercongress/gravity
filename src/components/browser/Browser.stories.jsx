@@ -9,7 +9,7 @@ import {
 	BrowserSidebar
 } from '../..';
 
-storiesOf('commponents/Browser', module)
+storiesOf('Elements/Browser', module)
     // .addDecorator(story => (<div style={{width: '100px', margin: 'auto'}}>{story()}</div>))
     .add('sidebar close', () => (
         <Browser openSidebar={false} isHomePage={false}>

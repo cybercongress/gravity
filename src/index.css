@@ -322,3 +322,8 @@ html, body, #root {
 .color-white-svg svg {
     fill: #ffffffe1 !important;
 }
+
+/* table hover */
+.css-z3ro6d[data-isselectable="true"]:hover, [data-css-z3ro6d][data-isselectable="true"]:hover{
+    background-color: #73737336 !important;
+}

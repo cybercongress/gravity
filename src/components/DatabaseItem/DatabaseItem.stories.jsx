@@ -5,7 +5,7 @@ import { addDecorator } from '@storybook/react';
 import { EditButton, UpdateButton, CancelButton, InfoButton, DeleteButton, FieldValue } from './index';
 
 
-storiesOf('commponents/DatabaseItem', module)
+storiesOf('Elements/DatabaseItem', module)
     .addDecorator(centered)
     .add('EditButton', () => <EditButton />)
     .add('DeleteButton', () => <DeleteButton />)

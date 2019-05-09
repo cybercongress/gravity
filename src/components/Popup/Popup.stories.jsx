@@ -28,7 +28,7 @@ import {
 
 
 
-storiesOf('commponents/Popup', module)
+storiesOf('Elements/Popup', module)
     .addDecorator(centered)
     .add('FundRegistry', () => (
         <Popup open='claimFundOpen'>

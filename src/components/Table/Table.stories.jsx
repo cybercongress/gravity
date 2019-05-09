@@ -9,7 +9,7 @@ import Table, {
 } from './Table';
 import { LinkHash, Checkbox,AddButton, RemoveButton  } from '../..';
 
-storiesOf('commponents/Table', module)
+storiesOf('Elements/Table', module)
   .addDecorator(centered)
   .add('table', () => (
     <Table>

@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { SearchItem, LinkContainer } from '../..';
 
 
-storiesOf('commponents/SearchResult', module)
+storiesOf('Elements/SearchResult', module)
     .add('SearchItem', () => (
         <div style={ { top: '50%', position: 'relative' } }>
             <SearchItem hash='sdfs21312' rank='2'>

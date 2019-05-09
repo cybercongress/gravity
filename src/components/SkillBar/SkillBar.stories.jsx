@@ -7,7 +7,7 @@ import { ToolTip } from './SkillBar';
 
 const tooltip = true;
 
-storiesOf('commponents/SkillsBar', module).add('SkillsBar', () => (
+storiesOf('Elements/SkillsBar', module).add('SkillsBar', () => (
     <div style={ { top: '50%', position: 'relative' } }>
         {/* <SkillBar value={ 10 }>
                 <Pane maxWidth={300}

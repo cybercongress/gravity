@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
 import ValueInput from './index';
 
-storiesOf('commponents/ValueInput', module)
+storiesOf('Elements/ValueInput', module)
   .addDecorator(centered)
   .add('ValueInput', () => (
       <ValueInput buttonLable="claim funds" color="second" />

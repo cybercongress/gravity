@@ -2,7 +2,7 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {Title} from "../..";
 
-storiesOf('commponents/Title', module)
+storiesOf('Elements/Title', module)
     .add('inline title', () => (
         <div>
             <p>some text</p>

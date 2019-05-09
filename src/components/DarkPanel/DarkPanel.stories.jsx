@@ -5,7 +5,7 @@ import { addDecorator } from '@storybook/react';
 import { DarkPanel, Code} from '../..';
 import code from '../pages/code';
 
-storiesOf('commponents/DarkPanel', module)
+storiesOf('Elements/DarkPanel', module)
     .add('DarkPanel', () => (
         <div style={ {
             top: '20%',

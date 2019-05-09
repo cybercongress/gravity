@@ -14,9 +14,9 @@ const databases = [
     {
         name: 'database_1',
         symbol: 'DB1',
-        entries: '5',
+        entries: '15',
         version: 'v1',
-        date: '12/12/2010 4:26:20',
+        date: '12/12/2010 00:26:20',
         owner: 'cybervaloper18wn5kyxewwk6qh97493xtj9gufpmqserdykng9',
     },
     {
@@ -30,7 +30,7 @@ const databases = [
     {
         name: 'database_1',
         symbol: 'DB1',
-        entries: '5',
+        entries: '555',
         version: 'v1',
         date: '12/12/2010 4:26:20',
         owner: 'cybervaloper18wn5kyxewwk6qh97493xtj9gufpmqserdykng9',
@@ -116,16 +116,16 @@ class DataBaseTable extends Component {
         } = item;
 
         return (
-            <Table.Row paddingLeft={ 20 } isSelectable key={ name }>
-                <Table.TextCell>{name}</Table.TextCell>
-                <Table.TextCell textAlign='end'>{symbol}</Table.TextCell>
-                <Table.TextCell textAlign='end'>{entries}</Table.TextCell>
-                <Table.TextCell textAlign='end'>{version}</Table.TextCell>
-                <Table.TextCell textAlign='center' flexGrow={ 4 }>
-                    {owner}
+            <Table.Row paddingLeft={ 10 } isSelectable key={ name } borderBottom={0}>
+                <Table.TextCell><sapn style={{color: '#fff'}}>{name}</sapn></Table.TextCell>
+                <Table.TextCell textAlign='start'><sapn style={{color: '#fff'}}>{symbol}</sapn></Table.TextCell>
+                <Table.TextCell textAlign='end'><sapn style={{color: '#fff'}}>{entries}</sapn></Table.TextCell>
+                <Table.TextCell textAlign='end'><sapn style={{color: '#fff'}}>{version}</sapn></Table.TextCell>
+                <Table.TextCell textAlign='end' flexGrow={ 5 }>
+                    <sapn style={{color: '#fff', fontSize: '13px'}}>{owner}</sapn>
                 </Table.TextCell>
-                <Table.TextCell textAlign='center' width={ 160 } flex='none' alginItems='center' isNumber>
-                    {moment(date).format('D/MM YYYY h:mm:ss')}
+                <Table.TextCell textAlign='end' width={ 140 } flex='none' alginItems='center' isNumber>
+                    <sapn style={{color: '#fff'}}>{moment(date).format('D/MM YYYY h:mm:ss')}</sapn>
                 </Table.TextCell>
             </Table.Row>
         );
@@ -138,19 +138,19 @@ class DataBaseTable extends Component {
             <ScrollContainer>
                 <MainContainer style={ { paddingBottom: 100, paddingTop: 50 } }>
                     <Table>
-                        <Table.Head paddingLeft={ 20 } paddingRight={0}>
-                            <Table.TextHeaderCell>Name</Table.TextHeaderCell>
-                            <Table.TextHeaderCell textAlign='end'>Symbol</Table.TextHeaderCell>
-                            <Table.TextHeaderCell textAlign='end'>Entries</Table.TextHeaderCell>
-                            <Table.TextHeaderCell textAlign='end'>Version</Table.TextHeaderCell>
-                            <Table.TextHeaderCell textAlign='center' flexGrow={ 4 }>
-                                Owner
+                        <Table.Head style={ { backgroundColor: 'transparent'}} paddingLeft={ 10 } paddingRight={0}>
+                            <Table.TextHeaderCell><sapn style={{color: '#fff'}}>Name</sapn></Table.TextHeaderCell>
+                            <Table.TextHeaderCell textAlign='start'><sapn style={{color: '#fff'}}>Symbol</sapn></Table.TextHeaderCell>
+                            <Table.TextHeaderCell textAlign='end'><sapn style={{color: '#fff'}}>Entries</sapn></Table.TextHeaderCell>
+                            <Table.TextHeaderCell textAlign='end'><sapn style={{color: '#fff'}}>Version</sapn></Table.TextHeaderCell>
+                            <Table.TextHeaderCell textAlign='end' flexGrow={ 5 }>
+                                <sapn style={{color: '#fff'}}>Owner</sapn>
                             </Table.TextHeaderCell>
-                            <Table.TextHeaderCell textAlign='center' width={ 160 } flex='none'>
-                                Created
+                            <Table.TextHeaderCell textAlign='end' width={ 140 } flex='none'>
+                                <sapn style={{color: '#fff'}}>Created</sapn>
                             </Table.TextHeaderCell>
                         </Table.Head>
-                        <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
+                        <Table.Body style={ { backgroundColor: 'transparent', overflowY: 'hidden' } }>
                             {databasesItem.map(this.renderItem)}
                         </Table.Body>
                     </Table>

@@ -14,7 +14,7 @@ import {
     MenuPopupResumeIcon,
 } from '../..';
 
-storiesOf('commponents/DbMenu', module)
+storiesOf('Elements/DbMenu', module)
     .addDecorator(centered)
     .add('DbMenu', () => (
         <DbMenu>

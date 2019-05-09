@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { AddNewRecordButton, Button } from '../..';
 
-storiesOf('commponents/Button', module)
+storiesOf('Elements/Button', module)
     .addDecorator(centered)
     .add('AddNewRecordButton', () => (
         <AddNewRecordButton>

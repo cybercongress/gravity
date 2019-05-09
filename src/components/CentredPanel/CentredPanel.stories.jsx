@@ -4,7 +4,7 @@ import {
     CentredPanel,
 } from '../..';
 
-storiesOf('commponents/CentredPanel', module)
+storiesOf('Elements/CentredPanel', module)
 
     .add('CentredPanel', () => (
         <CentredPanel>

@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import {BenContainer, BenPieChart} from "../..";
 
-storiesOf('commponents/Beneficiaries', module)
+storiesOf('Elements/Beneficiaries', module)
     .addDecorator(centered)
     .add('Doughnut', () => {
 

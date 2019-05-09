@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Section, SectionTabs, SectionContent } from '../..';
 
-storiesOf('commponents/Section', module)
+storiesOf('Elements/Section', module)
     .add('Section', () => (
         <Section title='Section'>
             <SectionContent>

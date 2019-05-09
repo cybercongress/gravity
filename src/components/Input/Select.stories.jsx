@@ -20,7 +20,7 @@ const CreateEntryPermissionGroup = {
     },
 };
 
-storiesOf('commponents/Select', module)
+storiesOf('Elements/Select', module)
     .addDecorator(centered)
     .add('Select', () => (
         <Select

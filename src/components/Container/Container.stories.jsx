@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { MainContainer } from '../..';
 
-storiesOf('commponents/MainContainer', module).add('MainContainer', () => (
+storiesOf('Elements/MainContainer', module).add('MainContainer', () => (
     <MainContainer>
         <div
           style={ {

@@ -12,7 +12,7 @@ const styles = {
 };
 const CenterDecorator = storyFn => <div style={ styles }>{storyFn()}</div>;
 
-storiesOf('commponents/SideBar', module)
+storiesOf('Elements/SideBar', module)
     .addDecorator(CenterDecorator)
 
     .add('SideBar', () => (

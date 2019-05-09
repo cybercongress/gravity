@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { addDecorator } from '@storybook/react';
 import { Text } from '../..';
 
-storiesOf('commponents/Text', module)
+storiesOf('Elements/Text', module)
     .addDecorator(centered)
     .add('TextSize', () => (
         <div>

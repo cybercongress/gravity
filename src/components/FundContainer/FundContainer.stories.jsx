@@ -4,7 +4,7 @@ import {
      FundContainer
 } from '../..';
 
-storiesOf('commponents/FundContainer', module)
+storiesOf('Elements/FundContainer', module)
 
     .add('FundContainer', () => (
         <FundContainer>

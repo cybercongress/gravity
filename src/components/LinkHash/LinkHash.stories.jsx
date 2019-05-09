@@ -6,7 +6,7 @@ import { LinkHash } from '../..';
 
 const hash = '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef';
 
-storiesOf('commponents/LinkHash', module)
+storiesOf('Elements/LinkHash', module)
 .addDecorator(centered)
     .add('LinkHash', () => (
         <LinkHash value={ hash } />
