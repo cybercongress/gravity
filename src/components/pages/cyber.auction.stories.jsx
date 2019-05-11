@@ -5,7 +5,7 @@ import {
 } from 'evergreen-ui';
 import { LineExample } from '../LineExample/LineExample';
 import {
-    ScrollContainer, MainContainer, CardHover, SkillBar, calculateBensShares, 
+    ScrollContainer, MainContainer, CardHover, SkillBar, calculateBensShares,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -60,19 +60,70 @@ const bens = [
     },
 ];
 
+const ContentTooltip = () => (
+    <Pane minWidth={ 150 } paddingX={ 15 } paddingY={ 10 } borderRadius={ 4 } backgroundColor='#000'
+    
+    width='108%'
+    /* height: 114%; */
+    marginLeft='-4%'
+    marginTop='-2%'
+    marginBottom='-2%'
+    boxShadow='0 0 20px 3px #36d6ae'
+    >
+        <Text color='#fff' display='inline-block' marginBottom={10}>
+            Day 5 of 711
+        </Text>
+        <Text color='#fff' fontSize='13px' display='inline-block'>
+            Current round ends in 20h 20m 20s
+        </Text>
+    </Pane>
+);
+
 const Databases = () => (
     <ScrollContainer>
         <MainContainer style={ { paddingBottom: 90 } }>
             <Pane display='flex' flexDirection='column' alignItems='center'>
                 {/* {Statistics}
                         {MyDatabases} */}
-                <Text fontSize='1.5em' letterSpacing={ 1.3 } color='#fff' display='inline-block' marginBottom={70}>The most excited auction of the future web</Text>
-                <Text fontSize='1.1em' letterSpacing={ 1.3 } color='#fff' display='inline-block' marginBottom={20}>current price</Text>
-                <Text fontSize='1.5em' letterSpacing={ 1.3 } color='#fff' display='inline-block' marginBottom={20}>42 575 ETH per CBD</Text>
-                <Pane width='50%' marginBottom='15%'>
-                    <SkillBar bwPercent={ 20 } />
+                <Text
+                  fontSize='1.5em'
+                  letterSpacing={ 1.3 }
+                  color='#fff'
+                  display='inline-block'
+                  marginBottom={ 70 }
+                >
+                    The most excited auction of the future web
+                </Text>
+                <Text
+                  fontSize='1.1em'
+                  letterSpacing={ 1.3 }
+                  color='#fff'
+                  display='inline-block'
+                  marginBottom={ 20 }
+                >
+                    current price
+                </Text>
+                <Text
+                  fontSize='1.5em'
+                  letterSpacing={ 1.3 }
+                  color='#fff'
+                  display='inline-block'
+                  marginBottom={ 30 }
+                >
+                    42 575 ETH per CBD
+                </Text>
+                <Pane width='30%' marginBottom='15%'>
+                    <SkillBar bwPercent={ 20 } contentTooltip={ <ContentTooltip /> } />
                 </Pane>
-                <Text fontSize='1.1em' letterSpacing={ 1.3 } color='#fff' display='inline-block' marginBottom={20}>Price history</Text>
+                <Text
+                  fontSize='1.1em'
+                  letterSpacing={ 1.3 }
+                  color='#fff'
+                  display='inline-block'
+                  marginBottom={ 20 }
+                >
+                    Price history
+                </Text>
                 <Pane
                   width='80%'
                     // height={200}

@@ -4,39 +4,38 @@ import styles from './SkillBar.less';
 // import cx from 'classnames';
 
 export const SkillBar = ({
-    children, fontSize, bwPercent, bwRemained, bwMaxValue, linkPrice, ...props
+    children, fontSize, bwPercent, bwRemained, bwMaxValue, linkPrice, contentTooltip, ...props
 }) => (
     <Tooltip
-      appearance='card'
-      top={ 30 }
       content={ (
-          <Pane
-            minWidth={ 200 }
-            paddingX={ 18 }
-            paddingY={ 14 }
-            borderRadius={ 4 }
-            backgroundColor='#fff'
-          >
-              <Pane marginBottom={ 12 }>
-                  <Text size={ 300 }>You have {bwRemained} BP out of {bwMaxValue} BP.</Text>
-              </Pane>
-              <Pane marginBottom={ 12 }>
-                  <Text size={ 300 }>
-                        Full regeneration of bandwidth points or BP happens in 24 hours.
-                  </Text>
-              </Pane>
-              <Pane display='flex' marginBottom={ 12 }>
-                  <Text size={ 300 }>Current rate for 1 cyberlink is {linkPrice} BP.</Text>
-              </Pane>
-{/*              <Pane>
-                  <Text size={ 300 }>
-                        More on{' '}
-                      <Link textDecoration='none' color='green' cursor='pointer'>
-                            Bandwidth
-                      </Link>
-                  </Text>
-              </Pane>*/}
-          </Pane>
+//           <Pane
+//             minWidth={ 200 }
+//             paddingX={ 18 }
+//             paddingY={ 14 }
+//             borderRadius={ 4 }
+//             backgroundColor='#fff'
+//           >
+//               <Pane marginBottom={ 12 }>
+//                   <Text size={ 300 }>You have {bwRemained} BP out of {bwMaxValue} BP.</Text>
+//               </Pane>
+//               <Pane marginBottom={ 12 }>
+//                   <Text size={ 300 }>
+//                         Full regeneration of bandwidth points or BP happens in 24 hours.
+//                   </Text>
+//               </Pane>
+//               <Pane display='flex' marginBottom={ 12 }>
+//                   <Text size={ 300 }>Current rate for 1 cyberlink is {linkPrice} BP.</Text>
+//               </Pane>
+// {/*              <Pane>
+//                   <Text size={ 300 }>
+//                         More on{' '}
+//                       <Link textDecoration='none' color='green' cursor='pointer'>
+//                             Bandwidth
+//                       </Link>
+//                   </Text>
+//               </Pane>*/}
+//           </Pane>
+        contentTooltip
       ) }
     >
         <Pane
