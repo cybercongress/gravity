@@ -10,6 +10,7 @@ const Menu = ({ openMenu, toggleMenu }) => (
     <MenuButton
       openMenu={ openMenu }
       onClick={ toggleMenu }
+      // status='local' //  status indicator
     />
 );
 

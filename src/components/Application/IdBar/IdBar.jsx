@@ -70,8 +70,8 @@ const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
                         </Pane>
                     ) : (
                         <Pane alignItems='center' display='flex'>
-                            <CybLink { ...props } dura={ item.dura }>
-                                {item.dura}
+                            <CybLink { ...props } dura={ item.rootDura }>
+                                {item.rootDura}
                             </CybLink>
                         </Pane>
                     )}
@@ -92,6 +92,35 @@ export const BookmarksTimeline = ({ items, ...props }) => (
         {items.map((item, index) => (
             <ItemsTimeline { ...props } key={ index } item={ item } />
         ))}
+    </div>
+);
+
+export const Timeline = ({menuItems, cybBalance, ethBalance, open }) => (
+        <div className={ cx(styles.user_popup, { [styles.user_popup__open]: open }) }>
+        <WaleetAppMenu
+        marginBottom={ 46 }
+        ethBalance={ ethBalance }
+        cybBalance={ cybBalance }
+        />
+        <UserCard
+        className='opacityItems'
+            // marginBottom={ 20 }
+        />
+        <BookmarksTimeline items={ menuItems } />
+        <Pane
+        width='100%'
+        paddingBottom={ 30 }
+        paddingTop={ 10 }
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+        className='opacityItemsBefore'
+        flexDirection='column'
+        >
+            {/* <Text fontSize='16px' color='#fff'>
+                Timeline
+            </Text> */}
+        </Pane>
     </div>
 );
 
@@ -133,32 +162,7 @@ export const CurrentUser = (props) => {
                 </CybLink>
             )}
             {defaultEthAccount && (
-                <div className={ cx(styles.user_popup, { [styles.user_popup__open]: open }) }>
-                    <WaleetAppMenu
-                      marginBottom={ 46 }
-                      ethBalance={ ethBalance }
-                      cybBalance={ cybBalance }
-                    />
-                    <UserCard
-                      className='opacityItems'
-                        // marginBottom={ 20 }
-                    />
-                    <BookmarksTimeline items={ menuItems } />
-                    <Pane
-                      width='100%'
-                      paddingBottom={ 30 }
-                      paddingTop={ 10 }
-                      display='flex'
-                      justifyContent='center'
-                      alignItems='center'
-                      className='opacityItemsBefore'
-                      flexDirection='column'
-                    >
-                        {/* <Text fontSize='16px' color='#fff'>
-                            Timeline
-                        </Text> */}
-                    </Pane>
-                </div>
+                <Timeline open={open} ethBalance={ethBalance} cybBalance={cybBalance} menuItems={menuItems} />
             )}
         </div>
     );

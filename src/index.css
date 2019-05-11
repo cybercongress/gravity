@@ -282,7 +282,7 @@ html, body, #root {
 
 .opacityItemsBefore{
     position: relative;
-    box-shadow: -35px -20px 40px 13px #000;
+    /* box-shadow: -35px -20px 40px 13px #000; */
 }
 
 .opacityItemsBefore::before {
@@ -294,8 +294,8 @@ html, body, #root {
     bottom: 100%;
     /* background: black; */
     opacity: 0.7;
-    z-index: 1;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 57%, var(--black));
+    z-index: 1;    background-image: linear-gradient(to bottom, rgb(0, 0, 0)50%, rgba(0, 0, 0, 1) 57.4%, var(--black));
+    box-shadow: 0 0 20px 0px #000;
 }
 
 .css-11bc0q4[aria-current="page"], [data-css-11bc0q4][aria-current="page"], .css-11bc0q4[aria-selected="true"], [data-css-11bc0q4][aria-selected="true"], .css-11bc0q4:active, [data-css-11bc0q4]:active{
