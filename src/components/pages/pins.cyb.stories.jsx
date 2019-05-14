@@ -51,13 +51,17 @@ class PinsCyb extends Component {
         } = this.props;
 
         const rows = registryItems.map(item => (
-            <Table.Row paddingLeft={ 20 } height={ 50 } isSelectable key={ item.name }>
+            <Table.Row borderBottom='none' paddingLeft={ 20 } height={ 50 } isSelectable key={ item.name }>
                 <Table.TextCell>
+                <span style={ { color: '#fff', fontSize: 16 } }>
 .
                     {item.name}
+                </span>
                 </Table.TextCell>
                 <Table.TextCell flexShrink={ 0 } flexGrow={ 1.5 }>
+                <span style={ { color: '#fff', fontSize: 16 } }>
                     {item.hash}
+                    </span>
                 </Table.TextCell>
                 {/* <Table.TextCell>{item.protocol}</Table.TextCell> */}
                 <Table.Cell width={ 60 } flex='none'>
@@ -79,7 +83,7 @@ class PinsCyb extends Component {
 ) }
                     >
                         <Pane paddingY={ 5 } paddingX={ 5 } width='100%'>
-                            <IconButton iconSize={ 12 } appearance='minimal' icon='more' />
+                            <IconButton iconSize={ 12 } className='color-white-svg icon-btn' appearance='minimal' icon='more' />
                         </Pane>
                     </Popover>
                     {/* </Button> */}
@@ -91,14 +95,14 @@ class PinsCyb extends Component {
             <ScrollContainer>
                 <MainContainer>
                     <Table>
-                        <Table.Head paddingLeft={ 20 }>
-                            <Table.TextHeaderCell>Name</Table.TextHeaderCell>
+                        <Table.Head style={ { backgroundColor: '#000', borderBottom: '1px solid #ffffff80' } } paddingLeft={ 20 }>
+                            <Table.TextHeaderCell><span style={ { color: '#fff', fontSize: 17 } }>Name</span></Table.TextHeaderCell>
                             <Table.TextHeaderCell flexShrink={ 0 } flexGrow={ 1.5 }>
-                                DURA
+                            <span style={ { color: '#fff', fontSize: 17 } }>DURA</span>
                             </Table.TextHeaderCell>
                             <Table.TextHeaderCell width={ 60 } flex='none' />
                         </Table.Head>
-                        <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
+                        <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
                             {rows}
                         </Table.Body>
                     </Table>

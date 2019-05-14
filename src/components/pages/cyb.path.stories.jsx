@@ -22,9 +22,9 @@ class History extends Component {
         }
 
         return (
-            <Table.Row paddingLeft={ 20 } isSelectable key={ index }>
-                <Table.TextCell>{content}</Table.TextCell>
-                <Table.TextCell width={160} flex='none' alginItems='center' isNumber>{moment(date).format('D/MM YYYY h:mm:ss')}</Table.TextCell>
+            <Table.Row borderBottom='none' paddingLeft={ 20 } isSelectable key={ index }>
+                <Table.TextCell><span style={{color: '#fff', fontSize: 16}}>{content}</span></Table.TextCell>
+                <Table.TextCell width={200} flex='none' textAlign='end' isNumber><span style={{color: '#fff', fontSize: 16}}>{moment(date).format('D/MM YYYY h:mm:ss')}</span></Table.TextCell>
             </Table.Row>
         );
     };
@@ -40,11 +40,11 @@ class History extends Component {
             <ScrollContainer>
             <MainContainer>
                     <Table>
-                        <Table.Head paddingLeft={ 20 }>
-                                <Table.TextHeaderCell>Dura</Table.TextHeaderCell>
-                                <Table.TextHeaderCell textAlign='center' width={160} flex='none'>Date</Table.TextHeaderCell>
+                        <Table.Head style={{backgroundColor: '#000', borderBottom: '1px solid #ffffff80'}} paddingLeft={ 20 }>
+                                <Table.TextHeaderCell><span style={{color: '#fff', fontSize: 17}}>Dura</span></Table.TextHeaderCell>
+                                <Table.TextHeaderCell textAlign='end' width={200} flex='none'><span style={{color: '#fff', fontSize: 17}}>Date</span></Table.TextHeaderCell>
                         </Table.Head>
-                        <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>{historyWithoutLast.map(this.renderItem)}</Table.Body>
+                        <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>{historyWithoutLast.map(this.renderItem)}</Table.Body>
                     </Table>
             </MainContainer>
             </ScrollContainer>

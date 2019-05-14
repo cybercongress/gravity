@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import ClickOutside from 'react-click-outside';
-import { CybLink } from '../..';
+import { Pane, Text } from 'evergreen-ui';
 import {
-    IdBarComponent,
-    SettingsLink,
-    CurrentUser,
-    SkillBar,
+    CybLink, IdBarComponent, SettingsLink, CurrentUser, SkillBar,
 } from '../..';
-import{
-    Pane,
-} from 'evergreen-ui';
+
 // import { toggleMenu } from '../../redux/appMenu';
 // import { getDefaultAccountBalance } from '../../redux/wallet';
 // import { getDefaultAccountBalance as getDefaultAccountBalanceCyb } from '../../redux/cyber';
-
 
 class IdBar extends Component {
     state = {
@@ -34,11 +28,11 @@ class IdBar extends Component {
 
         e.preventDefault();
         props.toggleMenu();
-    }
+    };
 
     close = () => {
         this.setState({ open: false });
-    }
+    };
 
     render() {
         const { open } = this.state;
@@ -49,6 +43,43 @@ class IdBar extends Component {
             defaultAccountBalanceCyb,
             menuItems,
         } = this.props;
+
+        const ContentTooltip = ({ bwRemained, bwMaxValue, linkPrice }) => (
+            <Pane
+              minWidth={ 200 }
+              paddingX={ 18 }
+              paddingY={ 14 }
+              borderRadius={ 4 }
+              backgroundColor='#fff'
+            >
+                <Pane marginBottom={ 12 }>
+                    <Text size={ 300 }>
+                        You have
+                        {' '}
+                        {bwRemained}
+                        {' '}
+BP out of
+                        {' '}
+                        {bwMaxValue}
+                        {' '}
+BP.
+                    </Text>
+                </Pane>
+                <Pane marginBottom={ 12 }>
+                    <Text size={ 300 }>
+                        Full regeneration of bandwidth points or BP happens in 24 hours.
+                    </Text>
+                </Pane>
+                <Pane display='flex' marginBottom={ 12 }>
+                    <Text size={ 300 }>
+Current rate for 1 cyberlink is
+                        {linkPrice}
+                        {' '}
+BP.
+                    </Text>
+                </Pane>
+            </Pane>
+        );
 
         return (
             <IdBarComponent>
@@ -61,13 +92,20 @@ class IdBar extends Component {
                       favoriteClick={ this.favoriteClick }
                       ethBalance={ defaultAccountBalance }
                       cybBalance={ defaultAccountBalanceCyb }
-                      menuItems={menuItems}
+                      menuItems={ menuItems }
                     />
                 </div>
-                {defaultEthAccount &&
-                     <SkillBar fontSize='10px' marginRight={30} style={{height: 14, maxWidth: 200 }} value={25} />
-                     
-                     }
+                {defaultEthAccount && (
+                    <SkillBar
+                      fontSize='10px'
+                      marginRight={ 30 }
+                      style={ { height: 15, maxWidth: 200, minWidth: 100 } }
+                      bwPercent={ 25 }
+                      contentTooltip={
+                          <ContentTooltip linkPrice={ 2100 } bwRemained={ 10 } bwMaxValue={ 100 } />
+                        }
+                    />
+                )}
             </IdBarComponent>
         );
     }

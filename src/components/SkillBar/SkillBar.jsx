@@ -7,6 +7,7 @@ export const SkillBar = ({
     children, fontSize, bwPercent, bwRemained, bwMaxValue, linkPrice, contentTooltip, ...props
 }) => (
     <Tooltip
+      appearance="card"
       content={ (
 //           <Pane
 //             minWidth={ 200 }
