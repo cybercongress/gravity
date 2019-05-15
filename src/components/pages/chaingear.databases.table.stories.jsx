@@ -110,19 +110,19 @@ const databases = [
 ];
 
 class DataBaseTable extends Component {
-    renderItem = (item) => {
+    renderItem = (item, index) => {
         const {
             date, owner, name, symbol, entries, version,
         } = item;
 
         return (
-            <Table.Row paddingLeft={ 10 } isSelectable key={ name } borderBottom={0}>
-                <Table.TextCell><sapn style={{color: '#fff'}}>{name}</sapn></Table.TextCell>
-                <Table.TextCell textAlign='start'><sapn style={{color: '#fff'}}>{symbol}</sapn></Table.TextCell>
-                <Table.TextCell textAlign='end'><sapn style={{color: '#fff'}}>{entries}</sapn></Table.TextCell>
-                <Table.TextCell textAlign='end'><sapn style={{color: '#fff'}}>{version}</sapn></Table.TextCell>
+            <Table.Row paddingLeft={ 10 } isSelectable key={ index } borderBottom={0}>
+                <Table.TextCell><sapn style={{color: '#fff', fontSize: 13}}>{name}</sapn></Table.TextCell>
+                <Table.TextCell textAlign='start'><sapn style={{color: '#fff', fontSize: 13}}>{symbol}</sapn></Table.TextCell>
+                <Table.TextCell textAlign='end'><sapn style={{color: '#fff', fontSize: 13}}>{entries}</sapn></Table.TextCell>
+                <Table.TextCell textAlign='end'><sapn style={{color: '#fff', fontSize: 13}}>{version}</sapn></Table.TextCell>
                 <Table.TextCell textAlign='end' flexGrow={ 5 }>
-                    <sapn style={{color: '#fff', fontSize: '13px'}}>{owner}</sapn>
+                    <sapn style={{color: '#fff', fontSize: 13}}>{owner}</sapn>
                 </Table.TextCell>
                 <Table.TextCell textAlign='end' width={ 140 } flex='none' alginItems='center' isNumber>
                     <sapn style={{color: '#fff'}}>{moment(date).format('D/MM YYYY h:mm:ss')}</sapn>
@@ -138,19 +138,19 @@ class DataBaseTable extends Component {
             <ScrollContainer>
                 <MainContainer style={ { paddingBottom: 100, paddingTop: 50 } }>
                     <Table>
-                        <Table.Head style={ { backgroundColor: 'transparent'}} paddingLeft={ 10 } paddingRight={0}>
-                            <Table.TextHeaderCell><sapn style={{color: '#fff'}}>Name</sapn></Table.TextHeaderCell>
-                            <Table.TextHeaderCell textAlign='start'><sapn style={{color: '#fff'}}>Symbol</sapn></Table.TextHeaderCell>
-                            <Table.TextHeaderCell textAlign='end'><sapn style={{color: '#fff'}}>Entries</sapn></Table.TextHeaderCell>
-                            <Table.TextHeaderCell textAlign='end'><sapn style={{color: '#fff'}}>Version</sapn></Table.TextHeaderCell>
+                        <Table.Head style={ { backgroundColor: '#000', borderBottom: '1px solid #ffffff80'}} paddingLeft={ 10 } paddingRight={0}>
+                            <Table.TextHeaderCell><sapn style={{color: '#fff', fontSize: 15}}>Name</sapn></Table.TextHeaderCell>
+                            <Table.TextHeaderCell textAlign='start'><sapn style={{color: '#fff', fontSize: 15}}>Symbol</sapn></Table.TextHeaderCell>
+                            <Table.TextHeaderCell textAlign='end'><sapn style={{color: '#fff', fontSize: 15}}>Entries</sapn></Table.TextHeaderCell>
+                            <Table.TextHeaderCell textAlign='end'><sapn style={{color: '#fff', fontSize: 15}}>Version</sapn></Table.TextHeaderCell>
                             <Table.TextHeaderCell textAlign='end' flexGrow={ 5 }>
-                                <sapn style={{color: '#fff'}}>Owner</sapn>
+                                <sapn style={{color: '#fff', fontSize: 15}}>Owner</sapn>
                             </Table.TextHeaderCell>
                             <Table.TextHeaderCell textAlign='end' width={ 140 } flex='none'>
-                                <sapn style={{color: '#fff'}}>Created</sapn>
+                                <sapn style={{color: '#fff', fontSize: 15}}>Created</sapn>
                             </Table.TextHeaderCell>
                         </Table.Head>
-                        <Table.Body style={ { backgroundColor: 'transparent', overflowY: 'hidden' } }>
+                        <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
                             {databasesItem.map(this.renderItem)}
                         </Table.Body>
                     </Table>
