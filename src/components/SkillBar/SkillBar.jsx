@@ -55,6 +55,7 @@ export const SkillBar = ({
           backgroundColor='#fff'
           borderRadius={ 4 }
           position='relative'
+          transition='1s'
         >
             <Pane
               height='100%'

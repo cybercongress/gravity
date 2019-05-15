@@ -1,15 +1,12 @@
 import React from 'react';
-import {storiesOf} from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import {LineExample} from "./LineExample";
-import {
-    Pane,
-} from 'evergreen-ui';
+import { Pane } from 'evergreen-ui';
+import { LineExample } from './LineExample';
 
-storiesOf('Line', module)
+storiesOf('Elements/LineExample', module)
     .addDecorator(centered)
-    .add('Doughnut', () => {
-
+    .add('LineExample', () => {
         const bens = [
             {
                 address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
@@ -47,19 +44,22 @@ storiesOf('Line', module)
 
             return beneficiaries.map(ben => ({
                 ...ben,
-                share: (ben.stake / allStake * 100).toFixed(fixed),
+                share: ((ben.stake / allStake) * 100).toFixed(fixed),
             }));
         };
 
         return (
             <Pane
-              width='100%'
-            >   
-                    <LineExample
-                        bens={bens}
-                        calculateBensShares={calculateBensShares}
-                    />
+              backgroundColor='#000'
+              width='100vw'
+              height='100vh'
+              display='flex'
+              justifyContent='center'
+              alignItems='center'
+            >
+                <Pane>
+                    <LineExample bens={ bens } calculateBensShares={ calculateBensShares } />
+                </Pane>
             </Pane>
-           
-        )
+        );
     });

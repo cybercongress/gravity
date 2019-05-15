@@ -46,7 +46,7 @@ const Application = (props) => {
     return (
         <App openMenu={ openMenu }>
             <SignerPopup />
-            <Status />
+            {/* <Status /> */}
             <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
                 <AppMenu menuItems={ menuItems } />
             </AppSideBar>

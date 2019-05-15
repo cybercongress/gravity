@@ -62,7 +62,7 @@ class Validators extends React.Component {
                                 }
 
                                 const statusTooltip = (
-                                    <Pane display='flex' alignItems='center'>
+                                    <Pane display='flex' alignItems='center' justifyContent='center'>
                                         <Tooltip
                                           appearance='card'
                                           content={ (
@@ -87,7 +87,7 @@ class Validators extends React.Component {
                                               borderRadius='50%'
                                               paddingX={ 4 }
                                               paddingY={ 0 }
-                                              marginX={ 20 }
+                                            //   marginX={ 20 }
                                               isSolid
                                               color={ statusColor }
                                             />
@@ -97,49 +97,58 @@ class Validators extends React.Component {
 
                                 return (
                                     <Table.Row
-                                      style={ { border: 0 } }
-                                      boxShadow='0px 0px 0.1px 0px #ddd'
-                                      className='validators-table-row'
+                                      borderBottom='none'
+                                    //   boxShadow='0px 0px 0.1px 0px #ddd'
+                                    //   className='validators-table-row'
                                       isSelectable
                                       key={ validator.description.moniker }
                                     >
-                                        <Table.TextCell textAlign='center' width={ 70 } flex='none'>
+                                        <Table.TextCell textAlign='center' width={ 35 } flex='none'>
                                             {statusTooltip}
                                         </Table.TextCell>
                                         <Table.TextCell
-                                          textAlign='center'
+                                          textAlign='end'
                                           flexBasis={ 60 }
                                           flexShrink={ 0 }
                                           flexGrow={ 0 }
                                           isNumber
                                         >
+                                        <span style={ { color: '#fff', fontSize: 13 } }>
                                             {index + 1}
+                                            </span>
                                         </Table.TextCell>
                                         <Table.TextCell>
+                                        <span style={ { color: '#fff', fontSize: 13 } }>
                                             {validator.description.moniker}
+                                        </span>
                                         </Table.TextCell>
                                         <Table.TextCell
-                                          textAlign='center'
+                                          textAlign='end'
                                           flexBasis={ 80 }
                                           flexShrink={ 0 }
                                           flexGrow={ 0 }
                                           isNumber
                                         >
-                                            {power}
+                                        <span style={ { color: '#fff', fontSize: 13 } }>
+                                            {power}</span>
                                         </Table.TextCell>
-                                        <Table.TextCell textAlign='center' flexGrow={ 1 }>
-                                            {commission}
+                                        <Table.TextCell textAlign='end' flexGrow={ 1 }>
+                                        <span style={ { color: '#fff', fontSize: 13 } }>
+                                            {commission}</span>
                                         </Table.TextCell>
-                                        <Table.TextCell textAlign='center' flexGrow={ 2 }>
+                                        <Table.TextCell textAlign='end' flexGrow={ 3 }>
+                                        <span style={ { color: '#fff', fontSize: 13 } }>
                                             {validator.operator_address}
+                                            </span>
                                         </Table.TextCell>
                                         <Table.TextCell
-                                          textAlign='center'
+                                          textAlign='end'
                                           flexShrink={ 0 }
-                                          flexGrow={ 1 }
+                                          flexGrow={ 0.8 }
                                           isNumber
                                         >
-                                            {height}
+                                        <span style={ { color: '#fff', fontSize: 13 } }>
+                                            {height}</span>
                                         </Table.TextCell>
                                     </Table.Row>
                                 );
@@ -189,47 +198,47 @@ class Validators extends React.Component {
                                     </Pane>
 
                                     <Table>
-                                        <Table.Head>
+                                        <Table.Head style={ { backgroundColor: '#000', borderBottom: '1px solid #ffffff80' } }>
                                             <Table.TextHeaderCell
                                               textAlign='center'
-                                              width={ 70 }
+                                              width={ 35 }
                                               flex='none'
                                             />
                                             <Table.TextHeaderCell
-                                              textAlign='center'
+                                              textAlign='end'
                                               flexBasis={ 60 }
                                               flexShrink={ 0 }
                                               flexGrow={ 0 }
                                             >
-                                                Rank
+                                                <span style={ { color: '#fff', fontSize: 16 } }>Rank</span>
                                             </Table.TextHeaderCell>
                                             <Table.TextHeaderCell flexGrow={ 1 }>
-                                                Name
+                                            <span style={ { color: '#fff', fontSize: 16 } }>Name</span>
                                             </Table.TextHeaderCell>
                                             <Table.TextHeaderCell
-                                              textAlign='center'
+                                              textAlign='end'
                                               flexBasis={ 80 }
                                               flexShrink={ 0 }
                                               flexGrow={ 0 }
                                             >
-                                                Power (GCYB)
+                                                <span style={ { color: '#fff', fontSize: 16 } }>Power (GCYB)</span>
                                             </Table.TextHeaderCell>
-                                            <Table.TextHeaderCell flexGrow={ 1 } textAlign='center'>
-                                                Commission (%)
+                                            <Table.TextHeaderCell flexGrow={ 1 } textAlign='end'>
+                                            <span style={ { color: '#fff', fontSize: 16 } }>Commission (%)</span>
                                             </Table.TextHeaderCell>
-                                            <Table.TextHeaderCell textAlign='center' flexGrow={ 2 }>
-                                                Address
+                                            <Table.TextHeaderCell textAlign='end' flexGrow={ 3 }>
+                                            <span style={ { color: '#fff', fontSize: 16 } }>Address</span>
                                             </Table.TextHeaderCell>
                                             <Table.TextHeaderCell
-                                              textAlign='center'
-                                              flexShrink={ 1 }
-                                              flexGrow={ 1 }
+                                              textAlign='end'
+                                              flexShrink={ 0 }
+                                              flexGrow={ 0.8 }
                                             >
-                                                {showJailed ? 'Unbonding height' : 'Bond height'}
+                                                <span style={ { color: '#fff', fontSize: 16 } }>{showJailed ? 'Unbonding height' : 'Bond height'}</span>
                                             </Table.TextHeaderCell>
                                         </Table.Head>
                                         <Table.Body
-                                          style={ { backgroundColor: '#fff', overflowY: 'hidden' } }
+                                          style={ { backgroundColor: '#000', overflowY: 'hidden' } }
                                         >
                                             {validatorRows}
                                         </Table.Body>
