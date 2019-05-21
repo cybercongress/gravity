@@ -306,6 +306,7 @@ export const HelloContainer = ({ children, ...props }) => (
       left={ 0 }
       overflowY='auto'
       backgroundColor='#000'
+      {...props}
     >
         <Pane
           maxWidth={ 1269 }

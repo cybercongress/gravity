@@ -3,7 +3,6 @@
     height: 32px !important;
     width: 32px !important;
     box-shadow: none !important;
-    margin: 2vh 0 !important;
 }
 
 .btn-group-soul{
@@ -13,7 +12,7 @@
 .btn-group-soul:hover{
     background: url(./soul-focus.svg) no-repeat center center !important;
 }
-.btn-group-soul:focus{
+.btn-group-soul.active-btn{
     background: url(./soul-focus.svg) no-repeat center center !important;
 }
 
@@ -24,7 +23,7 @@
 .btn-group-body:hover{
     background: url(./body-focus.svg) no-repeat center center !important;
 }
-.btn-group-body:focus{
+.btn-group-body.active-btn{
     background: url(./body-focus.svg) no-repeat center center !important;
 }
 
@@ -36,7 +35,7 @@
 .btn-group-imortality:hover{
     background: url(./imortality-focus.svg) no-repeat center center !important;
 }
-.btn-group-imortality:focus{
+.btn-group-imortality.active-btn{
     background: url(./imortality-focus.svg) no-repeat center center !important;
 }
 
@@ -47,7 +46,7 @@
 .btn-group-security:hover{
     background: url(./security-focus.svg) no-repeat center center !important;
 }
-.btn-group-security:focus{
+.btn-group-security.active-btn{
     background: url(./security-focus.svg) no-repeat center center !important;
 }
 
@@ -58,7 +57,7 @@
 .btn-group-intelligence:hover{
     background: url(./intelligence-focus.svg) no-repeat center center !important;
 }
-.btn-group-intelligence:focus{
+.btn-group-intelligence.active-btn{
     background: url(./intelligence-focus.svg) no-repeat center center !important;
 }
 
@@ -69,7 +68,7 @@
 .btn-group-root:hover{
     background: url(./root-focus.svg) no-repeat center center !important;
 }
-.btn-group-root:focus{
+.btn-group-root.active-btn{
     background: url(./root-focus.svg) no-repeat center center !important;
 }
 
@@ -80,7 +79,7 @@
 .btn-group-diplomat:hover{
     background: url(./diplomat-focus.svg) no-repeat center center !important;
 }
-.btn-group-diplomat:focus{
+.btn-group-diplomat.active-btn{
     background: url(./diplomat-focus.svg) no-repeat center center !important;
 }
 .btn-group-map{
@@ -90,7 +89,7 @@
 .btn-group-map:hover{
     background: url(./map-focus.svg) no-repeat center center !important;
 }
-.btn-group-map:focus{
+.btn-group-map.active-btn{
     background: url(./map-focus.svg) no-repeat center center !important;
 }
 
@@ -101,7 +100,7 @@
 .btn-group-earth:hover{
     background: url(./earth-focus.svg) no-repeat center center !important;
 }
-.btn-group-earth:focus{
+.btn-group-earth.active-btn{
     background: url(./earth-focus.svg) no-repeat center center !important;
 }
 
@@ -112,7 +111,7 @@
 .btn-group-heritage:hover{
     background: url(./heritage-focus.svg) no-repeat center center !important;
 }
-.btn-group-heritage:focus{
+.btn-group-heritage.active-btn{
     background: url(./heritage-focus.svg) no-repeat center center !important;
 }
 
@@ -123,7 +122,7 @@
 .btn-group-wiki:hover{
     background: url(./wiki-focus.svg) no-repeat center center !important;
 }
-.btn-group-wiki:focus{
+.btn-group-wiki.active-btn{
     background: url(./wiki-focus.svg) no-repeat center center !important;
 }
 
@@ -134,6 +133,6 @@
 .btn-group-oracul:hover{
     background: url(./oracul-focus.svg) no-repeat center center !important;
 }
-.btn-group-oracul:focus{
+.btn-group-oracul.active-btn{
     background: url(./oracul-focus.svg) no-repeat center center !important;
 }

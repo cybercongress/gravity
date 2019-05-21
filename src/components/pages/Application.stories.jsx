@@ -158,9 +158,9 @@ storiesOf('Examples/cyb', module)
     .add('openMenu', () => (
             <Application openMenu />
     ))
-    .add('NewApp', () => (
-        <Application openMenu newApp />
-    ))
+    // .add('NewApp', () => (
+    //     <Application openMenu newApp />
+    // ))
     .add('homePage', () => (
         <Application homePage />
     ))
