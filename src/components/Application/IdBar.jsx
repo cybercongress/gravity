@@ -95,17 +95,6 @@ BP.
                       menuItems={ menuItems }
                     />
                 </div>
-                {defaultEthAccount && (
-                    <SkillBar
-                      fontSize='10px'
-                      marginRight={ 30 }
-                      style={ { height: 15, maxWidth: 200, minWidth: 100 } }
-                      bwPercent={ 25 }
-                      contentTooltip={
-                          <ContentTooltip linkPrice={ 2100 } bwRemained={ 10 } bwMaxValue={ 100 } />
-                        }
-                    />
-                )}
             </IdBarComponent>
         );
     }
