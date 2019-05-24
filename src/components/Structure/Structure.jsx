@@ -3,15 +3,15 @@ import {LinkHash} from "../../index";
 import {Doughnut} from "react-chartjs-2";
 const palette = require('google-palette');
 
-const styles = require('./Ben.less');
+const styles = require('./Structure.less');
 
-export const BenContainer = ({children, ...props}) => (
-    <div {...props} className={styles.benContainer}>
+export const StructureContainer = ({children, ...props}) => (
+    <div {...props} className={styles.StructureContainer}>
         {children}
     </div>
 );
 
-export class BenPieChart extends React.Component {
+export class Structure extends React.Component {
 
     render() {
         const { bens, calculateBensShares } = this.props;
@@ -46,26 +46,26 @@ export class BenPieChart extends React.Component {
             }]
         };
 
-        return <div className={styles.benPieChart}>
+        return <div className={styles.Structure}>
             <Doughnut data={chartData} width={150} options={options} />
-                <BenList>
+                <StructureList>
                     {
                         bens.map((ben, index) => (
-                            <Ben key={ben.address} color={colors[index]} address={ben.address} />
+                            <Struct key={ben.address} color={colors[index]} address={ben.address} />
                         ))
                     }
-                </BenList>
+                </StructureList>
         </div>
     }
 }
 
-export const BenList = ({children}) => (
-    <div className={styles.benList}>
+export const StructureList = ({children}) => (
+    <div className={styles.StructureList}>
         {children}
     </div>
 );
 
-export const Ben = ({color, address}) => (
+export const Struct = ({color, address}) => (
     <div className={styles.ben}>
         <div className={styles.dot} style={{backgroundColor: color}} />
         <LinkHash value={address} />

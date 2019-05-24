@@ -4,12 +4,12 @@ import { LinkHash } from '../../index';
 
 const palette = require('google-palette');
 
-// const styles = require('./Ben.less');
+// const styles = require('./Struct.less');
 
-export const BenContainer = ({ children, ...props }) => (
+export const StructureContainer = ({ children, ...props }) => (
     <div
       { ...props }
-        // className={styles.benContainer}
+        // className={styles.StructureContainer}
     >
         {children}
     </div>
@@ -130,9 +130,9 @@ export class LineExample extends React.Component {
 
 }
 
-export const BenList = ({ children }) => <div>{children}</div>;
+export const StructureList = ({ children }) => <div>{children}</div>;
 
-export const Ben = ({ color, address }) => (
+export const Struct = ({ color, address }) => (
     <div>
         <div
             // className={styles.dot}

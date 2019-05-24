@@ -6,8 +6,8 @@ import {
 import {
     LinkHash,
     MainContainer,
-    BenContainer,
-    BenPieChart,
+    StructureContainer,
+    Structure,
     FormField,
     calculateBensShares,
     InfoButton,
@@ -355,12 +355,12 @@ class PagesViewRegistry extends Component {
                           boxShadow='0 0 10px 1px #36d6ae'
                           borderRadius={ 4 }
                         >
-                            <BenContainer>
-                                <BenPieChart
+                            <StructureContainer>
+                                <Structure
                                   bens={ beneficiaries }
                                   calculateBensShares={ calculateBensShares }
                                 />
-                            </BenContainer>
+                            </StructureContainer>
                         </Pane>
                     </Pane>
                 </Pane>

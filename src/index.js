@@ -57,11 +57,11 @@ import {
 } from './components/Popup/Popup';
 
 import {
-    BenContainer,
-    BenPieChart,
-    BenList,
-    Ben,
-} from './components/Beneficiary/Ben';
+    StructureContainer,
+    Structure,
+    StructureList,
+    Struct,
+} from './components/Structure/Structure';
 import {
     DarkPanel,
 } from './components/DarkPanel/DarkPanel';
@@ -364,10 +364,10 @@ export {
     PopupSkillBar,
     PopupBar,
     PopupBarFooter,
-    BenContainer,
-    BenPieChart,
-    BenList,
-    Ben,
+    StructureContainer,
+    Structure,
+    StructureList,
+    Struct,
 
     DarkPanel,
 

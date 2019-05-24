@@ -1,11 +1,11 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import {BenContainer, BenPieChart} from "../..";
+import {StructureContainer, Structure} from "../..";
 
-storiesOf('Elements/Beneficiaries', module)
+storiesOf('Elements/Structure', module)
     .addDecorator(centered)
-    .add('Doughnut', () => {
+    .add('Structure', () => {
 
         const bens = [
             {
@@ -44,11 +44,11 @@ storiesOf('Elements/Beneficiaries', module)
         };
 
         return (
-            <BenContainer>
-                <BenPieChart
+            <StructureContainer>
+                <Structure
                     bens={bens}
                     calculateBensShares={calculateBensShares}
                 />
-            </BenContainer>
+            </StructureContainer>
         )
     });
