@@ -33,7 +33,7 @@ Chart.controllers.line = Chart.controllers.line.extend({
 });
 
 
-export class LineExample extends React.Component {
+export class Dynamics extends React.Component {
     render() {
         const { bens, calculateBensShares } = this.props;
         var tooltipEl = document.getElementById('chartjs-tooltip');

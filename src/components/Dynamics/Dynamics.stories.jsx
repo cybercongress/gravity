@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Pane } from 'evergreen-ui';
-import { LineExample } from './LineExample';
+import { Dynamics } from '../..';
 
-storiesOf('Elements/LineExample', module)
+storiesOf('Elements/Dynamics', module)
     .addDecorator(centered)
-    .add('LineExample', () => {
+    .add('Dynamics', () => {
         const bens = [
             {
                 address: '0x379A23083a58B2b89F4dD307aD55F732BB5A20Ef',
@@ -58,7 +58,7 @@ storiesOf('Elements/LineExample', module)
               alignItems='center'
             >
                 <Pane>
-                    <LineExample bens={ bens } calculateBensShares={ calculateBensShares } />
+                    <Dynamics bens={ bens } calculateBensShares={ calculateBensShares } />
                 </Pane>
             </Pane>
         );

@@ -301,6 +301,10 @@ import {
 import {
     CardAccount,
 } from './components/CardAccount/CardAccount';
+import {
+    Dynamics,
+} from './components/Dynamics/Dynamics';
+
 
 export {
     Title,
@@ -521,4 +525,5 @@ export {
     Heading, Pane, Button, TextEv, TextInput,
     Tablist, Tab, TableEv, Pill, Tooltip, Card,
     Icon, IconButton, Textarea, FilePicker, Popover, Dialog, Menu,
+    Dynamics,
 };

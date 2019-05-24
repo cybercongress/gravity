@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import {
     Pane, Text, Heading, Button, TextInput, Select,
 } from 'evergreen-ui';
-import { LineExample } from '../LineExample/LineExample';
+import { Dynamics } from '../Dynamics/Dynamics';
 import {
     ScrollContainer, MainContainer, CardHover, SkillBar, calculateBensShares,
 } from '../..';
@@ -132,7 +132,7 @@ const Databases = () => (
                   width='80%'
                     // height={200}
                 >
-                    <LineExample bens={ bens } />
+                    <Dynamics bens={ bens } />
                 </Pane>
             </Pane>
         </MainContainer>

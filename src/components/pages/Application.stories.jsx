@@ -51,13 +51,6 @@ const Application = (props) => {
               fromAddress='sdfjnsfdjndfsjk'
               defaultAccountBalance='10'
             />
-            <Status
-              IPFS_END_POINT={ textIpfs }
-              ethNetworkName='dsf'
-              PARITTY_END_POINT={ textEthNode }
-              ipfsStatus={ ipfs }
-              cyberNodeStatus={ NodeStatus }
-            />
             <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
                 <AppMenu pendingAddToFavorites={ newApp } menuItems={ menuItems } />
             </AppSideBar>
