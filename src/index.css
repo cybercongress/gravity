@@ -328,7 +328,7 @@ html, body, #root {
     background-color: #73737336 !important;
 }
 
-.css-uxwp33, [data-css-uxwp33] .select-green {
+.select-green .css-uxwp33, [data-css-uxwp33] {
     background: transparent !important;
     box-shadow: inset 0 0 0 1px #36d6ae83 !important;
 }

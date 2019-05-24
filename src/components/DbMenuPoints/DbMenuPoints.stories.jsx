@@ -1,30 +1,25 @@
-// import React from 'react';
-// import { storiesOf } from '@storybook/react';
-// import centered from '@storybook/addon-centered';
-// import { addDecorator } from '@storybook/react';
-// import {
-//     MenuPopup,
-//     MenuPopupItem,
-//     MenuSeparator,
-//     MenuPopupAccountIcon,
-//     MenuPopupTransferIcon,
-//     MenuPopupDeleteIcon,
-//     MenuPopupEditIcon,
-// } from '../..';
-// import { DbMenuPoints } from './DbMenuPoints';
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import centered from '@storybook/addon-centered';
 
-// storiesOf('Elements/DbMenu', module)
-//     .addDecorator(centered)
-//     .add('DbMenuPoints', () => (
-//         <DbMenuPoints>
-//             <MenuPopup>
-//                 <MenuPopupItem icon={ <MenuPopupAccountIcon /> }>Transfer Ownership</MenuPopupItem>
-//                 <MenuSeparator />
-//                 <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>Fund Registry</MenuPopupItem>
-//                 <MenuPopupItem icon={ <MenuPopupTransferIcon /> }>Claim Funds</MenuPopupItem>
-//                 <MenuSeparator />
-//                 <MenuPopupItem icon={ <MenuPopupDeleteIcon /> }> Delete Registry </MenuPopupItem>
-//                 <MenuPopupItem icon={ <MenuPopupEditIcon /> }> Delete Registry </MenuPopupItem>
-//             </MenuPopup>
-//         </DbMenuPoints>
-//     ));
+import { Menu, Popover, Button } from 'evergreen-ui';
+
+storiesOf('Elements/Menu', module)
+    .addDecorator(centered)
+    .add('Menu', () => (
+        <Popover
+          content={ (
+              <Menu>
+                  <Menu.Item icon="people">Transfer Ownership</Menu.Item>
+                  <Menu.Item icon="edit">Fund Registry</Menu.Item>
+                  <Menu.Item icon="circle-arrow-right">Claim Funds</Menu.Item>
+                  <Menu.Divider />
+                  <Menu.Group>
+                      <Menu.Item icon="trash" intent="danger"> Delete </Menu.Item>
+                  </Menu.Group>
+              </Menu>
+) }
+        >
+            <Button>Menu</Button>
+        </Popover>
+    ));
