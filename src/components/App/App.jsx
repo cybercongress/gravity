@@ -28,8 +28,8 @@ export const AppContent = ({ children }) => (
     </div>
 );
 
-export const AppSideBar = ({ children, onCloseSidebar, openMenu }) => (
-    <div className={ cx(styles.sideBar, { [styles.sideBarHide]: !openMenu }) }>
+export const AppSideBar = ({ children, onCloseSidebar, openMenu, relative }) => (
+    <div className={ cx(styles.sideBar, { [styles.sideBarHide]: !openMenu, [styles.sideBarRelative]: relative }) }>
         <button
           type='button'
           onClick={ onCloseSidebar }

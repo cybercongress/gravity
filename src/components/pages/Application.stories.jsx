@@ -2,12 +2,17 @@ import React from 'react';
 // import { connect } from 'react-redux';
 // import { toggleMenu as toggleMenuAction } from '../../redux/appMenu';
 import { storiesOf } from '@storybook/react';
+import { Pane } from 'evergreen-ui';
 
 import {
     App,
-    AppHeader, AppContent, AppSideBar,
+    AppHeader,
+    AppContent,
+    AppSideBar,
     Navigation,
-    NavigationLeft, NavigationRight, NavigationCenter,
+    NavigationLeft,
+    NavigationRight,
+    NavigationCenter,
     ScrollContainer,
 } from '../..';
 
@@ -40,27 +45,42 @@ const Application = (props) => {
 
     return (
         <App openMenu={ openMenu }>
-            <SignerPopup isSignerPopup={signerPopup} toAddress='sfsdfsfsd' fromAddress='sdfjnsfdjndfsjk' defaultAccountBalance='10' />
-            <Status IPFS_END_POINT={textIpfs} ethNetworkName='dsf' PARITTY_END_POINT={textEthNode} ipfsStatus={ ipfs } cyberNodeStatus={ NodeStatus } />
+            <SignerPopup
+              isSignerPopup={ signerPopup }
+              toAddress='sfsdfsfsd'
+              fromAddress='sdfjnsfdjndfsjk'
+              defaultAccountBalance='10'
+            />
+            <Status
+              IPFS_END_POINT={ textIpfs }
+              ethNetworkName='dsf'
+              PARITTY_END_POINT={ textEthNode }
+              ipfsStatus={ ipfs }
+              cyberNodeStatus={ NodeStatus }
+            />
             <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
-                <AppMenu pendingAddToFavorites={newApp} menuItems={ menuItems } />
+                <AppMenu pendingAddToFavorites={ newApp } menuItems={ menuItems } />
             </AppSideBar>
-            <AppHeader isHome={ homePage } isMenuOpen={ openMenu }>
-                <Navigation isHome={ homePage }>
-                    <NavigationLeft>
-                        <ToggleMenu openMenu={ openMenu } />
-                    </NavigationLeft>
-                    <NavigationCenter>
-                        <NavigationComponents dura={dura} canBack={activeBttnBack} isFavorited={activeBttnFavorited} />
-                    </NavigationCenter>
-                    <NavigationRight>
-                        <IdBar menuItems={menuItems} defaultEthAccount />
-                    </NavigationRight>
-                </Navigation>
-            </AppHeader>
-            <AppContent>
-                {children}
-            </AppContent>
+            <Pane width='100%' height='100%' position='relative'>
+                <AppHeader isHome={ homePage } isMenuOpen={ openMenu }>
+                    <Navigation isHome={ homePage }>
+                        <NavigationLeft>
+                            <ToggleMenu openMenu={ openMenu } />
+                        </NavigationLeft>
+                        <NavigationCenter>
+                            <NavigationComponents
+                              dura={ dura }
+                              canBack={ activeBttnBack }
+                              isFavorited={ activeBttnFavorited }
+                            />
+                        </NavigationCenter>
+                        <NavigationRight>
+                            <IdBar menuItems={ menuItems } defaultEthAccount />
+                        </NavigationRight>
+                    </Navigation>
+                </AppHeader>
+                <AppContent>{children}</AppContent>
+                </Pane>
         </App>
     );
 };
@@ -149,21 +169,15 @@ const menuItems = [
         name: '.root',
         rootDura: 'tyds',
     },
-]
+];
 
 storiesOf('Examples/cyb', module)
-    .add('Application', () => (
-        <Application />
-    ))
-    .add('openMenu', () => (
-            <Application openMenu />
-    ))
+    .add('Application', () => <Application />)
+    .add('openMenu', () => <Application openMenu />)
     // .add('NewApp', () => (
     //     <Application openMenu newApp />
     // ))
-    .add('homePage', () => (
-        <Application homePage />
-    ))
+    .add('homePage', () => <Application homePage />)
     .add('ActiveNavigationComponents', () => (
         <Application activeBttnBack activeBttnFavorited dura='rr.cyb' />
     ))
@@ -171,17 +185,16 @@ storiesOf('Examples/cyb', module)
     .add('StatusIndicator', () => (
         <Application ipfs='local' textIpfs='textIpfs' textEthNode='textEthNode' NodeStatus='fail' />
     ));
-    // .add('SignerPopup', () => (
-    //     <Application signerPopup />
-    // ))
-    // .add('Create Account', () => (
-    //     <Application>
-    //         <Login />
-    //     </Application>
-    // ))
-    // .add('Login', () => (
-    //     <Application>
-    //         <Login isUserExist />
-    //     </Application>
-    // ));
-    
+// .add('SignerPopup', () => (
+//     <Application signerPopup />
+// ))
+// .add('Create Account', () => (
+//     <Application>
+//         <Login />
+//     </Application>
+// ))
+// .add('Login', () => (
+//     <Application>
+//         <Login isUserExist />
+//     </Application>
+// ));

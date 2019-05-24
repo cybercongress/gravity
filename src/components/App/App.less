@@ -28,8 +28,10 @@
 
 .appContent {
 	flex: 1 auto;
-	height: calc(100% - 60px);
+	/*height: calc(100% - 60px);*/
     background: #000;
+    height: 100%;
+    position: relative;
 }
 
 
@@ -42,8 +44,18 @@
     background: #000000;
     color: #fff;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
+    opacity: 0.9;
+    box-shadow: 1px 0 20px 2px #000;
 }
+
+.sideBarRelative {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    box-shadow: none;
+}
+
 
 .sideBarHide {
     left: -250px;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-    Pane, Text, Heading, Button,
+    Pane, Text, Heading, Button, TextInput, Select,
 } from 'evergreen-ui';
 import { LineExample } from '../LineExample/LineExample';
 import {
@@ -61,16 +61,20 @@ const bens = [
 ];
 
 const ContentTooltip = () => (
-    <Pane minWidth={ 150 } paddingX={ 15 } paddingY={ 10 } borderRadius={ 4 } backgroundColor='#000'
-    
-    width='108%'
-    /* height: 114%; */
-    marginLeft='-4%'
-    marginTop='-2%'
-    marginBottom='-2%'
-    boxShadow='0 0 20px 3px #36d6ae'
+    <Pane
+      minWidth={ 150 }
+      paddingX={ 15 }
+      paddingY={ 10 }
+      borderRadius={ 4 }
+      backgroundColor='#000'
+      width='108%'
+        /* height: 114%; */
+      marginLeft='-4%'
+      marginTop='-2%'
+      marginBottom='-2%'
+      boxShadow='0 0 20px 3px #36d6ae'
     >
-        <Text color='#fff' display='inline-block' marginBottom={10}>
+        <Text color='#fff' display='inline-block' marginBottom={ 10 }>
             Day 5 of 711
         </Text>
         <Text color='#fff' fontSize='13px' display='inline-block'>
@@ -156,13 +160,26 @@ const FooterCyb = () => (
           flexDirection='row'
           paddingX='3vw'
         >
-            <Pane display='flex' justifyContent='center' flexGrow={ 1 }>
-                <Text color='#fff' fontSize='18px'>
-                    Add a new database for 10 ETH
-                </Text>
+            <Pane display='flex' justifyContent='space-around' alignItems='center' flexGrow={ 1 } marginRight={15}>
+                <Pane width='40%'>
+                    <Select className='select-green' width='100%' height={ 42 }>
+                        <option value=''>Version</option>
+                        <option value='V1'>V1 (Basic Database)</option>
+                    </Select>
+                </Pane>
+                <TextInput
+                  height={ 42 }
+                  width='40%'
+                //   marginRight={ 15 }
+                  fontSize='18px'
+                  placeholder='ETH'
+                  textAlign='left'
+                  backgroundColor='transparent'
+                  className='input-green'
+                />
             </Pane>
             <Button paddingX={ 50 } className='btn'>
-                Add database
+                Get CBD
             </Button>
         </Pane>
     </Pane>

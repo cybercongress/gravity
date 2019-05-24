@@ -2,7 +2,9 @@ import React from 'react';
 // import { connect } from 'react-redux';
 // import { toggleMenu as toggleMenuAction } from '../../redux/appMenu';
 // import { storiesOf } from '@storybook/react';
-
+import {
+    Pane,
+} from 'evergreen-ui';
 import {
     App,
     AppHeader, AppContent, AppSideBar,
@@ -47,9 +49,7 @@ const Application = (props) => {
         <App openMenu={ openMenu }>
             <SignerPopup />
             {/* <Status /> */}
-            <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
-                <AppMenu menuItems={ menuItems } />
-            </AppSideBar>
+            
             <AppHeader isHome={ homePage } isMenuOpen={ openMenu }>
                 <Navigation isHome={ homePage }>
                     <NavigationLeft>
@@ -63,9 +63,21 @@ const Application = (props) => {
                     </NavigationRight>
                 </Navigation>
             </AppHeader>
+            <Pane
+              width='100%'
+              height='100%'
+              display='flex'
+              backgroundColor='#000'
+            >
+            <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
+                <AppMenu menuItems={ menuItems } />
+            </AppSideBar>
+
+
             <AppContent>
                 {children}
             </AppContent>
+            </Pane>
         </App>
     );
 };
