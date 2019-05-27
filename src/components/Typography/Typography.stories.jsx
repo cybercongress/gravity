@@ -3,16 +3,24 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import {
     Button,
+    // Text,
+    // Heading,
+    // Strong,
+    // Code,
+    // Link,
+    // Paragraph,
+    Pane,
+    UnorderedList,
+    ListItem,
+} from 'evergreen-ui';
+import {
     Text,
     Heading,
     Strong,
     Code,
     Link,
     Paragraph,
-    Pane,
-    UnorderedList,
-    ListItem,
-} from 'evergreen-ui';
+} from './Typography';
 
 storiesOf('Elements/Typography', module).add('Typography', () => (
     <Pane width='80%' marginX='auto' paddingTop='1em'>
