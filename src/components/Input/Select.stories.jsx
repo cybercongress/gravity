@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { Select } from 'evergreen-ui';
+import { Select } from './Input';
+
 
 const Permission = {
     OnlyAdmin: 0,

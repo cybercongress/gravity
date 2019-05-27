@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-    Pane, TextInput, Icon, Text,
+    Pane, TextInput, Icon, Text, Select as SelectEv,
 } from 'evergreen-ui';
 
 const styles = require('./Input.less');
@@ -36,7 +36,7 @@ export const Input = ({ inputRef, errorMessage, isInvalid, message, ...props }) 
 );
 
 export const Select = ({ children, inputRef, ...props }) => (
-    <select { ...props } ref={ inputRef } className={ styles.Input }>
+    <SelectEv { ...props }>
         {children}
-    </select>
+    </SelectEv>
 );

@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { Button, IconButton, Pane } from 'evergreen-ui';
+import { IconButton, Pane } from 'evergreen-ui';
+import { Button } from './Button';
 
 storiesOf('Elements/Button', module)
     .addDecorator(centered)

@@ -1,9 +1,8 @@
 import * as React from 'react';
+import { Badge as BadgeEv } from 'evergreen-ui';
 
-const styles = require('./Badge.less');
-
-export const Badge = ({ children }) => (
-    <span className={styles.badge} >
+export const Badge = ({ children, ...props }) => (
+    <BadgeEv {...props} >
       {children}
-    </span>
+    </BadgeEv>
   );
