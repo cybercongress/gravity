@@ -231,26 +231,37 @@ class RootRegistryPage extends Component {
                   paddingY={ 15 }
                   zIndex={ 2 }
                 >
-                    <Pane alignItems='center' justifyContent='center' display='flex' width='100%' maxWidth={ 1000 }>
-                    <Button
-                              height={ 32 }
-                              paddingX={ 15 }
-                              marginX={10}
-                              className='btn'
+                    <Pane
+                      alignItems='center'
+                      justifyContent='center'
+                      display='flex'
+                      width='100%'
+                      maxWidth={ 1000 }
+                    >
+                        <Button
+                          height={ 32 }
+                          paddingX={ 15 }
+                          marginX={ 10 }
+                          className='btn'
+                          minWidth={130}
+                          fontSize='14px'
                             //   onClick={ () => this.isShownAdd() }
-                            >
-                                RESET TO DEFAULT
-                            </Button>
-                    <Button
-                              iconBefore='add'
-                              height={ 32 }
-                              paddingX={ 15 }
-                              marginX={10}
-                              className='btn'
-                              onClick={ () => this.isShownAdd() }
-                            >
-                                Add
-                            </Button>
+                        >
+                            RESET TO DEFAULT
+                        </Button>
+                        <Button
+                          iconBefore='add'
+                          height={ 32 }
+                          paddingX={ 15 }
+                          marginX={ 10 }
+                          className='btn'
+                          minWidth={130}
+                          justifyContent='center'
+                          fontSize='14px'
+                          onClick={ () => this.isShownAdd() }
+                        >
+                            Add
+                        </Button>
                     </Pane>
                 </Pane>
             </div>

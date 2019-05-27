@@ -168,10 +168,10 @@ export const ConnectCyb = ({
           flexDirection='row'
           paddingX='3vw'
         >
-            <Button paddingX={ 30 } marginX={10} className='btn'>
+            <Button paddingX={ 30 } marginX={10} fontSize='14px' className='btn'>
                 EXPORT SETTINGS
             </Button>
-            <Button paddingX={ 30 } marginX={10} className='btn'>
+            <Button paddingX={ 30 } marginX={10} fontSize='14px'  className='btn'>
                 RESET SETTINGS
             </Button>
         </Pane>
@@ -180,6 +180,7 @@ export const ConnectCyb = ({
 );
 
 export const ShieldCyb = () => (
+    <div>
     <HelloContainer>
         <HelloContainerLeftCol>
             <BigImg srcBigImg={ idrobot } />
@@ -235,14 +236,38 @@ export const ShieldCyb = () => (
                     </Pane>
                 </Card>
             </HelloContainerRightColContent>
-            <HelloContainerRightColBtn center>
-                <ButtonEverGreen>Save Password</ButtonEverGreen>
-            </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>
+    <Pane
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      width='100%'
+      position='absolute'
+      bottom={ 0 }
+      paddingY={ 20 }
+      backgroundColor='#000000'
+      zIndex={ 2 }
+    >
+        <Pane
+          flexGrow={ 1 }
+          maxWidth={ 1000 }
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          flexDirection='row'
+          paddingX='3vw'
+        >
+            <Button paddingX={ 30 } fontSize='16px' className='btn'>
+            Save Password
+            </Button>
+        </Pane>
+    </Pane>
+    </div>
 );
 
 export const StateCyb = () => (
+    <div>
     <HelloContainer>
         <HelloContainerLeftCol>
             <BigImg srcBigImg={ idrobot } />
@@ -251,9 +276,32 @@ export const StateCyb = () => (
             <HelloContainerRightColContent>
                 <StateCybTable />
             </HelloContainerRightColContent>
-            <HelloContainerRightColBtn center>
-                <ButtonEverGreen>Export selected</ButtonEverGreen>
-            </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>
+        <Pane
+        display='flex'
+        alignItems='center'
+        justifyContent='center'
+        width='100%'
+        position='absolute'
+        bottom={ 0 }
+        paddingY={ 20 }
+        backgroundColor='#000000'
+        zIndex={ 2 }
+      >
+          <Pane
+            flexGrow={ 1 }
+            maxWidth={ 1000 }
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
+            flexDirection='row'
+            paddingX='3vw'
+          >
+              <Button paddingX={ 30 } marginX={10} fontSize='16px' className='btn'>
+                Export selected
+              </Button>
+          </Pane>
+      </Pane>
+      </div>
 );

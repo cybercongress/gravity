@@ -139,7 +139,7 @@ html, body, #root {
 }
 
 .input-green:focus{
-    box-shadow: inset 0 0 1.4px 1.1px #3dc9a1, 0 0 11px 0px #3dc9a1 !important;
+    box-shadow: 0 0 6px 0px #3dc9a1 !important;
 }
 
 /* width */

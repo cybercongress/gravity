@@ -803,7 +803,7 @@ export const SuccessfulLogin = () => (
                       marginBottom='6%'
                     >
                         <Pane width='100%' marginBottom='6%'>
-                            <TextInputError />
+                            <TextInputError autoFocus className='input-green' />
                         </Pane>
                     </Pane>
                 </Card>
@@ -859,7 +859,7 @@ export const FailLogin = () => (
                             >
                                 New password
                             </Text>
-                            <TextInputError />
+                            <TextInputError className='input-green' />
                         </Pane>
                         <Pane width='100%'>
                             <Text
@@ -870,7 +870,7 @@ export const FailLogin = () => (
                             >
                                 Confirm new password
                             </Text>
-                            <TextInputError />
+                            <TextInputError className='input-green' />
                         </Pane>
                     </Pane>
                 </Card>
