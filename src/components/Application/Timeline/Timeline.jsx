@@ -1,31 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
 import classNames from 'classnames';
-import { Pane, Text, Pill } from 'evergreen-ui';
+import { Pane, Text, Pill, IconButton } from 'evergreen-ui';
 import { CybLink, LinkHash, SkillBar } from '../../..';
 import { WaleetAppMenu, UserCard } from '../AppMenu/AppMenu';
 
-const styles = require('./IdBar.less');
-
-const IdBarComponent = ({ children }) => <div className={ styles.id_bar }>{children}</div>;
-
-export const SettingsLink = props => (
-    <CybLink { ...props } dura='settings.cyb' className={ styles.id_bar__settings }>
-        Settings
-    </CybLink>
-);
-
-export const WalletLink = props => (
-    <CybLink { ...props } dura='wallet.cyb' className={ styles.id_bar__wallet }>
-        Wallet
-    </CybLink>
-);
-
-export const NotificationLink = ({ notificationLinkCounter, ...props }) => (
-    <CybLink dura='txq.cyb' { ...props } className={ styles.id_bar__txq }>
-        <span>{notificationLinkCounter !== 0 ? notificationLinkCounter : ''}</span>
-    </CybLink>
-);
+const styles = require('./Timeline.less');
 
 const ItemsTimeline = ({ item, deleteAppFromMenu, ...props }) => (
     <Pane
@@ -133,8 +113,35 @@ export const Timeline = ({
     bwMaxValue,
     linkPrice,
     defaultEthAccount,
+    relative,
 }) => (
-    <div className={ cx(styles.user_popup, { [styles.user_popup__open]: open }) }>
+    <div className={ cx(styles.user_popup, { [styles.user_popup__open]: open, [styles.user_popup__relative]: relative }) }>
+        <IconButton
+          icon={ relative ? 'unpin' : 'pin'}
+          appearance='minimal'
+          className='icon-btn color-gray-svg'
+          position='absolute'
+          top={ 15 }
+          left={ relative ? 15 : 40 }
+          iconSize={ 16 }
+          color='#979797'
+          width={ 24 }
+          height={ 24 }
+        />
+        {!relative &&(
+            <IconButton
+            icon='cross'
+            appearance='minimal'
+            className='icon-btn color-gray-svg'
+            position='absolute'
+            top={ 15 }
+            left={15}
+            iconSize={ 16 }
+            color='#979797'
+            width={ 24 }
+            height={ 24 }
+          />
+        )}
         {defaultEthAccount && (
             <Pane width='100%' marginBottom='1.5em' paddingX='1em'>
                 <SkillBar
@@ -173,55 +180,3 @@ export const Timeline = ({
         </Pane>
     </div>
 );
-
-export const CurrentUser = (props) => {
-    const {
-        defaultEthAccount,
-        open,
-        toggle,
-        favoriteClick,
-        ethBalance,
-        cybBalance,
-        menuItems,
-        deleteMenuItem,
-    } = props;
-
-    return (
-        <div className={ styles.user_popup__container }>
-            {defaultEthAccount ? (
-                <Pane display='flex' alignItems='center'>
-                    <Text marginX={ 10 } color='#fff' fontSize='1em'>
-                        User
-                    </Text>
-                    <img
-                      alt='user'
-                      className={ styles.id_bar__user }
-                      onClick={ toggle }
-                      src={ `https://robohash.org/${defaultEthAccount}` }
-                    />
-                </Pane>
-            ) : (
-                <CybLink { ...props } dura='wallet.cyb'>
-                    <div
-                      className={ classNames({
-                            [styles.id_bar__user]: true,
-                            [styles.id_bar__user__default]: true,
-                        }) }
-                      onClick={ toggle }
-                    />
-                </CybLink>
-            )}
-            {/* {defaultEthAccount && (
-                <Timeline
-                  open={ open }
-                  ethBalance={ ethBalance }
-                  cybBalance={ cybBalance }
-                  menuItems={ menuItems }
-                  defaultEthAccount={defaultEthAccount}
-                />
-            )} */}
-        </div>
-    );
-};
-
-export default IdBarComponent;

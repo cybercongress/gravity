@@ -323,6 +323,10 @@ html, body, #root {
     fill: #ffffffe1 !important;
 }
 
+.color-gray-svg svg {
+    fill: #979797 !important;
+}
+
 /* table hover */
 .css-z3ro6d[data-isselectable="true"]:hover, [data-css-z3ro6d][data-isselectable="true"]:hover{
     background-color: #73737336 !important;

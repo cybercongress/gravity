@@ -2,7 +2,7 @@ import React from 'react';
 // import { connect } from 'react-redux';
 // import { toggleMenu as toggleMenuAction } from '../../redux/appMenu';
 import { storiesOf } from '@storybook/react';
-import { Pane } from 'evergreen-ui';
+import { Pane, Text } from 'evergreen-ui';
 
 import {
     App,
@@ -23,6 +23,7 @@ import NavigationComponents from '../Application/Navigation';
 import ToggleMenu from '../Application/ToggleMenu';
 import SignerPopup from '../Application/SignerPopup';
 import Login from '../Application/Login';
+import { Timeline } from '../Application/Timeline/Timeline';
 
 const img = require('../../img/earth-active.svg');
 
@@ -41,6 +42,9 @@ const Application = (props) => {
         newApp,
         textIpfs,
         textEthNode,
+        relative,
+        relativeTimeline,
+        openTimeline,
     } = props;
 
     return (
@@ -51,29 +55,54 @@ const Application = (props) => {
               fromAddress='sdfjnsfdjndfsjk'
               defaultAccountBalance='10'
             />
-            <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
-                <AppMenu pendingAddToFavorites={ newApp } menuItems={ menuItems } />
-            </AppSideBar>
-            <Pane width='100%' height='100%' position='relative'>
-                <AppHeader isHome={ homePage } isMenuOpen={ openMenu }>
-                    <Navigation isHome={ homePage }>
-                        <NavigationLeft>
-                            <ToggleMenu openMenu={ openMenu } />
-                        </NavigationLeft>
-                        <NavigationCenter>
-                            <NavigationComponents
-                              dura={ dura }
-                              canBack={ activeBttnBack }
-                              isFavorited={ activeBttnFavorited }
-                            />
-                        </NavigationCenter>
-                        <NavigationRight>
-                            <IdBar menuItems={ menuItems } defaultEthAccount />
-                        </NavigationRight>
-                    </Navigation>
-                </AppHeader>
-                <AppContent>{children}</AppContent>
-                </Pane>
+
+            <AppHeader isHome={ homePage } isMenuOpen={ openMenu }>
+                <Navigation isHome={ homePage }>
+                    <NavigationLeft>
+                        <ToggleMenu openMenu={ openMenu } />
+                    </NavigationLeft>
+                    <NavigationCenter>
+                        <NavigationComponents
+                          dura={ dura }
+                          canBack={ activeBttnBack }
+                          isFavorited={ activeBttnFavorited }
+                        />
+                    </NavigationCenter>
+                    <NavigationRight>
+                        <IdBar menuItems={ menuItems } defaultEthAccount />
+                    </NavigationRight>
+                </Navigation>
+            </AppHeader>
+            <Pane
+              width='100%'
+              height='100%'
+              display='flex'
+              backgroundColor='#000'
+              position='relative'
+            >
+                <AppSideBar onCloseSidebar={ toggleMenu } relative={ relative } openMenu={ openMenu }>
+                    <AppMenu pendingAddToFavorites={ newApp } menuItems={ menuItems } />
+                </AppSideBar>
+                <AppContent>
+                    <Pane
+                      height='100%'
+                      backgroundColor='#ddd'
+                      display='flex'
+                      alignItems='center'
+                      justifyContent='center'
+                    >
+                        <Text>Content</Text>
+                    </Pane>
+                </AppContent>
+                <Timeline
+                  open={openTimeline}
+                  ethBalance={ 2 }
+                  cybBalance={ 1 }
+                  menuItems={ menuItems }
+                  defaultEthAccount
+                  relative={relativeTimeline}
+                />
+            </Pane>
         </App>
     );
 };
@@ -167,6 +196,8 @@ const menuItems = [
 storiesOf('Examples/cyb', module)
     .add('Application', () => <Application />)
     .add('openMenu', () => <Application openMenu />)
+    .add('relativeMenu', () => <Application openMenu relative openTimeline />)
+    .add('relativeTimeline', () => <Application openMenu relative relativeTimeline openTimeline />)
     // .add('NewApp', () => (
     //     <Application openMenu newApp />
     // ))

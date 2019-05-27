@@ -43,6 +43,7 @@ const Application = (props) => {
         openMenu,
         children,
         toggleMenu,
+        relative,
     } = props;
 
     return (
@@ -69,7 +70,7 @@ const Application = (props) => {
               display='flex'
               backgroundColor='#000'
             >
-            <AppSideBar onCloseSidebar={ toggleMenu } openMenu={ openMenu }>
+            <AppSideBar onCloseSidebar={ toggleMenu } relative={relative} openMenu={ openMenu }>
                 <AppMenu menuItems={ menuItems } />
             </AppSideBar>
 
