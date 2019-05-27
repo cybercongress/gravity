@@ -534,12 +534,12 @@ export const ConnectionTable = ({
 }) => (
     <Pane width='100%'>
         <Table>
-            <Table.Head>
-                <Table.TextHeaderCell>Provider</Table.TextHeaderCell>
-                <Table.TextHeaderCell>Endpoint</Table.TextHeaderCell>
+            <Table.Head style={ { backgroundColor: '#000', borderBottom: '1px solid #ffffff80', marginBottom: 10 } }>
+                <Table.TextHeaderCell><span style={{color: '#fff', fontSize: 14 }}>Provider</span></Table.TextHeaderCell>
+                <Table.TextHeaderCell><span style={{color: '#fff', fontSize: 14 }}>Endpoint</span></Table.TextHeaderCell>
             </Table.Head>
-            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
-                <Table.Row isSelectable>
+            <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
+                <Table.Row isSelectable borderBottom='none'>
                     <Table.TextCell>
                         {' '}
                         <Pill
@@ -558,13 +558,13 @@ export const ConnectionTable = ({
                                     : 'yellow'
                             }
                         />
-                        <Text>IPFS read</Text>
+                        <Text color='#fff'>IPFS read</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ IPFS_END_POINT } width='80%' />
+                        <TextInput defaultValue={ IPFS_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
                     </Table.TextCell>
                 </Table.Row>
-                <Table.Row isSelectable>
+                <Table.Row isSelectable borderBottom='none'>
                     <Table.TextCell>
                         <Pill
                           height={ 8 }
@@ -579,13 +579,13 @@ export const ConnectionTable = ({
                                 status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
                             }
                         />
-                        <Text>IPFS write</Text>
+                        <Text color='#fff'>IPFS write</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ ipfsWriteUrl } width='80%' />
+                        <TextInput defaultValue={ ipfsWriteUrl } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
                     </Table.TextCell>
                 </Table.Row>
-                <Table.Row isSelectable>
+                <Table.Row isSelectable borderBottom='none'>
                     <Table.TextCell>
                         <Pill
                           height={ 8 }
@@ -604,13 +604,13 @@ export const ConnectionTable = ({
                                     : 'yellow'
                             }
                         />
-                        <Text>Ethereum HTTP</Text>
+                        <Text color='#fff'>Ethereum HTTP</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ PARITY_END_POINT } width='80%' />
+                        <TextInput defaultValue={ PARITY_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
                     </Table.TextCell>
                 </Table.Row>
-                <Table.Row isSelectable>
+                <Table.Row isSelectable borderBottom='none'>
                     <Table.TextCell>
                         <Pill
                           height={ 8 }
@@ -625,13 +625,13 @@ export const ConnectionTable = ({
                                 status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
                             }
                         />
-                        <Text>Cyberd HTTP</Text>
+                        <Text color='#fff'>Cyberd HTTP</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ CYBERD_END_POINT } width='80%' />
+                        <TextInput defaultValue={ CYBERD_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
                     </Table.TextCell>
                 </Table.Row>
-                <Table.Row>
+                <Table.Row isSelectable borderBottom='none'>
                     <Table.TextCell>
                         <Pill
                           height={ 8 }
@@ -650,10 +650,10 @@ export const ConnectionTable = ({
                                     : 'yellow'
                             }
                         />
-                        <Text>Cyberd Ws</Text>
+                        <Text color='#fff'>Cyberd Ws</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ CYBERD_WS_END_POINT } width='80%' />
+                        <TextInput defaultValue={ CYBERD_WS_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
                     </Table.TextCell>
                 </Table.Row>
             </Table.Body>

@@ -127,106 +127,133 @@ class RootRegistryPage extends Component {
         ));
 
         return (
-            <ScrollContainer>
-                <MainContainer>
-                    <Pane marginBottom={ 10 } width='100%' display='flex' justifyContent='flex-end'>
-                        <Button
-                          iconBefore='add'
-                          height={ 32 }
-                          paddingX={ 15 }
-                          className='btn'
-                          onClick={ () => this.isShownAdd() }
+            <div>
+                <ScrollContainer>
+                    <MainContainer>
+                        <Table>
+                            <Table.Head
+                              style={ {
+                                    backgroundColor: '#000',
+                                    borderBottom: '1px solid #ffffff80',
+                                } }
+                              paddingLeft={ 20 }
+                            >
+                                <Table.TextHeaderCell>
+                                    <span style={ { color: '#fff', fontSize: 17 } }>Name</span>
+                                </Table.TextHeaderCell>
+                                <Table.TextHeaderCell flexShrink={ 0 } flexGrow={ 2 }>
+                                    <span style={ { color: '#fff', fontSize: 17 } }>IPFS Hash</span>
+                                </Table.TextHeaderCell>
+                                <Table.TextHeaderCell width={ 60 } flex='none' />
+                            </Table.Head>
+                            <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
+                                {rows}
+                            </Table.Body>
+                        </Table>
+                        <Dialog
+                          isShown={ this.state.isShownRemove }
+                          title='Remove domain'
+                          intent='danger'
+                            // onCloseComplete={() => setState({ isShown: false })}
+                          confirmLabel='Delete'
+                          width={ 450 }
                         >
-                            Add
-                        </Button>
+                            Are you sure you want to delete Presentation?
+                        </Dialog>
+
+                        <Dialog
+                          isShown={ this.state.isShownRename }
+                          title='Rename domain'
+                            // onCloseComplete={() => setState({ isShown: false })}
+                          confirmLabel='Update'
+                          width={ 450 }
+                        >
+                            <Pane
+                              paddingTop={ 20 }
+                              paddingBottom={ 30 }
+                              paddingX={ 40 }
+                              display='flex'
+                              flexDirection='column'
+                            >
+                                <Pane display='flex' flexDirection='column' marginBottom={ 25 }>
+                                    <Text display='inline-block' marginBottom={ 10 }>
+                                        Name
+                                    </Text>
+                                    <TextInput width='100%' />
+                                </Pane>
+                                <Pane display='flex' flexDirection='column'>
+                                    <Text display='inline-block' marginBottom={ 10 }>
+                                        IPFS Hash
+                                    </Text>
+                                    <TextInput width='100%' />
+                                </Pane>
+                            </Pane>
+                        </Dialog>
+
+                        <Dialog
+                          isShown={ this.state.isShownAdd }
+                          title='Add domain'
+                            // onCloseComplete={() => this.setState({ isShown: false })}
+                          confirmLabel='Update'
+                          width={ 450 }
+                        >
+                            <Pane
+                              paddingTop={ 20 }
+                              paddingBottom={ 30 }
+                              paddingX={ 40 }
+                              display='flex'
+                              flexDirection='column'
+                            >
+                                <Pane display='flex' flexDirection='column' marginBottom={ 25 }>
+                                    <Text display='inline-block' marginBottom={ 10 }>
+                                        Name
+                                    </Text>
+                                    <TextInput width='100%' />
+                                </Pane>
+                                <Pane display='flex' flexDirection='column'>
+                                    <Text display='inline-block' marginBottom={ 10 }>
+                                        IPFS Hash
+                                    </Text>
+                                    <TextInput width='100%' />
+                                </Pane>
+                            </Pane>
+                        </Dialog>
+                    </MainContainer>
+                </ScrollContainer>
+                <Pane
+                  display='flex'
+                  alignItems='center'
+                  justifyContent='center'
+                  position='fixed'
+                  bottom={ 0 }
+                  width='100%'
+                  backgroundColor='#000000'
+                  paddingY={ 15 }
+                  zIndex={ 2 }
+                >
+                    <Pane alignItems='center' justifyContent='center' display='flex' width='100%' maxWidth={ 1000 }>
+                    <Button
+                              height={ 32 }
+                              paddingX={ 15 }
+                              marginX={10}
+                              className='btn'
+                            //   onClick={ () => this.isShownAdd() }
+                            >
+                                RESET TO DEFAULT
+                            </Button>
+                    <Button
+                              iconBefore='add'
+                              height={ 32 }
+                              paddingX={ 15 }
+                              marginX={10}
+                              className='btn'
+                              onClick={ () => this.isShownAdd() }
+                            >
+                                Add
+                            </Button>
                     </Pane>
-                    <Table>
-                        <Table.Head
-                          style={ { backgroundColor: '#000', borderBottom: '1px solid #ffffff80' } }
-                          paddingLeft={ 20 }
-                        >
-                            <Table.TextHeaderCell>
-                                <span style={ { color: '#fff', fontSize: 17 } }>Name</span>
-                            </Table.TextHeaderCell>
-                            <Table.TextHeaderCell flexShrink={ 0 } flexGrow={ 2 }>
-                                <span style={ { color: '#fff', fontSize: 17 } }>IPFS Hash</span>
-                            </Table.TextHeaderCell>
-                            <Table.TextHeaderCell width={ 60 } flex='none' />
-                        </Table.Head>
-                        <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
-                            {rows}
-                        </Table.Body>
-                    </Table>
-                    <Dialog
-                      isShown={ this.state.isShownRemove }
-                      title='Remove domain'
-                      intent='danger'
-                        // onCloseComplete={() => setState({ isShown: false })}
-                      confirmLabel='Delete'
-                      width={ 450 }
-                    >
-                        Are you sure you want to delete Presentation?
-                    </Dialog>
-
-                    <Dialog
-                      isShown={ this.state.isShownRename }
-                      title='Rename domain'
-                        // onCloseComplete={() => setState({ isShown: false })}
-                      confirmLabel='Update'
-                      width={ 450 }
-                    >
-                        <Pane
-                          paddingTop={ 20 }
-                          paddingBottom={ 30 }
-                          paddingX={ 40 }
-                          display='flex'
-                          flexDirection='column'
-                        >
-                            <Pane display='flex' flexDirection='column' marginBottom={ 25 }>
-                                <Text display='inline-block' marginBottom={ 10 }>
-                                    Name
-                                </Text>
-                                <TextInput width='100%' />
-                            </Pane>
-                            <Pane display='flex' flexDirection='column'>
-                                <Text display='inline-block' marginBottom={ 10 }>
-                                    IPFS Hash
-                                </Text>
-                                <TextInput width='100%' />
-                            </Pane>
-                        </Pane>
-                    </Dialog>
-
-                    <Dialog
-                      isShown={ this.state.isShownAdd }
-                      title='Add domain'
-                        // onCloseComplete={() => this.setState({ isShown: false })}
-                      confirmLabel='Update'
-                      width={ 450 }
-                    >
-                        <Pane
-                          paddingTop={ 20 }
-                          paddingBottom={ 30 }
-                          paddingX={ 40 }
-                          display='flex'
-                          flexDirection='column'
-                        >
-                            <Pane display='flex' flexDirection='column' marginBottom={ 25 }>
-                                <Text display='inline-block' marginBottom={ 10 }>
-                                    Name
-                                </Text>
-                                <TextInput width='100%' />
-                            </Pane>
-                            <Pane display='flex' flexDirection='column'>
-                                <Text display='inline-block' marginBottom={ 10 }>
-                                    IPFS Hash
-                                </Text>
-                                <TextInput width='100%' />
-                            </Pane>
-                        </Pane>
-                    </Dialog>
-                </MainContainer>
-            </ScrollContainer>
+                </Pane>
+            </div>
         );
     }
 }

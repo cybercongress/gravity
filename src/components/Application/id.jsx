@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import * as actions from '../../redux/settings';
-import { Pane, Text, Card } from 'evergreen-ui';
+import { Pane, Text, Card, Button } from 'evergreen-ui';
 import {
     HelloContainer,
     HelloContainerLeftCol,
@@ -128,7 +128,8 @@ export const ConnectCyb = ({
     CYBERD_WS_END_POINT,
     ipfsWriteUrl,
 }) => (
-    <HelloContainer>
+    <div>
+            <HelloContainer>
         <HelloContainerLeftCol>
             <BigImg srcBigImg={ idrobot } />
         </HelloContainerLeftCol>
@@ -145,11 +146,37 @@ export const ConnectCyb = ({
                   parityStatus={ parityStatus }
                 />
             </HelloContainerRightColContent>
-            <HelloContainerRightColBtn center>
-                <ButtonEverGreen>Check</ButtonEverGreen>
-            </HelloContainerRightColBtn>
         </HelloContainerRightCol>
     </HelloContainer>
+    <Pane
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      width='100%'
+      position='absolute'
+      bottom={ 0 }
+      paddingY={ 20 }
+      backgroundColor='#000000'
+      zIndex={ 2 }
+    >
+        <Pane
+          flexGrow={ 1 }
+          maxWidth={ 1000 }
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          flexDirection='row'
+          paddingX='3vw'
+        >
+            <Button paddingX={ 30 } marginX={10} className='btn'>
+                EXPORT SETTINGS
+            </Button>
+            <Button paddingX={ 30 } marginX={10} className='btn'>
+                RESET SETTINGS
+            </Button>
+        </Pane>
+    </Pane>
+    </div>
 );
 
 export const ShieldCyb = () => (
