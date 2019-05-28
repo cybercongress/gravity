@@ -5,7 +5,7 @@ import {
 import { CybLink } from '../../..';
 import cx from 'classnames';
 
-const img = require('../../../img/cyb.svg');
+const imgDefault = require('../../../img/cyb.svg');
 // import './AppMenu.less';
 
 const styles = require('./AppMenu.less');
@@ -231,7 +231,7 @@ export const AppStoreLink = (...props) => (
 class Items extends React.Component{
 
     render(){
-        const { item, deleteAppFromMenu, selected, ...props } = this.props;
+        const { item, deleteAppFromMenu, selected, img, ...props } = this.props;
         return(
 <Pane
       display='flex'
@@ -250,9 +250,9 @@ class Items extends React.Component{
           alignItems='center'
         >
             <Pane alignItems='center' flexGrow={ 1 } display='flex'>
-                {/* <Pane className={ styles.imgItems } marginRight={ 17 } width={ 24 } height={ 24 }>
-                <img src={ item.img ? item.img : img } />
-            </Pane> */}
+                <Pane className={ styles.imgItems } marginRight={ 17 } width={ 24 } height={ 24 }>
+                <img src={ item.img ? item.img : imgDefault } />
+            </Pane>
                 <CybLink { ...props } dura={ item.rootDura }>
                     {item.name}
                 </CybLink>

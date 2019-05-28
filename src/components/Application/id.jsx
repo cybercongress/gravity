@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import * as actions from '../../redux/settings';
-import { Pane, Text, Card, Button } from 'evergreen-ui';
+import {
+    Pane, Text, Card, Button,
+} from 'evergreen-ui';
 import {
     HelloContainer,
     HelloContainerLeftCol,
@@ -18,17 +20,18 @@ import {
     Eth,
     GCyb,
 } from '../..';
+import './media.css';
 
 import { BntGroupFull } from './Hello/btn.group.full';
 
 const idrobot = require('./Hello/idrobot.png');
 
-export const FollowYourWeb3 = ({img}) => (
+export const FollowYourWeb3 = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
             <BigImg srcBigImg={ img } />
         </HelloContainerLeftCol>
-        <HelloContainerRightCol bntGroup={ <BntGroupFull /> }>
+        <HelloContainerRightCol>
             <HelloContainerRightColContent>
                 <TextIlineBlock>Follow your web3 soul bravely, xhipster!</TextIlineBlock>
             </HelloContainerRightColContent>
@@ -37,12 +40,15 @@ export const FollowYourWeb3 = ({img}) => (
 );
 
 export const IdCyb = () => (
-    <HelloContainer>
-        <HelloContainerLeftCol>
+    <HelloContainer
+    customClassContainer='connectionContainer'
+    customClassGrig='connectionContainerGrid'
+    >
+        <HelloContainerLeftCol customClass='connectionContainer-left-col'>
             <BigImg srcBigImg={ idrobot } />
         </HelloContainerLeftCol>
-        <HelloContainerRightCol bntGroup={ <BntGroupFull /> }>
-            <HelloContainerRightColContent>
+        <HelloContainerRightCol>
+            <HelloContainerRightColContent customClass='connectionContainer-right-col-content'>
                 <Pane display='flex' flexDirection='column' alignItems='flex-start'>
                     <Pane
                       marginBottom={ 40 }
@@ -69,9 +75,10 @@ export const IdCyb = () => (
                                 <Eth />
                             </Pane>
                         </Pane>
-                        <Text fontSize='14px' color='#d1d1d1'>
-                            0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5
-                        </Text>
+                            <Text fontSize='14px' className='adress' color='#d1d1d1'>
+                                0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5
+                            </Text>
+                        
                     </Pane>
                     <Pane display='flex' flexDirection='column' alignItems='flex-start'>
                         <Pane
@@ -95,7 +102,7 @@ export const IdCyb = () => (
                                 <GCyb />
                             </Pane>
                         </Pane>
-                        <Text fontSize='14px' color='#d1d1d1'>
+                        <Text fontSize='14px' className='adress' color='#d1d1d1'>
                             0x92dF5e8886dA04fe4EB648d46e1Eeaaaa92256E5
                         </Text>
                     </Pane>
@@ -106,11 +113,14 @@ export const IdCyb = () => (
 );
 
 export const KeysCyb = () => (
-    <HelloContainer>
-        <HelloContainerLeftCol>
+    <HelloContainer
+      customClassContainer='connectionContainer'
+      customClassGrig='connectionContainerGrid'
+    >
+        <HelloContainerLeftCol customClass='connectionContainer-left-col'>
             <BigImg srcBigImg={ idrobot } />
         </HelloContainerLeftCol>
-        <HelloContainerRightCol bntGroup={ <BntGroupFull /> }>
+        <HelloContainerRightCol>
             <HelloContainerRightColContent>
                 <TextAreaImportMnemonic />
             </HelloContainerRightColContent>
@@ -129,87 +139,107 @@ export const ConnectCyb = ({
     ipfsWriteUrl,
 }) => (
     <div>
-            <HelloContainer>
-        <HelloContainerLeftCol>
-            <BigImg srcBigImg={ idrobot } />
-        </HelloContainerLeftCol>
-        <HelloContainerRightCol bntGroup={ <BntGroupFull /> }>
-            <HelloContainerRightColContent>
-                <ConnectionTable
-                  IPFS_END_POINT={ IPFS_END_POINT }
-                  PARITY_END_POINT={ PARITY_END_POINT }
-                  CYBERD_END_POINT={ CYBERD_END_POINT }
-                  CYBERD_WS_END_POINT={ CYBERD_WS_END_POINT }
-                  ipfsWriteUrl={ ipfsWriteUrl }
-                  cyberdStatus={ cyberdStatus }
-                  ipfsStatus={ ipfsStatus }
-                  parityStatus={ parityStatus }
-                />
-            </HelloContainerRightColContent>
-        </HelloContainerRightCol>
-    </HelloContainer>
-    <Pane
-      display='flex'
-      alignItems='center'
-      justifyContent='center'
-      width='100%'
-      position='absolute'
-      bottom={ 0 }
-      paddingY={ 20 }
-      backgroundColor='#000000'
-      zIndex={ 2 }
-    >
+        <HelloContainer
+          customClassContainer='connectionContainer'
+          customClassGrig='connectionContainerGrid'
+        >
+            <HelloContainerLeftCol customClass='connectionContainer-left-col'>
+                <BigImg srcBigImg={ idrobot } />
+            </HelloContainerLeftCol>
+            <HelloContainerRightCol>
+                <HelloContainerRightColContent customClass='connectionContainer-right-col-content'>
+                    <ConnectionTable
+                      IPFS_END_POINT={ IPFS_END_POINT }
+                      PARITY_END_POINT={ PARITY_END_POINT }
+                      CYBERD_END_POINT={ CYBERD_END_POINT }
+                      CYBERD_WS_END_POINT={ CYBERD_WS_END_POINT }
+                      ipfsWriteUrl={ ipfsWriteUrl }
+                      cyberdStatus={ cyberdStatus }
+                      ipfsStatus={ ipfsStatus }
+                      parityStatus={ parityStatus }
+                    />
+                </HelloContainerRightColContent>
+            </HelloContainerRightCol>
+        </HelloContainer>
         <Pane
-          flexGrow={ 1 }
-          maxWidth={ 1000 }
           display='flex'
           alignItems='center'
           justifyContent='center'
-          flexDirection='row'
-          paddingX='3vw'
+          width='100%'
+          position='absolute'
+          bottom={ 0 }
+          paddingY={ 20 }
+          backgroundColor='#000000'
+          zIndex={ 2 }
+          className='connectionContainer-footer'
         >
-            <Button paddingX={ 30 } marginX={10} fontSize='14px' className='btn'>
-                EXPORT SETTINGS
-            </Button>
-            <Button paddingX={ 30 } marginX={10} fontSize='14px'  className='btn'>
-                RESET SETTINGS
-            </Button>
+            <Pane
+              flexGrow={ 1 }
+              maxWidth={ 1000 }
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              flexDirection='row'
+              paddingX='3vw'
+              className='connectionContainer-footer-container'
+            >
+                <Button paddingX={ 30 } marginX={ 10 } fontSize='14px' className='btn'>
+                    EXPORT SETTINGS
+                </Button>
+                <Button paddingX={ 30 } marginX={ 10 } fontSize='14px' className='btn'>
+                    RESET SETTINGS
+                </Button>
+            </Pane>
         </Pane>
-    </Pane>
     </div>
 );
 
 export const ShieldCyb = () => (
     <div>
-    <HelloContainer>
-        <HelloContainerLeftCol>
-            <BigImg srcBigImg={ idrobot } />
-        </HelloContainerLeftCol>
-        <HelloContainerRightCol bntGroup={ <BntGroupFull /> }>
-            <HelloContainerRightColContent>
-                <Card
-                  display='flex'
-                  flexDirection='column'
-                  alignItems='center'
-                  boxShadow='0 0 1px #fff'
-                  maxWidth='80%'
-                  paddingX='8vh'
-                  paddingY='8vh'
-                  minWidth={ 500 }
-                  maxHeight={ 500 }
-                  height='100%'
-                >
-                    <Pane width='100%' marginBottom='6%'>
+        <HelloContainer
+        customClassContainer='connectionContainer'
+        customClassGrig='connectionContainerGrid'
+        >
+            <HelloContainerLeftCol customClass='connectionContainer-left-col'>
+                <BigImg srcBigImg={ idrobot } />
+            </HelloContainerLeftCol>
+            <HelloContainerRightCol>
+                <HelloContainerRightColContent>
+                    <Card
+                      display='flex'
+                      flexDirection='column'
+                      alignItems='center'
+                      boxShadow='0 0 1px #fff'
+                      maxWidth={ 500 }
+                      paddingX='8vh'
+                      paddingY='8vh'
+                      minWidth='80%'
+                      maxHeight={ 500 }
+                      height='80%'
+                    >
                         <Pane width='100%' marginBottom='6%'>
-                            <Text
-                              marginBottom='3%'
-                              display='inline-block'
-                              fontSize='1.12rem'
-                              color='#fff'
-                            >
-                                Current password
-                            </Text>
-                            <TextInputError />
+                            <Pane width='100%' marginBottom='6%'>
+                                <Text
+                                  marginBottom='3%'
+                                  display='inline-block'
+                                  fontSize='1.12rem'
+                                  color='#fff'
+                                >
+                                    Current password
+                                </Text>
+                                <TextInputError />
+                            </Pane>
+                            <Pane width='100%'>
+                                <Text
+                                  marginBottom='3%'
+                                  display='inline-block'
+                                  fontSize='1.12rem'
+                                  color='#fff'
+                                >
+                                    New password
+                                </Text>
+                                <TextInputError />
+                            </Pane>
                         </Pane>
                         <Pane width='100%'>
                             <Text
@@ -218,90 +248,81 @@ export const ShieldCyb = () => (
                               fontSize='1.12rem'
                               color='#fff'
                             >
-                                New password
+                                Confirm new password
                             </Text>
-                            <TextInputError />
+                            <TextInputError isInvalid />
                         </Pane>
-                    </Pane>
-                    <Pane width='100%'>
-                        <Text
-                          marginBottom='3%'
-                          display='inline-block'
-                          fontSize='1.12rem'
-                          color='#fff'
-                        >
-                            Confirm new password
-                        </Text>
-                        <TextInputError isInvalid />
-                    </Pane>
-                </Card>
-            </HelloContainerRightColContent>
-        </HelloContainerRightCol>
-    </HelloContainer>
-    <Pane
-      display='flex'
-      alignItems='center'
-      justifyContent='center'
-      width='100%'
-      position='absolute'
-      bottom={ 0 }
-      paddingY={ 20 }
-      backgroundColor='#000000'
-      zIndex={ 2 }
-    >
+                    </Card>
+                </HelloContainerRightColContent>
+            </HelloContainerRightCol>
+        </HelloContainer>
         <Pane
-          flexGrow={ 1 }
-          maxWidth={ 1000 }
           display='flex'
           alignItems='center'
           justifyContent='center'
-          flexDirection='row'
-          paddingX='3vw'
+          width='100%'
+          position='absolute'
+          bottom={ 0 }
+          paddingY={ 20 }
+          backgroundColor='#000000'
+          zIndex={ 2 }
         >
-            <Button paddingX={ 30 } fontSize='16px' className='btn'>
-            Save Password
-            </Button>
+            <Pane
+              flexGrow={ 1 }
+              maxWidth={ 1000 }
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              flexDirection='row'
+              paddingX='3vw'
+            >
+                <Button paddingX={ 30 } fontSize='16px' className='btn'>
+                    Save Password
+                </Button>
+            </Pane>
         </Pane>
-    </Pane>
     </div>
 );
 
 export const StateCyb = () => (
     <div>
-    <HelloContainer>
-        <HelloContainerLeftCol>
-            <BigImg srcBigImg={ idrobot } />
-        </HelloContainerLeftCol>
-        <HelloContainerRightCol bntGroup={ <BntGroupFull /> }>
-            <HelloContainerRightColContent>
-                <StateCybTable />
-            </HelloContainerRightColContent>
-        </HelloContainerRightCol>
-    </HelloContainer>
+        <HelloContainer
+            customClassContainer='connectionContainer'
+            customClassGrig='connectionContainerGrid'
+        >
+            <HelloContainerLeftCol customClass='connectionContainer-left-col'>
+                <BigImg srcBigImg={ idrobot } />
+            </HelloContainerLeftCol>
+            <HelloContainerRightCol>
+                <HelloContainerRightColContent>
+                    <StateCybTable />
+                </HelloContainerRightColContent>
+            </HelloContainerRightCol>
+        </HelloContainer>
         <Pane
-        display='flex'
-        alignItems='center'
-        justifyContent='center'
-        width='100%'
-        position='absolute'
-        bottom={ 0 }
-        paddingY={ 20 }
-        backgroundColor='#000000'
-        zIndex={ 2 }
-      >
-          <Pane
-            flexGrow={ 1 }
-            maxWidth={ 1000 }
-            display='flex'
-            alignItems='center'
-            justifyContent='center'
-            flexDirection='row'
-            paddingX='3vw'
-          >
-              <Button paddingX={ 30 } marginX={10} fontSize='16px' className='btn'>
-                Export selected
-              </Button>
-          </Pane>
-      </Pane>
-      </div>
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          width='100%'
+          position='absolute'
+          bottom={ 0 }
+          paddingY={ 20 }
+          backgroundColor='#000000'
+          zIndex={ 2 }
+        >
+            <Pane
+              flexGrow={ 1 }
+              maxWidth={ 1000 }
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              flexDirection='row'
+              paddingX='3vw'
+            >
+                <Button paddingX={ 30 } marginX={ 10 } fontSize='16px' className='btn'>
+                    Export selected
+                </Button>
+            </Pane>
+        </Pane>
+    </div>
 );

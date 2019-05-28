@@ -18,6 +18,7 @@ import Status from './Status';
 import NavigationComponents from './Navigation';
 import ToggleMenu from './ToggleMenu';
 import SignerPopup from './SignerPopup';
+import { BntGroupFull } from './Hello/btn.group.full';
 
 const menuItems = [
     {
@@ -77,6 +78,9 @@ const Application = (props) => {
 
             <AppContent>
                 {children}
+                <Pane position='fixed' top={0} right='5px' height='inherit' marginTop={60} display='flex' alignItems='center' className='BntGroupFull'>
+                    <BntGroupFull />
+                </Pane>
             </AppContent>
             </Pane>
         </App>

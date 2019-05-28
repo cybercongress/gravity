@@ -26,6 +26,12 @@ import Login from '../Application/Login';
 import { Timeline } from '../Application/Timeline/Timeline';
 
 const img = require('../../img/earth-active.svg');
+const wikipedia = require('../../img/wikipedia.svg');
+const chaingear = require('../../img/chaingear.svg');
+const root = require('../../img/root.svg');
+const ipfs = require('../../img/ipfs.svg');
+const congress = require('../../img/congress.png');
+
 
 const Application = (props) => {
     const {
@@ -122,12 +128,14 @@ const menuItems = [
         name: 'Chaingear',
         pill: '7',
         status: 'remote',
+        img: `${chaingear}`,
     },
     {
         items: '2',
         name: 'cyber•Congress',
         rootDura: 'tbcds',
         status: 'local',
+        img: `${congress}`,
     },
     {
         items: '3',
@@ -158,16 +166,19 @@ const menuItems = [
         items: '7',
         name: 'IPFS',
         rootDura: 'tyds',
+        img: `${ipfs}`,
     },
     {
         items: '8',
         name: '.root',
         rootDura: 'tyds',
+        img: `${root}`,
     },
     {
         items: '9',
-        name: '.cyber',
-        rootDura: 'tyds',
+        name: '.wikipedia',
+        rootDura: 'wikipedia',
+        img: `${wikipedia}`,
     },
     {
         items: '10',

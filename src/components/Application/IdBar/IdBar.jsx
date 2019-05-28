@@ -190,9 +190,11 @@ export const CurrentUser = (props) => {
         <div className={ styles.user_popup__container }>
             {defaultEthAccount ? (
                 <Pane display='flex' alignItems='center'>
-                    <Text marginX={ 10 } color='#fff' fontSize='1em'>
-                        User
-                    </Text>
+                    <div className={styles.username}>
+                        <Text marginX={ 10 } color='#fff' fontSize='1em'>
+                            User
+                        </Text>
+                    </div>
                     <img
                       alt='user'
                       className={ styles.id_bar__user }

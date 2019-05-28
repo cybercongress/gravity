@@ -297,7 +297,7 @@ export const HelloCardAccaunt = () => (
     </Card>
 );
 
-export const HelloContainer = ({ children, ...props }) => (
+export const HelloContainer = ({ children, customClassContainer, customClassGrig, ...props }) => (
     <Pane
       position='absolute'
       height='100%'
@@ -318,6 +318,7 @@ export const HelloContainer = ({ children, ...props }) => (
           marginY='auto'
           marginX='auto'
           paddingY={ 65 }
+          className={`${customClassContainer}`}
         >
             <Pane
             //  display='flex' alignItems='stretch' height='100%' flexDirection='row'
@@ -326,6 +327,7 @@ export const HelloContainer = ({ children, ...props }) => (
             display='grid'
             gridTemplateColumns='1fr 1fr'
             gridGap='1em'
+            className={`${customClassGrig}`}
             >
                 {children}
             </Pane>
@@ -333,11 +335,12 @@ export const HelloContainer = ({ children, ...props }) => (
     </Pane>
 );
 
-export const HelloContainerLeftCol = ({ children }) => (
+export const HelloContainerLeftCol = ({ children, customClass }) => (
     <Pane
       //  width='calc((100% - 20px * 2) / 2)'
       width='100%'
       height='inherit'
+      className={`${customClass}`}
       //  paddingX={ 20 }
     >
         {children}
@@ -380,7 +383,7 @@ export const HelloContainerRightCol = ({ children, bntGroup }) => (
     </Pane>
 );
 
-export const HelloContainerRightColContent = ({ children }) => (
+export const HelloContainerRightColContent = ({ children, customClass }) => (
     <Pane
       display='flex'
       justifyContent='center'
@@ -390,6 +393,7 @@ export const HelloContainerRightColContent = ({ children }) => (
       height='100%'
       marginBottom={ 50 }
       flexGrow={ 1 }
+      className={`${customClass}`}
     >
         {children}
     </Pane>
@@ -548,7 +552,7 @@ export const ConnectionTable = ({
                           borderRadius='50%'
                           paddingX={ 0 }
                           isSolid
-                          marginLeft={ 20 }
+                        //   marginLeft={ 20 }
                           marginRight={ 25 }
                           color={
                                 ipfsStatus == 'local'
@@ -573,7 +577,7 @@ export const ConnectionTable = ({
                           color='yellow'
                           paddingX={ 0 }
                           isSolid
-                          marginLeft={ 20 }
+                        //   marginLeft={ 20 }
                           marginRight={ 25 }
                           color={
                                 status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
@@ -594,7 +598,7 @@ export const ConnectionTable = ({
                           color='yellow'
                           paddingX={ 0 }
                           isSolid
-                          marginLeft={ 20 }
+                        //   marginLeft={ 20 }
                           marginRight={ 25 }
                           color={
                                 parityStatus == 'local'
@@ -619,7 +623,7 @@ export const ConnectionTable = ({
                           color='yellow'
                           paddingX={ 0 }
                           isSolid
-                          marginLeft={ 20 }
+                        //   marginLeft={ 20 }
                           marginRight={ 25 }
                           color={
                                 status == 'local' ? 'green' : status == 'fail' ? 'red' : 'yellow'
@@ -640,7 +644,7 @@ export const ConnectionTable = ({
                           color='yellow'
                           paddingX={ 0 }
                           isSolid
-                          marginLeft={ 20 }
+                        //   marginLeft={ 20 }
                           marginRight={ 25 }
                           color={
                                 cyberdStatus == 'local'
