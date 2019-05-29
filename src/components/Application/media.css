@@ -7,10 +7,16 @@
         /* position: absolute; */
         /* padding-bottom: 50px; */
         font-size: 12px;
+        height: calc(100% - 75px) !important;
+        margin-bottom: 75px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        overflow: auto;
     }
     .connectionContainerGrid .input-green {
         width: 100% !important;
     }
+    
     .connectionContainerGrid .connectionContainer-left-col {
         display: none !important;
     }

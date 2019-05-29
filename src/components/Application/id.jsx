@@ -26,6 +26,8 @@ import { BntGroupFull } from './Hello/btn.group.full';
 
 const idrobot = require('./Hello/idrobot.png');
 
+const mnemonic = 'asdf asf frfd dfkmf kvmeif dfmdfmc sfdfdskmhg fghre kovne dfgh htrrew gh';
+
 export const FollowYourWeb3 = ({ img }) => (
     <HelloContainer>
         <HelloContainerLeftCol>
@@ -122,7 +124,7 @@ export const KeysCyb = () => (
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
-                <TextAreaImportMnemonic />
+                <TextAreaImportMnemonic value={mnemonic} />
             </HelloContainerRightColContent>
         </HelloContainerRightCol>
     </HelloContainer>

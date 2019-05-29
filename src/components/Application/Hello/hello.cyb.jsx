@@ -469,7 +469,7 @@ export const TextIlineBlock = ({ children, ...props }) => (
     </Text>
 );
 
-export const TextAreaImportMnemonic = () => (
+export const TextAreaImportMnemonic = ({ value }) => (
     <Pane position='relative' display='flex' justifyContent='center' height='90%' maxHeight={ 500 } maxWidth={500} width='100%'>
         <Textarea
           height='100%'
@@ -482,6 +482,7 @@ export const TextAreaImportMnemonic = () => (
           color='#fff'
           boxShadow='0 0 1px #fff'
           style={ { wordSpacing: 20, resize: 'none' } }
+          value={ value }
         />
         <Pane bottom='1%' zIndex={ 2 } left='0' position='absolute'>
             <IconButton appearance='minimal' icon='duplicate' />
@@ -565,7 +566,7 @@ export const ConnectionTable = ({
                         <Text color='#fff'>IPFS read</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ IPFS_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
+                        <TextInput defaultValue={ IPFS_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green-no-focus' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable borderBottom='none'>
@@ -586,7 +587,7 @@ export const ConnectionTable = ({
                         <Text color='#fff'>IPFS write</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ ipfsWriteUrl } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
+                        <TextInput defaultValue={ ipfsWriteUrl } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green-no-focus' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable borderBottom='none'>
@@ -611,7 +612,7 @@ export const ConnectionTable = ({
                         <Text color='#fff'>Ethereum HTTP</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ PARITY_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
+                        <TextInput defaultValue={ PARITY_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green-no-focus' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable borderBottom='none'>
@@ -632,7 +633,7 @@ export const ConnectionTable = ({
                         <Text color='#fff'>Cyberd HTTP</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ CYBERD_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
+                        <TextInput defaultValue={ CYBERD_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green-no-focus' />
                     </Table.TextCell>
                 </Table.Row>
                 <Table.Row isSelectable borderBottom='none'>
@@ -657,7 +658,7 @@ export const ConnectionTable = ({
                         <Text color='#fff'>Cyberd Ws</Text>
                     </Table.TextCell>
                     <Table.TextCell>
-                        <TextInput defaultValue={ CYBERD_WS_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green' />
+                        <TextInput defaultValue={ CYBERD_WS_END_POINT } backgroundColor='transparent' fontSize='18px' width='80%' className='input-green-no-focus' />
                     </Table.TextCell>
                 </Table.Row>
             </Table.Body>
@@ -736,18 +737,19 @@ export const TextInputError = ({ isInvalid, message, ...props }) => (
           width='100%'
           maxHeight={ 42 }
           backgroundColor='transparent'
-          color='#fff'
           height='6vh'
+          minHeight={30}
           isInvalid={ isInvalid }
           paddingX={ 10 }
-          boxShadow='inset 0 0 0px 0.4px #979797'
+          className='input-green-no-focus'
+          
           { ...props }
         />
         {isInvalid && (
             <Pane
               position='absolute'
               left={ 0 }
-              bottom='-50%'
+              bottom='-54%'
               width='100%'
               display='flex'
               alignItems='center'
