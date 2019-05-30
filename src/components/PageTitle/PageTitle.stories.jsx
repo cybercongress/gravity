@@ -12,7 +12,7 @@
 // };
 // const CenterDecorator = storyFn => <div style={ styles }>{storyFn()}</div>;
 
-// storiesOf('Elements/PageTitle', module)
+// storiesOf('Elements|PageTitle', module)
 //     .addDecorator(CenterDecorator)
 
 //     .add('PageTitle', () => (

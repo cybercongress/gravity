@@ -33,7 +33,7 @@ BP.
     </Pane>
 );
 
-storiesOf('Elements/Battery', module).add('Battery', () => (
+storiesOf('Elements|Battery', module).add('Battery', () => (
     <div style={ { top: '50%', position: 'relative', padding: '0 1em' } }>
         <Battery
           bwPercent={ 50 }

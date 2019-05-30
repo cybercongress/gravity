@@ -4,7 +4,7 @@
 // import { addDecorator } from '@storybook/react';
 // import { Text } from '../..';
 
-// storiesOf('Elements/Text', module)
+// storiesOf('Elements|Text', module)
 //     .addDecorator(centered)
 //     .add('TextSize', () => (
 //         <div>

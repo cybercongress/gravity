@@ -101,7 +101,7 @@ const Application = (props) => {
     );
 };
 
-storiesOf('Components', module)
+storiesOf('Components|appBar', module)
     .add('appBar', () => (
         <Application openMenu />
     ));

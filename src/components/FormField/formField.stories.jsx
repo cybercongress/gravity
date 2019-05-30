@@ -22,7 +22,7 @@
 //     },
 // };
 
-// storiesOf('Elements/FormField', module).add('FormField', () => (
+// storiesOf('Elements|FormField', module).add('FormField', () => (
 //     <div>
 //         <FormField
 //           label='Description'

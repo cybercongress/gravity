@@ -4,7 +4,7 @@
 // import { addDecorator } from '@storybook/react';
 // import { Container, Button, Text } from '../..';
 
-// storiesOf('Elements/CallToAction', module)
+// storiesOf('Elements|CallToAction', module)
 //     .add('Container', () => (
 //         <div style={ { top: '30%', position: 'relative', border: '1px solid #b1aeae' } }>
 //             <Container>

@@ -48,4 +48,4 @@ const FooterCyb = () => (
     </Pane>
 );
 
-storiesOf('Components', module).add('actionBar', () => <FooterCyb />);
+storiesOf('Components|actionBar', module).add('actionBar', () => <FooterCyb />);

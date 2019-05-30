@@ -22,7 +22,7 @@ import {
     Paragraph,
 } from './Typography';
 
-storiesOf('Elements/Typography', module).add('Typography', () => (
+storiesOf('Elements|Typography', module).add('Typography', () => (
     <Pane width='80%' marginX='auto' paddingTop='1em'>
         <Heading size={ 700 }>Text components</Heading>
         <UnorderedList>

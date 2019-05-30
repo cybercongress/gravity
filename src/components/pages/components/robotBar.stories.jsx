@@ -14,4 +14,4 @@ const RobotBar = ({openMenu}) => (
     </Pane>
 );
 
-storiesOf('Components', module).add('robotBar', () => <RobotBar />);
+storiesOf('Components|robotBar', module).add('robotBar', () => <RobotBar />);

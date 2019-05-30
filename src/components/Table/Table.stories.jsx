@@ -64,7 +64,7 @@ const rowsBlack = addRegistryItem.map((item, index) => (
     </Table.Row>
 ));
 
-storiesOf('Elements/Table', module)
+storiesOf('Elements|Table', module)
     .add('Table', () => (
         <Pane paddingX='5em' paddingY='5em' width='100%' height='100%' backgroundColor='#000'>
             <Table>

@@ -94,4 +94,4 @@ const IdentityBar = () => (
     </Pane>
 );
 
-storiesOf('Components', module).add('identityBar', () => <IdentityBar />);
+storiesOf('Components|identityBar', module).add('identityBar', () => <IdentityBar />);

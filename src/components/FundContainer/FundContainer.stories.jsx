@@ -4,7 +4,7 @@
 //      FundContainer
 // } from '../..';
 
-// storiesOf('Elements/FundContainer', module)
+// storiesOf('Elements|FundContainer', module)
 
 //     .add('FundContainer', () => (
 //         <FundContainer>

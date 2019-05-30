@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Pane } from 'evergreen-ui';
 import { Badge } from './Badge';
 
-storiesOf('Elements/Badge & Pill', module)
+storiesOf('Elements|Badge & Pill', module)
 .addDecorator(centered)
 .add('Badge', () => (
     <Pane>

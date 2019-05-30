@@ -4,7 +4,7 @@
 // import { addDecorator } from '@storybook/react';
 // import { FormControl, Input } from '../..';
 
-// storiesOf('Elements/FormControl', module).add('FormControl', () => (
+// storiesOf('Elements|FormControl', module).add('FormControl', () => (
 //     <div style={ { top: '30%', position: 'relative', width: '100%' } }>
 //         <FormControl>
 //             <Input placeholder='Name' defaultValue='' />

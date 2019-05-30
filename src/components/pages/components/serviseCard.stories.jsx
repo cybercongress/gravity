@@ -28,4 +28,4 @@ const ServiceCard = () => (
     </Pane>
 );
 
-storiesOf('Components', module).add('serviceCard', () => <ServiceCard />);
+storiesOf('Components|serviceCard', module).add('serviceCard', () => <ServiceCard />);

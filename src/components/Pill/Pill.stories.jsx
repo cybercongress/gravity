@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { Pane } from 'evergreen-ui';
 import { Pill } from './Pill';
 
-storiesOf('Elements/Badge & Pill', module)
+storiesOf('Elements|Badge & Pill', module)
     .addDecorator(centered)
 
     .add('Pill', () => (

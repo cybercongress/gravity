@@ -250,7 +250,7 @@
 //     </DatabaseItemsContainer>
 // );
 
-// storiesOf('Elements/DatabaseItemsContainer', module)
+// storiesOf('Elements|DatabaseItemsContainer', module)
 //     .addDecorator(centered)
 //     .add('DatabaseItemsContainer', () => <Table />)
 //     .add('DatabaseItemsContainerDisabled', () => <Table disabled />);

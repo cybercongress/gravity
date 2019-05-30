@@ -3,7 +3,7 @@
 // import centered from '@storybook/addon-centered';
 // import { Checkbox } from './index';
 
-// storiesOf('Elements/Checkbox', module)
+// storiesOf('Elements|Checkbox', module)
 //   .addDecorator(centered)
 //   .add('checkbox', () => (
 //     <Checkbox>unique</Checkbox>

@@ -13,4 +13,4 @@ const SearchBar = () => (
     </Pane>
 );
 
-storiesOf('Components', module).add('searchBar', () => <SearchBar />);
+storiesOf('Components|searchBar', module).add('searchBar', () => <SearchBar />);

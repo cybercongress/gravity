@@ -4,7 +4,7 @@
 //     CentredPanel,
 // } from '../..';
 
-// storiesOf('Elements/CentredPanel', module)
+// storiesOf('Elements|CentredPanel', module)
 
 //     .add('CentredPanel', () => (
 //         <CentredPanel>

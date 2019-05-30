@@ -2,16 +2,16 @@ import { create } from '@storybook/theming';
 import logo from '../src/img/logoStoory.svg'
 
 export default create({
-  base: 'dark',
+  base: 'light',
   //light
 
-//  colorPrimary: 'hotpink',
-  colorSecondary: '#36d6aee3',
+  // colorPrimary: '#fff',
+  // colorSecondary: '#36d6aee3',
 
   // UI
-    appBg: '#000',
-    //  appContentBg: '#000',
-     appBorderColor: 'rgba(54, 214, 174, 0.5)',
+    // appBg: '#000',
+    //  appContentBg: '#fff',
+    //  appBorderColor: 'rgba(54, 214, 174, 0.5)',
 //   appBorderRadius: 4,
 
 //   // Typography
@@ -19,13 +19,12 @@ export default create({
 //   fontCode: 'monospace',
 
 //   // Text colors
-   textColor: '#fff',
-   textInverseColor: '#36d6ae',
+  //  textColor: '#fff',
 
   // Toolbar default and active colors
   // barTextColor: '#fff',
-   barSelectedColor: '#36d6ae',
-//   barBg: 'hotpink',
+  //  barSelectedColor: '#36d6ae',
+  // barBg: '#fff',
 
   // Form colors
   // inputBg: 'white',
