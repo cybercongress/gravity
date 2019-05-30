@@ -2,16 +2,16 @@ import { create } from '@storybook/theming';
 import logo from '../src/img/logoStoory.svg'
 
 export default create({
-  base: 'light',
+  base: 'dark',
   //light
 
   // colorPrimary: '#fff',
-  // colorSecondary: '#36d6aee3',
+  colorSecondary: '#36d6aee3',
 
   // UI
-    // appBg: '#000',
+     appBg: '#000',
     //  appContentBg: '#fff',
-    //  appBorderColor: 'rgba(54, 214, 174, 0.5)',
+    appBorderColor: 'rgba(54, 214, 174, 0.5)',
 //   appBorderRadius: 4,
 
 //   // Typography
