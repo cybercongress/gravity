@@ -5,7 +5,7 @@ import {
 } from 'evergreen-ui';
 import { Dynamics } from '../Dynamics/Dynamics';
 import {
-    ScrollContainer, MainContainer, CardHover, SkillBar, calculateBensShares,
+    ScrollContainer, MainContainer, CardHover, Battery, calculateBensShares,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -117,7 +117,7 @@ const Databases = () => (
                     42 575 ETH per CBD
                 </Text>
                 <Pane width='30%' marginBottom='15%'>
-                    <SkillBar bwPercent={ 20 } contentTooltip={ <ContentTooltip /> } />
+                    <Battery bwPercent={ 20 } contentTooltip={ <ContentTooltip /> } />
                 </Pane>
                 <Text
                   fontSize='1.1em'

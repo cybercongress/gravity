@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ClickOutside from 'react-click-outside';
 import { Pane, Text } from 'evergreen-ui';
 import {
-    CybLink, IdBarComponent, SettingsLink, CurrentUser, SkillBar,
+    CybLink, IdBarComponent, SettingsLink, CurrentUser, Battery,
 } from '../..';
 
 // import { toggleMenu } from '../../redux/appMenu';

@@ -40,12 +40,14 @@ class Navigation extends Component {
               paddingX={ 20 }
               display='flex'
               flexDirection='column'
+              backgroundColor='#000'
             >
-            <Text display='inline-block' marginBottom={10}>New App</Text>
-            <Pane display='flex'>
-                <TextInput autoFocus width='100%' defaultValue='New App' />
-                <IconButton marginLeft={10} paddingX={6} icon='tick' intent="success" />
+            <Text display='inline-block' color='#fff' marginBottom={10}>New App</Text>
+            <Pane display='flex' marginBottom={10}>
+                <TextInput autoFocus width='100%' defaultValue='New App' background='transparent' className='input-green-no-focus' />
+                <IconButton marginLeft={10} className='btn' paddingX={6} icon='tick' intent="success" />
             </Pane>
+            <Text display='inline-block' fontSize={10} color='#38d6ae'>QmT26rKxQdkD6XruyN8J3LDkRxWy6ZAjeYabfQUe9GssGf</Text>
             </Pane>
         );
 
@@ -55,13 +57,14 @@ class Navigation extends Component {
               paddingX={ 20 }
               display='flex'
               flexDirection='column'
+              backgroundColor='#000'
             >
-            <Text display='inline-block' marginBottom={6}>Rename App</Text>
+            <Text display='inline-block' color='#fff' marginBottom={6}>Rename App</Text>
             <Pane display='flex'>
-                <TextInput autoFocus width='100%' defaultValue={ dura } />
-                <IconButton marginLeft={10} paddingX={6} icon='tick' intent="success" />
+                <TextInput autoFocus width='100%' defaultValue={ dura } background='transparent' className='input-green-no-focus' />
+                <IconButton marginLeft={10} className='btn' paddingX={6} icon='tick' intent="success" />
             </Pane>
-            <Button marginTop={20} iconBefore="trash" width='fit-content' intent="danger">Delete App</Button>
+            <Button marginTop={20} iconBefore="trash" className='btn' width='fit-content' intent="danger">Delete App</Button>
             </Pane>
         );
 

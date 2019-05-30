@@ -100,7 +100,7 @@ import {
 } from './components/PopupContent/PopupContent';
 import { DatabaseItemsContainer } from './components/DatabaseTable/DatabaseItemsContainer';
 import { DbMenuPoints } from './components/DbMenuPoints/DbMenuPoints';
-import { SkillBar } from './components/SkillBar/SkillBar';
+import { Battery } from './components/Battery/Battery';
 import { Text } from './components/Text/Text';
 import {
     SearchItem,
@@ -342,7 +342,7 @@ export {
     Checkbox,
     AddNewRecordButton,
     MenuPopupEditIcon,
-    SkillBar,
+    Battery,
 
     Browser,
     BrowserHeader,

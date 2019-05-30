@@ -64,30 +64,8 @@ const rowsBlack = addRegistryItem.map((item, index) => (
     </Table.Row>
 ));
 
-const rows = addRegistryItem.map((item, index) => (
-    <Table.Row paddingLeft={ 20 } height={ 50 } isSelectable key={ index }>
-        <Table.TextCell>
-.
-            {item.name}
-        </Table.TextCell>
-        <Table.TextCell flexShrink={ 0 } flexGrow={ 2 }>
-            {item.hash}
-        </Table.TextCell>
-        {/* <Table.TextCell>{item.protocol}</Table.TextCell> */}
-        <Table.Cell width={ 60 } flex='none'>
-            {/* <Button sizeSm color='blue' onClick={ () => this.deleteRegistryItem(item.name) }> */}
-
-            <Pane paddingY={ 5 } paddingX={ 5 } width='100%'>
-                <IconButton iconSize={ 12 } className='icon-btn' appearance='minimal' icon='more' />
-            </Pane>
-
-            {/* </Button> */}
-        </Table.Cell>
-    </Table.Row>
-));
-
 storiesOf('Elements/Table', module)
-    .add('Table Black', () => (
+    .add('Table', () => (
         <Pane paddingX='5em' paddingY='5em' width='100%' height='100%' backgroundColor='#000'>
             <Table>
                 <Table.Head
@@ -105,21 +83,6 @@ storiesOf('Elements/Table', module)
                 <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
                     {rowsBlack}
                 </Table.Body>
-            </Table>
-        </Pane>
-    ))
-
-    .add('Table', () => (
-        <Pane paddingX='5em' paddingY='5em' width='100%' height='100%' backgroundColor='#000'>
-            <Table>
-                <Table.Head paddingLeft={ 20 }>
-                    <Table.TextHeaderCell>Name</Table.TextHeaderCell>
-                    <Table.TextHeaderCell flexShrink={ 0 } flexGrow={ 2 }>
-                        IPFS Hash
-                    </Table.TextHeaderCell>
-                    <Table.TextHeaderCell width={ 60 } flex='none' />
-                </Table.Head>
-                <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>{rows}</Table.Body>
             </Table>
         </Pane>
     ));

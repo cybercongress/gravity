@@ -47,8 +47,8 @@ const txHash = [
     },
     ];
 
-storiesOf('Examples/cyb', module)
-.add('TransactionView', () => (
+storiesOf('Examples/id', module)
+.add('.eth', () => (
     <Application>
         <TransactionView transaction={txHash}  receipt={txHash}/>
     </Application>

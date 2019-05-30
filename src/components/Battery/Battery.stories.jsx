@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Pane, Text, Link } from 'evergreen-ui';
-import { SkillBar } from '../..';
+import { Battery } from '../..';
 
 const ContentTooltip = ({ bwRemained, bwMaxValue, linkPrice }) => (
     <Pane minWidth={ 200 } paddingX={ 18 } paddingY={ 14 } borderRadius={ 4 } backgroundColor='#fff'>
@@ -33,9 +33,9 @@ BP.
     </Pane>
 );
 
-storiesOf('Elements/SkillsBar', module).add('SkillsBar', () => (
+storiesOf('Elements/Battery', module).add('Battery', () => (
     <div style={ { top: '50%', position: 'relative', padding: '0 1em' } }>
-        <SkillBar
+        <Battery
           bwPercent={ 50 }
           contentTooltip={ <ContentTooltip bwRemained={ 12 } bwMaxValue={ 100 } linkPrice={ 1 } /> }
         />

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Pane, Text, Link, Tooltip } from "evergreen-ui";
-import styles from './SkillBar.less';
+import styles from './Battery.less';
 // import cx from 'classnames';
 
-export const SkillBar = ({
+export const Battery = ({
     children, fontSize, bwPercent, bwRemained, bwMaxValue, linkPrice, contentTooltip, ...props
 }) => (
     <Tooltip

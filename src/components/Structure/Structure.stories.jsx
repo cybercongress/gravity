@@ -48,6 +48,7 @@ storiesOf('Elements/Structure', module)
                 <Structure
                     bens={bens}
                     calculateBensShares={calculateBensShares}
+                    noLegend
                 />
             </StructureContainer>
         )

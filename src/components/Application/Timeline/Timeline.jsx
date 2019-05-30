@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import classNames from 'classnames';
 import { Pane, Text, Pill, IconButton } from 'evergreen-ui';
-import { CybLink, LinkHash, SkillBar } from '../../..';
+import { CybLink, LinkHash, Battery } from '../../..';
 import { WaleetAppMenu, UserCard } from '../AppMenu/AppMenu';
 
 const styles = require('./Timeline.less');
@@ -144,7 +144,7 @@ export const Timeline = ({
         )}
         {defaultEthAccount && (
             <Pane width='100%' marginBottom='1.5em' paddingX='1em'>
-                <SkillBar
+                <Battery
                   maxHeight={ 16 }
                   bwPercent={ 10 }
                   bwPercent={ ((bwRemained / bwMaxValue) * 100).toFixed(0) }

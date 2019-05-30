@@ -14,7 +14,7 @@ export const StructureContainer = ({children, ...props}) => (
 export class Structure extends React.Component {
 
     render() {
-        const { bens, calculateBensShares } = this.props;
+        const { bens, calculateBensShares, noLegend } = this.props;
 
         const labels = bens.map(ben => ben.address);
         const data = calculateBensShares(bens, 2).map(ben => parseFloat(ben.share));
@@ -48,6 +48,7 @@ export class Structure extends React.Component {
 
         return <div className={styles.Structure}>
             <Doughnut data={chartData} width={150} options={options} />
+            {!noLegend &&(
                 <StructureList>
                     {
                         bens.map((ben, index) => (
@@ -55,6 +56,7 @@ export class Structure extends React.Component {
                         ))
                     }
                 </StructureList>
+            )}
         </div>
     }
 }

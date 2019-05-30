@@ -11,7 +11,7 @@ import {
     Icon,
 } from 'evergreen-ui';
 import {
-    MainContainer, SearchItem, Vitalick, ScrollContainer, CardHover, SkillBar,
+    MainContainer, SearchItem, Vitalick, ScrollContainer, CardHover, Battery,
 } from '../..';
 import Application from '../Application/Application';
 
@@ -189,7 +189,7 @@ const IndexV2 = () => (
             <Heading size={ 600 } color='#fff' marginBottom={ 24 }>
                 My bandwidth
             </Heading>
-            <SkillBar style={ { height: 16 } } value={ 80 } />
+            <Battery style={ { height: 16 } } value={ 80 } />
         </Pane>
         <Pane marginBottom={ 50 }>
             <Heading size={ 600 } color='#fff' marginBottom={ 24 }>
