@@ -130,12 +130,17 @@ html, body, #root {
     box-shadow: inset 0 0 1px 1.5px #3dc9a1 !important;
 } */
 
+::placeholder {
+    color: #c7c7c7 !important;
+  }
+
 .input-green {
     caret-color: #36d6ae !important;
     box-shadow: inset 0 0 0 1px #36d6ae83 !important;
     color: #3ab793 !important;
     outline: 0 !important;
     outline-offset: 0 !important;
+    background-color: transparent !important;
 }
 
 .input-green:focus{
@@ -148,6 +153,7 @@ html, body, #root {
     color: #3ab793 !important;
     outline: 0 !important;
     outline-offset: 0 !important;
+    background-color: transparent !important;
 }
 
 /* width */
@@ -329,6 +335,10 @@ html, body, #root {
 
 .color-white-svg svg {
     fill: #ffffffe1 !important;
+}
+
+.color-white-svg svg:hover {
+    fill: #979797 !important;
 }
 
 .color-gray-svg svg {

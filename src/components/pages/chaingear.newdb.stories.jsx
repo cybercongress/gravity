@@ -70,20 +70,29 @@ class Pages extends React.Component {
         const beneficiariesRows = beneficiariesItem.map(item => (
             <Table.Row
               style={ { border: 0 } }
-              boxShadow='0px 0px 0.1px 0px #ddd'
+            //   boxShadow='0px 0px 0.1px 0px #ddd'
               className='validators-table-row'
               paddingLeft='1rem'
+              borderBottom='none'
             >
                 <Table.TextCell textAlign='start' flexGrow={ 2 }>
+                <span style={{ color: '#fff'}}>
                     {item.address}
+                    </span>
                 </Table.TextCell>
-                <Table.TextCell textAlign='end'>{item.stake}</Table.TextCell>
+                <Table.TextCell textAlign='end'>
+                <span style={{ color: '#fff'}}>
+                {item.stake}
+                </span>
+                </Table.TextCell>
                 <Table.TextCell textAlign='center' flexGrow={ 1 }>
+                <span style={{ color: '#fff'}}>
                     {item.share}
 %
+</span>
                 </Table.TextCell>
                 <Table.TextCell flex='none' width={ 48 }>
-                    <IconButton icon='trash' appearance='minimal' className='icon-btn' />
+                    <IconButton icon='trash' appearance='minimal' className='icon-btn color-white-svg' />
                 </Table.TextCell>
             </Table.Row>
         ));
@@ -91,13 +100,14 @@ class Pages extends React.Component {
             <Pane>
                 <Section title='General database parameters'>
                     <Pane
-                      backgroundColor='#fff'
+                      backgroundColor='#000'
                       display='grid'
                       gridTemplateColumns='1fr 1fr'
                       gridGap={ 30 }
                       paddingX='2rem'
                       paddingY='2rem'
                       borderRadius={ 5 }
+                      boxShadow='0 0 2px #36d6ae'
                     >
                         <Pane>
                             <TextInput
@@ -105,24 +115,26 @@ class Pages extends React.Component {
                               defaultValue=''
                               width='100%'
                               marginBottom='1rem'
+                              className='input-green'
                             />
                             <TextInput
                               defaultValue=''
                               placeholder='Symbol'
                               width='100%'
                               marginBottom='1rem'
+                              className='input-green'
                             />
-                            <Select width='100%'>
+                            <Select className='select-green' width='100%'>
                                 <option value=''>Version</option>
                                 <option value='V1'>V1 (Basic Database)</option>
                             </Select>
                         </Pane>
-                        <Pane>
+                        <Pane textAlign='justify'>
                             <Text
                               fontSize='14px'
                               lineHeight={ 1.5 }
-                              color='#425a70'
-                              textAlign='justify'
+                              color='#dedede'
+                              
                             >
                                 <b>Description: </b>
                                 One morning, when Gregor Samsa woke from troubled dreams, he found
@@ -136,38 +148,46 @@ class Pages extends React.Component {
                 <Section title='Beneficiaries and shares (optional)'>
                     <Pane width='100%'>
                         <Table>
-                            <Table.Head paddingLeft='1rem'>
+                            <Table.Head style={ { backgroundColor: '#000', borderBottom: '1px solid #ffffff80' } } paddingLeft='1rem'>
                                 <Table.TextHeaderCell textAlign='start' flexGrow={ 2 }>
+                                <span style={{ color: '#fff'}}>
                                     Address
+                                    </span>
                                 </Table.TextHeaderCell>
                                 <Table.TextHeaderCell textAlign='end' flexGrow={ 1 }>
+                                <span style={{ color: '#fff'}}>
                                     Stake
+                                    </span>
                                 </Table.TextHeaderCell>
                                 <Table.TextHeaderCell textAlign='center' flexGrow={ 1 }>
+                                <span style={{ color: '#fff'}}>
                                     Share
+                                    </span>
                                 </Table.TextHeaderCell>
                                 <Table.TextHeaderCell flex='none' width={ 48 } />
                             </Table.Head>
-                            <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
+                            <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
                                 <Table.Row
-                                  paddingLeft='0.5rem'
+                                  paddingLeft='1rem'
                                   style={ { border: 0 } }
-                                  boxShadow='0px 0px 0.1px 0px #ddd'
+                                //   boxShadow='0px 0px 0.1px 0px #ddd'
                                 >
                                     <Table.TextCell textAlign='start' flexGrow={ 2 }>
-                                        <TextInput width='80%' />
+                                        <TextInput width='80%' className='input-green-no-focus' />
                                     </Table.TextCell>
                                     <Table.TextCell>
-                                        <TextInput width='100%' />
+                                        <TextInput width='100%' className='input-green-no-focus' />
                                     </Table.TextCell>
                                     <Table.TextCell textAlign='center' flexGrow={ 1 }>
+                                    <span style={{ color: '#fff'}}>
                                         0%
+                                        </span>
                                     </Table.TextCell>
                                     <Table.TextCell flex='none' width={ 48 }>
                                         <IconButton
                                           icon='add'
                                           appearance='minimal'
-                                          className='icon-btn'
+                                          className='icon-btn color-white-svg'
                                         />
                                     </Table.TextCell>
                                 </Table.Row>
@@ -256,7 +276,7 @@ class Pages extends React.Component {
                     {content}
 
                     {message && (
-                        <Message style={ { position: 'sticky', bottom: '10%' } } type='error'>
+                        <Message style={ { position: 'sticky', bottom: '12%' } } type='error'>
                             {message}
                         </Message>
                     )}
