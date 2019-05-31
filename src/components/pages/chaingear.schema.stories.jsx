@@ -69,18 +69,20 @@ class Pages extends React.Component {
 
         const tableRows = items.reverse().map(item => (
             <Table.Row
-              style={ { border: 0 } }
-              boxShadow='0px 0px 0.1px 0px #ddd'
+              borderBottom='none'
+            //   boxShadow='0px 0px 0.1px 0px #ddd'
               className='validators-table-row'
               paddingLeft='1rem'
             >
                 <Table.TextCell flexGrow={ 2 }>
+                <span style={{ color: '#fff'}}>
                     {item.name}
+                    </span>
                 </Table.TextCell>
-                <Table.TextCell>{item.type}</Table.TextCell>
-                <Table.TextCell>{item.validation}</Table.TextCell>
+                <Table.TextCell><span style={{ color: '#fff'}}>{item.type}</span></Table.TextCell>
+                <Table.TextCell><span style={{ color: '#fff'}}>{item.validation}</span></Table.TextCell>
                 <Table.TextCell flex='none' width={ 60 }>
-                    <IconButton icon='trash' appearance='minimal' className='icon-btn' />
+                    <IconButton icon='trash' appearance='minimal' className='icon-btn color-white-svg' />
                 </Table.TextCell>
             </Table.Row>
         ));
@@ -88,25 +90,27 @@ class Pages extends React.Component {
         const TabInput = () => (
             <Section title='Schema structure'>
                 <Table width='100%'>
-                    <Table.Head paddingLeft='1rem'>
+                    <Table.Head style={ { backgroundColor: '#000', borderBottom: '1px solid #ffffff80' } } paddingLeft='1rem'>
                         <Table.TextHeaderCell flexGrow={ 2 }>
+                        <span style={{ color: '#fff'}}>
                             Name
+</span>
                         </Table.TextHeaderCell>
-                        <Table.TextHeaderCell>Type</Table.TextHeaderCell>
-                        <Table.TextHeaderCell>Validation</Table.TextHeaderCell>
+                        <Table.TextHeaderCell><span style={{ color: '#fff'}}>Type</span></Table.TextHeaderCell>
+                        <Table.TextHeaderCell><span style={{ color: '#fff'}}>Validation</span></Table.TextHeaderCell>
                         <Table.TextHeaderCell flex='none' width={ 60 } />
                     </Table.Head>
-                    <Table.Body style={ { backgroundColor: '#fff', overflowY: 'hidden' } }>
+                    <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden' } }>
                         <Table.Row
-                          paddingLeft='0.5rem'
+                          paddingLeft='1rem'
                           style={ { border: 0 } }
-                          boxShadow='0px 0px 0.1px 0px #ddd'
+                        //   boxShadow='0px 0px 0.1px 0px #ddd'
                         >
                             <Table.TextCell flexGrow={ 2 }>
-                                <TextInput width='90%' />
+                                <TextInput width='90%' className='input-green-no-focus' />
                             </Table.TextCell>
                             <Table.TextCell>
-                                <Select width='70%'>
+                                <Select width='70%' className='select-green'>
                                     <option value='String'>String</option>
                                     <option value='Address'>Address</option>
                                     <option value='Bool'>Bool</option>
@@ -114,13 +118,13 @@ class Pages extends React.Component {
                                 </Select>
                             </Table.TextCell>
                             <Table.TextCell>
-                                <Select width='50%'>
+                                <Select width='50%' className='select-green'>
                                     <option value='Unique'>Unique</option>
                                     <option value='None'>None</option>
                                 </Select>
                             </Table.TextCell>
                             <Table.TextCell flex='none' width={ 60 }>
-                                <IconButton icon='add' appearance='minimal' className='icon-btn' />
+                                <IconButton icon='add' appearance='minimal' className='icon-btn color-white-svg' />
                             </Table.TextCell>
                         </Table.Row>
 
