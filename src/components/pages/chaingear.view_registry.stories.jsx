@@ -116,15 +116,15 @@ const CardGeneral = ({ value, title }) => (
       display='flex'
       alignItems='center'
       flexDirection='column'
-      backgroundColor='#fff'
+      backgroundColor='#000'
         //   marginX={ 15 }
       boxShadow='0 0 10px 1px #36d6ae'
     >
-        <Text display='inline-block' marginBottom={ 15 } color='#000' fontSize='1em'>
+        <Text display='inline-block' marginBottom={ 15 } color='#fff' fontSize='1em'>
             {value}
         </Text>
 
-        <Text display='inline-block' color='#000'>
+        <Text display='inline-block' color='#fff'>
             {title}
         </Text>
     </CardHover>
@@ -156,27 +156,27 @@ class PagesViewRegistry extends Component {
         } = item;
     
         return (
-            <Table.Row isSelectable key={ name } width='fit-content' position='relative'>
-                <Table.TextCell width={48} flex='none'>{index + 1}</Table.TextCell>
-                <Table.TextCell flex='none' width={150}>{name}</Table.TextCell>
+            <Table.Row isSelectable key={ name } borderBottom='none' width='fit-content' position='relative'>
+                <Table.TextCell width={48} flex='none'><span style={{color: '#fff'}}>{index + 1}</span></Table.TextCell>
+                <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>{name}</span></Table.TextCell>
                 <Table.TextCell flex='none' width={150}>
-                    <LinkHash value={hash} />
+                    <LinkHash style={{color: '#fff'}} value={hash} />
                 </Table.TextCell>
-                <Table.TextCell flex='none' width={150}>{developer}</Table.TextCell>
-                <Table.TextCell flex='none' width={150}>{version}</Table.TextCell>
-                <Table.TextCell flex='none' width={150}>{funded} ETH</Table.TextCell>
+                <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>{developer}</span></Table.TextCell>
+                <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>{version}</span></Table.TextCell>
+                <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>{funded} ETH</span></Table.TextCell>
                 <Table.TextCell flex='none' width={150}>
                     <Avatar style={{ height: 25, width: 25 }} hash={hash} />
                 </Table.TextCell>
 
-                <Table.TextCell flex='none' width={150}>{funded} ETH</Table.TextCell>
+                <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>{funded} ETH</span></Table.TextCell>
                 
-                <Table.Cell position='sticky' right={0} backgroundColor='#fff' flexBasis='auto' width={48} flex="none">
+                <Table.Cell position='sticky' right={0} backgroundColor='#000' flexBasis='auto' width={48} flex="none">
                     <Popover
                         content={this.renderRowMenu}
                         position='top'
                     >
-                        <IconButton icon="more" height={24} appearance="minimal" />
+                        <IconButton icon="more" height={24} appearance="minimal" className='color-white-svg' />
                     </Popover>
                 </Table.Cell>
             </Table.Row>
@@ -254,7 +254,7 @@ class PagesViewRegistry extends Component {
                   gridGap='15px'
                 >
                     <CardGeneral value='appstore' title='name' />
-                    <CardGeneral value={ <LinkHash value={ admin } /> } title='owner' />
+                    <CardGeneral value={ <LinkHash style={{color: '#fff'}} value={ admin } /> } title='owner' />
                     <CardGeneral value='7/2/2018 17:13:33' title='creation time (UTC)' />
                     <CardGeneral value='5 ETH / 3 ETH' title='funds / fee' />
                 </Pane>
@@ -272,7 +272,7 @@ class PagesViewRegistry extends Component {
                         </Text>
                         <Pane
                           display='flex'
-                          backgroundColor='#fff'
+                          backgroundColor='#000'
                           title='Overview'
                           flexDirection='column'
                           boxShadow='0 0 10px 1px #36d6ae'
@@ -343,7 +343,7 @@ class PagesViewRegistry extends Component {
                             Beneficiaries
                         </Text>
                         <Pane
-                          backgroundColor='#fff'
+                          backgroundColor='#000'
                           title='Beneficiaries'
                           display='flex'
                           flexDirection='column'
@@ -371,19 +371,18 @@ class PagesViewRegistry extends Component {
                          <DatabaseItemsContainer disabled={ disabled }>
                      <Table>
                          
-                         <Table.Body style={ { overflowY: 'hidden'}}>
-                         <Table.Row width='fit-content'>
-                            <Table.TextCell width={48} flex='none'>ID</Table.TextCell>
-                            <Table.TextCell flex='none' width={150}>Name</Table.TextCell>
-                            <Table.TextCell flex='none' width={150}>Address</Table.TextCell>
-                            <Table.TextCell flex='none' width={150}>Developer</Table.TextCell>
-                            <Table.TextCell flex='none' width={150}>Version</Table.TextCell>
-                            <Table.TextCell flex='none' width={150}>Funded</Table.TextCell>
-                            <Table.TextCell flex='none' width={150}>Owner</Table.TextCell>
+                         <Table.Body style={ { backgroundColor: '#000', overflowY: 'hidden'}}>
+                         <Table.Row borderBottom='1px solid #ffffff80' width='fit-content'>
+                            <Table.TextCell width={48} flex='none'><span style={{color: '#fff'}}>ID</span></Table.TextCell>
+                            <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>Name</span></Table.TextCell>
+                            <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>Address</span></Table.TextCell>
+                            <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>Developer</span></Table.TextCell>
+                            <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>Version</span></Table.TextCell>
+                            <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>Funded</span></Table.TextCell>
+                            <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>Owner</span></Table.TextCell>
+                            <Table.TextCell flex='none' width={150}><span style={{color: '#fff'}}>Funded</span></Table.TextCell>
 
-                            <Table.TextCell flex='none' width={150}>Funded</Table.TextCell>
-
-                            <Table.TextCell position='sticky' right={0} backgroundColor='#fff' width={48} flex="none"></Table.TextCell>
+                            <Table.TextCell position='sticky' right={0} backgroundColor='#000' width={48} flex="none"></Table.TextCell>
                          </Table.Row>
                             {databasesItem.map(this.renderItem)}
                          </Table.Body>

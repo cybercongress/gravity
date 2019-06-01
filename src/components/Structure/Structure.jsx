@@ -70,6 +70,6 @@ export const StructureList = ({children}) => (
 export const Struct = ({color, address}) => (
     <div className={styles.ben}>
         <div className={styles.dot} style={{backgroundColor: color}} />
-        <LinkHash value={address} />
+        <LinkHash style={{color: '#fff'}} value={address} />
     </div>
 );
