@@ -765,10 +765,10 @@ export const TextInputError = ({ isInvalid, message, ...props }) => (
     </Pane>
 );
 
-export const SuccessfulLogin = () => (
+export const SuccessfulLogin = ({img}) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg />
+            <BigImg srcBigImg={img} />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
@@ -821,10 +821,10 @@ export const SuccessfulLogin = () => (
     </HelloContainer>
 );
 
-export const FailLogin = () => (
+export const FailLogin = ({img}) => (
     <HelloContainer>
         <HelloContainerLeftCol>
-            <BigImg />
+            <BigImg srcBigImg={img} />
         </HelloContainerLeftCol>
         <HelloContainerRightCol>
             <HelloContainerRightColContent>
