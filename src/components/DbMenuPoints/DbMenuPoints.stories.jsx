@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 
 import { Menu, Popover, Button } from 'evergreen-ui';
 
-storiesOf('Elements|Menu', module)
+storiesOf('Atoms|Menu', module)
     .addDecorator(centered)
     .add('Menu', () => (
         <Popover

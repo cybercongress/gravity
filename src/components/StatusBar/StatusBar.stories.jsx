@@ -4,7 +4,7 @@
 // import { addDecorator } from '@storybook/react';
 // import { StatusBar } from '../..';
 
-// storiesOf('Elements|StatusBar', module)
+// storiesOf('Atoms|StatusBar', module)
 // .add('success', () => (
 //         <StatusBar open message='message' type='success'></StatusBar>
 // ))

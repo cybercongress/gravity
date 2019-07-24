@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { Button, Text, Heading } from 'evergreen-ui';
 import { Pane } from './Pane';
 
-storiesOf('Elements|Layout', module)
+storiesOf('Atoms|Layout', module)
     .addDecorator(centered)
 
     .add('Pane', () => (

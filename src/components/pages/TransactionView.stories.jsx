@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import { storiesOf } from '@storybook/react';
 // import { getTransaction } from '../../redux/wallet';
-// import ScrollContainer from '../../components/ScrollContainer/ScrollContainer';
+// import ScrollContainer from '../../Molecules/ScrollContainer/ScrollContainer';
 import { MainContainer, PageTitle, JsonView, ScrollContainer, } from '../..';
 import Application from '../Application/Application';
 

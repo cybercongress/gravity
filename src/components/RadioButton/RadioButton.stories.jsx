@@ -3,7 +3,7 @@
 // import centered from '@storybook/addon-centered';
 // import { RadioButton } from './RadioButton';
 
-// storiesOf('Elements|RadioButton', module)
+// storiesOf('Atoms|RadioButton', module)
 //   .addDecorator(centered)
 //   .add('RadioButton', () => (
 //       <div>

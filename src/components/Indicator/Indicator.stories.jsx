@@ -5,7 +5,7 @@
 // import { StatusContainer } from './Indicator';
 // import Indicator from './Indicator';
 
-// storiesOf('Elements|Indicator', module)
+// storiesOf('Atoms|Indicator', module)
 //     .add('Indicator', () => (
 //         <StatusContainer>
 //             <Indicator status='local'>ipfs</Indicator>

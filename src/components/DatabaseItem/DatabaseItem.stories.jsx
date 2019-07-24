@@ -5,7 +5,7 @@
 // import { EditButton, UpdateButton, CancelButton, InfoButton, DeleteButton, FieldValue } from './index';
 
 
-// storiesOf('Elements|DatabaseItem', module)
+// storiesOf('Atoms|DatabaseItem', module)
 //     .addDecorator(centered)
 //     .add('EditButton', () => <EditButton />)
 //     .add('DeleteButton', () => <DeleteButton />)

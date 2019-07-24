@@ -19,11 +19,11 @@ import {
 import Application from '../Application/Application';
 
 // import { getTransactions, resend } from '../../redux/wallet';
-// import CybLink from '../../components/CybLink';
+// import CybLink from '../../Molecules/CybLink';
 
 // import { Hash } from './TxQueue/TxQueue';
-// import ScrollContainer from '../../components/ScrollContainer/ScrollContainer';
-// import  from '../../components/Table/Table';
+// import ScrollContainer from '../../Molecules/ScrollContainer/ScrollContainer';
+// import  from '../../Molecules/Table/Table';
 
 class TxQueue extends Component {
     // componentDidMount() {

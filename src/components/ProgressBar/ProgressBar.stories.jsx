@@ -7,7 +7,7 @@
 //     Text, PopupBar, PopupBarFooter, Button,
 // } from '../..';
 
-// storiesOf('Elements|Progressbar', module)
+// storiesOf('Atoms|Progressbar', module)
 //     .add('ProgressBar', () => (
 //         <div style={ { top: '30%', position: 'relative' } }>
 //             <ProgressBar>

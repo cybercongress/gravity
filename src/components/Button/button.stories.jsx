@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { IconButton, Pane } from 'evergreen-ui';
 import { Button } from './ButtonNew';
 
-storiesOf('Elements|Button', module)
+storiesOf('Atoms|Button', module)
     .addDecorator(centered)
 
     .add('Button Gravity', () => <Button className='btn'>Button</Button>)

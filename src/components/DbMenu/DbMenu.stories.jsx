@@ -14,7 +14,7 @@
 //     MenuPopupResumeIcon,
 // } from '../..';
 
-// storiesOf('Elements|DbMenu', module)
+// storiesOf('Atoms|DbMenu', module)
 //     .addDecorator(centered)
 //     .add('DbMenu', () => (
 //         <DbMenu>

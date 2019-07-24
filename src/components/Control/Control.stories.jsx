@@ -12,7 +12,7 @@
 // };
 // const CenterDecorator = storyFn => <div style={ styles }>{storyFn()}</div>;
 
-// storiesOf('Elements|Control', module)
+// storiesOf('Atoms|Control', module)
 //     .addDecorator(CenterDecorator)
 //     .add('Control', () => (
 //         <div>

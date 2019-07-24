@@ -21,7 +21,7 @@ const CreateEntryPermissionGroup = {
     },
 };
 
-storiesOf('Elements|Select', module)
+storiesOf('Atoms|Select', module)
     .addDecorator(centered)
     .add('Select', () => (
         <Select

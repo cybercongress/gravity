@@ -94,4 +94,4 @@ const IdentityBar = () => (
     </Pane>
 );
 
-storiesOf('Components|identityBar', module).add('identityBar', () => <IdentityBar />);
+storiesOf('Molecules|identityBar', module).add('identityBar', () => <IdentityBar />);

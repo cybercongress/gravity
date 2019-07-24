@@ -5,7 +5,7 @@ import {
     Tooltip, IconButton, Pane, Icon, Paragraph,
 } from 'evergreen-ui';
 
-storiesOf('Elements|Tooltip', module)
+storiesOf('Atoms|Tooltip', module)
     .addDecorator(centered)
     .add('Tooltip', () => (
         <Tooltip content='Edit title'>

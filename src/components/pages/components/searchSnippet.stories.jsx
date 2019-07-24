@@ -37,4 +37,4 @@ const Application = (props) => {
     );
 };
 
-storiesOf('Components|searchSnippet', module).add('searchSnippet', () => <Application />);
+storiesOf('Molecules|searchSnippet', module).add('searchSnippet', () => <Application />);

@@ -22,9 +22,9 @@ import {
     Paragraph,
 } from './Typography';
 
-storiesOf('Elements|Typography', module).add('Typography', () => (
+storiesOf('Atoms|Typography', module).add('Typography', () => (
     <Pane width='80%' marginX='auto' paddingTop='1em'>
-        <Heading size={ 700 }>Text components</Heading>
+        <Heading size={ 700 }>Text Molecules</Heading>
         <UnorderedList>
             <ListItem>
                 <Strong>Heading:</Strong>
@@ -79,7 +79,7 @@ element by default.
             </ListItem>
         </UnorderedList>
         <Pane marginY={ 30 }>
-            <Heading size={ 700 }>List components</Heading>
+            <Heading size={ 700 }>List Molecules</Heading>
             <UnorderedList>
                 <ListItem>
                     <Strong>OrderedList:</Strong>

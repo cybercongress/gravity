@@ -5,7 +5,7 @@
 // import { DarkPanel, Code} from '../..';
 // import code from '../pages/code';
 
-// storiesOf('Elements|DarkPanel', module)
+// storiesOf('Atoms|DarkPanel', module)
 //     .add('DarkPanel', () => (
 //         <div style={ {
 //             top: '20%',

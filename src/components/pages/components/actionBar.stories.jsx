@@ -48,4 +48,4 @@ const FooterCyb = () => (
     </Pane>
 );
 
-storiesOf('Components|actionBar', module).add('actionBar', () => <FooterCyb />);
+storiesOf('Molecules|actionBar', module).add('actionBar', () => <FooterCyb />);
