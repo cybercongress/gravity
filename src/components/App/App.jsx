@@ -33,7 +33,7 @@ export const AppSideBar = ({
                 close
             </button>
         )}
-        <IconButton
+        {/* <IconButton
           icon={ relative ? 'unpin' : 'pin'}
           appearance='minimal'
           className='icon-btn color-gray-svg'
@@ -44,7 +44,7 @@ export const AppSideBar = ({
           color='#979797'
           width={ 24 }
           height={ 24 }
-        />
+        /> */}
         {children}
     </div>
 );
