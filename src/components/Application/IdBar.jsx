@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import ClickOutside from 'react-click-outside';
-import { CybLink } from '../..';
+import { Pane, Text } from 'evergreen-ui';
 import {
-    IdBarComponent,
-    SettingsLink,
-    CurrentUser,
+    CybLink, IdBarComponent, SettingsLink, CurrentUser, Battery,
 } from '../..';
+
 // import { toggleMenu } from '../../redux/appMenu';
 // import { getDefaultAccountBalance } from '../../redux/wallet';
 // import { getDefaultAccountBalance as getDefaultAccountBalanceCyb } from '../../redux/cyber';
-
 
 class IdBar extends Component {
     state = {
@@ -30,11 +28,11 @@ class IdBar extends Component {
 
         e.preventDefault();
         props.toggleMenu();
-    }
+    };
 
     close = () => {
         this.setState({ open: false });
-    }
+    };
 
     render() {
         const { open } = this.state;
@@ -43,7 +41,45 @@ class IdBar extends Component {
             defaultCyberAccount,
             defaultAccountBalance,
             defaultAccountBalanceCyb,
+            menuItems,
         } = this.props;
+
+        const ContentTooltip = ({ bwRemained, bwMaxValue, linkPrice }) => (
+            <Pane
+              minWidth={ 200 }
+              paddingX={ 18 }
+              paddingY={ 14 }
+              borderRadius={ 4 }
+              backgroundColor='#fff'
+            >
+                <Pane marginBottom={ 12 }>
+                    <Text size={ 300 }>
+                        You have
+                        {' '}
+                        {bwRemained}
+                        {' '}
+BP out of
+                        {' '}
+                        {bwMaxValue}
+                        {' '}
+BP.
+                    </Text>
+                </Pane>
+                <Pane marginBottom={ 12 }>
+                    <Text size={ 300 }>
+                        Full regeneration of bandwidth points or BP happens in 24 hours.
+                    </Text>
+                </Pane>
+                <Pane display='flex' marginBottom={ 12 }>
+                    <Text size={ 300 }>
+Current rate for 1 cyberlink is
+                        {linkPrice}
+                        {' '}
+BP.
+                    </Text>
+                </Pane>
+            </Pane>
+        );
 
         return (
             <IdBarComponent>
@@ -56,10 +92,9 @@ class IdBar extends Component {
                       favoriteClick={ this.favoriteClick }
                       ethBalance={ defaultAccountBalance }
                       cybBalance={ defaultAccountBalanceCyb }
+                      menuItems={ menuItems }
                     />
                 </div>
-                {defaultEthAccount && <SettingsLink />}
-                {defaultEthAccount && <CybLink defaultAccount={defaultEthAccount} dura='txq.cyb'>txq</CybLink>}
             </IdBarComponent>
         );
     }

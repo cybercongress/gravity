@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from './TxQueue.less';
 
-export const Hash = ({ children }) => (
-	<span className={styles.hash}>
+export const Hash = ({ children, ...props }) => (
+	<span {...props} className={styles.hash}>
 		{children}
 	</span>
 );

@@ -20,7 +20,6 @@ class TransactionView extends Component {
         return (
             <ScrollContainer>
             <MainContainer>
-                <PageTitle>transaction</PageTitle>
                 <JsonView data={ transaction } />
                 <JsonView data={ receipt } />
             </MainContainer>
@@ -48,8 +47,8 @@ const txHash = [
     },
     ];
 
-storiesOf('cyb/pages/TransactionView', module)
-.add('TransactionView', () => (
+storiesOf('Examples/id', module)
+.add('.eth', () => (
     <Application>
         <TransactionView transaction={txHash}  receipt={txHash}/>
     </Application>

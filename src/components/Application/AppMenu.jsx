@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import ClickOutside from 'react-click-outside';
 import {
+    Pane, Text, Pill, TextInput, Tooltip,
+} from 'evergreen-ui';
+import {
     Message,
     MenuContainer,
     Bookmarks,
@@ -12,7 +15,10 @@ import {
     AddMenuItemContainer,
 } from '../..';
 // import * as actions from '../../redux/appMenu';
-
+import {
+    WaleetAppMenu,
+    UserCard,
+} from './AppMenu/AppMenu';
 class AppMenu extends Component {
     addToFavorites = () => {
         const { props } = this;
@@ -39,49 +45,56 @@ class AppMenu extends Component {
     };
 
     render() {
-        const {
-            deleteMenuItem, menuItems,
-            pendingAddToFavorites,
-        } = this.props;
+        const { deleteMenuItem, menuItems, pendingAddToFavorites } = this.props;
 
         return (
             <MenuContainer>
-                <LogoLink onClick={ this.clickLogo } />
+                {/* <WaleetAppMenu marginBottom={ 66 } ethBalance={ 17 } cybBalance={ 10 } /> */}
+                {/* <UserCard className='opacityItems' marginBottom={ 20 } /> */}
+                <Pane position='relative' width='100%' className='opacityItems' />
+                <Bookmarks items={ menuItems } deleteMenuItem={ deleteMenuItem } />
 
-                <Message
-                  style={ {
-                    margin: 15,
-                  } }
-                  type='error'
+                <Pane
+                  width='100%'
+                  paddingY={ 10 }
+                  display='flex'
+                  justifyContent='center'
+                  alignItems='center'
+                  className='opacityItemsBefore'
+                  flexDirection='column'
                 >
-                Cyb in Ethereum Mainnet may not be secure yet. We recommend to operate accounts with small balance at your own risk.
-                </Message>
-                <Bookmarks
-                  items={ menuItems }
-                  deleteMenuItem={ deleteMenuItem }
-                />
-                {pendingAddToFavorites
-                && (
-                    <div onClickOutside={ this.rejectFavorite }>
-                        <AddMenuItemContainer>
-                            <AddMenuItem>
-                                <input
-                                  ref={ (node) => { this.input = node; } }
-                                  defaultValue='New App'
-                                />
-                                <AddMenuItemReject onClick={ this.addToFavorites } />
-                            </AddMenuItem>
-                        </AddMenuItemContainer>
-                    </div>
-                )}
-                <ReportLinkContainer>
-                    <a
-                      target='__blank'
-                      href='https://github.com/cybercongress/cyb'
-                    >
-                    Find a bug?
-                    </a>
-                </ReportLinkContainer>
+                    
+                    <ReportLinkContainer>
+                        {/* <a target='__blank' href='#'>
+                            Files
+                        </a> */}
+                        {pendingAddToFavorites && (
+                        <Pane onClickOutside={ this.rejectFavorite }>
+                        <Pane zIndex={ 2 }>
+                            <AddMenuItemContainer paddingBottom={ 10 }>
+                                <AddMenuItem>
+                                    <TextInput
+                                      boxSizing='border-box'
+                                      paddingRigt={ 40 }
+                                      paddingLeft={ 10 }
+                                      paddingY={ 10 }
+                                      width='80%'
+                                      fontSize='14px'
+                                      backgroundColor='transparent'
+                                      style={ { caretColor: '#36d6ae' } }
+                                      ref={ (node) => {
+                                            this.input = node;
+                                        } }
+                                      defaultValue='New App'
+                                    />
+                                    <AddMenuItemReject onClick={ this.addToFavorites } />
+                                </AddMenuItem>
+                            </AddMenuItemContainer>
+                        </Pane>
+                        </Pane>
+                    )}
+                    </ReportLinkContainer>
+                </Pane>
             </MenuContainer>
         );
     }

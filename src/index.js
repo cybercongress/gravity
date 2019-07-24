@@ -1,10 +1,17 @@
 import './index.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+import {
+    Heading, Pane, Button, Text as TextEv, TextInput,
+    Tablist, Tab, Table as TableEv, Pill, Tooltip, Card,
+    Icon, IconButton, Textarea, FilePicker, Popover, Menu, Dialog,
+} from 'evergreen-ui';
 
 import Title from './components/Title/Title';
 
 import {
     Container,
-    Link as ActionLink,
 } from './components/CallToAction';
 import {
     LinkHash,
@@ -46,14 +53,15 @@ import {
     PopupSkillBar,
     PopupBar,
     PopupBarFooter,
+    ToolTip,
 } from './components/Popup/Popup';
 
 import {
-    BenContainer,
-    BenPieChart,
-    BenList,
-    Ben,
-} from './components/Beneficiary/Ben';
+    StructureContainer,
+    Structure,
+    StructureList,
+    Struct,
+} from './components/Structure/Structure';
 import {
     DarkPanel,
 } from './components/DarkPanel/DarkPanel';
@@ -74,7 +82,7 @@ import {
 } from './components/Checkbox/index';
 import {
     AddNewRecordButton,
-    Button,
+    Button as ButtonOld,
     FooterButton,
 } from './components/Button/button';
 import FormField from './components/FormField/FormFild';
@@ -92,7 +100,7 @@ import {
 } from './components/PopupContent/PopupContent';
 import { DatabaseItemsContainer } from './components/DatabaseTable/DatabaseItemsContainer';
 import { DbMenuPoints } from './components/DbMenuPoints/DbMenuPoints';
-import { SkillBar } from './components/SkillBar/SkillBar';
+import { Battery } from './components/Battery/Battery';
 import { Text } from './components/Text/Text';
 import {
     SearchItem,
@@ -233,16 +241,78 @@ import LoginContainer from './components/Application/LoginContainer/LoginContain
 
 import BrowserWindow, { BrowserContainer, Loading } from './components/BrowserWindow/BrowserWindow';
 
-import NotFoundPage from './components/NotFound/NotFound'; 
+import NotFoundPage from './components/NotFound/NotFound';
+
+import {
+    SuccessfulLogin,
+    FailLogin,
+
+    GCyb,
+    BntGroup,
+    PaneBalance,
+    HelloCardAccaunt,
+    HelloContainer,
+    HelloContainerLeftCol,
+    HelloContainerRightCol,
+    HelloContainerRightColContent,
+    HelloContainerRightColBtn,
+    BigImg,
+    SlallImgText,
+    ButtonEverGreen,
+    TextIlineBlock,
+    TextAreaImportMnemonic,
+    TerminalCyb,
+    ConnectionTable,
+    StateCybTable,
+    TextInputError,
+    Eth,
+} from './components/Application/Hello/hello.cyb';
+
+import{
+    ThatYouSlave,
+    WelcomeNewWorld,
+    MatrixEverywhere,
+    LastChance,
+    GeneratedSecure,
+    ConnectionPages,
+    SecurityImportSettingsPages,
+    SecurityCreatePasswordPages,
+    StartCybPages,
+    CardWalletPages,
+    CardWalletPagesBackUpMnemonic,
+    ImportAccountPages,
+    ImportAccountShowMnemonic,
+    GetOffTheMatrix,
+    UserChoice,
+} from './components/Application/hello.cyb';
+
+import {
+    FollowYourWeb3,
+    IdCyb,
+    KeysCyb,
+    ConnectCyb,
+    ShieldCyb,
+    StateCyb,
+} from './components/Application/id';
+
+import {
+    CardHover,
+} from './components/CardHover/CardHover';
+import {
+    CardAccount,
+} from './components/CardAccount/CardAccount';
+import {
+    Dynamics,
+} from './components/Dynamics/Dynamics';
+
 
 export {
     Title,
     Badge,
     FooterButton,
-    Button,
+    ButtonOld,
     Container,
     Text,
-    ActionLink,
     Section,
     SectionTabs,
     SectionContent,
@@ -272,7 +342,7 @@ export {
     Checkbox,
     AddNewRecordButton,
     MenuPopupEditIcon,
-    SkillBar,
+    Battery,
 
     Browser,
     BrowserHeader,
@@ -298,10 +368,10 @@ export {
     PopupSkillBar,
     PopupBar,
     PopupBarFooter,
-    BenContainer,
-    BenPieChart,
-    BenList,
-    Ben,
+    StructureContainer,
+    Structure,
+    StructureList,
+    Struct,
 
     DarkPanel,
 
@@ -358,7 +428,7 @@ export {
     LinkList, LinkItem,
     JsonView,
     ScrollContainer,
-    
+
     App, AppHeader, AppContent, AppSideBar,
 
     Navigation, NavigationLeft, NavigationRight, NavigationCenter,
@@ -399,4 +469,61 @@ export {
     BrowserWindow, BrowserContainer, Loading,
 
     NotFoundPage,
+
+    ThatYouSlave,
+    WelcomeNewWorld,
+    MatrixEverywhere,
+    LastChance,
+    GeneratedSecure,
+    ConnectionPages,
+    SecurityImportSettingsPages,
+    SecurityCreatePasswordPages,
+    StartCybPages,
+    CardWalletPages,
+    CardWalletPagesBackUpMnemonic,
+    ImportAccountPages,
+    ImportAccountShowMnemonic,
+    GetOffTheMatrix,
+    UserChoice,
+    FollowYourWeb3,
+    IdCyb,
+    KeysCyb,
+    ConnectCyb,
+    ShieldCyb,
+    // RootCyb,
+    // TxCyb,
+    // PathCyb,
+    // PinsCyb,
+    StateCyb,
+    SuccessfulLogin,
+    FailLogin,
+    ToolTip,
+
+    Eth,
+    GCyb,
+    BntGroup,
+    PaneBalance,
+    HelloCardAccaunt,
+    HelloContainer,
+    HelloContainerLeftCol,
+    HelloContainerRightCol,
+    HelloContainerRightColContent,
+    HelloContainerRightColBtn,
+    BigImg,
+    SlallImgText,
+    ButtonEverGreen,
+    TextIlineBlock,
+    TextAreaImportMnemonic,
+    TerminalCyb,
+    ConnectionTable,
+    StateCybTable,
+    TextInputError,
+
+    CardHover,
+    CardAccount,
+
+    Heading, Pane, Button, TextEv, TextInput,
+    Tablist, Tab, TableEv, Pill, Tooltip, Card,
+    Icon, IconButton, Textarea, FilePicker, Popover, Dialog, Menu,
+    Dynamics,
 };

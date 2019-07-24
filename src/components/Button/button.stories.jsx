@@ -1,89 +1,21 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { addDecorator } from '@storybook/react';
-import { AddNewRecordButton, Button } from '../..';
+import { IconButton, Pane } from 'evergreen-ui';
+import { Button } from './ButtonNew';
 
-storiesOf('commponents/Button', module)
+storiesOf('Elements|Button', module)
     .addDecorator(centered)
-    .add('AddNewRecordButton', () => (
-        <AddNewRecordButton>
-          Add New Record
-        </AddNewRecordButton>
-    ))
-    .add('ButtonDefault', () => (
-        <Button>
-          Default
-        </Button>
-    ))
 
-    .add('ButtonRed', () => (
-        <Button color='red'>
-          Reject
-        </Button>
-    ))
+    .add('Button Gravity', () => <Button className='btn'>Button</Button>)
 
-    .add('ButtonCancel', () => (
-        <Button color='cancel'>
-          cancel
-        </Button>
-    ))
+    .add('Button Default', () => <Button>Button</Button>)
 
-    .add('ButtonCreen', () => (
-        <Button color='green'>
-          confirm
-        </Button>
-    ))
-    .add('ButtonBlue', () => (
-        <Button color='blue'>
-          next
-        </Button>
-    ))
+    .add('Button with an Icon', () => <Button iconBefore='cog'>Button</Button>)
 
-    .add('ButtonGreenYellow', () => (
-        <Button transformtext color='greenyellow'>
-          Link it!
-        </Button>
-    ))
-
-    .add('ButtonOgange', () => (
-        <Button transformtext color='ogange'>
-          Link it!
-        </Button>
-    ))
-
-    .add('ButtonOutline', () => (
-        <Button outline>
-          outline
-        </Button>
-    ))
-
-    .add('ButtonDisabled', () => (
-        <Button disabled>
-          disabled
-        </Button>
-    ))
-
-    .add('ButtonTransparent', () => (
-        <Button transparent style={ { color: '#b00020' } }>
-            complete step
-        </Button>
-    ))
-
-    .add('ActionLink', () => (
-      <Button to={ `/databases/` }>
-        ActionLink
-      </Button>
-  ))
-
-  .add('ActionLinkRed', () => (
-    <Button color='red' to={ `/databases/` }>
-        reject
-    </Button>
-))
-
-.add('ActionLinkBlue', () => (
-  <Button color='blue' to={ `/databases/` }>
-      next
-  </Button>
-));
+    .add('IconButton', () => (
+        <Pane display='flex'>
+            <IconButton icon='trash' intent='danger' marginRight={ 10 } />
+            <IconButton appearance='minimal' icon='notifications' iconSize={ 18 } />
+        </Pane>
+    ));

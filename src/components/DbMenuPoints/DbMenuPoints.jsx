@@ -27,14 +27,14 @@ export class DbMenuPoints extends React.Component {
 
         return (
             <div className={ styles.dbMenuP }>
-                <ClickOutside onClickOutside={ this.onClickOutside }>
+                <div onClickOutside={ this.onClickOutside }>
                     <button
                       onClick={ this.onClick }
                       className={ cx(styles.dbMenuPointsButton, {
                           [styles.dbMenuPointsButtonTriangle]: open,
                       }) }
                     />
-                </ClickOutside>
+                </div>
                 <div className={ less }>
                     {this.props.children}
                 </div>

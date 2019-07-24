@@ -165,9 +165,9 @@ const accounts = [
 },
 ];
 
-storiesOf('cyb/pages/Wallet', module)
-.add('Wallet', () => (
-    <Application>
-        <Page accounts={accounts} />
-    </Application>
-))
+// storiesOf('cyb/pages/Wallet', module)
+// .add('Wallet', () => (
+//     <Application>
+//         <Page accounts={accounts} />
+//     </Application>
+// ))

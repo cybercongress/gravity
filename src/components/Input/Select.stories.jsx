@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Select } from './Input';
 
+
 const Permission = {
     OnlyAdmin: 0,
     Whitelist: 1,
@@ -20,14 +21,10 @@ const CreateEntryPermissionGroup = {
     },
 };
 
-storiesOf('commponents/Select', module)
+storiesOf('Elements|Select', module)
     .addDecorator(centered)
     .add('Select', () => (
         <Select
-            //   inputRef={ (node) => {
-            //         dbPage.permissionGroup = node;
-            //   } }
-          defaultValue='{ permissionGroup }'
         >
             {Object.keys(CreateEntryPermissionGroup).map((n) => {
                 const { label } = CreateEntryPermissionGroup[n];

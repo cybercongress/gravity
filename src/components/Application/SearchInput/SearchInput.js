@@ -1,11 +1,16 @@
 import React from 'react';
+import{
+    TextInput,
+    IconButton,
+    Button,
+} from 'evergreen-ui';
 import style from './FavoriteButton.less';
 import cx from 'classnames';
 
 const styles = require('./SearchInput.less');
 
 const SearchInput = ({ inputRef, ...props }) => (
-    <input { ...props } ref={ inputRef } className={styles.SearchInput} />
+    <TextInput { ...props } ref={ inputRef } className={styles.SearchInput} />
 );
 
 
@@ -33,9 +38,8 @@ export const FavoriteButtonContainer = ({ children }) => (
 export const FavoriteButton = ({ isFavorited, ...props }) => {
     const className = `${style.button} ${isFavorited ? style.buttonFavorite : ''}`;
     return (
-        <div className={ className } {...props}>
-
-        </div>
+        // <button className={ className } {...props} />
+        <IconButton {...props} className={ className } />
     );
 }
 

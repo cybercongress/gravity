@@ -1,9 +1,9 @@
-.tx_view pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
-.string { color: green; }
+.tx_view pre {box-shadow: 0 0 1px #ccc; padding: 5px; margin: 5px; }
+.string { color: #e3e3e3; }
 .number { color: darkorange; }
 .boolean { color: blue; }
 .null { color: magenta; }
-.key { color: red; }
+.key { color: #03bea6; }
 
 
 .tx_view pre {
