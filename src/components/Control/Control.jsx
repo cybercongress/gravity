@@ -2,7 +2,7 @@ import * as React from 'react';
 import cx from 'classnames';
 import { Text } from '../..';
 
-const styles = require('./Control.css');
+const styles = require('./Control.less');
 
 export const Control = ({ children, noMargin, title, noText, textWidth, ...props }) => (
   <div {...props} className={cx(styles.control, { [styles.noMargin]: noMargin})}>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './SearchItem.css';
+import styles from './SearchItem.less';
 // import cx from 'classnames';
 
 export const SearchItem = ({ children, ...props }) => (

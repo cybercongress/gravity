@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./Avatar.css');
+const styles = require('./Avatar.less');
 
 export const Avatar = ({ hash }) => {
     return (

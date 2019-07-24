@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './SkillBar.css';
+import styles from './SkillBar.less';
 //import cx from 'classnames';
 
 export const SkillBar = ({children, value}) => {

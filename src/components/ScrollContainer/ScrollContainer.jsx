@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './scrollContainer.css';
+import styles from './scrollContainer.less';
 
 const ScrollContainer = props => (
     <div className={ styles.scrollContainer }>

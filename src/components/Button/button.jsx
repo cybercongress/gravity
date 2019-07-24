@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Link } from 'react-router';
 import { ActionLink , CybLink } from '../..';
 
-const styles = require('./button.css');
+const styles = require('./button.less');
 
 export const AddNewRecordButton = ({ children, ...props }) => (
     <button className={ styles.AddNewRecordButton } { ...props }>

@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-const styles = require('./App.css');
+const styles = require('./App.less');
 
 const App = ({ children, openMenu }) => (
     <div className={ styles.app }>

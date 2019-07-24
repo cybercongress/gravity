@@ -1,7 +1,7 @@
 import React from 'react';
 
-// import './ConfirmationPopup.css';
-const styles = require('./ConfirmationPopup.css');
+// import './ConfirmationPopup.less';
+const styles = require('./ConfirmationPopup.less');
 
 export const Address = ({ children }) => (
     <span className={styles.address}>

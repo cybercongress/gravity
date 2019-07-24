@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./RadioButton.css');
+const styles = require('./RadioButton.less');
 
 export const RadioButton = ({ children, inputRef, name, width, height, ...props }) => (
   <span className={styles.RadioBtn}>

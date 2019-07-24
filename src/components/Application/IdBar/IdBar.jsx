@@ -3,7 +3,7 @@ import cx from 'classnames';
 import classNames from 'classnames';
 import { CybLink } from '../../..';
 
-const styles = require('./IdBar.css');
+const styles = require('./IdBar.less');
 
 const IdBarComponent = ({ children }) => <div className={ styles.id_bar }>{children}</div>;
 

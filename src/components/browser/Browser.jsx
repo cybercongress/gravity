@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import styles from './browser.css'
+import styles from './browser.less'
 
 export const Browser = ({ children, openSidebar, isHomePage }) => {
 	const childrenWithProps = React.Children.map(children, child =>

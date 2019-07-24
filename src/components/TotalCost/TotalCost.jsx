@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./TotalCost.css');
+const styles = require('./TotalCost.less');
 
 export const TotalCost = ({ value }) => (
     <div className={styles.totalCost}>

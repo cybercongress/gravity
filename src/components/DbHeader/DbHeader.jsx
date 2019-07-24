@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
 
-const styles = require('./DbHeader.css');
+const styles = require('./DbHeader.less');
 
 
 export const FlexContainer = ({ children, line, noPadding, ...props, }) => (

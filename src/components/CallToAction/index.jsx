@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Link as RouterLink } from 'react-router';
 
-const styles = require("./CallToAction.css");
+const styles = require("./CallToAction.less");
 
 export const Container = ({ children }) => (
   <div className={styles.container}>

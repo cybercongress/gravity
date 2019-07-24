@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
 
-const styles = require('./MenuPopup.css');
+const styles = require('./MenuPopup.less');
 
 export const MenuPopup = ({children, ...props}) => (
     <ul {...props} className={styles.menuPopup}>

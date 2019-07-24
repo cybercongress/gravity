@@ -1,12 +1,12 @@
 import * as React from 'react';
-const styles = require("./SolidityHighlight.css");
+const styles = require("./SolidityHighlight.less");
 
 import hljs from 'highlight.js';
 
 import ReactDOM from 'react-dom';
 // var ReactDOM = require('react-dom');
 
-require('./railscasts.less');
+require('./railscasts.css');
 
 // hljs.initHighlightingOnLoad();
 // const Code = ({ children }) => (
@@ -14,7 +14,7 @@ require('./railscasts.less');
 //   </textarea>
 // );
 
-// import css from 'highlight.js/styles/'
+// import less from 'highlight.js/styles/'
 
 import hljsDefineSolidity from './hljsDefineSolidity';
 

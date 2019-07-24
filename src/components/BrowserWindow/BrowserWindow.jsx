@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './BrowserWindow.css';
+import './BrowserWindow.less';
 import { Block, BlockRow } from '../..';
 import cx from 'classnames';
 
-const styles = require('./BrowserWindow.css');
+const styles = require('./BrowserWindow.less');
 
 const BrowserWindow = ({ loading, refFn, ...props }) => (
     <webview

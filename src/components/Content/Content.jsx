@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { DarkPanel } from '../..';
 
-const styles = require('./Content.css');
+const styles = require('./Content.less');
 
 export const Content = ({ children, title, ...props }) => (
     <div {...props} className={styles.content}>

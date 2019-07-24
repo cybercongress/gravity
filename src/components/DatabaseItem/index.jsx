@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require("./DatabaseItem.css");
+const styles = require("./DatabaseItem.less");
 
 export const Label = (props) => (
     <div {...props} className={styles.label}/>

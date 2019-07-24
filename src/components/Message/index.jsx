@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
 
-const styles = require('./Message.css');
+const styles = require('./Message.less');
 
 export const Message = ({ children, type, ...props }) => {
     return <div {...props} className={

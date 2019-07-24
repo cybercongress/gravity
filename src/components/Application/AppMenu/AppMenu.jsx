@@ -1,8 +1,8 @@
 import React from 'react';
 import { CybLink } from '../../..';
-// import './AppMenu.css';
+// import './AppMenu.less';
 
-const styles = require('./AppMenu.css');
+const styles = require('./AppMenu.less');
 
 const Logo = props => (
     <CybLink { ...props } className={styles.logo}>logo</CybLink>

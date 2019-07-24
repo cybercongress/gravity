@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./Input.css');
+const styles = require('./Input.less');
 
 export const Input = ({ inputRef, errorMessage, ...props }) => (
     <div className={ styles.inutText }>
