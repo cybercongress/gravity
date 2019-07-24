@@ -20,14 +20,6 @@ export const TableItemBen = ({ children }) => (
     </table>
 );
 
-
-
-const Table = ({ children }) => (
-    <div className={styles.tableContainer}>
-        {children}
-    </div>
-);
-
 export const TableItem = ({ children }) => (
     <div className={styles.TableItem}>
         {children}
@@ -51,6 +43,3 @@ export const TableAddItem = ({ children }) => (
         {children}
     </div>
 );
-
-
-export default Table;

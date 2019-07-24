@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import Table, {
+import{
   TableRow,
   TableItem,
   TableAddRow,
@@ -12,7 +12,7 @@ import { LinkHash, Checkbox,AddButton, RemoveButton  } from '../..';
 storiesOf('commponents/Table', module)
   .addDecorator(centered)
   .add('table', () => (
-    <Table>
+    <div>
       <TableRow>
         <TableItem>
           <LinkHash noCopy noPadding value="0x000F3754f028c704FDCe4e8ab9aAdba220f39618" />
@@ -33,18 +33,17 @@ storiesOf('commponents/Table', module)
           <RemoveButton />
         </TableItem>
       </TableRow>
-    </Table>
+    </div>
+      
   ))
 
   .add('table_Input', () => (
-    <Table>
       <TableAddRow>
         <input />
         <input />
         <span>100%</span>
         <AddButton />
       </TableAddRow>
-    </Table>
   ))
 
   .add('table_3', () => (
