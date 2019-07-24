@@ -69,7 +69,7 @@ import {
     ProgressBar,
 } from './components/ProgressBar/ProgressBar';
 import CircleLable from './components/ProgressBar/CricleLable';
-import Table, {
+import {
     HomeTable,
     TableRow,
     TableItem,
@@ -159,7 +159,7 @@ import { CentredPanel } from './components/CentredPanel/CentredPanel';
 import { FundContainer } from './components/FundContainer/FundContainer';
 
 import CybLink from './components/CybLink/CybLink';
-import { TableCybLink } from './components/TableCybLink/Table';
+import { Table } from './components/TableCybLink/Table';
 import { Block, BlockRow, Row } from './components/Block/Block';
 import { SettingLabel, SettingRow } from './components/Block/Settings';
 
@@ -378,7 +378,7 @@ export {
     ProgressBar,
     CircleLable,
 
-    Table,
+    //Table,
     HomeTable,
     TableRow,
     TableItem,
@@ -405,7 +405,7 @@ export {
 
     Status,
     CybLink,
-    TableCybLink,
+    Table,
     Block,
     BlockRow,
     Row,
