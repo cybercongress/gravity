@@ -13,6 +13,8 @@ storiesOf('Atoms|Button', module)
 
     .add('Button with an Icon', () => <Button iconBefore='cog'>Button</Button>)
 
+    .add('Button Link', () => <a className='btn link-btn'>Button</a>)
+
     .add('IconButton', () => (
         <Pane display='flex'>
             <IconButton icon='trash' intent='danger' marginRight={ 10 } />

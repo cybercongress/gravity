@@ -37,6 +37,8 @@
     "react-click-outside": "^3.0.1",
     "react-dom": "16.8.6",
     "react-flexbox-grid": "^2.1.2",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "react-slick": "^0.24.0",
     "slick-carousel": "^1.8.1",
     "terminal-in-react": "^4.3.1",
@@ -64,10 +66,10 @@
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.6.0",
     "prettier": "^1.17.0",
+    "rimraf": "2.6.3",
     "style-loader": "0.23.1",
     "url-loader": "1.1.2",
     "webpack": "4.30.0",
-    "webpack-cli": "3.3.1",
-    "rimraf": "2.6.3"
+    "webpack-cli": "3.3.1"
   }
 }

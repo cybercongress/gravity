@@ -8,7 +8,7 @@ import moment from 'moment';
 
 // import * as actions from '../../redux/settings';
 import {
-    MainContainer, PageTitle, CybLink, Table, ScrollContainer,
+    MainContainer, PageTitle, CybLink, ScrollContainer,
 } from '../..';
 import Application from '../Application/Application';
 

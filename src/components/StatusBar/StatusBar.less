@@ -1,8 +1,7 @@
 
 
 .container {
-    background: url(./fox-portfolio.svg) no-repeat center center;
-    background-color: rgba(216, 216, 216, 0.7);
+    background: rgba(0, 0, 0, 0.7);
     background-size: 400px;
     z-index: 100000;
 }
@@ -13,18 +12,16 @@
     left: 0;
     right: 0;
     text-align: center;
-    background: #438cef;
+    background: #438befb0;
     font-weight: lighter;
     font-size: 14px;
-    height: 70px;
+    min-height: 70px;
+    width: 100%;
+    padding: 10px 20px;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.containererror {
-    background-image: url(./group-2.svg);
 }
 
 .messageprocessing {
@@ -32,17 +29,22 @@
 }
 
 .messagesuccess {
-    background: #34bfa3;
+    background: #34bfa3a8;
 }
 
 .messageerror {
-    background: #cd333a;
+    background: #b73a3a9d;
+}
+
+.containerMessage {
+    width: 100%;
+    word-wrap: break-word;
 }
 
 .button {
     position: fixed;
-    top: 43%;
-    right: 36%;
+    top: 50%;
+    right: 33%;
     border: 0;
     padding: 10px 20px;
     border-radius: 2px;
@@ -52,10 +54,80 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1500px) {
+    .button{
+        right: 24%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .button{
+        right: 15%;
+    }
+}
+
+@media screen and (max-width: 760px){
+    .button {
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
+
 .buttonError {
-   background: #cd333a;;
+   background: #b73a3a;
+   box-shadow: 0 0 6px 0px #b73a3a;
+    min-width: 140px;
+}
+
+.buttonError:hover {
+    box-shadow: 0 0 9px 0px #b73a3a;
+}
+
+.buttonError:active {
+    background: #e96262;
 }
 
 .Buttonuccess {
     background: #34bfa3;
+}
+
+.cyb {
+    width: 230px;
+    height: 230px;
+    box-shadow: 0 0px 15px 1px #3ab793;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cybOvalR{
+    width: 70px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0px 10px 1px #3ab793;
+    transform: rotate(25deg);
+    margin-bottom: 20px;
+}
+
+.cybOvalL{
+    width: 70px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0px 10px 1px #3ab793;
+    transform: rotate(-25deg);
+    margin-bottom: 20px;
+}
+
+.containererror > .cyb {
+    box-shadow: 0 0px 15px 1px #b73a3a;
+}
+
+.containererror > .cyb .cybOvalR {
+    box-shadow: 0 0px 10px 1px #b73a3a;
+}
+
+.containererror > .cyb .cybOvalL {
+    box-shadow: 0 0px 10px 1px #b73a3a;
 }
