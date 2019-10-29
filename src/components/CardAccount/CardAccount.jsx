@@ -12,7 +12,7 @@ export const CardAccount = ({
 
     return (
         <Card
-          boxShadow='0 0 1px #fff'
+          boxShadow='0 0 6px 1px #3ab793'
           display='flex'
           flexDirection='column'
           alignItems='center'
@@ -31,26 +31,21 @@ export const CardAccount = ({
             >
                 {winner ? 'Congratulations :-)' : 'You Loose :-('}
             </Text>
-            <Pane width='100%' marginBottom={30}>
-                <Pane display='flex' flexDirection='row' marginBottom={45}>
+            <Pane width='100%' marginBottom={ 30 }>
+                <Pane display='flex' flexDirection='row' marginBottom={ 45 }>
                     <Pane>
                         <Pill
-                          height={10}
-                          width={10}
+                          height={ 10 }
+                          width={ 10 }
                           borderRadius='50%'
                           color='yellow'
-                          paddingX={0}
+                          paddingX={ 0 }
                           isSolid
-                          marginRight={15}
+                          marginRight={ 15 }
                         />
                     </Pane>
                     <PaneBalance position='relative' display='flex' flexDirection='column'>
-                        <Text
-                          display='inline-block'
-                          marginBottom={11}
-                          color='#fff'
-                          fontSize={30}
-                        >
+                        <Text display='inline-block' marginBottom={ 11 } color='#fff' fontSize={ 30 }>
                             {balanceEth}
                             &nbsp;ETH
                         </Text>
@@ -62,22 +57,17 @@ export const CardAccount = ({
                 <Pane display='flex' flexDirection='row'>
                     <Pane>
                         <Pill
-                          height={10}
-                          width={10}
+                          height={ 10 }
+                          width={ 10 }
                           borderRadius='50%'
                           color='blue'
-                          paddingX={0}
+                          paddingX={ 0 }
                           isSolid
-                          marginRight={15}
+                          marginRight={ 15 }
                         />
                     </Pane>
                     <PaneBalance position='relative' display='flex' flexDirection='column'>
-                        <Text
-                          display='inline-block'
-                          marginBottom={11}
-                          color='#fff'
-                          fontSize={30}
-                        >
+                        <Text display='inline-block' marginBottom={ 11 } color='#fff' fontSize={ 30 }>
                             {balanceCyberdGcyb}
                             &nbsp;GCYB
                         </Text>

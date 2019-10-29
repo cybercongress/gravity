@@ -3,29 +3,63 @@ import {
     Pane, TextInput, Icon, Text, Select as SelectEv,
 } from 'evergreen-ui';
 
-const styles = require('./Input.less');
-
-export const Input = ({ inputRef, errorMessage, isInvalid, message, ...props }) => (
-    <Pane position='relative'>
+export const Input = ({
+    errorMessage,
+    isInvalid,
+    message,
+    margin,
+    marginX,
+    marginY,
+    marginLeft,
+    marginRight,
+    marginTop,
+    marginBottom,
+    width,
+    height,
+    paddingX,
+    boxShadow,
+    noFocus,
+    ...props
+}) => (
+    <Pane
+      position='relative'
+      margin={ margin }
+      marginX={ marginX }
+      marginY={ marginY }
+      marginLeft={ marginLeft }
+      marginRight={ marginRight }
+      marginTop={ marginTop }
+      marginBottom={ marginBottom }
+      width={ width || '100%' }
+    >
         <TextInput
           width='100%'
+          height={ height || 42 }
           backgroundColor='transparent'
+          className={ noFocus ? `${isInvalid ? 'input-green-valid' : 'input-green-no-focus'}` : `${isInvalid ? 'input-green-valid' : 'input-green'}` }
           isInvalid={ isInvalid }
-          paddingX={ 10 }
-          boxShadow='inset 0 0 0px 0.4px #979797'
+          paddingX={ paddingX || 10 }
           { ...props }
         />
         {isInvalid && (
             <Pane
               position='absolute'
-              left={ 0 }
-              bottom='-50%'
-              width='100%'
+              top='100%'
+                //   bottom='-50%'
+              whiteSpace='nowrap'
               display='flex'
               alignItems='center'
             >
-                <Icon icon='info-sign' color='danger' size={ 11 } marginRight={ 5 } />
-                <Pane>
+                <Icon
+                  icon='info-sign'
+                  color='danger'
+                  style={ {
+                        width: '11px',
+                        height: '20px',
+                    } }
+                  marginRight={ 5 }
+                />
+                <Pane display='flex'>
                     <Text fontSize='11px' color='#ec4c47'>
                         {message}
                     </Text>
@@ -36,7 +70,5 @@ export const Input = ({ inputRef, errorMessage, isInvalid, message, ...props }) 
 );
 
 export const Select = ({ children, inputRef, ...props }) => (
-    <SelectEv { ...props }>
-        {children}
-    </SelectEv>
+    <SelectEv { ...props }>{children}</SelectEv>
 );
