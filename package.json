@@ -1,11 +1,8 @@
 {
-  "name": "@cybercongress/ui",
-  "version": "0.1.2",
+  "name": "@cybercongress/gravity",
+  "version": "0.0.1",
   "description": "Components for cyb",
-  "author": {
-    "name": "cybercongress",
-    "email": "cybercongress42@gmail.com"
-  },
+  "author": "cybercongress <cybercongress42@gmail.com>",
   "storybook-deployer": {
     "gitUsername": "cybercongress",
     "gitEmail": "cybercongress42@gmail.com",
@@ -74,5 +71,16 @@
     "url-loader": "1.1.2",
     "webpack": "4.30.0",
     "webpack-cli": "3.3.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybercongress/gravity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cybercongress/gravity/issues"
+  },
+  "homepage": "https://github.com/cybercongress/gravity#readme"
 }
