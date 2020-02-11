@@ -90,7 +90,7 @@ const Application = (props) => {
     );
 };
 
-storiesOf('Components|timeline', module)
+storiesOf('Molecules|timeline', module)
     .add('timeline', () => (
         <Application openMenu />
     ));

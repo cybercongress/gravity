@@ -14,7 +14,7 @@
 // };
 // const CenterDecorator = storyFn => <div style={ styles }>{storyFn()}</div>;
 
-// storiesOf('Elements|ContainerRegister', module)
+// storiesOf('Atoms|ContainerRegister', module)
 //     .addDecorator(CenterDecorator)
 //     .add('ContainerRegister', () => (
 //         <ContainerRegister title='title'>

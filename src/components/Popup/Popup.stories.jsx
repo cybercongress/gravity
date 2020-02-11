@@ -28,7 +28,7 @@
 
 
 
-// storiesOf('Elements|Popup', module)
+// storiesOf('Atoms|Popup', module)
 //     .addDecorator(centered)
 //     .add('FundRegistry', () => (
 //         <Popup open='claimFundOpen'>

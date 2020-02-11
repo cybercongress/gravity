@@ -2,4 +2,4 @@
 // import { storiesOf } from '@storybook/react';
 // import { TotalCost } from '../..';
 
-// storiesOf('Elements|TotalCost', module).add('TotalCost', () => <TotalCost value={ 4 } />);
+// storiesOf('Atoms|TotalCost', module).add('TotalCost', () => <TotalCost value={ 4 } />);

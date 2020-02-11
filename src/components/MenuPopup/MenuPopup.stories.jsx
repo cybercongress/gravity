@@ -18,7 +18,7 @@
 
 // import { LinkHash } from '../..';
 
-// storiesOf('Elements|MenuPopup', module)
+// storiesOf('Atoms|MenuPopup', module)
 //   .addDecorator(centered)
 //   .add('MenuPopup', () => (
 //     <MenuPopup>

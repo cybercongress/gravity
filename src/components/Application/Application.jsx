@@ -78,9 +78,9 @@ const Application = (props) => {
 
             <AppContent>
                 {children}
-                <Pane position='fixed' top={0} right='5px' height='inherit' marginTop={60} display='flex' alignItems='center' className='BntGroupFull'>
+                {/* <Pane position='fixed' top={0} right='5px' height='inherit' marginTop={60} display='flex' alignItems='center' className='BntGroupFull'>
                     <BntGroupFull />
-                </Pane>
+                </Pane> */}
             </AppContent>
             </Pane>
         </App>

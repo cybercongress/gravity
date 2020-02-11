@@ -4,7 +4,7 @@
 // import { addDecorator } from '@storybook/react';
 // import ValueInput from './index';
 
-// storiesOf('Elements|ValueInput', module)
+// storiesOf('Atoms|ValueInput', module)
 //   .addDecorator(centered)
 //   .add('ValueInput', () => (
 //       <ValueInput buttonLable="claim funds" color="second" />

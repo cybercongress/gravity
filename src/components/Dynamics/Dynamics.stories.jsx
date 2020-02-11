@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import { Pane } from 'evergreen-ui';
 import { Dynamics } from '../..';
 
-storiesOf('Elements|Dynamics', module)
+storiesOf('Atoms|Dynamics', module)
     .addDecorator(centered)
     .add('Dynamics', () => {
         const bens = [

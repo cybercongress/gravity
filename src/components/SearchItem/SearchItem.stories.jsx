@@ -4,7 +4,7 @@
 // import { SearchItem, LinkContainer } from '../..';
 
 
-// storiesOf('Elements|SearchResult', module)
+// storiesOf('Atoms|SearchResult', module)
 //     .add('SearchItem', () => (
 //         <div style={ { top: '50%', position: 'relative' } }>
 //             <SearchItem hash='sdfs21312' rank='2'>

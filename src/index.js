@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import {
-    Heading, Pane, Button, Text as TextEv, TextInput,
+    Heading, Pane, Text, TextInput,
     Tablist, Tab, Table as TableEv, Pill, Tooltip, Card,
     Icon, IconButton, Textarea, FilePicker, Popover, Menu, Dialog,
 } from 'evergreen-ui';
@@ -101,7 +101,6 @@ import {
 import { DatabaseItemsContainer } from './components/DatabaseTable/DatabaseItemsContainer';
 import { DbMenuPoints } from './components/DbMenuPoints/DbMenuPoints';
 import { Battery } from './components/Battery/Battery';
-import { Text } from './components/Text/Text';
 import {
     SearchItem,
 } from './components/SearchItem/SearchItem';
@@ -305,6 +304,9 @@ import {
     Dynamics,
 } from './components/Dynamics/Dynamics';
 
+import ActionBar from './components/ActionBar/ActionBar';
+
+import Button from './components/Button/ButtonNew';
 
 export {
     Title,
@@ -312,7 +314,6 @@ export {
     FooterButton,
     ButtonOld,
     Container,
-    Text,
     Section,
     SectionTabs,
     SectionContent,
@@ -522,8 +523,10 @@ export {
     CardHover,
     CardAccount,
 
-    Heading, Pane, Button, TextEv, TextInput,
+    Heading, Pane, Button, Text, TextInput,
     Tablist, Tab, TableEv, Pill, Tooltip, Card,
     Icon, IconButton, Textarea, FilePicker, Popover, Dialog, Menu,
     Dynamics,
+
+    ActionBar,
 };

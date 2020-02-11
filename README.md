@@ -8,7 +8,7 @@ for link in project:
 yarn link 
 
 in your project 
-yarn link '@cybercongress/ui'
+yarn link '@cybercongress/gravity'
 
 
 for publish:

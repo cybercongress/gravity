@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 /* @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css"; */
 @import './components/Application/Hello/btn.group.css';
@@ -10,7 +11,7 @@
 }
 
 .fontSF {
-    font-family: SF Regular !important;
+    font-family: 'Space Mono', monospace !important;
 }
 
 :root {
@@ -58,7 +59,7 @@
 /*  */
 
 /* slider chaingear */
-.slick-center .active-slide-card-chaingear{
+.active-slide-card-chaingear{
     max-width: 411px;
     max-height: 455px;
     height: 30rem;
@@ -147,6 +148,15 @@ html, body, #root {
     box-shadow: 0 0 6px 0px #3dc9a1 !important;
 }
 
+.input-green-valid {
+    caret-color: #36d6ae !important;
+    box-shadow: inset 0 0 0 1px #ec4c47 !important;
+    color: #3ab793 !important;
+    outline: 0 !important;
+    outline-offset: 0 !important;
+    background-color: transparent !important;
+}
+
 .input-green-no-focus {
     caret-color: #36d6ae !important;
     box-shadow: inset 0 0 0 1px #36d6ae83 !important;
@@ -178,6 +188,18 @@ html, body, #root {
   ::-webkit-scrollbar-thumb:hover {
     background: #5c5c5c;
   }
+
+.link-btn{
+    height: 42px;
+    font-size: 16px;
+    white-space: nowrap;
+    margin: 0px 10px;
+    min-width: 215px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
 
   .btn {
     /* background-image: none !important; */

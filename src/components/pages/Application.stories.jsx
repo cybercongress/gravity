@@ -19,7 +19,7 @@ import {
 import IdBar from '../Application/IdBar';
 import AppMenu from '../Application/AppMenu';
 import Status from '../Application/Status';
-import NavigationComponents from '../Application/Navigation';
+import NavigationMolecules from '../Application/Navigation';
 import ToggleMenu from '../Application/ToggleMenu';
 import SignerPopup from '../Application/SignerPopup';
 import Login from '../Application/Login';
@@ -68,7 +68,7 @@ const Application = (props) => {
                         <ToggleMenu openMenu={ openMenu } />
                     </NavigationLeft>
                     <NavigationCenter>
-                        <NavigationComponents
+                        <NavigationMolecules
                           dura={ dura }
                           canBack={ activeBttnBack }
                           isFavorited={ activeBttnFavorited }
@@ -213,7 +213,7 @@ storiesOf('Examples/cyb', module)
     //     <Application openMenu newApp />
     // ))
     .add('homePage', () => <Application homePage />)
-    .add('ActiveNavigationComponents', () => (
+    .add('ActiveNavigationMolecules', () => (
         <Application activeBttnBack activeBttnFavorited dura='rr.cyb' />
     ))
 

@@ -2,7 +2,7 @@
 // import { storiesOf } from '@storybook/react';
 // import { Section, SectionTabs, SectionContent } from '../..';
 
-// storiesOf('Elements|Section', module)
+// storiesOf('Atoms|Section', module)
 //     .add('Section', () => (
 //         <Section title='Section'>
 //             <SectionContent>

@@ -1,11 +1,8 @@
 {
-  "name": "@cybercongress/ui",
-  "version": "0.1.1",
+  "name": "@cybercongress/gravity",
+  "version": "0.0.1",
   "description": "Components for cyb",
-  "author": {
-    "name": "cybercongress",
-    "email": "cybercongress42@gmail.com"
-  },
+  "author": "cybercongress <cybercongress42@gmail.com>",
   "storybook-deployer": {
     "gitUsername": "cybercongress",
     "gitEmail": "cybercongress42@gmail.com",
@@ -24,6 +21,7 @@
     "babel-eslint": "^10.0.1",
     "chart.js": "^2.8.0",
     "classnames": "2.2.6",
+    "d3": "^5.11.0",
     "eslint": "^5.16.0",
     "eslint-config-standard-react": "^7.0.2",
     "evergreen-ui": "^4.15.0",
@@ -31,12 +29,16 @@
     "highlight.js": "9.15.6",
     "less": "^3.9.0",
     "moment": "^2.24.0",
+    "plotly.js": "^1.49.4",
     "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-chartjs-2": "2.7.6",
     "react-click-outside": "^3.0.1",
     "react-dom": "16.8.6",
     "react-flexbox-grid": "^2.1.2",
+    "react-plotly.js": "^2.3.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "react-slick": "^0.24.0",
     "slick-carousel": "^1.8.1",
     "terminal-in-react": "^4.3.1",
@@ -64,10 +66,21 @@
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.6.0",
     "prettier": "^1.17.0",
+    "rimraf": "2.6.3",
     "style-loader": "0.23.1",
     "url-loader": "1.1.2",
     "webpack": "4.30.0",
-    "webpack-cli": "3.3.1",
-    "rimraf": "2.6.3"
-  }
+    "webpack-cli": "3.3.1"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybercongress/gravity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cybercongress/gravity/issues"
+  },
+  "homepage": "https://github.com/cybercongress/gravity#readme"
 }
