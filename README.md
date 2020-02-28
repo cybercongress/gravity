@@ -1,17 +1,17 @@
-yarn version 1.12.3
-
-yarn install
-yarn start
-
-
-for link in project:
-yarn link 
-
 in your project 
 yarn link '@cybercongress/gravity'
 
+yarn 1.12+
 
-for publish:
-change version in package.json
-npm login
-npm publish
+How to run:
+
+```
+yarn install
+yarn start
+```
+
+For link in project:
+
+```
+yarn link '@cybercongress/ui'
+```
