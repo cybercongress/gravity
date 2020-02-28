@@ -1,0 +1,201 @@
+.id_bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+
+.separator {
+  border: 0;
+  height: 1px;
+  color: #d6d6d6;
+  background-color: #d6d6d6;
+}
+
+.id_bar__settings {
+  width: 20px;
+  height: 20px;
+  background: url(../../../img/settings.svg) no-repeat center center;
+  border: none;
+  text-indent: -999999px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+
+.id_bar__txq {
+width: 20px;
+height: 20px;
+background: url(../../../img/bell-ring-voice-alarm-clock.svg) no-repeat center center;
+border: none;
+/* text-indent: -999999px; */
+cursor: pointer;
+text-decoration: none;
+}
+
+.id_bar__txq span {
+background: #cd333a;
+border-radius: 10px;
+color: #fff;
+font-size: 12px;
+font-weight: bold;
+margin: -11px 11px;
+padding: 2px;
+position: absolute;
+}
+.id_bar__txq span:empty  {
+display: none;
+}
+
+
+.id_bar__wallet {
+  width: 20px;
+  height: 20px;
+  background: url(../../../img/wallet.svg) no-repeat center center;
+  border: none;
+  text-indent: -999999px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.id_bar__history {
+  width: 20px;
+  height: 20px;
+  background: url(../../../img/history.svg) no-repeat center center;
+  border: none;
+  text-indent: -999999px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.id_bar__favorite {
+  width: 20px;
+  height: 20px;
+  background: url(../../../img/favorite.svg) no-repeat center center;
+  border: none;
+  text-indent: -999999px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.id_bar__user {
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  /*background: no-repeat center center #eff3f6;*/
+  background-size: 30px 30px;
+}
+
+.id_bar__user__default {
+  background: url(../../../img/ic-account-circle-48-px.svg) no-repeat center center;
+  background-size: 40px;
+  margin-left: 20px;
+}
+
+.id-bar-img-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.id_bar__user__big {
+  width: 70px;
+  height: 70px;
+}
+
+.user_popup__container {
+  position: relative;
+}
+
+.user_popup {
+  font-family: 'Play', sans-serif;
+  position: fixed;
+  width: 250px;
+  background: #000000;
+  color: #000;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  display: none;
+  padding-top: 50px;
+  padding-right: 0;
+  box-sizing: border-box;
+  z-index: 3;
+  box-sizing: border-box;
+  box-shadow: -7px 0px 20px 2px #0000008c;
+  opacity: 0.90;
+}
+
+.id_bar_link_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.user_popup:before {
+}
+
+.user_popup__open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tokenName {
+  display: inline-block;
+}
+
+.bookmarks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  flex-grow: 1;
+  overflow: auto;
+  position: relative;
+}
+
+.bookmarks__item {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.bookmarks__item:first-child {
+  margin-top: 55px;
+}
+
+.bookmarks__item:last-child {
+  margin-bottom: 50px;
+}
+
+.imgItems img{
+  width: 24px;
+  height: 24px;
+}
+
+.activeTL::after {
+  content: '';
+  height: 40px;
+  width: 3px;
+  background-color: #4ed6ae;
+  filter: blur(0.7px);
+  box-shadow: -3px 0px 20px 1.5px #4ed6ae;
+}
+
+.bookmarks__item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.bookmarks__item:hover a {
+  color: #32d9ae;
+}
+
+@media screen and (max-width: 700px) {
+  .username{
+    display: none;
+  }
+}

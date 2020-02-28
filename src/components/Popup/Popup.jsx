@@ -1,7 +1,8 @@
 import * as React from 'react';
 import cx from 'classnames';
+import { Pane } from 'evergreen-ui';
 
-const styles = require('./Popup.css');
+const styles = require('./Popup.less');
 
 export const Popup = ({ children, open, onClose, ...props }) => (
     <div className={cx(styles.popup, { [styles.popupOpen]: open })}>
@@ -35,4 +36,40 @@ export const PopupSkillBar = ({ children }) => (
 
 export const PopupBarFooter = ({ children }) => (
   <div className={styles.PopupBarFooter}>{children}</div>);
+
+  export class ToolTip extends React.Component {
+    state = {
+        hover: false,
+    };
+
+    handleHover() {
+        this.setState({ hover: !this.state.hover });
+    }
+
+    seeAll = () => {
+        this.setState({
+            seeAll: !this.state.seeAll,
+        });
+    };
+
+    render() {
+        const { content, children } = this.props;
+
+        return (
+            <Pane onMouseEnter={ () => this.handleHover() }
+            onMouseLeave={ () => this.handleHover() } position='relative' width='100%'>
+                <Pane
+                  width='100%'
+                >
+                    {children}
+                </Pane>
+                {this.state.hover && (
+                    <Pane maxWidth={ 300 } {...this.props} zIndex='4' position='absolute'>
+                        {content}
+                    </Pane>
+                )}
+            </Pane>
+        );
+    }
+}
 

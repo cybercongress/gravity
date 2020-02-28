@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './ProgressBar.css';
+import styles from './ProgressBar.less';
 import cx from 'classnames';
 
 // const NumberText = [
@@ -24,12 +24,12 @@ export default class CircleLable extends React.Component {
   render() {
     // const { visible } = this.state;
     const {number, type, text, children} = this.props;
-    const circleCss = cx(styles.circle, { [styles.done] : type === "complete", [styles.doneGreen] : type === "edit"} );
+    const circleless = cx(styles.circle, { [styles.done] : type === "complete", [styles.doneGreen] : type === "edit"} );
     return (
         
         <div key={number} className={styles.NumberText}>
        
-          <div className={circleCss}>
+          <div className={circleless}>
           
             <span className={styles.label}>
             {children}

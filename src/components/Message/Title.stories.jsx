@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered';
 import {Message, Title} from "../..";
 import { addDecorator } from '@storybook/react';
 
-storiesOf('commponents/Message', module)
+storiesOf('Atoms|Message', module)
     .addDecorator(centered)
     .add('info', () => (
         <div>

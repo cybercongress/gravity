@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
 
-const styles = require('./Icons.css');
+const styles = require('./Icons.less');
 
 export const IconLinks = ({children, ...props}) => (
   <i {...props} className={cx(styles.Icon, styles.IconLinks)}>

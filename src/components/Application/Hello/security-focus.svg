@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 43 43">
+    <defs>
+        <path id="a" d="M0 0h26.539v31.346H0z"/>
+        <filter id="c" width="140.2%" height="134.1%" x="-20.1%" y="-17.2%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(8 6)">
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <path fill="#2B3239" stroke="#9D9D9D" stroke-width=".7" d="M13.269 1.206c-3.223 3.11-7.035 4.52-12.01 4.52 0 8.1-1.69 19.702 12.01 24.414 13.7-4.712 12.011-16.314 12.011-24.414-4.976 0-8.787-1.41-12.011-4.52z" mask="url(#b)"/>
+            <path fill="#2B3239" stroke="#36D6AE" stroke-width=".7" d="M13.269 1.206c-3.223 3.11-7.035 4.52-12.01 4.52 0 8.1-1.69 19.702 12.01 24.414 13.7-4.712 12.011-16.314 12.011-24.414-4.976 0-8.787-1.41-12.011-4.52z" filter="url(#c)" mask="url(#b)"/>
+        </g>
+        <path d="M0 0h43v43H0z"/>
+    </g>
+</svg>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './DarkPanel.css';
+import styles from './DarkPanel.less';
 
 export const DarkPanel = ({ children, title, noPadding, ...props }) => (
   <div {...props} className={styles.DarkPanel}>

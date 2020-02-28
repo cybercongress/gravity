@@ -1,0 +1,56 @@
+
+.NavigationContainer {
+	display: flex;
+	align-items: center;
+}
+
+.SearchInput {
+	background-color: transparent;
+	border-radius: 20px;
+	border: none;
+	color: #fff;
+	padding: 5px 20px;
+	/*padding-right: 60px;*/
+	box-sizing: border-box;
+	font-family: 'Play', sans-serif;
+	outline: 0;
+	outline-offset: 0;
+	box-shadow: 0 0 1px #fff;
+	caret-color: #36d6ae;
+
+}
+
+.SearchInput:focus {
+	-webkit-app-region: no-drag;
+	box-shadow: 0 0 20px 0 rgba(0, 255, 163, 0.53);
+}
+
+.BackButton {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	margin-right: 10px;
+	background: url(../../../img/rocket.svg) no-repeat center center;
+	border: none;
+	padding: 0 10px;
+}
+
+.ForwardButton {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	margin-left: 10px;
+	background: url(../../../img/rocket.svg) no-repeat center center;
+	border: none;
+	transform: rotate(180deg);
+	padding: 0 10px;
+}
+
+.BackButton:disabled {
+	opacity: 0.5;
+}
+
+.ForwardButton:disabled {
+	opacity: 0.5;
+}
+

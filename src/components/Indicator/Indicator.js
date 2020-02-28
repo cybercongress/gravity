@@ -1,29 +1,42 @@
 import React from 'react';
+import cx from 'classnames';
+// import Tooltip from 'rc-tooltip';
 
-import './Indicator.css';
+// import 'rc-tooltip/assets/bootstrap.less';
+// // import './Indicator.less';
+const styles = require('./Indicator.less');
 
-const Indicator = ({ children }) => {
-    const style = {
-        background: '#fff',
-    };
+const Indicator = ({ status, children, tooltipContent }) => {
+    // const style = {
+    //     background: '#fff',
+    // };
 
-    if (status) {
-        style.background = status === 'fail' ? '#d0021b' : status === 'local' ? '#7ed321' : '#f8e71c';
-    }
+    // if (status) {
+    //     style.background = status === 'fail' ? '#d0021b' : status === 'local' ? '#7ed321' : '#f8e71c';
+    // }
 
     return (
-        <span style={ style } className='indicator'>{children}</span>
+       // <Tooltip
+        //   placement='topLeft'
+        //   trigger={ ['hover'] }
+        //   overlay={ tooltipContent }
+        // >
+        <span className={cx(styles.indicator,{
+                                                        [styles.statusFail]: status === 'fail',
+                                                        [styles.statusLocal]: status === 'local',
+                                                        })}>{children}</span>
+      //  </Tooltip>
     );
 };
 
 export const SettingsIndicator = ({ status }) => {
-    const style = {
-        background: '#fff',
-    };
+    // const style = {
+    //     background: '#fff',
+    // };
 
-    if (status) {
-        style.background = status === 'fail' ? '#d0021b' : status === 'local' ? '#7ed321' : '#f8e71c';
-    }
+    // if (status) {
+    //     // style.background = status === 'fail' ? '#d0021b' : status === 'local' ? '#7ed321' : '#f8e71c';
+    // }
 
     let placeholder;
 
@@ -46,12 +59,19 @@ export const SettingsIndicator = ({ status }) => {
     }
 
     return (
-        <span style={ style } className='settings-indicator'>{placeholder}</span>
+        <span className={ cx(styles.settings_indicator, {
+                    [styles.statusFail]: status === 'fail',
+                    [styles.statusLocal]: status === 'local',
+                })
+            }
+        >
+            {placeholder}
+        </span>
     );
 };
 
 export const StatusContainer = ({ children }) => (
-    <div className='StatusContainer'>
+    <div className={styles.StatusContainer}>
         {children}
     </div>
 );

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require("./Table.css");
+const styles = require("./Table.less");
 
 export const HomeTable = ({ children }) => (
     <table className={styles.table}>
@@ -18,14 +18,6 @@ export const TableItemBen = ({ children }) => (
     <table className={styles.TableItemBen}>
         {children}
     </table>
-);
-
-
-
-const Table = ({ children }) => (
-    <div className={styles.tableContainer}>
-        {children}
-    </div>
 );
 
 export const TableItem = ({ children }) => (
@@ -51,6 +43,3 @@ export const TableAddItem = ({ children }) => (
         {children}
     </div>
 );
-
-
-export default Table;

@@ -1,0 +1,46 @@
+@media screen and (max-width: 700px) {
+    .connectionContainer {
+        padding: 0 !important;
+    }
+    .connectionContainerGrid {
+        grid-template-columns: 1fr !important;
+        /* position: absolute; */
+        /* padding-bottom: 50px; */
+        font-size: 12px;
+        height: calc(100% - 75px) !important;
+        margin-bottom: 75px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        overflow: auto;
+    }
+    .connectionContainerGrid .input-green {
+        width: 100% !important;
+    }
+    
+    .connectionContainerGrid .connectionContainer-left-col {
+        display: none !important;
+    }
+    
+    .connectionContainer-footer {
+        padding: 0.5em;
+    }
+    .connectionContainer-footer-container {
+        flex-direction: column !important;
+        padding: 0 !important;
+    }
+        .connectionContainer-footer-container .btn {
+        /* font-size: 0.8em !important;*/
+        padding: 0 10px !important;
+        margin: 5px 0 !important;
+        white-space: nowrap !important;
+        min-width: 140px !important;
+        justify-content: center;
+    }
+    .connectionContainer-right-col-content .adress {
+        /* justify-content: flex-start; */
+        font-size: 12px !important;
+    }
+    .BntGroupFull {
+        display: none;
+    }
+ }

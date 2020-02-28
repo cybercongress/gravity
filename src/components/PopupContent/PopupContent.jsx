@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = require('./PopupContent.css');
+const styles = require('./PopupContent.less');
 
 export const ContentLine = ({children}) => (
   <div className={styles.ContentLine}>

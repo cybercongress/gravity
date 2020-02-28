@@ -5,7 +5,7 @@ import centered from '@storybook/addon-centered';
 import { Vitalick } from './vitalick';
 
 
-storiesOf('commponents/Vitalick', module)
+storiesOf('Atoms|Vitalick', module)
     .addDecorator(centered)
     .add('Vitalick', () => (
         <div style={ { top: '50%', position: 'relative' } }>

@@ -1,23 +1,30 @@
 import * as React from 'react';
-import cx from 'classnames';
 
-const styles = require('./Text.css');
+const styles = require('./Text.less');
 
-export const Text = ({ bold, uppercase, justify, lineheight, color, size, ...props }) => (
-    <div
+export const Paragraph = ({children, ...props }) => (
+    <p
       { ...props }
-      className={ cx(styles.TextDefault, {
-            [styles.TextWeight]: bold,
-            [styles.TextTransform]: uppercase,
-            [styles.fontSizeSm]: size === 'sm',
-            [styles.fontSizeLg]: size === 'lg',
-            [styles.fontSizeXlg]: size === 'xlg',
-            [styles.fontSizeXxlg]: size === 'xxlg',
-            [styles.TextColorBlue]: color === 'blue',
-            [styles.TextColorBlack]: color === 'black',
-            [styles.TextColorWhite]: color === 'white',
-            [styles.lineheight]: lineheight,
-            [styles.textJustify]: justify,
-        }) }
-    />
+      className={styles.paragraph}
+    >
+        {children}
+    </p>
+);
+
+export const Caption = ({ children, ...props }) => (
+    <h1
+      {...props}
+      className={styles.caption}
+    >
+        {children}
+    </h1>
+);
+
+export const Chapter = ({ children, ...props }) => (
+    <h2
+      {...props}
+      className={styles.chapter}
+    >
+        {children}
+    </h2>
 );

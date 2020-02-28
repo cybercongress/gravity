@@ -1,0 +1,74 @@
+.RadioBtn {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  
+  .RadioBtn input {
+    display: none;
+  }
+  
+  .RadioBtn label {
+    display: inline-block;
+    /* margin: 0 11px; */
+    margin-right: 11px;
+  }
+  
+  .RadioBtn i {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    /* border: 2px solid #438cef; */
+    position: relative;
+    border-radius: 3px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #dedede;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  }
+  
+  .RadioBtn i:hover{
+    opacity: 0.8;
+  }
+  
+  .RadioBtn i::before {
+    content: '';
+    padding-top: 2px;
+    padding-left: 1px;
+    /* color: #ffff; */
+    position: absolute;
+    /* background: url(./check-box.svg) no-repeat center; */
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    transform: scale(0);
+    transition: .4s;
+    background-color: #438cef;
+    border-radius: 50%;
+  }
+  .RadioBtn i::after{
+      content: '';
+      top: 4px;
+      bottom: 4px;
+      left: 4px;
+      right: 4px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute; 
+      transform: scale(0);
+      transition: .4s;
+  } 
+  
+  .RadioBtn input:checked+i::before {
+    transform: scale(1);
+  }
+  .RadioBtn input:checked+i::after {
+    transform: scale(1);
+  }
+  
+  .RadioBtnText{
+    font-size: 14px;
+    color: #2e3842;
+    padding-bottom: 5px;
+  }

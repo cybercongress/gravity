@@ -1,0 +1,54 @@
+.CheckboxBtn {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.CheckboxBtn input {
+  display: none;
+}
+
+.CheckboxBtn label {
+  display: inline-block;
+  margin: 0 11px;
+}
+
+.CheckboxBtn i {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #438cef;
+  position: relative;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.CheckboxBtn i:hover{
+  opacity: 0.8;
+}
+
+.CheckboxBtn i::before {
+  content: url(../../img/done.svg);
+  padding-top: 2px;
+  padding-left: 1px;
+  color: #ffff;
+  position: absolute;
+  /* background: url(./check-box.svg) no-repeat center; */
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transform: scale(0);
+  transition: .4s;
+  background-color: #438cef;
+}
+
+.CheckboxBtn input:checked+i::before {
+  transform: scale(1);
+}
+
+.CheckboxBtnText{
+  font-size: 14px;
+  color: #2e3842;
+  padding-bottom: 5px;
+}

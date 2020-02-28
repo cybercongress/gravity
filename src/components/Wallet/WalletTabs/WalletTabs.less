@@ -1,0 +1,53 @@
+
+.wallet_tabs {
+	font-size: 18px;
+	/* border: 1px solid #979797; */
+	display: inline-flex;
+	/* margin-bottom: 40px; */
+	border-radius: 2px;
+}
+
+.wallet_tabs__vertical {
+	flex-direction: column;
+	background: #fff;
+}
+
+.wallet_tabs__tab {
+	/*border: 1px solid #979797;*/
+	border: none;
+	/* border-right: 1px solid #979797; */
+	background: none;
+	color: #7c7c7c;
+	cursor: pointer;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	outline:0;
+	background-color: #dedede;
+}
+
+.wallet_tabs__tab:hover{
+	opacity: 0.8;
+}
+
+.wallet_tabs__vertical .wallet_tabs__tab {
+	border-right: none;
+	border-bottom: 1px solid #aa8080;
+}
+
+.wallet-tabs__tab:last-child {
+	border-right: none;
+}
+
+.wallet_tabs__vertical .wallet_tabs__tab:last-child {
+	border-bottom: none;
+}
+
+.wallet_tabs__tab:focus {
+	outline:0;
+	/* box-shadow: 0 2px 4px rgba(0,0,0,0.5) */
+}
+
+.wallet_tabs__active {
+	background: #fff;
+	color: #9b9b9b;
+}

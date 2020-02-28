@@ -1,11 +1,11 @@
 import * as React from 'react';
 import cx from 'classnames';
 
-const styles = require('./DbHeader.css');
+const styles = require('./DbHeader.less');
 
 
-export const FlexContainer = ({ children, line, ...props, }) => (
-  <div {...props} className={cx(styles.FlexContainer,{ [styles.FlexContainerLine] : line}) }>
+export const FlexContainer = ({ children, line, noPadding, ...props, }) => (
+  <div {...props} className={cx(styles.FlexContainer,{ [styles.FlexContainerLine] : line, [styles.noPadding] : noPadding}) }>
     {children}
   </div>
 );

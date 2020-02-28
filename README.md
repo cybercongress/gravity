@@ -1,19 +1,5 @@
-## UI sources for cyberprojects
-
-
-### Getting started Useful links
-
-- [Gravity design system](https://github.com/cybercongress/ui.cyb/tree/gravity)
-
-- [React components](https://github.com/cybercongress/ui.cyb/tree/master/src/components)
-
-- [Sketch layouts](https://github.com/cybercongress/ui.cyb/tree/graphics)
-
-### How to work with Storybook
-
-Requirements:
-
-node 10.x.x
+in your project 
+yarn link '@cybercongress/gravity'
 
 yarn 1.12+
 
