@@ -3,7 +3,7 @@ import { Pane, Pill, Text, Spinner, Tooltip, Link } from "evergreen-ui";
 import styles from "./SearchItem.less";
 // import cx from 'classnames';
 
-const LinkWithTooltip = ({ status, hash, content }) => {
+const LinkWithTooltip = ({ status, hash, content, contentIpfs }) => {
   let colorPill = "neutral";
 
   switch (status) {
@@ -21,14 +21,20 @@ const LinkWithTooltip = ({ status, hash, content }) => {
       break;
   }
 
+  let contentItem = false;
+
+  if (status === "success") {
+    if (contentIpfs !== undefined) {
+      if (contentIpfs.indexOf(hash) === -1) {
+        contentItem = true;
+      }
+    }
+  }
+
   return (
     <Pane display="flex" flex={1} alignItems="center">
       <Pane display="flex" flex={1} flexDirection="column">
-        <Pane
-          display="flex"
-          alignItems="center"
-          marginBottom={status === "success" ? 10 : "none"}
-        >
+        <Pane display="flex" alignItems="center">
           <Tooltip
             appearance="card"
             content={
@@ -61,7 +67,7 @@ const LinkWithTooltip = ({ status, hash, content }) => {
             {hash}
           </Text>
         </Pane>
-        {status === "success" && (
+        {contentItem && (
           <Text flex={1} color="#000" size={400}>
             {content}
           </Text>
@@ -77,7 +83,8 @@ export const SearchItem = ({
   grade,
   onClick,
   children,
-  hash
+  hash,
+  contentIpfs
 }) => {
   let rankGradeColor = "neutral";
 
@@ -170,7 +177,12 @@ export const SearchItem = ({
       className={styles.containerSearchItem}
       maxHeight="250px"
     >
-      <LinkWithTooltip status={status} hash={hash} content={children} />
+      <LinkWithTooltip
+        status={status}
+        contentIpfs={contentIpfs}
+        hash={hash}
+        content={children}
+      />
       {status === "loading" && <Spinner marginX={10} size={16} />}
       {rankGradeWithTooltip}
     </Pane>
