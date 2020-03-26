@@ -19,7 +19,7 @@ export const SearchItem = ({
     <Pane key={hash} onClick={onClick} className={styles.containerSearchItem}>
       <Pane display="flex" width="100%" flex={1} flexDirection="column">
         <Pane display="flex" width="100%" alignItems="center">
-          <Status status={status} />
+          {rank && <Rank rank={rank} grade={grade} />}
           <Text
             color="#000"
             width="100%"
@@ -30,10 +30,10 @@ export const SearchItem = ({
           >
             {text || hash}
           </Text>
-          {rank && <Rank rank={rank} grade={grade} />}
+          <Status status={status} />
         </Pane>
         {contentApp && (
-          <div style={{ marginTop: "10px", paddingLeft: "18px" }}>
+          <div style={{ marginTop: "10px", paddingLeft: "10px" }}>
             {contentApp}
           </div>
         )}

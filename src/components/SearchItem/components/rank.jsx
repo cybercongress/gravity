@@ -1,5 +1,6 @@
 import React from "react";
 import { Pane, Text, Tooltip, Pill, Link } from "evergreen-ui";
+import styles from "../SearchItem.less";
 
 const GradeTooltipContent = ({ grade, color, rank }) => (
   <Pane paddingX={15} paddingY={15}>
@@ -86,18 +87,9 @@ const Rank = ({ rank, grade }) => {
       content={<GradeTooltipContent grade={grade} color={color} rank={rank} />}
       position="bottom"
     >
-      <Pill
-        paddingX={8}
-        paddingY={5}
-        width={25}
-        height={16}
-        display="flex"
-        alignItems="center"
-        style={{ color: "#fff", backgroundColor: color }}
-        isSolid
-      >
+      <Pane className={styles.rank} style={{ backgroundColor: color }}>
         {grade.value}
-      </Pill>
+      </Pane>
     </Tooltip>
   );
 };
