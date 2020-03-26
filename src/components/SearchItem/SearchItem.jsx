@@ -16,7 +16,7 @@ export const SearchItem = ({
 }) => {
   let contentItem = false;
 
-  if (status === "success") {
+  if (status === "downloaded") {
     if (contentIpfs !== undefined) {
       if (contentIpfs.indexOf(hash) === -1) {
         contentItem = true;

@@ -24,7 +24,8 @@ const links = {
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE4x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 4 },
-    status: "downloaded"
+    status: "downloaded",
+    content: "data:,QmeaYGKqdJHCstEPsS4iw3epvT5y6JZyuAKu87kFwz1yQEyx"
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE5x: {
     rank: "0.000576",
@@ -64,7 +65,7 @@ const Application = props => {
             status={links[key].status}
             contentIpfs={links[key].content}
           >
-            {links[key].status !== "success" ? (
+            {links[key].status !== "downloaded" ? (
               key
             ) : (
               <iframe style={{ width: '100%', border: 'none' }} src={links[key].content} />
