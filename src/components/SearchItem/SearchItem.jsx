@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Pane, Pill, Text, Spinner, Tooltip, Link } from "evergreen-ui";
+import { Pane, Pill, Text, Spinner, Tooltip } from "evergreen-ui";
 import styles from "./SearchItem.less";
 import Rank from "./components/rank";
 import Status from "./components/status";
@@ -12,18 +12,9 @@ export const SearchItem = ({
   onClick,
   children,
   hash,
-  contentIpfs
+  text,
+  contentApp
 }) => {
-  let contentItem = false;
-
-  if (status === "downloaded") {
-    if (contentIpfs !== undefined) {
-      if (contentIpfs.indexOf(hash) === -1) {
-        contentItem = true;
-      }
-    }
-  }
-
   const item = (
     <Pane key={hash} onClick={onClick} className={styles.containerSearchItem}>
       <Pane display="flex" width="100%" flex={1} flexDirection="column">
@@ -37,11 +28,16 @@ export const SearchItem = ({
             overflow="hidden"
             size={500}
           >
-            {hash}
+            {text || hash}
           </Text>
-          <Rank rank={rank} grade={grade} />
+          {rank && <Rank rank={rank} grade={grade} />}
         </Pane>
-        {contentItem && (
+        {contentApp && (
+          <div style={{ marginTop: "10px", paddingLeft: "18px" }}>
+            {contentApp}
+          </div>
+        )}
+        {status === "downloaded" && (
           <Text flex={1} color="#000" size={400}>
             {children}
           </Text>
@@ -52,15 +48,19 @@ export const SearchItem = ({
 
   return (
     <span>
-      <a
-        style={{
-          textDecoration: "none"
-        }}
-        href={`https://ipfs.io/ipfs/${hash}`}
-        target="_blank"
-      >
-        {item}
-      </a>
+      {status !== "sparkApp" ? (
+        <a
+          style={{
+            textDecoration: "none"
+          }}
+          href={`https://ipfs.io/ipfs/${hash}`}
+          target="_blank"
+        >
+          {item}
+        </a>
+      ) : (
+        item
+      )}
     </span>
   );
 };

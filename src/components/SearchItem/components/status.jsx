@@ -73,7 +73,7 @@ const Status = ({ status }) => {
     >
       <Pane
         className={`${styles.customPill} ${
-          status === "understandingState" ? styles.glow : ""
+          status === "understandingState" ? "glow" : ""
         }`}
         style={{ color: "#fff", backgroundColor: color }}
       />

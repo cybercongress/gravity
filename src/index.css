@@ -394,3 +394,21 @@ html, body, #root {
 /* .📦bs_17sc08g {
     box-shadow: 0 0 1px #38d6ae, 0 8px 10px -4px #38d6ae86 !important;
 } */
+
+.glow {
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+
+@keyframes glow {
+    0% {
+      box-shadow: 0 0 2px 0px #fff, 0 0 2px 0px #00b0ff;
+    }
+    100% {
+      box-shadow: 0 0 3px 2px #fff, 0 0 3px 2px #00b8d4, 0 0 4px 2px #00b8d4,
+        0 0 5px 2px #00b8d4, 0 0 6px 2px #00b8d4;
+    }
+  }

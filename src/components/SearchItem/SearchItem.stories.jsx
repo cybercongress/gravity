@@ -27,11 +27,6 @@ const links = {
     status: "downloaded",
     content: "data:,QmeaYGKqdJHCstEPsS4iw3epvT5y6JZyuAKu87kFwz1yQEyx"
   },
-  QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE5x: {
-    rank: "0.000576",
-    grade: { from: 0.000001, to: 0.001, value: 5 },
-    status: "sparkApp"
-  },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE6x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 6 },
@@ -63,15 +58,31 @@ const Application = props => {
             rank={links[key].rank}
             grade={links[key].grade}
             status={links[key].status}
-            contentIpfs={links[key].content}
           >
             {links[key].status !== "downloaded" ? (
               key
             ) : (
-              <iframe style={{ width: '100%', border: 'none' }} src={links[key].content} />
+              <iframe
+                style={{ width: "100%", border: "none" }}
+                src={links[key].content}
+              />
             )}
           </SearchItem>
         ))}
+        <a
+          style={{
+            textDecoration: "none",
+            color: '#000'
+          }}
+          href={`https://ipfs.io/ipfs/`}
+        >
+          <SearchItem
+            hash="1"
+            text="Explore details of contrac"
+            contentApp={<div>cybe...fhky</div>}
+            status="sparkApp"
+          />
+        </a>
       </Pane>
     </Pane>
   );
