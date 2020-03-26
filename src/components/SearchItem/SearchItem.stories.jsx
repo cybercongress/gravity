@@ -7,19 +7,39 @@ import { SearchItem } from "./SearchItem";
 const links = {
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQEyx: {
     rank: "0.000576",
-    grade: { from: 0.000001, to: 0.001, value: 3 },
-    status: "success",
+    grade: { from: 0.000001, to: 0.001, value: 1 },
+    status: "understandingState",
     content: "data:,QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQEyx"
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE2x: {
     rank: "0.000576",
-    grade: { from: 0.000001, to: 0.001, value: 4 },
-    status: "loading"
+    grade: { from: 0.000001, to: 0.001, value: 2 },
+    status: "availableDownload"
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE3x: {
     rank: "0.000576",
+    grade: { from: 0.000001, to: 0.001, value: 3 },
+    status: "impossibleLoad"
+  },
+  QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE4x: {
+    rank: "0.000576",
+    grade: { from: 0.000001, to: 0.001, value: 4 },
+    status: "downloaded"
+  },
+  QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE5x: {
+    rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 5 },
-    status: "failed",
+    status: "sparkApp"
+  },
+  QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE6x: {
+    rank: "0.000576",
+    grade: { from: 0.000001, to: 0.001, value: 6 },
+    status: "legacy"
+  },
+  QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE7x: {
+    rank: "0.000576",
+    grade: { from: 0.000001, to: 0.001, value: 7 },
+    status: "legacys"
   }
 };
 

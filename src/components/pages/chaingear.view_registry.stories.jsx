@@ -213,7 +213,7 @@ class PagesViewRegistry extends Component {
                     <Text color={ isDbPaused ? '#f5a623' : '#50e3c2' }>{databaseSymbol}</Text>
                 </Pane>
                 <Popover
-                  position='BOTTOM_LEFT'
+                  position='left'
                   content={ (
                       <Menu>
                           <Menu.Group>

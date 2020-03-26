@@ -25,7 +25,7 @@ storiesOf('Atoms|Tooltip', module)
             <Tooltip content='Right' position='right'>
                 <IconButton marginX={ 30 } icon='arrow-right' />
             </Tooltip>
-            <Tooltip content='Bottom' position='Bottom'>
+            <Tooltip content='Bottom' position='bottom'>
                 <IconButton marginX={ 30 } icon='arrow-down' />
             </Tooltip>
             <Tooltip content='Left' position='left'>
