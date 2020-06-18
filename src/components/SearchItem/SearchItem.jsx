@@ -12,24 +12,46 @@ export const SearchItem = ({
   onClick,
   children,
   hash,
+  contentApp,
   text,
-  contentApp
+  contentStyle,
+  containerTitleStyle,
+  titleStyle,
 }) => {
   const item = (
     <Pane key={hash} onClick={onClick} className={styles.containerSearchItem}>
       <Pane display="flex" width="100%" flex={1} flexDirection="column">
-        <Pane display="flex" width="100%" alignItems="center">
-          {rank && <Rank rank={rank} grade={grade} />}
-          <Text
-            color="#000"
-            width="100%"
+        <Pane
+          display="flex"
+          width="100%"
+          justifyContent="flex-end"
+          alignItems="center"
+        >
+          <Pane
+            display="flex"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+            flex={1}
             textOverflow="ellipsis"
-            paddingX={10}
             overflow="hidden"
-            size={500}
+            {...containerTitleStyle}
           >
-            {text || hash}
-          </Text>
+            {rank && <Rank marginTop="2px" rank={rank} grade={grade} />}
+            {(text || hash) && (
+              <Text
+                color="#000"
+                // width="100%"
+                textOverflow="ellipsis"
+                overflow="hidden"
+                paddingX={10}
+                // lineHeight={1}
+                size={500}
+                {...titleStyle}
+              >
+                {text || hash}
+              </Text>
+            )}
+          </Pane>
           <Status status={status} />
         </Pane>
         {contentApp && (
@@ -37,30 +59,12 @@ export const SearchItem = ({
             {contentApp}
           </div>
         )}
-        {status === "downloaded" && (
-          <Text flex={1} color="#000" size={400}>
-            {children}
-          </Text>
-        )}
+        <Pane overflowY="auto" {...contentStyle}>
+          {children}
+        </Pane>
       </Pane>
     </Pane>
   );
 
-  return (
-    <span>
-      {status !== "sparkApp" ? (
-        <a
-          style={{
-            textDecoration: "none"
-          }}
-          href={`https://ipfs.io/ipfs/${hash}`}
-          target="_blank"
-        >
-          {item}
-        </a>
-      ) : (
-        item
-      )}
-    </span>
-  );
+  return item;
 };

@@ -46,7 +46,7 @@ const GradeTooltipContent = ({ grade, color, rank }) => (
   </Pane>
 );
 
-const gradeColorRank = rank => {
+const gradeColorRank = (rank) => {
   let rankGradeColor = "#546e7a";
 
   switch (rank) {
@@ -79,7 +79,7 @@ const gradeColorRank = rank => {
   return rankGradeColor;
 };
 
-const Rank = ({ rank, grade }) => {
+const Rank = ({ rank, grade, ...props }) => {
   const color = gradeColorRank(grade.value);
   return (
     <Tooltip
@@ -87,7 +87,7 @@ const Rank = ({ rank, grade }) => {
       content={<GradeTooltipContent grade={grade} color={color} rank={rank} />}
       position="bottom"
     >
-      <Pane className={styles.rank} style={{ backgroundColor: color }}>
+      <Pane className={styles.rank} backgroundColor={color} {...props}>
         {grade.value}
       </Pane>
     </Tooltip>

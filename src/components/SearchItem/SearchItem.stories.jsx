@@ -4,48 +4,80 @@ import { Pane } from "evergreen-ui";
 
 import { SearchItem } from "./SearchItem";
 
+const imgTest = require("../../img/robohash.jpg");
+
+const text1 = `
+Hey!
+
+I have no idea what this means. But I guess you can know for sure. Cyberlink it.
+
+What is cyberlink?
+
+You have probably used links which look like this: https://google.com. Eventually the request to this link resolves to a particular machine which will show your old god. You cant know for sure what you get. Cyberlinks are different. Cyberlink is a link between two pieces of content there each content is addressed by its hash. Changing the way we link things we make the Great Web closer
+I have no idea what this means. But I guess you can know for sure. Cyberlink it.
+
+What is cyberlink?
+
+You have probably used links which look like this: https://google.com. Eventually the request to this link resolves to a particular machine which will show your old god. You cant know for sure what you get. Cyberlinks are different. Cyberlink is a link between two pieces of content there each content is addressed by its hash. Changing the way we link things we make the Great Web closer
+I have no idea what this means. But I guess you can know for sure. Cyberlink it.
+
+What is cyberlink?
+
+You have probably used links which look like this: https://google.com. Eventually the request to this link resolves to a particular machine which will show your old god. You cant know for sure what you get. Cyberlinks are different. Cyberlink is a link between two pieces of content there each content is addressed by its hash. Changing the way we link things we make the Great Web closer
+
+`;
+
+const text2 = `What is cyberlink?`;
+
 const links = {
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQEyx: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 1 },
     status: "understandingState",
-    content: "data:,QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQEyx"
+    content: "data:,QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQEyx",
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE2x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 2 },
-    status: "availableDownload"
+    status: "downloaded",
+    type: "text",
+    content: text2,
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE3x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 3 },
-    status: "impossibleLoad"
+    status: "impossibleLoad",
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE4x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 4 },
     status: "downloaded",
-    content: "data:,QmeaYGKqdJHCstEPsS4iw3epvT5y6JZyuAKu87kFwz1yQEyx"
+    type: "link",
+    content:
+      "https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Kirill.html",
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE5x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 5 },
-    status: "impossibleLoad",
-    content: "data:,QmeaYGKqdJHCstEPsS4iw3epvT5y6JZyuAKu87kFwz1yQEyx"
+    status: "downloaded",
+    type: "text",
+    content: text1,
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE6x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 6 },
-    status: "legacy"
+    status: "downloaded",
+    type: "image",
+    content: imgTest,
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE7x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 7 },
-    status: "legacys"
-  }
+    status: "legacy",
+  },
 };
 
-const Application = props => {
+const Application = (props) => {
   const { openMenu, toggleMenu, newApp } = props;
 
   return (
@@ -57,28 +89,41 @@ const Application = props => {
       alignItems="center"
     >
       <Pane padding="2em" width="100%">
-        {Object.keys(links).map(key => (
-          <SearchItem
-            key={key}
-            hash={key}
-            rank={links[key].rank}
-            grade={links[key].grade}
-            status={links[key].status}
-          >
-            {links[key].status !== "downloaded" ? (
-              key
-            ) : (
-              <iframe
-                style={{ width: "100%", border: "none" }}
-                src={links[key].content}
-              />
-            )}
-          </SearchItem>
-        ))}
+        {Object.keys(links).map((key) => {
+          let text;
+          if (
+            links[key].type === "text" ||
+            (links[key].type === "link" && links[key].status === "downloaded")
+          ) {
+            if (links[key].content.length > 300) {
+              text = `${links[key].content.slice(0, 300)}...`;
+            } else {
+              text = links[key].content;
+            }
+          } else if (links[key].type === "image") {
+            text = false;
+          } else {
+            text = key;
+          }
+          return (
+            <SearchItem
+              key={key}
+              text={text}
+              rank={links[key].rank}
+              grade={links[key].grade}
+              status={links[key].status}
+            >
+              {links[key].type === "image" && (
+                <img alt="img" src={links[key].content} />
+              )}
+              {/* {links[key].content} */}
+            </SearchItem>
+          );
+        })}
         <a
           style={{
             textDecoration: "none",
-            color: '#000'
+            color: "#000",
           }}
           href={`https://ipfs.io/ipfs/`}
         >

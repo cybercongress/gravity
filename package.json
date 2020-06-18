@@ -1,6 +1,6 @@
 {
   "name": "@cybercongress/gravity",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Components for cyb",
   "author": "cybercongress <cybercongress42@gmail.com>",
   "storybook-deployer": {
