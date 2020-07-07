@@ -34,27 +34,29 @@ const links = {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 1 },
     status: "understandingState",
-    content: "data:,QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQEyx",
+    content: "data:,QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQEyx"
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE2x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 2 },
-    status: "downloaded",
+    status: "impossibleLoad",
     type: "text",
-    content: text2,
+    content: text2
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE3x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 3 },
-    status: "impossibleLoad",
+    status: "availableDownload",
+    size: "100 mb"
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE4x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 4 },
     status: "downloaded",
     type: "link",
+    size: "100 kb",
     content:
-      "https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Kirill.html",
+      "https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Kirill.html"
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE5x: {
     rank: "0.000576",
@@ -62,6 +64,7 @@ const links = {
     status: "downloaded",
     type: "text",
     content: text1,
+    size: "100 kb"
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE6x: {
     rank: "0.000576",
@@ -69,15 +72,21 @@ const links = {
     status: "downloaded",
     type: "image",
     content: imgTest,
+    size: "100 kb"
   },
   QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE7x: {
     rank: "0.000576",
     grade: { from: 0.000001, to: 0.001, value: 7 },
-    status: "legacy",
+    status: "legacy"
   },
+  QmeaYGKqdJHCstEPsS4iepvT5y6JZyuAKu87kFwz1yQE8x: {
+    rank: "0.000576",
+    grade: { from: 0.000001, to: 0.001, value: 'n/a' },
+    status: "legacy"
+  }
 };
 
-const Application = (props) => {
+const Application = props => {
   const { openMenu, toggleMenu, newApp } = props;
 
   return (
@@ -89,7 +98,7 @@ const Application = (props) => {
       alignItems="center"
     >
       <Pane padding="2em" width="100%">
-        {Object.keys(links).map((key) => {
+        {Object.keys(links).map(key => {
           let text;
           if (
             links[key].type === "text" ||
@@ -108,10 +117,12 @@ const Application = (props) => {
           return (
             <SearchItem
               key={key}
+              hash={key}
               text={text}
               rank={links[key].rank}
               grade={links[key].grade}
               status={links[key].status}
+              size={links[key].size}
             >
               {links[key].type === "image" && (
                 <img alt="img" src={links[key].content} />
@@ -123,7 +134,7 @@ const Application = (props) => {
         <a
           style={{
             textDecoration: "none",
-            color: "#000",
+            color: "#000"
           }}
           href={`https://ipfs.io/ipfs/`}
         >

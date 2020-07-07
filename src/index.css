@@ -412,3 +412,82 @@ html, body, #root {
         0 0 5px 2px #00b8d4, 0 0 6px 2px #00b8d4;
     }
   }
+
+  .rankVal1 {
+    box-shadow: 0 0 3px #ff3d00;
+  }
+  
+  .rankVal2 {
+    box-shadow: 0 0 3px #ff9100;
+  }
+  
+  .rankVal3 {
+    box-shadow: 0 0 3px #ffea00;
+  }
+  
+  .rankVal4 {
+    box-shadow: 0 0 3px #64dd17;
+  }
+  
+  .rankVal5 {
+    box-shadow: 0 0 3px #00b0ff;
+  }
+  
+  .rankVal6 {
+    box-shadow: 0 0 3px #304ffe;
+  }
+  
+  .rankVal7 {
+    box-shadow: 0 0 3px #d500f9;
+  }
+  
+  .rankValDefault {
+    box-shadow: 0 0 3px #546e7a;
+  }
+
+  .rankVal1:hover {
+    box-shadow: 0 0 7px #ff3d00;
+  }
+  
+  .rankVal2:hover {
+    box-shadow: 0 0 7px #ff9100;
+  }
+  
+  .rankVal3:hover {
+    box-shadow: 0 0 7px #ffea00;
+  }
+  
+  .rankVal4:hover {
+    box-shadow: 0 0 7px #64dd17;
+  }
+  
+  .rankVal5:hover {
+    box-shadow: 0 0 7px #00b0ff;
+  }
+  
+  .rankVal6:hover {
+    box-shadow: 0 0 7px #304ffe;
+  }
+  
+  .rankVal7:hover {
+    box-shadow: 0 0 7px #d500f9;
+  }
+  
+  .rankValDefault:hover {
+    box-shadow: 0 0 7px #546e7a;
+  }
+
+  .copy-address {
+    background: url(./img/copy.svg) center center no-repeat;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .copy-address:hover {
+    opacity: 0.8;
+  }

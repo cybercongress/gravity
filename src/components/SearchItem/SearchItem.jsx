@@ -5,6 +5,39 @@ import Rank from "./components/rank";
 import Status from "./components/status";
 // import cx from 'classnames';
 
+const gradeColorRank = (grade) => {
+  let classColor = "rankValDefault";
+
+  switch (grade) {
+    case 1:
+      classColor = "rankVal1";
+      break;
+    case 2:
+      classColor = "rankVal2";
+      break;
+    case 3:
+      classColor = "rankVal3";
+      break;
+    case 4:
+      classColor = "rankVal4";
+      break;
+    case 5:
+      classColor = "rankVal5";
+      break;
+    case 6:
+      classColor = "rankVal6";
+      break;
+    case 7:
+      classColor = "rankVal7";
+      break;
+    default:
+      classColor = "rankValDefault";
+      break;
+  }
+
+  return classColor;
+};
+
 export const SearchItem = ({
   status,
   rank,
@@ -17,9 +50,21 @@ export const SearchItem = ({
   contentStyle,
   containerTitleStyle,
   titleStyle,
+  size,
 }) => {
+  let colorRank = "rankValDefault";
+
+  if (grade && grade.value) {
+    colorRank = gradeColorRank(grade.value);
+  }
+
   const item = (
-    <Pane key={hash} onClick={onClick} className={styles.containerSearchItem}>
+    <Pane
+      key={hash}
+      onClick={onClick}
+      className={`${styles.containerSearchItem} ${colorRank}`}
+      // style="--radius: var(--rad-50);"
+    >
       <Pane display="flex" width="100%" flex={1} flexDirection="column">
         <Pane
           display="flex"
@@ -36,23 +81,26 @@ export const SearchItem = ({
             overflow="hidden"
             {...containerTitleStyle}
           >
-            {rank && <Rank marginTop="2px" rank={rank} grade={grade} />}
-            {(text || hash) && (
+            {/* {rank && (
+              <Rank marginTop="2px" hash={hash} rank={rank} grade={grade} />
+            )} */}
+            {text && (
               <Text
-                color="#000"
+                color="#fff"
                 // width="100%"
                 textOverflow="ellipsis"
                 overflow="hidden"
                 paddingX={10}
                 // lineHeight={1}
+                className={styles.textSearchItem}
                 size={500}
                 {...titleStyle}
               >
-                {text || hash}
+                {text}
               </Text>
             )}
           </Pane>
-          <Status status={status} />
+          {status !== "downloaded" && <Status status={status} size={size} />}
         </Pane>
         {contentApp && (
           <div style={{ marginTop: "10px", paddingLeft: "10px" }}>
