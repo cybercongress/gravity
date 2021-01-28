@@ -122,10 +122,10 @@ body {
 * {
     font-family: 'Play', sans-serif !important;
 }
-
+/* 
 html, body, #root {
 	height: 100%;
-}
+} */
 
 /* input:focus{
     box-shadow: inset 0 0 1px 1.5px #3dc9a1 !important;

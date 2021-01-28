@@ -15,60 +15,58 @@ export const Battery = ({
   colorText,
   ...props
 }) => (
-  <Tooltip appearance="card" content={contentTooltip}>
+  <Pane
+    height={25}
+    width="100%"
+    className={
+      bwPercent <= 25
+        ? styles.skillBarHoverRed
+        : bwPercent < 50
+        ? styles.skillBarHoverOrange
+        : bwPercent < 76
+        ? styles.skillBarHoverYellow
+        : styles.skillBarHoverGreen
+    }
+    backgroundColor="#fff"
+    borderRadius={4}
+    position="relative"
+    transition="1s"
+    {...props}
+  >
     <Pane
-      height={25}
-      width="100%"
-      className={
+      height="100%"
+      borderRadius="inherit"
+      style={{ transition: "width .2s ease-in" }}
+      width={`${bwPercent}%`}
+      backgroundColor={
         bwPercent <= 25
-          ? styles.skillBarHoverRed
+          ? "#d32f2f"
           : bwPercent < 50
-          ? styles.skillBarHoverOrange
+          ? "#f57c00"
           : bwPercent < 76
-          ? styles.skillBarHoverYellow
-          : styles.skillBarHoverGreen
+          ? "#fbc02d"
+          : "#4caf50"
       }
-      backgroundColor="#fff"
-      borderRadius={4}
-      position="relative"
-      transition="1s"
-      {...props}
     >
       <Pane
+        display="flex"
+        alignItems="center"
+        width="100%"
         height="100%"
-        borderRadius="inherit"
-        style={{ transition: "width .2s ease-in" }}
-        width={`${bwPercent}%`}
-        backgroundColor={
-          bwPercent <= 25
-            ? "#d32f2f"
-            : bwPercent < 50
-            ? "#f57c00"
-            : bwPercent < 76
-            ? "#fbc02d"
-            : "#4caf50"
-        }
+        position="absolute"
+        paddingX={20}
+        justifyContent={bwPercent < 26 ? "flex-end" : "flex-start"}
       >
-        <Pane
-          display="flex"
-          alignItems="center"
-          width="100%"
-          height="100%"
-          position="absolute"
-          paddingX={20}
-          justifyContent={bwPercent < 26 ? "flex-end" : "flex-start"}
+        <Text
+          style={styleText}
+          fontSize={fontSize || 18}
+          fontWeight="bold"
+          color={bwPercent < 26 ? "#d32f2f" : colorText || "#ffffff"}
         >
-          <Text
-            style={styleText}
-            fontSize={fontSize || 18}
-            fontWeight="bold"
-            color={bwPercent < 26 ? "#d32f2f" : colorText || "#ffffff"}
-          >
-            {`${bwPercent} %`}
-          </Text>
-        </Pane>
+          {`${bwPercent} %`}
+        </Text>
       </Pane>
-      {children}
     </Pane>
-  </Tooltip>
+    {children}
+  </Pane>
 );
