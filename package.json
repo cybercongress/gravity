@@ -26,7 +26,7 @@
     "eslint-config-standard-react": "^7.0.2",
     "evergreen-ui": "^4.15.0",
     "google-palette": "1.1.0",
-    "highlight.js": "9.15.6",
+    "highlight.js": "10.4.1",
     "less": "^3.9.0",
     "moment": "^2.24.0",
     "plotly.js": "^1.49.4",
